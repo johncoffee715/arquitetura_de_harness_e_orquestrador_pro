@@ -1,0 +1,68 @@
+# =============================================================================
+# Harness Backup - .gitignore
+# Exclui artefatos runtime, binários grandes, segredos e cache
+# =============================================================================
+
+# --- Dependências ---
+node_modules/
+*/node_modules/
+package-lock.json
+
+# --- Secrets ---
+.env
+.env.*
+
+# --- Cache / Runtime ---
+.cache/
+cache/
+arquivos do cache/
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# --- Binários grandes ---
+tools/ghidra_12.1.2_PUBLIC/
+tools/jdk-21.0.11+10/
+
+# --- Build artifacts ---
+dist/
+*.pyc
+__pycache__/
+
+# --- Runtime OpenCode ---
+share-data/
+omo/codegraph/
+omo/runtime/
+omo/start-work/
+omo/ulw-research/
+omo/evidence/
+omo/drafts/
+omo/run-continuation/
+omo/boulder.json
+omo/plans/
+
+# --- Backups temporários ---
+backup-orphaned-*/
+security-audit-*/
+.mode-fix-backups-agents/
+
+# --- Sessões / Dados temporários ---
+session-summaries/
+huggingface/
+bun/
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# --- Executáveis / Binários ---
+bin/
+
+# --- OMO internal ---
+.omo/
+
+# --- Config internal (node_modules já coberto acima) ---
+config/node_modules/

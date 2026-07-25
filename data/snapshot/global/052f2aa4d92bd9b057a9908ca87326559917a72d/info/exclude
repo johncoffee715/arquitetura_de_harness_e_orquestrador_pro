@@ -1,0 +1,1833 @@
+# git ls-files --others --exclude-from=.git/info/exclude
+# Lines that start with '#' are comments.
+# For a project mostly in C, the following would be a good set of
+# exclude patterns (uncomment them if you want to use them):
+# *.[oa]
+# *~
+.codegraph
+/.local/bin/gh
+/.local/bin/node
+/.local/share/Steam/ThirdPartyLegalNotices-Chromium.html
+/.local/share/Steam/bin/hardwareupdater/hardwareupdater.x86_64
+/.local/share/Steam/bootstrap.tar.xz
+/.local/share/Steam/clientui/fonts/GoNotoKurrent-Bold.ttf
+/.local/share/Steam/clientui/fonts/GoNotoKurrent-Regular.ttf
+/.local/share/Steam/config/htmlcache/BrowserMetrics-spare.pma
+/.local/share/Steam/config/htmlcache/GrShaderCache/data_3
+/.local/share/Steam/legacycompat/SteamService.exe
+/.local/share/Steam/legacycompat/steamclient.dll
+/.local/share/Steam/legacycompat/steamclient64.dll
+/.local/share/Steam/linux32/steamclient.so
+/.local/share/Steam/linux64/steamclient.so
+/.local/share/Steam/package/bins_codecs_steamrt_ubuntu12.zip.vz.06d30405f28650c005608d73b25689e73fc263cd_7522687
+/.local/share/Steam/package/bins_codecs_ubuntu12.zip.vz.f341e3e1e97eac8be90cdaf2e2e058e6ac1ab5d6_12869687
+/.local/share/Steam/package/bins_hardware_ubuntu12.zip.da8814f3cc3788fd3789ce233dd86f107b2b244a
+/.local/share/Steam/package/bins_misc_ubuntu12.zip.vz.66f69431258861c897d2015efaf176d68bb468b2_19645812
+/.local/share/Steam/package/bins_sdk_ubuntu12.zip.vz.e6a0f57729a580e5e40004d0bf6bd5ba366219db_23410536
+/.local/share/Steam/package/bins_steamrt_ubuntu12.zip.vz.ed89e4849a1b1ef75b471e72d56db38fb51c725b_60591660
+/.local/share/Steam/package/bins_ubuntu12.zip.vz.831610a6de9d99095144f039015a91b3306a075a_40655156
+/.local/share/Steam/package/public_all.zip.vz.6ce7bafc2d2a23a24a450f182c89fdda6cbc3628_24187846
+/.local/share/Steam/package/resources_all.zip.vz.ef4c575e0ebeda2c391b9e56182d51ce688f222e_3488108
+/.local/share/Steam/package/resources_misc_all.zip.vz.e86a975545f3ab21a77373870cb311ef93934b8c_2224876
+/.local/share/Steam/package/runtime_scout_ubuntu12.zip.3cef20642abda3af88097fe68bd50a56964e7f02
+/.local/share/Steam/package/runtime_steamrt_ubuntu12.zip.vz.f7326f3900525f380207e474a31240d433483ed4_79430095
+/.local/share/Steam/package/sdl3_ubuntu12.zip.vz.41ce9175cf38af9cd7178b742126ac1b20179821_11412960
+/.local/share/Steam/package/steam_steamrt_ubuntu12.zip.vz.3f50401c077b2c2dcc79da1f80f335b57ae6a0e8_3587128
+/.local/share/Steam/package/steam_ubuntu12.zip.vz.b9b3e64ac460824be3e031ab8126f8731bc9c565_3382228
+/.local/share/Steam/package/steamui_websrc_all.zip.vz.99a97eab36bcaeae404d4e4d931a72cc75c1d33a_26604423
+/.local/share/Steam/package/steamui_websrc_movies_all.zip.fd1834bd9e99e82f4672e0bd4cab33edb648cbe0
+/.local/share/Steam/package/steamui_websrc_sounds_all.zip.vz.5ba6acd8f4dfe4b93437895b20344fab5bb3ff96_3714779
+/.local/share/Steam/package/tenfoot_images_all.zip.vz.193cb8c4eb4446698ea2c0a9e8c4e6b6a623dac7_5572671
+/.local/share/Steam/package/webkit_ubuntu12.zip.vz.b47a2e526c9a5dec38f46ec651d991bde3230762_89724917
+/.local/share/Steam/steam/cached/game_details_header_blue.tga
+/.local/share/Steam/steam/cached/game_details_header_green.tga
+/.local/share/Steam/steam/cached/game_details_header_mask.tga
+/.local/share/Steam/steam/cached/game_details_header_red.tga
+/.local/share/Steam/steamapps/common/Steamworks Shared/_CommonRedist/DirectX/Jun2010/Apr2006_MDX1_x86_Archive.cab
+/.local/share/Steam/steamapps/common/Steamworks Shared/_CommonRedist/DirectX/Jun2010/Aug2009_d3dcsx_42_x64.cab
+/.local/share/Steam/steamapps/common/Steamworks Shared/_CommonRedist/DirectX/Jun2010/Aug2009_d3dcsx_42_x86.cab
+/.local/share/Steam/steamapps/common/Steamworks Shared/_CommonRedist/vcredist/2013/vcredist_x64.exe
+/.local/share/Steam/steamapps/common/Steamworks Shared/_CommonRedist/vcredist/2013/vcredist_x86.exe
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/Program Files (x86)/Steam/steam.exe
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/Program Files (x86)/Steam/steamclient.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/Program Files (x86)/Steam/steamclient64.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/vrclient/bin/vrclient.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/vrclient/bin/vrclient_x64.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/Fonts/malgun.ttf
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/Fonts/msgothic.ttc
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/Fonts/msyh.ttf
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/Fonts/simsun.ttc
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/d3d11.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/d3d12core.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/d3d9.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/dxgi.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/icudt68.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/icuin68.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/icuuc68.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/libvkd3d-shader-1.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/msi.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/opengl32.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/shell32.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/user32.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/winedbg.exe
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/system32/winsqlite3.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/d3d11.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/d3d12core.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/d3d9.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/dxgi.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/icudt68.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/icuin68.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/libvkd3d-shader-1.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/msi.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/nvapi.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/wined3d.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/winedbg.exe
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/syswow64/winsqlite3.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/winsxs/amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.2600.2982_none_deadbeef/comctl32.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/drive_c/windows/winsxs/x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.2600.2982_none_deadbeef/comctl32.dll
+/.local/share/Steam/steamapps/compatdata/0/pfx/system.reg
+/.local/share/Steam/steamapps/compatdata/0/pfx/system.reg.old
+/.local/share/Steam/steamclient.dll
+/.local/share/Steam/steamclient64.dll
+/.local/share/Steam/steamrt32/fossilize_replay
+/.local/share/Steam/steamrt32/gamelauncher
+/.local/share/Steam/steamrt32/libSDL3.so
+/.local/share/Steam/steamrt32/libSDL3.so.0
+/.local/share/Steam/steamrt32/libSDL3_ttf.so.0
+/.local/share/Steam/steamrt32/libsdkencryptedappticket.so
+/.local/share/Steam/steamrt32/libvpx.so.6
+/.local/share/Steam/steamrt32/steamclient.so
+/.local/share/Steam/steamrt32/video/libvpx.so.6
+/.local/share/Steam/steamrt64/chromehtml.so
+/.local/share/Steam/steamrt64/fossilize_replay
+/.local/share/Steam/steamrt64/friendsui.so
+/.local/share/Steam/steamrt64/gamelauncher
+/.local/share/Steam/steamrt64/gameoverlayui.so
+/.local/share/Steam/steamrt64/icudtl.dat
+/.local/share/Steam/steamrt64/libGLESv2.so
+/.local/share/Steam/steamrt64/libSDL3.so
+/.local/share/Steam/steamrt64/libSDL3.so.0
+/.local/share/Steam/steamrt64/libSDL3_ttf.so.0
+/.local/share/Steam/steamrt64/libVkLayer_khronos_validation.so
+/.local/share/Steam/steamrt64/libaom.so.3
+/.local/share/Steam/steamrt64/libavcodec.so.62
+/.local/share/Steam/steamrt64/libcef.so
+/.local/share/Steam/steamrt64/libsdkencryptedappticket.so
+/.local/share/Steam/steamrt64/libvideo.so
+/.local/share/Steam/steamrt64/libvk_swiftshader.so
+/.local/share/Steam/steamrt64/libvpx.so.6
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/i386-linux-gnu/libSDL3.so.0.4.8
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/i386-linux-gnu/libcrypto.so.1.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/i386-linux-gnu/libgio-2.0.so.0.6600.8
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/i386-linux-gnu/libgnutls.so.30.29.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/i386-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.33
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/locale/locale-archive
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/x86_64-linux-gnu/libSDL3.so.0.4.8
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/x86_64-linux-gnu/libcrypto.so.1.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/x86_64-linux-gnu/libgnutls.so.30.29.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/x86_64-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.33
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/x86_64-linux-gnu/libicudata.so.67.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/lib/x86_64-linux-gnu/libicui18n.so.67.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/share/i18n/locales/cns11643_stroke
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/share/i18n/locales/iso14651_t1_common
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/steamrt3c_platform_3c.0.20260526.238681/files/share/mime/packages/freedesktop.org.xml
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libSDL3.so.0
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libSDL3.so.0.4.8
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libcrypto.so.1.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgio-2.0.so.0
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgio-2.0.so.0.6600.8
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgnutls.so.30
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgnutls.so.30.29.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgtk-3.so.0
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.33
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libSDL3.so.0
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libSDL3.so.0.4.8
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libgnutls.so.30
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libgnutls.so.30.29.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libgtk-3.so.0
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.33
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libicudata.so.67
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libicudata.so.67.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libicui18n.so.67
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/lib/x86_64-linux-gnu/libicui18n.so.67.1
+/.local/share/Steam/steamrt64/pv-runtime/steam-runtime-steamrt/var/tmp-HPYNS3/usr/share/mime/packages/freedesktop.org.xml
+/.local/share/Steam/steamrt64/resources.pak
+/.local/share/Steam/steamrt64/steam
+/.local/share/Steam/steamrt64/steamclient.so
+/.local/share/Steam/steamrt64/steamservice.so
+/.local/share/Steam/steamrt64/steamsysinfo
+/.local/share/Steam/steamrt64/steamui.so
+/.local/share/Steam/steamrt64/steamwebhelper
+/.local/share/Steam/steamrt64/streaming_client
+/.local/share/Steam/steamrt64/vgui2_s.so
+/.local/share/Steam/steamrt64/video/libavcodec.so.62
+/.local/share/Steam/steamrt64/video/libvpx.so.6
+/.local/share/Steam/steamui/chunk~2dcc5aaf7.js
+/.local/share/Steam/steamui/css/chunk~2dcc5aaf7.css
+/.local/share/Steam/steamui/images/interstitial_controller_config.png
+/.local/share/Steam/ubuntu12_32/chromehtml.so
+/.local/share/Steam/ubuntu12_32/fossilize_replay
+/.local/share/Steam/ubuntu12_32/friendsui.so
+/.local/share/Steam/ubuntu12_32/gameoverlayui.so
+/.local/share/Steam/ubuntu12_32/libSDL3.so.0
+/.local/share/Steam/ubuntu12_32/libSDL3_ttf.so.0
+/.local/share/Steam/ubuntu12_32/libaom.so.3
+/.local/share/Steam/ubuntu12_32/libavcodec.so.58
+/.local/share/Steam/ubuntu12_32/libavcodec.so.62
+/.local/share/Steam/ubuntu12_32/libsteam.so
+/.local/share/Steam/ubuntu12_32/libsteamwebrtc.so
+/.local/share/Steam/ubuntu12_32/libvideo.so
+/.local/share/Steam/ubuntu12_32/libvpx.so.6
+/.local/share/Steam/ubuntu12_32/steam
+/.local/share/Steam/ubuntu12_32/steam-runtime.tar.xz
+/.local/share/Steam/ubuntu12_32/steam-runtime/amd64/usr/bin/cgc
+/.local/share/Steam/ubuntu12_32/steam-runtime/i386/usr/bin/cgc
+/.local/share/Steam/ubuntu12_32/steam-runtime/pinned_libs_32/libgtk-x11-2.0.so.0
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/gcc/i686-linux-gnu/4.6/libstdc++_pic.a
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/gcc/x86_64-linux-gnu/4.6/libstdc++_pic.a
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/i386-linux-gnu/libCg.so
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu/libCg.so
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0
+/.local/share/Steam/ubuntu12_32/steam-runtime/usr/lib/x86_64-linux-gnu/libgtk-x11-2.0.so.0.2400.10
+/.local/share/Steam/ubuntu12_32/steamclient.so
+/.local/share/Steam/ubuntu12_32/steamservice.so
+/.local/share/Steam/ubuntu12_32/steamsysinfo
+/.local/share/Steam/ubuntu12_32/steamui.so
+/.local/share/Steam/ubuntu12_32/vgui2_s.so
+/.local/share/Steam/ubuntu12_32/video/libavcodec.so.58
+/.local/share/Steam/ubuntu12_32/video/libavcodec.so.62
+/.local/share/Steam/ubuntu12_32/video/libvpx.so.6
+/.local/share/Steam/ubuntu12_64/fossilize_replay
+/.local/share/Steam/ubuntu12_64/icudtl.dat
+/.local/share/Steam/ubuntu12_64/libGLESv2.so
+/.local/share/Steam/ubuntu12_64/libSDL3.so.0
+/.local/share/Steam/ubuntu12_64/libSDL3_ttf.so.0
+/.local/share/Steam/ubuntu12_64/libVkLayer_khronos_validation.so
+/.local/share/Steam/ubuntu12_64/libavcodec.so.58
+/.local/share/Steam/ubuntu12_64/libavcodec.so.62
+/.local/share/Steam/ubuntu12_64/libcef.so
+/.local/share/Steam/ubuntu12_64/libsteamwebrtc.so
+/.local/share/Steam/ubuntu12_64/libvk_swiftshader.so
+/.local/share/Steam/ubuntu12_64/libvpx.so.6
+/.local/share/Steam/ubuntu12_64/resources.pak
+/.local/share/Steam/ubuntu12_64/steamwebhelper
+/.local/share/Steam/ubuntu12_64/streaming_client
+/.local/share/Steam/ubuntu12_64/video/libavcodec.so.58
+/.local/share/Steam/ubuntu12_64/video/libavcodec.so.62
+/.local/share/Steam/ubuntu12_64/video/libvpx.so.6
+/.local/share/Trash/files/2026-07-10 17-26-18.mp4
+/.local/share/goverlay/gameconfig/global/FSR4_INT8/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/gameconfig/global/FSR4_LATEST/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/gameconfig/global/OptiScaler.dll
+/.local/share/goverlay/gameconfig/global/amd_fidelityfx_framegeneration_dx12.dll
+/.local/share/goverlay/gameconfig/global/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/gameconfig/global/amd_fidelityfx_vk.dll
+/.local/share/goverlay/gameconfig/global/dlssg_to_fsr3_amd_is_better.dll
+/.local/share/goverlay/gameconfig/global/libxess.dll
+/.local/share/goverlay/gameconfig/global/libxess_fg.dll
+/.local/share/goverlay/gameconfig/global/nvngx_dlss.dll
+/.local/share/goverlay/gameconfig/global/nvngx_dlssg.dll
+/.local/share/goverlay/optiscaler-edge/D3D12_OptiScaler/D3D12Core.dll
+/.local/share/goverlay/optiscaler-edge/FSR4_INT8/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/optiscaler-edge/FSR4_LATEST/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/optiscaler-edge/OptiScaler.dll
+/.local/share/goverlay/optiscaler-edge/amd_fidelityfx_framegeneration_dx12.dll
+/.local/share/goverlay/optiscaler-edge/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/optiscaler-edge/amd_fidelityfx_vk.dll
+/.local/share/goverlay/optiscaler-edge/dlssg_to_fsr3_amd_is_better.dll
+/.local/share/goverlay/optiscaler-edge/libxess.dll
+/.local/share/goverlay/optiscaler-edge/libxess_fg.dll
+/.local/share/goverlay/optiscaler-edge/nvngx_dlss.dll
+/.local/share/goverlay/optiscaler-edge/nvngx_dlssg.dll
+/.local/share/goverlay/optiscaler-stable/D3D12_Optiscaler/D3D12Core.dll
+/.local/share/goverlay/optiscaler-stable/FSR4_INT8/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/optiscaler-stable/FSR4_LATEST/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/optiscaler-stable/OptiScaler.dll
+/.local/share/goverlay/optiscaler-stable/amd_fidelityfx_framegeneration_dx12.dll
+/.local/share/goverlay/optiscaler-stable/amd_fidelityfx_upscaler_dx12.dll
+/.local/share/goverlay/optiscaler-stable/amd_fidelityfx_vk.dll
+/.local/share/goverlay/optiscaler-stable/dlssg_to_fsr3_amd_is_better.dll
+/.local/share/goverlay/optiscaler-stable/libxess.dll
+/.local/share/goverlay/optiscaler-stable/libxess_fg.dll
+/.local/share/goverlay/optiscaler-stable/nvngx_dlss.dll
+/.local/share/goverlay/optiscaler-stable/nvngx_dlssd.dll
+/.local/share/goverlay/optiscaler-stable/nvngx_dlssg.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavcodec.so.61
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavcodec.so.61.19.101
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavfilter.so.10
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavfilter.so.10.4.100
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavformat.so.61
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavformat.so.61.7.100
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/vkd3d/i386-windows/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/vkd3d/x86_64-windows/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/ddraw.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/ddraw.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-unix/win32u.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/light.msstyles
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/mshtml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/msxml3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/shell32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/user32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/vrclient.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/winedbg.exe
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/winsqlite3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/x86_64-windows/icuuc68.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/nvapi/i386-windows/nvapi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/nvidia-libs/nvapi/i386-windows/nvapi.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/vkd3d-proton/i386-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/vkd3d-proton/x86_64-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-unix/lsteamclient.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-unix/win32u.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/light.msstyles
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/mshtml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/msxml3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/opengl32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/shell32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/user32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/vrclient_x64.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/wined3d.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/winedbg.exe
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/winsqlite3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libVkLayer_pyroveil_64.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavcodec.so.61
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavcodec.so.61.19.101
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavfilter.so.10
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavfilter.so.10.4.100
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavformat.so.61
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavformat.so.61.7.100
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/opengl32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/shell32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/user32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/winedbg.exe
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/winsqlite3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/winedbg.exe
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/winsqlite3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/system.reg
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/malgun.ttf
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/msgothic.ttc
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/msyh.ttf
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/simsun.ttc
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libEGL.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libGLESv2.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nss3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/omni.ja
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libEGL.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libGLESv2.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nss3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/System.Data.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/System.Web.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/System.Xml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/System.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/msbuild/Current/bin/Roslyn/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/msbuild/Current/bin/Roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/msbuild/Current/bin/Roslyn/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/System.Data.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/System.Web.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/System.Xml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/System.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/msbuild/Current/bin/Roslyn/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/msbuild/Current/bin/Roslyn/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/msbuild/Current/bin/Roslyn/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/nls/sortdefault.nls
+/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/xalia/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavcodec.so.61
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavcodec.so.61.19.101
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavfilter.so.10
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavfilter.so.10.4.100
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavformat.so.61
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavformat.so.61.7.100
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libvkbasalt.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/vkd3d/i386-windows/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/vkd3d/x86_64-windows/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/ddraw.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/ddraw.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-unix/win32u.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/comctl32_v6.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/light.msstyles
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/msi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/shell32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/user32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/vrclient.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/x86_64-windows/icuuc68.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/nvapi/i386-windows/nvapi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/nvidia-libs/nvapi/i386-windows/nvapi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/vkd3d-proton/i386-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/vkd3d-proton/x86_64-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-unix/lsteamclient.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-unix/win32u.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/comctl32_v6.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/light.msstyles
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/msi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/opengl32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/shell32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/user32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/vrclient_x64.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libVkLayer_pyroveil_64.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavcodec.so.61
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavcodec.so.61.19.101
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavfilter.so.10
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavfilter.so.10.4.100
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavformat.so.61
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavformat.so.61.7.100
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libvkbasalt.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/msi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/opengl32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/shell32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/user32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/msi.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.2600.2982_none_deadbeef/comctl32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.2600.2982_none_deadbeef/comctl32.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/system.reg
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/espeak-ng-data/ru_dict
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/malgun.ttf
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/msgothic.ttc
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/msyh.ttf
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/simsun.ttc
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/libtashkeel_model.ort
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libEGL.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libGLESv2.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nss3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/omni.ja
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libEGL.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libGLESv2.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nss3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/nls/sortdefault.nls
+/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/xalia/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavcodec.so.58
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavcodec.so.58.91.100
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavfilter.so.7
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavfilter.so.7.85.100
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavformat.so.58
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavformat.so.58.45.100
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/light.msstyles
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/shell32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/user32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/vrclient.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/x86_64-windows/icuuc68.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/vkd3d-proton/i386-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/vkd3d-proton/i386-windows/dxbc_compiler.exe
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/vkd3d-proton/x86_64-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-unix/lsteamclient.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-unix/vrclient.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/light.msstyles
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/msi.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/shell32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/user32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/vrclient_x64.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavcodec.so.58
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavcodec.so.58.91.100
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavfilter.so.7
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavfilter.so.7.85.100
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavformat.so.58
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavformat.so.58.45.100
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/msi.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/shell32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/user32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/system.reg
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/espeak-ng-data/ru_dict
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/malgun.ttf
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/msgothic.ttc
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/msyh.ttf
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/simsun.ttc
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/libtashkeel_model.ort
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libEGL.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libGLESv2.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nss3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/omni.ja
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libEGL.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libGLESv2.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nss3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/nls/sortdefault.nls
+/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/xalia/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/i386-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/i386-linux-gnu/libavcodec.so.62
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/i386-linux-gnu/libavcodec.so.62.28.100
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/i386-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-unix/win32u.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/light.msstyles
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/shell32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/user32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/vrclient.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/x86_64-windows/icuuc68.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/nvapi/i386-windows/nvapi.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/vkd3d-proton/i386-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/vkd3d-proton/x86_64-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-unix/lsteamclient.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-unix/win32u.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/light.msstyles
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/opengl32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/shell32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/user32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/vrclient_x64.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libavcodec.so.62
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libavcodec.so.62.28.100
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/opengl32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/shell32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/user32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/winedbg.exe
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/winsqlite3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/system.reg
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/espeak-ng-data/ru_dict
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/malgun.ttf
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/msgothic.ttc
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/msyh.ttf
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/simsun.ttc
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/libtashkeel_model.ort
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/fonts/msyh.ttf
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libEGL.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libGLESv2.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nss3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/omni.ja
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libEGL.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libGLESv2.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nss3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/nls/sortdefault.nls
+/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/xalia/SDL3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavcodec.so.61
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavcodec.so.61.19.101
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavfilter.so.10
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavfilter.so.10.4.100
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavformat.so.61
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavformat.so.61.7.100
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/vkd3d/i386-windows/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/vkd3d/x86_64-windows/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/ddraw.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/ddraw.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-unix/win32u.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/light.msstyles
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/mshtml.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/msxml3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/shell32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/user32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/vrclient.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/winedbg.exe
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/i386-windows/icudt68.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/i386-windows/icuin68.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/x86_64-windows/icuuc68.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/nvapi/i386-windows/nvapi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/nvidia-libs/nvapi/i386-windows/nvapi.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/vkd3d-bratan/i386-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/vkd3d-bratan/x86_64-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/vkd3d-proton/i386-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/vkd3d-proton/x86_64-windows/d3d12core.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-unix/lsteamclient.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-unix/win32u.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/light.msstyles
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/lsteamclient.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/mshtml.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/msxml3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/opengl32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/shell32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/user32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/vrclient_x64.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/windowscodecs.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/wined3d.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/winedbg.exe
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavcodec.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavcodec.so.61
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavcodec.so.61.19.101
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavfilter.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavfilter.so.10
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavfilter.so.10.4.100
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavformat.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavformat.so.61
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavformat.so.61.7.100
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libonnxruntime.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libvosk.so
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/opengl32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/shell32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/user32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/winedbg.exe
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/libvkd3d-shader-1.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/winedbg.exe
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/system.reg
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/espeak-ng-data/ru_dict
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/malgun.ttf
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/msgothic.ttc
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/msyh.ttf
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/simsun.ttc
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/libtashkeel_model.ort
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/libEGL.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/libGLESv2.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/nss3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/omni.ja
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libEGL.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libGLESv2.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nss3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/x86/SDL3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/SDL3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/nls/sortdefault.nls
+/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/xalia/SDL3.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/libavcodec.so
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/libavcodec.so.58
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/libavcodec.so.58.91.100
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/libvosk.so
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/libvpx.so.6
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/libvpx.so.6.3.0
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/light.msstyles
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/mshtml.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/msxml3.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/shell32.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/wined3d.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/libavcodec.so
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/libavcodec.so.58
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/libavcodec.so.58.91.100
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/libvosk.so
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/libvpx.so.6
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/libvpx.so.6.3.0
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/kernelbase.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/light.msstyles
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/mshtml.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/msxml3.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/shell32.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/wined3d.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/fonts/msyh.ttf
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/browser/omni.ja
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/libEGL.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/libGLESv2.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/nss3.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/omni.ja
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/xul.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/browser/omni.ja
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/libEGL.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/libGLESv2.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/nss3.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/omni.ja
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/xul.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/bin/libmono-2.0-x86.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/bin/libmono-2.0-x86_64.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/mscorlib.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/x86/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/nls/sortdefault.nls
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libIrrlicht.so.1.8
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libavcodec.so.57
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libavformat.so.57
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libcrypto.so.1.1
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libicudata.so.60
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libicui18n.so.60
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libvpx.so.5
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libwx_baseu-3.0.so.0
+/.local/share/lutris/runtime/Ubuntu-18.04-i686/libwx_gtk2u_core-3.0.so.0
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libIrrlicht.so.1.8
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libavcodec.so.57
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libavformat.so.57
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libcrypto.so.1.1
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libicudata.so.60
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libicui18n.so.60
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libvpx.so.5
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libwx_baseu-3.0.so.0
+/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libwx_gtk2u_core-3.0.so.0
+/.local/share/lutris/runtime/battleye_runtime/BEClient.so
+/.local/share/lutris/runtime/battleye_runtime/BEClient_x64.so
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dcompiler_43.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dcompiler_46.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dcompiler_47.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_24.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_25.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_26.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_27.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_28.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_29.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_30.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_31.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_32.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_33.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_34.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_35.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_36.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_37.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_38.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_39.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_40.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_41.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dcompiler_40.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dcompiler_41.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dcompiler_42.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dcompiler_43.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dcompiler_46.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dcompiler_47.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_24.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_25.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_26.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_27.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_28.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_29.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_30.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_31.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_32.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_33.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_34.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_35.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_36.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_37.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_38.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_39.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_40.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_41.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_42.dll
+/.local/share/lutris/runtime/d3d_extras/v2/x64/d3dx9_43.dll
+/.local/share/lutris/runtime/dxvk-nvapi/v0.9.0/x32/nvapi.dll
+/.local/share/lutris/runtime/dxvk-nvapi/v0.9.0/x64/nvapi64-tests.exe
+/.local/share/lutris/runtime/dxvk-nvapi/v0.9.0/x64/nvofapi64-tests.exe
+/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x32/d3d11.dll
+/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x32/d3d9.dll
+/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x32/dxgi.dll
+/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x64/d3d11.dll
+/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x64/d3d9.dll
+/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x64/dxgi.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/d3d11.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/d3d9.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/ddraw.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/dxgi.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/d3d11.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/d3d9.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/ddraw.dll
+/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/dxgi.dll
+/.local/share/lutris/runtime/dxvk/v2.6.2/x32/d3d11.dll
+/.local/share/lutris/runtime/dxvk/v2.6.2/x32/d3d9.dll
+/.local/share/lutris/runtime/dxvk/v2.6.2/x32/dxgi.dll
+/.local/share/lutris/runtime/dxvk/v2.6.2/x64/d3d11.dll
+/.local/share/lutris/runtime/dxvk/v2.6.2/x64/d3d9.dll
+/.local/share/lutris/runtime/dxvk/v2.6.2/x64/dxgi.dll
+/.local/share/lutris/runtime/p7zip/7z.so
+/.local/share/lutris/runtime/vkd3d/v2.14/x64/d3d12core.dll
+/.local/share/lutris/runtime/vkd3d/v2.14/x86/d3d12core.dll
+/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x32/d3d11.dll
+/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x32/d3d9.dll
+/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x32/dxgi.dll
+/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x64/d3d11.dll
+/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x64/d3d9.dll
+/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x64/dxgi.dll
+/.local/share/opencode.old/opencode.db
+/.local/share/opencode.old/opencode.db-wal
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/icu/icudt68.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/icu/icuin68.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/libavcodec.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/libavcodec.so.58
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/libavcodec.so.58.91.100
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/libvosk.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/dxvk/d3d11.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/dxvk/d3d9.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/dxvk/dxgi.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-unix/vrclient.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/kernelbase.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/light.msstyles
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/lsteamclient.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/mshtml.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/msxml3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/shell32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/user32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/vrclient.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/windowscodecs.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/i386-windows/wined3d.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib/wine/vkd3d-proton/d3d12core.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/icu/icudt68.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/icu/icuin68.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/icu/icuuc68.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/libavcodec.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/libavcodec.so.58
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/libavcodec.so.58.91.100
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/libonnxruntime.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/libonnxruntime.so.1.14.1
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/libvosk.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/dxvk/d3d11.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/dxvk/d3d9.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/dxvk/dxgi.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/vkd3d-proton/d3d12core.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-unix/steam.exe.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-unix/vrclient_x64.so
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/actxprxy.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/kernelbase.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/light.msstyles
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/lsteamclient.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/mshtml.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/msi.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/msxml3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/ole32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/oleaut32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/shell32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/user32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/vrclient_x64.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/windowscodecs.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/lib64/wine/x86_64-windows/wined3d.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/actxprxy.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/msi.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/ole32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/oleaut32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/shell32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/user32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/syswow64/wined3d.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/default_pfx/system.reg
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/espeak-ng-data/ru_dict
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/fonts/malgun.ttf
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/fonts/msgothic.ttc
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/fonts/msyh.ttf
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/fonts/simsun.ttc
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/libtashkeel_model.ort
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/fonts/msyh.ttf
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86/libEGL.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86/libGLESv2.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86/nss3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86/omni.ja
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libEGL.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libGLESv2.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nss3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/bin/libmono-2.0-x86.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/bin/libmono-2.0-x86_64.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/4.5/mscorlib.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/x86/wpfgfx_cor3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/mono/wine-mono-9.3.1/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/steam/compatibilitytools.d/GE-Proton9-27/files/share/wine/nls/sortdefault.nls
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/i386-linux-gnu/libvosk.so
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-unix/vrclient.so
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/kernelbase.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/light.msstyles
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/lsteamclient.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/mshtml.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/msxml3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/shell32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/user32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/vrclient.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/windowscodecs.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/i386-windows/winedbg.exe
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/icu/x86_64-windows/icuuc68.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/vkd3d-proton/i386-windows/d3d12core.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/vkd3d-proton/x86_64-windows/d3d12core.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-unix/lsteamclient.so
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-unix/vrclient_x64.so
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/kernelbase.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/light.msstyles
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/lsteamclient.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/mshtml.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/msi.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/msxml3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/shell32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/user32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/vrclient_x64.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/windowscodecs.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/wined3d.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/wine/x86_64-windows/winedbg.exe
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/.local/share/umu/compatibilitytools/UMU-Latest/files/lib/x86_64-linux-gnu/libvosk.so
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/globalization/sorting/sortdefault.nls
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/resources/themes/light/light.msstyles
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/kernelbase.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/lsteamclient.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/mshtml.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/msi.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/msxml3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/shell32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/user32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/vrclient_x64.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/windowscodecs.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/wined3d.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/system32/winedbg.exe
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/kernelbase.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/lsteamclient.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/mshtml.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/msxml3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/shell32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/user32.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/vrclient.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/windowscodecs.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/syswow64/winedbg.exe
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/default_pfx/system.reg
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/espeak-ng-data/ru_dict
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/fonts/malgun.ttf
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/fonts/msgothic.ttc
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/fonts/msyh.ttf
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/fonts/simsun.ttc
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/libtashkeel_model.ort
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libEGL.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/libGLESv2.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nss3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/omni.ja
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libEGL.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/libGLESv2.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nss3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/bin/libmono-2.0-x86.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/bin/libmono-2.0-x86_64.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/mscorlib.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86/SDL3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86/wpfgfx_cor3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86_64/SDL3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86_64/wpfgfx_cor3.dll
+/.local/share/umu/compatibilitytools/UMU-Latest/files/share/wine/nls/sortdefault.nls
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/bin/python3.9
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/file/magic.mgc
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libCg.so
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libcrypto.so.1.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libdxvk_d3d11.so.0.20701
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libdxvk_d3d9.so.0.20701
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libdxvk_dxgi.so.0.20701
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libgfortran.so.5.0.0
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libgio-2.0.so.0.6600.8
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libgnutls.so.30.29.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libicudata.so.67.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libicui18n.so.67.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/libvpx.so.6.3.0
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/openblas-pthread/liblapack.so.3
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/openblas-pthread/libopenblasp-r0.3.13.so
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/i386-linux-gnu/sdl2-classic/libSDL2-2.0.so.0.3200.10
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/locale/locale-archive
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libCg.so
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libQt5Core.so.5.15.2
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.2
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.2
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libcrypto.so.1.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libdxvk_d3d11.so.0.20701
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libdxvk_d3d9.so.0.20701
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libdxvk_dxgi.so.0.20701
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libgfortran.so.5.0.0
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libgnutls.so.30.29.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libicudata.so.67.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libicui18n.so.67.1
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/libvpx.so.6.3.0
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/openblas-pthread/liblapack.so.3
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.13.so
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/share/i18n/locales/cns11643_stroke
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/share/i18n/locales/iso14651_t1_common
+/.local/share/umu/steamrt3/sniper_platform_3.0.20260608.242788/files/share/mime/packages/freedesktop.org.xml
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/bin/python
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/bin/python3
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/bin/python3.9
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/file/magic.mgc
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/i915_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/i965_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/iris_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/kms_swrast_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/nouveau_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/nouveau_vieux_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/r200_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/r300_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/r600_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/radeon_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/radeonsi_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/swrast_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/virtio_gpu_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/vmwgfx_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/dri/zink_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libCg.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libOSMesa.so.6
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libOSMesa.so.8
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libSDL3.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libcrypto.so.1.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libdxvk_d3d11.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libdxvk_d3d11.so.0.20701
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libdxvk_d3d9.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libdxvk_d3d9.so.0.20701
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libdxvk_dxgi.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libdxvk_dxgi.so.0.20701
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgfortran.so.5
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgfortran.so.5.0.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgio-2.0.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgio-2.0.so.0.6600.8
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgnutls.so.30
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgnutls.so.30.29.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgtk-3.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libicudata.so.67
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libicudata.so.67.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libicui18n.so.67
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libicui18n.so.67.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/liblapack.so.3
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libopenblas.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libvpx.so.6
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libvpx.so.6.3
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/libvpx.so.6.3.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/openblas-pthread/liblapack.so.3
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/openblas-pthread/libopenblas.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/openblas-pthread/libopenblasp-r0.3.13.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/sdl2-classic/libSDL2-2.0.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/i386-linux-gnu/sdl2-classic/libSDL2-2.0.so.0.3200.10
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/i915_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/i965_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/iris_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/kms_swrast_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/nouveau_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/nouveau_vieux_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/r200_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/r300_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/r600_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/radeon_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/radeonsi_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/swrast_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/virtio_gpu_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/vmwgfx_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/dri/zink_dri.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libCg.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libOSMesa.so.6
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libOSMesa.so.8
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Core.so.5
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Core.so.5.15.2
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Gui.so.5.15.2
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libQt5Widgets.so.5.15.2
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libSDL3.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libcrypto.so.1.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d11.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d11.so.0.20701
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d9.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d9.so.0.20701
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libdxvk_dxgi.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libdxvk_dxgi.so.0.20701
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libgfortran.so.5
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libgnutls.so.30
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libgnutls.so.30.29.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libgtk-3.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libgtk-3.so.0.2404.20
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libicudata.so.67
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libicudata.so.67.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libicui18n.so.67
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libicui18n.so.67.1
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/liblapack.so.3
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libopenblas.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libvpx.so.6
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libvpx.so.6.3
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/libvpx.so.6.3.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/openblas-pthread/liblapack.so.3
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblas.so.0
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.13.so
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/share/file/magic.mgc
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/share/mime/packages/freedesktop.org.xml
+/.local/share/umu/steamrt3/var/tmp-SJ4GS3/usr/share/misc/magic.mgc
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/bin/python3.13
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/file/magic.mgc
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libc.so.6
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libcrypto.so.3
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libgallium-25.0.7-2+steamrt4.1+bsrt4.1.so
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libgio-2.0.so.0.8400.4
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libgnutls.so.30.40.3
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libopus.so.0.10.1
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libstdc++.so.6.0.33
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/i386-linux-gnu/libvpx.so.9.1.0
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/locale/locale-archive
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libapt-pkg.so.7.0.0
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libcrypto.so.3
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libdxvk_d3d11.so.0.20701
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libdxvk_d3d9.so.0.20701
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libdxvk_dxgi.so.0.20701
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libgallium-25.0.7-2+steamrt4.1+bsrt4.1.so
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libgfortran.so.5.0.0
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libgnutls.so.30.40.3
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libopus.so.0.10.1
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libstdc++.so.6.0.33
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/libvpx.so.9.1.0
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/openblas-pthread/liblapack.so.3
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.29.so
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/share/i18n/locales/cns11643_stroke
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/share/i18n/locales/iso14651_t1_common
+/.local/share/umu/steamrt4/steamrt4_platform_4.0.20260608.242786/files/share/mime/packages/freedesktop.org.xml
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/bin/python
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/bin/python3
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/bin/python3.13
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/file/magic.mgc
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libOSMesa.so.6
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libOSMesa.so.8
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libSDL3.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libcrypto.so.3
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libgallium-25.0.7-2+steamrt4.1+bsrt4.1.so
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libgio-2.0.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libgio-2.0.so.0.8400.4
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libgnutls.so.30
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libgnutls.so.30.40.3
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libopus.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libopus.so.0.10.1
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libvpx.so.9
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libvpx.so.9.1
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/i386-linux-gnu/libvpx.so.9.1.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libOSMesa.so.6
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libOSMesa.so.8
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libOSMesa.so.8.0.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libSDL3.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libSDL3.so.0.4.10
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libapt-pkg.so.7.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libapt-pkg.so.7.0.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libcrypto.so.3
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d11.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d11.so.0.20701
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d9.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libdxvk_d3d9.so.0.20701
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libdxvk_dxgi.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libdxvk_dxgi.so.0.20701
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libgallium-25.0.7-2+steamrt4.1+bsrt4.1.so
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libgfortran.so.5
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libgfortran.so.5.0.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libgnutls.so.30
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libgnutls.so.30.40.3
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/liblapack.so.3
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libopenblas.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libopus.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libopus.so.0.10.1
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libvpx.so.9
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libvpx.so.9.1
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/libvpx.so.9.1.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/openblas-pthread/liblapack.so.3
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblas.so.0
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/lib/x86_64-linux-gnu/openblas-pthread/libopenblasp-r0.3.29.so
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/share/file/magic.mgc
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/share/mime/packages/freedesktop.org.xml
+/.local/share/umu/steamrt4/var/tmp-KRJLS3/usr/share/misc/magic.mgc
+/.npm/_cacache/content-v2/sha512/01/8c/d33155d50ea4a0a88bde935b70ef2a328647b5c4567304115f45565bb1a85bebc4c3bd15664999cb42ba7eb7a8360b52a8799309fe4c342785b5d312273e
+/.npm/_cacache/content-v2/sha512/05/58/55777b4f31585d3a5dfd4dd66e4ac6f68fa269c18a4ac67070c9ab961d0758c568305fd6754a18bdf671b206a5c951b0674906d0e687426f8755fa4e9549
+/.npm/_cacache/content-v2/sha512/06/dd/1edb82eae35386e37abbe743641cb3ddae28c2d0ba3207c33424f408d167ae463460d44dfd18e3fa4da30bc049d95c8e3cd4d3af6f8aebbc3000605319db
+/.npm/_cacache/content-v2/sha512/0d/58/e9ef67f71e6ad16296e7796659588aa4521b799136574bbc171858b0ccbcfa78d6048238e1f8672c9e1222f143b0654b4d88a52b8d99e83f7f28bc5a95f0
+/.npm/_cacache/content-v2/sha512/14/86/fcfae1b8f6c641b4b4e7fb3b75009db44ea55ca96792232a15b74a2beee0167ac80a6876e2061e8ea40fe4f6fd0b4edf8f4eb6f52daa35df790fe2e57192
+/.npm/_cacache/content-v2/sha512/1d/8f/89fd453289d7859f02efa2f6d95a798ad62d7bb0d5865cd02855a132acd4c78fb27e679e8df3a75a287aa0c119d2bfad8609ad1378abd88a8a3840106143
+/.npm/_cacache/content-v2/sha512/24/7e/fe7336dcf002c0f35f6f95381c57e436d78ffe56319e0470e35fcd7e6420f43c254220518536d4f4578b171bfd495f2a4a3e049c41c0778a3fe19376274e
+/.npm/_cacache/content-v2/sha512/2a/04/011a38ae730e1eee033e47ca8ecc75811618c263521f0ab1a35b75b3c6fda129494bfa63e17a569e2709c4aad3713147554d88e5c25bb7207c6c95730959
+/.npm/_cacache/content-v2/sha512/2c/ed/76a5b86431a889875d095f3f652775573032ae29917160a6c77083dc1cc3fd652652a461d51f3a7bc9c0d30216f7ca842b6477a315fb0fc3225fedd82c81
+/.npm/_cacache/content-v2/sha512/30/3e/92b38192a50068eb3aa8273c93f4b45b298b3bc7f255376dc54f6e04704be5a85e15bb33ce787e97dfca2b64f2874036e9ae7ecaf92069bb4fe68f60908b
+/.npm/_cacache/content-v2/sha512/35/95/f71a45f59e29d97247366d7aa52ca644f1ba1d1b30743b228e2a4e7a6808758be9514bea79be030a3a7d335df8b60cec15c8c24a6ddf4dda7a9ec482d889
+/.npm/_cacache/content-v2/sha512/3f/32/594a53d86275c98638c63338e118324e21ed0659e46441b088b12b51a89dbc29aad4fff2c00c7eb5bffba8dfeb3166903ec9c7c09d6a318769b8269796d6
+/.npm/_cacache/content-v2/sha512/45/36/957e07e2e1d91ab6161469a2f4cc67dfa29161d1647a0517cdd781cf36659310f194c668c33ccb9fc0996cf9c105c2eec9eef7104b568c4d7db934059631
+/.npm/_cacache/content-v2/sha512/45/eb/74a87b600e111e99060d76ea92c9a8a115625238a69ee185b7b141d2ebcd06f0ae7b0ac45490ae86b3891bcc3b96aa235462cdb9e3eaaee6165965210a50
+/.npm/_cacache/content-v2/sha512/48/57/3814750cd068b43bb7b1941813897e665dde4089fadc3e41a5f58e354f9af80f847e97e5df4807550006d25f8fa5e26980a4f9245e280a282b8e5986237d
+/.npm/_cacache/content-v2/sha512/51/f5/f266e7396aba41ac90059f88a27258fcc4310ccf6df18cea4b2e83097bf22c8ed5495282ca74c98a8563c434113ba279916778c65db7b310fabd1ce9be8a
+/.npm/_cacache/content-v2/sha512/53/29/3cb9e693f328af609f97d05bcb842ddaa3154eee2703edbd28d941510961d92130b4482ced67b690077155414091bdc9c6d7a99798bcdec0250b58265e42
+/.npm/_cacache/content-v2/sha512/5a/fd/d9426343dd2b3f2b2db7d1aa75ddd90a186b293e8f7034dbb1fd35153f0ff8ab71827e2349f4fed881fe4389ae22f1f46a5e2e3638c186a44f41afd243a0
+/.npm/_cacache/content-v2/sha512/63/1f/8a875d94fa2d859a3c047cab3e78f166a4c778dd13c3d681aa73f56b6924bd6d8cef17415fdcfa23c041445447b0a7cc5cf76531bb6f204eca54e2acaf1c
+/.npm/_cacache/content-v2/sha512/74/32/da8c08c87f9b6d10cb2457c7837e89738b4bbd47adf273fbb9c6fe807bab8f8959f82fe02391d26a81d0979e15ccb7b18424a7bc50804810771e68042f23
+/.npm/_cacache/content-v2/sha512/75/cb/a7098f898f73a43e9995657fd5468841156384ff63646e44d96699344e4f480e47b70b943767d6f130641b02b3de1b87f0b26eccd2634df54c3f66793453
+/.npm/_cacache/content-v2/sha512/81/c8/fccc1594e5c16c8bd5943fee1b14d5c0c85d624690372cbc92fc33f9c65acdcc698f222cd478182029af036c3c1da9a2b051c4c49c286d77682b5a8ff1fc
+/.npm/_cacache/content-v2/sha512/89/f1/44ffd6f4b669ae53a533d4a1c3f7764e37516755e0d0d4560983dc7d79480a8dab6953046010626ed166258f65cd29a0e03982195717a059897fa4cebd19
+/.npm/_cacache/content-v2/sha512/8e/5d/6f6733c38a72ebf5e52ddc9feded5e8580d130f508ef04f772b33f4a7d00c3e357d0ac2d98e2f290762694a454f86d795bd511e12e9a7cc2d9ba3394e04b
+/.npm/_cacache/content-v2/sha512/9a/f8/3afe1055971ff8750c5af588f6103ff088e85133a18ec3abd1453fbfe07dae6265c670e3bfbfd7db7f7e9403ac9c21b6923736dd2d7b5b541bdde492dc7c
+/.npm/_cacache/content-v2/sha512/a4/40/805856a3d56f480590b90007bc806adabe0c2efe826deab58bb76b2ad7183e7b40720ef9ae6f0976abadeb1ba970d51956c1ebf97b6afd3e1987bf6dd512
+/.npm/_cacache/content-v2/sha512/ab/d2/246a3749bd5d28c38d0510382e27cff72661c3b6621261a55cd0de9109dbc1e5eee6c0d68fd988942cb1a26959605eeaa4f03f2981d2d3114d88f7ba42d7
+/.npm/_cacache/content-v2/sha512/b1/77/86d5346055f3e4a70e72eafd7625104441804d942ee5377b06eced888374468c98ba5796744a06fd96ef02eb1f4f8e2788b0b8846523392afdd471b528e3
+/.npm/_cacache/content-v2/sha512/b4/9c/6288bb261dcf40c756f3de868e6015114d718844338306a86f7951e89eb1c9f7ffa4f3da9b2e5d1b7099ecf9ee2de2bbda341c5a119b05b527c076ab8faf
+/.npm/_cacache/content-v2/sha512/bf/75/26d1f5f04cf83b906443d6129e4b7e80ecfff727b8774e2436280cc4f1384a9035621d88ca18491a8ed1864888ff4eff865672413af27b8bbe76ffa89204
+/.npm/_cacache/content-v2/sha512/c0/c5/72792a79b87bf355480d1e4eb1b930a2b1538052ff054c2eb3d6cc0035d2d095081de13ae7bbc198c212613bb714f51b8bf39ca7d5792c0acebe3e444cf0
+/.npm/_cacache/content-v2/sha512/c6/f1/9ba530fe2c71f0902d21804c6449a48b7c9b2b2a38dc3b88a928e37bc5d81306717f8189a61c70262a11019e03ea9f4f7b9dc671dfc6187fba5cb421ae7e
+/.npm/_cacache/content-v2/sha512/c8/64/6fc1df6bc89bd0a6886cfd63361b362f6cc08bec80b1ebba616afa0b8780e07ce973ea4baac5f99b2339ae82a202f282b32691624d5326a906ea713bb893
+/.npm/_cacache/content-v2/sha512/cb/64/efbb14993c3c906a490544f6472859be28a56a222b1d83dfc26709bd7edbca5cb3fc3515a3dfcfce0e335baf8dd2b285ea36e022b047f519d0b1a9671d07
+/.npm/_cacache/content-v2/sha512/d0/6a/d6e208a14eca46452d1959b23ae176a32eb555528fde08b28dc08b78c90722b93c0f430b565e16d8aeb8f9ac6293d4f55d51737796a1635809f7f4e1834c
+/.npm/_cacache/content-v2/sha512/d1/2c/872b7a86a08160377cf30125b73daa7512f1a7d4f9958877a91b458f3ba78f57f86e4ae2f5b85f10cde0296945823649822f56301ff9c2ad1523720b0c5a
+/.npm/_cacache/content-v2/sha512/d3/0b/1a93c46d80602bf545926d50e024765c52a312be270772f699bf531b30cecc086816e119ffd77ec9d4c1d06f060f730606c53fc8a9e84577e51b62e8fbf3
+/.npm/_cacache/content-v2/sha512/d4/ae/7b85b29398e4eaf9f854f4c9fde59822cfee7bfd4c34719999b0f9611851397f81ba72b9ff41e3012bc869fa90bf68f7c70c10405616acac6c106c9934e1
+/.npm/_cacache/content-v2/sha512/db/ea/6124e57b26449e411e2e3a76a9024852c100e33731d8ce50976490588988bb6d4c50cfde6719b1ae5de4ec7a9ad95844b4932b151b2487eb70751c6e7587
+/.npm/_cacache/content-v2/sha512/e1/aa/c4afad9cce215af010550d4c090892666957a95dffe4460ecab42d21f3e6ee7e782c72b1dbc16161afd73e1e89f0385fb7d54de20f7c54266c3d2b35fb0f
+/.npm/_cacache/content-v2/sha512/e9/81/7fdc56fc8326d59006030b8686f7972f51ef6bbee61d4357e482b89d0626e295efef6b5ee2cfe5a083f20d669507bb8f5716cce56adaaa98727239431f6b
+/.npm/_cacache/content-v2/sha512/ee/22/728a1bfd39f66f8a5fa61b874228c1be5ae345c9feb7da4d21cbf20b9fd7ea308f66b85bdcf451e9928ade780e5bf80e037992e7dc82129009b4d5fb2072
+/.npm/_cacache/content-v2/sha512/f0/14/42a01307d17b1668421a9ae4742eb24601f7ed80701f6f656b7dfcb454a952004fcc9d4279fe1ff34df10fddf0c87edfa793b4ea07cc571320011a2b418d
+/.npm/_cacache/content-v2/sha512/f3/c5/5fcbf72a87da8fa2008e668de35ac096fc6be99c06f06fec7b6b739f61b97255bc6dc103f50088bebef5846feff6b7fe343152602026534342d742ced8fd
+/.npm/_cacache/content-v2/sha512/fd/9c/dfb62c5e5d10abc61b6783847cb539c8a23b36877dbf4ef0196b7e7e005452a9d2097ed882969b8b03f66445bba419c23103fae91e7af64eb08b76e8e34a
+/.npm/_npx/a78857a30883db8e/node_modules/@anthropic-ai/claude-agent-sdk-linux-x64/claude
+/.npm/_npx/a78857a30883db8e/node_modules/@fallow-cli/linux-x64-gnu/fallow
+/.npm/_npx/a78857a30883db8e/node_modules/@fallow-cli/linux-x64-gnu/fallow-lsp
+/.npm/_npx/a78857a30883db8e/node_modules/@fallow-cli/linux-x64-gnu/fallow-mcp
+/.npm/_npx/a78857a30883db8e/node_modules/@fallow-cli/linux-x64-musl/fallow
+/.npm/_npx/a78857a30883db8e/node_modules/@fallow-cli/linux-x64-musl/fallow-lsp
+/.npm/_npx/a78857a30883db8e/node_modules/@fallow-cli/linux-x64-musl/fallow-mcp
+/.var/app/com.rtosta.zapzap/cache/ZapZap/QtWebEngine/storage-whats/Cache/Cache_Data/2d8ac18d30ccc46b_0
+/.var/app/com.rtosta.zapzap/cache/ZapZap/QtWebEngine/storage-whats/Cache/Cache_Data/49278f98ae63fffa_0
+/.var/app/com.rtosta.zapzap/cache/ZapZap/QtWebEngine/storage-whats/Cache/Cache_Data/785bfd2cabe48f08_0
+/.var/app/com.rtosta.zapzap/cache/ZapZap/QtWebEngine/storage-whats/Cache/Cache_Data/b9422b34362aee80_0
+/.var/app/com.rtosta.zapzap/cache/mesa_shader_cache/index
+/.var/app/com.rtosta.zapzap/cache/radv_builtin_shaders/index
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/GPUCache/data_2
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/GPUCache/data_3
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003788.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003789.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003790.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003791.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003792.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003867.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003868.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003869.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003870.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003871.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003873.log
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003878.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003879.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003880.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003881.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003882.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003884.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003885.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003886.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003887.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003888.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003889.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003890.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003891.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003892.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003893.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003894.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003895.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003896.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/IndexedDB/https_web.whatsapp.com_0.indexeddb.leveldb/003897.ldb
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/Service Worker/CacheStorage/0bf6ab7f94a21cdc9c1649f884333ec20f40a544/5b5e63b4-240f-448c-8aa1-b41c7230d068/39c7db6df00440ef_0
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/Service Worker/ScriptCache/96820d56514364fb_0
+/.var/app/com.rtosta.zapzap/data/ZapZap/QtWebEngine/storage-whats/Service Worker/ScriptCache/96820d56514364fb_1
+/.var/app/io.github.jeffshee.Hidamari/cache/mesa_shader_cache/index
+/.var/app/io.github.jeffshee.Hidamari/cache/radv_builtin_shaders/index
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.c
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.cpython-310-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.cpython-311-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.cpython-312-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.cpython-313-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_cython.cpython-314-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.cpython-312-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.cpython-313-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/bundled/libs/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.cpython-314-x86_64-linux-gnu.so
+/.vscode/extensions/ms-python.debugpy-2026.6.0-linux-x64/dist/extension.js.map
+/.vscode/extensions/ms-python.python-2026.4.0-linux-x64/out/client/extension.js
+/.vscode/extensions/ms-python.python-2026.4.0-linux-x64/out/client/node_modules/unicode/category/Lo.js
+/.vscode/extensions/ms-python.python-2026.4.0-linux-x64/python-env-tools/bin/pet
+/.vscode/extensions/ms-python.python-2026.4.0-linux-x64/python_files/get-pip.py
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/NOTICE.txt
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/browser.async.bundle.js
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/browser.extension.bundle.js
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/bundled/bin/_manifest/spdx_2.2/manifest.spdx.json
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/bundled/bin/darwin-arm64/pylance-indexer
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/bundled/bin/linux-arm64/pylance-indexer
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/bundled/bin/linux-x64/pylance-indexer
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/bundled/bin/win32-arm64/pylance-indexer.exe
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/bundled/bin/win32-x64/pylance-indexer.exe
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/copilot-pyright.bundle.js
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/copilot-vendor.bundle.js
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/ort-wasm.wasm
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/pyright.bundle.js
+/.vscode/extensions/ms-python.vscode-pylance-2026.2.1/dist/vendor.bundle.js
+/.vscode/extensions/ms-python.vscode-python-envs-1.36.0-linux-x64/python-env-tools/bin/pet
+/.wine/drive_c/windows/Installer/1571.msi
+/.wine/drive_c/windows/globalization/sorting/sortdefault.nls
+/.wine/drive_c/windows/mono/mono-2.0/bin/libmono-2.0-x86.dll
+/.wine/drive_c/windows/mono/mono-2.0/bin/libmono-2.0-x86_64.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/4.5/Microsoft.CodeAnalysis.CSharp.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/4.5/Microsoft.CodeAnalysis.VisualBasic.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/4.5/Microsoft.CodeAnalysis.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/4.5/mscorlib.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/PresentationCore/4.0.0.0__31bf3856ad364e35/PresentationCore.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/System.Data/4.0.0.0__b77a5c561934e089/System.Data.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/System.Web/4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/System.Xml/4.0.0.0__b77a5c561934e089/System.Xml.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/mono/gac/System/4.0.0.0__b77a5c561934e089/System.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/x86/SDL3.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/x86/wpfgfx_cor3.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/x86_64/SDL3.dll
+/.wine/drive_c/windows/mono/mono-2.0/lib/x86_64/wpfgfx_cor3.dll
+/.wine/drive_c/windows/resources/themes/aero/aero.msstyles
+/.wine/drive_c/windows/system32/icu.dll
+/.wine/drive_c/windows/system32/kernelbase.dll
+/.wine/drive_c/windows/system32/mshtml.dll
+/.wine/drive_c/windows/system32/msxml3.dll
+/.wine/drive_c/windows/system32/shell32.dll
+/.wine/drive_c/windows/system32/wined3d.dll
+/.wine/drive_c/windows/system32/winedbg.exe
+/.wine/drive_c/windows/syswow64/icu.dll
+/.wine/drive_c/windows/syswow64/kernelbase.dll
+/.wine/drive_c/windows/syswow64/mshtml.dll
+/.wine/drive_c/windows/syswow64/msxml3.dll
+/.wine/drive_c/windows/syswow64/shell32.dll
+/.wine/drive_c/windows/syswow64/wined3d.dll
+/.wine/drive_c/windows/syswow64/winedbg.exe
+/.wine/drive_c/windows/winsxs/amd64_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.wine/drive_c/windows/winsxs/x86_microsoft-windows-msxml30_31bf3856ad364e35_6.0.6000.16386_none_deadbeef/msxml3.dll
+/.wine/system.reg

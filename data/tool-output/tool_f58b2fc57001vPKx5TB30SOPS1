@@ -1,0 +1,1150 @@
+=== store config ===
+---
+=== Lutris rivals config ===
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/support/winemono-support.cab
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/MonoPosixHelper-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/mono/wine-mono-8.1.0/lib/MonoPosixHelper-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86_64/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/gecko/wine-gecko-2.47.3-x86/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/share/wine/wine.inf
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/fltmgr.sys
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/winealsa.drv
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib64/wine/x86_64-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/setupx.dll16
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/fltmgr.sys
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/winealsa.drv
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/krnl386.exe16
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/wine-ge-8-26-x86_64/lib/wine/i386-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/user.reg
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/system32/drivers/etc/services
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/drive_c/windows/syswow64/setupx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/default_pfx/system.reg
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/mono/wine-mono-11.0.0/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/wine/wine.inf
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/libtashkeel_model.ort
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/msyh.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/simsun.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/msgothic.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/share/fonts/malgun.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/krnl386.exe16
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/setupx.dll16
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/i386-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/i386-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/i386-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-sarek/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk-llasync/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/x86_64-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libavfilter.so.10.4.100
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/gstreamer-1.0/libgstisomp4.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/x86_64-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libavfilter.so.10.4.100
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/files/lib/i386-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/protonfixes/umu-database.csv
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/protonfixes/files/bin/zipinfo
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/protonfixes/files/bin/unzip
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1.0.1
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1
+/home/johncoffee/.local/share/lutris/runners/wine/proton-cachyos-11.0-x86_64/protonfixes/gamefixes-egs/umu-2767030.py
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1.0.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/protonfixes/files/bin/unzip
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/protonfixes/files/bin/zipinfo
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/protonfixes/gamefixes-egs/umu-2767030.py
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/protonfixes/umu-database.csv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/gstreamer-1.0/libgstisomp4.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libavfilter.so.10.4.100
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/x86_64-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libavfilter.so.10.4.100
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/i386-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-sarek/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/setupx.dll16
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/dinput8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/krnl386.exe16
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/dinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk-llasync/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/i386-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/dinput8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/dinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/lib/wine/x86_64-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/syswow64/setupx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/drive_c/windows/system32/drivers/etc/services
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/user.reg
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/default_pfx/system.reg
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/msyh.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/msgothic.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/malgun.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/fonts/simsun.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/wine/wine.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-CachyOS Latest/files/share/libtashkeel_model.ort
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/dinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/dinput8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/gameinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/krnl386.exe16
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/setupx.dll16
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/dinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/dinput8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/gameinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/i386-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/wine/x86_64-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/vkd3d/i386-windows/libvkd3d-shader-1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/lib/i386-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/system32/drivers/etc/services
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/libvkd3d-shader-1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/drive_c/windows/syswow64/setupx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/user.reg
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/default_pfx/system.reg
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/wine.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/mono/wine-mono-11.0.0/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/libtashkeel_model.ort
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/malgun.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/msgothic.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/simsun.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/files/share/fonts/msyh.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1.0.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/protonfixes/files/bin/unzip
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/protonfixes/files/bin/unzipsfx
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/protonfixes/files/bin/zipinfo
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/protonfixes/gamefixes-egs/umu-2767030.py
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-GE Latest/protonfixes/umu-database.csv
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/protonfixes/files/bin/zipinfo
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/protonfixes/files/bin/unzip
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1.0.1
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/protonfixes/umu-database.csv
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/protonfixes/gamefixes-egs/umu-2767030.py
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/d7vk/i386-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/dinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/krnl386.exe16
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/dinput8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/setupx.dll16
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/gameinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/windows.devices.enumeration.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/dinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/dinput8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/wineps.drv
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/gameinput.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-low-latency/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/ddraw.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/dxvk-sarek/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/i386-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/wine/x86_64-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/i386-linux-gnu/libavfilter.so.10.4.100
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/lib/x86_64-linux-gnu/libavfilter.so.10.4.100
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/system.reg
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/user.reg
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/system32/drivers/etc/services
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/default_pfx/drive_c/windows/syswow64/setupx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono-11.2.0/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/mono/wine-mono/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/wine.inf
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/msgothic.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/msyh.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/malgun.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/DW-Proton Latest/files/share/fonts/simsun.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/protonfixes/umu-database.csv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/protonfixes/gamefixes-egs/umu-2767030.py
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/protonfixes/files/bin/zipinfo
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/protonfixes/files/bin/unzip
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/protonfixes/files/bin/unzipsfx
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1.0.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/protonfixes/files/lib/x86_64-linux-gnu/libproc2.so.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/user.reg
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/syswow64/setupx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/drive_c/windows/system32/drivers/etc/services
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/default_pfx/system.reg
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/libtashkeel_model.ort
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/msyh.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/simsun.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/malgun.ttf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/fonts/msgothic.ttc
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86_64/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/xul.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/nssckbi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/features/loop@mozilla.org.xpi
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/gecko/wine-gecko-2.47.4-x86/browser/omni.ja
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/wine.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/bin/libmono-2.0-x86_64.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/bin/libmono-2.0-x86.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/support/installinf-x86.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/support/dotnetfakedlls.inf
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/support/installinf-x86_64.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/2.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.6.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.7.1-api/System.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.7.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.6-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.8-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Data.Entity/4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/WineMono.Posix/4.0.0.0__0738eb9f132ed756/WineMono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/PresentationFramework/4.0.0.0__31bf3856ad364e35/PresentationFramework.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/gac/System.Windows.Forms/4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.0-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/pdb2mdb.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/mono-symbolicate.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.6.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.7-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.7.2-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/mono/4.5.1-api/Mono.Posix.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/share/wine/mono/wine-mono-10.4.1/lib/x86_64/MonoPosixHelper.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libonnxruntime.so.1.14.1
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/x86_64-linux-gnu/libavfilter.so.7.85.100
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libvosk.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/gstreamer-1.0/libgstsctp.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavformat.so.58.45.100
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/i386-linux-gnu/libavfilter.so.7.85.100
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/krnl386.exe16
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/setupx.dll16
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/winealsa.drv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/i386-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/i386-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/x86_64-windows/icudt68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/icu/x86_64-windows/icuin68.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/winebth.sys
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/ntoskrnl.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/atiadlxx.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_2.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/winmm.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/cfgmgr32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/wbemprox.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/msvcp120.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/mf.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/dsound.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/mmdevapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_7.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/concrt140.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/msvcp120_app.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/windows.media.speech.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/ws2_32.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/winealsa.drv
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/advpack.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_3.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_4.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/winecfg.exe
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/setupapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/updspapi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/msvcp100.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine2_0.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_1.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/msvcp110.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xactengine3_5.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/xaudio2_6.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-windows/riched20.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/i386-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/i386-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/i386-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/i386-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/x86_64-windows/dxgi.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/x86_64-windows/d3d8.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/x86_64-windows/d3d9.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/dxvk/x86_64-windows/d3d11.dll
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/x86_64-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-unix/ntdll.so
+/home/johncoffee/.local/share/lutris/runners/wine/Proton-EM Latest/files/lib/wine/i386-unix/winepulse.so
+/home/johncoffee/.local/share/lutris/games/need-for-speed-most-wanted-6206470d.yml
+/home/johncoffee/.local/share/lutris/games/need-for-speed--rivals-11a8df69.yml
+/home/johncoffee/.local/share/lutris/runtime/umu-games/umu-games.json
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x32/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x32/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x32/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x32/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x64/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x64/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x64/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/v2.6.2/x64/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x32/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x32/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x32/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x32/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x64/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x64/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x64/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/dxvk-3.0.1/x64/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x64/ddraw.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/dxvk/sarek-v1.12.0/x32/ddraw.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x32/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x32/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x32/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x32/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x64/d3d9.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x64/d3d11.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x64/d3d8.dll
+/home/johncoffee/.local/share/lutris/runtime/vkd3d/vkd3d-proton-3.0.1/x64/dxgi.dll
+/home/johncoffee/.local/share/lutris/runtime/battleye_runtime/BEClient_x64.so
+/home/johncoffee/.local/share/lutris/runtime/battleye_runtime/BEClient.so
+/home/johncoffee/.local/share/lutris/runtime/d3d_extras/v2/x32/d3dx9_25.dll
+/home/johncoffee/.local/share/lutris/runtime/network-tools/openssl
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-i686/libicudata.so.60
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-i686/libfreetype.so.6
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-i686/libgcrypt.so.11
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-i686/libgcrypt.so.20
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-i686/libicui18n.so.60
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libicudata.so.60
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libfreetype.so.6
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libgcrypt.so.11
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libgcrypt.so.20
+/home/johncoffee/.local/share/lutris/runtime/Ubuntu-18.04-x86_64/libicui18n.so.60
+/home/johncoffee/.local/share/lutris/pga.db
+---
+=== Heroic config folder ===
+---
+=== Game folder search ===

@@ -1,0 +1,37 @@
+{
+  "version": 2,
+  "name": "johncoffee-home",
+  "displayName": "johncoffee-home",
+  "path": "/home/johncoffee",
+  "description": "Home directory",
+  "stack": [],
+  "goal": "General purpose",
+  "constraints": [
+    "Store important files in /mnt/dados/, never in /tmp"
+  ],
+  "repo": null,
+  "createdAt": "2026-07-14",
+  "sessions": [
+    {
+      "id": "8f140b0d",
+      "date": "2026-07-14",
+      "summary": "Preflight check hook + GPU overclock analysis concluído",
+      "leftOff": "GPU Radeon Pro VII estável com VBIOS original restaurado. SCLK 2100MHz atingível via software (power_dpm_force_performance_level=high). MCLK 1200MHz disponível no DPM stock. OverDrive via sysfs (pp_sclk_od, pp_od_clk_voltage) não funciona neste kernel — rejeita writes com Invalid argument. Não é necessário modificar VBIOS para atingir 2100MHz SCLK.",
+      "nextSteps": [
+        "Se quiser >2100MHz SCLK: tentar UPP (Uplift Power Play) via pp_table override em runtime — https://github.com/sibradzic/upp",
+        "Ou testar crossflash para VBIOS de outra MI50/Pro VII já assinada com clocks mais altos",
+        "Recovery sempre via EZP2019+ (GD25Q80C) se necessario"
+      ],
+      "decisions": [
+        "Rota runtime (UPP) é mais segura que mod VBIOS — RSA bypass é NOTORIAMENTE problematico em MI50 (veja https://github.com/sibradzic/upp)",
+        "agente reverser DEPENDE de GhidraMCP rodando — verificar antes de chamar",
+        "Adicionado hook SessionStart: preflight-check.sh para verificar MCP/LSP/agents no inicio de cada sessao"
+      ],
+      "blockers": [
+        "GhidraMCP offline — Unable to connect no SSE endpoint",
+        "LSPs disabled — sem diagnostics de TypeScript/Python",
+        "pp_od_clk_voltage nao aceita writes — OverDrive travado no kernel"
+      ]
+    }
+  ]
+}

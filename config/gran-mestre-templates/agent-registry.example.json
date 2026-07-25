@@ -1,0 +1,140 @@
+{
+  "registry_version": "1.0.0",
+  "updated_at": "2026-07-25T00:00:00Z",
+  "entries": [
+
+    {
+      "id": "gran-mestre",
+      "tipo": "agent",
+      "nome": "Gran-Mestre",
+      "versao": "6.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Meta-orquestrador que roteia toda tarefa recebida para o pipeline/subagent correto conforme complexidade.",
+      "categoria_roteamento": "n/a",
+      "modelo": {
+        "primario": "qwen3.5-27b",
+        "fallback": ["opencode-go", "opencode-zen", "omnirouter"],
+        "provider": "ollama",
+        "vram_estimada_gb": 11
+      },
+      "capacidades": [
+        "classificar tarefa em TRIVIAL/SIMPLE/MEDIUM/COMPLEX/CRITICAL/FEATURE",
+        "acionar pipeline em cascata (Superpowers) para rotas complexas",
+        "delegar para subagents especializados"
+      ],
+      "regras": {
+        "nao_faz": [
+          "não executa código de produção diretamente sem passar por subagent",
+          "não pula gates de aprovação em rotas CRITICAL"
+        ],
+        "requer_aprovacao_humana_para": ["rotas CRITICAL", "mudanças em arquivos de config core"]
+      },
+      "validacao": {
+        "gates": ["safety-sha", "attestation-gate", "completion-gate"],
+        "tdd_obrigatorio": false
+      },
+      "autonomia": { "modo_autonomo": true, "condicoes": ["rota <= MEDIUM"] },
+      "dependencias": {
+        "subagents": ["atlas", "atena", "hestia", "reviewer-rust"],
+        "mcps": ["mcp-obsidian-vault"],
+        "skills": ["skill-archify"],
+        "hooks": ["safety-sha", "attestation-gate", "2-action-rule", "3-strike-protocol", "completion-gate"]
+      },
+      "comandos_slash": [],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25",
+      "notas": "Sistema build/ECC ativo (27 agents) — não confundir com GSD legado (43 agents gsd-*)."
+    },
+
+    {
+      "id": "reviewer-rust",
+      "tipo": "subagent",
+      "nome": "Revisor Rust",
+      "versao": "1.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Revisa código Rust gerado por outros agents antes do completion-gate.",
+      "categoria_roteamento": "MEDIUM",
+      "modelo": {
+        "primario": "qwen2.5-coder:7b",
+        "fallback": ["omnirouter"],
+        "provider": "ollama",
+        "vram_estimada_gb": 4.7
+      },
+      "capacidades": ["lint semântico", "checagem de idiomas Rust", "sugerir refactor"],
+      "regras": {
+        "nao_faz": ["não faz merge", "não revisa outras linguagens"],
+        "escopo_maximo": "arquivos *.rs do PR corrente"
+      },
+      "validacao": { "gates": ["review-por-linguagem", "completion-gate"], "tdd_obrigatorio": true },
+      "autonomia": { "modo_autonomo": true, "condicoes": ["PR já passou por 2-action-rule"] },
+      "dependencias": { "subagents": [], "mcps": [], "skills": [], "hooks": ["completion-gate"] },
+      "comandos_slash": ["/gsd-review"],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-22"
+    },
+
+    {
+      "id": "mcp-obsidian-vault",
+      "tipo": "mcp",
+      "nome": "MCP Shared Brain (Obsidian)",
+      "versao": "0.3",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Expõe o vault /mnt/dados/cerebro (wiki/diarios/aprendizados/templates) como memória compartilhada entre agents.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["ler notas", "escrever aprendizados", "buscar por tag/pasta"],
+      "regras": {
+        "nao_faz": ["não deleta notas existentes", "não escreve fora de wiki/aprendizados sem aprovação"]
+      },
+      "validacao": { "gates": ["safety-sha"] },
+      "autonomia": { "modo_autonomo": true, "condicoes": ["escrita restrita a pastas permitidas"] },
+      "dependencias": {},
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-22"
+    },
+
+    {
+      "id": "skill-archify",
+      "tipo": "skill",
+      "nome": "Archify",
+      "versao": "external",
+      "status": "experimental",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "archify",
+        "repo_url": "https://github.com/tt-a1i/archify",
+        "adaptacoes": ["integrado ao plugin graphify.js local para diagramas do Gran-Mestre"]
+      },
+      "proposito": "Gera diagramas de arquitetura a partir de código/estrutura de projeto.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["gerar diagrama de dependências", "exportar como mermaid/svg"],
+      "regras": { "nao_faz": ["não modifica código-fonte"] },
+      "validacao": { "gates": ["nenhum"] },
+      "autonomia": { "modo_autonomo": true, "condicoes": [] },
+      "dependencias": {},
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-22",
+      "notas": "Ainda em avaliação — status experimental até validar encaixe no pipeline."
+    },
+
+    {
+      "id": "tool-safety-sha",
+      "tipo": "tool",
+      "nome": "Safety SHA Hook",
+      "versao": "1.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno", "adaptacoes": ["parte do sistema ECC Autofagia"] },
+      "proposito": "Gera hash de verificação antes de qualquer ação que altere estado persistente.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["hash de estado pré-ação", "comparação pós-ação"],
+      "regras": { "nao_faz": ["não bloqueia leitura, só escrita"] },
+      "validacao": { "gates": ["nenhum"] },
+      "autonomia": { "modo_autonomo": true, "condicoes": [] },
+      "dependencias": {},
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-22"
+    }
+  ]
+}

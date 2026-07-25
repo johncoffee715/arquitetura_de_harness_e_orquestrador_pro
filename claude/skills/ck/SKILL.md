@@ -1,0 +1,1 @@
+/mnt/dados/opencode/skills/ck/SKILL.md

@@ -1,0 +1,1901 @@
+{
+  "version": "1.1.0",
+  "last_sync": "2026-07-24T00:00:00.000000",
+  "total_agents": 52,
+  "total_skills": 3,
+  "total_commands": 69,
+  "total_mcps": 1,
+  "total_hooks": 32,
+  "agents": [
+    {
+      "name": "agent-reach",
+      "description": "MUST USE when user wants to 调研/research/搜索/search/查/找/look up anything on the internet — e.g. 全网调研 X / 帮我调研一下 X / 查一下 X / 搜搜 X / 看看大家怎么评价 X / X 上有什么讨论 / research this topic。\nAlso MUST USE when user mentions any platform or shares any URL/链接: 小红书/xiaohongshu/xhs, Twitter/推特/X, B站/bilibili, Reddit, Facebook, Instagram, V2EX, LinkedIn/领英/招聘/求职/jobs, YouTube, GitHub code search, 小宇宙播客, 雪球/股票行情, RSS feeds, or any web URL.\n15 platforms, multi-backend routing (OpenCLI / per-platform CLIs / APIs). Zero config for 6 channels. Run `agent-reach doctor --json` to see which backend serves each platform right now.\nNOT for: 写报告/数据分析/翻译等内容加工（本 skill 只负责从互联网获取内容）； 发帖/评论/点赞等写操作；已有专门 skill 的平台（先用专门 skill）。\n【路由方式】SKILL.md 包含路由表和常用命令，复杂场景需按需阅读对应分类的 references/*.md。 分类：search / social (小红书/推特/B站/V2EX/Reddit/Facebook/Instagram) / career(LinkedIn) / dev(github) / web(网页/文章/RSS) / video(YouTube/B站/播客)。\n",
+      "mode": "skill",
+      "capabilities": [
+        "documentation",
+        "research"
+      ],
+      "source": "skill",
+      "path": "/home/johncoffee/.claude/skills/agent-reach/SKILL.md",
+      "_mtime": 1783980842.2843072,
+      "triggers": [
+        "调研/全网调研/帮我调研/研究一下/research/深入了解",
+        "搜/查/找/search/搜索/查一下/帮我搜/看看大家怎么说",
+        [
+          {
+            "小红书": "xiaohongshu/xhs/小红书/红书"
+          },
+          {
+            "Twitter": "twitter/推特/x.com/推文"
+          },
+          {
+            "B站": "bilibili/b站/哔哩哔哩"
+          },
+          {
+            "V2EX": "v2ex"
+          },
+          {
+            "Reddit": "reddit"
+          },
+          {
+            "Facebook": "facebook/fb/facebook groups"
+          },
+          {
+            "Instagram": "instagram/ig"
+          }
+        ],
+        "招聘/职位/求职/linkedin/领英/找工作",
+        "github/代码/仓库/gh/issue/pr/分支/commit",
+        "网页/链接/文章/rss/读一下/打开这个",
+        "youtube/视频/播客/字幕/小宇宙/转录/yt",
+        "雪球/股票/stock/xueqiu/行情/基金"
+      ]
+    },
+    {
+      "name": "ck",
+      "description": "Persistent per-project memory for Claude Code. Auto-loads project context on session start, tracks sessions with git activity, and writes to native memory. Commands run deterministic Node.js scripts — behavior is consistent across model versions.",
+      "mode": "skill",
+      "capabilities": [
+        "memory"
+      ],
+      "source": "skill",
+      "path": "/home/johncoffee/.claude/skills/ck/SKILL.md",
+      "_mtime": 1784506258.69268,
+      "triggers": [
+        "/ck /context /memory /save /resume /lembrar /salvar /continuar /retomar",
+        "salvar contexto/guardar memória/save state/checkpoint",
+        "continuar de onde parou/retomar/continue from/onde paramos"
+      ]
+    },
+    {
+      "name": "gsd-advisor-researcher",
+      "description": "Researches a single gray area decision and returns a structured comparison table with rationale. Spawned by discuss-phase advisor mode.",
+      "mode": "subagent",
+      "capabilities": [
+        "research"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-advisor-researcher.md",
+      "_mtime": 1783670265.2987268,
+      "spawn_sources": [
+        "discuss-phase advisor mode"
+      ]
+    },
+    {
+      "name": "gsd-ai-researcher",
+      "description": "Researches a chosen AI framework's official docs to produce implementation-ready guidance — best practices, syntax, core patterns, and pitfalls distilled for the specific use case. Writes the Framework Quick Reference and Implementation Guidance sections of AI-SPEC.md. Spawned by /gsd-ai-integration-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "execution",
+        "framework-selection",
+        "integration",
+        "pattern-mapping",
+        "research",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-ai-researcher.md",
+      "_mtime": 1783670265.299727,
+      "spawn_sources": [
+        "/gsd-ai-integration-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-assumptions-analyzer",
+      "description": "Deeply analyzes codebase for a phase and returns structured assumptions with evidence. Spawned by discuss-phase assumptions mode.",
+      "mode": "subagent",
+      "capabilities": [
+        "assumptions-analysis"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-assumptions-analyzer.md",
+      "_mtime": 1783670265.299727,
+      "spawn_sources": [
+        "discuss-phase assumptions mode"
+      ]
+    },
+    {
+      "name": "gsd-code-fixer",
+      "description": "Applies fixes to code review findings from REVIEW.md. Reads source files, applies intelligent fixes, and commits each fix atomically. Spawned by /gsd-code-review --fix.",
+      "mode": "subagent",
+      "capabilities": [
+        "intelligence",
+        "review"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-code-fixer.md",
+      "_mtime": 1783670265.299727,
+      "spawn_sources": [
+        "/gsd-code-review --fix"
+      ]
+    },
+    {
+      "name": "gsd-code-reviewer",
+      "description": "Reviews source files for bugs, security issues, and code quality problems. Produces structured REVIEW.md with severity-classified findings. Spawned by /gsd-code-review.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "review",
+        "security"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-code-reviewer.md",
+      "_mtime": 1783670265.300727,
+      "spawn_sources": [
+        "/gsd-code-review"
+      ]
+    },
+    {
+      "name": "gsd-codebase-mapper",
+      "description": "Explores codebase and writes structured analysis documents. Spawned by map-codebase with a focus area (tech, arch, quality, concerns). Writes documents directly to reduce orchestrator context load.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-codebase-mapper.md",
+      "_mtime": 1783670265.300727,
+      "spawn_sources": [
+        "map-codebase with a focus area (tech, arch, quality, concerns)"
+      ]
+    },
+    {
+      "name": "gsd-debug-session-manager",
+      "description": "Manages multi-cycle /gsd-debug checkpoint and continuation loop in isolated context. Spawns gsd-debugger agents, handles checkpoints via question, dispatches specialist skills, applies fixes. Returns compact summary to main context. Spawned by /gsd-debug command.",
+      "mode": "subagent",
+      "capabilities": [
+        "debugging"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-debug-session-manager.md",
+      "_mtime": 1783670265.300727,
+      "spawn_sources": [
+        "/gsd-debug command"
+      ]
+    },
+    {
+      "name": "gsd-debugger",
+      "description": "Investigates bugs using scientific method, manages debug sessions, handles checkpoints. Spawned by /gsd-debug orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "debugging"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-debugger.md",
+      "_mtime": 1783670265.3017268,
+      "spawn_sources": [
+        "/gsd-debug orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-doc-classifier",
+      "description": "Classifies a single planning document as ADR, PRD, SPEC, DOC, or UNKNOWN. Extracts title, scope summary, and cross-references. Spawned in parallel by /gsd-ingest-docs. Writes a JSON classification file and returns a one-line confirmation.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "planning"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-doc-classifier.md",
+      "_mtime": 1783670265.3017268
+    },
+    {
+      "name": "gsd-doc-synthesizer",
+      "description": "Synthesizes classified planning docs into a single consolidated context. Applies precedence rules, detects cross-ref cycles, enforces LOCKED-vs-LOCKED hard-blocks, and writes INGEST-CONFLICTS.md with three buckets (auto-resolved, competing-variants, unresolved-blockers). Spawned by /gsd-ingest-docs.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "planning"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-doc-synthesizer.md",
+      "_mtime": 1783670265.302727,
+      "spawn_sources": [
+        "/gsd-ingest-docs"
+      ]
+    },
+    {
+      "name": "gsd-doc-verifier",
+      "description": "Verifies factual claims in generated docs against the live codebase. Returns structured JSON per doc.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "verification"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-doc-verifier.md",
+      "_mtime": 1783670265.302727
+    },
+    {
+      "name": "gsd-doc-writer",
+      "description": "Writes and updates project documentation. Spawned with a doc_assignment block specifying doc type, mode (create/update/supplement), and project context.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-doc-writer.md",
+      "_mtime": 1783670265.302727
+    },
+    {
+      "name": "gsd-domain-researcher",
+      "description": "Researches the business domain and real-world application context of the AI system being built. Surfaces domain expert evaluation criteria, industry-specific failure modes, regulatory context, and what \"good\" looks like for practitioners in this field — before the eval-planner turns it into measurable rubrics. Spawned by /gsd-ai-integration-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "domain-research",
+        "evaluation",
+        "integration",
+        "planning",
+        "research",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-domain-researcher.md",
+      "_mtime": 1783670265.303727,
+      "spawn_sources": [
+        "/gsd-ai-integration-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-eval-auditor",
+      "description": "Retroactive audit of an implemented AI phase's evaluation coverage. Checks implementation against the AI-SPEC.md evaluation plan. Scores each eval dimension as COVERED/PARTIAL/MISSING. Produces a scored EVAL-REVIEW.md with findings, gaps, and remediation guidance. Spawned by /gsd-eval-review orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "evaluation",
+        "execution",
+        "planning",
+        "review",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-eval-auditor.md",
+      "_mtime": 1783670265.303727,
+      "spawn_sources": [
+        "/gsd-eval-review orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-eval-planner",
+      "description": "Designs a structured evaluation strategy for an AI phase. Identifies critical failure modes, selects eval dimensions with rubrics, recommends tooling, and specifies the reference dataset. Writes the Evaluation Strategy, Guardrails, and Production Monitoring sections of AI-SPEC.md. Spawned by /gsd-ai-integration-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "evaluation",
+        "framework-selection",
+        "integration",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-eval-planner.md",
+      "_mtime": 1783670265.303727,
+      "spawn_sources": [
+        "/gsd-ai-integration-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-executor",
+      "description": "Executes GSD plans with atomic commits, deviation handling, checkpoint protocols, and state management. Spawned by execute-phase orchestrator or execute-plan command.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-executor.md",
+      "_mtime": 1783670265.3047268,
+      "spawn_sources": [
+        "execute-phase orchestrator or execute-plan command"
+      ]
+    },
+    {
+      "name": "gsd-framework-selector",
+      "description": "Presents an interactive decision matrix to surface the right AI/LLM framework for the user's specific use case. Produces a scored recommendation with rationale. Spawned by /gsd-ai-integration-phase and /gsd-select-framework orchestrators.",
+      "mode": "subagent",
+      "capabilities": [
+        "framework-selection",
+        "integration"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-framework-selector.md",
+      "_mtime": 1783670265.3047268,
+      "spawn_sources": [
+        "/gsd-ai-integration-phase and /gsd-select-framework orchestrators"
+      ]
+    },
+    {
+      "name": "gsd-integration-checker",
+      "description": "Verifies cross-phase integration and E2E flows. Checks that phases connect properly and user workflows complete end-to-end.",
+      "mode": "subagent",
+      "capabilities": [
+        "integration",
+        "verification"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-integration-checker.md",
+      "_mtime": 1783670265.3047268
+    },
+    {
+      "name": "gsd-intel-updater",
+      "description": "Analyzes codebase and writes structured intel files to .planning/intel/.",
+      "mode": "subagent",
+      "capabilities": [
+        "intelligence",
+        "planning"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-intel-updater.md",
+      "_mtime": 1783670265.305727
+    },
+    {
+      "name": "gsd-mempalace-curator",
+      "description": "Ship-time MemPalace curation — writes the session diary, proposes/creates cross-project tunnels, mirrors extract-learnings into the temporal KG, and runs wing-scoped drawer pruning. Spawned at ship:post by the mempalace capability.",
+      "mode": "subagent",
+      "capabilities": [
+        "memory"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-mempalace-curator.md",
+      "_mtime": 1783670265.305727
+    },
+    {
+      "name": "gsd-nyquist-auditor",
+      "description": "Fills Nyquist validation gaps by generating tests and verifying coverage for phase requirements",
+      "mode": "subagent",
+      "capabilities": [
+        "ui-design",
+        "verification"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-nyquist-auditor.md",
+      "_mtime": 1783670265.305727
+    },
+    {
+      "name": "gsd-pattern-mapper",
+      "description": "Analyzes codebase for existing patterns and produces PATTERNS.md mapping new files to closest analogs. Read-only codebase analysis spawned by /gsd-plan-phase orchestrator before planning.",
+      "mode": "subagent",
+      "capabilities": [
+        "pattern-mapping",
+        "planning"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-pattern-mapper.md",
+      "_mtime": 1783670265.306727,
+      "spawn_sources": [
+        "/gsd-plan-phase orchestrator before planning"
+      ]
+    },
+    {
+      "name": "gsd-phase-researcher",
+      "description": "Researches how to implement a phase before planning. Produces RESEARCH.md consumed by gsd-planner. Spawned by /gsd-plan-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "research"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-phase-researcher.md",
+      "_mtime": 1783670265.306727,
+      "spawn_sources": [
+        "/gsd-plan-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-plan-checker",
+      "description": "Verifies plans will achieve phase goal before execution. Goal-backward analysis of plan quality. Spawned by /gsd-plan-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "verification"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-plan-checker.md",
+      "_mtime": 1783670265.3077269,
+      "spawn_sources": [
+        "/gsd-plan-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-planner",
+      "description": "Creates executable phase plans with task breakdown, dependency analysis, and goal-backward verification. Spawned by /gsd-plan-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "verification"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-planner.md",
+      "_mtime": 1783670265.3077269,
+      "spawn_sources": [
+        "/gsd-plan-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-project-researcher",
+      "description": "Researches domain ecosystem before roadmap creation. Produces files in .planning/research/ consumed during roadmap creation. Spawned by /gsd-new-project or /gsd-new-milestone orchestrators.",
+      "mode": "subagent",
+      "capabilities": [
+        "domain-research",
+        "planning",
+        "research"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-project-researcher.md",
+      "_mtime": 1783670265.308727,
+      "spawn_sources": [
+        "/gsd-new-project or /gsd-new-milestone orchestrators"
+      ]
+    },
+    {
+      "name": "gsd-research-synthesizer",
+      "description": "Synthesizes research outputs from parallel researcher agents into SUMMARY.md. Spawned by /gsd-new-project after 4 researcher agents complete.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "research"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-research-synthesizer.md",
+      "_mtime": 1783670265.308727,
+      "spawn_sources": [
+        "/gsd-new-project after 4 researcher agents complete"
+      ]
+    },
+    {
+      "name": "gsd-roadmapper",
+      "description": "Creates project roadmaps with phase breakdown, requirement mapping, success criteria derivation, and coverage validation. Spawned by /gsd-new-project orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "planning",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-roadmapper.md",
+      "_mtime": 1783670265.309727,
+      "spawn_sources": [
+        "/gsd-new-project orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-security-auditor",
+      "description": "Verifies threat mitigations from PLAN.md threat model exist in implemented code. Produces SECURITY.md. Spawned by /gsd-secure-phase.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "security",
+        "verification"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-security-auditor.md",
+      "_mtime": 1783670265.309727,
+      "spawn_sources": [
+        "/gsd-secure-phase"
+      ]
+    },
+    {
+      "name": "gsd-ui-auditor",
+      "description": "Retroactive 6-pillar visual audit of implemented frontend code. Produces scored UI-REVIEW.md. Spawned by /gsd-ui-review orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "review",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-ui-auditor.md",
+      "_mtime": 1783670265.309727,
+      "spawn_sources": [
+        "/gsd-ui-review orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-ui-checker",
+      "description": "Validates UI-SPEC.md design contracts against 6 quality dimensions. Produces BLOCK/FLAG/PASS verdicts. Spawned by /gsd-ui-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-ui-checker.md",
+      "_mtime": 1783670265.309727,
+      "spawn_sources": [
+        "/gsd-ui-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-ui-researcher",
+      "description": "Produces UI-SPEC.md design contract for frontend phases. Reads upstream artifacts, detects design system state, asks only unanswered questions. Spawned by /gsd-ui-phase orchestrator.",
+      "mode": "subagent",
+      "capabilities": [
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-ui-researcher.md",
+      "_mtime": 1783670265.310727,
+      "spawn_sources": [
+        "/gsd-ui-phase orchestrator"
+      ]
+    },
+    {
+      "name": "gsd-user-profiler",
+      "description": "Analyzes extracted session messages across 8 behavioral dimensions to produce a scored developer profile with confidence levels and evidence. Spawned by profile orchestration workflows.",
+      "mode": "subagent",
+      "capabilities": [
+        "profiling"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-user-profiler.md",
+      "_mtime": 1783670265.310727,
+      "spawn_sources": [
+        "profile orchestration workflows"
+      ]
+    },
+    {
+      "name": "gsd-verifier",
+      "description": "Verifies phase goal achievement through goal-backward analysis. Checks codebase delivers what phase promised, not just that tasks completed. Creates VERIFICATION.md report.",
+      "mode": "subagent",
+      "capabilities": [
+        "verification"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gsd-verifier.md",
+      "_mtime": 1783670265.311727
+    },
+    {
+      "name": "memory-keeper",
+      "description": "Gerencia memória persistente do projeto — grava, busca e lista memórias via tool memory(). Use quando precisar salvar contexto de longo prazo ou recuperar decisões/arquitetura de sessões anteriores. Fallback quando o auto-capture falha (modelo sem structured output).",
+      "mode": "subagent",
+      "capabilities": [
+        "memory",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/memory-keeper.md",
+      "_mtime": 1783660046.0939558,
+      "model": "opencode-go/glm-5.2",
+      "color": "info",
+      "permissions": {
+        "webfetch": "allow",
+        "websearch": "allow",
+        "bash": "deny",
+        "edit": "deny",
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow"
+      }
+    },
+    {
+      "name": "reverser",
+      "description": "Agente especializado em engenharia reversa de binários/firmware/BIOS via GhidraMCP. Decompila funções, analisa pseudocódigo com LLM, sugere renomeação e documenta análise. NUNCA aplica mudanças sem confirmação do usuário.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "reverse-engineering"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/reverser.md",
+      "_mtime": 1783998564.4726355,
+      "model": "anthropic/claude-sonnet-4-5",
+      "color": "#8B0000",
+      "temperature": 0.1,
+      "permissions": {
+        "mcp_*": "allow",
+        "webfetch": "allow",
+        "websearch": "allow",
+        "bash": "allow",
+        "read": "allow"
+      }
+    },
+    {
+      "name": "security-review",
+      "description": "AI-powered codebase security scanner that reasons about code like a security researcher — tracing data flows, understanding component interactions, and catching vulnerabilities that pattern-matching tools miss. Use this skill when asked to scan code for security vulnerabilities, find bugs, check for SQL injection, XSS, command injection, exposed API keys, hardcoded secrets, insecure dependencies, access control issues, or any request like \"is my code secure?\", \"review for security issues\", \"audit this codebase\", or \"check for vulnerabilities\". Covers injection flaws, authentication and access control bugs, secrets exposure, weak cryptography, insecure dependencies, and business logic issues across JavaScript, TypeScript, Python, Java, PHP, Go, Ruby, and Rust.",
+      "mode": "skill",
+      "capabilities": [
+        "pattern-mapping",
+        "research",
+        "review",
+        "security"
+      ],
+      "source": "skill",
+      "path": "/home/johncoffee/.claude/skills/security-review/SKILL.md",
+      "_mtime": 1784506275.8187625,
+      "triggers": [
+        "segurança/seguranca/vulnerabilidade/auditar/scan/vulnerability/CVE/injection/XSS/SQLi",
+        "revisão de segurança/security review/auditar código/audit code/varredura",
+        "is my code secure/check my code/code review security/this safe?"
+      ]
+    },
+    {
+      "name": "superpowers",
+      "description": "Superpowers-driven agent. Brainstorms with you, then delegates spec writing, planning, implementation, and implementation review to specialized subagents. Enforces the bundled skill-first workflow.",
+      "mode": "primary",
+      "capabilities": [
+        "execution",
+        "planning",
+        "review",
+        "superpowers",
+        "execution-strategy",
+        "cascade-feature"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/superpowers.md",
+      "_mtime": 1783660046.102252,
+      "model": "opencode-go/deepseek-v4-flash",
+      "color": "#8b5cf6",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "webfetch": "allow",
+        "question": "allow",
+        "todowrite": "allow",
+        "skill": "allow",
+        "edit": "ask",
+        "bash": {
+          "*": "ask",
+          "ls": "allow",
+          "ls *": "allow",
+          "git *": "allow",
+          "git push*": "ask",
+          "git pull*": "ask",
+          "git merge *": "ask",
+          "git rebase*": "ask",
+          "git cherry-pick*": "ask",
+          "git reset*": "ask",
+          "git clean*": "ask",
+          "git checkout *": "ask",
+          "git restore *": "ask"
+        },
+        "task": {
+          "*": "deny",
+          "superpowers-spec-writer": "allow",
+          "superpowers-plan-writer": "allow",
+          "superpowers-plan-writer-alt1": "allow",
+          "superpowers-plan-writer-alt2": "allow",
+          "superpowers-implementer": "allow",
+          "superpowers-code-reviewer": "allow"
+        }
+      },
+      "route": "FEATURE",
+      "cascade_role": "orchestrator"
+    },
+    {
+      "name": "superpowers-code-reviewer",
+      "description": "Reviews completed implementation work for a single plan task before the implementer finalizes it. Invoked by the superpowers implementer.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "review",
+        "superpowers"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/superpowers-code-reviewer.md",
+      "_mtime": 1783660046.0970292,
+      "model": "omniroute/auto/coding",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "skill": "allow"
+      },
+      "cascade_role": "executor-coder30B"
+    },
+    {
+      "name": "superpowers-implementer",
+      "description": "Executes the approved implementation plan. Invoked by the superpowers primary agent after the user confirms the plan.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "superpowers"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/superpowers-implementer.md",
+      "_mtime": 1783660046.1002872,
+      "model": "omniroute/auto/coding",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "allow",
+        "todowrite": "allow",
+        "skill": "allow",
+        "task": {
+          "*": "deny",
+          "superpowers-code-reviewer": "allow"
+        },
+        "webfetch": "allow",
+        "bash": {
+          "*": "allow",
+          "git push*": "ask",
+          "git pull*": "ask",
+          "git merge *": "ask",
+          "git rebase*": "ask",
+          "git cherry-pick*": "ask",
+          "git reset*": "ask",
+          "git clean*": "ask",
+          "git checkout *": "ask",
+          "git restore *": "ask",
+          "rm -rf*": "ask",
+          "rm -fr*": "ask",
+          "sudo *": "ask"
+        }
+      },
+      "cascade_role": "executor-coder30B"
+    },
+    {
+      "name": "superpowers-plan-writer",
+      "description": "Writes the implementation plan from an approved spec. Invoked by the superpowers primary agent after the user confirms the spec.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "superpowers"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer.md",
+      "_mtime": 1783660046.1100507,
+      "model": "omniroute/auto/offline",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "allow",
+        "bash": "allow",
+        "todowrite": "allow",
+        "skill": "allow"
+      },
+      "cascade_role": "writer-27B"
+    },
+    {
+      "name": "superpowers-plan-writer-alt1",
+      "description": "Writes the implementation plan from an approved spec; first alternative plan-writer variant. The concrete model is set per profile in scripts/install-profiles.json. Invoked by the superpowers primary agent only when the user explicitly requests this alternative for plan writing.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "profiling",
+        "superpowers"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer-alt1.md",
+      "_mtime": 1783660046.1050227,
+      "model": "opencode-go/deepseek-v4-pro",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "allow",
+        "bash": "allow",
+        "todowrite": "allow",
+        "skill": "allow"
+      }
+    },
+    {
+      "name": "superpowers-plan-writer-alt2",
+      "description": "Writes the implementation plan from an approved spec; second alternative plan-writer variant. The concrete model is set per profile in scripts/install-profiles.json. Invoked by the superpowers primary agent only when the user explicitly requests this alternative for plan writing.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "planning",
+        "profiling",
+        "superpowers"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer-alt2.md",
+      "_mtime": 1783660046.1075783,
+      "model": "opencode-go/glm-5.2",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "allow",
+        "bash": "allow",
+        "todowrite": "allow",
+        "skill": "allow"
+      }
+    },
+    {
+      "name": "superpowers-spec-writer",
+      "description": "Writes the design spec document from an approved brainstorm. Invoked by the superpowers primary agent after design is approved.",
+      "mode": "subagent",
+      "capabilities": [
+        "documentation",
+        "superpowers",
+        "ui-design"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/superpowers-spec-writer.md",
+      "_mtime": 1783660046.1125166,
+      "model": "omniroute/auto/offline",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "allow",
+        "bash": "allow",
+        "todowrite": "allow",
+        "skill": "allow"
+      },
+      "cascade_role": "writer-27B"
+    },
+    {
+      "name": "gran-mestre",
+      "description": "Meta-orquestrador do OpenCode. Ponto de entrada único para requisições do usuário. Analisa requisição, roteia (TRIVIAL→FEATURE), delega para Prometheus (planejar), Héstia (validar), Atlas (executar), Atena (revisar). Gerencia pipeline completo (6 fases) com safety protocol (SHA+rollback), Shared Brain, escalonamento automático para nuvem em CRITICAL/FEATURE e modelo de rotação automática.",
+      "mode": "primary",
+      "capabilities": [
+        "orchestration",
+        "delegation",
+        "governance",
+        "safety",
+        "observability",
+        "routing",
+        "pipeline-management",
+        "escalation"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gran-mestre/README.md",
+      "origin": "gran-mestre-original",
+      "model": "opencode/deepseek-v4-flash",
+      "color": "#FFD700",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "skill": "allow",
+        "todowrite": "allow",
+        "bash": "ask",
+        "edit": "deny",
+        "write": "deny",
+        "task": "allow"
+      },
+      "model_rotation": {
+        "enabled": true,
+        "category": "ORCHESTRATION",
+        "primary": "opencode/deepseek-v4-flash",
+        "max_retries": 3,
+        "escalate_on_failure": true,
+        "continue_after_escalate": true,
+        "restart_cycle_on_exhaust": true
+      },
+      "route_map": {
+        "TRIVIAL": "inline",
+        "SIMPLE": "inline",
+        "MEDIUM": "pipeline-agent",
+        "COMPLEX": "pipeline-completo",
+        "CRITICAL": "pipeline+nuvem",
+        "FEATURE": "cascata-superpowers"
+      },
+      "triggers": [
+        "/gran-mestre",
+        "/gran-mestre start",
+        "/gran-mestre status",
+        "/gran-mestre validate",
+        "/gran-mestre report",
+        "requisição complexa",
+        "modo noturno",
+        "modo autônomo"
+      ],
+      "_note": "Orquestrador central do OpenCode. Este é o agente que está falando com você agora."
+    },
+    {
+      "name": "prometheus",
+      "description": "Agente de planejamento do Gran-Mestre. Decompõe requisitos do usuário em plano de fases com acceptance criteria. Produz PLAN.md com tasks, dependências, critérios de aceite e verificação goal-backward.",
+      "mode": "subagent",
+      "capabilities": [
+        "planning",
+        "decomposition",
+        "requirements-analysis",
+        "task-decomposition",
+        "dependency-analysis"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gran-mestre/README.md",
+      "origin": "gran-mestre-original",
+      "model": "github-copilot/claude-opus-4.7",
+      "color": "#FF6B35",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "skill": "allow",
+        "bash": "deny",
+        "edit": "deny",
+        "write": "deny"
+      },
+      "model_rotation": {
+        "enabled": true,
+        "category": "CRITICAL",
+        "primary": "github-copilot/claude-opus-4.7",
+        "fallback": [
+          "opencode/claude-opus-4-7",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5",
+          "github-copilot/gemini-3.1-pro-preview",
+          "opencode/gemini-3.1-pro"
+        ],
+        "max_retries": 3,
+        "escalate_on_failure": true,
+        "continue_after_escalate": true,
+        "restart_cycle_on_exhaust": true,
+        "restart_order": "free_first"
+      },
+      "triggers": [
+        "delegado pelo Gran-Mestre para planejar",
+        "/prometheus plan",
+        "Fase 1 (Descoberta): decomposição leve de requisitos"
+      ]
+    },
+    {
+      "name": "hestia",
+      "description": "Agente de validação do Gran-Mestre. Valida specs, planos e entregas contra o pedido original — nunca escreve ou revisa código, só audita conformidade. Chamado 2-3x por pipeline (filtro 1 nas fases de Contrato, Plano e Entrega).",
+      "mode": "subagent",
+      "capabilities": [
+        "validation",
+        "quality",
+        "conformity-audit",
+        "spec-validation",
+        "coverage-validation",
+        "contract-validation",
+        "verifiability-validation",
+        "final-validation"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gran-mestre/HESTIA.md",
+      "origin": "gran-mestre-original",
+      "model": "github-copilot/claude-opus-4.7",
+      "color": "#4A90D9",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "write": "deny",
+        "bash": "deny",
+        "skill": "allow",
+        "todowrite": "allow"
+      },
+      "model_rotation": {
+        "enabled": true,
+        "category": "CRITICAL",
+        "primary": "github-copilot/claude-opus-4.7",
+        "fallback": [
+          "opencode/claude-opus-4-7",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5",
+          "github-copilot/claude-sonnet-4.6",
+          "opencode/claude-sonnet-4-6",
+          "opencode/kimi-k2.5",
+          "opencode/gpt-5-nano",
+          "github-copilot/claude-haiku-4.5",
+          "opencode/glm-5",
+          "opencode/big-pickle"
+        ],
+        "max_retries_per_model": 1,
+        "escalate_on_failure": true,
+        "continue_after_escalate": true,
+        "restart_cycle_on_exhaust": true,
+        "restart_order": "free_first"
+      },
+      "triggers": [
+        "delegado pelo Gran-Mestre para validar",
+        "/hestia validate",
+        "/hestia check-coverage",
+        "/hestia check-contracts",
+        "/hestia final-check",
+        "Fase 2 (Contrato): valida spec contra pedido original",
+        "Fase 3 (Plano): valida cobertura e verificabilidade",
+        "Fase 6 (Entrega): validação final da evidência"
+      ],
+      "rules": [
+        "NUNCA escreve ou edita código, spec ou plano — só aprova, reprova ou pede ajuste",
+        "Reprovação exige razão objetiva e acionável",
+        "Máximo 3 ciclos de validação por fase",
+        "Em modo autônomo (Modo C), atua como proxy de aprovação do usuário"
+      ],
+      "not_from": "oh-my-openagent",
+      "_note": "Héstia NÃO existe no OmO — é invenção documentada do Gran-Mestre."
+    },
+    {
+      "name": "atlas",
+      "description": "Agente de execução do Gran-Mestre. Implementa o plano aprovado. Safety protocol: SHA antes de executar, rollback se falhar. Na cascata (rota FEATURE), atua como supervisor que gerencia git, sequencia tasks atômicas e reporta progresso ao Gran-Mestre — nunca escreve código diretamente na cascata.",
+      "mode": "subagent",
+      "capabilities": [
+        "execution",
+        "implementation",
+        "git-management",
+        "task-sequencing",
+        "supervision"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gran-mestre/README.md",
+      "origin": "gran-mestre-original",
+      "model": "github-copilot/claude-sonnet-4.6",
+      "color": "#7CB342",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "allow",
+        "write": "allow",
+        "bash": "allow",
+        "skill": "allow",
+        "todowrite": "allow"
+      },
+      "model_rotation": {
+        "enabled": true,
+        "category": "EXECUTION",
+        "primary": "github-copilot/claude-sonnet-4.6",
+        "fallback": [
+          "opencode/claude-sonnet-4-6",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5",
+          "opencode/kimi-k2.5"
+        ],
+        "max_retries": 3,
+        "escalate_on_failure": true,
+        "continue_after_escalate": true,
+        "restart_cycle_on_exhaust": true,
+        "restart_order": "free_first"
+      },
+      "triggers": [
+        "delegado pelo Gran-Mestre para executar",
+        "/atlas execute",
+        "Fase 4 (Execução): implementa plano aprovado"
+      ]
+    },
+    {
+      "name": "atena",
+      "description": "Agente de revisão macro do Gran-Mestre. Revisa o diff total de uma feature (coerência cross-task, acoplamento, arquitetura) — diferente do Code Reviewer/Hephaestus, que revisa micro (por task). Chamada 1x por pipeline, Fase 5, em rotas COMPLEX/CRITICAL/FEATURE.",
+      "mode": "subagent",
+      "capabilities": [
+        "review",
+        "security",
+        "quality",
+        "macro-review",
+        "architecture-audit",
+        "holistic-review",
+        "coherence-check",
+        "coupling-analysis",
+        "architecture-alignment"
+      ],
+      "source": "agent",
+      "path": "/home/johncoffee/.config/opencode/agents/gran-mestre/ATHENA.md",
+      "origin": "gran-mestre-original",
+      "model": "github-copilot/claude-opus-4.7",
+      "color": "#9C27B0",
+      "permissions": {
+        "read": "allow",
+        "glob": "allow",
+        "grep": "allow",
+        "edit": "deny",
+        "write": "deny",
+        "bash": "deny",
+        "skill": "allow",
+        "todowrite": "allow"
+      },
+      "model_rotation": {
+        "enabled": true,
+        "category": "CRITICAL",
+        "primary": "github-copilot/claude-opus-4.7",
+        "fallback": [
+          "opencode/claude-opus-4-7",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5",
+          "github-copilot/claude-sonnet-4.6",
+          "opencode/claude-sonnet-4-6",
+          "opencode/kimi-k2.5",
+          "opencode/gpt-5-nano",
+          "github-copilot/claude-haiku-4.5",
+          "opencode/glm-5",
+          "opencode/big-pickle"
+        ],
+        "max_retries_per_model": 1,
+        "escalate_on_failure": true,
+        "continue_after_escalate": true,
+        "restart_cycle_on_exhaust": true,
+        "restart_order": "free_first"
+      },
+      "triggers": [
+        "delegado pelo Gran-Mestre para revisar",
+        "/athena review",
+        "/athena check-coherence",
+        "/athena check-coupling",
+        "/athena check-architecture",
+        "Fase 5 (Revisão Macro): diff total após todas tasks",
+        "Rotas COMPLEX/CRITICAL/FEATURE apenas"
+      ],
+      "evaluation_criteria": [
+        "Coerência cross-task — nomes, contratos, convenções batem?",
+        "Acoplamento — dependências desnecessárias entre módulos?",
+        "Alinhamento arquitetural — resultado respeita spec aprovado?"
+      ],
+      "rules": [
+        "Lê diff completo, não task por task",
+        "Reprovação vai para Fable Judge antes de voltar ao usuário",
+        "Não repete trabalho do Code Reviewer — só relata se problema reapareceu no diff final",
+        "Não decide se plano estava certo (isso é do Héstia)",
+        "Não escreve ou corrige código — só relata com severidade e localização"
+      ],
+      "not_from": "oh-my-openagent",
+      "_note": "Atena NÃO existe no OmO — é invenção documentada do Gran-Mestre."
+    },
+    {
+      "name": "fable-judge",
+      "description": "Verificação adversarial de trabalho concluído. Trata qualquer done como conjunto de afirmações, re-executa cada verificação afirmada, detecta checks enfraquecidos e falsos completos.",
+      "mode": "skill",
+      "capabilities": [
+        "review",
+        "verification",
+        "quality",
+        "security"
+      ],
+      "source": "skill",
+      "path": "/home/johncoffee/.opencode/skills/fable-judge/SKILL.md",
+      "triggers": [
+        "fable-judge",
+        "judge this work",
+        "verify what it did",
+        "did that actually work?",
+        "verificar trabalho",
+        "julgar trabalho"
+      ]
+    }
+  ],
+  "capability_index": {
+    "documentation": [
+      "agent-reach",
+      "gsd-ai-researcher",
+      "gsd-code-reviewer",
+      "gsd-codebase-mapper",
+      "gsd-doc-classifier",
+      "gsd-doc-synthesizer",
+      "gsd-doc-verifier",
+      "gsd-doc-writer",
+      "gsd-research-synthesizer",
+      "reverser",
+      "superpowers-spec-writer"
+    ],
+    "research": [
+      "agent-reach",
+      "gsd-advisor-researcher",
+      "gsd-ai-researcher",
+      "gsd-domain-researcher",
+      "gsd-phase-researcher",
+      "gsd-project-researcher",
+      "gsd-research-synthesizer",
+      "security-review"
+    ],
+    "memory": [
+      "ck",
+      "gsd-mempalace-curator",
+      "memory-keeper"
+    ],
+    "execution": [
+      "gsd-ai-researcher",
+      "gsd-eval-auditor",
+      "gsd-executor",
+      "gsd-phase-researcher",
+      "gsd-plan-checker",
+      "gsd-planner",
+      "gsd-security-auditor",
+      "gsd-ui-auditor",
+      "superpowers",
+      "superpowers-code-reviewer",
+      "superpowers-implementer",
+      "superpowers-plan-writer",
+      "superpowers-plan-writer-alt1",
+      "superpowers-plan-writer-alt2"
+    ],
+    "framework-selection": [
+      "gsd-ai-researcher",
+      "gsd-eval-planner",
+      "gsd-framework-selector"
+    ],
+    "integration": [
+      "gsd-ai-researcher",
+      "gsd-domain-researcher",
+      "gsd-eval-planner",
+      "gsd-framework-selector",
+      "gsd-integration-checker"
+    ],
+    "pattern-mapping": [
+      "gsd-ai-researcher",
+      "gsd-pattern-mapper",
+      "security-review"
+    ],
+    "ui-design": [
+      "gsd-ai-researcher",
+      "gsd-domain-researcher",
+      "gsd-eval-auditor",
+      "gsd-eval-planner",
+      "gsd-nyquist-auditor",
+      "gsd-roadmapper",
+      "gsd-ui-auditor",
+      "gsd-ui-checker",
+      "gsd-ui-researcher",
+      "memory-keeper",
+      "superpowers-spec-writer"
+    ],
+    "assumptions-analysis": [
+      "gsd-assumptions-analyzer"
+    ],
+    "intelligence": [
+      "gsd-code-fixer",
+      "gsd-intel-updater"
+    ],
+    "review": [
+      "gsd-code-fixer",
+      "gsd-code-reviewer",
+      "gsd-eval-auditor",
+      "gsd-ui-auditor",
+      "security-review",
+      "superpowers",
+      "superpowers-code-reviewer"
+    ],
+    "security": [
+      "gsd-code-reviewer",
+      "gsd-security-auditor",
+      "security-review"
+    ],
+    "debugging": [
+      "gsd-debug-session-manager",
+      "gsd-debugger"
+    ],
+    "planning": [
+      "gsd-doc-classifier",
+      "gsd-doc-synthesizer",
+      "gsd-domain-researcher",
+      "gsd-eval-auditor",
+      "gsd-executor",
+      "gsd-intel-updater",
+      "gsd-pattern-mapper",
+      "gsd-phase-researcher",
+      "gsd-plan-checker",
+      "gsd-planner",
+      "gsd-project-researcher",
+      "gsd-roadmapper",
+      "gsd-security-auditor",
+      "superpowers",
+      "superpowers-code-reviewer",
+      "superpowers-implementer",
+      "superpowers-plan-writer",
+      "superpowers-plan-writer-alt1",
+      "superpowers-plan-writer-alt2"
+    ],
+    "verification": [
+      "gsd-doc-verifier",
+      "gsd-integration-checker",
+      "gsd-nyquist-auditor",
+      "gsd-plan-checker",
+      "gsd-planner",
+      "gsd-security-auditor",
+      "gsd-verifier"
+    ],
+    "domain-research": [
+      "gsd-domain-researcher",
+      "gsd-project-researcher"
+    ],
+    "evaluation": [
+      "gsd-domain-researcher",
+      "gsd-eval-auditor",
+      "gsd-eval-planner"
+    ],
+    "profiling": [
+      "gsd-user-profiler",
+      "superpowers-plan-writer-alt1",
+      "superpowers-plan-writer-alt2"
+    ],
+    "reverse-engineering": [
+      "reverser"
+    ],
+    "superpowers": [
+      "superpowers",
+      "superpowers-code-reviewer",
+      "superpowers-implementer",
+      "superpowers-plan-writer",
+      "superpowers-plan-writer-alt1",
+      "superpowers-plan-writer-alt2",
+      "superpowers-spec-writer"
+    ],
+    "execution-strategy": [
+      "superpowers"
+    ],
+    "cascade-feature": [
+      "superpowers",
+      "superpowers-code-reviewer",
+      "superpowers-implementer",
+      "superpowers-plan-writer",
+      "superpowers-spec-writer"
+    ]
+  },
+  "commands": {
+    "gsd-add-tests": {
+      "name": "gsd-add-tests",
+      "description": "Generate tests for a completed phase based on UAT criteria and implementation",
+      "argument_hint": "<phase> [additional instructions]"
+    },
+    "gsd-ai-integration-phase": {
+      "name": "gsd-ai-integration-phase",
+      "description": "Generate an AI-SPEC.md design contract for phases that involve building AI systems.",
+      "argument_hint": "[phase number]"
+    },
+    "gsd-audit-fix": {
+      "name": "gsd-audit-fix",
+      "description": "Autonomous audit-to-fix pipeline — find issues, classify, fix, test, commit",
+      "argument_hint": "--source <audit-uat> [--severity <medium|high|all>] [--max N] [--dry-run]"
+    },
+    "gsd-audit-milestone": {
+      "name": "gsd-audit-milestone",
+      "description": "Audit milestone completion against original intent before archiving",
+      "argument_hint": "[version]"
+    },
+    "gsd-audit-uat": {
+      "name": "gsd-audit-uat",
+      "description": "Cross-phase audit of all outstanding UAT and verification items",
+      "argument_hint": ""
+    },
+    "gsd-autonomous": {
+      "name": "gsd-autonomous",
+      "description": "Run all remaining phases autonomously — discuss→plan→execute per phase",
+      "argument_hint": "[--from N] [--to N] [--only N] [--interactive] [--converge]"
+    },
+    "gsd-capture": {
+      "name": "gsd-capture",
+      "description": "Capture ideas, tasks, notes, and seeds to their destination",
+      "argument_hint": "[--note | --backlog | --seed | --list | --list-seeds] [text]"
+    },
+    "gsd-cleanup": {
+      "name": "gsd-cleanup",
+      "description": "Archive accumulated phase directories from completed milestones",
+      "argument_hint": ""
+    },
+    "gsd-code-review": {
+      "name": "gsd-code-review",
+      "description": "Review source files changed during a phase for bugs, security issues, and code quality problems",
+      "argument_hint": "<phase-number> [--depth=quick|standard|deep] [--files file1,file2,...] [--fix [--all] [--auto]]"
+    },
+    "gsd-complete-milestone": {
+      "name": "gsd-complete-milestone",
+      "description": "Archive completed milestone and prepare for next version",
+      "argument_hint": "<version>"
+    },
+    "gsd-config": {
+      "name": "gsd-config",
+      "description": "Configure GSD settings — workflow toggles, advanced knobs, integrations, and model profile",
+      "argument_hint": "[--advanced | --integrations | --profile <name>]"
+    },
+    "gsd-debug": {
+      "name": "gsd-debug",
+      "description": "Systematic debugging with persistent state across context resets",
+      "argument_hint": "[list | status <slug> | continue <slug> | --diagnose] [issue description]"
+    },
+    "gsd-discuss-phase": {
+      "name": "gsd-discuss-phase",
+      "description": "Gather phase context through adaptive questioning before planning.",
+      "argument_hint": "<phase> [--all] [--auto] [--chain] [--batch] [--analyze] [--text] [--power] [--assumptions]"
+    },
+    "gsd-docs-update": {
+      "name": "gsd-docs-update",
+      "description": "Generate or update project documentation verified against the codebase",
+      "argument_hint": "[--force] [--verify-only]"
+    },
+    "gsd-eval-review": {
+      "name": "gsd-eval-review",
+      "description": "Audit an executed AI phase's evaluation coverage and produce an EVAL-REVIEW.md remediation plan.",
+      "argument_hint": "[phase number]"
+    },
+    "gsd-execute-phase": {
+      "name": "gsd-execute-phase",
+      "description": "Execute all plans in a phase with wave-based parallelization",
+      "argument_hint": "<phase-number> [--wave N] [--gaps-only] [--interactive] [--tdd]"
+    },
+    "gsd-explore": {
+      "name": "gsd-explore",
+      "description": "Socratic ideation and idea routing — think through ideas before committing to plans",
+      "argument_hint": ""
+    },
+    "gsd-extract-learnings": {
+      "name": "gsd-extract-learnings",
+      "description": "Extract decisions, lessons, patterns, and surprises from completed phase artifacts",
+      "argument_hint": "<phase-number>"
+    },
+    "gsd-fast": {
+      "name": "gsd-fast",
+      "description": "Execute a trivial task inline — no subagents, no planning overhead",
+      "argument_hint": "[task description]"
+    },
+    "gsd-forensics": {
+      "name": "gsd-forensics",
+      "description": "Post-mortem investigation for failed GSD workflows — diagnoses what went wrong.",
+      "argument_hint": "[problem description]"
+    },
+    "gsd-graphify": {
+      "name": "gsd-graphify",
+      "description": "Build, query, and inspect the project knowledge graph in .planning/graphs/",
+      "argument_hint": "[build|query <term>|status|diff]"
+    },
+    "gsd-health": {
+      "name": "gsd-health",
+      "description": "Diagnose planning directory health and optionally repair issues",
+      "argument_hint": "[--repair] [--context]"
+    },
+    "gsd-help": {
+      "name": "gsd-help",
+      "description": "Show available GSD commands and usage guide",
+      "argument_hint": "[--brief | --full | <topic> | --brief <topic>]"
+    },
+    "gsd-import": {
+      "name": "gsd-import",
+      "description": "Ingest external plans with conflict detection against project decisions before writing anything.",
+      "argument_hint": "--from <filepath> | --from-gsd2"
+    },
+    "gsd-inbox": {
+      "name": "gsd-inbox",
+      "description": "Triage and review open GitHub issues and PRs against project templates and contribution guidelines.",
+      "argument_hint": "[--issues] [--prs] [--label] [--close-incomplete] [--repo owner/repo]"
+    },
+    "gsd-ingest-docs": {
+      "name": "gsd-ingest-docs",
+      "description": "Bootstrap or merge a .planning/ setup from existing ADRs, PRDs, SPECs, and docs in a repo.",
+      "argument_hint": "[path] [--mode new|merge] [--manifest <file>] [--resolve auto|interactive]"
+    },
+    "gsd-manager": {
+      "name": "gsd-manager",
+      "description": "Interactive command center for managing multiple phases from one terminal",
+      "argument_hint": "[--analyze-deps]"
+    },
+    "gsd-map-codebase": {
+      "name": "gsd-map-codebase",
+      "description": "Analyze codebase with parallel mapper agents to produce .planning/codebase/ documents",
+      "argument_hint": "[--fast [--focus tech|arch|quality|concerns]] [--query <term>|status|diff|refresh] [area]"
+    },
+    "gsd-mempalace-capture": {
+      "name": "gsd-mempalace-capture",
+      "description": "File a phase artifact into MemPalace; mirror decision facts into its temporal KG",
+      "argument_hint": "[CONTEXT.md|PLAN.md|SUMMARY.md]"
+    },
+    "gsd-mempalace-recall": {
+      "name": "gsd-mempalace-recall",
+      "description": "Recall decisions, patterns, and surprises from MemPalace before planning",
+      "argument_hint": "[phase-slug]"
+    },
+    "gsd-milestone-summary": {
+      "name": "gsd-milestone-summary",
+      "description": "Generate a comprehensive project summary from milestone artifacts for team onboarding and review",
+      "argument_hint": "[version]"
+    },
+    "gsd-mvp-phase": {
+      "name": "gsd-mvp-phase",
+      "description": "Plan a phase as a vertical MVP slice — user story, SPIDR splitting, then plan-phase",
+      "argument_hint": "<phase-number>"
+    },
+    "gsd-new-milestone": {
+      "name": "gsd-new-milestone",
+      "description": "Start a new milestone cycle — update PROJECT.md and route to requirements",
+      "argument_hint": "[milestone name, e.g., 'v1.1 Notifications']"
+    },
+    "gsd-new-project": {
+      "name": "gsd-new-project",
+      "description": "Initialize a new project with deep context gathering and PROJECT.md",
+      "argument_hint": "[--auto]"
+    },
+    "gsd-ns-context": {
+      "name": "gsd-ns-context",
+      "description": "codebase intel | map graphify docs learnings mempalace",
+      "argument_hint": ""
+    },
+    "gsd-ns-ideate": {
+      "name": "gsd-ns-ideate",
+      "description": "exploration capture | explore sketch spike spec capture",
+      "argument_hint": ""
+    },
+    "gsd-ns-manage": {
+      "name": "gsd-ns-manage",
+      "description": "config workspace | workstreams thread update ship inbox",
+      "argument_hint": ""
+    },
+    "gsd-ns-project": {
+      "name": "gsd-ns-project",
+      "description": "project lifecycle | milestones audits summary",
+      "argument_hint": ""
+    },
+    "gsd-ns-review": {
+      "name": "gsd-ns-review",
+      "description": "quality gates | code review debug audit security eval ui",
+      "argument_hint": ""
+    },
+    "gsd-ns-workflow": {
+      "name": "gsd-ns-workflow",
+      "description": "workflow | discuss plan execute verify phase progress",
+      "argument_hint": ""
+    },
+    "gsd-pause-work": {
+      "name": "gsd-pause-work",
+      "description": "Create context handoff when pausing work mid-phase",
+      "argument_hint": "[--report]"
+    },
+    "gsd-phase": {
+      "name": "gsd-phase",
+      "description": "CRUD for phases in ROADMAP.md — add, insert, remove, or edit phases",
+      "argument_hint": "[--insert | --remove | --edit] <phase-name-or-number>"
+    },
+    "gsd-plan-phase": {
+      "name": "gsd-plan-phase",
+      "description": "Create detailed phase plan (PLAN.md) with verification loop",
+      "argument_hint": "[phase] [--auto] [--research] [--skip-research] [--research-phase <N>] [--view] [--gaps] [--skip-verify] [--prd <file>] [--ingest <path-or-glob>] [--ingest-format <auto|nygard|madr|narrative>] [--reviews] [--text] [--tdd] [--mvp]"
+    },
+    "gsd-plan-review-convergence": {
+      "name": "gsd-plan-review-convergence",
+      "description": "Cross-AI plan convergence - replan until review concerns are resolved.",
+      "argument_hint": "<phase> [--codex] [--gemini] [--claude] [--opencode] [--ollama] [--lm-studio] [--llama-cpp] [--text] [--ws <name>] [--all] [--max-cycles N]"
+    },
+    "gsd-pr-branch": {
+      "name": "gsd-pr-branch",
+      "description": "Create a clean PR branch by filtering out .planning/ commits — ready for code review",
+      "argument_hint": "[target branch, default: main]"
+    },
+    "gsd-profile-user": {
+      "name": "gsd-profile-user",
+      "description": "Generate developer behavioral profile and create Claude-discoverable artifacts",
+      "argument_hint": "[--questionnaire] [--refresh]"
+    },
+    "gsd-progress": {
+      "name": "gsd-progress",
+      "description": "Check progress, advance workflow, or dispatch freeform intent — the unified GSD situational command",
+      "argument_hint": "[--forensic | --next [--auto] [--converge] | --do \"task description\"]"
+    },
+    "gsd-quick": {
+      "name": "gsd-quick",
+      "description": "Execute a quick task with GSD guarantees (atomic commits, state tracking) but skip optional agents",
+      "argument_hint": "[list | status <slug> | resume <slug> | --full] [--validate] [--discuss] [--research] [task description]"
+    },
+    "gsd-resume-work": {
+      "name": "gsd-resume-work",
+      "description": "Resume work from previous session with full context restoration",
+      "argument_hint": ""
+    },
+    "gsd-review-backlog": {
+      "name": "gsd-review-backlog",
+      "description": "Review and promote backlog items to active milestone",
+      "argument_hint": ""
+    },
+    "gsd-review": {
+      "name": "gsd-review",
+      "description": "Request cross-AI peer review of phase plans from external AI CLIs",
+      "argument_hint": "--phase N [--gemini] [--claude] [--codex] [--opencode] [--qwen] [--cursor] [--agy] [--all]"
+    },
+    "gsd-secure-phase": {
+      "name": "gsd-secure-phase",
+      "description": "Retroactively verify threat mitigations for a completed phase",
+      "argument_hint": "[phase number]"
+    },
+    "gsd-settings": {
+      "name": "gsd-settings",
+      "description": "Configure GSD workflow toggles and model profile",
+      "argument_hint": ""
+    },
+    "gsd-ship": {
+      "name": "gsd-ship",
+      "description": "Create PR, run review, and prepare for merge after verification passes",
+      "argument_hint": "[phase number or milestone, e.g., '4' or 'v1.0']"
+    },
+    "gsd-sketch": {
+      "name": "gsd-sketch",
+      "description": "Sketch UI/design ideas with throwaway HTML mockups, or propose what to sketch next (frontier mode)",
+      "argument_hint": "[design idea to explore] [--quick] [--text] [--wrap-up] or [frontier]"
+    },
+    "gsd-spec-phase": {
+      "name": "gsd-spec-phase",
+      "description": "Clarify WHAT a phase delivers with ambiguity scoring; produces a SPEC.md before discuss-phase.",
+      "argument_hint": "<phase> [--auto] [--text]"
+    },
+    "gsd-spike": {
+      "name": "gsd-spike",
+      "description": "Spike an idea through experiential exploration, or propose what to spike next (frontier mode)",
+      "argument_hint": "[idea to validate] [--quick] [--text] [--wrap-up] or [frontier]"
+    },
+    "gsd-stats": {
+      "name": "gsd-stats",
+      "description": "Display project statistics — phases, plans, requirements, git metrics, and timeline",
+      "argument_hint": ""
+    },
+    "gsd-surface": {
+      "name": "gsd-surface",
+      "description": "Toggle which skills are surfaced — apply a profile, list, or disable a cluster without reinstall",
+      "argument_hint": "[list|status|profile <name>|disable <cluster>|enable <cluster>|reset]"
+    },
+    "gsd-thread": {
+      "name": "gsd-thread",
+      "description": "Manage persistent context threads for cross-session work",
+      "argument_hint": "[list [--open | --resolved] | close <slug> | status <slug> | name | description]"
+    },
+    "gsd-ui-phase": {
+      "name": "gsd-ui-phase",
+      "description": "Generate UI design contract (UI-SPEC.md) for frontend phases",
+      "argument_hint": "[phase]"
+    },
+    "gsd-ui-review": {
+      "name": "gsd-ui-review",
+      "description": "Retroactive 6-pillar visual audit of implemented frontend code",
+      "argument_hint": "[phase]"
+    },
+    "gsd-ultraplan-phase": {
+      "name": "gsd-ultraplan-phase",
+      "description": "[BETA] Offload plan phase to Claude Code's ultraplan cloud; review in browser and import back.",
+      "argument_hint": "[phase-number]"
+    },
+    "gsd-undo": {
+      "name": "gsd-undo",
+      "description": "Safe git revert. Roll back phase or plan commits using the phase manifest with dependency checks.",
+      "argument_hint": "--last N | --phase NN | --plan NN-MM"
+    },
+    "gsd-update": {
+      "name": "gsd-update",
+      "description": "Update GSD to latest version with changelog display",
+      "argument_hint": "[--sync | --reapply | --next | --rc]"
+    },
+    "gsd-validate-phase": {
+      "name": "gsd-validate-phase",
+      "description": "Retroactively audit and fill Nyquist validation gaps for a completed phase",
+      "argument_hint": "[phase number]"
+    },
+    "gsd-verify-work": {
+      "name": "gsd-verify-work",
+      "description": "Validate built features through conversational UAT",
+      "argument_hint": "[phase number, e.g., '4'] [--ws <name>]"
+    },
+    "gsd-workspace": {
+      "name": "gsd-workspace",
+      "description": "Manage GSD workspaces — create, list, or remove isolated workspace environments",
+      "argument_hint": "[--new | --list | --remove] [name]"
+    },
+    "gsd-workstreams": {
+      "name": "gsd-workstreams",
+      "description": "Manage parallel workstreams — list, create, switch, status, progress, complete, and resume",
+      "argument_hint": ""
+    }
+  },
+  "mcps": {
+    "ghidra": {
+      "name": "ghidra",
+      "type": "remote",
+      "url": "http://127.0.0.1:8080/mcp",
+      "enabled": true,
+      "timeout": 300000
+    }
+  },
+  "hooks": {
+    "pre:bash:dispatcher": {
+      "id": "pre:bash:dispatcher",
+      "phase": "PreToolUse",
+      "matcher": "Bash",
+      "description": "Consolidated Bash preflight dispatcher for quality, tmux, push, and GateGuard checks"
+    },
+    "pre:write:doc-file-warning": {
+      "id": "pre:write:doc-file-warning",
+      "phase": "PreToolUse",
+      "matcher": "Write",
+      "description": "Doc file warning: warn about non-standard documentation files (exit code 0; warns only)"
+    },
+    "pre:edit-write:suggest-compact": {
+      "id": "pre:edit-write:suggest-compact",
+      "phase": "PreToolUse",
+      "matcher": "Edit|Write",
+      "description": "Suggest manual compaction at logical intervals"
+    },
+    "pre:observe:continuous-learning": {
+      "id": "pre:observe:continuous-learning",
+      "phase": "PreToolUse",
+      "matcher": "*",
+      "description": "Capture tool use observations for continuous learning"
+    },
+    "pre:governance-capture": {
+      "id": "pre:governance-capture",
+      "phase": "PreToolUse",
+      "matcher": "Bash|Write|Edit|MultiEdit",
+      "description": "Capture governance events (secrets, policy violations, approval requests). Enable with ECC_GOVERNANCE_CAPTURE=1"
+    },
+    "pre:config-protection": {
+      "id": "pre:config-protection",
+      "phase": "PreToolUse",
+      "matcher": "Write|Edit|MultiEdit",
+      "description": "Block modifications to linter/formatter config files. Steers agent to fix code instead of weakening configs."
+    },
+    "pre:mcp-health-check": {
+      "id": "pre:mcp-health-check",
+      "phase": "PreToolUse",
+      "matcher": "*",
+      "description": "Check MCP server health before MCP tool execution and block unhealthy MCP calls"
+    },
+    "pre:edit-write:gateguard-fact-force": {
+      "id": "pre:edit-write:gateguard-fact-force",
+      "phase": "PreToolUse",
+      "matcher": "Edit|Write|MultiEdit",
+      "description": "Fact-forcing gate: block first Edit/Write/MultiEdit per file and demand investigation (importers, data schemas, user instruction) before allowing"
+    },
+    "pre:compact": {
+      "id": "pre:compact",
+      "phase": "PreCompact",
+      "matcher": "*",
+      "description": "Save state before context compaction"
+    },
+    "session:start": {
+      "id": "session:start",
+      "phase": "SessionStart",
+      "matcher": "*",
+      "description": "Load previous context and detect package manager on new session"
+    },
+    "session-start:plan-canvas-sessions": {
+      "id": "session-start:plan-canvas-sessions",
+      "phase": "SessionStart",
+      "matcher": "*",
+      "description": "Surface open Plan Canvas review sessions so a fresh session can resume the loop"
+    },
+    "session-start:ck-context": {
+      "id": "session-start:ck-context",
+      "phase": "SessionStart",
+      "matcher": "*",
+      "description": "Auto-load ck project context on session start"
+    },
+    "session-start:preflight": {
+      "id": "session-start:preflight",
+      "phase": "SessionStart",
+      "matcher": "*",
+      "description": "Preflight: check MCP, LSP, skills, disk before starting work"
+    },
+    "post:bash:dispatcher": {
+      "id": "post:bash:dispatcher",
+      "phase": "PostToolUse",
+      "matcher": "Bash",
+      "description": "Consolidated Bash postflight dispatcher for logging, PR, and build notifications"
+    },
+    "post:quality-gate": {
+      "id": "post:quality-gate",
+      "phase": "PostToolUse",
+      "matcher": "Edit|Write|MultiEdit",
+      "description": "Run quality gate checks after file edits"
+    },
+    "post:edit:design-quality-check": {
+      "id": "post:edit:design-quality-check",
+      "phase": "PostToolUse",
+      "matcher": "Edit|Write|MultiEdit",
+      "description": "Warn when frontend edits drift toward generic template-looking UI"
+    },
+    "post:edit:accumulator": {
+      "id": "post:edit:accumulator",
+      "phase": "PostToolUse",
+      "matcher": "Edit|Write|MultiEdit",
+      "description": "Record edited JS/TS file paths for batch format+typecheck at Stop time"
+    },
+    "post:edit:console-warn": {
+      "id": "post:edit:console-warn",
+      "phase": "PostToolUse",
+      "matcher": "Edit",
+      "description": "Warn about console.log statements after edits"
+    },
+    "post:governance-capture": {
+      "id": "post:governance-capture",
+      "phase": "PostToolUse",
+      "matcher": "Bash|Write|Edit|MultiEdit",
+      "description": "Capture governance events from tool outputs. Enable with ECC_GOVERNANCE_CAPTURE=1"
+    },
+    "post:session-activity-tracker": {
+      "id": "post:session-activity-tracker",
+      "phase": "PostToolUse",
+      "matcher": "*",
+      "description": "Track per-session tool calls and file activity for ECC2 metrics"
+    },
+    "post:observe:continuous-learning": {
+      "id": "post:observe:continuous-learning",
+      "phase": "PostToolUse",
+      "matcher": "*",
+      "description": "Capture tool use results for continuous learning"
+    },
+    "post:ecc-metrics-bridge": {
+      "id": "post:ecc-metrics-bridge",
+      "phase": "PostToolUse",
+      "matcher": "*",
+      "description": "Maintain running session metrics aggregate for statusline and context monitor"
+    },
+    "post:ecc-context-monitor": {
+      "id": "post:ecc-context-monitor",
+      "phase": "PostToolUse",
+      "matcher": "*",
+      "description": "Inject agent warnings on context exhaustion, high cost, scope creep, or tool loops"
+    },
+    "post:mcp-health-check": {
+      "id": "post:mcp-health-check",
+      "phase": "PostToolUseFailure",
+      "matcher": "*",
+      "description": "Track failed MCP tool calls, mark unhealthy servers, and attempt reconnect"
+    },
+    "stop:format-typecheck": {
+      "id": "stop:format-typecheck",
+      "phase": "Stop",
+      "matcher": "*",
+      "description": "Batch format (Biome/Prettier) and typecheck (tsc) all JS/TS files edited this response — runs once at Stop instead of after every Edit"
+    },
+    "stop:check-console-log": {
+      "id": "stop:check-console-log",
+      "phase": "Stop",
+      "matcher": "*",
+      "description": "Check for console.log in modified files after each response"
+    },
+    "stop:session-end": {
+      "id": "stop:session-end",
+      "phase": "Stop",
+      "matcher": "*",
+      "description": "Persist session state after each response (Stop carries transcript_path)"
+    },
+    "stop:evaluate-session": {
+      "id": "stop:evaluate-session",
+      "phase": "Stop",
+      "matcher": "*",
+      "description": "Evaluate session for extractable patterns"
+    },
+    "stop:cost-tracker": {
+      "id": "stop:cost-tracker",
+      "phase": "Stop",
+      "matcher": "*",
+      "description": "Track token and cost metrics per session"
+    },
+    "stop:desktop-notify": {
+      "id": "stop:desktop-notify",
+      "phase": "Stop",
+      "matcher": "*",
+      "description": "Send desktop notification (macOS/WSL) with task summary when Claude responds"
+    },
+    "stop:ck-auto-save": {
+      "id": "stop:ck-auto-save",
+      "phase": "Stop",
+      "matcher": "Bash|Edit|Write",
+      "description": "Auto-save ck context on Stop (basic)"
+    },
+    "session:end:marker": {
+      "id": "session:end:marker",
+      "phase": "SessionEnd",
+      "matcher": "*",
+      "description": "Session end lifecycle marker (non-blocking)"
+    }
+  },
+  "route_map": {
+    "FEATURE": {
+      "strategy": "cascade-superpowers",
+      "description": "Pipeline em Cascata Gran-Mestre + Superpowers: Prometheus>Brainstorm, Spec>Hestia, Plan>Hestia, Atlas(supervisor)>Implementer(operario)>CodeReviewer, Atena(macro), Verification+Hestia(entrega)",
+      "gate_modes": {
+        "default": "A-interativo",
+        "options": [
+          "A-interativo",
+          "C-autonomo"
+        ]
+      },
+      "safety": "SHA salvo ao fim da Fase 3; rollback somente se pipeline inteiro falhar",
+      "escalation": "Implementer local falha 2x -> nuvem (oc/tllm -> opencode-go/kimi-k3 -> opencode-zen)"
+    }
+  }
+}

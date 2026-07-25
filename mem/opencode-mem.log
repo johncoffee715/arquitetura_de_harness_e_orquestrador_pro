@@ -1,0 +1,598 @@
+
+--- Session started: 2026-07-10T02:32:57.925-03:00 ---
+[2026-07-10T02:32:57.926-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+[2026-07-10T02:33:09.203-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+
+--- Session started: 2026-07-10T02:41:23.165-03:00 ---
+[2026-07-10T02:41:23.165-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T02:41:24.359-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+[2026-07-10T02:47:24.975-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783662219088_l8gjqk9","sessionID":"ses_0b7ebe498ffegi7EUAqGhzIzKp","memoryId":"mem_1783662444971_lolg9psbi"}
+[2026-07-10T02:47:24.978-03:00] user-profile-learning: check: {"count":1,"threshold":10}
+[2026-07-10T02:47:34.701-03:00] user-profile-learning: check: {"count":1,"threshold":10}
+[2026-07-10T02:59:04.680-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783663073113_7uu0a6f","sessionID":"ses_0b7ebe498ffegi7EUAqGhzIzKp","memoryId":"mem_1783663144672_shsciyuq6"}
+[2026-07-10T02:59:04.682-03:00] user-profile-learning: check: {"count":2,"threshold":10}
+[2026-07-10T02:59:14.438-03:00] user-profile-learning: check: {"count":2,"threshold":10}
+[2026-07-10T03:00:47.002-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported StructuredOutputError: Model did not produce structured output"}
+[2026-07-10T03:00:47.003-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:00:50.031-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported StructuredOutputError: Model did not produce structured output"}
+[2026-07-10T03:00:50.032-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:00:54.785-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported StructuredOutputError: Model did not produce structured output"}
+[2026-07-10T03:00:54.786-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:00:54.788-03:00] user-profile-learning: check: {"count":3,"threshold":10}
+[2026-07-10T03:01:04.801-03:00] user-profile-learning: check: {"count":3,"threshold":10}
+[2026-07-10T03:02:40.499-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783663270437_u99zn8u","sessionID":"ses_0b7ebe498ffegi7EUAqGhzIzKp","memoryId":"mem_1783663360491_tsz3w6t8j"}
+[2026-07-10T03:02:40.501-03:00] user-profile-learning: check: {"count":4,"threshold":10}
+[2026-07-10T03:02:50.246-03:00] user-profile-learning: check: {"count":4,"threshold":10}
+[2026-07-10T03:24:06.585-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783663389306_j4atspo","sessionID":"ses_0b56095ebffePASVxO1pQ730xK","memoryId":"mem_1783664646584_1esl7x0ae"}
+[2026-07-10T03:25:41.399-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"[\n  {\n    \"expected\": \"array\",\n    \"code\": \"invalid_type\",\n    \"path\": [\n      \"tags\"\n    ],\n    \"message\": \"Invalid input: expected array, received string\"\n  }\n]"}
+[2026-07-10T03:25:41.400-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:25:46.093-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783664697068_p787bvi","sessionID":"ses_0b56095ebffePASVxO1pQ730xK","memoryId":"mem_1783664746092_zmf1snl5r"}
+
+--- Session started: 2026-07-10T03:29:34.200-03:00 ---
+[2026-07-10T03:29:34.201-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:29:34.614-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+[2026-07-10T03:29:35.055-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:30:25.194-03:00 ---
+[2026-07-10T03:30:25.195-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:30:26.197-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+[2026-07-10T03:33:40.209-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783665169646_b7ozyzw","sessionID":"ses_0bc86a2cdffeIOvsHWH4P7yn0M","memoryId":"mem_1783665220207_n7y39k0nr"}
+
+--- Session started: 2026-07-10T03:33:43.713-03:00 ---
+[2026-07-10T03:33:43.713-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:33:44.796-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:34:12.049-03:00 ---
+[2026-07-10T03:34:12.049-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:34:13.124-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:35:02.348-03:00 ---
+[2026-07-10T03:35:02.348-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:35:03.545-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:35:09.012-03:00 ---
+[2026-07-10T03:35:09.012-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+
+--- Session started: 2026-07-10T03:35:15.006-03:00 ---
+[2026-07-10T03:35:15.007-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:35:16.031-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:35:50.936-03:00 ---
+[2026-07-10T03:35:50.936-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+
+--- Session started: 2026-07-10T03:37:11.192-03:00 ---
+[2026-07-10T03:37:11.192-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:37:12.388-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:37:17.572-03:00 ---
+[2026-07-10T03:37:17.572-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:38:05.769-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783665447330_ylzru6o","sessionID":"ses_0b7ebe498ffegi7EUAqGhzIzKp","memoryId":"mem_1783665485768_24k5329vu"}
+[2026-07-10T03:38:05.771-03:00] user-profile-learning: check: {"count":9,"threshold":10}
+[2026-07-10T03:38:15.638-03:00] user-profile-learning: check: {"count":9,"threshold":10}
+[2026-07-10T03:40:13.574-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783665268616_cq6ocq3","sessionID":"ses_0bc86a2cdffeIOvsHWH4P7yn0M","memoryId":"mem_1783665613573_ul11h3bii"}
+
+--- Session started: 2026-07-10T03:41:03.002-03:00 ---
+[2026-07-10T03:41:03.003-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:41:04.174-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:42:18.880-03:00 ---
+[2026-07-10T03:42:18.880-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:42:20.072-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+[2026-07-10T03:44:25.618-03:00] Auto-capture memory persisted: {"promptId":"prompt_1783665765802_ms2mol4","sessionID":"ses_0bc86a2cdffeIOvsHWH4P7yn0M","memoryId":"mem_1783665865617_is8i75i4t"}
+
+--- Session started: 2026-07-10T03:49:33.744-03:00 ---
+[2026-07-10T03:49:33.744-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:49:34.883-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:50:32.004-03:00 ---
+[2026-07-10T03:50:32.004-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:50:33.215-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:50:58.776-03:00 ---
+[2026-07-10T03:50:58.776-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:50:59.996-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+
+--- Session started: 2026-07-10T03:51:19.140-03:00 ---
+[2026-07-10T03:51:19.140-03:00] Embedding model warmed up: {"model":"Xenova/nomic-embed-text-v1"}
+[2026-07-10T03:51:20.158-03:00] opencode providers connected: {"list":["llama","opencode-go","openrouter","openai","opencode"],"configured":"opencode-go"}
+[2026-07-10T03:53:46.673-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:53:46.673-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:53:49.162-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:53:49.163-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:53:53.582-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:53:53.582-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:53:53.585-03:00] user-profile-learning: check: {"count":13,"threshold":10}
+[2026-07-10T03:53:53.628-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T03:53:53.628-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T03:53:53.629-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T03:53:53.629-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T03:53:53.631-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T03:54:03.585-03:00] user-profile-learning: check: {"count":13,"threshold":10}
+[2026-07-10T03:54:03.625-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T03:54:03.625-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T03:54:03.625-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T03:54:03.625-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T03:54:03.626-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T03:55:35.241-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:55:35.241-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:55:37.709-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:55:37.710-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:55:42.118-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:55:42.118-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:55:42.120-03:00] user-profile-learning: check: {"count":14,"threshold":10}
+[2026-07-10T03:55:42.155-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T03:55:42.155-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T03:55:42.156-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T03:55:42.156-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T03:55:42.156-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T03:55:52.127-03:00] user-profile-learning: check: {"count":14,"threshold":10}
+[2026-07-10T03:55:52.168-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T03:55:52.168-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T03:55:52.169-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T03:55:52.169-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T03:55:52.169-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T03:56:56.578-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:56:56.579-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:56:59.020-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:56:59.021-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:57:03.548-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:57:03.548-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:57:03.956-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:57:03.956-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:57:06.425-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:57:06.425-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:57:10.855-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:57:10.855-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:57:50.486-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:57:50.486-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:57:53.151-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:57:53.152-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:57:57.940-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T03:57:57.940-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T03:59:24.261-03:00] Compaction memory injected: {"sessionID":"ses_0bc86a2cdffeIOvsHWH4P7yn0M","count":3}
+[2026-07-10T04:05:14.419-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:14.419-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:17.371-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:17.371-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:22.137-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:22.137-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:22.606-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:22.607-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:25.112-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:25.113-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:29.644-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:29.644-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:30.052-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:30.053-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:32.556-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:32.556-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:05:37.312-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:05:37.313-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:08:54.239-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:08:54.239-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:08:56.804-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:08:56.805-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:09:01.394-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:09:01.394-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:20:53.226-03:00] Compaction memory injected: {"sessionID":"ses_0bc86a2cdffeIOvsHWH4P7yn0M","count":3}
+[2026-07-10T04:21:17.587-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:17.588-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:20.135-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:20.135-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:24.753-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:24.753-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:25.382-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:25.382-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:27.883-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:27.883-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:32.377-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:32.378-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:50.368-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:50.368-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:52.868-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:52.868-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:21:57.379-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:21:57.379-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:22:33.704-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:22:33.705-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:22:36.266-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:22:36.266-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:22:40.870-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:22:40.870-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:23:14.111-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:23:14.112-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:23:16.695-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:23:16.695-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:23:21.428-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:23:21.428-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:23:39.204-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:23:39.205-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:23:41.654-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:23:41.654-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:23:46.128-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:23:46.129-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:24:20.860-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:24:20.861-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:24:23.480-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:24:23.481-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:24:28.074-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:24:28.075-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:24:52.334-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:24:52.335-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:24:54.900-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:24:54.901-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:24:59.371-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:24:59.372-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:25:10.307-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:25:10.307-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:25:12.875-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:25:12.876-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:25:17.376-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:25:17.376-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:26:05.132-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:26:05.132-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:26:07.625-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:26:07.625-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:26:12.181-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:26:12.181-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:28:18.930-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:28:18.930-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:28:21.498-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:28:21.498-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:28:25.914-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:28:25.915-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:49:32.300-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:49:32.301-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:49:34.748-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:49:34.748-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:49:39.178-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:49:39.178-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:51:07.848-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:51:07.849-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:51:10.304-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:51:10.304-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:51:14.795-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:51:14.795-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:51:14.798-03:00] user-profile-learning: check: {"count":37,"threshold":10}
+[2026-07-10T04:51:14.838-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T04:51:14.838-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T04:51:14.838-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T04:51:14.838-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T04:51:14.838-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T04:51:24.783-03:00] user-profile-learning: check: {"count":37,"threshold":10}
+[2026-07-10T04:51:24.823-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T04:51:24.823-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T04:51:24.823-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T04:51:24.824-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T04:51:24.824-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T04:52:23.235-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:52:23.235-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:52:25.719-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:52:25.720-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:52:30.199-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:52:30.199-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:58:05.124-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:58:05.124-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:58:07.610-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:58:07.610-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:58:12.364-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:58:12.365-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:58:12.367-03:00] user-profile-learning: check: {"count":40,"threshold":10}
+[2026-07-10T04:58:12.407-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T04:58:12.407-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T04:58:12.407-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T04:58:12.407-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T04:58:12.407-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T04:58:22.353-03:00] user-profile-learning: check: {"count":40,"threshold":10}
+[2026-07-10T04:58:22.397-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T04:58:22.397-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T04:58:22.398-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T04:58:22.398-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T04:58:22.398-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T04:58:27.662-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:58:27.662-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:58:30.030-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:58:30.030-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:58:34.520-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:58:34.520-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:58:34.523-03:00] user-profile-learning: check: {"count":40,"threshold":10}
+[2026-07-10T04:58:34.566-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T04:58:34.566-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T04:58:34.566-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T04:58:34.566-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T04:58:34.566-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T04:58:44.507-03:00] user-profile-learning: check: {"count":40,"threshold":10}
+[2026-07-10T04:58:44.547-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T04:58:44.547-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T04:58:44.547-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T04:58:44.547-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T04:58:44.547-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T04:59:54.391-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:59:54.392-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T04:59:56.874-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T04:59:56.874-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:00:01.287-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:00:01.288-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:00:01.290-03:00] user-profile-learning: check: {"count":41,"threshold":10}
+[2026-07-10T05:00:01.328-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:00:01.328-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:00:01.328-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:00:01.328-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:00:01.328-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:00:11.276-03:00] user-profile-learning: check: {"count":41,"threshold":10}
+[2026-07-10T05:00:11.316-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:00:11.316-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:00:11.316-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:00:11.316-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:00:11.316-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:04:47.570-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:04:47.571-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:04:50.067-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:04:50.067-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:04:54.423-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:04:54.424-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:04:54.426-03:00] user-profile-learning: check: {"count":42,"threshold":10}
+[2026-07-10T05:04:54.467-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:04:54.467-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:04:54.467-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:04:54.467-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:04:54.467-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:05:04.412-03:00] user-profile-learning: check: {"count":42,"threshold":10}
+[2026-07-10T05:05:04.450-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:05:04.450-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:05:04.450-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:05:04.451-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:05:04.451-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:08:14.303-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:08:14.303-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:08:16.842-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:08:16.842-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:08:21.331-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:08:21.332-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:09:51.570-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:09:51.570-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:09:54.089-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:09:54.090-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:09:58.576-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:09:58.576-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:12:34.411-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:12:34.412-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:12:37.033-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:12:37.033-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:12:41.541-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:12:41.541-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:13:12.124-03:00] Web server takeover successful: {"port":4747}
+[2026-07-10T05:14:09.536-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:14:09.537-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:14:12.035-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:14:12.035-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:14:16.548-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:14:16.549-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:14:16.554-03:00] user-profile-learning: check: {"count":46,"threshold":10}
+[2026-07-10T05:14:16.597-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:14:16.598-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:14:16.598-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:14:16.598-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:14:16.600-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:14:26.554-03:00] user-profile-learning: check: {"count":46,"threshold":10}
+[2026-07-10T05:14:26.593-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:14:26.594-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:14:26.594-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:14:26.594-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:14:26.594-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:14:52.323-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:14:52.323-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:14:54.810-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:14:54.811-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:14:59.237-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:14:59.237-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:14:59.239-03:00] user-profile-learning: check: {"count":47,"threshold":10}
+[2026-07-10T05:14:59.275-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:14:59.275-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:14:59.275-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:14:59.275-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:14:59.275-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:15:09.248-03:00] user-profile-learning: check: {"count":47,"threshold":10}
+[2026-07-10T05:15:09.289-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:15:09.289-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:15:09.289-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:15:09.289-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:15:09.289-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:16:25.033-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:16:25.033-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:16:27.637-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:16:27.638-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:16:32.042-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:16:32.042-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:16:32.044-03:00] user-profile-learning: check: {"count":48,"threshold":10}
+[2026-07-10T05:16:32.083-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:16:32.083-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:16:32.083-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:16:32.083-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:16:32.083-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:16:42.032-03:00] user-profile-learning: check: {"count":49,"threshold":10}
+[2026-07-10T05:16:42.071-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:16:42.071-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:16:42.071-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:16:42.071-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:16:42.071-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:17:17.328-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:17:17.329-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:17:19.800-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:17:19.801-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:17:24.271-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:17:24.272-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:17:24.273-03:00] user-profile-learning: check: {"count":49,"threshold":10}
+[2026-07-10T05:17:24.312-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:17:24.312-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:17:24.312-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:17:24.312-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:17:24.312-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:17:34.246-03:00] user-profile-learning: check: {"count":49,"threshold":10}
+[2026-07-10T05:17:34.286-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:17:34.286-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:17:34.287-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:17:34.287-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:17:34.287-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:20:44.996-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:20:44.996-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:20:47.524-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:20:47.525-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:20:51.993-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:20:51.994-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:20:51.996-03:00] user-profile-learning: check: {"count":50,"threshold":10}
+[2026-07-10T05:20:52.037-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:20:52.037-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:20:52.038-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:20:52.038-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:20:52.038-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:21:02.005-03:00] user-profile-learning: check: {"count":51,"threshold":10}
+[2026-07-10T05:21:02.043-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:21:02.043-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:21:02.044-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:21:02.044-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:21:02.044-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:21:40.071-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:21:40.072-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:21:42.662-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:21:42.662-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:21:47.161-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:21:47.161-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:21:47.163-03:00] user-profile-learning: check: {"count":52,"threshold":10}
+[2026-07-10T05:21:47.204-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:21:47.204-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:21:47.204-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:21:47.204-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:21:47.204-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:21:57.154-03:00] user-profile-learning: check: {"count":52,"threshold":10}
+[2026-07-10T05:21:57.194-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:21:57.194-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:21:57.194-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:21:57.194-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:21:57.194-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:22:16.742-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:22:16.742-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:22:19.202-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:22:19.202-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:22:23.713-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:22:23.713-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:22:23.715-03:00] user-profile-learning: check: {"count":52,"threshold":10}
+[2026-07-10T05:22:23.752-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:22:23.752-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:22:23.752-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:22:23.752-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:22:23.752-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:22:33.697-03:00] user-profile-learning: check: {"count":52,"threshold":10}
+[2026-07-10T05:22:33.737-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:22:33.738-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:22:33.738-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:22:33.738-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:22:33.738-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:22:59.745-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:22:59.746-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:23:02.301-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:23:02.302-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:23:06.817-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:23:06.817-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:23:06.820-03:00] user-profile-learning: check: {"count":53,"threshold":10}
+[2026-07-10T05:23:06.857-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:23:06.857-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:23:06.857-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:23:06.858-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:23:06.858-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:23:16.806-03:00] user-profile-learning: check: {"count":53,"threshold":10}
+[2026-07-10T05:23:16.845-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:23:16.845-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:23:16.845-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:23:16.845-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:23:16.845-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:23:38.278-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:23:38.278-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:23:40.862-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:23:40.862-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:23:45.380-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:23:45.381-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:23:45.383-03:00] user-profile-learning: check: {"count":54,"threshold":10}
+[2026-07-10T05:23:45.421-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:23:45.421-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:23:45.422-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:23:45.422-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:23:45.422-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:23:55.369-03:00] user-profile-learning: check: {"count":54,"threshold":10}
+[2026-07-10T05:23:55.408-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:23:55.408-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:23:55.409-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:23:55.409-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:23:55.409-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:25:55.620-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:25:55.621-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:25:58.221-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:25:58.221-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:26:02.733-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:26:02.733-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:26:02.736-03:00] user-profile-learning: check: {"count":55,"threshold":10}
+[2026-07-10T05:26:02.776-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:26:02.776-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:26:02.776-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:26:02.776-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:26:02.776-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:26:12.735-03:00] user-profile-learning: check: {"count":55,"threshold":10}
+[2026-07-10T05:26:12.776-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:26:12.776-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:26:12.777-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:26:12.777-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:26:12.777-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:27:54.475-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:27:54.475-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:27:56.879-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:27:56.879-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:28:01.412-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:28:01.412-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:28:01.415-03:00] user-profile-learning: check: {"count":56,"threshold":10}
+[2026-07-10T05:28:01.454-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:28:01.454-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:28:01.454-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:28:01.454-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:28:01.454-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:28:11.417-03:00] user-profile-learning: check: {"count":56,"threshold":10}
+[2026-07-10T05:28:11.456-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:28:11.456-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:28:11.456-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:28:11.456-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:28:11.456-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:32:36.939-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:32:36.940-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:32:39.466-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:32:39.466-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:32:43.966-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:32:43.967-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:32:43.969-03:00] user-profile-learning: check: {"count":57,"threshold":10}
+[2026-07-10T05:32:44.008-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:32:44.008-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:32:44.009-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:32:44.009-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:32:44.009-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:32:53.972-03:00] user-profile-learning: check: {"count":57,"threshold":10}
+[2026-07-10T05:32:54.012-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:32:54.013-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:32:54.013-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:32:54.013-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:32:54.013-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:33:58.353-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:33:58.354-03:00] Auto-capture warning (attempt 1/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:34:00.847-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:34:00.847-03:00] Auto-capture warning (attempt 2/3): {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:34:05.365-03:00] auto-capture: opencode provider failed, falling back to external API: {"error":"Error: opencode-mem: opencode reported APIError: Insufficient balance. Manage your billing here: https://opencode.ai/workspace/wrk_01KWZJYN1SD4DHVKAAEJZY7GCQ/billing; details={\"statusCode\":401}"}
+[2026-07-10T05:34:05.365-03:00] Auto-capture final error after 3 attempts: {"error":"Summary generation failed: External API not configured for auto-capture"}
+[2026-07-10T05:34:05.368-03:00] user-profile-learning: check: {"count":58,"threshold":10}
+[2026-07-10T05:34:05.409-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:34:05.409-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:34:05.409-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:34:05.409-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:34:05.410-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}
+[2026-07-10T05:34:15.354-03:00] user-profile-learning: check: {"count":58,"threshold":10}
+[2026-07-10T05:34:15.397-03:00] user-profile-learning: analyze called: {"hasProfile":false}
+[2026-07-10T05:34:15.397-03:00] user-profile-learning: trying opencode provider
+[2026-07-10T05:34:15.397-03:00] user-profile-learning: opencode provider failed, falling back to external API: {"error":"BuildMessage: ENOENT reading \"/home/johncoffee/.cache/opencode/packages/opencode-mem@latest/node_modules/opencode-mem/dist/services/ai/profile-llm-client.js\""}
+[2026-07-10T05:34:15.397-03:00] User Profile Config Check Failed:: {}
+[2026-07-10T05:34:15.398-03:00] Idle processing error: {"error":"Error: External API not configured for user memory learning"}

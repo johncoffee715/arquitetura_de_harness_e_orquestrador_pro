@@ -1,0 +1,185 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "agent-registry.schema.json",
+  "title": "Registry Canônico — Agents / Subagents / Tools / MCP / Skills",
+  "description": "Schema único para registrar qualquer entidade do sistema (Gran-Mestre / ECC Autofagia / GSD-legado). Um arquivo, uma fonte de verdade.",
+  "type": "object",
+  "required": ["registry_version", "updated_at", "entries"],
+  "properties": {
+    "registry_version": { "type": "string", "description": "Versão do próprio schema/registry, ex: '1.0.0'" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "entries": {
+      "type": "array",
+      "items": { "$ref": "#/definitions/entry" }
+    }
+  },
+  "definitions": {
+    "entry": {
+      "type": "object",
+      "required": [
+        "id", "tipo", "nome", "status", "origem",
+        "proposito", "modelo", "regras", "validacao", "autonomia"
+      ],
+      "properties": {
+
+        "id": {
+          "type": "string",
+          "description": "Identificador único, kebab-case. Ex: 'atlas', 'reviewer-rust', 'mcp-obsidian-vault', 'skill-archify'"
+        },
+
+        "tipo": {
+          "type": "string",
+          "enum": ["agent", "subagent", "tool", "mcp", "skill"],
+          "description": "agent = orquestrador primário (ex: gran-mestre, build). subagent = executor especializado (ex: reviewer-go). tool = função/comando interno. mcp = servidor MCP externo. skill = SKILL.md/capacidade empacotada."
+        },
+
+        "nome": { "type": "string" },
+
+        "versao": { "type": "string", "default": "0.1.0" },
+
+        "status": {
+          "type": "string",
+          "enum": ["ativo", "legado", "experimental", "descontinuado"],
+          "description": "'legado' pra distinguir GSD (43 agents) do sistema build/ECC ativo (27 agents)"
+        },
+
+        "origem": {
+          "type": "object",
+          "required": ["tipo_origem"],
+          "properties": {
+            "tipo_origem": {
+              "type": "string",
+              "enum": ["interno", "framework-externo", "fork-adaptado"]
+            },
+            "framework": {
+              "type": "string",
+              "description": "Se veio de fora: oh-my-openagent, superpowers, fable-method, mixture-of-agents, archify, etc."
+            },
+            "repo_url": { "type": "string", "format": "uri" },
+            "adaptacoes": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "O que foi alterado em relação ao original (princípio da antropofagia tecnológica: absorver criticamente, não copiar cru)"
+            }
+          }
+        },
+
+        "proposito": {
+          "type": "string",
+          "description": "1-2 frases: o que essa entidade resolve. Sem isso, não deveria existir no registry."
+        },
+
+        "categoria_roteamento": {
+          "type": "string",
+          "enum": ["TRIVIAL", "SIMPLE", "MEDIUM", "COMPLEX", "CRITICAL", "FEATURE", "n/a"],
+          "description": "Só para agent/subagent — em que degrau do roteamento do Gran-Mestre essa entidade entra"
+        },
+
+        "modelo": {
+          "type": "object",
+          "description": "n/a para mcp puro de dados, mas obrigatório para agent/subagent/skill que geram texto",
+          "properties": {
+            "primario": { "type": "string", "description": "ex: qwen2.5-coder:7b, kimi-k3, claude-sonnet-4-6" },
+            "fallback": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "cadeia de fallback, ex: ['opencode-go', 'opencode-zen', 'omnirouter']"
+            },
+            "provider": { "type": "string", "description": "ollama, omnirouter, openrouter, nvidia, morph, llama, etc." },
+            "vram_estimada_gb": { "type": "number" }
+          }
+        },
+
+        "capacidades": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "O que a entidade PODE fazer — lista curta e concreta"
+        },
+
+        "regras": {
+          "type": "object",
+          "description": "Limites explícitos — o que essa entidade NUNCA faz",
+          "required": ["nao_faz"],
+          "properties": {
+            "nao_faz": {
+              "type": "array",
+              "items": { "type": "string" },
+              "minItems": 1,
+              "description": "ex: 'não faz commit sem gate de aprovação', 'não escreve fora do escopo do subagent'"
+            },
+            "escopo_maximo": { "type": "string", "description": "limite de arquivos/diretórios/domínio que pode tocar" },
+            "requer_aprovacao_humana_para": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        },
+
+        "validacao": {
+          "type": "object",
+          "description": "Ciclo de validação — mapeia direto pros hooks do ECC Autofagia",
+          "properties": {
+            "gates": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "enum": [
+                  "safety-sha", "attestation-gate", "2-action-rule",
+                  "3-strike-protocol", "completion-gate", "tdd-obrigatorio",
+                  "review-por-linguagem", "nenhum"
+                ]
+              }
+            },
+            "tdd_obrigatorio": { "type": "boolean", "default": false },
+            "fase_pipeline": {
+              "type": "string",
+              "description": "Se faz parte do pipeline Superpowers (5 fases) ou do CrossOver (6 fases), qual fase ocupa"
+            }
+          }
+        },
+
+        "autonomia": {
+          "type": "object",
+          "required": ["modo_autonomo"],
+          "properties": {
+            "modo_autonomo": { "type": "boolean" },
+            "condicoes": {
+              "type": "array",
+              "items": { "type": "string" },
+              "description": "Só roda autônomo se estas condições forem verdadeiras"
+            },
+            "timeout_acao_min": { "type": "number" }
+          }
+        },
+
+        "dependencias": {
+          "type": "object",
+          "properties": {
+            "subagents": { "type": "array", "items": { "type": "string" }, "description": "ids de outras entries" },
+            "mcps": { "type": "array", "items": { "type": "string" } },
+            "skills": { "type": "array", "items": { "type": "string" } },
+            "hooks": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+
+        "comandos_slash": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "ex: ['/gsd-plan', '/gsd-review'] ou comandos do sistema build"
+        },
+
+        "observabilidade": {
+          "type": "object",
+          "properties": {
+            "log_path": { "type": "string" },
+            "metricas": { "type": "array", "items": { "type": "string" } }
+          }
+        },
+
+        "registrado_em": { "type": "string", "format": "date" },
+        "atualizado_em": { "type": "string", "format": "date" },
+        "notas": { "type": "string" }
+      }
+    }
+  }
+}

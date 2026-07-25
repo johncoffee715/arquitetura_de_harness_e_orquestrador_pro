@@ -1,0 +1,28 @@
+{
+  "gran-mestre": {
+    "monitor": {
+      "enabled": true,
+      "interval": 300,
+      "dream_after": 1800,
+      "auto_heal": true,
+      "gpu": {
+        "device": "/sys/class/drm/card1/device",
+        "rocm_smi": "/opt/rocm/bin/rocm-smi",
+        "temp_critical": 80.0,
+        "vram_critical_gb": 2.0,
+        "usage_low_pct": 5,
+        "vram_high_gb": 14.0
+      },
+      "services": {
+        "ollama": {"port": 11434, "critical": true},
+        "qdrant": {"port": 6333, "critical": true},
+        "opencode": {"port": 3000, "critical": false}
+      },
+      "paths": {
+        "base": "~/.opencode",
+        "logs": "~/.opencode/logs",
+        "state": "~/.opencode/state"
+      }
+    }
+  }
+}

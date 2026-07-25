@@ -1,0 +1,313 @@
+{
+  "registry_version": "1.0.0",
+  "updated_at": "2026-07-25T20:00:00Z",
+  "entries": [
+
+    {
+      "id": "gran-mestre",
+      "tipo": "agent",
+      "nome": "Gran-Mestre",
+      "versao": "7.0.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Meta-orquestrador senior que roteia toda tarefa recebida para o pipeline/subagent correto conforme complexidade (TRIVIAL→FEATURE). Único agent primary do sistema.",
+      "categoria_roteamento": "n/a",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5", "opencode/gpt-5.5", "github-copilot/gemini-3.1-pro-preview", "opencode/gemini-3.1-pro"],
+        "provider": "github-copilot",
+        "vram_estimada_gb": 0
+      },
+      "capacidades": [
+        "classificar tarefa em TRIVIAL/SIMPLE/MEDIUM/COMPLEX/CRITICAL/FEATURE",
+        "acionar pipeline em cascata (6 fases) para rotas FEATURE",
+        "delegar para subagents especializados",
+        "gerenciar safety protocol (SHA + rollback)",
+        "orquestrar Shared Brain (memória persistente)"
+      ],
+      "regras": {
+        "nao_faz": [
+          "não executa código de produção diretamente sem passar por subagent",
+          "não pula gates de aprovação em rotas CRITICAL",
+          "não decide tecnicamente sem passar pelo validador",
+          "não continua após rollback sem aprovação do usuário"
+        ],
+        "requer_aprovacao_humana_para": ["rotas CRITICAL", "mudanças em arquivos de config core"]
+      },
+      "validacao": {
+        "gates": ["safety-sha", "attestation-gate", "completion-gate"],
+        "tdd_obrigatorio": false
+      },
+      "autonomia": { "modo_autonomo": true, "condicoes": ["rota <= MEDIUM"] },
+      "dependencias": {
+        "subagents": ["prometheus", "hestia", "atlas", "atena", "sisyphus"],
+        "mcps": ["mcp-obsidian-vault"],
+        "skills": ["gran-mestre", "hestia", "athena", "pxpipe"],
+        "hooks": ["safety-sha", "attestation-gate", "2-action-rule", "3-strike-protocol", "completion-gate"]
+      },
+      "comandos_slash": ["/gran-mestre"],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25",
+      "notas": "Único agent primary. Seniority: senior. Core: context_analyzer + capability_index + trace_context."
+    },
+
+    {
+      "id": "prometheus",
+      "tipo": "subagent",
+      "nome": "Prometheus",
+      "versao": "1.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Planejamento: decompõe requisitos do usuário em plano de fases com acceptance criteria. Produz PLAN.md.",
+      "categoria_roteamento": "MEDIUM",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5"],
+        "provider": "github-copilot",
+        "vram_estimada_gb": 0
+      },
+      "capacidades": ["decomposição de requisitos", "geração de PLAN.md", "análise de dependências"],
+      "regras": {
+        "nao_faz": ["não executa código", "não edita arquivos de implementação"],
+        "escopo_maximo": "documentação e planejamento apenas"
+      },
+      "validacao": { "gates": ["completion-gate"], "tdd_obrigatorio": false },
+      "autonomia": { "modo_autonomo": true, "condicoes": [] },
+      "dependencias": { "subagents": [], "mcps": [], "skills": [], "hooks": ["completion-gate"] },
+      "comandos_slash": [],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25"
+    },
+
+    {
+      "id": "hestia",
+      "tipo": "subagent",
+      "nome": "Héstia",
+      "versao": "3.3.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Validação: valida specs, planos e entregas contra o pedido original. Nunca escreve ou revisa código, só audita conformidade.",
+      "categoria_roteamento": "MEDIUM",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5", "opencode/gpt-5.5", "github-copilot/claude-sonnet-4.6", "opencode/claude-sonnet-4-6"],
+        "provider": "github-copilot",
+        "vram_estimada_gb": 0
+      },
+      "capacidades": ["validação de spec", "validação de cobertura", "validação de contratos", "validação final"],
+      "regras": {
+        "nao_faz": ["não escreve código", "não edita arquivos", "não decide arquitetura"],
+        "escopo_maximo": "validação e conformidade apenas"
+      },
+      "validacao": { "gates": ["completion-gate"], "tdd_obrigatorio": false },
+      "autonomia": { "modo_autonomo": true, "condicoes": ["modo C ativo"] },
+      "dependencias": { "subagents": [], "mcps": [], "skills": ["hestia"], "hooks": ["completion-gate"] },
+      "comandos_slash": ["/hestia"],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25",
+      "notas": "Max validation cycles: 3. Escala ao usuário após 2x reprovado no mesmo ponto."
+    },
+
+    {
+      "id": "atlas",
+      "tipo": "subagent",
+      "nome": "Atlas",
+      "versao": "1.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Execução: implementa o plano aprovado. Safety protocol: SHA antes de executar, rollback se falhar. Na cascata (rota FEATURE), atua como supervisor que gerencia git e sequencia tasks.",
+      "categoria_roteamento": "COMPLEX",
+      "modelo": {
+        "primario": "github-copilot/claude-sonnet-4.6",
+        "fallback": ["opencode/claude-sonnet-4-6", "github-copilot/gpt-5.5", "opencode/gpt-5.5"],
+        "provider": "github-copilot",
+        "vram_estimada_gb": 0
+      },
+      "capacidades": ["execução de plano", "gerenciamento git", "commits atômicos", "sequenciamento de tasks"],
+      "regras": {
+        "nao_faz": ["nunca escreve código na cascata (só gerencia)", "nunca gerencia branch (só executa TDD)"],
+        "escopo_maximo": "implementação dentro do plano aprovado"
+      },
+      "validacao": { "gates": ["safety-sha", "completion-gate"], "tdd_obrigatorio": true },
+      "autonomia": { "modo_autonomo": true, "condicoes": ["plano aprovado"] },
+      "dependencias": { "subagents": [], "mcps": [], "skills": [], "hooks": ["safety-sha", "completion-gate"] },
+      "comandos_slash": [],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25",
+      "notas": "Supervisor/worker split: inegociável. Atlas NUNCA escreve código na cascata."
+    },
+
+    {
+      "id": "atena",
+      "tipo": "subagent",
+      "nome": "Atena",
+      "versao": "3.3.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Revisão macro: revisa o diff total de uma feature (coerência cross-task, acoplamento, arquitetura). Chamada 1x por pipeline, Fase 5.",
+      "categoria_roteamento": "COMPLEX",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5", "opencode/gpt-5.5", "github-copilot/claude-sonnet-4.6", "opencode/claude-sonnet-4-6"],
+        "provider": "github-copilot",
+        "vram_estimada_gb": 0
+      },
+      "capacidades": ["revisão holística", "verificação de coerência", "análise de acoplamento", "alinhamento arquitetural"],
+      "regras": {
+        "nao_faz": ["não revisa task isolada", "não decide se plano estava certo", "não escreve ou corrige código"],
+        "escopo_maximo": "revisão macro do diff total"
+      },
+      "validacao": { "gates": ["completion-gate"], "tdd_obrigatorio": false },
+      "autonomia": { "modo_autonomo": true, "condicoes": [] },
+      "dependencias": { "subagents": [], "mcps": [], "skills": ["athena"], "hooks": ["completion-gate"] },
+      "comandos_slash": ["/athena"],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25",
+      "notas": "Max validation cycles: 2. Reprovação vai para Fable Judge antes de voltar ao usuário."
+    },
+
+    {
+      "id": "sisyphus",
+      "tipo": "subagent",
+      "nome": "Sisyphus",
+      "versao": "1.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Execução trivial: tarefas simples de 1 arquivo, <10 linhas, sem novo comportamento.",
+      "categoria_roteamento": "TRIVIAL",
+      "modelo": {
+        "primario": "opencode/gpt-5-nano",
+        "fallback": ["github-copilot/claude-haiku-4.5"],
+        "provider": "opencode",
+        "vram_estimada_gb": 0
+      },
+      "capacidades": ["execução trivial", "edição simples", "correção rápida"],
+      "regras": {
+        "nao_faz": ["não delega para subagents", "não usa skills externas"],
+        "escopo_maximo": "1 arquivo, <10 linhas"
+      },
+      "validacao": { "gates": ["nenhum"], "tdd_obrigatorio": false },
+      "autonomia": { "modo_autonomo": true, "condicoes": [] },
+      "dependencias": { "subagents": [], "mcps": [], "skills": [], "hooks": [] },
+      "comandos_slash": [],
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25"
+    },
+
+    {
+      "id": "mcp-obsidian-vault",
+      "tipo": "mcp",
+      "nome": "MCP Shared Brain (Obsidian)",
+      "versao": "0.3",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Expõe o vault /mnt/dados/cerebro com IA como memória compartilhada entre agents.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["ler notas", "escrever aprendizados", "buscar por tag/pasta"],
+      "regras": {
+        "nao_faz": ["não deleta notas existentes", "não escreve fora de wiki/aprendizados sem aprovação"]
+      },
+      "validacao": { "gates": ["safety-sha"] },
+      "autonomia": { "modo_autonomo": true, "condicoes": ["escrita restrita a pastas permitidas"] },
+      "dependencias": {},
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25"
+    },
+
+    {
+      "id": "skill-gran-mestre",
+      "tipo": "skill",
+      "nome": "Gran-Mestre Skill",
+      "versao": "7.0.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Skill principal do meta-orquestrador. Define pipeline 6 fases, regras de roteamento, safety protocol.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["roteamento", "pipeline 6 fases", "safety protocol"],
+      "regras": { "nao_faz": [] },
+      "validacao": { "gates": [] },
+      "autonomia": { "modo_autonomo": true },
+      "dependencias": {},
+      "registrado_em": "2026-07-25",
+      "atualizado_em": "2026-07-25"
+    },
+
+    {
+      "id": "skill-hestia",
+      "tipo": "skill",
+      "nome": "Héstia Skill",
+      "versao": "3.3.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Skill de validação. Define comandos /hestia, critérios de validação, regras de conformidade.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["validação de spec", "validação de cobertura", "validação final"],
+      "regras": { "nao_faz": [] },
+      "validacao": { "gates": [] },
+      "autonomia": { "modo_autonomo": true },
+      "dependencias": {},
+      "registrado_em": "2026-07-25",
+      "atualizado_em": "2026-07-25"
+    },
+
+    {
+      "id": "skill-athena",
+      "tipo": "skill",
+      "nome": "Atena Skill",
+      "versao": "3.3.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno" },
+      "proposito": "Skill de revisão macro. Define comandos /athena, critérios de revisão, regras de coerência.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["revisão macro", "verificação de coerência", "análise de acoplamento"],
+      "regras": { "nao_faz": [] },
+      "validacao": { "gates": [] },
+      "autonomia": { "modo_autonomo": true },
+      "dependencias": {},
+      "registrado_em": "2026-07-25",
+      "atualizado_em": "2026-07-25"
+    },
+
+    {
+      "id": "skill-pxpipe",
+      "tipo": "skill",
+      "nome": "pxpipe Skill",
+      "versao": "1.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "pxpipe",
+        "repo_url": "https://github.com/teamchong/pxpipe",
+        "adaptacoes": ["integrado como skill de redução de tokens"]
+      },
+      "proposito": "Proxy local que reduz tokens de entrada renderizando contexto como imagens PNG.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["redução de tokens", "renderização PNG", "proxy local"],
+      "regras": { "nao_faz": ["não modifica código-fonte"] },
+      "validacao": { "gates": [] },
+      "autonomia": { "modo_autonomo": true },
+      "dependencias": {},
+      "registrado_em": "2026-07-25",
+      "atualizado_em": "2026-07-25"
+    },
+
+    {
+      "id": "tool-safety-sha",
+      "tipo": "tool",
+      "nome": "Safety SHA Hook",
+      "versao": "1.0",
+      "status": "ativo",
+      "origem": { "tipo_origem": "interno", "adaptacoes": ["parte do sistema ECC Autofagia"] },
+      "proposito": "Gera hash de verificação antes de qualquer ação que altere estado persistente.",
+      "modelo": { "primario": "n/a" },
+      "capacidades": ["hash de estado pré-ação", "comparação pós-ação"],
+      "regras": { "nao_faz": ["não bloqueia leitura, só escrita"] },
+      "validacao": { "gates": ["nenhum"] },
+      "autonomia": { "modo_autonomo": true, "condicoes": [] },
+      "dependencias": {},
+      "registrado_em": "2026-07-22",
+      "atualizado_em": "2026-07-25"
+    }
+
+  ]
+}

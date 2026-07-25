@@ -1,0 +1,240 @@
+{
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-check-update.js\""
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/gsd-session-state.sh\""
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|Edit|Write|MultiEdit|Agent|Task",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-context-monitor.js\"",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "Read",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-read-injection-scanner.js\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/gsd-graphify-update.sh\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/gsd-phase-boundary.sh\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Read|Grep|WebSearch|Glob",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/ecc-2action-rule.sh\" \"Research\"",
+            "timeout": 3
+          }
+        ],
+        "description": "2-Action Rule: save findings every 2 research actions",
+        "id": "post:autofagia:2action-rule"
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-prompt-guard.js\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-read-guard.js\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash|Edit|Write|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-workflow-guard.js\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-worktree-path-guard.js\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/gsd-validate-commit.sh\"",
+            "timeout": 5
+          }
+        ]
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/ecc-safety-sha.sh\"",
+            "timeout": 5
+          }
+        ],
+        "description": "Save SHA before Write/Edit for rollback safety",
+        "id": "pre:autofagia:safety-sha"
+      },
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/ecc-attest.sh\" verify \"/home/johncoffee/.opencode/.planning/autofagia-ecc/task_plan.md\"",
+            "timeout": 5
+          }
+        ],
+        "description": "Verify plan integrity before modifying planning files",
+        "id": "pre:autofagia:attestation"
+      }
+    ],
+    "SubagentStop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-context-monitor.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-context-monitor.js\"",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/ecc-complete.sh\" check \"/home/johncoffee/.opencode/.planning/autofagia-ecc/task_plan.md\"",
+            "timeout": 5
+          }
+        ],
+        "description": "Completion Gate: check phase completeness after each stop",
+        "id": "stop:autofagia:completion-gate"
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"/home/johncoffee/.claude/hooks/ecc-3strike.sh\" \"$TOOL_NAME\"",
+            "timeout": 5
+          }
+        ],
+        "description": "3-Strike Protocol: escalate after 3 consecutive failures",
+        "id": "post:autofagia:3strike"
+      }
+    ],
+    "PreCompact": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-context-monitor.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "FileChanged": [
+      {
+        "matcher": "config.json",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-config-reload.js\"",
+            "timeout": 8
+          }
+        ]
+      }
+    ]
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "\"/mnt/dados/node/bin/node\" \"/home/johncoffee/.claude/hooks/gsd-statusline.js\""
+  },
+  "permissions": {
+    "allow": [
+      "Bash(npx gsd-core *)",
+      "Read(.planning/*)",
+      "Write(.planning/*)",
+      "Read(STATE.md)",
+      "Write(STATE.md)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Read(.env.*)",
+      "Read(.secrets)"
+    ]
+  }
+}

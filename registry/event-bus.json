@@ -1,0 +1,581 @@
+{
+  "version": "1.0.0",
+  "description": "EventBus Central — desacoplamento entre agentes, comandos, hooks e MCPs",
+  "topics": {
+    "agent:registered": {
+      "description": "Um novo agente foi registrado no Registry",
+      "producers": [
+        "agent-registry"
+      ],
+      "consumers": [
+        "*"
+      ]
+    },
+    "agent:capability:updated": {
+      "description": "Capacidade de um agente foi alterada",
+      "producers": [
+        "agent-registry"
+      ],
+      "consumers": [
+        "capability-router",
+        "context-broker"
+      ]
+    },
+    "agent:health:changed": {
+      "description": "Status de saúde de um agente mudou",
+      "producers": [
+        "agent-monitor"
+      ],
+      "consumers": [
+        "capability-router",
+        "dashboard"
+      ]
+    },
+    "workflow:phase:started": {
+      "description": "Uma fase de workflow foi iniciada",
+      "producers": [
+        "gsd-executor"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter",
+        "dashboard"
+      ]
+    },
+    "workflow:phase:completed": {
+      "description": "Uma fase de workflow foi concluída",
+      "producers": [
+        "gsd-executor"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter",
+        "dashboard",
+        "memory-keeper"
+      ]
+    },
+    "workflow:phase:failed": {
+      "description": "Uma fase de workflow falhou",
+      "producers": [
+        "gsd-executor"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter",
+        "dashboard",
+        "auto-healer"
+      ]
+    },
+    "hook:executed": {
+      "description": "Um hook foi executado",
+      "producers": [
+        "hook-registry"
+      ],
+      "consumers": [
+        "otel-exporter",
+        "session-activity-tracker"
+      ]
+    },
+    "command:invoked": {
+      "description": "Um comando GSD foi invocado",
+      "producers": [
+        "command-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "mcp:health:changed": {
+      "description": "Status de saúde de um MCP mudou",
+      "producers": [
+        "mcp-health-check"
+      ],
+      "consumers": [
+        "capability-router",
+        "dashboard"
+      ]
+    },
+    "context:propagated": {
+      "description": "Contexto (TraceID) foi propagado",
+      "producers": [
+        "context-broker"
+      ],
+      "consumers": [
+        "*"
+      ]
+    },
+    "registry:synced": {
+      "description": "Registry foi sincronizado após alteração",
+      "producers": [
+        "agent-registry"
+      ],
+      "consumers": [
+        "capability-router",
+        "context-broker",
+        "dashboard"
+      ]
+    },
+    "agent:agent-reach:invoked": {
+      "description": "Agente agent-reach foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:ck:invoked": {
+      "description": "Agente ck foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-advisor-researcher:invoked": {
+      "description": "Agente gsd-advisor-researcher foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-ai-researcher:invoked": {
+      "description": "Agente gsd-ai-researcher foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-assumptions-analyzer:invoked": {
+      "description": "Agente gsd-assumptions-analyzer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-code-fixer:invoked": {
+      "description": "Agente gsd-code-fixer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-code-reviewer:invoked": {
+      "description": "Agente gsd-code-reviewer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-codebase-mapper:invoked": {
+      "description": "Agente gsd-codebase-mapper foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-debug-session-manager:invoked": {
+      "description": "Agente gsd-debug-session-manager foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-debugger:invoked": {
+      "description": "Agente gsd-debugger foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-doc-classifier:invoked": {
+      "description": "Agente gsd-doc-classifier foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-doc-synthesizer:invoked": {
+      "description": "Agente gsd-doc-synthesizer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-doc-verifier:invoked": {
+      "description": "Agente gsd-doc-verifier foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-doc-writer:invoked": {
+      "description": "Agente gsd-doc-writer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-domain-researcher:invoked": {
+      "description": "Agente gsd-domain-researcher foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-eval-auditor:invoked": {
+      "description": "Agente gsd-eval-auditor foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-eval-planner:invoked": {
+      "description": "Agente gsd-eval-planner foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-executor:invoked": {
+      "description": "Agente gsd-executor foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-framework-selector:invoked": {
+      "description": "Agente gsd-framework-selector foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-integration-checker:invoked": {
+      "description": "Agente gsd-integration-checker foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-intel-updater:invoked": {
+      "description": "Agente gsd-intel-updater foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-mempalace-curator:invoked": {
+      "description": "Agente gsd-mempalace-curator foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-nyquist-auditor:invoked": {
+      "description": "Agente gsd-nyquist-auditor foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-pattern-mapper:invoked": {
+      "description": "Agente gsd-pattern-mapper foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-phase-researcher:invoked": {
+      "description": "Agente gsd-phase-researcher foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-plan-checker:invoked": {
+      "description": "Agente gsd-plan-checker foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-planner:invoked": {
+      "description": "Agente gsd-planner foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-project-researcher:invoked": {
+      "description": "Agente gsd-project-researcher foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-research-synthesizer:invoked": {
+      "description": "Agente gsd-research-synthesizer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-roadmapper:invoked": {
+      "description": "Agente gsd-roadmapper foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-security-auditor:invoked": {
+      "description": "Agente gsd-security-auditor foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-ui-auditor:invoked": {
+      "description": "Agente gsd-ui-auditor foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-ui-checker:invoked": {
+      "description": "Agente gsd-ui-checker foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-ui-researcher:invoked": {
+      "description": "Agente gsd-ui-researcher foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-user-profiler:invoked": {
+      "description": "Agente gsd-user-profiler foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:gsd-verifier:invoked": {
+      "description": "Agente gsd-verifier foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:memory-keeper:invoked": {
+      "description": "Agente memory-keeper foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:reverser:invoked": {
+      "description": "Agente reverser foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:security-review:invoked": {
+      "description": "Agente security-review foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:superpowers:invoked": {
+      "description": "Agente superpowers foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:superpowers-code-reviewer:invoked": {
+      "description": "Agente superpowers-code-reviewer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:superpowers-implementer:invoked": {
+      "description": "Agente superpowers-implementer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:superpowers-plan-writer:invoked": {
+      "description": "Agente superpowers-plan-writer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:superpowers-plan-writer-alt1:invoked": {
+      "description": "Agente superpowers-plan-writer-alt1 foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:superpowers-plan-writer-alt2:invoked": {
+      "description": "Agente superpowers-plan-writer-alt2 foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    },
+    "agent:superpowers-spec-writer:invoked": {
+      "description": "Agente superpowers-spec-writer foi invocado",
+      "producers": [
+        "capability-router"
+      ],
+      "consumers": [
+        "context-broker",
+        "otel-exporter"
+      ]
+    }
+  },
+  "total_topics": 11
+}

@@ -1,0 +1,696 @@
+{
+  "version": "1.0.0",
+  "rules": [
+    {
+      "capability": "documentation",
+      "agent": "agent-reach",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "agent-reach",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "memory",
+      "agent": "ck",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "gsd-advisor-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-ai-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-ai-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "framework-selection",
+      "agent": "gsd-ai-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "integration",
+      "agent": "gsd-ai-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "pattern-mapping",
+      "agent": "gsd-ai-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "gsd-ai-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-ai-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "assumptions-analysis",
+      "agent": "gsd-assumptions-analyzer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "intelligence",
+      "agent": "gsd-code-fixer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "review",
+      "agent": "gsd-code-fixer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-code-reviewer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "review",
+      "agent": "gsd-code-reviewer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "security",
+      "agent": "gsd-code-reviewer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-codebase-mapper",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "debugging",
+      "agent": "gsd-debug-session-manager",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "debugging",
+      "agent": "gsd-debugger",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-doc-classifier",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-doc-classifier",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-doc-synthesizer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-doc-synthesizer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-doc-verifier",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "verification",
+      "agent": "gsd-doc-verifier",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-doc-writer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "domain-research",
+      "agent": "gsd-domain-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "evaluation",
+      "agent": "gsd-domain-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "integration",
+      "agent": "gsd-domain-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-domain-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "gsd-domain-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-domain-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "evaluation",
+      "agent": "gsd-eval-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-eval-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-eval-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "review",
+      "agent": "gsd-eval-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-eval-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "evaluation",
+      "agent": "gsd-eval-planner",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "framework-selection",
+      "agent": "gsd-eval-planner",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "integration",
+      "agent": "gsd-eval-planner",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-eval-planner",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-executor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-executor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "framework-selection",
+      "agent": "gsd-framework-selector",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "integration",
+      "agent": "gsd-framework-selector",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "integration",
+      "agent": "gsd-integration-checker",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "verification",
+      "agent": "gsd-integration-checker",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "intelligence",
+      "agent": "gsd-intel-updater",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-intel-updater",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "memory",
+      "agent": "gsd-mempalace-curator",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-nyquist-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "verification",
+      "agent": "gsd-nyquist-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "pattern-mapping",
+      "agent": "gsd-pattern-mapper",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-pattern-mapper",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-phase-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-phase-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "gsd-phase-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-plan-checker",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-plan-checker",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "verification",
+      "agent": "gsd-plan-checker",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-planner",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-planner",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "verification",
+      "agent": "gsd-planner",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "domain-research",
+      "agent": "gsd-project-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-project-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "gsd-project-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "gsd-research-synthesizer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "gsd-research-synthesizer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-roadmapper",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-roadmapper",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-security-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "gsd-security-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "security",
+      "agent": "gsd-security-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "verification",
+      "agent": "gsd-security-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "gsd-ui-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "review",
+      "agent": "gsd-ui-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-ui-auditor",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-ui-checker",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "gsd-ui-researcher",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "profiling",
+      "agent": "gsd-user-profiler",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "verification",
+      "agent": "gsd-verifier",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "memory",
+      "agent": "memory-keeper",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "memory-keeper",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "reverser",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "reverse-engineering",
+      "agent": "reverser",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "pattern-mapping",
+      "agent": "security-review",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "research",
+      "agent": "security-review",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "review",
+      "agent": "security-review",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "security",
+      "agent": "security-review",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "superpowers",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "superpowers",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "review",
+      "agent": "superpowers",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "superpowers",
+      "agent": "superpowers",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "superpowers-code-reviewer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "superpowers-code-reviewer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "review",
+      "agent": "superpowers-code-reviewer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "superpowers",
+      "agent": "superpowers-code-reviewer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "superpowers-implementer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "superpowers-implementer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "superpowers",
+      "agent": "superpowers-implementer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "superpowers-plan-writer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "superpowers-plan-writer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "superpowers",
+      "agent": "superpowers-plan-writer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "superpowers-plan-writer-alt1",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "superpowers-plan-writer-alt1",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "profiling",
+      "agent": "superpowers-plan-writer-alt1",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "superpowers",
+      "agent": "superpowers-plan-writer-alt1",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "execution",
+      "agent": "superpowers-plan-writer-alt2",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "planning",
+      "agent": "superpowers-plan-writer-alt2",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "profiling",
+      "agent": "superpowers-plan-writer-alt2",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "superpowers",
+      "agent": "superpowers-plan-writer-alt2",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "documentation",
+      "agent": "superpowers-spec-writer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "superpowers",
+      "agent": "superpowers-spec-writer",
+      "priority": 1,
+      "active": true
+    },
+    {
+      "capability": "ui-design",
+      "agent": "superpowers-spec-writer",
+      "priority": 1,
+      "active": true
+    }
+  ],
+  "total_rules": 115
+}

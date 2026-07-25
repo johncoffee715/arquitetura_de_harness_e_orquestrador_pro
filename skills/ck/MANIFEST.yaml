@@ -1,0 +1,19 @@
+name: ck
+version: 1.0.0
+description: Persistent per-project memory. Auto-loads project context, tracks sessions
+  with git activity
+author: Gran-Mestre System
+scope: opencode-project
+requires: []
+triggers:
+- ck
+- context-keeper
+- memoria
+- project-memory
+category: memoria-projeto
+priority: medium
+tags:
+- gsd
+- memory
+- context
+- persistence

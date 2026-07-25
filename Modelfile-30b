@@ -1,0 +1,17 @@
+FROM /mnt/dados/Assistente Pessoal/modelos LLM/Qwen3-Coder-30B-A3B-Instruct-Q3_K_M.gguf
+
+TEMPLATE """{{- if .System }}
+<|im_start|>system
+{{ .System }}<|im_end|>
+{{- end }}
+<|im_start|>user
+{{ .Prompt }}<|im_end|>
+<|im_start|>assistant
+"""
+
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER num_ctx 8192
+PARAMETER num_batch 256
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|im_end|>"

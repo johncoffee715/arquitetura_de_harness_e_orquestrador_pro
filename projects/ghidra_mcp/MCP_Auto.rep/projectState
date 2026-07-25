@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROJECT>
+    <PROJECT_DATA_XML_NAME NAME="DISPLAY_DATA">
+        <SAVE_STATE />
+    </PROJECT_DATA_XML_NAME>
+    <TOOL_MANAGER ACTIVE_WORKSPACE="Workspace">
+        <WORKSPACE NAME="Workspace" ACTIVE="true">
+            <RUNNING_TOOL TOOL_NAME="Debugger">
+                <ROOT_NODE X_POS="2041" Y_POS="961" WIDTH="1440" HEIGHT="1037" EX_STATE="0">
+                    <COMPONENT_NODE TOP_INFO="0">
+                        <COMPONENT_INFO NAME="Defined Strings" OWNER="ViewStringsPlugin" TITLE="Defined Strings" ACTIVE="false" GROUP="Default" INSTANCE_ID="3592304145116733724" />
+                    </COMPONENT_NODE>
+                    <WINDOW_NODE X_POS="0" Y_POS="0" WIDTH="0" HEIGHT="0">
+                        <COMPONENT_NODE TOP_INFO="0">
+                            <COMPONENT_INFO NAME="Jython" OWNER="Jython" TITLE="Jython" ACTIVE="false" GROUP="Default" INSTANCE_ID="3741635932809517563" />
+                        </COMPONENT_NODE>
+                    </WINDOW_NODE>
+                    <WINDOW_NODE X_POS="0" Y_POS="0" WIDTH="0" HEIGHT="0">
+                        <COMPONENT_NODE TOP_INFO="0">
+                            <COMPONENT_INFO NAME="PyGhidra" OWNER="PyGhidra" TITLE="PyGhidra" ACTIVE="false" GROUP="Default" INSTANCE_ID="3741635932809517565" />
+                        </COMPONENT_NODE>
+                    </WINDOW_NODE>
+                    <WINDOW_NODE X_POS="1720" Y_POS="1006" WIDTH="400" HEIGHT="103">
+                        <COMPONENT_NODE TOP_INFO="0">
+                            <COMPONENT_INFO NAME="Breakpoint Timeline" OWNER="BreakpointTimelinePlugin" TITLE="Breakpoint Timeline" ACTIVE="false" GROUP="Default" INSTANCE_ID="3741635933358971385" />
+                        </COMPONENT_NODE>
+                    </WINDOW_NODE>
+                </ROOT_NODE>
+                <DATA_STATE />
+            </RUNNING_TOOL>
+        </WORKSPACE>
+    </TOOL_MANAGER>
+</PROJECT>

@@ -1,0 +1,35 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "storagePath": "~/.opencode-mem/data",
+  "embeddingModel": "Xenova/nomic-embed-text-v1",
+
+  "memory": {
+    "defaultScope": "project"
+  },
+  "webServerEnabled": true,
+  "webServerPort": 4747,
+
+  "autoCaptureEnabled": true,
+  "autoCaptureLanguage": "auto",
+
+  "opencodeProvider": "opencode-go",
+  "opencodeModel": "glm-5.2",
+
+  "showAutoCaptureToasts": true,
+  "showUserProfileToasts": true,
+  "showErrorToasts": true,
+
+  "userProfileAnalysisInterval": 10,
+  "maxMemories": 10,
+
+  "compaction": {
+    "enabled": true,
+    "memoryLimit": 10
+  },
+  "chatMessage": {
+    "enabled": true,
+    "maxMemories": 3,
+    "excludeCurrentSession": true,
+    "injectOn": "first"
+  }
+}
