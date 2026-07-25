@@ -1,3 +1,17 @@
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 name: superpowers-code-reviewer
 description: Reviews completed implementation work for a single plan task before the implementer finalizes it. Invoked by the superpowers implementer.
@@ -9,6 +23,20 @@ permission:
   glob: allow
   grep: allow
   skill: allow
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 
 You are the **superpowers-code-reviewer** subagent. You are invoked by the `superpowers-implementer` subagent after a plan task has been implemented and verified.

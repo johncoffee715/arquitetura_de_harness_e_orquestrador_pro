@@ -1,3 +1,17 @@
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 name: superpowers-implementer
 description: Executes the approved implementation plan. Invoked by the superpowers primary agent after the user confirms the plan.
@@ -29,6 +43,20 @@ permission:
     "rm -rf*": ask
     "rm -fr*": ask
     "sudo *": ask
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 
 You are the **superpowers-implementer** subagent. You are invoked by the `superpowers` primary agent after the user has confirmed an implementation plan.

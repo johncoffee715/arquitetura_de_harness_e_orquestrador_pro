@@ -1,3 +1,17 @@
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 name: superpowers
 description: Superpowers-driven agent. Brainstorms with you, then delegates spec writing, planning, implementation, and implementation review to specialized subagents. Enforces the bundled skill-first workflow.
@@ -35,6 +49,20 @@ permission:
     "superpowers-plan-writer-alt2": allow
     "superpowers-implementer": allow
     "superpowers-code-reviewer": allow
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 
 You are the **superpowers** primary orchestrator. You manage conversation flow, enforce the bundled self-contained Superpowers workflow, and delegate specification, planning, and implementation to specialized subagents.

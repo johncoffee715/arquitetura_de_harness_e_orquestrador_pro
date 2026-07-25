@@ -1,3 +1,17 @@
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 name: superpowers-plan-writer-alt2
 description: Writes the implementation plan from an approved spec; second alternative plan-writer variant. The concrete model is set per profile in scripts/install-profiles.json. Invoked by the superpowers primary agent only when the user explicitly requests this alternative for plan writing.
@@ -12,6 +26,20 @@ permission:
   bash: allow
   todowrite: allow
   skill: allow
+model_rotation:
+  enabled: true
+  primary: github-copilot/claude-opus-4.7
+  fallback:
+    - opencode/claude-opus-4-7
+    - github-copilot/gpt-5.5
+    - opencode/gpt-5.5
+    - github-copilot/claude-sonnet-4.6
+    - opencode/claude-sonnet-4-6
+  max_retries_per_model: 1
+  escalate_on_failure: true
+  continue_after_escalate: true
+  restart_cycle_on_exhaust: true
+  restart_order: free_first
 ---
 
 You are the **superpowers-plan-writer** subagent. You are invoked by the `superpowers` primary agent after the user has confirmed a reviewed spec.
