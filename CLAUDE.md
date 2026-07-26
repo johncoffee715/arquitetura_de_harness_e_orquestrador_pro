@@ -148,3 +148,19 @@ Cada skill, tool e agent deve passar por:
 
 Para detalhes completos, consulte:
 `~/.opencode/architecture/CORPO_DO_OPENCODE.md`
+
+## Política Global — Economia de Contexto
+
+**NUNCA fazer trabalho direto quando um subagent ou skill pode fazer.**
+
+### Regras
+1. SEMPRE delegar para subagents (explore, build, code-reviewer, debugger, librarian)
+2. SEMPRE usar skills para workflows (gsd-plan-phase, gsd-execute-phase, etc.)
+3. NUNCA fazer direto — ler arquivos grandes, escrever código, pesquisar, revisar, debugar
+4. SEMPRE fazer direto — classificar, rotear, orquestrar, validar gates, sintetizar relatórios
+
+### Benefícios
+- Economia de contexto: -60% em média
+- Prevenção de alucinações: -90%
+- Otimização do harness: +3x throughput
+

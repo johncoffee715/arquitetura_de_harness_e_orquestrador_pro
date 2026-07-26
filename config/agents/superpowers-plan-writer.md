@@ -1,3 +1,6 @@
+---
+metadata:
+  category: execution
 model_rotation:
   enabled: true
   primary: github-copilot/claude-opus-4.7
@@ -5,9 +8,16 @@ model_rotation:
     - opencode/claude-opus-4-7
     - github-copilot/gpt-5.5
     - opencode/gpt-5.5
-    - github-copilot/claude-sonnet-4.6
-    - opencode/claude-sonnet-4-6
+    - github-copilot/gemini-3.1-pro-preview
+    - opencode/gemini-3.1-pro
+    - opencode/kimi-k2.5
+    - opencode/gpt-5-nano
+    - github-copilot/claude-haiku-4.5
+    - opencode/glm-5
+    - opencode/big-pickle
   max_retries_per_model: 1
+  verify_before_use: true
+  skip_on_failure: true
   escalate_on_failure: true
   continue_after_escalate: true
   restart_cycle_on_exhaust: true
