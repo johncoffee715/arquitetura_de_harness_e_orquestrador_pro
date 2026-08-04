@@ -1,7 +1,8 @@
 {
   "$schema": "https://opencode.ai/config.json",
   "plugin": [
-    "oh-my-openagent@latest"
+    "oh-my-openagent@latest",
+    "./plugins/ecc-session-delete"
   ],
   "permission": {
     "bash": "allow",
@@ -9,7 +10,8 @@
     "edit": "allow",
     "webfetch": "allow",
     "websearch": "allow",
-    "mcp_ghidra": "allow"
+    "mcp_ghidra": "allow",
+    "mcp_openwork": "allow"
   },
   "mcp": {
     "ghidra": {
@@ -17,37 +19,83 @@
       "url": "http://127.0.0.1:8080/mcp",
       "enabled": true,
       "timeout": 300000
+    },
+    "openwork": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://api.openworklabs.com/mcp/agent",
+      "oauth": {}
     }
   },
   "provider": {
-    "local": {
+    "local-lfm": {
       "api": "openai",
-      "name": "Ollama Local (AMD ROCm)",
+      "name": "LFM 2.5-1.6B (llama.cpp :8081)",
       "options": {
-        "baseURL": "http://localhost:11434/v1",
-        "apiKey": "ollama"
+        "baseURL": "http://127.0.0.1:8081/v1",
+        "apiKey": "llamacpp"
       },
       "models": {
-        "qwen-coder-30b": {
-          "name": "qwen-coder-30b",
+        "lfm-2.5-1.6b": {
+          "name": "lfm-2.5-1.6b",
           "limit": {
-            "context": 8192,
-            "output": 4096
+            "context": 2048,
+            "output": 1024
           },
           "tool_call": true,
           "temperature": true
-        },
-        "qwen2.5-coder:7b": {
-          "name": "qwen2.5-coder:7b",
+        }
+      }
+    },
+    "local-nanbeige": {
+      "api": "openai",
+      "name": "Nanbeige 3B (llama.cpp :8082)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8082/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "nanbeige-3b": {
+          "name": "nanbeige-3b",
           "limit": {
-            "context": 32768,
-            "output": 4096
+            "context": 4096,
+            "output": 2048
           },
           "tool_call": true,
           "temperature": true
-        },
-        "qwen3.5-27b": {
-          "name": "qwen3.5-27b",
+        }
+      }
+    },
+    "local-ornith": {
+      "api": "openai",
+      "name": "Ornith 9B (llama.cpp :8083)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8083/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "ornith-9b": {
+          "name": "ornith-9b",
+          "limit": {
+            "context": 4096,
+            "output": 2048
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-bonsai": {
+      "api": "openai",
+      "name": "Bonsai 27B (llama.cpp :8084)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8084/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "bonsai-27b": {
+          "name": "bonsai-27b",
           "limit": {
             "context": 4096,
             "output": 2048

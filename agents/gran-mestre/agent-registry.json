@@ -1,20 +1,27 @@
 {
   "registry_version": "1.0.0",
-  "updated_at": "2026-07-25T20:00:00Z",
+  "updated_at": "2026-08-04T10:09:06.902152+00:00",
   "entries": [
-
     {
       "id": "gran-mestre",
       "tipo": "agent",
       "nome": "Gran-Mestre",
       "versao": "7.0.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Meta-orquestrador senior que roteia toda tarefa recebida para o pipeline/subagent correto conforme complexidade (TRIVIAL→FEATURE). Único agent primary do sistema.",
       "categoria_roteamento": "n/a",
       "modelo": {
         "primario": "github-copilot/claude-opus-4.7",
-        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5", "opencode/gpt-5.5", "github-copilot/gemini-3.1-pro-preview", "opencode/gemini-3.1-pro"],
+        "fallback": [
+          "opencode/claude-opus-4-7",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5",
+          "github-copilot/gemini-3.1-pro-preview",
+          "opencode/gemini-3.1-pro"
+        ],
         "provider": "github-copilot",
         "vram_estimada_gb": 0
       },
@@ -32,242 +39,485 @@
           "não decide tecnicamente sem passar pelo validador",
           "não continua após rollback sem aprovação do usuário"
         ],
-        "requer_aprovacao_humana_para": ["rotas CRITICAL", "mudanças em arquivos de config core"]
+        "requer_aprovacao_humana_para": [
+          "rotas CRITICAL",
+          "mudanças em arquivos de config core"
+        ]
       },
       "validacao": {
-        "gates": ["safety-sha", "attestation-gate", "completion-gate"],
+        "gates": [
+          "safety-sha",
+          "attestation-gate",
+          "completion-gate"
+        ],
         "tdd_obrigatorio": false
       },
-      "autonomia": { "modo_autonomo": true, "condicoes": ["rota <= MEDIUM"] },
-      "dependencias": {
-        "subagents": ["prometheus", "hestia", "atlas", "atena", "sisyphus"],
-        "mcps": ["mcp-obsidian-vault"],
-        "skills": ["gran-mestre", "hestia", "athena", "pxpipe"],
-        "hooks": ["safety-sha", "attestation-gate", "2-action-rule", "3-strike-protocol", "completion-gate"]
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": [
+          "rota <= MEDIUM"
+        ]
       },
-      "comandos_slash": ["/gran-mestre"],
+      "dependencias": {
+        "subagents": [
+          "prometheus",
+          "hestia",
+          "atlas",
+          "atena",
+          "sisyphus"
+        ],
+        "mcps": [
+          "mcp-obsidian-vault"
+        ],
+        "skills": [
+          "gran-mestre",
+          "hestia",
+          "athena",
+          "pxpipe"
+        ],
+        "hooks": [
+          "safety-sha",
+          "attestation-gate",
+          "2-action-rule",
+          "3-strike-protocol",
+          "completion-gate"
+        ]
+      },
+      "comandos_slash": [
+        "/gran-mestre"
+      ],
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25",
       "notas": "Único agent primary. Seniority: senior. Core: context_analyzer + capability_index + trace_context."
     },
-
     {
       "id": "prometheus",
       "tipo": "subagent",
       "nome": "Prometheus",
       "versao": "1.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Planejamento: decompõe requisitos do usuário em plano de fases com acceptance criteria. Produz PLAN.md.",
       "categoria_roteamento": "MEDIUM",
       "modelo": {
         "primario": "github-copilot/claude-opus-4.7",
-        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5"],
+        "fallback": [
+          "opencode/claude-opus-4-7",
+          "github-copilot/gpt-5.5"
+        ],
         "provider": "github-copilot",
         "vram_estimada_gb": 0
       },
-      "capacidades": ["decomposição de requisitos", "geração de PLAN.md", "análise de dependências"],
+      "capacidades": [
+        "decomposição de requisitos",
+        "geração de PLAN.md",
+        "análise de dependências"
+      ],
       "regras": {
-        "nao_faz": ["não executa código", "não edita arquivos de implementação"],
+        "nao_faz": [
+          "não executa código",
+          "não edita arquivos de implementação"
+        ],
         "escopo_maximo": "documentação e planejamento apenas"
       },
-      "validacao": { "gates": ["completion-gate"], "tdd_obrigatorio": false },
-      "autonomia": { "modo_autonomo": true, "condicoes": [] },
-      "dependencias": { "subagents": [], "mcps": [], "skills": [], "hooks": ["completion-gate"] },
+      "validacao": {
+        "gates": [
+          "completion-gate"
+        ],
+        "tdd_obrigatorio": false
+      },
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": []
+      },
+      "dependencias": {
+        "subagents": [],
+        "mcps": [],
+        "skills": [],
+        "hooks": [
+          "completion-gate"
+        ]
+      },
       "comandos_slash": [],
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25"
     },
-
     {
       "id": "hestia",
       "tipo": "subagent",
       "nome": "Héstia",
       "versao": "3.3.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Validação: valida specs, planos e entregas contra o pedido original. Nunca escreve ou revisa código, só audita conformidade.",
       "categoria_roteamento": "MEDIUM",
       "modelo": {
         "primario": "github-copilot/claude-opus-4.7",
-        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5", "opencode/gpt-5.5", "github-copilot/claude-sonnet-4.6", "opencode/claude-sonnet-4-6"],
+        "fallback": [
+          "opencode/claude-opus-4-7",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5",
+          "github-copilot/claude-sonnet-4.6",
+          "opencode/claude-sonnet-4-6"
+        ],
         "provider": "github-copilot",
         "vram_estimada_gb": 0
       },
-      "capacidades": ["validação de spec", "validação de cobertura", "validação de contratos", "validação final"],
+      "capacidades": [
+        "validação de spec",
+        "validação de cobertura",
+        "validação de contratos",
+        "validação final"
+      ],
       "regras": {
-        "nao_faz": ["não escreve código", "não edita arquivos", "não decide arquitetura"],
+        "nao_faz": [
+          "não escreve código",
+          "não edita arquivos",
+          "não decide arquitetura"
+        ],
         "escopo_maximo": "validação e conformidade apenas"
       },
-      "validacao": { "gates": ["completion-gate"], "tdd_obrigatorio": false },
-      "autonomia": { "modo_autonomo": true, "condicoes": ["modo C ativo"] },
-      "dependencias": { "subagents": [], "mcps": [], "skills": ["hestia"], "hooks": ["completion-gate"] },
-      "comandos_slash": ["/hestia"],
+      "validacao": {
+        "gates": [
+          "completion-gate"
+        ],
+        "tdd_obrigatorio": false
+      },
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": [
+          "modo C ativo"
+        ]
+      },
+      "dependencias": {
+        "subagents": [],
+        "mcps": [],
+        "skills": [
+          "hestia"
+        ],
+        "hooks": [
+          "completion-gate"
+        ]
+      },
+      "comandos_slash": [
+        "/hestia"
+      ],
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25",
       "notas": "Max validation cycles: 3. Escala ao usuário após 2x reprovado no mesmo ponto."
     },
-
     {
       "id": "atlas",
       "tipo": "subagent",
       "nome": "Atlas",
       "versao": "1.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Execução: implementa o plano aprovado. Safety protocol: SHA antes de executar, rollback se falhar. Na cascata (rota FEATURE), atua como supervisor que gerencia git e sequencia tasks.",
       "categoria_roteamento": "COMPLEX",
       "modelo": {
         "primario": "github-copilot/claude-sonnet-4.6",
-        "fallback": ["opencode/claude-sonnet-4-6", "github-copilot/gpt-5.5", "opencode/gpt-5.5"],
+        "fallback": [
+          "opencode/claude-sonnet-4-6",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5"
+        ],
         "provider": "github-copilot",
         "vram_estimada_gb": 0
       },
-      "capacidades": ["execução de plano", "gerenciamento git", "commits atômicos", "sequenciamento de tasks"],
+      "capacidades": [
+        "execução de plano",
+        "gerenciamento git",
+        "commits atômicos",
+        "sequenciamento de tasks"
+      ],
       "regras": {
-        "nao_faz": ["nunca escreve código na cascata (só gerencia)", "nunca gerencia branch (só executa TDD)"],
+        "nao_faz": [
+          "nunca escreve código na cascata (só gerencia)",
+          "nunca gerencia branch (só executa TDD)"
+        ],
         "escopo_maximo": "implementação dentro do plano aprovado"
       },
-      "validacao": { "gates": ["safety-sha", "completion-gate"], "tdd_obrigatorio": true },
-      "autonomia": { "modo_autonomo": true, "condicoes": ["plano aprovado"] },
-      "dependencias": { "subagents": [], "mcps": [], "skills": [], "hooks": ["safety-sha", "completion-gate"] },
+      "validacao": {
+        "gates": [
+          "safety-sha",
+          "completion-gate"
+        ],
+        "tdd_obrigatorio": true
+      },
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": [
+          "plano aprovado"
+        ]
+      },
+      "dependencias": {
+        "subagents": [],
+        "mcps": [],
+        "skills": [],
+        "hooks": [
+          "safety-sha",
+          "completion-gate"
+        ]
+      },
       "comandos_slash": [],
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25",
       "notas": "Supervisor/worker split: inegociável. Atlas NUNCA escreve código na cascata."
     },
-
     {
       "id": "atena",
       "tipo": "subagent",
       "nome": "Atena",
       "versao": "3.3.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Revisão macro: revisa o diff total de uma feature (coerência cross-task, acoplamento, arquitetura). Chamada 1x por pipeline, Fase 5.",
       "categoria_roteamento": "COMPLEX",
       "modelo": {
         "primario": "github-copilot/claude-opus-4.7",
-        "fallback": ["opencode/claude-opus-4-7", "github-copilot/gpt-5.5", "opencode/gpt-5.5", "github-copilot/claude-sonnet-4.6", "opencode/claude-sonnet-4-6"],
+        "fallback": [
+          "opencode/claude-opus-4-7",
+          "github-copilot/gpt-5.5",
+          "opencode/gpt-5.5",
+          "github-copilot/claude-sonnet-4.6",
+          "opencode/claude-sonnet-4-6"
+        ],
         "provider": "github-copilot",
         "vram_estimada_gb": 0
       },
-      "capacidades": ["revisão holística", "verificação de coerência", "análise de acoplamento", "alinhamento arquitetural"],
+      "capacidades": [
+        "revisão holística",
+        "verificação de coerência",
+        "análise de acoplamento",
+        "alinhamento arquitetural"
+      ],
       "regras": {
-        "nao_faz": ["não revisa task isolada", "não decide se plano estava certo", "não escreve ou corrige código"],
+        "nao_faz": [
+          "não revisa task isolada",
+          "não decide se plano estava certo",
+          "não escreve ou corrige código"
+        ],
         "escopo_maximo": "revisão macro do diff total"
       },
-      "validacao": { "gates": ["completion-gate"], "tdd_obrigatorio": false },
-      "autonomia": { "modo_autonomo": true, "condicoes": [] },
-      "dependencias": { "subagents": [], "mcps": [], "skills": ["athena"], "hooks": ["completion-gate"] },
-      "comandos_slash": ["/athena"],
+      "validacao": {
+        "gates": [
+          "completion-gate"
+        ],
+        "tdd_obrigatorio": false
+      },
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": []
+      },
+      "dependencias": {
+        "subagents": [],
+        "mcps": [],
+        "skills": [
+          "athena"
+        ],
+        "hooks": [
+          "completion-gate"
+        ]
+      },
+      "comandos_slash": [
+        "/athena"
+      ],
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25",
       "notas": "Max validation cycles: 2. Reprovação vai para Fable Judge antes de voltar ao usuário."
     },
-
     {
       "id": "sisyphus",
       "tipo": "subagent",
       "nome": "Sisyphus",
       "versao": "1.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Execução trivial: tarefas simples de 1 arquivo, <10 linhas, sem novo comportamento.",
       "categoria_roteamento": "TRIVIAL",
       "modelo": {
         "primario": "opencode/gpt-5-nano",
-        "fallback": ["github-copilot/claude-haiku-4.5"],
+        "fallback": [
+          "github-copilot/claude-haiku-4.5"
+        ],
         "provider": "opencode",
         "vram_estimada_gb": 0
       },
-      "capacidades": ["execução trivial", "edição simples", "correção rápida"],
+      "capacidades": [
+        "execução trivial",
+        "edição simples",
+        "correção rápida"
+      ],
       "regras": {
-        "nao_faz": ["não delega para subagents", "não usa skills externas"],
+        "nao_faz": [
+          "não delega para subagents",
+          "não usa skills externas"
+        ],
         "escopo_maximo": "1 arquivo, <10 linhas"
       },
-      "validacao": { "gates": ["nenhum"], "tdd_obrigatorio": false },
-      "autonomia": { "modo_autonomo": true, "condicoes": [] },
-      "dependencias": { "subagents": [], "mcps": [], "skills": [], "hooks": [] },
+      "validacao": {
+        "gates": [
+          "nenhum"
+        ],
+        "tdd_obrigatorio": false
+      },
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": []
+      },
+      "dependencias": {
+        "subagents": [],
+        "mcps": [],
+        "skills": [],
+        "hooks": []
+      },
       "comandos_slash": [],
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25"
     },
-
     {
       "id": "mcp-obsidian-vault",
       "tipo": "mcp",
       "nome": "MCP Shared Brain (Obsidian)",
       "versao": "0.3",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
-      "proposito": "Expõe o vault /mnt/dados/cerebro com IA como memória compartilhada entre agents.",
-      "modelo": { "primario": "n/a" },
-      "capacidades": ["ler notas", "escrever aprendizados", "buscar por tag/pasta"],
-      "regras": {
-        "nao_faz": ["não deleta notas existentes", "não escreve fora de wiki/aprendizados sem aprovação"]
+      "origem": {
+        "tipo_origem": "interno"
       },
-      "validacao": { "gates": ["safety-sha"] },
-      "autonomia": { "modo_autonomo": true, "condicoes": ["escrita restrita a pastas permitidas"] },
+      "proposito": "Expõe o vault /mnt/dados/cerebro com IA como memória compartilhada entre agents.",
+      "modelo": {
+        "primario": "n/a"
+      },
+      "capacidades": [
+        "ler notas",
+        "escrever aprendizados",
+        "buscar por tag/pasta"
+      ],
+      "regras": {
+        "nao_faz": [
+          "não deleta notas existentes",
+          "não escreve fora de wiki/aprendizados sem aprovação"
+        ]
+      },
+      "validacao": {
+        "gates": [
+          "safety-sha"
+        ]
+      },
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": [
+          "escrita restrita a pastas permitidas"
+        ]
+      },
       "dependencias": {},
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25"
     },
-
     {
       "id": "skill-gran-mestre",
       "tipo": "skill",
       "nome": "Gran-Mestre Skill",
       "versao": "7.0.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Skill principal do meta-orquestrador. Define pipeline 6 fases, regras de roteamento, safety protocol.",
-      "modelo": { "primario": "n/a" },
-      "capacidades": ["roteamento", "pipeline 6 fases", "safety protocol"],
-      "regras": { "nao_faz": [] },
-      "validacao": { "gates": [] },
-      "autonomia": { "modo_autonomo": true },
+      "modelo": {
+        "primario": "n/a"
+      },
+      "capacidades": [
+        "roteamento",
+        "pipeline 6 fases",
+        "safety protocol"
+      ],
+      "regras": {
+        "nao_faz": []
+      },
+      "validacao": {
+        "gates": []
+      },
+      "autonomia": {
+        "modo_autonomo": true
+      },
       "dependencias": {},
       "registrado_em": "2026-07-25",
       "atualizado_em": "2026-07-25"
     },
-
     {
       "id": "skill-hestia",
       "tipo": "skill",
       "nome": "Héstia Skill",
       "versao": "3.3.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Skill de validação. Define comandos /hestia, critérios de validação, regras de conformidade.",
-      "modelo": { "primario": "n/a" },
-      "capacidades": ["validação de spec", "validação de cobertura", "validação final"],
-      "regras": { "nao_faz": [] },
-      "validacao": { "gates": [] },
-      "autonomia": { "modo_autonomo": true },
+      "modelo": {
+        "primario": "n/a"
+      },
+      "capacidades": [
+        "validação de spec",
+        "validação de cobertura",
+        "validação final"
+      ],
+      "regras": {
+        "nao_faz": []
+      },
+      "validacao": {
+        "gates": []
+      },
+      "autonomia": {
+        "modo_autonomo": true
+      },
       "dependencias": {},
       "registrado_em": "2026-07-25",
       "atualizado_em": "2026-07-25"
     },
-
     {
       "id": "skill-athena",
       "tipo": "skill",
       "nome": "Atena Skill",
       "versao": "3.3.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno" },
+      "origem": {
+        "tipo_origem": "interno"
+      },
       "proposito": "Skill de revisão macro. Define comandos /athena, critérios de revisão, regras de coerência.",
-      "modelo": { "primario": "n/a" },
-      "capacidades": ["revisão macro", "verificação de coerência", "análise de acoplamento"],
-      "regras": { "nao_faz": [] },
-      "validacao": { "gates": [] },
-      "autonomia": { "modo_autonomo": true },
+      "modelo": {
+        "primario": "n/a"
+      },
+      "capacidades": [
+        "revisão macro",
+        "verificação de coerência",
+        "análise de acoplamento"
+      ],
+      "regras": {
+        "nao_faz": []
+      },
+      "validacao": {
+        "gates": []
+      },
+      "autonomia": {
+        "modo_autonomo": true
+      },
       "dependencias": {},
       "registrado_em": "2026-07-25",
       "atualizado_em": "2026-07-25"
     },
-
     {
       "id": "skill-pxpipe",
       "tipo": "skill",
@@ -278,36 +528,1308 @@
         "tipo_origem": "framework-externo",
         "framework": "pxpipe",
         "repo_url": "https://github.com/teamchong/pxpipe",
-        "adaptacoes": ["integrado como skill de redução de tokens"]
+        "adaptacoes": [
+          "integrado como skill de redução de tokens"
+        ]
       },
       "proposito": "Proxy local que reduz tokens de entrada renderizando contexto como imagens PNG.",
-      "modelo": { "primario": "n/a" },
-      "capacidades": ["redução de tokens", "renderização PNG", "proxy local"],
-      "regras": { "nao_faz": ["não modifica código-fonte"] },
-      "validacao": { "gates": [] },
-      "autonomia": { "modo_autonomo": true },
+      "modelo": {
+        "primario": "n/a"
+      },
+      "capacidades": [
+        "redução de tokens",
+        "renderização PNG",
+        "proxy local"
+      ],
+      "regras": {
+        "nao_faz": [
+          "não modifica código-fonte"
+        ]
+      },
+      "validacao": {
+        "gates": []
+      },
+      "autonomia": {
+        "modo_autonomo": true
+      },
       "dependencias": {},
       "registrado_em": "2026-07-25",
       "atualizado_em": "2026-07-25"
     },
-
     {
       "id": "tool-safety-sha",
       "tipo": "tool",
       "nome": "Safety SHA Hook",
       "versao": "1.0",
       "status": "ativo",
-      "origem": { "tipo_origem": "interno", "adaptacoes": ["parte do sistema ECC Autofagia"] },
+      "origem": {
+        "tipo_origem": "interno",
+        "adaptacoes": [
+          "parte do sistema ECC Autofagia"
+        ]
+      },
       "proposito": "Gera hash de verificação antes de qualquer ação que altere estado persistente.",
-      "modelo": { "primario": "n/a" },
-      "capacidades": ["hash de estado pré-ação", "comparação pós-ação"],
-      "regras": { "nao_faz": ["não bloqueia leitura, só escrita"] },
-      "validacao": { "gates": ["nenhum"] },
-      "autonomia": { "modo_autonomo": true, "condicoes": [] },
+      "modelo": {
+        "primario": "n/a"
+      },
+      "capacidades": [
+        "hash de estado pré-ação",
+        "comparação pós-ação"
+      ],
+      "regras": {
+        "nao_faz": [
+          "não bloqueia leitura, só escrita"
+        ]
+      },
+      "validacao": {
+        "gates": [
+          "nenhum"
+        ]
+      },
+      "autonomia": {
+        "modo_autonomo": true,
+        "condicoes": []
+      },
       "dependencias": {},
       "registrado_em": "2026-07-22",
       "atualizado_em": "2026-07-25"
+    },
+    {
+      "id": "oh-my-opencode-slim",
+      "tipo": "subagent",
+      "nome": "Oh My Opencode Slim",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "alvinunreal/oh-my-opencode-slim",
+        "url": "https://github.com/alvinunreal/oh-my-opencode-slim"
+      },
+      "proposito": "Lean, fine-tuned Opencode multi agent suite. Mix any models, auto-delegate tasks.",
+      "padroes_absorvidos": [
+        "[Seven specialized agents](#meet-the-pantheon)** - Orchestrator, Explorer,",
+        "[Background orchestration](docs/background-orchestration.md)** - the",
+        "[Bundled skills](#skills)** - prompt-based workflows like `deepwork`,",
+        "[Council](docs/council.md)** - run multiple models in parallel on the same",
+        "[Companion](docs/companion.md)** - an optional floating desktop window",
+        "[Multiplexer integration](docs/multiplexer-integration.md)** - watch agents",
+        "[Preset switching](docs/preset-switching.md)** - swap the whole team's",
+        "[Code intelligence tools](docs/tools.md)** - LSP tools, AST-aware search"
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-13",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "oh-my-opencode-slim",
+        "agentic-ai",
+        "oh-my-opencode"
+      ],
+      "linguagem": "TypeScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "pi",
+      "tipo": "subagent",
+      "nome": "Pi",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "earendil-works/pi",
+        "url": "https://github.com/earendil-works/pi"
+      },
+      "proposito": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI.",
+      "padroes_absorvidos": [
+        "[@earendil-works/pi-coding-agent](packages/coding-agent)**: Interactive coding agent CLI",
+        "[@earendil-works/pi-agent-core](packages/agent)**: Agent runtime with tool calling and state management",
+        "[@earendil-works/pi-ai](packages/ai)**: Unified multi-provider LLM API (OpenAI, Anthropic, Google, …)",
+        "[Visit pi.dev](https://pi.dev), the project website with demos",
+        "[Read the documentation](https://pi.dev/docs/latest), but you can also ask the agent to explain itself",
+        "Gondolin extension**: keep `pi` and provider auth on the host while routing built-in tools and `!` commands into a local Linux micro-VM.",
+        "Plain Docker**: run the whole `pi` process in a local container for simple isolation.",
+        "OpenShell**: run the whole `pi` process in a policy-controlled sandbox."
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-10",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "pi",
+        "llm",
+        "agent-loop"
+      ],
+      "linguagem": "TypeScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "ruview",
+      "tipo": "skill",
+      "nome": "Ruview",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "ruvnet/RuView",
+        "url": "https://github.com/ruvnet/RuView"
+      },
+      "proposito": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, presence detection — without video.",
+      "padroes_absorvidos": [
+        "Presence and occupancy** — detect people through walls, count them, track entries and exits",
+        "Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting",
+        "Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns",
+        "Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects",
+        "Sleep quality** — overnight monitoring with sleep stage classification and apnea screening",
+        "Camera-free pose** — estimate 17 body keypoints from WiFi CSI",
+        "Built-in model workflow** — record CSI, train models, load RVF files, and switch LoRA profiles",
+        "Local automation** — HOMECORE provides state, history, automations, signed Wasm plugins, voice hooks, and HomeKit support"
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-9",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "ruview",
+        "wifi",
+        "spatial-intelligence"
+      ],
+      "linguagem": "Rust",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "openship",
+      "tipo": "subagent",
+      "nome": "Openship",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "oblien/openship",
+        "url": "https://github.com/oblien/openship"
+      },
+      "proposito": "Self-hosted deployment platform.",
+      "padroes_absorvidos": [
+        "Desktop app** — full GUI, real-time logs, one-click everything. Best for solo.",
+        "Web dashboard** — the same UI in the browser, built for teams.",
+        "CLI** — scriptable and CI-friendly; also how you install and manage a self-hosted instance.",
+        "Openship Cloud** — managed, auto-scaling, zero setup",
+        "Any VPS** — Hetzner, DigitalOcean, Linode, OVH, and the rest",
+        "Dedicated servers** — bare metal, colo, homelab",
+        "Multi-server** — spread workloads across machines",
+        "Report it here (preferred):** [Report a vulnerability](https://github.com/oblien/openship/security/advisories/new) — a private GitHub advisory, visible only to you and the maintainers."
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-8",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "openship",
+        "agents",
+        "deployments",
+        "self-hosted"
+      ],
+      "linguagem": "TypeScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "code-review-graph",
+      "tipo": "skill",
+      "nome": "Code Review Graph",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "tirth8205/code-review-graph",
+        "url": "https://github.com/tirth8205/code-review-graph"
+      },
+      "proposito": "Local-first code intelligence graph for MCP and CLI. Persistent map of codebase so AI tools read only what matters.",
+      "padroes_absorvidos": [
+        "Small single-file changes:** Graph context can exceed naive file reads for trivial edits (see express results above). The overhead is the structural metadata that enables multi-file analysis.",
+        "Search quality (MRR 0.35):** Keyword search finds the right result in the top-4 for most queries, but ranking needs improvement. Express queries return 0 hits due to module-pattern naming.",
+        "Flow detection (33% recall):** Framework and conventional entry patterns are strongest for Python and PHP/Laravel. JavaScript and Go flow detection needs work.",
+        "Precision vs recall trade-off:** Impact analysis is deliberately conservative. It flags files that *might* be affected, which means some false positives in large dependency graphs.",
+        "[vs RAG / embeddings](docs/FAQ.md#isnt-this-just-rag) — structural edges parsed from the AST, not similarity chunks; embeddings are optional and only assist search.",
+        "[vs grep / agentic search](docs/FAQ.md#why-not-just-grep) — grep wins on one-hop lookups; the graph wins on multi-hop questions (impact radius, callers-of-callers, tests-for, affected flows).",
+        "[vs Serena, codegraph, claude-context, repomix](docs/FAQ.md#how-does-it-compare-to-serena-codegraph-claude-context-and-repomix) — factual comparison table.",
+        "[When NOT to use it](docs/FAQ.md#when-should-i-not-use-it) — small repos, trivial single-file diffs, one-off questions."
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-7",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": true,
+        "lsp": false
+      },
+      "tags": [
+        "code-review-graph",
+        "code-review",
+        "mcp"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "i-have-adhd",
+      "tipo": "skill",
+      "nome": "I Have Adhd",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "ayghri/i-have-adhd",
+        "url": "https://github.com/ayghri/i-have-adhd"
+      },
+      "proposito": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "padroes_absorvidos": [
+        "Lead with the next action: the first line is something the reader can do (command, path, or snippet first, prose after)",
+        "Number multi-step tasks with bounded, numbered steps; no step contains 'and then' twice; cut unneeded steps",
+        "End with one concrete next action the reader can do in under two minutes if anything is left open",
+        "Suppress tangents: finish the first issue, then offer the second as a separate question",
+        "Restate state every turn: the reader cannot hold 'step 3 of 5' between messages — restate progress explicitly",
+        "Give specific time estimates in concrete units (e.g. 'about 15 minutes'), never vague ('some work')",
+        "Make completed work visible: show what now works in concrete terms, do not bury wins in a recap",
+        "Matter-of-fact tone for errors: state cause and fix, never 'Uh oh' or 'There seems to be a problem'",
+        "Cap lists at 5 items: split into 'do now' vs 'later' or 'must' vs 'nice to have' past five",
+        "No preamble, no recap, no closing pleasantries: start with the answer, end when the answer is done"
+      ],
+      "numero_padraes": 10,
+      "categoria_roteamento": "baseado-em-6",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "i-have-adhd",
+        "adhd",
+        "claude-skills"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "orca",
+      "tipo": "subagent",
+      "nome": "Orca",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "stablyai/orca",
+        "url": "https://github.com/stablyai/orca"
+      },
+      "proposito": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription.",
+      "padroes_absorvidos": [
+        "[Quick open](https://www.onorca.dev/docs/model/quick-open)** — Search across worktrees, files, agents, commands, and repo context without leaving your flow.",
+        "[Account switcher &amp; usage tracking](https://www.onorca.dev/docs/agents/usage-tracking)** — See Claude and Codex usage and rate-limit resets, and hot-swap accounts without re-logging in.",
+        "[Rich repo previews](https://www.onorca.dev/docs/editing/markdown)** — Preview Markdown, images, PDFs, and repo docs in the workspace.",
+        "[Computer Use](https://www.onorca.dev/docs/cli/computer-use)** — Let agents operate desktop apps and visible UI when a workflow needs real interaction.",
+        "[Notifications and unread state](https://www.onorca.dev/docs/notifications)** — Know when an agent finishes or needs attention, then mark threads unread to come back later.",
+        "And many, many more** — we ship daily, so this list is perpetually behind. The [changelog](https://github.com/stablyai/orca/releases) is the real feature list.",
+        "[Download from onOrca.dev](https://onorca.dev/download)**",
+        "Running `orca serve` on a headless Linux server? See the [headless Linux server guide](docs/reference/headless-linux-server.md)."
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-5",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "orca",
+        "ade",
+        "parallel-agents"
+      ],
+      "linguagem": "TypeScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "omniroute",
+      "tipo": "skill",
+      "nome": "Omniroute",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "diegosouzapw/OmniRoute",
+        "url": "https://github.com/diegosouzapw/OmniRoute"
+      },
+      "proposito": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A.",
+      "padroes_absorvidos": [
+        "🗜️ Compression hardening** — default-on inflation guard, Caveman packs for DE / FR / JA + Chinese (wényán), RTK filters for Gradle & .NET. → [Compression](docs/compression/COMPRESSION_ENGINES.md)",
+        "💸 Honest flat-rate cost** — subscription / coding-plan providers read **$0** in cost analytics; budget, quota & routing keep estimating. → [API Reference](docs/reference/API_REFERENCE.md)",
+        "⚖️ Quota-Share routing** — split a shared account's quota fairly across pooled keys, work-conserving so idle slices are lent out. → [Resilience Guide](docs/architecture/RESILIENCE_GUIDE.md)",
+        "🤖 One-command CLI/agent setup** — `setup-*` configures 12+ coding tools; `omniroute launch` / `launch-codex` are zero-config. → [CLI Integrations](docs/guides/CLI-INTEGRATIONS.md)",
+        "🛰️ Remote mode** — drive a remote OmniRoute with scoped tokens (`connect` / `contexts` / `tokens`) + an `antigravity` OAuth helper for VPS installs. → [Remote Mode](docs/guides/REMOTE-MODE.md)",
+        "🕵️ Transparent MITM decrypt (TPROXY)** — capture CLIs that ignore proxy env vars, with a per-SNI CA + trust-store installer. → [MITM/TPROXY](docs/security/MITM-TPROXY-DECRYPT.md)",
+        "💸 Cost telemetry everywhere** — `X-OmniRoute-*` cost/usage headers on every endpoint, cache-HIT savings header, per-key USD spend quotas. → [API Reference](docs/reference/API_REFERENCE.md)",
+        "🧠 Memory you control** — off by default, opt-in int8 vector quantization + typed decay, per-request `x-omniroute-no-memory`. → [Memory](docs/frameworks/MEMORY.md)"
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-4",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": true,
+        "lsp": false
+      },
+      "tags": [
+        "omniroute",
+        "ai-gateway",
+        "mcp",
+        "a2a"
+      ],
+      "linguagem": "TypeScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "mattpocock-skills",
+      "tipo": "skill",
+      "nome": "Mattpocock Skills",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills"
+      },
+      "proposito": "Skills for Real Engineers. Straight from .agents directory.",
+      "padroes_absorvidos": [
+        "Ask you which issue tracker you want to use (GitHub, Linear, or local files)",
+        "Ask you what labels you apply to tickets when you triage them (`/triage` uses labels)",
+        "Ask you where you want to save any docs we create",
+        "[`/grill-me`](./skills/productivity/grill-me/SKILL.md) - for non-code uses",
+        "[`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) - same as [`/grill-me`](./skills/productivity/grill-me/SKILL.md), but adds more goodies (see below)",
+        "BEFORE**: \"There's a problem when a lesson inside a section of a course is made 'real' (i.e. given a spot in the file system)\"",
+        "AFTER**: \"There's a problem with the materialization cascade\"",
+        "[`/to-spec`](./skills/engineering/to-spec/SKILL.md) quizzes you about which modules you're touching before creating a spec"
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-3",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "mattpocock-skills",
+        "skills",
+        "engineers"
+      ],
+      "linguagem": "Shell",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "worldmonitor",
+      "tipo": "skill",
+      "nome": "Worldmonitor",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "koala73/worldmonitor",
+        "url": "https://github.com/koala73/worldmonitor"
+      },
+      "proposito": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, infrastructure tracking.",
+      "padroes_absorvidos": [
+        "500+ curated news feeds** across 15 categories, AI-synthesized into briefs",
+        "Dual map engine** — 3D globe (globe.gl) and WebGL flat map (deck.gl) with 56 map layer types",
+        "Cross-stream correlation** — military, economic, disaster, and escalation signal convergence",
+        "Country Instability Index (CII)** — server-authoritative CII v8 stress scoring for 31 Tier-1 countries",
+        "Finance radar** — 29 stock exchanges, commodities, crypto, and 7-signal market composite",
+        "Local AI** — run everything with Ollama, no API keys required",
+        "6 site variants** from a single codebase (world, tech, finance, commodity, happy, energy)",
+        "Native desktop app** (Tauri 2) for macOS, Windows, and Linux"
+      ],
+      "numero_padraes": 8,
+      "categoria_roteamento": "baseado-em-2",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "worldmonitor",
+        "geopolitics",
+        "dashboard"
+      ],
+      "linguagem": "TypeScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "ai-agent-book",
+      "tipo": "skill",
+      "nome": "Ai Agent Book",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "bojieli/ai-agent-book",
+        "url": "https://github.com/bojieli/ai-agent-book"
+      },
+      "proposito": "《深入理解 AI Agent：设计原理与工程实践》开源主仓库: 全书正文、PDF 与按章配套代码.",
+      "padroes_absorvidos": [
+        "Orquestrar conhecimento de design de agentes de IA: usar o livro como fonte de princípios de engenharia, arquitetura e padrões de design de agentes (capítulos 1-10 disponíveis como markdown)",
+        "Consultar o código de exemplo por capítulo para implementar padrões de agentes (memória, tool calling, planejamento) em projetos reais",
+        "Seguir o fluxo de build do repo (pandoc + xelatex + ElegantBook) para gerar PDFs dos documentos técnicos do projeto"
+      ],
+      "numero_padraes": 3,
+      "categoria_roteamento": "baseado-em-1",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "ai-agent-book",
+        "agent-memory",
+        "book"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "onp-spec-driven",
+      "tipo": "skill",
+      "nome": "Onp Spec Driven",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "onovoprogramador/onp-spec-driven",
+        "url": "https://github.com/onovoprogramador/onp-spec-driven"
+      },
+      "proposito": "Spec-driven development workflow.",
+      "padroes_absorvidos": [
+        "Especificação legível** em `.spec/features/<feature>/` — histórias de",
+        "Plano de execução com paralelismo opcional** — tarefas que não se tocam",
+        "Você sempre sabe o que está rolando** — antes de executar, o agente avisa",
+        "Falhou uma faixa? refaça só ela** — peça *\"reexecuta só a faixa 2\"* e o",
+        "Gestão de commits e branches feita** — 1 tarefa = 1 commit rastreável,",
+        "A prova** — ao final, a auditoria mecânica: cada critério de aceite tem um"
+      ],
+      "numero_padraes": 6,
+      "categoria_roteamento": "baseado-em-11",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "onp-spec-driven",
+        "spec-driven"
+      ],
+      "linguagem": "JavaScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "hallmark",
+      "tipo": "subagent",
+      "nome": "Hallmark",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "nutlope/hallmark",
+        "url": "https://github.com/nutlope/hallmark"
+      },
+      "proposito": "Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots.",
+      "padroes_absorvidos": [
+        "Anti-slop test: regras que impedem o fallback para defaults treinados",
+        "Variedade estrutural: briefs diferentes não compartilham o mesmo ritmo hero→features→CTA→footer",
+        "Verbs explícitos: audit/redesign/study + fluxo default",
+        "Safety rail: nunca apagar rotas/componentes sem aprovação explícita",
+        "design.md portátil com camada de recusa (não copiar pixels alheios)"
+      ],
+      "numero_padraes": 5,
+      "categoria_roteamento": "baseado-em-14",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "hallmark",
+        "design",
+        "anti-ai-slop",
+        "ui",
+        "frontend"
+      ],
+      "linguagem": "Markdown",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "book-to-skill",
+      "tipo": "subagent",
+      "nome": "Book To Skill",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "virgiliojr94/book-to-skill",
+        "url": "https://github.com/virgiliojr94/book-to-skill"
+      },
+      "proposito": "Turn any technical book PDF into a structured agent skill — frameworks, principles, techniques, anti-patterns.",
+      "padroes_absorvidos": [
+        "Extract structure, not summaries",
+        "Preserve a precisão do autor (nomes de frameworks exatos)",
+        "Depth por camadas (livro simples → skill simples; complexo → references + capítulos)",
+        "Pacote Python book_to_skill com parsers por formato",
+        "Agent-neutral: allowed-tools omitido para portabilidade entre hosts"
+      ],
+      "numero_padraes": 5,
+      "categoria_roteamento": "baseado-em-15",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "book-to-skill",
+        "skill-builder",
+        "meta-skill",
+        "study"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "context-selector",
+      "tipo": "subagent",
+      "nome": "Context Selector",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "ratel-ai/ratel",
+        "url": "https://github.com/ratel-ai/ratel"
+      },
+      "proposito": "Context engineering layer: seleciona tools/skills por turno via BM25 + disclosure progressivo — corta tokens e recupera acurácia perdida por tool-overload (sem vector DB).",
+      "padroes_absorvidos": [
+        "searchable_text: indexar so tokens semanticos (nome, descricao, valores enum) — pular type/required/braces/aspas via projecao deterministica (serde preserve_order)",
+        "BM25 como ranker default (model-free, nunca falha), k1=0.9 b=0.4 (descricoes curtas); semantic/hybrid opt-in com RRF",
+        "replace-vs-suggest: interceptar a lista de tools antes do modelo e substituir por top-K (replace default = economia direta e atribuivel)",
+        "Skills first-class {id,name,description,tags,tools,metadata,body}: tags indexadas, skills nunca esfomeadas por tool-matches; gateway e o unico loader (host nao auto-scaneia)",
+        "search_capabilities(query, topKTools, topKSkills) -> buckets independentes + invoke_tool + get_skill_content: disclosure progressivo por turno",
+        "Adaptive usage ranking: par impression/click dos traces do proprio uso (busca x tool invocada) vira relevancia confirmada pelo usuario (ADR-0014)"
+      ],
+      "numero_padraes": 6,
+      "categoria_roteamento": "baseado-em-16",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "context-selector",
+        "context-engineering",
+        "bm25",
+        "token-economy",
+        "tool-selection",
+        "skills"
+      ],
+      "linguagem": "Rust",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "dokku-deploy",
+      "tipo": "subagent",
+      "nome": "Dokku Deploy",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "dokku/dokku",
+        "url": "https://github.com/dokku/dokku"
+      },
+      "proposito": "Docker-powered mini-Heroku: deploy self-hosted via git push; app.json + plugin-hooks de ciclo de vida com triggers ordenados.",
+      "padroes_absorvidos": [
+        "Fluxo deploy: dokku apps:create <app> + git push dokku main + dokku ps:rebuild <app> (redeploy) / ps:set skip-deploy true",
+        "app.json: scripts predeploy/postdeploy + healthchecks + formations — contrato de ciclo de vida da app",
+        "Plugin-hooks prefixo numerico (00_dokku-standard, 20_events, app-json...) com triggers de ciclo de vida (pre-deploy, post-deploy...)",
+        "Command API dokku: commands (help) + subcommands/default + subcommands/<cmd> -> dokku <plugin>:<cmd>",
+        "plugin.toml obrigatorio (description+version); arquivos executaveis; adotar set -eo pipefail (dica oficial do dokku)"
+      ],
+      "numero_padraes": 5,
+      "categoria_roteamento": "baseado-em-17",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "dokku-deploy",
+        "deploy",
+        "paas",
+        "docker",
+        "self-hosted",
+        "plugin-hooks"
+      ],
+      "linguagem": "Shell",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "llama-mtp",
+      "tipo": "skill",
+      "nome": "Llama Mtp",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "ggml-org/llama.cpp",
+        "url": "https://github.com/ggml-org/llama.cpp"
+      },
+      "proposito": "Multi-Token Prediction (MTP) heads no llama.cpp (PR #22673 merged) — speculative decoding integrado, >2x speedup sem draft model separado; aplicar nos 4 modelos locais Vulkan.",
+      "padroes_absorvidos": [
+        "Multi-Token Prediction (MTP) heads no llama.cpp (PR #22673 merged) — speculative decoding integrado, >2x speedup sem draft model separado; aplicar nos 4 modelos locais Vulkan."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-20",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "llama-mtp",
+        "llm",
+        "inference",
+        "speculative-decoding"
+      ],
+      "linguagem": "C++",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "anthropics-skills",
+      "tipo": "skill",
+      "nome": "Anthropics Skills",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills"
+      },
+      "proposito": "Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness.",
+      "padroes_absorvidos": [
+        "Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-19",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "anthropics-skills",
+        "skills",
+        "mcp",
+        "design",
+        "docs"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "deepagents",
+      "tipo": "subagent",
+      "nome": "Deepagents",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "langchain-ai/deepagents",
+        "url": "https://github.com/langchain-ai/deepagents"
+      },
+      "proposito": "Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo.",
+      "padroes_absorvidos": [
+        "Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-18",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "deepagents",
+        "agent-harness",
+        "mcp",
+        "langgraph"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "last30days-skill",
+      "tipo": "skill",
+      "nome": "Last30days Skill",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "mvanhorn/last30days-skill",
+        "url": "https://github.com/mvanhorn/last30days-skill"
+      },
+      "proposito": "Pesquisa/síntese multi-plataforma 30d (Reddit, X, YouTube, HN, Polymarket) com ranking por upvotes — ADAPTADO: só a pipeline de briefing, nunca hook cru (RCE upstream corrigido).",
+      "padroes_absorvidos": [
+        "Pesquisa/síntese multi-plataforma 30d (Reddit, X, YouTube, HN, Polymarket) com ranking por upvotes — ADAPTADO: só a pipeline de briefing, nunca hook cru (RCE upstream corrigido)."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-17",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "last30days-skill",
+        "research",
+        "search",
+        "synthesis"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "cc-harness-iai",
+      "tipo": "skill",
+      "nome": "Cc Harness Iai",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "elberrd/cc-harness-iai",
+        "url": "https://github.com/elberrd/cc-harness-iai"
+      },
+      "proposito": "Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença).",
+      "padroes_absorvidos": [
+        "Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença)."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-16",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "cc-harness-iai",
+        "harness",
+        "task-decomposition",
+        "tools"
+      ],
+      "linguagem": "Shell",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "impeccable",
+      "tipo": "subagent",
+      "nome": "Impeccable",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "pbakaus/impeccable",
+        "url": "https://github.com/pbakaus/impeccable"
+      },
+      "proposito": "Design language p/ harness de IA: 23 commands (craft/init/audit/critique/polish) + 59 deterministic detector rules (sem LLM) + PRODUCT.md/DESIGN.md (contexto de audiência/marca).",
+      "padroes_absorvidos": [
+        "Design language p/ harness de IA: 23 commands (craft/init/audit/critique/polish) + 59 deterministic detector rules (sem LLM) + PRODUCT.md/DESIGN.md (contexto de audiência/marca)."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-15",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "impeccable",
+        "design",
+        "frontend",
+        "qa"
+      ],
+      "linguagem": "JavaScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "spec-kit",
+      "tipo": "skill",
+      "nome": "Spec Kit",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "github/spec-kit",
+        "url": "https://github.com/github/spec-kit"
+      },
+      "proposito": "Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente.",
+      "padroes_absorvidos": [
+        "Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-14",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "spec-kit",
+        "spec-driven",
+        "planning"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "vercel-agent-skills",
+      "tipo": "skill",
+      "nome": "Vercel Agent Skills",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "vercel-labs/agent-skills",
+        "url": "https://github.com/vercel-labs/agent-skills"
+      },
+      "proposito": "Skills oficiais Vercel: react-best-practices (40+ regras/8 categorias), web-design-guidelines, composition-patterns, vercel-optimize (auditoria custo/perf).",
+      "padroes_absorvidos": [
+        "Skills oficiais Vercel: react-best-practices (40+ regras/8 categorias), web-design-guidelines, composition-patterns, vercel-optimize (auditoria custo/perf)."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-12",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "vercel-agent-skills",
+        "react",
+        "frontend",
+        "performance"
+      ],
+      "linguagem": "Markdown",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "openwork-mcp",
+      "tipo": "subagent",
+      "nome": "Openwork Mcp",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "different-ai/openwork",
+        "url": "https://github.com/different-ai/openwork"
+      },
+      "proposito": "OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido.",
+      "padroes_absorvidos": [
+        "OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-8",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": true,
+        "lsp": false
+      },
+      "tags": [
+        "openwork-mcp",
+        "mcp",
+        "capability-catalog",
+        "a2a"
+      ],
+      "linguagem": "TypeScript",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "world-model-optimizer",
+      "tipo": "skill",
+      "nome": "World Model Optimizer",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "experientiallabs/world-model-optimizer",
+        "url": "https://github.com/experientiallabs/world-model-optimizer"
+      },
+      "proposito": "Distill traces de agentes → modelo oráculo menor + router frontier↔small (-27% custo, RouterBench). Inspiração p/ self-learning (sem licença).",
+      "padroes_absorvidos": [
+        "Distill traces de agentes → modelo oráculo menor + router frontier↔small (-27% custo, RouterBench). Inspiração p/ self-learning (sem licença)."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-6",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "world-model-optimizer",
+        "self-learning",
+        "distillation",
+        "routing"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "azure-skills",
+      "tipo": "skill",
+      "nome": "Azure Skills",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "microsoft/github-copilot-for-azure",
+        "url": "https://github.com/microsoft/github-copilot-for-azure"
+      },
+      "proposito": "Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada.",
+      "padroes_absorvidos": [
+        "Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-5",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "azure-skills",
+        "azure",
+        "cloud",
+        "diagnostics"
+      ],
+      "linguagem": "Markdown",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "awesome-llm-apps",
+      "tipo": "skill",
+      "nome": "Awesome Llm Apps",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "Shubhamsaboo/awesome-llm-apps",
+        "url": "https://github.com/Shubhamsaboo/awesome-llm-apps"
+      },
+      "proposito": "100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura.",
+      "padroes_absorvidos": [
+        "100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-5",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "awesome-llm-apps",
+        "llm-apps",
+        "rag",
+        "reference"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "coderabbit",
+      "tipo": "skill",
+      "nome": "Coderabbit",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "coderabbitai/awesome-coderabbit",
+        "url": "https://github.com/coderabbitai/awesome-coderabbit"
+      },
+      "proposito": "CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness.",
+      "padroes_absorvidos": [
+        "CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-7",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "coderabbit",
+        "code-review",
+        "pr",
+        "automation"
+      ],
+      "linguagem": "other",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "llama-mtp-concept",
+      "tipo": "skill",
+      "nome": "Llama Mtp Concept",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "tryigit/cleveres-ai",
+        "url": "https://github.com/tryigit/cleveres-ai"
+      },
+      "proposito": "Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência.",
+      "padroes_absorvidos": [
+        "Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-4",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "llama-mtp-concept",
+        "llm",
+        "mtp",
+        "architecture"
+      ],
+      "linguagem": "Markdown",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
+    },
+    {
+      "id": "unsloth-zoo",
+      "tipo": "skill",
+      "nome": "Unsloth Zoo",
+      "versao": "2.0.0",
+      "status": "ativo",
+      "origem": {
+        "tipo_origem": "framework-externo",
+        "framework": "unslothai/unsloth-zoo",
+        "url": "https://github.com/unslothai/unsloth-zoo"
+      },
+      "proposito": "Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B.",
+      "padroes_absorvidos": [
+        "Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B."
+      ],
+      "numero_padraes": 1,
+      "categoria_roteamento": "baseado-em-6",
+      "formato_orquestravel": {
+        "skill": true,
+        "subagent": true,
+        "hook": true,
+        "plugin": true,
+        "mcp": false,
+        "lsp": false
+      },
+      "tags": [
+        "unsloth-zoo",
+        "finetune",
+        "vram",
+        "dataset"
+      ],
+      "linguagem": "Python",
+      "modelo": {
+        "primario": "github-copilot/claude-opus-4.7",
+        "fallback": []
+      }
     }
-
   ]
 }
