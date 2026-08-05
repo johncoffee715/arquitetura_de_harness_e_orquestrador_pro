@@ -1,0 +1,8 @@
+# SHA-256 dos scripts ECC-Autofagia — calculado em seg 27 jul 2026 21:20:54 -03
+# Auditoria da auditoria — seção 5 preenchida
+e7585cdcdf6a97d8ad90c095ff113b348bfd25b0114bb4ab081dd58454558744  /home/johncoffee/scripts/ecc-autofagia.sh
+a072fb1b5692e9f0a9f5448cb768e32f2848993762c5bf648e51ddbc56e55ef4  /home/johncoffee/scripts/ecc-attest.sh
+b8f350824a799892b5f23265767c0a29cfc9d9dd8606049a7471d2e422c067ad  /home/johncoffee/scripts/ecc-complete.sh
+90c3fe28b755f62bcef0bbffb59510d1278887b940e8cd509f9e69632aa8b1d6  /home/johncoffee/scripts/ecc-digest.sh
+5706769c20a93899694eb6096d9a2e9940c5075ab92f9b19fbf619e0660a81fa  /home/johncoffee/scripts/attest-plan.sh
+430ee8803243a0253a565bcdf4a5d8837480313a0dd587dd83b23e33f4bf0093  /home/johncoffee/scripts/check-plan-complete.sh

@@ -1,0 +1,9 @@
+# GBNF Grammar — Resposta binária de validação (LFM 2.5 / filtros)
+# Uso: llama-server --grammar-file harness/grammars/verdict.gbnf
+# Força saídas [VÁLIDO]/[INVÁLIDO] + razão curta — ideal para o LFM 2.5
+# nas checagens binárias instantâneas (spec §Fase 1/2/4)
+
+root ::= verdict
+verdict ::= "[VÁLIDO]" | "[INVÁLIDO]" reason
+reason ::= ws ":" ws [^\n]{1,200}
+ws ::= | " " | "\t"

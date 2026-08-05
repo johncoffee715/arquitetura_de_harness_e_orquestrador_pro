@@ -1,0 +1,399 @@
+[
+  {
+    "slug": "oh-my-opencode-slim",
+    "repo": "alvinunreal/oh-my-opencode-slim",
+    "desc": "Lean, fine-tuned Opencode multi agent suite. Mix any models, auto-delegate tasks.",
+    "lang": "TypeScript",
+    "topics": [
+      "agentic-ai",
+      "oh-my-opencode"
+    ],
+    "prioridade": 13,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "pi",
+    "repo": "earendil-works/pi",
+    "desc": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI.",
+    "lang": "TypeScript",
+    "topics": [
+      "llm",
+      "agent-loop"
+    ],
+    "prioridade": 10,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "ruview",
+    "repo": "ruvnet/RuView",
+    "desc": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, presence detection — without video.",
+    "lang": "Rust",
+    "topics": [
+      "wifi",
+      "spatial-intelligence"
+    ],
+    "prioridade": 9,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "openship",
+    "repo": "oblien/openship",
+    "desc": "Self-hosted deployment platform.",
+    "lang": "TypeScript",
+    "topics": [
+      "agents",
+      "deployments",
+      "self-hosted"
+    ],
+    "prioridade": 8,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "code-review-graph",
+    "repo": "tirth8205/code-review-graph",
+    "desc": "Local-first code intelligence graph for MCP and CLI. Persistent map of codebase so AI tools read only what matters.",
+    "lang": "Python",
+    "topics": [
+      "code-review",
+      "mcp"
+    ],
+    "prioridade": 7,
+    "tipo_artefato": "mcp+skill"
+  },
+  {
+    "slug": "i-have-adhd",
+    "repo": "ayghri/i-have-adhd",
+    "desc": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+    "lang": "Python",
+    "topics": [
+      "adhd",
+      "claude-skills"
+    ],
+    "prioridade": 6,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "orca",
+    "repo": "stablyai/orca",
+    "desc": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription.",
+    "lang": "TypeScript",
+    "topics": [
+      "ade",
+      "parallel-agents"
+    ],
+    "prioridade": 5,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "omniroute",
+    "repo": "diegosouzapw/OmniRoute",
+    "desc": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A.",
+    "lang": "TypeScript",
+    "topics": [
+      "ai-gateway",
+      "mcp",
+      "a2a"
+    ],
+    "prioridade": 4,
+    "tipo_artefato": "mcp+skill"
+  },
+  {
+    "slug": "mattpocock-skills",
+    "repo": "mattpocock/skills",
+    "desc": "Skills for Real Engineers. Straight from .agents directory.",
+    "lang": "Shell",
+    "topics": [
+      "skills",
+      "engineers"
+    ],
+    "prioridade": 3,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "worldmonitor",
+    "repo": "koala73/worldmonitor",
+    "desc": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, infrastructure tracking.",
+    "lang": "TypeScript",
+    "topics": [
+      "geopolitics",
+      "dashboard"
+    ],
+    "prioridade": 2,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "ai-agent-book",
+    "repo": "bojieli/ai-agent-book",
+    "desc": "《深入理解 AI Agent：设计原理与工程实践》开源主仓库: 全书正文、PDF 与按章配套代码.",
+    "lang": "Python",
+    "topics": [
+      "agent-memory",
+      "book"
+    ],
+    "prioridade": 1,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "onp-spec-driven",
+    "repo": "onovoprogramador/onp-spec-driven",
+    "desc": "Spec-driven development workflow.",
+    "lang": "JavaScript",
+    "topics": [
+      "spec-driven"
+    ],
+    "prioridade": 11,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "hallmark",
+    "repo": "nutlope/hallmark",
+    "desc": "Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots.",
+    "lang": "Markdown",
+    "topics": [
+      "design",
+      "anti-ai-slop",
+      "ui",
+      "frontend"
+    ],
+    "prioridade": 14,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "book-to-skill",
+    "repo": "virgiliojr94/book-to-skill",
+    "desc": "Turn any technical book PDF into a structured agent skill — frameworks, principles, techniques, anti-patterns.",
+    "lang": "Python",
+    "topics": [
+      "skill-builder",
+      "meta-skill",
+      "study"
+    ],
+    "prioridade": 15,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "context-selector",
+    "repo": "ratel-ai/ratel",
+    "desc": "Context engineering layer: seleciona tools/skills por turno via BM25 + disclosure progressivo — corta tokens e recupera acurácia perdida por tool-overload (sem vector DB).",
+    "lang": "Rust",
+    "topics": [
+      "context-engineering",
+      "bm25",
+      "token-economy",
+      "tool-selection",
+      "skills"
+    ],
+    "prioridade": 16,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "dokku-deploy",
+    "repo": "dokku/dokku",
+    "desc": "Docker-powered mini-Heroku: deploy self-hosted via git push; app.json + plugin-hooks de ciclo de vida com triggers ordenados.",
+    "lang": "Shell",
+    "topics": [
+      "deploy",
+      "paas",
+      "docker",
+      "self-hosted",
+      "plugin-hooks"
+    ],
+    "prioridade": 17,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "llama-mtp",
+    "repo": "ggml-org/llama.cpp",
+    "desc": "Multi-Token Prediction (MTP) heads no llama.cpp (PR #22673 merged) — speculative decoding integrado, >2x speedup sem draft model separado; aplicar nos 4 modelos locais Vulkan.",
+    "lang": "C++",
+    "topics": [
+      "llm",
+      "inference",
+      "speculative-decoding"
+    ],
+    "prioridade": 20,
+    "tipo_artefato": "feature"
+  },
+  {
+    "slug": "anthropics-skills",
+    "repo": "anthropics/skills",
+    "desc": "Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness.",
+    "lang": "Python",
+    "topics": [
+      "skills",
+      "mcp",
+      "design",
+      "docs"
+    ],
+    "prioridade": 19,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "deepagents",
+    "repo": "langchain-ai/deepagents",
+    "desc": "Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo.",
+    "lang": "Python",
+    "topics": [
+      "agent-harness",
+      "mcp",
+      "langgraph"
+    ],
+    "prioridade": 18,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "last30days-skill",
+    "repo": "mvanhorn/last30days-skill",
+    "desc": "Pesquisa/síntese multi-plataforma 30d (Reddit, X, YouTube, HN, Polymarket) com ranking por upvotes — ADAPTADO: só a pipeline de briefing, nunca hook cru (RCE upstream corrigido).",
+    "lang": "Python",
+    "topics": [
+      "research",
+      "search",
+      "synthesis"
+    ],
+    "prioridade": 17,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "cc-harness-iai",
+    "repo": "elberrd/cc-harness-iai",
+    "desc": "Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença).",
+    "lang": "Shell",
+    "topics": [
+      "harness",
+      "task-decomposition",
+      "tools"
+    ],
+    "prioridade": 16,
+    "tipo_artefato": "skill+feature"
+  },
+  {
+    "slug": "impeccable",
+    "repo": "pbakaus/impeccable",
+    "desc": "Design language p/ harness de IA: 23 commands (craft/init/audit/critique/polish) + 59 deterministic detector rules (sem LLM) + PRODUCT.md/DESIGN.md (contexto de audiência/marca).",
+    "lang": "JavaScript",
+    "topics": [
+      "design",
+      "frontend",
+      "qa"
+    ],
+    "prioridade": 15,
+    "tipo_artefato": "skill+subagent"
+  },
+  {
+    "slug": "spec-kit",
+    "repo": "github/spec-kit",
+    "desc": "Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente.",
+    "lang": "Python",
+    "topics": [
+      "spec-driven",
+      "planning"
+    ],
+    "prioridade": 14,
+    "tipo_artefato": "skill+feature"
+  },
+  {
+    "slug": "vercel-agent-skills",
+    "repo": "vercel-labs/agent-skills",
+    "desc": "Skills oficiais Vercel: react-best-practices (40+ regras/8 categorias), web-design-guidelines, composition-patterns, vercel-optimize (auditoria custo/perf).",
+    "lang": "Markdown",
+    "topics": [
+      "react",
+      "frontend",
+      "performance"
+    ],
+    "prioridade": 12,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "openwork-mcp",
+    "repo": "different-ai/openwork",
+    "desc": "OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido.",
+    "lang": "TypeScript",
+    "topics": [
+      "mcp",
+      "capability-catalog",
+      "a2a"
+    ],
+    "prioridade": 8,
+    "tipo_artefato": "mcp+subagent"
+  },
+  {
+    "slug": "world-model-optimizer",
+    "repo": "experientiallabs/world-model-optimizer",
+    "desc": "Distill traces de agentes → modelo oráculo menor + router frontier↔small (-27% custo, RouterBench). Inspiração p/ self-learning (sem licença).",
+    "lang": "Python",
+    "topics": [
+      "self-learning",
+      "distillation",
+      "routing"
+    ],
+    "prioridade": 6,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "azure-skills",
+    "repo": "microsoft/github-copilot-for-azure",
+    "desc": "Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada.",
+    "lang": "Markdown",
+    "topics": [
+      "azure",
+      "cloud",
+      "diagnostics"
+    ],
+    "prioridade": 5,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "awesome-llm-apps",
+    "repo": "Shubhamsaboo/awesome-llm-apps",
+    "desc": "100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura.",
+    "lang": "Python",
+    "topics": [
+      "llm-apps",
+      "rag",
+      "reference"
+    ],
+    "prioridade": 5,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "coderabbit",
+    "repo": "coderabbitai/awesome-coderabbit",
+    "desc": "CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness.",
+    "lang": "other",
+    "topics": [
+      "code-review",
+      "pr",
+      "automation"
+    ],
+    "prioridade": 7,
+    "tipo_artefato": "hook+feature"
+  },
+  {
+    "slug": "llama-mtp-concept",
+    "repo": "tryigit/cleveres-ai",
+    "desc": "Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência.",
+    "lang": "Markdown",
+    "topics": [
+      "llm",
+      "mtp",
+      "architecture"
+    ],
+    "prioridade": 4,
+    "tipo_artefato": "skill"
+  },
+  {
+    "slug": "unsloth-zoo",
+    "repo": "unslothai/unsloth-zoo",
+    "desc": "Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B.",
+    "lang": "Python",
+    "topics": [
+      "finetune",
+      "vram",
+      "dataset"
+    ],
+    "prioridade": 6,
+    "tipo_artefato": "skill"
+  }
+]

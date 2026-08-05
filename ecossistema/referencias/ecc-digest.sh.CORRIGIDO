@@ -1,0 +1,135 @@
+#!/usr/bin/env bash
+# ecc-digest.sh — Autofagia Digestion Engine para ECC
+# Processa descobertas, identifica padrões e fecha ciclo de autofagia
+# Uso:
+#   ecc-digest.sh digest <dir>       — Digestão de descobertas
+#   ecc-digest.sh report <dir>       — Relatório de autofagia
+#   ecc-digest.sh gaps <dir>         — Identificar gaps
+#   ecc-digest.sh integrate <dir>    — Integrar com Gran-Mestre
+
+set -euo pipefail
+
+CMD="${1:-}"
+TARGET_DIR="${2:-.planning/autofagia-ecc}"
+ECC_LOG="${ECC_AUTOFAGIA_LOG:-$HOME/.ecc/autofagia}"
+TIMESTAMP=$(date +%Y-%m-%d_%H-%M-%S)
+
+mkdir -p "$ECC_LOG"
+
+# Funcao auxiliar para gerar JSON seguro (CORRIGIDO — auditoria 2026-07-27)
+# ANTES: python3 com interpolacao de string (CVE: injecao via $msg/$TIMESTAMP/$type)
+# DEPOIS: jq com --arg (sanitize automatico, sem injecao possivel)
+json_log() {
+    local type="$1"
+    local msg="$2"
+    # Sanitize type para uso como nome de arquivo (remove / e caracteres perigosos)
+    local safe_type="${type//\//_}"
+    safe_type="${safe_type//[^a-zA-Z0-9_-]/_}"
+    jq -n --arg ts "$TIMESTAMP" --arg t "$safe_type" --arg m "$msg" \
+        '{timestamp: $ts, type: $t, message: $m}' \
+        >> "$ECC_LOG/$safe_type.jsonl" 2>/dev/null || true
+}
+
+case "$CMD" in
+    digest)
+        echo "[ecc-digest] 🔄 Iniciando digestão de autofagia..."
+        echo "[ecc-digest] 📂 Alvo: $TARGET_DIR"
+        
+        # Verifica se task_plan.md existe
+        if [ -f "$TARGET_DIR/task_plan.md" ]; then
+            TOTAL=$(grep -c '### Phase' "$TARGET_DIR/task_plan.md" 2>/dev/null || echo 0)
+            COMPLETE=$(grep -c '\*\*Status:\*\* complete' "$TARGET_DIR/task_plan.md" 2>/dev/null || echo 0)
+            echo "[ecc-digest] 📊 Progresso: $COMPLETE/$TOTAL fases completas"
+            
+            # Registra no log de digestão (JSON seguro)
+            json_log "digest" "Progresso: $COMPLETE/$TOTAL fases"
+        fi
+        
+        # Verifica findings.md
+        if [ -f "$TARGET_DIR/findings.md" ]; then
+            GAPS=$(grep -c '🔴\|🟡' "$TARGET_DIR/findings.md" 2>/dev/null || echo 0)
+            echo "[ecc-digest] 🔍 $GAPS gaps identificados na análise"
+            json_log "gaps" "$GAPS gaps em $TARGET_DIR"
+        fi
+        
+        echo "[ecc-digest] ✅ Digestão concluída"
+        ;;
+    
+    report)
+        echo "[ecc-digest] 📋 Relatório de Autofagia"
+        echo "========================"
+        echo "Timestamp: $TIMESTAMP"
+        echo "Diretório: $TARGET_DIR"
+        echo ""
+        
+        # Estatísticas dos logs
+        DIGEST_COUNT=$(wc -l < "$ECC_LOG/digest.jsonl" 2>/dev/null || echo 0)
+        GAPS_COUNT=$(wc -l < "$ECC_LOG/gaps.jsonl" 2>/dev/null || echo 0)
+        touch "$ECC_LOG/errors.jsonl" 2>/dev/null || true
+        ERROR_COUNT=$(wc -l < "$ECC_LOG/errors.jsonl" 2>/dev/null || echo 0)
+        
+        echo "📊 Estatísticas:"
+        echo "  Digestões realizadas: $DIGEST_COUNT"
+        echo "  Gaps registrados: $GAPS_COUNT"
+        echo "  Erros: $ERROR_COUNT"
+        echo "  Tamanho total: $(du -sh "$ECC_LOG" 2>/dev/null | cut -f1)"
+        echo ""
+        
+        # Última digestão
+        if [ -f "$ECC_LOG/digest.jsonl" ]; then
+            echo "🔄 Última digestão:"
+            tail -1 "$ECC_LOG/digest.jsonl" 2>/dev/null || true
+        fi
+        ;;
+    
+    gaps)
+        echo "[ecc-digest] 🔍 Analisando gaps..."
+        
+        if [ -f "$TARGET_DIR/findings.md" ]; then
+            echo "Gaps críticos (🔴):"
+            grep -n '🔴' "$TARGET_DIR/findings.md" 2>/dev/null | sed 's/^/  /' || echo "  (nenhum)"
+            
+            echo ""
+            echo "Gaps médios (🟡):"
+            grep -n '🟡' "$TARGET_DIR/findings.md" 2>/dev/null | sed 's/^/  /' || echo "  (nenhum)"
+            
+            # Registra no log (JSON seguro)
+            json_log "gaps-analysis" "Analise de gaps em $TARGET_DIR"
+        else
+            echo "[ecc-digest] ⚠️  Nenhum findings.md encontrado em $TARGET_DIR"
+        fi
+        ;;
+    
+    integrate)
+        echo "[ecc-digest] 🔗 Integrando com Gran-Mestre..."
+        
+        GRAN_MESTRE_DIR="$HOME/.opencode/.planning/autofagia"
+        
+        if [ -d "$GRAN_MESTRE_DIR" ]; then
+            echo "[ecc-digest] ✅ Gran-Mestre autofagia encontrado em $GRAN_MESTRE_DIR"
+            
+            # Copia findings para integração
+            if [ -f "$TARGET_DIR/findings.md" ]; then
+                cp "$TARGET_DIR/findings.md" "$ECC_LOG/findings-ecc-$TIMESTAMP.md"
+                echo "[ecc-digest] ✅ Findings copiados para integração"
+            fi
+            
+            echo "[ecc-digest] 🔄 Cross-reference de gaps:"
+            if [ -f "$GRAN_MESTRE_DIR/findings.md" ] && [ -f "$TARGET_DIR/findings.md" ]; then
+                GM_GAPS=$(grep -c '🔴\|🟡' "$GRAN_MESTRE_DIR/findings.md" 2>/dev/null || echo 0)
+                ECC_GAPS=$(grep -c '🔴\|🟡' "$TARGET_DIR/findings.md" 2>/dev/null || echo 0)
+                echo "  Gran-Mestre: $GM_GAPS gaps"
+                echo "  ECC: $ECC_GAPS gaps"
+            fi
+        else
+            echo "[ecc-digest] ⚠️  Gran-Mestre autofagia não encontrado"
+        fi
+        
+        json_log "integration" "Integracao com Gran-Mestre em $TARGET_DIR"
+        ;;
+    
+    *)
+        echo "[ecc-digest] Uso: ecc-digest.sh {digest|report|gaps|integrate} [target-dir]"
+        exit 1
+        ;;
+esac

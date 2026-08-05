@@ -1,0 +1,230 @@
+{
+  "gerado_em": "2026-08-03",
+  "fontes": 12,
+  "alvos": [
+    {
+      "slug": "ai-agent-book",
+      "titulo": "深入理解 AI Agent：设计原理与工程实践",
+      "proposito": "**中文** ← 当前 · [English](docs/en/README.md) · [Español](docs/es/README.md) · [Bahasa Indonesia](docs/id/README.md) · [العربية](docs/ar/README.md) · [繁體中文（台灣）](docs/zh-TW/README.md) · [Русский](docs/ru/README.md) · [Tiếng Việt](docs/vi/README.md) · [தமிழ்](docs/ta/README.md) · [日本語](docs/ja/README.md) · [Türkçe](docs/tr/README.md) · [한국어](docs/ko/README.md) · [Magyar](docs/hu/README.md)",
+      "padroes": [
+        "Orquestrar conhecimento de design de agentes de IA: usar o livro como fonte de princípios de engenharia, arquitetura e padrões de design de agentes (capítulos 1-10 disponíveis como markdown)",
+        "Consultar o código de exemplo por capítulo para implementar padrões de agentes (memória, tool calling, planejamento) em projetos reais",
+        "Seguir o fluxo de build do repo (pandoc + xelatex + ElegantBook) para gerar PDFs dos documentos técnicos do projeto"
+      ]
+    },
+    {
+      "slug": "code-review-graph",
+      "titulo": "code-review-graph",
+      "proposito": "Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.",
+      "padroes": [
+        "Small single-file changes:** Graph context can exceed naive file reads for trivial edits (see express results above). The overhead is the structural metadata that enables multi-file analysis.",
+        "Search quality (MRR 0.35):** Keyword search finds the right result in the top-4 for most queries, but ranking needs improvement. Express queries return 0 hits due to module-pattern naming.",
+        "Flow detection (33% recall):** Framework and conventional entry patterns are strongest for Python and PHP/Laravel. JavaScript and Go flow detection needs work.",
+        "Precision vs recall trade-off:** Impact analysis is deliberately conservative. It flags files that *might* be affected, which means some false positives in large dependency graphs.",
+        "[vs RAG / embeddings](docs/FAQ.md#isnt-this-just-rag) — structural edges parsed from the AST, not similarity chunks; embeddings are optional and only assist search.",
+        "[vs grep / agentic search](docs/FAQ.md#why-not-just-grep) — grep wins on one-hop lookups; the graph wins on multi-hop questions (impact radius, callers-of-callers, tests-for, affected flows).",
+        "[vs Serena, codegraph, claude-context, repomix](docs/FAQ.md#how-does-it-compare-to-serena-codegraph-claude-context-and-repomix) — factual comparison table.",
+        "[When NOT to use it](docs/FAQ.md#when-should-i-not-use-it) — small repos, trivial single-file diffs, one-off questions."
+      ]
+    },
+    {
+      "slug": "i-have-adhd",
+      "titulo": "i-have-adhd",
+      "proposito": "Shaped response for a reader with ADHD: lead with the next action, number multi-step work, restate state every turn, suppress tangents, give specific time estimates, make wins visible. Stays on until 'stop adhd mode'.",
+      "padroes": [
+        "Lead with the next action: the first line is something the reader can do (command, path, or snippet first, prose after)",
+        "Number multi-step tasks with bounded, numbered steps; no step contains 'and then' twice; cut unneeded steps",
+        "End with one concrete next action the reader can do in under two minutes if anything is left open",
+        "Suppress tangents: finish the first issue, then offer the second as a separate question",
+        "Restate state every turn: the reader cannot hold 'step 3 of 5' between messages — restate progress explicitly",
+        "Give specific time estimates in concrete units (e.g. 'about 15 minutes'), never vague ('some work')",
+        "Make completed work visible: show what now works in concrete terms, do not bury wins in a recap",
+        "Matter-of-fact tone for errors: state cause and fix, never 'Uh oh' or 'There seems to be a problem'",
+        "Cap lists at 5 items: split into 'do now' vs 'later' or 'must' vs 'nice to have' past five",
+        "No preamble, no recap, no closing pleasantries: start with the answer, end when the answer is done"
+      ]
+    },
+    {
+      "slug": "mattpocock-skills",
+      "titulo": "Skills For Real Engineers",
+      "proposito": "My agent skills that I use every day to do real engineering - not vibe coding.",
+      "padroes": [
+        "Ask you which issue tracker you want to use (GitHub, Linear, or local files)",
+        "Ask you what labels you apply to tickets when you triage them (`/triage` uses labels)",
+        "Ask you where you want to save any docs we create",
+        "[`/grill-me`](./skills/productivity/grill-me/SKILL.md) - for non-code uses",
+        "[`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) - same as [`/grill-me`](./skills/productivity/grill-me/SKILL.md), but adds more goodies (see below)",
+        "BEFORE**: \"There's a problem when a lesson inside a section of a course is made 'real' (i.e. given a spot in the file system)\"",
+        "AFTER**: \"There's a problem with the materialization cascade\"",
+        "[`/to-spec`](./skills/engineering/to-spec/SKILL.md) quizzes you about which modules you're touching before creating a spec"
+      ]
+    },
+    {
+      "slug": "oh-my-opencode-slim",
+      "titulo": "oh-my-opencode-slim",
+      "proposito": "oh-my-opencode-slim is an agent orchestration plugin for OpenCode. It includes a built-in team of specialized agents that can scout a codebase, look up fresh documentation, review architecture, handle UI work, and execute well-scoped implementation tasks under one orchestrator.",
+      "padroes": [
+        "[Seven specialized agents](#meet-the-pantheon)** - Orchestrator, Explorer,",
+        "[Background orchestration](docs/background-orchestration.md)** - the",
+        "[Bundled skills](#skills)** - prompt-based workflows like `deepwork`,",
+        "[Council](docs/council.md)** - run multiple models in parallel on the same",
+        "[Companion](docs/companion.md)** - an optional floating desktop window",
+        "[Multiplexer integration](docs/multiplexer-integration.md)** - watch agents",
+        "[Preset switching](docs/preset-switching.md)** - swap the whole team's",
+        "[Code intelligence tools](docs/tools.md)** - LSP tools, AST-aware search"
+      ]
+    },
+    {
+      "slug": "omniroute",
+      "titulo": "🚀 OmniRoute — The Free AI Gateway",
+      "proposito": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models. Works with Claude Code, Codex, Cursor, OpenCode, Cline & Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA.",
+      "padroes": [
+        "🗜️ Compression hardening** — default-on inflation guard, Caveman packs for DE / FR / JA + Chinese (wényán), RTK filters for Gradle & .NET. → [Compression](docs/compression/COMPRESSION_ENGINES.md)",
+        "💸 Honest flat-rate cost** — subscription / coding-plan providers read **$0** in cost analytics; budget, quota & routing keep estimating. → [API Reference](docs/reference/API_REFERENCE.md)",
+        "⚖️ Quota-Share routing** — split a shared account's quota fairly across pooled keys, work-conserving so idle slices are lent out. → [Resilience Guide](docs/architecture/RESILIENCE_GUIDE.md)",
+        "🤖 One-command CLI/agent setup** — `setup-*` configures 12+ coding tools; `omniroute launch` / `launch-codex` are zero-config. → [CLI Integrations](docs/guides/CLI-INTEGRATIONS.md)",
+        "🛰️ Remote mode** — drive a remote OmniRoute with scoped tokens (`connect` / `contexts` / `tokens`) + an `antigravity` OAuth helper for VPS installs. → [Remote Mode](docs/guides/REMOTE-MODE.md)",
+        "🕵️ Transparent MITM decrypt (TPROXY)** — capture CLIs that ignore proxy env vars, with a per-SNI CA + trust-store installer. → [MITM/TPROXY](docs/security/MITM-TPROXY-DECRYPT.md)",
+        "💸 Cost telemetry everywhere** — `X-OmniRoute-*` cost/usage headers on every endpoint, cache-HIT savings header, per-key USD spend quotas. → [API Reference](docs/reference/API_REFERENCE.md)",
+        "🧠 Memory you control** — off by default, opt-in int8 vector quantization + typed decay, per-request `x-omniroute-no-memory`. → [Memory](docs/frameworks/MEMORY.md)"
+      ]
+    },
+    {
+      "slug": "onp-spec-driven",
+      "titulo": "onp-spec-driven",
+      "proposito": "**A especificação que continua verdadeira.** Você descreve a feature, o agente",
+      "padroes": [
+        "Especificação legível** em `.spec/features/<feature>/` — histórias de",
+        "Plano de execução com paralelismo opcional** — tarefas que não se tocam",
+        "Você sempre sabe o que está rolando** — antes de executar, o agente avisa",
+        "Falhou uma faixa? refaça só ela** — peça *\"reexecuta só a faixa 2\"* e o",
+        "Gestão de commits e branches feita** — 1 tarefa = 1 commit rastreável,",
+        "A prova** — ao final, a auditoria mecânica: cada critério de aceite tem um"
+      ]
+    },
+    {
+      "slug": "openship",
+      "titulo": "openship",
+      "proposito": "Open-source, self-hostable deployment platform with built-in CI/CD.<br>",
+      "padroes": [
+        "Desktop app** — full GUI, real-time logs, one-click everything. Best for solo.",
+        "Web dashboard** — the same UI in the browser, built for teams.",
+        "CLI** — scriptable and CI-friendly; also how you install and manage a self-hosted instance.",
+        "Openship Cloud** — managed, auto-scaling, zero setup",
+        "Any VPS** — Hetzner, DigitalOcean, Linode, OVH, and the rest",
+        "Dedicated servers** — bare metal, colo, homelab",
+        "Multi-server** — spread workloads across machines",
+        "Report it here (preferred):** [Report a vulnerability](https://github.com/oblien/openship/security/advisories/new) — a private GitHub advisory, visible only to you and the maintainers."
+      ]
+    },
+    {
+      "slug": "orca",
+      "titulo": "orca",
+      "proposito": "Orca is the ADE (Agent Development Environment) for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS.",
+      "padroes": [
+        "[Quick open](https://www.onorca.dev/docs/model/quick-open)** — Search across worktrees, files, agents, commands, and repo context without leaving your flow.",
+        "[Account switcher &amp; usage tracking](https://www.onorca.dev/docs/agents/usage-tracking)** — See Claude and Codex usage and rate-limit resets, and hot-swap accounts without re-logging in.",
+        "[Rich repo previews](https://www.onorca.dev/docs/editing/markdown)** — Preview Markdown, images, PDFs, and repo docs in the workspace.",
+        "[Computer Use](https://www.onorca.dev/docs/cli/computer-use)** — Let agents operate desktop apps and visible UI when a workflow needs real interaction.",
+        "[Notifications and unread state](https://www.onorca.dev/docs/notifications)** — Know when an agent finishes or needs attention, then mark threads unread to come back later.",
+        "And many, many more** — we ship daily, so this list is perpetually behind. The [changelog](https://github.com/stablyai/orca/releases) is the real feature list.",
+        "[Download from onOrca.dev](https://onorca.dev/download)**",
+        "Running `orca serve` on a headless Linux server? See the [headless Linux server guide](docs/reference/headless-linux-server.md)."
+      ]
+    },
+    {
+      "slug": "pi",
+      "titulo": "Pi Agent Harness",
+      "proposito": "This is the home of the Pi agent harness project including our self extensible coding agent.",
+      "padroes": [
+        "[@earendil-works/pi-coding-agent](packages/coding-agent)**: Interactive coding agent CLI",
+        "[@earendil-works/pi-agent-core](packages/agent)**: Agent runtime with tool calling and state management",
+        "[@earendil-works/pi-ai](packages/ai)**: Unified multi-provider LLM API (OpenAI, Anthropic, Google, …)",
+        "[Visit pi.dev](https://pi.dev), the project website with demos",
+        "[Read the documentation](https://pi.dev/docs/latest), but you can also ask the agent to explain itself",
+        "Gondolin extension**: keep `pi` and provider auth on the host while routing built-in tools and `!` commands into a local Linux micro-VM.",
+        "Plain Docker**: run the whole `pi` process in a local container for simple isolation.",
+        "OpenShell**: run the whole `pi` process in a policy-controlled sandbox."
+      ]
+    },
+    {
+      "slug": "ruview",
+      "titulo": "π RuView",
+      "proposito": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "padroes": [
+        "Presence and occupancy** — detect people through walls, count them, track entries and exits",
+        "Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting",
+        "Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns",
+        "Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects",
+        "Sleep quality** — overnight monitoring with sleep stage classification and apnea screening",
+        "Camera-free pose** — estimate 17 body keypoints from WiFi CSI",
+        "Built-in model workflow** — record CSI, train models, load RVF files, and switch LoRA profiles",
+        "Local automation** — HOMECORE provides state, history, automations, signed Wasm plugins, voice hooks, and HomeKit support"
+      ]
+    },
+    {
+      "slug": "worldmonitor",
+      "titulo": "World Monitor",
+      "proposito": "**Real-time global intelligence dashboard** — AI-powered news aggregation, geopolitical monitoring, and infrastructure tracking in a unified situational awareness interface.",
+      "padroes": [
+        "500+ curated news feeds** across 15 categories, AI-synthesized into briefs",
+        "Dual map engine** — 3D globe (globe.gl) and WebGL flat map (deck.gl) with 56 map layer types",
+        "Cross-stream correlation** — military, economic, disaster, and escalation signal convergence",
+        "Country Instability Index (CII)** — server-authoritative CII v8 stress scoring for 31 Tier-1 countries",
+        "Finance radar** — 29 stock exchanges, commodities, crypto, and 7-signal market composite",
+        "Local AI** — run everything with Ollama, no API keys required",
+        "6 site variants** from a single codebase (world, tech, finance, commodity, happy, energy)",
+        "Native desktop app** (Tauri 2) for macOS, Windows, and Linux"
+      ]
+    },
+    {
+      "slug": "hallmark",
+      "titulo": "Hallmark — Anti-AI-slop",
+      "proposito": "Skill de design opinativa: variedade estrutural (não só visual), 20 temas nomeados, verbs audit/redesign/study, design.md portátil.",
+      "padroes": [
+        "Anti-slop test: regras que impedem o fallback para defaults treinados",
+        "Variedade estrutural: briefs diferentes não compartilham o mesmo ritmo hero→features→CTA→footer",
+        "Verbs explícitos: audit/redesign/study + fluxo default",
+        "Safety rail: nunca apagar rotas/componentes sem aprovação explícita",
+        "design.md portátil com camada de recusa (não copiar pixels alheios)"
+      ]
+    },
+    {
+      "slug": "book-to-skill",
+      "titulo": "Book-to-Skill",
+      "proposito": "Meta-skill que converte livro/documento em skill acionável; extrai estrutura (frameworks, princípios, técnicas, anti-padrões), não resumo.",
+      "padroes": [
+        "Extract structure, not summaries",
+        "Preserve a precisão do autor (nomes de frameworks exatos)",
+        "Depth por camadas (livro simples → skill simples; complexo → references + capítulos)",
+        "Pacote Python book_to_skill com parsers por formato",
+        "Agent-neutral: allowed-tools omitido para portabilidade entre hosts"
+      ]
+    },
+    {
+      "slug": "context-selector",
+      "titulo": "Ratel — Context Selector (BM25 + progressive disclosure)",
+      "proposito": "Camada de context engineering: indexa tools/skills num catalogo pesquisavel e injeta por turno so o que o modelo precisa — corta tokens pagos por chamada e recupera acurácia perdida por tool-overload.",
+      "padroes": [
+        "searchable_text: indexar so tokens semanticos (nome, descricao, valores enum) — pular type/required/braces/aspas via projecao deterministica (serde preserve_order)",
+        "BM25 como ranker default (model-free, nunca falha), k1=0.9 b=0.4 (descricoes curtas); semantic/hybrid opt-in com RRF",
+        "replace-vs-suggest: interceptar a lista de tools antes do modelo e substituir por top-K (replace default = economia direta e atribuivel)",
+        "Skills first-class {id,name,description,tags,tools,metadata,body}: tags indexadas, skills nunca esfomeadas por tool-matches; gateway e o unico loader (host nao auto-scaneia)",
+        "search_capabilities(query, topKTools, topKSkills) -> buckets independentes + invoke_tool + get_skill_content: disclosure progressivo por turno",
+        "Adaptive usage ranking: par impression/click dos traces do proprio uso (busca x tool invocada) vira relevancia confirmada pelo usuario (ADR-0014)"
+      ]
+    },
+    {
+      "slug": "dokku-deploy",
+      "titulo": "Dokku — Mini-PaaS self-hosted (app.json + plugin-hooks)",
+      "proposito": "PaaS docker minima: deploy de apps via git push com buildpacks/Dockerfile, ciclo de vida versionado em app.json e plugin-hooks de triggers ordenados por prefixo numerico.",
+      "padroes": [
+        "Fluxo deploy: dokku apps:create <app> + git push dokku main + dokku ps:rebuild <app> (redeploy) / ps:set skip-deploy true",
+        "app.json: scripts predeploy/postdeploy + healthchecks + formations — contrato de ciclo de vida da app",
+        "Plugin-hooks prefixo numerico (00_dokku-standard, 20_events, app-json...) com triggers de ciclo de vida (pre-deploy, post-deploy...)",
+        "Command API dokku: commands (help) + subcommands/default + subcommands/<cmd> -> dokku <plugin>:<cmd>",
+        "plugin.toml obrigatorio (description+version); arquivos executaveis; adotar set -eo pipefail (dica oficial do dokku)"
+      ]
+    }
+  ]
+}

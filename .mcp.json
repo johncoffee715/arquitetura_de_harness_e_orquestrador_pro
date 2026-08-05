@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "obsidian": {
+      "command": "python3",
+      "args": ["/mnt/dados/harness/mcp/obsidian_server.py"],
+      "env": {
+        "OBSIDIAN_VAULT": "/mnt/dados/cerebro com IA"
+      }
+    }
+  }
+}

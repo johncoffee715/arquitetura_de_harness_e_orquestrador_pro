@@ -1,0 +1,3384 @@
+{
+  "plugins": [
+    {
+      "name": "ecc-compact-gate",
+      "description": "plugin script",
+      "version": "0.0.0",
+      "path": "/home/johncoffee/.config/opencode/plugins/ecc-compact-gate.ts",
+      "source": "/home/johncoffee/.config/opencode/plugins",
+      "type": "script"
+    },
+    {
+      "name": "ecc-hooks",
+      "description": "plugin script",
+      "version": "0.0.0",
+      "path": "/mnt/dados/opencode/plugins/ecc-hooks.ts",
+      "source": "/mnt/dados/opencode/plugins",
+      "type": "script"
+    },
+    {
+      "name": "graphify",
+      "description": "plugin script",
+      "version": "0.0.0",
+      "path": "/mnt/dados/opencode/plugins/graphify.js",
+      "source": "/mnt/dados/opencode/plugins",
+      "type": "script"
+    },
+    {
+      "name": "index",
+      "description": "plugin script",
+      "version": "0.0.0",
+      "path": "/mnt/dados/opencode/plugins/index.ts",
+      "source": "/mnt/dados/opencode/plugins",
+      "type": "script"
+    },
+    {
+      "name": "opencode-auto-continue",
+      "description": "OpenCode plugin that auto-sends 'continue' when bad request (400) errors occur",
+      "version": "1.0.0",
+      "path": "/mnt/dados/opencode/plugins/opencode-auto-continue",
+      "source": "/mnt/dados/opencode/plugins",
+      "type": "package"
+    },
+    {
+      "name": "ecc-compact-gate",
+      "description": "plugin script",
+      "version": "0.0.0",
+      "path": "/mnt/dados/opencode/config/plugins/ecc-compact-gate.ts",
+      "source": "/mnt/dados/opencode/config/plugins",
+      "type": "script"
+    },
+    {
+      "name": "oh-my-openagent@latest",
+      "description": "plugin (config)",
+      "version": "latest",
+      "path": "",
+      "source": "opencode.json",
+      "type": "config"
+    },
+    {
+      "name": "./plugins/ecc-session-delete",
+      "description": "plugin (config)",
+      "version": "latest",
+      "path": "",
+      "source": "opencode.json",
+      "type": "config"
+    }
+  ],
+  "mcp": [
+    {
+      "name": "ghidra",
+      "type": "remote",
+      "url": "http://127.0.0.1:8080/mcp",
+      "command": "",
+      "enabled": true,
+      "timeout": 300000,
+      "path": "/home/johncoffee/.config/opencode/opencode.json",
+      "description": "MCP server: ghidra"
+    },
+    {
+      "name": "openwork",
+      "type": "remote",
+      "url": "https://api.openworklabs.com/mcp/agent",
+      "command": "",
+      "enabled": true,
+      "timeout": 0,
+      "path": "/home/johncoffee/.config/opencode/opencode.json",
+      "description": "MCP server: openwork"
+    },
+    {
+      "name": "obsidian",
+      "type": "stdio",
+      "url": "",
+      "command": "python3",
+      "enabled": true,
+      "timeout": 0,
+      "path": "/home/johncoffee/.config/opencode/opencode.json",
+      "description": "MCP server: obsidian"
+    }
+  ],
+  "lsp": [
+    {
+      "name": "rust",
+      "language": "rust",
+      "command": "/usr/lib/rustup/bin/rust-analyzer",
+      "enabled": true,
+      "path": "/usr/lib/rustup/bin/rust-analyzer",
+      "detected": "binary",
+      "description": "LSP server: rust (rust-analyzer)"
+    },
+    {
+      "name": "c/c++",
+      "language": "c/c++",
+      "command": "/usr/bin/clangd",
+      "enabled": true,
+      "path": "/usr/bin/clangd",
+      "detected": "binary",
+      "description": "LSP server: c/c++ (clangd)"
+    }
+  ],
+  "hooks": [
+    {
+      "name": "gsd-check-update-worker",
+      "filename": "gsd-check-update-worker.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-check-update-worker.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-check-update-worker"
+    },
+    {
+      "name": "gsd-check-update",
+      "filename": "gsd-check-update.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-check-update.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-check-update"
+    },
+    {
+      "name": "gsd-config-reload",
+      "filename": "gsd-config-reload.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-config-reload.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-config-reload"
+    },
+    {
+      "name": "gsd-context-monitor",
+      "filename": "gsd-context-monitor.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-context-monitor.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-context-monitor"
+    },
+    {
+      "name": "gsd-cursor-post-tool",
+      "filename": "gsd-cursor-post-tool.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-cursor-post-tool.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-cursor-post-tool"
+    },
+    {
+      "name": "gsd-cursor-session-start",
+      "filename": "gsd-cursor-session-start.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-cursor-session-start.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-cursor-session-start"
+    },
+    {
+      "name": "gsd-ensure-canonical-path",
+      "filename": "gsd-ensure-canonical-path.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-ensure-canonical-path.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-ensure-canonical-path"
+    },
+    {
+      "name": "gsd-graphify-update",
+      "filename": "gsd-graphify-update.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-graphify-update.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-graphify-update"
+    },
+    {
+      "name": "gsd-phase-boundary",
+      "filename": "gsd-phase-boundary.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-phase-boundary.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-phase-boundary"
+    },
+    {
+      "name": "gsd-prompt-guard",
+      "filename": "gsd-prompt-guard.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-prompt-guard.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-prompt-guard"
+    },
+    {
+      "name": "gsd-read-guard",
+      "filename": "gsd-read-guard.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-read-guard.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-read-guard"
+    },
+    {
+      "name": "gsd-read-injection-scanner",
+      "filename": "gsd-read-injection-scanner.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-read-injection-scanner.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-read-injection-scanner"
+    },
+    {
+      "name": "gsd-session-state",
+      "filename": "gsd-session-state.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-session-state.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-session-state"
+    },
+    {
+      "name": "gsd-statusline",
+      "filename": "gsd-statusline.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-statusline.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-statusline"
+    },
+    {
+      "name": "gsd-update-banner",
+      "filename": "gsd-update-banner.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-update-banner.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-update-banner"
+    },
+    {
+      "name": "gsd-validate-commit",
+      "filename": "gsd-validate-commit.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-validate-commit.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-validate-commit"
+    },
+    {
+      "name": "gsd-workflow-guard",
+      "filename": "gsd-workflow-guard.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-workflow-guard.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-workflow-guard"
+    },
+    {
+      "name": "gsd-worktree-path-guard",
+      "filename": "gsd-worktree-path-guard.js",
+      "type": "js",
+      "path": "/home/johncoffee/.config/opencode/hooks/gsd-worktree-path-guard.js",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: gsd-worktree-path-guard"
+    },
+    {
+      "name": "helenize-ai-agent-book",
+      "filename": "helenize-ai-agent-book.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-ai-agent-book.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-ai-agent-book"
+    },
+    {
+      "name": "helenize-anthropics-skills",
+      "filename": "helenize-anthropics-skills.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-anthropics-skills.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-anthropics-skills"
+    },
+    {
+      "name": "helenize-awesome-llm-apps",
+      "filename": "helenize-awesome-llm-apps.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-awesome-llm-apps.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-awesome-llm-apps"
+    },
+    {
+      "name": "helenize-azure-skills",
+      "filename": "helenize-azure-skills.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-azure-skills.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-azure-skills"
+    },
+    {
+      "name": "helenize-book-to-skill",
+      "filename": "helenize-book-to-skill.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-book-to-skill.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-book-to-skill"
+    },
+    {
+      "name": "helenize-cc-harness-iai",
+      "filename": "helenize-cc-harness-iai.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-cc-harness-iai.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-cc-harness-iai"
+    },
+    {
+      "name": "helenize-code-review-graph",
+      "filename": "helenize-code-review-graph.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-code-review-graph.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-code-review-graph"
+    },
+    {
+      "name": "helenize-coderabbit",
+      "filename": "helenize-coderabbit.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-coderabbit.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-coderabbit"
+    },
+    {
+      "name": "helenize-context-selector",
+      "filename": "helenize-context-selector.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-context-selector.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-context-selector"
+    },
+    {
+      "name": "helenize-deepagents",
+      "filename": "helenize-deepagents.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-deepagents.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-deepagents"
+    },
+    {
+      "name": "helenize-dokku-deploy",
+      "filename": "helenize-dokku-deploy.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-dokku-deploy.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-dokku-deploy"
+    },
+    {
+      "name": "helenize-gate",
+      "filename": "helenize-gate.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-gate.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-gate"
+    },
+    {
+      "name": "helenize-hallmark",
+      "filename": "helenize-hallmark.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-hallmark.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-hallmark"
+    },
+    {
+      "name": "helenize-i-have-adhd",
+      "filename": "helenize-i-have-adhd.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-i-have-adhd.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-i-have-adhd"
+    },
+    {
+      "name": "helenize-impeccable",
+      "filename": "helenize-impeccable.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-impeccable.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-impeccable"
+    },
+    {
+      "name": "helenize-last30days-skill",
+      "filename": "helenize-last30days-skill.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-last30days-skill.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-last30days-skill"
+    },
+    {
+      "name": "helenize-llama-mtp-concept",
+      "filename": "helenize-llama-mtp-concept.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-llama-mtp-concept.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-llama-mtp-concept"
+    },
+    {
+      "name": "helenize-llama-mtp",
+      "filename": "helenize-llama-mtp.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-llama-mtp.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-llama-mtp"
+    },
+    {
+      "name": "helenize-mattpocock-skills",
+      "filename": "helenize-mattpocock-skills.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-mattpocock-skills.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-mattpocock-skills"
+    },
+    {
+      "name": "helenize-oh-my-opencode-slim",
+      "filename": "helenize-oh-my-opencode-slim.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-oh-my-opencode-slim.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-oh-my-opencode-slim"
+    },
+    {
+      "name": "helenize-omniroute",
+      "filename": "helenize-omniroute.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-omniroute.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-omniroute"
+    },
+    {
+      "name": "helenize-onp-spec-driven",
+      "filename": "helenize-onp-spec-driven.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-onp-spec-driven.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-onp-spec-driven"
+    },
+    {
+      "name": "helenize-openship",
+      "filename": "helenize-openship.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-openship.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-openship"
+    },
+    {
+      "name": "helenize-openwork-mcp",
+      "filename": "helenize-openwork-mcp.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-openwork-mcp.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-openwork-mcp"
+    },
+    {
+      "name": "helenize-orca",
+      "filename": "helenize-orca.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-orca.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-orca"
+    },
+    {
+      "name": "helenize-pi",
+      "filename": "helenize-pi.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-pi.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-pi"
+    },
+    {
+      "name": "helenize-ruview",
+      "filename": "helenize-ruview.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-ruview.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-ruview"
+    },
+    {
+      "name": "helenize-spec-kit",
+      "filename": "helenize-spec-kit.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-spec-kit.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-spec-kit"
+    },
+    {
+      "name": "helenize-unsloth-zoo",
+      "filename": "helenize-unsloth-zoo.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-unsloth-zoo.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-unsloth-zoo"
+    },
+    {
+      "name": "helenize-vercel-agent-skills",
+      "filename": "helenize-vercel-agent-skills.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-vercel-agent-skills.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-vercel-agent-skills"
+    },
+    {
+      "name": "helenize-world-model-optimizer",
+      "filename": "helenize-world-model-optimizer.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-world-model-optimizer.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-world-model-optimizer"
+    },
+    {
+      "name": "helenize-worldmonitor",
+      "filename": "helenize-worldmonitor.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/helenize-worldmonitor.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: helenize-worldmonitor"
+    },
+    {
+      "name": "managed-hooks-registry",
+      "filename": "managed-hooks-registry.cjs",
+      "type": "cjs",
+      "path": "/home/johncoffee/.config/opencode/hooks/managed-hooks-registry.cjs",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: managed-hooks-registry"
+    },
+    {
+      "name": "prepare-commit-msg",
+      "filename": "prepare-commit-msg.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/prepare-commit-msg.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: prepare-commit-msg"
+    },
+    {
+      "name": "sensitive-data-check",
+      "filename": "sensitive-data-check.sh",
+      "type": "sh",
+      "path": "/home/johncoffee/.config/opencode/hooks/sensitive-data-check.sh",
+      "source": "/home/johncoffee/.config/opencode/hooks",
+      "description": "Hook: sensitive-data-check"
+    }
+  ],
+  "skills": [
+    {
+      "name": "agent-reach",
+      "description": ">",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/agent-reach",
+      "source": "opencode"
+    },
+    {
+      "name": "ai-agent-book",
+      "description": "《深入理解 AI Agent：设计原理与工程实践》开源主仓库: 全书正文、PDF 与按章配套代码. (absorvido de bojieli/ai-agent-book)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:bojieli/ai-agent-book",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/ai-agent-book",
+      "source": "opencode"
+    },
+    {
+      "name": "anthropics-skills",
+      "description": "Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness. (absorvido de anthropics/skills)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:anthropics/skills",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/anthropics-skills",
+      "source": "opencode"
+    },
+    {
+      "name": "archify",
+      "description": "Create professional architecture, workflow, sequence, data-flow, and lifecycle/state diagrams as explorable standalone HTML files with SVG graphics, progressive MAP/READ/FULL Reading Depth, selective counted inline legends that enter a Semantic Lens with selection-triggered direction signals, directly operable and shareable stable relationships, exact-edge one-shot Relationship Preview pulses, pre-click Intent Trace path previews, two-endpoint Route Probe analysis, searchable semantic nodes, focus with Semantic Passport context, a live Semantic Radar overview, a Named Chapter Rail with pre-commit Chapter Delta Preview, Shared Anchor Handoff, a directly inspectable Story Beat Navigator with Story Follow Camera, factual Story Director Strip, and one-step Story Horizon, stable Shareable Story Moment links, a reader-controlled Live/Still Motion Governor, Presentation Stage, dependency-free pan/zoom, dark/light themes, optional motion styling, and one-click export to PNG / JPEG / WebP / SVG / WebM. Accepts plain-language descriptions or pasted Mermaid code (flowchart, sequenceDiagram, stateDiagram) and lays the diagram out from scratch in archify style. Use when the user asks for system architecture diagrams, infrastructure diagrams, cloud architecture visualizations, security diagrams, network topology, technical workflows, approval flows, runbooks, CI/CD flows, process diagrams, API call sequences, request lifecycles, data pipelines, ETL/ELT maps, PII boundaries, data lineage, state machines, lifecycle diagrams, status transitions, or asks to convert/beautify a Mermaid diagram.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "2.11",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/archify",
+      "source": "opencode"
+    },
+    {
+      "name": "athena",
+      "description": "Oracle (OmO) em modo pós-hoc com prompt adicional de coerência cross-task. Composição, não invenção — herda updates do Oracle upstream.",
+      "model": "omniroute/auto/best-free",
+      "mode": "subagent",
+      "origin": "composição:sobre:oracle(oh-my-openagent)",
+      "category": "review",
+      "version": "4.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/athena",
+      "source": "opencode"
+    },
+    {
+      "name": "awesome-llm-apps",
+      "description": "100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura. (absorvido de Shubhamsaboo/awesome-llm-apps)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:Shubhamsaboo/awesome-llm-apps",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/awesome-llm-apps",
+      "source": "opencode"
+    },
+    {
+      "name": "azure-skills",
+      "description": "Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada. (absorvido de microsoft/github-copilot-for-azure)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:microsoft/github-copilot-for-azure",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/azure-skills",
+      "source": "opencode"
+    },
+    {
+      "name": "book-to-skill",
+      "description": "Converts books and documents (PDF, EPUB, DOCX, HTML, Markdown, plain text, RTF, MOBI/AZW with Calibre) into structured agent skills, extracting frameworks, mental models, principles, techniques, and anti-patterns. Use when the user wants to study a document through GitHub Copilot CLI, Amp, or Claude Code, apply an author's frameworks while working, or build a reusable knowledge base from a file.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/book-to-skill",
+      "source": "opencode"
+    },
+    {
+      "name": "browser-use",
+      "description": "Automação de navegador via AI Agent — absorvido criticamente de browser-use/browser-use (106k★ MIT). Integra Playwright MCP + Gran-Mestre para tarefas web complexas: formulários, scraping, QA, extração.",
+      "model": "",
+      "mode": "",
+      "origin": "https://github.com/browser-use/browser-use (MIT)",
+      "category": "",
+      "version": "1.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/browser-use",
+      "source": "opencode"
+    },
+    {
+      "name": "cc-harness-iai",
+      "description": "Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença). (absorvido de elberrd/cc-harness-iai)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:elberrd/cc-harness-iai",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/cc-harness-iai",
+      "source": "opencode"
+    },
+    {
+      "name": "ck",
+      "description": "Persistent per-project memory for Claude Code. Auto-loads project context on session start, tracks sessions with git activity, and writes to native memory. Commands run deterministic Node.js scripts — behavior is consistent across model versions.",
+      "model": "",
+      "mode": "",
+      "origin": "community",
+      "category": "memory",
+      "version": "2.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/ck",
+      "source": "opencode"
+    },
+    {
+      "name": "code-review-graph",
+      "description": "Local-first code intelligence graph for MCP and CLI. Persistent map of codebase so AI tools read only what matters. (absorvido de tirth8205/code-review-graph)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:tirth8205/code-review-graph",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/code-review-graph",
+      "source": "opencode"
+    },
+    {
+      "name": "coderabbit",
+      "description": "CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness. (absorvido de coderabbitai/awesome-coderabbit)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:coderabbitai/awesome-coderabbit",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/coderabbit",
+      "source": "opencode"
+    },
+    {
+      "name": "context-compaction",
+      "description": "Regra global de compactação cognitiva a 50% de capacidade: ARMARENAR → COMPACTAR → LIMPAR antes de qualquer compactação de contexto, preservando workflow e workspace e evitando alucinações por estouro de contexto. Acionar quando a sessão atingir ~50% da janela de contexto, em PreCompact, ou ao iniciar longa sessão de retomada.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/context-compaction",
+      "source": "opencode"
+    },
+    {
+      "name": "context-selector",
+      "description": "Context engineering layer: seleciona tools/skills por turno via BM25 + disclosure progressivo — corta tokens e recupera acurácia perdida por tool-overload (sem vector DB). (absorvido de ratel-ai/ratel)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:ratel-ai/ratel",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/context-selector",
+      "source": "opencode"
+    },
+    {
+      "name": "deepagents",
+      "description": "Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo. (absorvido de langchain-ai/deepagents)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:langchain-ai/deepagents",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/deepagents",
+      "source": "opencode"
+    },
+    {
+      "name": "dev-loop",
+      "description": "Loop de desenvolvimento de 3 níveis para iterar tasks rapidamente. Nível 1 (ReAct) para tasks isoladas. Nível 2 (Mini Loop Spec-Driven) para features locais. Nível 3 (Human Loop) para épicos e ciclos longos. Escalonamento automático entre níveis.",
+      "model": "omniroute/auto/best-free",
+      "mode": "",
+      "origin": "",
+      "category": "development",
+      "version": "1.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/dev-loop",
+      "source": "opencode"
+    },
+    {
+      "name": "dokku-deploy",
+      "description": "Docker-powered mini-Heroku: deploy self-hosted via git push; app.json + plugin-hooks de ciclo de vida com triggers ordenados. (absorvido de dokku/dokku)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:dokku/dokku",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/dokku-deploy",
+      "source": "opencode"
+    },
+    {
+      "name": "fable-judge",
+      "description": "Verificação adversarial de trabalho concluído. Trata qualquer 'done' como conjunto de afirmações, re-executa cada verificação afirmada, detecta checks enfraquecidos e falsos completos. Use após qualquer agente/modelo afirmar que trabalho está completo.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "1.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/fable-judge",
+      "source": "opencode"
+    },
+    {
+      "name": "gran-mestre",
+      "description": "Meta-orquestrador do OpenCode. Ponto de entrada único para requisições do usuário. Modo MIX: delega dinamicamente subagents, skills, MCPs, LSPs e tools consultando o Registry por fase, conforme necessidade.",
+      "model": "omniroute/auto/best-free",
+      "mode": "primary",
+      "origin": "gran-mestre-original",
+      "category": "orchestration",
+      "version": "7.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/gran-mestre",
+      "source": "opencode"
+    },
+    {
+      "name": "hallmark",
+      "description": "Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots. Use when the user asks to build a new app or landing page, wants to redesign something, invokes Hallmark by name, or uses audit/redesign/study.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "1.1.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/hallmark",
+      "source": "opencode"
+    },
+    {
+      "name": "hestia",
+      "description": "Agente de validação do Gran-Mestre. Valida RASTREABILIDADE requisito↔spec — não evidência de execução (isso é fable-judge). Confere se spec/plano ainda corresponde ao pedido original.",
+      "model": "omniroute/auto/best-free",
+      "mode": "subagent",
+      "origin": "gran-mestre-original",
+      "category": "validation",
+      "version": "4.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/hestia",
+      "source": "opencode"
+    },
+    {
+      "name": "i-have-adhd",
+      "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output. (absorvido de ayghri/i-have-adhd)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:ayghri/i-have-adhd",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/i-have-adhd",
+      "source": "opencode"
+    },
+    {
+      "name": "impeccable",
+      "description": "Design language p/ harness de IA: 23 commands (craft/init/audit/critique/polish) + 59 deterministic detector rules (sem LLM) + PRODUCT.md/DESIGN.md (contexto de audiência/marca). (absorvido de pbakaus/impeccable)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:pbakaus/impeccable",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/impeccable",
+      "source": "opencode"
+    },
+    {
+      "name": "last30days-skill",
+      "description": "Pesquisa/síntese multi-plataforma 30d (Reddit, X, YouTube, HN, Polymarket) com ranking por upvotes — ADAPTADO: só a pipeline de briefing, nunca hook cru (RCE upstream corrigido). (absorvido de mvanhorn/last30days-skill)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:mvanhorn/last30days-skill",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/last30days-skill",
+      "source": "opencode"
+    },
+    {
+      "name": "llama-mtp",
+      "description": "Multi-Token Prediction (MTP) heads no llama.cpp (PR #22673 merged) — speculative decoding integrado, >2x speedup sem draft model separado; aplicar nos 4 modelos locais Vulkan. (absorvido de ggml-org/llama.cpp)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:ggml-org/llama.cpp",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/llama-mtp",
+      "source": "opencode"
+    },
+    {
+      "name": "llama-mtp-concept",
+      "description": "Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência. (absorvido de tryigit/cleveres-ai)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:tryigit/cleveres-ai",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/llama-mtp-concept",
+      "source": "opencode"
+    },
+    {
+      "name": "mattpocock-skills",
+      "description": "Skills for Real Engineers. Straight from .agents directory. (absorvido de mattpocock/skills)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:mattpocock/skills",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/mattpocock-skills",
+      "source": "opencode"
+    },
+    {
+      "name": "oh-my-opencode-slim",
+      "description": "Lean, fine-tuned Opencode multi agent suite. Mix any models, auto-delegate tasks. (absorvido de alvinunreal/oh-my-opencode-slim)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:alvinunreal/oh-my-opencode-slim",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/oh-my-opencode-slim",
+      "source": "opencode"
+    },
+    {
+      "name": "omniroute",
+      "description": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A. (absorvido de diegosouzapw/OmniRoute)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:diegosouzapw/OmniRoute",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/omniroute",
+      "source": "opencode"
+    },
+    {
+      "name": "onp-spec-driven",
+      "description": "Spec-driven development workflow. (absorvido de onovoprogramador/onp-spec-driven)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:onovoprogramador/onp-spec-driven",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/onp-spec-driven",
+      "source": "opencode"
+    },
+    {
+      "name": "openship",
+      "description": "Self-hosted deployment platform. (absorvido de oblien/openship)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:oblien/openship",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/openship",
+      "source": "opencode"
+    },
+    {
+      "name": "openwork-mcp",
+      "description": "OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido. (absorvido de different-ai/openwork)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:different-ai/openwork",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/openwork-mcp",
+      "source": "opencode"
+    },
+    {
+      "name": "orca",
+      "description": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. (absorvido de stablyai/orca)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:stablyai/orca",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/orca",
+      "source": "opencode"
+    },
+    {
+      "name": "pi",
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI. (absorvido de earendil-works/pi)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:earendil-works/pi",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/pi",
+      "source": "opencode"
+    },
+    {
+      "name": "pxpipe",
+      "description": "Proxy local que reduz tokens de entrada do Claude Code renderizando contexto volumoso como imagens PNG. Economia de 59-70% em tokens de entrada.",
+      "model": "opencode/gpt-5-nano",
+      "mode": "skill",
+      "origin": "gran-mestre-original",
+      "category": "optimization",
+      "version": "1.0.0",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/pxpipe",
+      "source": "opencode"
+    },
+    {
+      "name": "ruview",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, presence detection — without video. (absorvido de ruvnet/RuView)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:ruvnet/RuView",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/ruview",
+      "source": "opencode"
+    },
+    {
+      "name": "spec-kit",
+      "description": "Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente. (absorvido de github/spec-kit)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:github/spec-kit",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/spec-kit",
+      "source": "opencode"
+    },
+    {
+      "name": "unsloth-zoo",
+      "description": "Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B. (absorvido de unslothai/unsloth-zoo)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:unslothai/unsloth-zoo",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/unsloth-zoo",
+      "source": "opencode"
+    },
+    {
+      "name": "vercel-agent-skills",
+      "description": "Skills oficiais Vercel: react-best-practices (40+ regras/8 categorias), web-design-guidelines, composition-patterns, vercel-optimize (auditoria custo/perf). (absorvido de vercel-labs/agent-skills)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:vercel-labs/agent-skills",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/vercel-agent-skills",
+      "source": "opencode"
+    },
+    {
+      "name": "world-model-optimizer",
+      "description": "Distill traces de agentes → modelo oráculo menor + router frontier↔small (-27% custo, RouterBench). Inspiração p/ self-learning (sem licença). (absorvido de experientiallabs/world-model-optimizer)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:experientiallabs/world-model-optimizer",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/world-model-optimizer",
+      "source": "opencode"
+    },
+    {
+      "name": "worldmonitor",
+      "description": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, infrastructure tracking. (absorvido de koala73/worldmonitor)",
+      "model": "",
+      "mode": "",
+      "origin": "absorvido:koala73/worldmonitor",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/mnt/dados/opencode/skills/worldmonitor",
+      "source": "opencode"
+    },
+    {
+      "name": "caveman",
+      "description": "Skill de compressão radical de saída: reduz até 65% dos tokens gerados falando como homem das cavernas. Níveis Lite/Full/Ultra. Comandos /caveman-commit (mensagens de commit), /caveman-review (revisões em bullets), /caveman-compress (comprimir contexto). Complementa pxpipe (entrada) com economia na SAÍDA. Use quando o usuário pedir respostas curtas, economia de tokens, output conciso ou quando a sessão estiver perto do limite de contexto.",
+      "model": "qualquer",
+      "mode": "compression",
+      "origin": "caveman (JuliusBrussee) — MIT",
+      "category": "efficiency",
+      "version": "1.0.0",
+      "tags": [
+        "compressao",
+        "token",
+        "saida",
+        "output",
+        "conciso",
+        "curto",
+        "economia",
+        "caveman",
+        "resumo",
+        "bullets"
+      ],
+      "path": "/home/johncoffee/.config/opencode/skills/caveman",
+      "source": "opencode"
+    },
+    {
+      "name": "code-archaeologist",
+      "description": "Skill de exploração profunda de codebases: desenterra arquitetura, padrões, dívida técnica e riscos. Workflow Survey→Map→Detect patterns→Deep-dive→Measure→Synthesize. Produz relatório estruturado 'Codebase Assessment' com resumo executivo, score de saúde 0-10, top riscos, arquitetura e recomendações priorizadas. Use para entender codebase desconhecida, auditar arquitetura, mapear dívida técnica, onboarding ou antes de refactors grandes.",
+      "model": "qualquer",
+      "mode": "exploration",
+      "origin": "code-archaeologist (flyingwebie/claude-agents)",
+      "category": "analysis",
+      "version": "1.0.0",
+      "tags": [
+        "exploracao",
+        "arqueologia",
+        "codebase",
+        "arquitetura",
+        "auditoria",
+        "mapeamento",
+        "divida-tecnica",
+        "analise",
+        "relatorio",
+        "onboarding"
+      ],
+      "path": "/home/johncoffee/.config/opencode/skills/code-archaeologist",
+      "source": "opencode"
+    },
+    {
+      "name": "graphify",
+      "description": "Use for any question about a codebase, its architecture, file relationships, or project content — especially when graphify-out/ exists, where the question should be treated as a graphify query first. Turns any input (code, docs, papers, images, videos) into a persistent knowledge graph with god nodes, community detection, and query/path/explain tools.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/graphify",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-add-tests",
+      "description": "Generate tests for a completed phase based on UAT criteria and implementation",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-add-tests",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ai-integration-phase",
+      "description": "Generate an AI-SPEC.md design contract for phases that involve building AI systems.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ai-integration-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-audit-fix",
+      "description": "Autonomous audit-to-fix pipeline — find issues, classify, fix, test, commit",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-audit-fix",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-audit-milestone",
+      "description": "Audit milestone completion against original intent before archiving",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-audit-milestone",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-audit-uat",
+      "description": "Cross-phase audit of all outstanding UAT and verification items",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-audit-uat",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-autonomous",
+      "description": "Run all remaining phases autonomously — discuss→plan→execute per phase",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-autonomous",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-capture",
+      "description": "Capture ideas, tasks, notes, and seeds to their destination",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-capture",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-cleanup",
+      "description": "Archive accumulated phase directories from completed milestones",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-cleanup",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-code-review",
+      "description": "Review source files changed during a phase for bugs, security issues, and code quality problems",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-code-review",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-complete-milestone",
+      "description": "Archive completed milestone and prepare for next version",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-complete-milestone",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-config",
+      "description": "Configure GSD settings — workflow toggles, advanced knobs, integrations, and model profile",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-config",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-debug",
+      "description": "Systematic debugging with persistent state across context resets",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-debug",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-discuss-phase",
+      "description": "Gather phase context through adaptive questioning before planning.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-discuss-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-docs-update",
+      "description": "Generate or update project documentation verified against the codebase",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-docs-update",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-eval-review",
+      "description": "Audit an executed AI phase's evaluation coverage and produce an EVAL-REVIEW.md remediation plan.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-eval-review",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-execute-phase",
+      "description": "Execute all plans in a phase with wave-based parallelization",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-execute-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-explore",
+      "description": "Socratic ideation and idea routing — think through ideas before committing to plans",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-explore",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-extract-learnings",
+      "description": "Extract decisions, lessons, patterns, and surprises from completed phase artifacts",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-extract-learnings",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-fast",
+      "description": "Execute a trivial task inline — no subagents, no planning overhead",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-fast",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-forensics",
+      "description": "Post-mortem investigation for failed GSD workflows — diagnoses what went wrong.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-forensics",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-graphify",
+      "description": "Build, query, and inspect the project knowledge graph in .planning/graphs/",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-graphify",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-health",
+      "description": "Diagnose planning directory health and optionally repair issues",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-health",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-help",
+      "description": "Show available GSD commands and usage guide",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-help",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-import",
+      "description": "Ingest external plans with conflict detection against project decisions before writing anything.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-import",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-inbox",
+      "description": "Triage and review open GitHub issues and PRs against project templates and contribution guidelines.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-inbox",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ingest-docs",
+      "description": "Bootstrap or merge a .planning/ setup from existing ADRs, PRDs, SPECs, and docs in a repo.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ingest-docs",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-manager",
+      "description": "Interactive command center for managing multiple phases from one terminal",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-manager",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-map-codebase",
+      "description": "Analyze codebase with parallel mapper agents to produce .planning/codebase/ documents",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-map-codebase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-mempalace-capture",
+      "description": "File a phase artifact into MemPalace; mirror decision facts into its temporal KG",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-mempalace-capture",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-mempalace-recall",
+      "description": "Recall decisions, patterns, and surprises from MemPalace before planning",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-mempalace-recall",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-milestone-summary",
+      "description": "Generate a comprehensive project summary from milestone artifacts for team onboarding and review",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-milestone-summary",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-mvp-phase",
+      "description": "Plan a phase as a vertical MVP slice — user story, SPIDR splitting, then plan-phase",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-mvp-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-new-milestone",
+      "description": "Start a new milestone cycle — update PROJECT.md and route to requirements",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-new-milestone",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-new-project",
+      "description": "Initialize a new project with deep context gathering and PROJECT.md",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-new-project",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ns-context",
+      "description": "codebase intel | map graphify docs learnings mempalace",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ns-context",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ns-ideate",
+      "description": "exploration capture | explore sketch spike spec capture",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ns-ideate",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ns-manage",
+      "description": "config workspace | workstreams thread update ship inbox",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ns-manage",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ns-project",
+      "description": "project lifecycle | milestones audits summary",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ns-project",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ns-review",
+      "description": "quality gates | code review debug audit security eval ui",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ns-review",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ns-workflow",
+      "description": "workflow | discuss plan execute verify phase progress",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ns-workflow",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-pause-work",
+      "description": "Create context handoff when pausing work mid-phase",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-pause-work",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-phase",
+      "description": "CRUD for phases in ROADMAP.md — add, insert, remove, or edit phases",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-plan-phase",
+      "description": "Create detailed phase plan (PLAN.md) with verification loop",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-plan-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-plan-review-convergence",
+      "description": "Cross-AI plan convergence - replan until review concerns are resolved.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-plan-review-convergence",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-pr-branch",
+      "description": "Create a clean PR branch by filtering out .planning/ commits — ready for code review",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-pr-branch",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-profile-user",
+      "description": "Generate developer behavioral profile and create Claude-discoverable artifacts",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-profile-user",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-progress",
+      "description": "Check progress, advance workflow, or dispatch freeform intent — the unified GSD situational command",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-progress",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-quick",
+      "description": "Execute a quick task with GSD guarantees (atomic commits, state tracking) but skip optional agents",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-quick",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-resume-work",
+      "description": "Resume work from previous session with full context restoration",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-resume-work",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-review",
+      "description": "Request cross-AI peer review of phase plans from external AI CLIs",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-review",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-review-backlog",
+      "description": "Review and promote backlog items to active milestone",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-review-backlog",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-secure-phase",
+      "description": "Retroactively verify threat mitigations for a completed phase",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-secure-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-settings",
+      "description": "Configure GSD workflow toggles and model profile",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-settings",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ship",
+      "description": "Create PR, run review, and prepare for merge after verification passes",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ship",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-sketch",
+      "description": "Sketch UI/design ideas with throwaway HTML mockups, or propose what to sketch next (frontier mode)",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-sketch",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-spec-phase",
+      "description": "Clarify WHAT a phase delivers with ambiguity scoring; produces a SPEC.md before discuss-phase.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-spec-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-spike",
+      "description": "Spike an idea through experiential exploration, or propose what to spike next (frontier mode)",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-spike",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-stats",
+      "description": "Display project statistics — phases, plans, requirements, git metrics, and timeline",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-stats",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-surface",
+      "description": "Toggle which skills are surfaced — apply a profile, list, or disable a cluster without reinstall",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-surface",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-thread",
+      "description": "Manage persistent context threads for cross-session work",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-thread",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ui-phase",
+      "description": "Generate UI design contract (UI-SPEC.md) for frontend phases",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ui-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ui-review",
+      "description": "Retroactive 6-pillar visual audit of implemented frontend code",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ui-review",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-ultraplan-phase",
+      "description": "[BETA] Offload plan phase to Claude Code's ultraplan cloud; review in browser and import back.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-ultraplan-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-undo",
+      "description": "Safe git revert. Roll back phase or plan commits using the phase manifest with dependency checks.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-undo",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-update",
+      "description": "Update GSD to latest version with changelog display",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-update",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-validate-phase",
+      "description": "Retroactively audit and fill Nyquist validation gaps for a completed phase",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-validate-phase",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-verify-work",
+      "description": "Validate built features through conversational UAT",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-verify-work",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-workspace",
+      "description": "Manage GSD workspaces — create, list, or remove isolated workspace environments",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-workspace",
+      "source": "opencode"
+    },
+    {
+      "name": "gsd-workstreams",
+      "description": "Manage parallel workstreams — list, create, switch, status, progress, complete, and resume",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/gsd-workstreams",
+      "source": "opencode"
+    },
+    {
+      "name": "silverhawk",
+      "description": "Skill de visão, imagem e vídeo baseada no LFM2.5-VL-1.6B (Liquid AI). Análise visual, OCR de imagens e documentos, legendagem de vídeo em tempo real, raciocínio multimodal, grounding e captioning. Use para qualquer task de visão, imagem, OCR, vídeo ou multimodal.",
+      "model": "LFM 2.5-VL-1.6B",
+      "mode": "vision-multimodal",
+      "origin": "SilverHawk",
+      "category": "vision",
+      "version": "1.0.0",
+      "tags": [
+        "visao",
+        "imagem",
+        "video",
+        "ocr",
+        "multimodal",
+        "captioning",
+        "grounding",
+        "raciocinio-visual",
+        "audio",
+        "design",
+        "estetica",
+        "estilo",
+        "layout",
+        "ui",
+        "feedback",
+        "som",
+        "transcricao",
+        "legenda"
+      ],
+      "path": "/home/johncoffee/.config/opencode/skills/silverhawk",
+      "source": "opencode"
+    },
+    {
+      "name": "superpowers-brainstorming",
+      "description": "Superpowers workflow scope only. Use inside superpowers-* agents before design/spec/implementation work.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/superpowers-brainstorming",
+      "source": "opencode"
+    },
+    {
+      "name": "superpowers-executing-plans",
+      "description": "Superpowers workflow scope only. Use inside superpowers-* agents when carrying out an approved implementation plan.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/superpowers-executing-plans",
+      "source": "opencode"
+    },
+    {
+      "name": "superpowers-subagent-driven-development",
+      "description": "Superpowers workflow scope only. Use inside superpowers-* agents when executing implementation plans with delegated tasks.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/superpowers-subagent-driven-development",
+      "source": "opencode"
+    },
+    {
+      "name": "superpowers-using-superpowers",
+      "description": "Superpowers workflow scope only. Use inside superpowers-* agents to establish skill usage discipline for that workflow.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/superpowers-using-superpowers",
+      "source": "opencode"
+    },
+    {
+      "name": "superpowers-verification-before-completion",
+      "description": "Superpowers workflow scope only. Use inside superpowers-* agents before any completion or success claim.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/superpowers-verification-before-completion",
+      "source": "opencode"
+    },
+    {
+      "name": "superpowers-writing-plans",
+      "description": "Superpowers workflow scope only. Use inside superpowers-* agents after approved spec to write implementation plans.",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.config/opencode/skills/superpowers-writing-plans",
+      "source": "opencode"
+    },
+    {
+      "name": "ecc-autofagia",
+      "description": "Autofagia (self-digestion) para ECC — v2 refatorada pela auditoria v1.0-audit (portável, segura, observável)",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "category": "",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.claude/skills/ecc-autofagia",
+      "source": ".claude"
+    },
+    {
+      "name": "security-review",
+      "description": "AI-powered codebase security scanner that reasons about code like a security researcher — tracing data flows, understanding component interactions, and catching vulnerabilities that pattern-matching tools miss. Use this skill when asked to scan code for security vulnerabilities, find bugs, check for SQL injection, XSS, command injection, exposed API keys, hardcoded secrets, insecure dependencies, access control issues, or any request like \"is my code secure?\", \"review for security issues\", \"audit this codebase\", or \"check for vulnerabilities\". Covers injection flaws, authentication and access control bugs, secrets exposure, weak cryptography, insecure dependencies, and business logic issues across JavaScript, TypeScript, Python, Java, PHP, Go, Ruby, and Rust.",
+      "model": "",
+      "mode": "",
+      "origin": "builtin",
+      "category": "security",
+      "version": "",
+      "tags": [],
+      "path": "/home/johncoffee/.claude/skills/security-review",
+      "source": ".claude"
+    }
+  ],
+  "subagents": [
+    {
+      "name": "ai-agent-book",
+      "description": "Subagent helenizado de bojieli/ai-agent-book: 《深入理解 AI Agent：设计原理与工程实践》开源主仓库: 全书正文、PDF 与按章配套代码.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/ai-agent-book.md",
+      "source": "local"
+    },
+    {
+      "name": "anthropics-skills",
+      "description": "Subagent helenizado de anthropics/skills: Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/anthropics-skills.md",
+      "source": "local"
+    },
+    {
+      "name": "awesome-llm-apps",
+      "description": "Subagent helenizado de Shubhamsaboo/awesome-llm-apps: 100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/awesome-llm-apps.md",
+      "source": "local"
+    },
+    {
+      "name": "azure-skills",
+      "description": "Subagent helenizado de microsoft/github-copilot-for-azure: Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/azure-skills.md",
+      "source": "local"
+    },
+    {
+      "name": "book-to-skill",
+      "description": "Subagent helenizado de virgiliojr94/book-to-skill: Turn any technical book PDF into a structured agent skill — frameworks, principles, techniques, anti-patterns.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/book-to-skill.md",
+      "source": "local"
+    },
+    {
+      "name": "cc-harness-iai",
+      "description": "Subagent helenizado de elberrd/cc-harness-iai: Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença).",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/cc-harness-iai.md",
+      "source": "local"
+    },
+    {
+      "name": "code-review-graph",
+      "description": "Subagent helenizado de tirth8205/code-review-graph: Local-first code intelligence graph for MCP and CLI. Persistent map of codebase so AI tools read only what matters.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/code-review-graph.md",
+      "source": "local"
+    },
+    {
+      "name": "coderabbit",
+      "description": "Subagent helenizado de coderabbitai/awesome-coderabbit: CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/coderabbit.md",
+      "source": "local"
+    },
+    {
+      "name": "context-selector",
+      "description": "Subagent helenizado de ratel-ai/ratel: Context engineering layer: seleciona tools/skills por turno via BM25 + disclosure progressivo — corta tokens e recupera acurácia perdida por tool-overload (sem vector DB).",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/context-selector.md",
+      "source": "local"
+    },
+    {
+      "name": "deepagents",
+      "description": "Subagent helenizado de langchain-ai/deepagents: Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/deepagents.md",
+      "source": "local"
+    },
+    {
+      "name": "dokku-deploy",
+      "description": "Subagent helenizado de dokku/dokku: Docker-powered mini-Heroku: deploy self-hosted via git push; app.json + plugin-hooks de ciclo de vida com triggers ordenados.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/dokku-deploy.md",
+      "source": "local"
+    },
+    {
+      "name": "executor-deep",
+      "description": "Subagent helenizado de different-ai/openwork (executor-deep): executor de raciocínio profundo para features multi-arquivo, refactors e debugging espinhoso. Invocado pelo orquestrador (Gran-Mestre) quando a task é complexa demais para o executor padrão ou após 2 rodadas de reparo falharem.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/executor-deep.md",
+      "source": "local"
+    },
+    {
+      "name": "fallow-lsp-reviewer",
+      "description": "Subagent helenizado de fallow-rs/fallow (lsp-reviewer + rules/lsp-server): revisa o servidor LSP — protocolo, diagnósticos, code actions, hover e integração com ferramentas que consomem LSP.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/fallow-lsp-reviewer.md",
+      "source": "local"
+    },
+    {
+      "name": "fallow-mcp-reviewer",
+      "description": "Subagent helenizado de fallow-rs/fallow (mcp-reviewer): revisa definições de ferramentas MCP — nomes, design de parâmetros, estrutura de resposta e ergonomia para agentes de IA.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/fallow-mcp-reviewer.md",
+      "source": "local"
+    },
+    {
+      "name": "gran-mestre",
+      "description": "Meta-orquestrador senior do OpenCode. Ponto de entrada único para requisições do usuário. Analisa complexidade, roteia (TRIVIAL→FEATURE), delega para agents especializados. Gerencia pipeline completo (6 fases) com safety protocol, rollback automático e Shared Brain.",
+      "model": "local-ornith/ornith-9b",
+      "mode": "primary",
+      "origin": "absorvido:<nome>.",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gran-mestre.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-advisor-researcher",
+      "description": "Researches a single gray area decision and returns a structured comparison table with rationale. Spawned by discuss-phase advisor mode.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-advisor-researcher.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-ai-researcher",
+      "description": "Researches a chosen AI framework's official docs to produce implementation-ready guidance — best practices, syntax, core patterns, and pitfalls distilled for the specific use case. Writes the Framework Quick Reference and Implementation Guidance sections of AI-SPEC.md. Spawned by /gsd-ai-integration-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-ai-researcher.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-assumptions-analyzer",
+      "description": "Deeply analyzes codebase for a phase and returns structured assumptions with evidence. Spawned by discuss-phase assumptions mode.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-assumptions-analyzer.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-code-fixer",
+      "description": "Applies fixes to code review findings from REVIEW.md. Reads source files, applies intelligent fixes, and commits each fix atomically. Spawned by /gsd-code-review --fix.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-code-fixer.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-code-reviewer",
+      "description": "Reviews source files for bugs, security issues, and code quality problems. Produces structured REVIEW.md with severity-classified findings. Spawned by /gsd-code-review.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-code-reviewer.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-codebase-mapper",
+      "description": "Explores codebase and writes structured analysis documents. Spawned by map-codebase with a focus area (tech, arch, quality, concerns). Writes documents directly to reduce orchestrator context load.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-codebase-mapper.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-debug-session-manager",
+      "description": "Manages multi-cycle /gsd-debug checkpoint and continuation loop in isolated context. Spawns gsd-debugger agents, handles checkpoints via question, dispatches specialist skills, applies fixes. Returns compact summary to main context. Spawned by /gsd-debug command.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-debug-session-manager.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-debugger",
+      "description": "Investigates bugs using scientific method, manages debug sessions, handles checkpoints. Spawned by /gsd-debug orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-debugger.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-doc-classifier",
+      "description": "Classifies a single planning document as ADR, PRD, SPEC, DOC, or UNKNOWN. Extracts title, scope summary, and cross-references. Spawned in parallel by /gsd-ingest-docs. Writes a JSON classification file and returns a one-line confirmation.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-doc-classifier.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-doc-synthesizer",
+      "description": "Synthesizes classified planning docs into a single consolidated context. Applies precedence rules, detects cross-ref cycles, enforces LOCKED-vs-LOCKED hard-blocks, and writes INGEST-CONFLICTS.md with three buckets (auto-resolved, competing-variants, unresolved-blockers). Spawned by /gsd-ingest-docs.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-doc-synthesizer.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-doc-verifier",
+      "description": "Verifies factual claims in generated docs against the live codebase. Returns structured JSON per doc.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-doc-verifier.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-doc-writer",
+      "description": "Writes and updates project documentation. Spawned with a doc_assignment block specifying doc type, mode (create/update/supplement), and project context.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-doc-writer.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-domain-researcher",
+      "description": "Researches the business domain and real-world application context of the AI system being built. Surfaces domain expert evaluation criteria, industry-specific failure modes, regulatory context, and what \"good\" looks like for practitioners in this field — before the eval-planner turns it into measurable rubrics. Spawned by /gsd-ai-integration-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-domain-researcher.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-eval-auditor",
+      "description": "Retroactive audit of an implemented AI phase's evaluation coverage. Checks implementation against the AI-SPEC.md evaluation plan. Scores each eval dimension as COVERED/PARTIAL/MISSING. Produces a scored EVAL-REVIEW.md with findings, gaps, and remediation guidance. Spawned by /gsd-eval-review orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-eval-auditor.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-eval-planner",
+      "description": "Designs a structured evaluation strategy for an AI phase. Identifies critical failure modes, selects eval dimensions with rubrics, recommends tooling, and specifies the reference dataset. Writes the Evaluation Strategy, Guardrails, and Production Monitoring sections of AI-SPEC.md. Spawned by /gsd-ai-integration-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-eval-planner.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-executor",
+      "description": "Executes GSD plans with atomic commits, deviation handling, checkpoint protocols, and state management. Spawned by execute-phase orchestrator or execute-plan command.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-executor.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-framework-selector",
+      "description": "Presents an interactive decision matrix to surface the right AI/LLM framework for the user's specific use case. Produces a scored recommendation with rationale. Spawned by /gsd-ai-integration-phase and /gsd-select-framework orchestrators.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-framework-selector.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-integration-checker",
+      "description": "Verifies cross-phase integration and E2E flows. Checks that phases connect properly and user workflows complete end-to-end.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-integration-checker.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-intel-updater",
+      "description": "Analyzes codebase and writes structured intel files to .planning/intel/.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-intel-updater.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-mempalace-curator",
+      "description": "Ship-time MemPalace curation — writes the session diary, proposes/creates cross-project tunnels, mirrors extract-learnings into the temporal KG, and runs wing-scoped drawer pruning. Spawned at ship:post by the mempalace capability.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-mempalace-curator.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-nyquist-auditor",
+      "description": "Fills Nyquist validation gaps by generating tests and verifying coverage for phase requirements",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-nyquist-auditor.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-pattern-mapper",
+      "description": "Analyzes codebase for existing patterns and produces PATTERNS.md mapping new files to closest analogs. Read-only codebase analysis spawned by /gsd-plan-phase orchestrator before planning.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-pattern-mapper.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-phase-researcher",
+      "description": "Researches how to implement a phase before planning. Produces RESEARCH.md consumed by gsd-planner. Spawned by /gsd-plan-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-phase-researcher.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-plan-checker",
+      "description": "Verifies plans will achieve phase goal before execution. Goal-backward analysis of plan quality. Spawned by /gsd-plan-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-plan-checker.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-planner",
+      "description": "Creates executable phase plans with task breakdown, dependency analysis, and goal-backward verification. Spawned by /gsd-plan-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-planner.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-project-researcher",
+      "description": "Researches domain ecosystem before roadmap creation. Produces files in .planning/research/ consumed during roadmap creation. Spawned by /gsd-new-project or /gsd-new-milestone orchestrators.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-project-researcher.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-research-synthesizer",
+      "description": "Synthesizes research outputs from parallel researcher agents into SUMMARY.md. Spawned by /gsd-new-project after 4 researcher agents complete.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-research-synthesizer.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-roadmapper",
+      "description": "Creates project roadmaps with phase breakdown, requirement mapping, success criteria derivation, and coverage validation. Spawned by /gsd-new-project orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-roadmapper.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-security-auditor",
+      "description": "Verifies threat mitigations from PLAN.md threat model exist in implemented code. Produces SECURITY.md. Spawned by /gsd-secure-phase.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-security-auditor.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-ui-auditor",
+      "description": "Retroactive 6-pillar visual audit of implemented frontend code. Produces scored UI-REVIEW.md. Spawned by /gsd-ui-review orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-ui-auditor.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-ui-checker",
+      "description": "Validates UI-SPEC.md design contracts against 6 quality dimensions. Produces BLOCK/FLAG/PASS verdicts. Spawned by /gsd-ui-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-ui-checker.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-ui-researcher",
+      "description": "Produces UI-SPEC.md design contract for frontend phases. Reads upstream artifacts, detects design system state, asks only unanswered questions. Spawned by /gsd-ui-phase orchestrator.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-ui-researcher.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-user-profiler",
+      "description": "Analyzes extracted session messages across 8 behavioral dimensions to produce a scored developer profile with confidence levels and evidence. Spawned by profile orchestration workflows.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-user-profiler.md",
+      "source": "local"
+    },
+    {
+      "name": "gsd-verifier",
+      "description": "Verifies phase goal achievement through goal-backward analysis. Checks codebase delivers what phase promised, not just that tasks completed. Creates VERIFICATION.md report.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "gsd-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/gsd-verifier.md",
+      "source": "local"
+    },
+    {
+      "name": "hallmark",
+      "description": "Subagent helenizado de nutlope/hallmark: Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/hallmark.md",
+      "source": "local"
+    },
+    {
+      "name": "i-have-adhd",
+      "description": "Subagent helenizado de ayghri/i-have-adhd: A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/i-have-adhd.md",
+      "source": "local"
+    },
+    {
+      "name": "impeccable",
+      "description": "Subagent helenizado de pbakaus/impeccable: Design language p/ harness de IA: 23 commands (craft/init/audit/critique/polish) + 59 deterministic detector rules (sem LLM) + PRODUCT.md/DESIGN.md (contexto de audiência/marca).",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/impeccable.md",
+      "source": "local"
+    },
+    {
+      "name": "last30days-skill",
+      "description": "Subagent helenizado de mvanhorn/last30days-skill: Pesquisa/síntese multi-plataforma 30d (Reddit, X, YouTube, HN, Polymarket) com ranking por upvotes — ADAPTADO: só a pipeline de briefing, nunca hook cru (RCE upstream corrigido).",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/last30days-skill.md",
+      "source": "local"
+    },
+    {
+      "name": "llama-mtp-concept",
+      "description": "Subagent helenizado de tryigit/cleveres-ai: Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/llama-mtp-concept.md",
+      "source": "local"
+    },
+    {
+      "name": "llama-mtp",
+      "description": "Subagent helenizado de ggml-org/llama.cpp: Multi-Token Prediction (MTP) heads no llama.cpp (PR #22673 merged) — speculative decoding integrado, >2x speedup sem draft model separado; aplicar nos 4 modelos locais Vulkan.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/llama-mtp.md",
+      "source": "local"
+    },
+    {
+      "name": "mattpocock-skills",
+      "description": "Subagent helenizado de mattpocock/skills: Skills for Real Engineers. Straight from .agents directory.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/mattpocock-skills.md",
+      "source": "local"
+    },
+    {
+      "name": "memory-keeper",
+      "description": "Gerencia memória persistente do projeto integrado ao Obsidian (vault: /mnt/dados/cerebro com IA/). Grava, busca e lista memórias via tool memory() e sincroniza com Obsidian como parte da cognição. Use quando precisar salvar contexto de longo prazo ou recuperar decisões/arquitetura de sessões anteriores.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "oh-my-openagent-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/memory-keeper.md",
+      "source": "local"
+    },
+    {
+      "name": "metrology-scientist",
+      "description": "Cientista metrológico experiente: medições com incerteza quantificada segundo GUM, terminologia VIM, ISO 17025 e CIPM MRA. Especialista em rastreabilidade por cadeia ininterrupta de calibração, separação de calibração/ajuste/verificação, definição de constantes no SI desde 2019. Use para qualquer task de medição, calibração, incerteza de medição, verificação de instrumentos, análise metrológica, hardware, schematics, testes de precisão ou avaliação de conformidade.",
+      "model": "local-bonsai/bonsai-27b",
+      "mode": "all",
+      "origin": "K-Dense-AI/scientific-agents (metrology-scientist)",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/metrology-scientist.md",
+      "source": "local"
+    },
+    {
+      "name": "oh-my-opencode-slim",
+      "description": "Subagent helenizado de alvinunreal/oh-my-opencode-slim: Lean, fine-tuned Opencode multi agent suite. Mix any models, auto-delegate tasks.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/oh-my-opencode-slim.md",
+      "source": "local"
+    },
+    {
+      "name": "omniroute",
+      "description": "Subagent helenizado de diegosouzapw/OmniRoute: Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/omniroute.md",
+      "source": "local"
+    },
+    {
+      "name": "onp-spec-driven",
+      "description": "Subagent helenizado de onovoprogramador/onp-spec-driven: Spec-driven development workflow.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/onp-spec-driven.md",
+      "source": "local"
+    },
+    {
+      "name": "openship",
+      "description": "Subagent helenizado de oblien/openship: Self-hosted deployment platform.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/openship.md",
+      "source": "local"
+    },
+    {
+      "name": "openwork-mcp",
+      "description": "Subagent helenizado de different-ai/openwork: OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/openwork-mcp.md",
+      "source": "local"
+    },
+    {
+      "name": "orca",
+      "description": "Subagent helenizado de stablyai/orca: Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/orca.md",
+      "source": "local"
+    },
+    {
+      "name": "pi",
+      "description": "Subagent helenizado de earendil-works/pi: AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/pi.md",
+      "source": "local"
+    },
+    {
+      "name": "reverser",
+      "description": "Agente especializado em engenharia reversa de binários/firmware/BIOS via GhidraMCP. Decompila funções, analisa pseudocódigo com LLM, sugere renomeação e documenta análise. NUNCA aplica mudanças sem confirmação do usuário.",
+      "model": "local-nanbeige/nanbeige-3b",
+      "mode": "subagent",
+      "origin": "oh-my-openagent-helenizado",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/reverser.md",
+      "source": "local"
+    },
+    {
+      "name": "ruview",
+      "description": "Subagent helenizado de ruvnet/RuView: π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, presence detection — without video.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/ruview.md",
+      "source": "local"
+    },
+    {
+      "name": "spec-kit",
+      "description": "Subagent helenizado de github/spec-kit: Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/spec-kit.md",
+      "source": "local"
+    },
+    {
+      "name": "superpowers-code-reviewer",
+      "description": "",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/superpowers-code-reviewer.md",
+      "source": "local"
+    },
+    {
+      "name": "superpowers-implementer",
+      "description": "",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/superpowers-implementer.md",
+      "source": "local"
+    },
+    {
+      "name": "superpowers-plan-writer-alt1",
+      "description": "",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/superpowers-plan-writer-alt1.md",
+      "source": "local"
+    },
+    {
+      "name": "superpowers-plan-writer-alt2",
+      "description": "",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/superpowers-plan-writer-alt2.md",
+      "source": "local"
+    },
+    {
+      "name": "superpowers-plan-writer",
+      "description": "",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/superpowers-plan-writer.md",
+      "source": "local"
+    },
+    {
+      "name": "superpowers-spec-writer",
+      "description": "",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/superpowers-spec-writer.md",
+      "source": "local"
+    },
+    {
+      "name": "superpowers",
+      "description": "",
+      "model": "",
+      "mode": "",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/superpowers.md",
+      "source": "local"
+    },
+    {
+      "name": "unsloth-zoo",
+      "description": "Subagent helenizado de unslothai/unsloth-zoo: Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/unsloth-zoo.md",
+      "source": "local"
+    },
+    {
+      "name": "vercel-agent-skills",
+      "description": "Subagent helenizado de vercel-labs/agent-skills: Skills oficiais Vercel: react-best-practices (40+ regras/8 categorias), web-design-guidelines, composition-patterns, vercel-optimize (auditoria custo/perf).",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/vercel-agent-skills.md",
+      "source": "local"
+    },
+    {
+      "name": "world-model-optimizer",
+      "description": "Subagent helenizado de experientiallabs/world-model-optimizer: Distill traces de agentes → modelo oráculo menor + router frontier↔small (-27% custo, RouterBench). Inspiração p/ self-learning (sem licença).",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/world-model-optimizer.md",
+      "source": "local"
+    },
+    {
+      "name": "worldmonitor",
+      "description": "Subagent helenizado de koala73/worldmonitor: Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, infrastructure tracking.",
+      "model": "",
+      "mode": "subagent",
+      "origin": "",
+      "max_cycles": "3",
+      "path": "/mnt/dados/opencode/config/agents/worldmonitor.md",
+      "source": "local"
+    }
+  ],
+  "commands": [
+    {
+      "name": "aside",
+      "path": "/mnt/dados/opencode/commands/aside.md",
+      "source": "local"
+    },
+    {
+      "name": "auto-update",
+      "path": "/mnt/dados/opencode/commands/auto-update.md",
+      "source": "local"
+    },
+    {
+      "name": "book-to-skill",
+      "path": "/mnt/dados/opencode/commands/book-to-skill.md",
+      "source": "local"
+    },
+    {
+      "name": "build-fix",
+      "path": "/mnt/dados/opencode/commands/build-fix.md",
+      "source": "local"
+    },
+    {
+      "name": "checkpoint",
+      "path": "/mnt/dados/opencode/commands/checkpoint.md",
+      "source": "local"
+    },
+    {
+      "name": "code-review",
+      "path": "/mnt/dados/opencode/commands/code-review.md",
+      "source": "local"
+    },
+    {
+      "name": "cost-report",
+      "path": "/mnt/dados/opencode/commands/cost-report.md",
+      "source": "local"
+    },
+    {
+      "name": "cpp-build",
+      "path": "/mnt/dados/opencode/commands/cpp-build.md",
+      "source": "local"
+    },
+    {
+      "name": "cpp-review",
+      "path": "/mnt/dados/opencode/commands/cpp-review.md",
+      "source": "local"
+    },
+    {
+      "name": "cpp-test",
+      "path": "/mnt/dados/opencode/commands/cpp-test.md",
+      "source": "local"
+    },
+    {
+      "name": "e2e",
+      "path": "/mnt/dados/opencode/commands/e2e.md",
+      "source": "local"
+    },
+    {
+      "name": "ecc-guide",
+      "path": "/mnt/dados/opencode/commands/ecc-guide.md",
+      "source": "local"
+    },
+    {
+      "name": "epic-claim",
+      "path": "/mnt/dados/opencode/commands/epic-claim.md",
+      "source": "local"
+    },
+    {
+      "name": "epic-decompose",
+      "path": "/mnt/dados/opencode/commands/epic-decompose.md",
+      "source": "local"
+    },
+    {
+      "name": "epic-publish",
+      "path": "/mnt/dados/opencode/commands/epic-publish.md",
+      "source": "local"
+    },
+    {
+      "name": "epic-review",
+      "path": "/mnt/dados/opencode/commands/epic-review.md",
+      "source": "local"
+    },
+    {
+      "name": "epic-sync",
+      "path": "/mnt/dados/opencode/commands/epic-sync.md",
+      "source": "local"
+    },
+    {
+      "name": "epic-unblock",
+      "path": "/mnt/dados/opencode/commands/epic-unblock.md",
+      "source": "local"
+    },
+    {
+      "name": "epic-validate",
+      "path": "/mnt/dados/opencode/commands/epic-validate.md",
+      "source": "local"
+    },
+    {
+      "name": "eval",
+      "path": "/mnt/dados/opencode/commands/eval.md",
+      "source": "local"
+    },
+    {
+      "name": "evolve",
+      "path": "/mnt/dados/opencode/commands/evolve.md",
+      "source": "local"
+    },
+    {
+      "name": "fastapi-review",
+      "path": "/mnt/dados/opencode/commands/fastapi-review.md",
+      "source": "local"
+    },
+    {
+      "name": "feature-dev",
+      "path": "/mnt/dados/opencode/commands/feature-dev.md",
+      "source": "local"
+    },
+    {
+      "name": "flutter-build",
+      "path": "/mnt/dados/opencode/commands/flutter-build.md",
+      "source": "local"
+    },
+    {
+      "name": "flutter-review",
+      "path": "/mnt/dados/opencode/commands/flutter-review.md",
+      "source": "local"
+    },
+    {
+      "name": "flutter-test",
+      "path": "/mnt/dados/opencode/commands/flutter-test.md",
+      "source": "local"
+    },
+    {
+      "name": "gan-build",
+      "path": "/mnt/dados/opencode/commands/gan-build.md",
+      "source": "local"
+    },
+    {
+      "name": "gan-design",
+      "path": "/mnt/dados/opencode/commands/gan-design.md",
+      "source": "local"
+    },
+    {
+      "name": "go-build",
+      "path": "/mnt/dados/opencode/commands/go-build.md",
+      "source": "local"
+    },
+    {
+      "name": "go-review",
+      "path": "/mnt/dados/opencode/commands/go-review.md",
+      "source": "local"
+    },
+    {
+      "name": "go-test",
+      "path": "/mnt/dados/opencode/commands/go-test.md",
+      "source": "local"
+    },
+    {
+      "name": "gradle-build",
+      "path": "/mnt/dados/opencode/commands/gradle-build.md",
+      "source": "local"
+    },
+    {
+      "name": "harness-audit",
+      "path": "/mnt/dados/opencode/commands/harness-audit.md",
+      "source": "local"
+    },
+    {
+      "name": "hookify-configure",
+      "path": "/mnt/dados/opencode/commands/hookify-configure.md",
+      "source": "local"
+    },
+    {
+      "name": "hookify-help",
+      "path": "/mnt/dados/opencode/commands/hookify-help.md",
+      "source": "local"
+    },
+    {
+      "name": "hookify-list",
+      "path": "/mnt/dados/opencode/commands/hookify-list.md",
+      "source": "local"
+    },
+    {
+      "name": "hookify",
+      "path": "/mnt/dados/opencode/commands/hookify.md",
+      "source": "local"
+    },
+    {
+      "name": "instinct-export",
+      "path": "/mnt/dados/opencode/commands/instinct-export.md",
+      "source": "local"
+    },
+    {
+      "name": "instinct-import",
+      "path": "/mnt/dados/opencode/commands/instinct-import.md",
+      "source": "local"
+    },
+    {
+      "name": "instinct-status",
+      "path": "/mnt/dados/opencode/commands/instinct-status.md",
+      "source": "local"
+    },
+    {
+      "name": "jira",
+      "path": "/mnt/dados/opencode/commands/jira.md",
+      "source": "local"
+    },
+    {
+      "name": "kotlin-build",
+      "path": "/mnt/dados/opencode/commands/kotlin-build.md",
+      "source": "local"
+    },
+    {
+      "name": "kotlin-review",
+      "path": "/mnt/dados/opencode/commands/kotlin-review.md",
+      "source": "local"
+    },
+    {
+      "name": "kotlin-test",
+      "path": "/mnt/dados/opencode/commands/kotlin-test.md",
+      "source": "local"
+    },
+    {
+      "name": "learn-eval",
+      "path": "/mnt/dados/opencode/commands/learn-eval.md",
+      "source": "local"
+    },
+    {
+      "name": "learn",
+      "path": "/mnt/dados/opencode/commands/learn.md",
+      "source": "local"
+    },
+    {
+      "name": "loop-start",
+      "path": "/mnt/dados/opencode/commands/loop-start.md",
+      "source": "local"
+    },
+    {
+      "name": "loop-status",
+      "path": "/mnt/dados/opencode/commands/loop-status.md",
+      "source": "local"
+    },
+    {
+      "name": "marketing-campaign",
+      "path": "/mnt/dados/opencode/commands/marketing-campaign.md",
+      "source": "local"
+    },
+    {
+      "name": "model-route",
+      "path": "/mnt/dados/opencode/commands/model-route.md",
+      "source": "local"
+    },
+    {
+      "name": "multi-backend",
+      "path": "/mnt/dados/opencode/commands/multi-backend.md",
+      "source": "local"
+    },
+    {
+      "name": "multi-execute",
+      "path": "/mnt/dados/opencode/commands/multi-execute.md",
+      "source": "local"
+    },
+    {
+      "name": "multi-frontend",
+      "path": "/mnt/dados/opencode/commands/multi-frontend.md",
+      "source": "local"
+    },
+    {
+      "name": "multi-plan",
+      "path": "/mnt/dados/opencode/commands/multi-plan.md",
+      "source": "local"
+    },
+    {
+      "name": "multi-workflow",
+      "path": "/mnt/dados/opencode/commands/multi-workflow.md",
+      "source": "local"
+    },
+    {
+      "name": "orch-add-feature",
+      "path": "/mnt/dados/opencode/commands/orch-add-feature.md",
+      "source": "local"
+    },
+    {
+      "name": "orch-build-mvp",
+      "path": "/mnt/dados/opencode/commands/orch-build-mvp.md",
+      "source": "local"
+    },
+    {
+      "name": "orch-change-feature",
+      "path": "/mnt/dados/opencode/commands/orch-change-feature.md",
+      "source": "local"
+    },
+    {
+      "name": "orch-fix-defect",
+      "path": "/mnt/dados/opencode/commands/orch-fix-defect.md",
+      "source": "local"
+    },
+    {
+      "name": "orch-refine-code",
+      "path": "/mnt/dados/opencode/commands/orch-refine-code.md",
+      "source": "local"
+    },
+    {
+      "name": "orch-review",
+      "path": "/mnt/dados/opencode/commands/orch-review.md",
+      "source": "local"
+    },
+    {
+      "name": "orchestrate",
+      "path": "/mnt/dados/opencode/commands/orchestrate.md",
+      "source": "local"
+    },
+    {
+      "name": "pkm-ingest",
+      "path": "/mnt/dados/opencode/commands/pkm-ingest.md",
+      "source": "local"
+    },
+    {
+      "name": "plan-canvas",
+      "path": "/mnt/dados/opencode/commands/plan-canvas.md",
+      "source": "local"
+    },
+    {
+      "name": "plan-prd",
+      "path": "/mnt/dados/opencode/commands/plan-prd.md",
+      "source": "local"
+    },
+    {
+      "name": "plan",
+      "path": "/mnt/dados/opencode/commands/plan.md",
+      "source": "local"
+    },
+    {
+      "name": "pm2",
+      "path": "/mnt/dados/opencode/commands/pm2.md",
+      "source": "local"
+    },
+    {
+      "name": "pr",
+      "path": "/mnt/dados/opencode/commands/pr.md",
+      "source": "local"
+    },
+    {
+      "name": "project-init",
+      "path": "/mnt/dados/opencode/commands/project-init.md",
+      "source": "local"
+    },
+    {
+      "name": "projects",
+      "path": "/mnt/dados/opencode/commands/projects.md",
+      "source": "local"
+    },
+    {
+      "name": "promote",
+      "path": "/mnt/dados/opencode/commands/promote.md",
+      "source": "local"
+    },
+    {
+      "name": "prp-commit",
+      "path": "/mnt/dados/opencode/commands/prp-commit.md",
+      "source": "local"
+    },
+    {
+      "name": "prp-implement",
+      "path": "/mnt/dados/opencode/commands/prp-implement.md",
+      "source": "local"
+    },
+    {
+      "name": "prp-plan",
+      "path": "/mnt/dados/opencode/commands/prp-plan.md",
+      "source": "local"
+    },
+    {
+      "name": "prp-pr",
+      "path": "/mnt/dados/opencode/commands/prp-pr.md",
+      "source": "local"
+    },
+    {
+      "name": "prp-prd",
+      "path": "/mnt/dados/opencode/commands/prp-prd.md",
+      "source": "local"
+    },
+    {
+      "name": "prune",
+      "path": "/mnt/dados/opencode/commands/prune.md",
+      "source": "local"
+    },
+    {
+      "name": "python-review",
+      "path": "/mnt/dados/opencode/commands/python-review.md",
+      "source": "local"
+    },
+    {
+      "name": "quality-gate",
+      "path": "/mnt/dados/opencode/commands/quality-gate.md",
+      "source": "local"
+    },
+    {
+      "name": "react-build",
+      "path": "/mnt/dados/opencode/commands/react-build.md",
+      "source": "local"
+    },
+    {
+      "name": "react-review",
+      "path": "/mnt/dados/opencode/commands/react-review.md",
+      "source": "local"
+    },
+    {
+      "name": "react-test",
+      "path": "/mnt/dados/opencode/commands/react-test.md",
+      "source": "local"
+    },
+    {
+      "name": "refactor-clean",
+      "path": "/mnt/dados/opencode/commands/refactor-clean.md",
+      "source": "local"
+    },
+    {
+      "name": "resume-session",
+      "path": "/mnt/dados/opencode/commands/resume-session.md",
+      "source": "local"
+    },
+    {
+      "name": "review-pr",
+      "path": "/mnt/dados/opencode/commands/review-pr.md",
+      "source": "local"
+    },
+    {
+      "name": "rust-build",
+      "path": "/mnt/dados/opencode/commands/rust-build.md",
+      "source": "local"
+    },
+    {
+      "name": "rust-review",
+      "path": "/mnt/dados/opencode/commands/rust-review.md",
+      "source": "local"
+    },
+    {
+      "name": "rust-test",
+      "path": "/mnt/dados/opencode/commands/rust-test.md",
+      "source": "local"
+    },
+    {
+      "name": "santa-loop",
+      "path": "/mnt/dados/opencode/commands/santa-loop.md",
+      "source": "local"
+    },
+    {
+      "name": "save-session",
+      "path": "/mnt/dados/opencode/commands/save-session.md",
+      "source": "local"
+    },
+    {
+      "name": "security-scan",
+      "path": "/mnt/dados/opencode/commands/security-scan.md",
+      "source": "local"
+    },
+    {
+      "name": "security",
+      "path": "/mnt/dados/opencode/commands/security.md",
+      "source": "local"
+    },
+    {
+      "name": "sessions",
+      "path": "/mnt/dados/opencode/commands/sessions.md",
+      "source": "local"
+    },
+    {
+      "name": "setup-pm",
+      "path": "/mnt/dados/opencode/commands/setup-pm.md",
+      "source": "local"
+    },
+    {
+      "name": "skill-create",
+      "path": "/mnt/dados/opencode/commands/skill-create.md",
+      "source": "local"
+    },
+    {
+      "name": "skill-health",
+      "path": "/mnt/dados/opencode/commands/skill-health.md",
+      "source": "local"
+    },
+    {
+      "name": "tdd",
+      "path": "/mnt/dados/opencode/commands/tdd.md",
+      "source": "local"
+    },
+    {
+      "name": "test-coverage",
+      "path": "/mnt/dados/opencode/commands/test-coverage.md",
+      "source": "local"
+    },
+    {
+      "name": "update-codemaps",
+      "path": "/mnt/dados/opencode/commands/update-codemaps.md",
+      "source": "local"
+    },
+    {
+      "name": "update-docs",
+      "path": "/mnt/dados/opencode/commands/update-docs.md",
+      "source": "local"
+    },
+    {
+      "name": "verify",
+      "path": "/mnt/dados/opencode/commands/verify.md",
+      "source": "local"
+    },
+    {
+      "name": "vue-review",
+      "path": "/mnt/dados/opencode/commands/vue-review.md",
+      "source": "local"
+    },
+    {
+      "name": "youtube-sync",
+      "path": "/mnt/dados/opencode/commands/youtube-sync.md",
+      "source": "local"
+    }
+  ],
+  "timestamp": "2026-08-04T10:27:10.460733",
+  "schema_version": "2.0",
+  "categorias": [
+    "plugins",
+    "mcp",
+    "lsp",
+    "hooks",
+    "skills",
+    "subagents"
+  ]
+}

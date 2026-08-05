@@ -1,0 +1,18 @@
+# GBNF Grammar — JSON estrito para saídas estruturadas do Gran-Mestre
+# Uso: llama-server --grammar-file harness/grammars/json.gbnf
+# Exigido pela spec (engenharia de harness.md §1): "Gramáticas GBNF Estritas
+# para forçar o modelo a responder estritamente dentro de esquemas JSON"
+
+root ::= object
+object ::= "{" ws (pair ("," ws pair)*)? "}" ws
+pair ::= string ":" value
+value ::= object | array | string | number | "true" | "false" | "null"
+array ::= "[" ws (value ("," ws value)*)? "]" ws
+string ::= "\"" chars "\"" ws
+chars ::= [^"\\\x7F\x00-\x1F] | "\\" escape
+escape ::= "\"" | "\\" | "/" | "b" | "f" | "n" | "r" | "t" | "u" [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F]
+number ::= "-"? int frac? exp? ws
+int ::= "0" | [1-9] [0-9]*
+frac ::= "." [0-9]+
+exp ::= ("e" | "E") ("+" | "-")? [0-9]+
+ws ::= | " " | "\t" | "\n" | "\r"

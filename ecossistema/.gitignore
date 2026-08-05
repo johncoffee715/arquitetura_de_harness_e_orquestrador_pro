@@ -1,0 +1,8 @@
+# Ignore sensitive files
+*.log
+*.tmp
+*.swp
+*~
+
+# Ignore Obsidian config (not content)
+.obsidian/

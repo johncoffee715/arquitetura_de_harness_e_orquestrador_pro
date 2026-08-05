@@ -1,0 +1,380 @@
+{
+    "harness": {
+        "name": "Gran-Mestre Hybrid Harness",
+        "version": "1.0.0",
+        "mode": "MIX",
+        "description": "Hybrid AI orchestration harness for local (MI50) and cloud models",
+        "hardware": {
+            "cpu": "Xeon E5-2699v3",
+            "motherboard": "jingsh x99-d8 (x99/c612)",
+            "ram": "32GB DDR4 2400MHz",
+            "gpu": {
+                "model": "AMD Radeon Instinct MI50 16GB HBM2 (VEGA20) — VBIOS spoofed as Radeon Pro VII",
+                "vram_gb": 16,
+                "hbm2_bandwidth_tb_s": 1024,
+                "backend": "Vulkan0",
+                "inference": "gpu_only",
+                "vbios_spoof": "MI50 detectada pelo driver como Radeon Pro VII via VBIOS modding"
+            },
+            "storage": {
+                "primary": "slave A.I. SSD 128GB SATA3",
+                "harness_idempotent": true
+            }
+        },
+        "models": {
+            "gran_mestre": {
+                "name": "Ornith-1.0 9B",
+                "quantization": "Q4_K_M",
+                "vram_gb": 5.5,
+                "location": "local",
+                "role": "meta_orchestrator",
+                "local_model_path": "/mnt/dados/Assistente Pessoal/modelos LLM/ornith-1.0-9B.Q4_K_M.gguf",
+                "gpu_layers": 999,
+                "reasoning_native": true,
+                "reasoning_preserve": true,
+                "tool_calling": "openai_style",
+                "self_scaffolding": true,
+                "description": "Gran-Mestre: self-scaffolding (gera scaffold + solução), raciocínio nativo <think>, tool-calling OpenAI-style",
+                "max_context": 262144,
+                "n_ctx_default": 16384,
+                "agentic_coding": true,
+                "training": "RL — gera código + harness/scaffold juntos (self-scaffolding)",
+                "tool_calling_note": "MCP servers, loops contínuos de correção de bugs, chamadas a funções externas",
+                "benchmarks": [
+                    "Terminal-Bench 2.1",
+                    "SWE-Bench",
+                    "NL2Repo",
+                    "OpenClaw"
+                ],
+                "execution": "agentes de código, execução contínua em loop, correção de bugs, simulações",
+                "integration": "MCP servers, hooks, prompts únicos para loops contínuos",
+                "orchestration": "RL otimizado para orquestração: decisão de ferramenta, geração de scaffolds, gerenciamento de estado em workflows multi-step",
+                "agentic_superiority": "9B supera modelos 3x maiores em tarefas agentic (Terminal-Bench 2.1, SWE-Bench, NL2Repo, OpenClaw)",
+                "routing": "delega recursos (plugin/skill/subagent/lsp/mcp/hook) por oferta-demanda ao submodelo mais capaz",
+                "logit_precision": "para orquestração real (gerenciar fluxo, interpretar JSON/XML com precisão, rotear ferramentas), a retenção de precisão dos logits supera a contagem bruta de parâmetros",
+                "role_label": "Controlador Lógico",
+                "parsing": "parsing otimizado de fábrica para tool-calling (JSON/XML), coerência de estrutura de controle",
+                "stability": "estável em janelas de até 256K tokens; não desalinha output em scripts Python/roteamento",
+                "control": "invocar ferramentas, analisar métricas de hardware, blocos de controle de exceção (run_with_fallback)"
+            },
+            "heavy_execution": {
+                "name": "Bonsai 27B 1-bit",
+                "quantization": "Q4_K_M",
+                "vram_gb": 3.9,
+                "location": "local",
+                "role": "code_generation",
+                "parallel_slots": 4,
+                "local_model_path": "/mnt/dados/Assistente Pessoal/modelos LLM/Bonsai-27B-1bit.Q4_K_M.gguf",
+                "gpu_layers": 999,
+                "description": "Heavy code generation with multiple parallel slots",
+                "max_context": 262144,
+                "n_ctx_default": 32768,
+                "base_model": "Qwen ecosystem (27B dense)",
+                "retention": "89.5% vs FP16",
+                "vram_range_gb": [
+                    4,
+                    8
+                ],
+                "tool_calling": true,
+                "multimodal": "opcional (mmproj torres de visão)",
+                "reasoning": "lógica intermediária, matemática e análise offline",
+                "multimodal_native": true,
+                "vision_tower": "0.46B params, 4-bit HQQ (separado dos pesos 1-bit)",
+                "vision_capabilities": [
+                    "OCR",
+                    "descrição de cenários",
+                    "identificação de objetos",
+                    "análise de gráficos"
+                ],
+                "video": "frames extraídos → sequência de imagens na janela 262K",
+                "audio": "sem codificador nativo — transcrição externa → processamento de texto",
+                "orchestration_suitability": "não indicado p/ orquestração — quantização extrema (1-bit) degrada logits; papel: sumarização local, matemática, reasoning puro",
+                "role_label": "Unidade de Síntese",
+                "quantization_wall": "1-bit: perda catastrófica de instruction-following precision — erros arquiteturais (módulos inexistentes, argumentos fora de conformidade, chaves rompidas)",
+                "suitable_for": "ler manuais técnicos gigantescos, resumir dezenas de logs, iterar texto cru (desvio de pontuação não quebra hardware)",
+                "orchestration": "NÃO — trator de leitura e inferência rápida, sem estabilidade técnica para segurar a direção do sistema"
+            },
+            "filter_fast": {
+                "name": "LFM 2.5-1.6B",
+                "quantization": "Q4_K_M",
+                "vram_gb": 1.1,
+                "location": "local",
+                "role": "instant_checks",
+                "local_model_path": "/mnt/dados/Assistente Pessoal/modelos LLM/LFM-2.5-1.6B.Q4_K_M.gguf",
+                "gpu_layers": 999,
+                "description": "Binary validation checks",
+                "base_model": "Liquid AI LFM2.5-VL-1.6B (multimodal VL)",
+                "multimodal": true,
+                "vision": "múltiplas imagens, alta resolução",
+                "ocr": "textos em imagens e documentos",
+                "document_understanding": "layouts e arquivos escaneados",
+                "multilingual": [
+                    "árabe",
+                    "chinês",
+                    "francês",
+                    "alemão",
+                    "japonês",
+                    "coreano",
+                    "espanhol"
+                ],
+                "file_size_gb": 0.731,
+                "runners": [
+                    "llama.cpp",
+                    "Ollama",
+                    "LM Studio"
+                ],
+                "edge_optimized": true
+            },
+            "filter_medium": {
+                "name": "Nanbeige 3B",
+                "quantization": "Q4_K_M",
+                "vram_gb": 1.4,
+                "location": "local",
+                "local_model_path": "/mnt/dados/Assistente Pessoal/modelos LLM/Nanbeige-3B.Q4_K_M.gguf",
+                "role": "micro_reviews",
+                "gpu_layers": 999,
+                "description": "Layered text understanding for validation",
+                "max_context": 32768,
+                "agentic": true,
+                "tool_calling": true,
+                "reasoning": "chain-of-thought passo a passo (ciências, matemática, lógica)",
+                "programming": "geração e otimização de código (benchmarks altos)",
+                "agentic_note": "fluxos de trabalho longos, múltiplas tool calls, deep search",
+                "alignment": "forte aderência a instruções humanas"
+            },
+            "cloud_moe": {
+                "name": "MoE (Cloud)",
+                "quantization": "n/a",
+                "vram_gb": 0,
+                "location": "cloud",
+                "role": "architectural_audit",
+                "trigger": "Phase 5/6 or 3 consecutive Bonsai failures",
+                "description": "Elite consultant for architectural abstraction"
+            }
+        },
+        "context_compaction": {
+            "enabled": true,
+            "trigger_ratio_min": 0.75,
+            "trigger_ratio_max": 0.85,
+            "retain_ratio_min": 0.1,
+            "retain_ratio_max": 0.2,
+            "retain_ratio": 0.15,
+            "offload_dir": "/conversation_history",
+            "models": {
+                "gran_mestre": {
+                    "max_context": 262144
+                },
+                "heavy_execution": {
+                    "max_context": 262144
+                },
+                "filter_medium": {
+                    "max_context": 32768
+                }
+            }
+        },
+        "model_inheritance": {
+            "backends": {
+                "local-ornith": {
+                    "base_url": "http://127.0.0.1:8083",
+                    "kind": "local",
+                    "priority": 10
+                },
+                "local-bonsai": {
+                    "base_url": "http://127.0.0.1:8084",
+                    "kind": "local",
+                    "priority": 20
+                },
+                "local-nanbeige": {
+                    "base_url": "http://127.0.0.1:8082",
+                    "kind": "local",
+                    "priority": 30
+                },
+                "local-lfm": {
+                    "base_url": "http://127.0.0.1:8081",
+                    "kind": "local",
+                    "priority": 40
+                },
+                "omniroute": {
+                    "base_url": "http://localhost:20128",
+                    "kind": "gateway",
+                    "priority": 50
+                }
+            },
+            "defaults": {
+                "subagent": "local-ornith",
+                "skill": "omniroute",
+                "hook": "omniroute",
+                "mcp": "omniroute",
+                "lsp": "omniroute",
+                "plugin": "omniroute",
+                "tool": "omniroute"
+            },
+            "overrides": {
+                "silverhawk": {
+                    "backend": "local-lfm",
+                    "model": "lfm-2.5-1.6b"
+                }
+            }
+        },
+        "vram_budget": {
+            "total_gb": 16,
+            "models_allocated_gb": 11.9,
+            "kv_cache_reserved_gb": 4.1,
+            "safety_margin_gb": 0
+        },
+        "pipeline": {
+            "phases": [
+                {
+                    "number": 1,
+                    "name": "Discovery",
+                    "tags": [
+                        "discovery",
+                        "research",
+                        "interview",
+                        "brainstorming"
+                    ],
+                    "model": "Ornith-1.0 9B",
+                    "temperature": 0.7,
+                    "grammar": "json.gbnf",
+                    "filters": [
+                        "LFM 2.5",
+                        "Nanbeige 3B"
+                    ],
+                    "gate": "Gate 1: Direction approval"
+                },
+                {
+                    "number": 2,
+                    "name": "Contract",
+                    "tags": [
+                        "spec",
+                        "contract",
+                        "design",
+                        "validation"
+                    ],
+                    "model": "Bonsai 27B 1-bit",
+                    "temperature": 0.2,
+                    "grammar": "json.gbnf",
+                    "filters": [
+                        "Nanbeige 3B"
+                    ],
+                    "gate": "Gate 2: Spec approval"
+                },
+                {
+                    "number": 3,
+                    "name": "Plan",
+                    "tags": [
+                        "planning",
+                        "tdd",
+                        "tasks",
+                        "decomposition"
+                    ],
+                    "model": "Bonsai 27B 1-bit",
+                    "temperature": 0.2,
+                    "grammar": "json.gbnf",
+                    "filters": [
+                        "LFM 2.5",
+                        "Nanbeige 3B"
+                    ],
+                    "gate": "Gate 3: Plan approval",
+                    "safety_checkpoint": true
+                },
+                {
+                    "number": 4,
+                    "name": "Execution",
+                    "tags": [
+                        "execution",
+                        "implementation",
+                        "coding",
+                        "git"
+                    ],
+                    "model": "Bonsai 27B 1-bit",
+                    "temperature": 0.1,
+                    "grammar": "code.gbnf",
+                    "context": 16384,
+                    "filters": [
+                        "LFM 2.5",
+                        "Nanbeige 3B"
+                    ],
+                    "gate": "None — atomic commits",
+                    "dev_loop": "N1/ReAct per task"
+                },
+                {
+                    "number": 5,
+                    "name": "Macro Review",
+                    "tags": [
+                        "review",
+                        "macro",
+                        "architecture",
+                        "audit"
+                    ],
+                    "model": "Ornith-1.0 9B + MoE (cloud)",
+                    "temperature": 0.1,
+                    "grammar": "json.gbnf",
+                    "filters": [
+                        "Nanbeige 3B"
+                    ],
+                    "gate": "None — report"
+                },
+                {
+                    "number": 6,
+                    "name": "Delivery",
+                    "tags": [
+                        "delivery",
+                        "verification",
+                        "release",
+                        "memory"
+                    ],
+                    "model": "Ornith-1.0 9B + MoE (cloud)",
+                    "filters": [
+                        "LFM 2.5"
+                    ],
+                    "gate": "Gate 4: Final report → cerebral memory"
+                }
+            ]
+        },
+        "safety_protocol": {
+            "sha_checkpoint_phase": 3,
+            "git_diff_check": true,
+            "rollback_on_failure": true,
+            "hestia_validator": true,
+            "never_partial_state": true
+        },
+        "observability": {
+            "context_file": ".planning/CONTEXT.md",
+            "metrics_format": "[Metrics] Phase: {phase}\n[Metrics] Route: {route}\n[Metrics] Status: {status}",
+            "otel_enabled": true,
+            "melt_tracking": true,
+            "semantic_conventions": "genai"
+        },
+        "dev_loop": {
+            "level_1": {
+                "name": "ReAct",
+                "use_for": "Trivial tasks (1-3 files)",
+                "max_iterations": 3,
+                "escalates_to": 2
+            },
+            "level_2": {
+                "name": "Mini Loop",
+                "use_for": "Features (1 module, clear requirements)",
+                "max_cycles": 2,
+                "escalates_to": 3
+            },
+            "level_3": {
+                "name": "Human Loop",
+                "use_for": "Epics, architectural decisions, multi-module",
+                "termination": "Human decision"
+            }
+        },
+        "language_policy": {
+            "internal_communication": "en",
+            "user_output": "pt-br",
+            "note": "comunicação entre submodelos/recursos em inglês (precisão técnica); relatórios, resumos e respostas ao usuário em português"
+        },
+        "reasoning_policy": {
+            "principle": "reasoning longo somente se necessário",
+            "budget_tokens": 1024,
+            "implementation": "--reasoning-budget 1024 (llama-server) — ornith e bonsai",
+            "note": "tarefas simples → resposta direta; tarefas complexas → reasoning até o budget"
+        }
+    }
+}

@@ -1,0 +1,11 @@
+# GBNF Grammar — Código estruturado (Bonsai 27B)
+# Uso: llama-server --grammar-file harness/grammars/code.gbnf
+# Blindagem para o modelo de 1-bit gerar blocos de código sem
+# quebrar a sintaxe (spec §1: "anulando desvios de sintaxe
+# induzidos pelo bit baixo")
+
+root ::= codeblock
+codeblock ::= "```" language ws code ws "```"
+language ::= [a-zA-Z0-9+#-]{1,20}
+code ::= [^\x60]*
+ws ::= [ \t\n\r]*

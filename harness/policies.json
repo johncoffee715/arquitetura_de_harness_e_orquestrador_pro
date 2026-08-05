@@ -1,0 +1,59 @@
+{
+  "policies": {
+    "version": "1.0.0",
+    "description": "Motor de Políticas do Gran-Mestre — policy-as-code (spec: Orquestrador de IA §3, engenharia de harness §7)",
+    "execution": {
+      "never_offload_to_cpu": true,
+      "gpu_layers_min": 999,
+      "refuse_execution_on_dirty_git": true,
+      "sha_checkpoint_phase": 3,
+      "max_rollbacks_per_pipeline": 1
+    },
+    "cloud": {
+      "moe_only_on_phases": [5, 6],
+      "moe_fallback_after_bonsai_failures": 3,
+      "hestia_intercepts_cloud": true
+    },
+    "model_roles": {
+      "gran_mestre": {
+        "temperature": 0.0,
+        "context": 4096,
+        "rules": ["JSON estrito", "sem trabalho bruto", "delega sempre"]
+      },
+      "discovery": {
+        "temperature": 0.7,
+        "context": 4096,
+        "rules": ["decomposicao leve", "filtro de escopo"]
+      },
+      "heavy_execution": {
+        "temperature": 0.2,
+        "context": 16384,
+        "rules": ["grammar GBNF code.gbnf", "slots paralelos 4-5", "auto-correcao loop fase 5"]
+      },
+      "filter_fast": {
+        "temperature": 0.0,
+        "context": 2048,
+        "rules": ["grammar GBNF verdict.gbnf", "checagem binaria"]
+      },
+      "filter_medium": {
+        "temperature": 0.1,
+        "context": 4096,
+        "rules": ["auditoria estrutural intermediaria", "micro-reviews"]
+      }
+    },
+    "rbac": {
+      "enabled": true,
+      "roles": {
+        "user": ["request", "approve_gates", "veto"],
+        "gran_mestre": ["classify", "delegate", "route", "gate_control"],
+        "subagent": ["execute_task", "report_progress"],
+        "hestia": ["validate", "block_cloud_output"]
+      }
+    },
+    "compliance": {
+      "audit_trail": true,
+      "metrics_logged": true,
+      "never_log_secrets": true
+    }
+  }
+}
