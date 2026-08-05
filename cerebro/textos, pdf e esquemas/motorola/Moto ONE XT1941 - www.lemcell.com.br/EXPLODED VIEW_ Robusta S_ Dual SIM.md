@@ -1,0 +1,88 @@
+---
+aliases:
+  - "EXPLODED VIEW_ Robusta S_ Dual SIM"
+tags:
+  - datasheet
+  - esquematico
+  - referencia
+source: "/mnt/win2/textos, pdf e esquemas"
+file: "EXPLODED VIEW_ Robusta S_ Dual SIM.pdf"
+---
+
+# EXPLODED VIEW Robusta S Dual SIM
+
+![[EXPLODED VIEW_ Robusta S_ Dual SIM.pdf]]
+
+## Informações
+
+- **Arquivo original:** `EXPLODED VIEW_ Robusta S_ Dual SIM.pdf`
+- **Tipo:** PDF/Datasheet
+- **Caminho:** `textos, pdf e esquemas/motorola/Moto ONE XT1941 - www.lemcell.com.br/EXPLODED VIEW_ Robusta S_ Dual SIM.pdf`
+
+<!-- OCR_EXTRACT_START -->
+## 📝 Texto Extraído (OCR)
+
+> [!info] Método: ocr-pdf
+> Extraído automaticamente pelo OpenCode OCR Pipeline
+
+| J
+
+0
+
+38 — |LXFL3520 AOl JaTEAEMREN T ENA 2
+37 — |LXFL3520 AOLJSIAEHAER 1
+ª 36 — |LXFL3520 A01l AHERAIAAÇAA 1
+35 — |LXF L3520 AO0l TSSAA S AsAiR 1
+34 — |LXFL3520 AOl HRBXERRIS AA ES AN A 2E( 1
+33 — |LXF L3520 AO0l NFCK% 1
+32 — |LXF L3520 AOl JSAA 1
+31 — |LXFL3520 AOIEMIRENWEEM 1
+30 — |LXFL3520 AOl JabEAIEN BNT EX 1
+29 — |LXF L3520 A01 BIlK 1
+28 — |[LXFL3520 AOl, EMIC (EEM) RÊ 1
+27 |5 1
+26 — |LXFL3520 A0l FPC 1
+25 — |LXFL3520 AOl BOKHEHSARITA BNAA H 1
+24 — |LXF L3520 AO1 BOX 1
+23 — |LXF L3520 AO01l JSAA 1
+22 — |LXF L3520 A01l JEBA 2
+21 — |LXFL3520 AOl AiHb5% 1
+20 —|LXFL3520 A0l ALHESSIETRR 1
+19 — |LXFL3520 AOl HshbiSfdAA 1
+18 — |LXFL3520 A0l HESCBRAETONARR 1
+17 — |LXFL3520 A01l FSA 1
+16 — |LXFL3520 AOl NET 14
+15 |LXF 13520 AOl a5A 1
+14 |LXFL3520 A0l ETA 1
+13  |LXFL3520 A0l XEMHRAT 2
+12 |LXFL3520 01 EM 1
+11  |LXFL3520 A01 SIVHÍE OHF) 1
+10  |LXF L3520 AO1I, HEMLAE (FP) RÊ 1
+9 — |LXFL3520 AOL JE (SIE) RE 1
+8 — LXFL3520 AOl RRR 3ABM FF 1
+T — |LXFL3520 AOI, BIMIC (CEST) RÊ 1
+6 [%A 89 m8 mK2 5 mm, É H, 1
+5 — |LXFL3520 A0O1-Ai5E2A/t 1
+4 — |LXF 13520 AO1, LOM EBEnA + ENAA 1
+3 — [LXFL3520 A0l MiSAENR/FA A 1
+2 — |LXFL3520 AO1I-AIIAASANAON 1
+1 |&RA 13520,5.86 3EF, incell TDDI, 720%*1520, CG, GG3, black 1
+E s % Â À E|) RE
+WARNING: PROPRIETARY INFORMATION CANNOT PENE NSS (JEXS) E RA
+BE DISCLOSED WITHOUT AUTHORIZATION, ?f Lengehesr Technology (Shemghhal) Co L.td.
+DO NOT SCALE DRAVING ppT NO MODEL 13590
+ALL DIMENSION ARE IN fm
+GENERAL TOLERANCE a aã.s%.â ºw»ª_ . L3520 BRYEI (COE)
+EG Teos CHK li vei
+om 4003 APRV lingivei M'TL
+150 | t005 DWG. NO. ISSUE DATE | 2018-06-05| REVISION V1O
+51150 | 0910 FINISH SCALE v UNIT mm
+151 - 500 2015 | EB SIZE ne SHEET 10
+
+EEENENENTRA
+
+| :
+
+| 6
+
+<!-- OCR_EXTRACT_END -->
