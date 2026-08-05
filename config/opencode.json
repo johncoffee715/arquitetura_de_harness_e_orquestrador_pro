@@ -25,7 +25,20 @@
       "enabled": true,
       "url": "https://api.openworklabs.com/mcp/agent",
       "oauth": {}
+    },
+
+  "obsidian": {
+    "enabled": true,
+    "type": "local",
+    "command": "python3",
+    "args": [
+      "/mnt/dados/harness/mcp/obsidian_server.py"
+    ],
+    "env": {
+      "OBSIDIAN_VAULT": "/mnt/dados/cerebro com IA"
     }
+  }
+
   },
   "provider": {
     "local-lfm": {
@@ -49,14 +62,14 @@
     },
     "local-nanbeige": {
       "api": "openai",
-      "name": "Nanbeige 3B (llama.cpp :8082)",
+      "name": "Nanbeige 4.2-3B (llama.cpp :8082)",
       "options": {
         "baseURL": "http://127.0.0.1:8082/v1",
         "apiKey": "llamacpp"
       },
       "models": {
-        "nanbeige-3b": {
-          "name": "nanbeige-3b",
+        "nanbeige-4.2-3b": {
+          "name": "nanbeige-4.2-3b",
           "limit": {
             "context": 4096,
             "output": 2048

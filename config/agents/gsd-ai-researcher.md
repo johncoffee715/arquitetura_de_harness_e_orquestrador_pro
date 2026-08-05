@@ -1,12 +1,12 @@
 ---
 name: gsd-ai-researcher
 description: "Researches a chosen AI framework's official docs to produce implementation-ready guidance — best practices, syntax, core patterns, and pitfalls distilled for the specific use case. Writes the Framework Quick Reference and Implementation Guidance sections of AI-SPEC.md. Spawned by /gsd-ai-integration-phase orchestrator."
-model: github-copilot/claude-opus-4.7
+model: local-nanbeige/nanbeige-4.2-3b
 mode: subagent
 origin: gsd-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: omniroute/auto/best-free
   fallback:
     - opencode/claude-opus-4-7
     - github-copilot/gpt-5.5

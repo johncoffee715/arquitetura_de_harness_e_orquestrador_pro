@@ -1,12 +1,12 @@
 ---
 name: gsd-ui-checker
 description: "Validates UI-SPEC.md design contracts against 6 quality dimensions. Produces BLOCK/FLAG/PASS verdicts. Spawned by /gsd-ui-phase orchestrator."
-model: github-copilot/claude-opus-4.7
+model: local-nanbeige/nanbeige-4.2-3b
 mode: subagent
 origin: gsd-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: omniroute/auto/best-free
   fallback:
     - opencode/claude-opus-4-7
     - github-copilot/gpt-5.5

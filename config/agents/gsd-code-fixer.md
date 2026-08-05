@@ -1,12 +1,12 @@
 ---
 name: gsd-code-fixer
 description: "Applies fixes to code review findings from REVIEW.md. Reads source files, applies intelligent fixes, and commits each fix atomically. Spawned by /gsd-code-review --fix."
-model: github-copilot/claude-opus-4.7
+model: local-nanbeige/nanbeige-4.2-3b
 mode: subagent
 origin: gsd-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: omniroute/auto/best-free
   fallback:
     - opencode/claude-opus-4-7
     - github-copilot/gpt-5.5

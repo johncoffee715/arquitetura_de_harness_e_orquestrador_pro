@@ -1,12 +1,12 @@
 ---
 name: gsd-mempalace-curator
 description: "Ship-time MemPalace curation — writes the session diary, proposes/creates cross-project tunnels, mirrors extract-learnings into the temporal KG, and runs wing-scoped drawer pruning. Spawned at ship:post by the mempalace capability."
-model: github-copilot/claude-opus-4.7
+model: local-nanbeige/nanbeige-4.2-3b
 mode: subagent
 origin: gsd-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: omniroute/auto/best-free
   fallback:
     - opencode/claude-opus-4-7
     - github-copilot/gpt-5.5

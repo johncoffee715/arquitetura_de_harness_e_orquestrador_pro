@@ -1,12 +1,12 @@
 ---
 name: gsd-assumptions-analyzer
 description: "Deeply analyzes codebase for a phase and returns structured assumptions with evidence. Spawned by discuss-phase assumptions mode."
-model: github-copilot/claude-opus-4.7
+model: local-nanbeige/nanbeige-4.2-3b
 mode: subagent
 origin: gsd-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: omniroute/auto/best-free
   fallback:
     - opencode/claude-opus-4-7
     - github-copilot/gpt-5.5

@@ -1,12 +1,12 @@
 ---
 name: gsd-advisor-researcher
 description: "Researches a single gray area decision and returns a structured comparison table with rationale. Spawned by discuss-phase advisor mode."
-model: github-copilot/claude-opus-4.7
+model: local-nanbeige/nanbeige-4.2-3b
 mode: subagent
 origin: gsd-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: omniroute/auto/best-free
   fallback:
     - opencode/claude-opus-4-7
     - github-copilot/gpt-5.5

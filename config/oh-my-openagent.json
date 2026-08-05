@@ -1,232 +1,1184 @@
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
-  "agents": {
-    "sisyphus": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
+    "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+    "agents": {
+        "sisyphus": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
         },
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "hephaestus": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
-        }
-      ]
-    },
-    "oracle": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
+        "hephaestus": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
         },
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "librarian": {
-      "model": "opencode/deepseek-v4-flash-free"
-    },
-    "explore": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "multimodal-looker": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
-        }
-      ]
-    },
-    "prometheus": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
+        "oracle": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
         },
-        {
-          "model": "opencode/glm-5.2"
+        "librarian": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "explore": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "multimodal-looker": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "prometheus": {
+            "model": "local-ornith/ornith-9b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "metis": {
+            "model": "local-lfm/lfm-2.5-1.6b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "momus": {
+            "model": "local-ornith/ornith-9b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "superpowers": {
+            "model": "local-ornith/ornith-9b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "atlas": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "sisyphus-junior": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "hestia": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "atena": {
+            "model": "local-ornith/ornith-9b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "ai-agent-book": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "book-to-skill": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "code-review-graph": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "context-selector": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "dokku-deploy": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "executor-deep": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "fallow-lsp-reviewer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "fallow-mcp-reviewer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gran-mestre": {
+            "model": "local-ornith/ornith-9b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-advisor-researcher": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-ai-researcher": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-assumptions-analyzer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-code-fixer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-code-reviewer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-codebase-mapper": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-debug-session-manager": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-debugger": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-doc-classifier": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-doc-synthesizer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-doc-verifier": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-doc-writer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-domain-researcher": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-eval-auditor": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-eval-planner": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-executor": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-framework-selector": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-integration-checker": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-intel-updater": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-mempalace-curator": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-nyquist-auditor": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-pattern-mapper": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-phase-researcher": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-plan-checker": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-planner": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-project-researcher": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-research-synthesizer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-roadmapper": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-security-auditor": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-ui-auditor": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-ui-checker": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-ui-researcher": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-user-profiler": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "gsd-verifier": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "hallmark": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "i-have-adhd": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "mattpocock-skills": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "memory-keeper": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "oh-my-opencode-slim": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "omniroute": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "onp-spec-driven": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "openship": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "orca": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "pi": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "reverser": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "ruview": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "superpowers-code-reviewer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "superpowers-implementer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "superpowers-plan-writer-alt1": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "superpowers-plan-writer-alt2": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "superpowers-plan-writer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "superpowers-spec-writer": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "worldmonitor": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
         }
-      ]
     },
-    "metis": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
+    "categories": {
+        "visual-engineering": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
         },
-        {
-          "model": "opencode/big-pickle"
+        "ultrabrain": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "deep": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "artistry": {
+            "model": "local-ornith/ornith-9b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "quick": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "unspecified-low": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "unspecified-high": {
+            "model": "local-bonsai/bonsai-27b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
+        },
+        "writing": {
+            "model": "local-nanbeige/nanbeige-4.2-3b",
+            "fallback_models": [
+                {
+                    "model": "omniroute/auto/best-free"
+                },
+                {
+                    "model": "opencode/deepseek-v4-flash-free"
+                },
+                {
+                    "model": "opencode/glm-5.2"
+                }
+            ]
         }
-      ]
     },
-    "momus": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "superpowers": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "atlas": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    },
-    "sisyphus-junior": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    },
-    "hestia": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "atena": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    }
-  },
-  "categories": {
-    "visual-engineering": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    },
-    "ultrabrain": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "deep": {
-      "model": "opencode/big-pickle",
-      "fallback_models": [
-        {
-          "model": "opencode/deepseek-v4-flash-free"
-        },
-        {
-          "model": "opencode/glm-5.2"
-        }
-      ]
-    },
-    "artistry": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    },
-    "quick": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    },
-    "unspecified-low": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    },
-    "unspecified-high": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    },
-    "writing": {
-      "model": "opencode/deepseek-v4-flash-free",
-      "fallback_models": [
-        {
-          "model": "opencode/glm-5.2"
-        },
-        {
-          "model": "opencode/big-pickle"
-        }
-      ]
-    }
-  }
+    "updated_at": "2026-08-03T12:10:00-03:00"
 }
