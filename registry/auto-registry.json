@@ -1,0 +1,1563 @@
+{
+  "registry_version": "1.0.0",
+  "updated_at": "2026-07-28T03:52:36.178818Z",
+  "description": "Registry automático — sincronizado com componentes instalados",
+  "auto_sync": true,
+  "entries": [
+    {
+      "id": "skill-agent-reach",
+      "tipo": "skill",
+      "nome": "agent-reach",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/agent-reach"
+    },
+    {
+      "id": "skill-archify",
+      "tipo": "skill",
+      "nome": "archify",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/archify"
+    },
+    {
+      "id": "skill-athena",
+      "tipo": "skill",
+      "nome": "athena",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/athena"
+    },
+    {
+      "id": "skill-browser-use",
+      "tipo": "skill",
+      "nome": "browser-use",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/browser-use"
+    },
+    {
+      "id": "skill-ck",
+      "tipo": "skill",
+      "nome": "ck",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/ck"
+    },
+    {
+      "id": "skill-fable-judge",
+      "tipo": "skill",
+      "nome": "fable-judge",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/fable-judge"
+    },
+    {
+      "id": "skill-gran-mestre",
+      "tipo": "skill",
+      "nome": "gran-mestre",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/gran-mestre"
+    },
+    {
+      "id": "skill-hestia",
+      "tipo": "skill",
+      "nome": "hestia",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/hestia"
+    },
+    {
+      "id": "skill-pxpipe",
+      "tipo": "skill",
+      "nome": "pxpipe",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/pxpipe"
+    },
+    {
+      "id": "skill-security-review",
+      "tipo": "skill",
+      "nome": "security-review",
+      "status": "incompleto",
+      "localizacao": "/home/johncoffee/.opencode/skills/security-review"
+    },
+    {
+      "id": "skill-agent-reach",
+      "tipo": "skill",
+      "nome": "agent-reach",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/agent-reach"
+    },
+    {
+      "id": "skill-graphify",
+      "tipo": "skill",
+      "nome": "graphify",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/graphify"
+    },
+    {
+      "id": "skill-gsd-add-tests",
+      "tipo": "skill",
+      "nome": "gsd-add-tests",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-add-tests"
+    },
+    {
+      "id": "skill-gsd-ai-integration-phase",
+      "tipo": "skill",
+      "nome": "gsd-ai-integration-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ai-integration-phase"
+    },
+    {
+      "id": "skill-gsd-audit-fix",
+      "tipo": "skill",
+      "nome": "gsd-audit-fix",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-audit-fix"
+    },
+    {
+      "id": "skill-gsd-audit-milestone",
+      "tipo": "skill",
+      "nome": "gsd-audit-milestone",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-audit-milestone"
+    },
+    {
+      "id": "skill-gsd-audit-uat",
+      "tipo": "skill",
+      "nome": "gsd-audit-uat",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-audit-uat"
+    },
+    {
+      "id": "skill-gsd-autonomous",
+      "tipo": "skill",
+      "nome": "gsd-autonomous",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-autonomous"
+    },
+    {
+      "id": "skill-gsd-capture",
+      "tipo": "skill",
+      "nome": "gsd-capture",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-capture"
+    },
+    {
+      "id": "skill-gsd-cleanup",
+      "tipo": "skill",
+      "nome": "gsd-cleanup",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-cleanup"
+    },
+    {
+      "id": "skill-gsd-code-review",
+      "tipo": "skill",
+      "nome": "gsd-code-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-code-review"
+    },
+    {
+      "id": "skill-gsd-complete-milestone",
+      "tipo": "skill",
+      "nome": "gsd-complete-milestone",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-complete-milestone"
+    },
+    {
+      "id": "skill-gsd-config",
+      "tipo": "skill",
+      "nome": "gsd-config",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-config"
+    },
+    {
+      "id": "skill-gsd-debug",
+      "tipo": "skill",
+      "nome": "gsd-debug",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-debug"
+    },
+    {
+      "id": "skill-gsd-discuss-phase",
+      "tipo": "skill",
+      "nome": "gsd-discuss-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-discuss-phase"
+    },
+    {
+      "id": "skill-gsd-docs-update",
+      "tipo": "skill",
+      "nome": "gsd-docs-update",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-docs-update"
+    },
+    {
+      "id": "skill-gsd-eval-review",
+      "tipo": "skill",
+      "nome": "gsd-eval-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-eval-review"
+    },
+    {
+      "id": "skill-gsd-execute-phase",
+      "tipo": "skill",
+      "nome": "gsd-execute-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-execute-phase"
+    },
+    {
+      "id": "skill-gsd-explore",
+      "tipo": "skill",
+      "nome": "gsd-explore",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-explore"
+    },
+    {
+      "id": "skill-gsd-extract-learnings",
+      "tipo": "skill",
+      "nome": "gsd-extract-learnings",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-extract-learnings"
+    },
+    {
+      "id": "skill-gsd-fast",
+      "tipo": "skill",
+      "nome": "gsd-fast",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-fast"
+    },
+    {
+      "id": "skill-gsd-forensics",
+      "tipo": "skill",
+      "nome": "gsd-forensics",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-forensics"
+    },
+    {
+      "id": "skill-gsd-graphify",
+      "tipo": "skill",
+      "nome": "gsd-graphify",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-graphify"
+    },
+    {
+      "id": "skill-gsd-health",
+      "tipo": "skill",
+      "nome": "gsd-health",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-health"
+    },
+    {
+      "id": "skill-gsd-help",
+      "tipo": "skill",
+      "nome": "gsd-help",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-help"
+    },
+    {
+      "id": "skill-gsd-import",
+      "tipo": "skill",
+      "nome": "gsd-import",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-import"
+    },
+    {
+      "id": "skill-gsd-inbox",
+      "tipo": "skill",
+      "nome": "gsd-inbox",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-inbox"
+    },
+    {
+      "id": "skill-gsd-ingest-docs",
+      "tipo": "skill",
+      "nome": "gsd-ingest-docs",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ingest-docs"
+    },
+    {
+      "id": "skill-gsd-manager",
+      "tipo": "skill",
+      "nome": "gsd-manager",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-manager"
+    },
+    {
+      "id": "skill-gsd-map-codebase",
+      "tipo": "skill",
+      "nome": "gsd-map-codebase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-map-codebase"
+    },
+    {
+      "id": "skill-gsd-mempalace-capture",
+      "tipo": "skill",
+      "nome": "gsd-mempalace-capture",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-mempalace-capture"
+    },
+    {
+      "id": "skill-gsd-mempalace-recall",
+      "tipo": "skill",
+      "nome": "gsd-mempalace-recall",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-mempalace-recall"
+    },
+    {
+      "id": "skill-gsd-milestone-summary",
+      "tipo": "skill",
+      "nome": "gsd-milestone-summary",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-milestone-summary"
+    },
+    {
+      "id": "skill-gsd-mvp-phase",
+      "tipo": "skill",
+      "nome": "gsd-mvp-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-mvp-phase"
+    },
+    {
+      "id": "skill-gsd-new-milestone",
+      "tipo": "skill",
+      "nome": "gsd-new-milestone",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-new-milestone"
+    },
+    {
+      "id": "skill-gsd-new-project",
+      "tipo": "skill",
+      "nome": "gsd-new-project",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-new-project"
+    },
+    {
+      "id": "skill-gsd-ns-context",
+      "tipo": "skill",
+      "nome": "gsd-ns-context",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ns-context"
+    },
+    {
+      "id": "skill-gsd-ns-ideate",
+      "tipo": "skill",
+      "nome": "gsd-ns-ideate",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ns-ideate"
+    },
+    {
+      "id": "skill-gsd-ns-manage",
+      "tipo": "skill",
+      "nome": "gsd-ns-manage",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ns-manage"
+    },
+    {
+      "id": "skill-gsd-ns-project",
+      "tipo": "skill",
+      "nome": "gsd-ns-project",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ns-project"
+    },
+    {
+      "id": "skill-gsd-ns-review",
+      "tipo": "skill",
+      "nome": "gsd-ns-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ns-review"
+    },
+    {
+      "id": "skill-gsd-ns-workflow",
+      "tipo": "skill",
+      "nome": "gsd-ns-workflow",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ns-workflow"
+    },
+    {
+      "id": "skill-gsd-pause-work",
+      "tipo": "skill",
+      "nome": "gsd-pause-work",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-pause-work"
+    },
+    {
+      "id": "skill-gsd-phase",
+      "tipo": "skill",
+      "nome": "gsd-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-phase"
+    },
+    {
+      "id": "skill-gsd-plan-phase",
+      "tipo": "skill",
+      "nome": "gsd-plan-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-plan-phase"
+    },
+    {
+      "id": "skill-gsd-plan-review-convergence",
+      "tipo": "skill",
+      "nome": "gsd-plan-review-convergence",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-plan-review-convergence"
+    },
+    {
+      "id": "skill-gsd-pr-branch",
+      "tipo": "skill",
+      "nome": "gsd-pr-branch",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-pr-branch"
+    },
+    {
+      "id": "skill-gsd-profile-user",
+      "tipo": "skill",
+      "nome": "gsd-profile-user",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-profile-user"
+    },
+    {
+      "id": "skill-gsd-progress",
+      "tipo": "skill",
+      "nome": "gsd-progress",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-progress"
+    },
+    {
+      "id": "skill-gsd-quick",
+      "tipo": "skill",
+      "nome": "gsd-quick",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-quick"
+    },
+    {
+      "id": "skill-gsd-resume-work",
+      "tipo": "skill",
+      "nome": "gsd-resume-work",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-resume-work"
+    },
+    {
+      "id": "skill-gsd-review",
+      "tipo": "skill",
+      "nome": "gsd-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-review"
+    },
+    {
+      "id": "skill-gsd-review-backlog",
+      "tipo": "skill",
+      "nome": "gsd-review-backlog",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-review-backlog"
+    },
+    {
+      "id": "skill-gsd-secure-phase",
+      "tipo": "skill",
+      "nome": "gsd-secure-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-secure-phase"
+    },
+    {
+      "id": "skill-gsd-settings",
+      "tipo": "skill",
+      "nome": "gsd-settings",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-settings"
+    },
+    {
+      "id": "skill-gsd-ship",
+      "tipo": "skill",
+      "nome": "gsd-ship",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ship"
+    },
+    {
+      "id": "skill-gsd-sketch",
+      "tipo": "skill",
+      "nome": "gsd-sketch",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-sketch"
+    },
+    {
+      "id": "skill-gsd-spec-phase",
+      "tipo": "skill",
+      "nome": "gsd-spec-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-spec-phase"
+    },
+    {
+      "id": "skill-gsd-spike",
+      "tipo": "skill",
+      "nome": "gsd-spike",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-spike"
+    },
+    {
+      "id": "skill-gsd-stats",
+      "tipo": "skill",
+      "nome": "gsd-stats",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-stats"
+    },
+    {
+      "id": "skill-gsd-surface",
+      "tipo": "skill",
+      "nome": "gsd-surface",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-surface"
+    },
+    {
+      "id": "skill-gsd-thread",
+      "tipo": "skill",
+      "nome": "gsd-thread",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-thread"
+    },
+    {
+      "id": "skill-gsd-ui-phase",
+      "tipo": "skill",
+      "nome": "gsd-ui-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ui-phase"
+    },
+    {
+      "id": "skill-gsd-ui-review",
+      "tipo": "skill",
+      "nome": "gsd-ui-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ui-review"
+    },
+    {
+      "id": "skill-gsd-ultraplan-phase",
+      "tipo": "skill",
+      "nome": "gsd-ultraplan-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-ultraplan-phase"
+    },
+    {
+      "id": "skill-gsd-undo",
+      "tipo": "skill",
+      "nome": "gsd-undo",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-undo"
+    },
+    {
+      "id": "skill-gsd-update",
+      "tipo": "skill",
+      "nome": "gsd-update",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-update"
+    },
+    {
+      "id": "skill-gsd-validate-phase",
+      "tipo": "skill",
+      "nome": "gsd-validate-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-validate-phase"
+    },
+    {
+      "id": "skill-gsd-verify-work",
+      "tipo": "skill",
+      "nome": "gsd-verify-work",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-verify-work"
+    },
+    {
+      "id": "skill-gsd-workspace",
+      "tipo": "skill",
+      "nome": "gsd-workspace",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-workspace"
+    },
+    {
+      "id": "skill-gsd-workstreams",
+      "tipo": "skill",
+      "nome": "gsd-workstreams",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/gsd-workstreams"
+    },
+    {
+      "id": "skill-superpowers-brainstorming",
+      "tipo": "skill",
+      "nome": "superpowers-brainstorming",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/superpowers-brainstorming"
+    },
+    {
+      "id": "skill-superpowers-executing-plans",
+      "tipo": "skill",
+      "nome": "superpowers-executing-plans",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/superpowers-executing-plans"
+    },
+    {
+      "id": "skill-superpowers-subagent-driven-development",
+      "tipo": "skill",
+      "nome": "superpowers-subagent-driven-development",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/superpowers-subagent-driven-development"
+    },
+    {
+      "id": "skill-superpowers-using-superpowers",
+      "tipo": "skill",
+      "nome": "superpowers-using-superpowers",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/superpowers-using-superpowers"
+    },
+    {
+      "id": "skill-superpowers-verification-before-completion",
+      "tipo": "skill",
+      "nome": "superpowers-verification-before-completion",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/superpowers-verification-before-completion"
+    },
+    {
+      "id": "skill-superpowers-writing-plans",
+      "tipo": "skill",
+      "nome": "superpowers-writing-plans",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/skills/superpowers-writing-plans"
+    },
+    {
+      "id": "agent-gran-mestre",
+      "tipo": "agent",
+      "nome": "gran-mestre",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gran-mestre.md"
+    },
+    {
+      "id": "agent-gsd-advisor-researcher",
+      "tipo": "subagent",
+      "nome": "gsd-advisor-researcher",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-advisor-researcher.md"
+    },
+    {
+      "id": "agent-gsd-ai-researcher",
+      "tipo": "subagent",
+      "nome": "gsd-ai-researcher",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-ai-researcher.md"
+    },
+    {
+      "id": "agent-gsd-assumptions-analyzer",
+      "tipo": "subagent",
+      "nome": "gsd-assumptions-analyzer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-assumptions-analyzer.md"
+    },
+    {
+      "id": "agent-gsd-code-fixer",
+      "tipo": "subagent",
+      "nome": "gsd-code-fixer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-code-fixer.md"
+    },
+    {
+      "id": "agent-gsd-code-reviewer",
+      "tipo": "subagent",
+      "nome": "gsd-code-reviewer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-code-reviewer.md"
+    },
+    {
+      "id": "agent-gsd-codebase-mapper",
+      "tipo": "subagent",
+      "nome": "gsd-codebase-mapper",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-codebase-mapper.md"
+    },
+    {
+      "id": "agent-gsd-debug-session-manager",
+      "tipo": "subagent",
+      "nome": "gsd-debug-session-manager",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-debug-session-manager.md"
+    },
+    {
+      "id": "agent-gsd-debugger",
+      "tipo": "subagent",
+      "nome": "gsd-debugger",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-debugger.md"
+    },
+    {
+      "id": "agent-gsd-doc-classifier",
+      "tipo": "subagent",
+      "nome": "gsd-doc-classifier",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-doc-classifier.md"
+    },
+    {
+      "id": "agent-gsd-doc-synthesizer",
+      "tipo": "subagent",
+      "nome": "gsd-doc-synthesizer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-doc-synthesizer.md"
+    },
+    {
+      "id": "agent-gsd-doc-verifier",
+      "tipo": "subagent",
+      "nome": "gsd-doc-verifier",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-doc-verifier.md"
+    },
+    {
+      "id": "agent-gsd-doc-writer",
+      "tipo": "subagent",
+      "nome": "gsd-doc-writer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-doc-writer.md"
+    },
+    {
+      "id": "agent-gsd-domain-researcher",
+      "tipo": "subagent",
+      "nome": "gsd-domain-researcher",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-domain-researcher.md"
+    },
+    {
+      "id": "agent-gsd-eval-auditor",
+      "tipo": "subagent",
+      "nome": "gsd-eval-auditor",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-eval-auditor.md"
+    },
+    {
+      "id": "agent-gsd-eval-planner",
+      "tipo": "subagent",
+      "nome": "gsd-eval-planner",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-eval-planner.md"
+    },
+    {
+      "id": "agent-gsd-executor",
+      "tipo": "subagent",
+      "nome": "gsd-executor",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-executor.md"
+    },
+    {
+      "id": "agent-gsd-framework-selector",
+      "tipo": "subagent",
+      "nome": "gsd-framework-selector",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-framework-selector.md"
+    },
+    {
+      "id": "agent-gsd-integration-checker",
+      "tipo": "subagent",
+      "nome": "gsd-integration-checker",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-integration-checker.md"
+    },
+    {
+      "id": "agent-gsd-intel-updater",
+      "tipo": "subagent",
+      "nome": "gsd-intel-updater",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-intel-updater.md"
+    },
+    {
+      "id": "agent-gsd-mempalace-curator",
+      "tipo": "subagent",
+      "nome": "gsd-mempalace-curator",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-mempalace-curator.md"
+    },
+    {
+      "id": "agent-gsd-nyquist-auditor",
+      "tipo": "subagent",
+      "nome": "gsd-nyquist-auditor",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-nyquist-auditor.md"
+    },
+    {
+      "id": "agent-gsd-pattern-mapper",
+      "tipo": "subagent",
+      "nome": "gsd-pattern-mapper",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-pattern-mapper.md"
+    },
+    {
+      "id": "agent-gsd-phase-researcher",
+      "tipo": "subagent",
+      "nome": "gsd-phase-researcher",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-phase-researcher.md"
+    },
+    {
+      "id": "agent-gsd-plan-checker",
+      "tipo": "subagent",
+      "nome": "gsd-plan-checker",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-plan-checker.md"
+    },
+    {
+      "id": "agent-gsd-planner",
+      "tipo": "subagent",
+      "nome": "gsd-planner",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-planner.md"
+    },
+    {
+      "id": "agent-gsd-project-researcher",
+      "tipo": "subagent",
+      "nome": "gsd-project-researcher",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-project-researcher.md"
+    },
+    {
+      "id": "agent-gsd-research-synthesizer",
+      "tipo": "subagent",
+      "nome": "gsd-research-synthesizer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-research-synthesizer.md"
+    },
+    {
+      "id": "agent-gsd-roadmapper",
+      "tipo": "subagent",
+      "nome": "gsd-roadmapper",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-roadmapper.md"
+    },
+    {
+      "id": "agent-gsd-security-auditor",
+      "tipo": "subagent",
+      "nome": "gsd-security-auditor",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-security-auditor.md"
+    },
+    {
+      "id": "agent-gsd-ui-auditor",
+      "tipo": "subagent",
+      "nome": "gsd-ui-auditor",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-ui-auditor.md"
+    },
+    {
+      "id": "agent-gsd-ui-checker",
+      "tipo": "subagent",
+      "nome": "gsd-ui-checker",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-ui-checker.md"
+    },
+    {
+      "id": "agent-gsd-ui-researcher",
+      "tipo": "subagent",
+      "nome": "gsd-ui-researcher",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-ui-researcher.md"
+    },
+    {
+      "id": "agent-gsd-user-profiler",
+      "tipo": "subagent",
+      "nome": "gsd-user-profiler",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-user-profiler.md"
+    },
+    {
+      "id": "agent-gsd-verifier",
+      "tipo": "subagent",
+      "nome": "gsd-verifier",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/gsd-verifier.md"
+    },
+    {
+      "id": "agent-memory-keeper",
+      "tipo": "subagent",
+      "nome": "memory-keeper",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/memory-keeper.md"
+    },
+    {
+      "id": "agent-reverser",
+      "tipo": "subagent",
+      "nome": "reverser",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/reverser.md"
+    },
+    {
+      "id": "agent-superpowers-code-reviewer",
+      "tipo": "subagent",
+      "nome": "superpowers-code-reviewer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/superpowers-code-reviewer.md"
+    },
+    {
+      "id": "agent-superpowers-implementer",
+      "tipo": "subagent",
+      "nome": "superpowers-implementer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/superpowers-implementer.md"
+    },
+    {
+      "id": "agent-superpowers-plan-writer-alt1",
+      "tipo": "subagent",
+      "nome": "superpowers-plan-writer-alt1",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer-alt1.md"
+    },
+    {
+      "id": "agent-superpowers-plan-writer-alt2",
+      "tipo": "subagent",
+      "nome": "superpowers-plan-writer-alt2",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer-alt2.md"
+    },
+    {
+      "id": "agent-superpowers-plan-writer",
+      "tipo": "subagent",
+      "nome": "superpowers-plan-writer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer.md"
+    },
+    {
+      "id": "agent-superpowers-spec-writer",
+      "tipo": "subagent",
+      "nome": "superpowers-spec-writer",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/superpowers-spec-writer.md"
+    },
+    {
+      "id": "agent-superpowers",
+      "tipo": "subagent",
+      "nome": "superpowers",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/agents/superpowers.md"
+    },
+    {
+      "id": "hook-gsd-check-update-worker.js",
+      "tipo": "tool",
+      "nome": "gsd-check-update-worker.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-check-update-worker.js"
+    },
+    {
+      "id": "hook-gsd-check-update.js",
+      "tipo": "tool",
+      "nome": "gsd-check-update.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-check-update.js"
+    },
+    {
+      "id": "hook-gsd-config-reload.js",
+      "tipo": "tool",
+      "nome": "gsd-config-reload.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-config-reload.js"
+    },
+    {
+      "id": "hook-gsd-context-monitor.js",
+      "tipo": "tool",
+      "nome": "gsd-context-monitor.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-context-monitor.js"
+    },
+    {
+      "id": "hook-gsd-cursor-post-tool.js",
+      "tipo": "tool",
+      "nome": "gsd-cursor-post-tool.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-cursor-post-tool.js"
+    },
+    {
+      "id": "hook-gsd-cursor-session-start.js",
+      "tipo": "tool",
+      "nome": "gsd-cursor-session-start.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-cursor-session-start.js"
+    },
+    {
+      "id": "hook-gsd-ensure-canonical-path.js",
+      "tipo": "tool",
+      "nome": "gsd-ensure-canonical-path.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-ensure-canonical-path.js"
+    },
+    {
+      "id": "hook-gsd-graphify-update.sh",
+      "tipo": "tool",
+      "nome": "gsd-graphify-update.sh",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-graphify-update.sh"
+    },
+    {
+      "id": "hook-gsd-phase-boundary.sh",
+      "tipo": "tool",
+      "nome": "gsd-phase-boundary.sh",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-phase-boundary.sh"
+    },
+    {
+      "id": "hook-gsd-prompt-guard.js",
+      "tipo": "tool",
+      "nome": "gsd-prompt-guard.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-prompt-guard.js"
+    },
+    {
+      "id": "hook-gsd-read-guard.js",
+      "tipo": "tool",
+      "nome": "gsd-read-guard.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-read-guard.js"
+    },
+    {
+      "id": "hook-gsd-read-injection-scanner.js",
+      "tipo": "tool",
+      "nome": "gsd-read-injection-scanner.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-read-injection-scanner.js"
+    },
+    {
+      "id": "hook-gsd-session-state.sh",
+      "tipo": "tool",
+      "nome": "gsd-session-state.sh",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-session-state.sh"
+    },
+    {
+      "id": "hook-gsd-statusline.js",
+      "tipo": "tool",
+      "nome": "gsd-statusline.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-statusline.js"
+    },
+    {
+      "id": "hook-gsd-update-banner.js",
+      "tipo": "tool",
+      "nome": "gsd-update-banner.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-update-banner.js"
+    },
+    {
+      "id": "hook-gsd-validate-commit.sh",
+      "tipo": "tool",
+      "nome": "gsd-validate-commit.sh",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-validate-commit.sh"
+    },
+    {
+      "id": "hook-gsd-workflow-guard.js",
+      "tipo": "tool",
+      "nome": "gsd-workflow-guard.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-workflow-guard.js"
+    },
+    {
+      "id": "hook-gsd-worktree-path-guard.js",
+      "tipo": "tool",
+      "nome": "gsd-worktree-path-guard.js",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/hooks/gsd-worktree-path-guard.js"
+    },
+    {
+      "id": "mcp-ghidra",
+      "tipo": "mcp",
+      "nome": "ghidra",
+      "status": "ativo",
+      "localizacao": "http://127.0.0.1:8080/mcp"
+    },
+    {
+      "id": "command-gran-mestre",
+      "tipo": "skill",
+      "nome": "/gran-mestre",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gran-mestre.md"
+    },
+    {
+      "id": "command-gsd-add-tests",
+      "tipo": "skill",
+      "nome": "/gsd-add-tests",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-add-tests.md"
+    },
+    {
+      "id": "command-gsd-ai-integration-phase",
+      "tipo": "skill",
+      "nome": "/gsd-ai-integration-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ai-integration-phase.md"
+    },
+    {
+      "id": "command-gsd-audit-fix",
+      "tipo": "skill",
+      "nome": "/gsd-audit-fix",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-audit-fix.md"
+    },
+    {
+      "id": "command-gsd-audit-milestone",
+      "tipo": "skill",
+      "nome": "/gsd-audit-milestone",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-audit-milestone.md"
+    },
+    {
+      "id": "command-gsd-audit-uat",
+      "tipo": "skill",
+      "nome": "/gsd-audit-uat",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-audit-uat.md"
+    },
+    {
+      "id": "command-gsd-autonomous",
+      "tipo": "skill",
+      "nome": "/gsd-autonomous",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-autonomous.md"
+    },
+    {
+      "id": "command-gsd-capture",
+      "tipo": "skill",
+      "nome": "/gsd-capture",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-capture.md"
+    },
+    {
+      "id": "command-gsd-cleanup",
+      "tipo": "skill",
+      "nome": "/gsd-cleanup",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-cleanup.md"
+    },
+    {
+      "id": "command-gsd-code-review",
+      "tipo": "skill",
+      "nome": "/gsd-code-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-code-review.md"
+    },
+    {
+      "id": "command-gsd-complete-milestone",
+      "tipo": "skill",
+      "nome": "/gsd-complete-milestone",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-complete-milestone.md"
+    },
+    {
+      "id": "command-gsd-config",
+      "tipo": "skill",
+      "nome": "/gsd-config",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-config.md"
+    },
+    {
+      "id": "command-gsd-debug",
+      "tipo": "skill",
+      "nome": "/gsd-debug",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-debug.md"
+    },
+    {
+      "id": "command-gsd-discuss-phase",
+      "tipo": "skill",
+      "nome": "/gsd-discuss-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-discuss-phase.md"
+    },
+    {
+      "id": "command-gsd-docs-update",
+      "tipo": "skill",
+      "nome": "/gsd-docs-update",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-docs-update.md"
+    },
+    {
+      "id": "command-gsd-eval-review",
+      "tipo": "skill",
+      "nome": "/gsd-eval-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-eval-review.md"
+    },
+    {
+      "id": "command-gsd-execute-phase",
+      "tipo": "skill",
+      "nome": "/gsd-execute-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-execute-phase.md"
+    },
+    {
+      "id": "command-gsd-explore",
+      "tipo": "skill",
+      "nome": "/gsd-explore",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-explore.md"
+    },
+    {
+      "id": "command-gsd-extract-learnings",
+      "tipo": "skill",
+      "nome": "/gsd-extract-learnings",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-extract-learnings.md"
+    },
+    {
+      "id": "command-gsd-fast",
+      "tipo": "skill",
+      "nome": "/gsd-fast",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-fast.md"
+    },
+    {
+      "id": "command-gsd-forensics",
+      "tipo": "skill",
+      "nome": "/gsd-forensics",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-forensics.md"
+    },
+    {
+      "id": "command-gsd-graphify",
+      "tipo": "skill",
+      "nome": "/gsd-graphify",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-graphify.md"
+    },
+    {
+      "id": "command-gsd-health",
+      "tipo": "skill",
+      "nome": "/gsd-health",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-health.md"
+    },
+    {
+      "id": "command-gsd-help",
+      "tipo": "skill",
+      "nome": "/gsd-help",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-help.md"
+    },
+    {
+      "id": "command-gsd-import",
+      "tipo": "skill",
+      "nome": "/gsd-import",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-import.md"
+    },
+    {
+      "id": "command-gsd-inbox",
+      "tipo": "skill",
+      "nome": "/gsd-inbox",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-inbox.md"
+    },
+    {
+      "id": "command-gsd-ingest-docs",
+      "tipo": "skill",
+      "nome": "/gsd-ingest-docs",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ingest-docs.md"
+    },
+    {
+      "id": "command-gsd-manager",
+      "tipo": "skill",
+      "nome": "/gsd-manager",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-manager.md"
+    },
+    {
+      "id": "command-gsd-map-codebase",
+      "tipo": "skill",
+      "nome": "/gsd-map-codebase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-map-codebase.md"
+    },
+    {
+      "id": "command-gsd-mempalace-capture",
+      "tipo": "skill",
+      "nome": "/gsd-mempalace-capture",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-mempalace-capture.md"
+    },
+    {
+      "id": "command-gsd-mempalace-recall",
+      "tipo": "skill",
+      "nome": "/gsd-mempalace-recall",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-mempalace-recall.md"
+    },
+    {
+      "id": "command-gsd-milestone-summary",
+      "tipo": "skill",
+      "nome": "/gsd-milestone-summary",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-milestone-summary.md"
+    },
+    {
+      "id": "command-gsd-mvp-phase",
+      "tipo": "skill",
+      "nome": "/gsd-mvp-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-mvp-phase.md"
+    },
+    {
+      "id": "command-gsd-new-milestone",
+      "tipo": "skill",
+      "nome": "/gsd-new-milestone",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-new-milestone.md"
+    },
+    {
+      "id": "command-gsd-new-project",
+      "tipo": "skill",
+      "nome": "/gsd-new-project",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-new-project.md"
+    },
+    {
+      "id": "command-gsd-ns-context",
+      "tipo": "skill",
+      "nome": "/gsd-ns-context",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ns-context.md"
+    },
+    {
+      "id": "command-gsd-ns-ideate",
+      "tipo": "skill",
+      "nome": "/gsd-ns-ideate",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ns-ideate.md"
+    },
+    {
+      "id": "command-gsd-ns-manage",
+      "tipo": "skill",
+      "nome": "/gsd-ns-manage",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ns-manage.md"
+    },
+    {
+      "id": "command-gsd-ns-project",
+      "tipo": "skill",
+      "nome": "/gsd-ns-project",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ns-project.md"
+    },
+    {
+      "id": "command-gsd-ns-review",
+      "tipo": "skill",
+      "nome": "/gsd-ns-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ns-review.md"
+    },
+    {
+      "id": "command-gsd-ns-workflow",
+      "tipo": "skill",
+      "nome": "/gsd-ns-workflow",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ns-workflow.md"
+    },
+    {
+      "id": "command-gsd-pause-work",
+      "tipo": "skill",
+      "nome": "/gsd-pause-work",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-pause-work.md"
+    },
+    {
+      "id": "command-gsd-phase",
+      "tipo": "skill",
+      "nome": "/gsd-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-phase.md"
+    },
+    {
+      "id": "command-gsd-plan-phase",
+      "tipo": "skill",
+      "nome": "/gsd-plan-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-plan-phase.md"
+    },
+    {
+      "id": "command-gsd-plan-review-convergence",
+      "tipo": "skill",
+      "nome": "/gsd-plan-review-convergence",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-plan-review-convergence.md"
+    },
+    {
+      "id": "command-gsd-pr-branch",
+      "tipo": "skill",
+      "nome": "/gsd-pr-branch",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-pr-branch.md"
+    },
+    {
+      "id": "command-gsd-profile-user",
+      "tipo": "skill",
+      "nome": "/gsd-profile-user",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-profile-user.md"
+    },
+    {
+      "id": "command-gsd-progress",
+      "tipo": "skill",
+      "nome": "/gsd-progress",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-progress.md"
+    },
+    {
+      "id": "command-gsd-quick",
+      "tipo": "skill",
+      "nome": "/gsd-quick",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-quick.md"
+    },
+    {
+      "id": "command-gsd-resume-work",
+      "tipo": "skill",
+      "nome": "/gsd-resume-work",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-resume-work.md"
+    },
+    {
+      "id": "command-gsd-review-backlog",
+      "tipo": "skill",
+      "nome": "/gsd-review-backlog",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-review-backlog.md"
+    },
+    {
+      "id": "command-gsd-review",
+      "tipo": "skill",
+      "nome": "/gsd-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-review.md"
+    },
+    {
+      "id": "command-gsd-secure-phase",
+      "tipo": "skill",
+      "nome": "/gsd-secure-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-secure-phase.md"
+    },
+    {
+      "id": "command-gsd-settings",
+      "tipo": "skill",
+      "nome": "/gsd-settings",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-settings.md"
+    },
+    {
+      "id": "command-gsd-ship",
+      "tipo": "skill",
+      "nome": "/gsd-ship",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ship.md"
+    },
+    {
+      "id": "command-gsd-sketch",
+      "tipo": "skill",
+      "nome": "/gsd-sketch",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-sketch.md"
+    },
+    {
+      "id": "command-gsd-spec-phase",
+      "tipo": "skill",
+      "nome": "/gsd-spec-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-spec-phase.md"
+    },
+    {
+      "id": "command-gsd-spike",
+      "tipo": "skill",
+      "nome": "/gsd-spike",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-spike.md"
+    },
+    {
+      "id": "command-gsd-stats",
+      "tipo": "skill",
+      "nome": "/gsd-stats",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-stats.md"
+    },
+    {
+      "id": "command-gsd-surface",
+      "tipo": "skill",
+      "nome": "/gsd-surface",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-surface.md"
+    },
+    {
+      "id": "command-gsd-thread",
+      "tipo": "skill",
+      "nome": "/gsd-thread",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-thread.md"
+    },
+    {
+      "id": "command-gsd-ui-phase",
+      "tipo": "skill",
+      "nome": "/gsd-ui-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ui-phase.md"
+    },
+    {
+      "id": "command-gsd-ui-review",
+      "tipo": "skill",
+      "nome": "/gsd-ui-review",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ui-review.md"
+    },
+    {
+      "id": "command-gsd-ultraplan-phase",
+      "tipo": "skill",
+      "nome": "/gsd-ultraplan-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-ultraplan-phase.md"
+    },
+    {
+      "id": "command-gsd-undo",
+      "tipo": "skill",
+      "nome": "/gsd-undo",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-undo.md"
+    },
+    {
+      "id": "command-gsd-update",
+      "tipo": "skill",
+      "nome": "/gsd-update",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-update.md"
+    },
+    {
+      "id": "command-gsd-validate-phase",
+      "tipo": "skill",
+      "nome": "/gsd-validate-phase",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-validate-phase.md"
+    },
+    {
+      "id": "command-gsd-verify-work",
+      "tipo": "skill",
+      "nome": "/gsd-verify-work",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-verify-work.md"
+    },
+    {
+      "id": "command-gsd-workspace",
+      "tipo": "skill",
+      "nome": "/gsd-workspace",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-workspace.md"
+    },
+    {
+      "id": "command-gsd-workstreams",
+      "tipo": "skill",
+      "nome": "/gsd-workstreams",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/gsd-workstreams.md"
+    },
+    {
+      "id": "command-registry-sync",
+      "tipo": "skill",
+      "nome": "/registry-sync",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.config/opencode/command/registry-sync.md"
+    }
+  ],
+  "stats": {
+    "total": 221,
+    "skills": 158,
+    "agents": 1,
+    "subagents": 43,
+    "tools": 18,
+    "mcps": 1
+  }
+}
