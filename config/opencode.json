@@ -1042,12 +1042,7 @@
   "small_model": "omniroute/auto/cheap",
   "default_agent": "gran-mestre",
   "instructions": [
-    "/mnt/dados/AGENTS.md",
-    "/mnt/dados/opencode/instructions/INSTRUCTIONS.md",
-    "/mnt/dados/opencode/instructions/continuous-improvement.md",
-    "/mnt/dados/opencode/skills/gran-mestre/SKILL.md",
-    "/mnt/dados/opencode/skills/browser-use/SKILL.md",
-    "/home/johncoffee/.claude/skills/ecc-autofagia/SKILL.md"
+    "~/.config/opencode/AGENTS.md"
   ],
   "skills": {
     "paths": [
