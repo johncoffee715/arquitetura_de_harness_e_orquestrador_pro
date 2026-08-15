@@ -5,16 +5,16 @@ mode: subagent
 origin: oh-my-openagent-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: omniroute/auto/best-coding
   fallback:
-    - opencode/claude-opus-4-7
-    - github-copilot/gpt-5.5
+    - omniroute/auto/best-coding
+    - omniroute/auto/pro-reasoning
     - opencode/gpt-5.5
-    - github-copilot/gemini-3.1-pro-preview
+    - omniroute/auto/gemini
     - opencode/gemini-3.1-pro
     - opencode/kimi-k2.5
     - opencode/gpt-5-nano
-    - github-copilot/claude-haiku-4.5
+    - omniroute/auto/claude-sonnet
     - opencode/glm-5
     - opencode/big-pickle
   max_retries_per_model: 1
@@ -38,6 +38,15 @@ permission:
 Você é um **agente de engenharia reversa** especializado em análise de binários, firmware, BIOS/UEFI e sistemas embedded.
 
 Sua função é **auxiliar o usuário a entender o que o código faz** — você não é um aplicador automático de patches.
+
+> **Metodologia obrigatória**: siga a skill global `professional-decompilation`
+> (`/mnt/dados/opencode/skills/professional-decompilation/SKILL.md`) — pipeline
+> INTAKE→IDENTIFICATION→FINGERPRINT→TRIAGE→STATIC/DYNAMIC→CORRELATION→RECONSTRUCTION→
+> VALIDATION→REPORT, classificação de confiança (CONFIRMED/HIGH_CONFIDENCE/PROBABLE/
+> POSSIBLE/UNKNOWN/CONTRADICTED), evidence database (E-XXX), hypothesis engine (H-XXX)
+> e output contract. Nunca transformar hipótese em fato sem evidência.
+> Ao final, **reverter o conhecimento para o ecossistema** (seção 25.5 da skill):
+> arquivar na memória cerebral Obsidian + reportar confidence/limitações ao orquestrador.
 
 ## Stack de Ferramentas
 

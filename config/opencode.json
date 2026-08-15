@@ -38,50 +38,26 @@
       "env": {
         "OBSIDIAN_VAULT": "/mnt/dados/cerebro com IA"
       }
+    },
+    "siz_delimiter": {
+      "enabled": true,
+      "type": "local",
+      "command": "python3",
+      "args": [
+        "/mnt/dados/harness/mcp/siz_delimiter_server.py"
+      ],
+      "env": {
+        "SIZ_TOKENIZE_ENDPOINT": "http://127.0.0.1:8083/tokenize",
+        "SIZ_CACHE_DIR": "/mnt/dados/harness/cache",
+        "SIZ_SAFETY_FACTOR": "1.15",
+        "SIZ_BUDGET_TOKENS": "8700"
+      }
     }
   },
   "provider": {
-    "local-lfm": {
-      "api": "openai",
-      "name": "LFM 2.5-1.6B (llama.cpp :8081)",
-      "options": {
-        "baseURL": "http://127.0.0.1:8081/v1",
-        "apiKey": "llamacpp"
-      },
-      "models": {
-        "lfm-2.5-1.6b": {
-          "name": "lfm-2.5-1.6b",
-          "limit": {
-            "context": 2048,
-            "output": 1024
-          },
-          "tool_call": true,
-          "temperature": true
-        }
-      }
-    },
-    "local-nanbeige": {
-      "api": "openai",
-      "name": "Nanbeige 4.2-3B (llama.cpp :8082)",
-      "options": {
-        "baseURL": "http://127.0.0.1:8082/v1",
-        "apiKey": "llamacpp"
-      },
-      "models": {
-        "nanbeige-4.2-3b": {
-          "name": "nanbeige-4.2-3b",
-          "limit": {
-            "context": 4096,
-            "output": 2048
-          },
-          "tool_call": true,
-          "temperature": true
-        }
-      }
-    },
     "local-ornith": {
       "api": "openai",
-      "name": "Ornith 9B (llama.cpp :8083)",
+      "name": "ornith (GPU :8083)",
       "options": {
         "baseURL": "http://127.0.0.1:8083/v1",
         "apiKey": "llamacpp"
@@ -90,31 +66,30 @@
         "ornith-9b": {
           "name": "ornith-9b",
           "limit": {
-            "context": 4096,
-            "output": 2048
+            "context": 262144,
+            "output": 4096
           },
           "tool_call": true,
-          "reasoning": true,
-          "temperature": true
+          "temperature": true,
+          "reasoning": true
         }
       }
     },
     "local-bonsai": {
       "api": "openai",
-      "name": "Bonsai 27B (llama.cpp :8084)",
+      "name": "bonsai (CPU :9083)",
       "options": {
-        "baseURL": "http://127.0.0.1:8084/v1",
+        "baseURL": "http://127.0.0.1:9083/v1",
         "apiKey": "llamacpp"
       },
       "models": {
         "bonsai-27b": {
           "name": "bonsai-27b",
           "limit": {
-            "context": 4096,
-            "output": 2048
+            "context": 30000,
+            "output": 4096
           },
           "tool_call": true,
-          "reasoning": true,
           "temperature": true
         }
       }
@@ -1036,10 +1011,86 @@
           "reasoning": true
         }
       }
+    },
+    "local-qwen": {
+      "api": "openai",
+      "name": "qwen (CPU :9084)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9084/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "qwen-3.5-0.8b": {
+          "name": "qwen-3.5-0.8b",
+          "limit": {
+            "context": 262144,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-deepseek": {
+      "api": "openai",
+      "name": "deepseek (CPU :9085)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9085/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "deepseek-r1-0.5b": {
+          "name": "deepseek-r1-0.5b",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-lfm": {
+      "api": "openai",
+      "name": "lfm (CPU :9086)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9086/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "lfm2.5-230m": {
+          "name": "lfm2.5-230m",
+          "limit": {
+            "context": 128000,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-qwen-coder": {
+      "api": "openai",
+      "name": "Qwen2.5-Coder (CPU :9087)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9087/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "qwen2.5-coder-1.5b": {
+          "name": "qwen2.5-coder-1.5b",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
     }
   },
-  "model": "omniroute/auto/best-free",
-  "small_model": "omniroute/auto/cheap",
+  "model": "omniroute/aug/kimi-k2.6",
+  "small_model": "local-qwen/qwen-3.5-0.8b",
   "default_agent": "gran-mestre",
   "instructions": [
     "~/.config/opencode/AGENTS.md"
@@ -1074,7 +1125,8 @@
         "bash": true,
         "read": true,
         "changed-files": true
-      }
+      },
+      "model": "local-ornith/ornith-9b"
     },
     "planner": {
       "description": "Expert planning specialist for complex features and refactoring.",
@@ -1085,7 +1137,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-ornith/ornith-9b"
     },
     "architect": {
       "description": "Software architecture specialist for system design, scalability, and technical decision-making.",
@@ -1107,7 +1160,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-ornith/ornith-9b"
     },
     "security-reviewer": {
       "description": "Security vulnerability detection and remediation specialist.",
@@ -1129,7 +1183,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-ornith/ornith-9b"
     },
     "build-error-resolver": {
       "description": "Build and TypeScript error resolution specialist.",
@@ -1140,7 +1195,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-ornith/ornith-9b"
     },
     "e2e-runner": {
       "description": "End-to-end testing specialist using Playwright.",
@@ -1151,7 +1207,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-ornith/ornith-9b"
     },
     "doc-updater": {
       "description": "Documentation and codemap specialist.",
@@ -1373,7 +1430,8 @@
         "bash": true,
         "write": true,
         "edit": true
-      }
+      },
+      "model": "local-ornith/ornith-9b"
     },
     "gsd-code-reviewer": {
       "description": "Reviews source files for bugs, security issues, code quality problems. Produces REVIEW.md.",
@@ -1744,11 +1802,26 @@
         "bash": true,
         "write": true
       }
+    },
+    "executor-deep": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "hestia": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "atena": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "Sisyphus-Junior": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "general": {
+      "model": "local-ornith/ornith-9b"
     }
   },
   "command": {
     "gran-mestre": {
-      "description": "Run Gran-Mestre full pipeline: plan, validate, execute, review with Mixture-of-Agents routing",
+      "description": "Run Gran-Mestre full pipeline: plan, validate, execute, review with Mixture of Agents routing",
       "template": "/mnt/dados/opencode/command/gran-mestre.md\n\n$ARGUMENTS",
       "agent": "gran-mestre",
       "subtask": true
@@ -1960,6 +2033,20 @@
       "description": "Control browser via AI agent",
       "template": "/mnt/dados/opencode/skills/browser-use/SKILL.md\n\nTAREFA: $ARGUMENTS",
       "subtask": false
+    },
+    "decompile": {
+      "description": "Descompilacao e engenharia reversa profissional (metodologia baseada em evidencias). Analisa binario/firmware/executavel via agente reverser (GhidraMCP) seguindo a skill professional-decompilation, e reverte o conhecimento para o ecossistema (memoria cerebral + catalogo).",
+      "template": "/mnt/dados/opencode/skills/professional-decompilation/SKILL.md\n\nTAREFA: $ARGUMENTS",
+      "agent": "reverser",
+      "subtask": true
     }
+  },
+  "hooks": {
+    "session.start": [
+      {
+        "command": "python3 /mnt/dados/harness/hooks/memory_inject.py",
+        "timeout": 5000
+      }
+    ]
   }
 }

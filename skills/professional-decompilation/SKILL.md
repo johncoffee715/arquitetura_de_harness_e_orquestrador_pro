@@ -395,6 +395,35 @@ next_steps:
 
 ---
 
+## 25.5 REVERSÃO AO ECOSSISTEMA OPencode
+
+A descompilação **reverte para o ecossistema do OpenCode**: o conhecimento extraído
+não termina no relatório — é absorvido pelo harness (R14/R26). Após o REPORT:
+
+### 1. Memória cerebral (Obsidian)
+Arquivar em `/mnt/dados/cerebro com IA/`:
+- `wiki/summaries/` — summary da análise (artifact, arquitetura, achados-chave);
+- `wiki/concepts/` — conceitos descobertos (protocolo, formato, algoritmo, struct);
+- `wiki/entities/` — entidades identificadas (funções renomeadas, módulos, componentes);
+- `decisoes/` — decisão datada `YYYY-MM-DD-<assunto>.md` (o que foi concluído e com que confiança);
+- append em `wiki/log.md` (fluxo de ingestão padrão do harness).
+
+### 2. Skills / instintos (R36)
+Padrão repetido 2+ vezes (mesmo tipo de offset, mesma API, mesmo padrão de firmware)
+→ registrar como skill/instinto reutilizável (`/learn` ou skill helenizada nova).
+
+### 3. Catálogo e registry (R-catalog)
+Novos artefatos/ferramentas/descobertas → `harness/registry.json` via `build_registry`/`registry-sync`.
+
+### 4. Relatório de retorno ao orquestrador
+Entregar ao Gran-Mestre: resumo executivo, confidence assessment, evidence DB,
+limitações e next steps — para o orquestrador decidir follow-ups.
+
+> A análise só está completa quando o conhecimento **retornou ao ecossistema**
+> (memória + catálogo + lições), não apenas quando o relatório foi escrito.
+
+---
+
 ## 26. Regra mestra do agente
 
 Pensar como um engenheiro de RE:
