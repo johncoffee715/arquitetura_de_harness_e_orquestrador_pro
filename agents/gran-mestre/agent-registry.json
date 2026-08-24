@@ -2597,6 +2597,37 @@
    "registrado_em": "2026-08-24T21:25:29.536116+00:00",
    "path": "/mnt/dados/opencode/harness/needle-pipeline/",
    "conteudo": "pytest plugin + evidencias jsonl"
+  },
+  {
+   "id": "secure_runner",
+   "tipo": "sandbox",
+   "status": "ativo-validado",
+   "registrado_em": "2026-08-24T22:57:55.165943+00:00",
+   "path": "/mnt/dados/harness/sandbox/secure_runner.sh",
+   "base": "bwrap 0.11.2",
+   "flags": [
+    "--net (rede on)",
+    "--harness-ro (mnt/dados leitura)"
+   ],
+   "testes": [
+    "benigno ✓",
+    "isolamento home/rede/mnt ✓",
+    "harness-ro ✓"
+   ],
+   "auditoria": "/tmp/opencode_tasks/_done/ (últimos 50)"
+  },
+  {
+   "id": "memory_keeper",
+   "tipo": "gatekeeper-cognicao",
+   "status": "ativo-validado",
+   "registrado_em": "2026-08-24T22:57:55.165943+00:00",
+   "path": "/mnt/dados/harness/hooks/memory_keeper.sh",
+   "testes": [
+    "traversal bloqueado ✓",
+    "nota limpa ✓",
+    "NUL sanitizado ✓"
+   ],
+   "politica": "ÚNICO caminho de escrita no vault (R71)"
   }
  ]
 }

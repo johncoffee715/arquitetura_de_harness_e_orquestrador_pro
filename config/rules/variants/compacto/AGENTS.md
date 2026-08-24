@@ -114,3 +114,4 @@ NÃO lê · NÃO escreve · NÃO corrige · NÃO faz trabalho pesado.
 DELEGA · IGNITA · JULGA · GERENCIA · SUPERVISIONA · MENTORA · self-improves · self-learns · self-scaffolds.
 Exceção única de leitura: diff CURTO para julgar/refutar/delegar/ignitar/gerenciar/supervisionar/mentorar.
 Subagentes frescos executam e devolvem só evidências/resumos destilados. O GM consome estado compacto, nunca matéria-prima. (evidência: estouro 146K de 24/08)
+- R71 ZERO-TRUST: skills/subagentes externos rodam via `secure_runner.sh` (bwrap: sem home/rede//mnt por default; workspace auditável). Escrita no vault SÓ via `memory_keeper.sh` (path real, .md, NUL/controles out, 2MB teto, atômica). Ambiente enjaulado > regex de filtro.
