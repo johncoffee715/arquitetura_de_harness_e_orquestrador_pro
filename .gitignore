@@ -19,3 +19,4 @@ harness/backup-rename-*/
 # Arquivos gigantes fora do GitHub
 cerebro com IA/textos, pdf e esquemas/**/*.pdf
 **/*.rar
+*.gguf

@@ -1,0 +1,70 @@
+[start-all] reusando 1/9; subindo apenas os ausentes.
+[start-all] orchestrator: reusando — pulando
+[start-all] bonsai: porta 9083 | ctx 16384 | slots 1 | cpu | PID 2801777
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 2801778
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 2801779
+[start-all] qwen38-2b: porta 9087 | ctx 262144 | slots 1 | cpu | PID 2801780
+[start-all] qwen31-7b: porta 9088 | ctx 32768 | slots 1 | cpu | PID 2801781
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 2801782
+[start-all] ternary17: porta 9089 | ctx 8192 | slots 1 | cpu | PID 2801783
+[start-all] ternary8b: porta 9090 | ctx 8192 | slots 1 | cpu | PID 2801784
+
+[start-all] Aguardando 9 servidores (até 180s)...
+[start-all] 5s: 2/9 no ar
+[start-all] 10s: 2/9 no ar
+[start-all] 15s: 4/9 no ar
+[start-all] 20s: 5/9 no ar
+[start-all] 25s: 6/9 no ar
+[start-all] 30s: 7/9 no ar
+[start-all] 35s: 8/9 no ar
+[start-all] 40s: 9/9 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 9/9 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ bonsai  → http://127.0.0.1:9083 (cpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ✅ qwen38-2b  → http://127.0.0.1:9087 (cpu)
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ✅ llmjudge  → http://127.0.0.1:9085 (cpu)
+  ✅ ternary17  → http://127.0.0.1:9089 (cpu)
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] reusando 1/9; subindo apenas os ausentes.
+[start-all] orchestrator: reusando — pulando
+[start-all] bonsai: porta 9083 | ctx 16384 | slots 1 | cpu | PID 2809704
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 2809705
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 2809707
+[start-all] qwen38-2b: porta 9087 | ctx 262144 | slots 1 | cpu | PID 2809708
+[start-all] qwen31-7b: porta 9088 | ctx 32768 | slots 1 | cpu | PID 2809709
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 2809710
+[start-all] ternary17: porta 9089 | ctx 8192 | slots 1 | cpu | PID 2809712
+[start-all] ternary8b: porta 9090 | ctx 8192 | slots 1 | cpu | PID 2809713
+
+[start-all] Aguardando 9 servidores (até 180s)...
+[start-all] 5s: 2/9 no ar
+[start-all] 10s: 2/9 no ar
+[start-all] 15s: 4/9 no ar
+[start-all] 20s: 5/9 no ar
+[start-all] 25s: 6/9 no ar
+[start-all] 30s: 7/9 no ar
+[start-all] 35s: 7/9 no ar
+[start-all] 40s: 9/9 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 9/9 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ bonsai  → http://127.0.0.1:9083 (cpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ✅ qwen38-2b  → http://127.0.0.1:9087 (cpu)
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ✅ llmjudge  → http://127.0.0.1:9085 (cpu)
+  ✅ ternary17  → http://127.0.0.1:9089 (cpu)
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 

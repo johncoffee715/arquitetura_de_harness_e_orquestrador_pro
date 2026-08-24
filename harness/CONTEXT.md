@@ -1,4 +1,4 @@
-# Contexto Atual — snapshot cognitivo (2026-08-05T07:46:43.196546+00:00)
+# Contexto Atual — snapshot cognitivo (2026-08-24T20:39:11.497453+00:00)
 
 ## Decisões desta sessão
 - Deploy R11 real concluído: alvos.json 16→31; 158 artefatos (15 skills+15 subagents+hooks+plugins); registry 28→43
@@ -20,6 +20,6 @@
 - Skills ricas preservadas (hallmark, book-to-skill — guard)
 
 ## Snapshot técnico
-- git:  M .git_harness_sha,  D .omo/run-continuation/ses_04cb6e0d4ffeM1PT4ykFfxEkXs.json,  M .planning/CONTEXT.md,  M "cerebro com IA/.obsidian/graph.json",  M "cerebro com IA/decisoes/2026-08-04-compactacao.md",  M harness/CONTEXT.md,  M harness/CONTEXT_COMPACT.md,  M harness/dev_loop/__pycache__/dev_loop.cpython-314.pyc,  M harness/models/__pycache__/__init__.cpython-314.pyc,  M harness/models/__pycache__/model_provider.cpython-314.pyc,  M harness/observability/__pycache__/observability_layer.cpython-314.pyc,  M node/lib/node_modules/omniroute/dist/.build/next/cache/fetch-cache/b561fbe55d2b526faa0efc680452a0a60cd7c5926b1085be6248102bc15445fc,  m opencode,  m opencode-source,  D "projetos/doom test/index-doom3d.html",  D "projetos/doom test/index.html",  D "projetos/doom test/leia-me.txt",  D "projetos/doom test/livrarias/three.module.js",  D "projetos/doom test/preview.html",  D "projetos/doom test/previews/doom3d_frame_fim.png"
+- git:  M "cerebro com IA/aprendizados/R64_R65_manifesto_llm_auditoria_kv_2026-08-24.md",  M harness/logs/llm-usage-8083.jsonl,  M harness/logs/llm-usage-8090.jsonl,  m opencode, ?? "Assistente Pessoal/gpu-fw/", ?? "Assistente Pessoal/logs/", ?? "Assistente Pessoal/modelos LLM/Bonsai-27B-1bit.Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/LFM2.5-230M-Q4_0.gguf", ?? "Assistente Pessoal/modelos LLM/LLMJudge-Qwen2.5-3B.Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/Ornith-1.5-9B-Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/Phi-4-mini-instruct-Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3-1.7B-Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3.5-0.8B.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3.5-4B-UD-IQ2_XXS.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3.8-27B-UD-IQ1_S.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3.8-27B-UD-IQ2_XXS.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3.8-2B-Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3.8-4B-Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/Qwen3.8-9B-Q4_K_M.gguf", ?? "Assistente Pessoal/modelos LLM/Ternary-Bonsai-1.7B-Q2_0_g64.gguf"
 - ECC_HOME: $HOME/.ecc/autofagia
-- registry entries: 43
+- registry entries: 336

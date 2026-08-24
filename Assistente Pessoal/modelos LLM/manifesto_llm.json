@@ -39,7 +39,7 @@
   "nota": "score roda SOMENTE dentro do conjunto aprovado pelos disjuntores"
  },
  "decisao_orquestrador_2026-08-24": {
-  "veredito": "Ornith PERMANECE Gran-Mestre; Qwen3.8-27B IQ2_XXS = PLANNER WARM F1/F2/F5 via hot-swap GPU (R58/R65)",
+  "veredito": "Qwen3.8-9B @229376 (224K MAX VALIDADO 24/08: decode 81.2 t/s, prefill 487, VRAM pico 10.28GiB global). Ornith reserva warm.",
   "dados": {
    "ornith": {
     "gm_local": 76.3,
@@ -68,8 +68,47 @@
  },
  "models": [
   {
-   "model_id": "Ornith-1.5-9B-Q4_K_M",
+   "model_id": "Qwen3.8-9B-Q4_K_M",
    "slot_port": 8083,
+   "device": "GPU",
+   "topologia_arquitetura": {
+    "tipo_fundacao": "qwen35",
+    "layers": 33,
+    "embedding_length": 4096,
+    "attn_heads": 16,
+    "kv_heads": 4,
+    "key_len_head": 256,
+    "contexto_nativo": 262144
+   },
+   "fisica_inferencia": {
+    "quantizacao": "Q4_K_M",
+    "pesos_gb": 5.38,
+    "ctx_ativo": 229376,
+    "cache_k": "q5_0",
+    "cache_v": "q4_0",
+    "kv_per_token_kb": 41.2,
+    "kv_total_gb_at_ctx": 8.6,
+    "batch_ubatch": "2048/1024",
+    "tps_decode_crivo": 84.2,
+    "vram_pico_crivo_gb": 14.47,
+    "teto_vram_nota": "R66: 204800=MAX VALIDADO (decode 84.2 t/s maior do crivo)"
+   },
+   "indicadores_raciocinio": {
+    "gm_oficial": 74.2,
+    "fonte": "GMB-local spec B/D-FULL (#2 do placar)"
+   },
+   "vocacao_grafo": "ORQUESTRADOR ATIVO · janela 200K · F1-F6",
+   "fases_bloqueadas": [],
+   "null_para_busca_web": {
+    "ttft_ms": null,
+    "math_500": null,
+    "ifeval_strict": null,
+    "gpqa_diamond": null
+   }
+  },
+  {
+   "model_id": "Ornith-1.5-9B-Q4_K_M",
+   "slot_port": 0,
    "device": "GPU",
    "topologia_arquitetura": {
     "tipo_fundacao": "qwen35",
@@ -102,7 +141,7 @@
     "terminal_bench_21": 46.2,
     "benchlm_geral": "36.9/100 #204/224 — fraco fora coding/agentic => vocacao restrita confirmada"
    },
-   "vocacao_grafo": "orquestrador primario · janela longa · F1/F2/F5 cognitivo",
+   "vocacao_grafo": "RESERVA warm · ex-orquestrador (GM 76.3) · reversível via launcher",
    "fases_bloqueadas": [
     "F4"
    ],

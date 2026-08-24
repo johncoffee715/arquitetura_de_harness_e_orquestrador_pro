@@ -30,7 +30,7 @@ flock -n 9 || { echo "[start-all] outra instância já está levantando os model
 # ── Definição dos modelos ──
 # Formato: arquivo|porta|grammar|ctx|slots|local(gpu|cpu)
 declare -A MODELS=(
-  [orchestrator]="Ornith-1.5-9B-Q4_K_M.gguf|8083|none|262144|1|gpu"
+  [orchestrator]="Qwen3.8-9B-Q4_K_M.gguf|8083|none|229376|1|gpu"
   [bonsai]="Bonsai-27B-1bit.Q4_K_M.gguf|9083|code.gbnf|16384|1|cpu"
   [qwen]="Qwen3.5-0.8B.gguf|9084|none|131072|1|cpu"
       [lfm]="LFM2.5-230M-Q4_0.gguf|9086|none|128000|1|cpu"
@@ -104,7 +104,8 @@ for key in "${KEYS[@]}"; do
 
   # Modelos específicos
   case "$FILE" in
-    Ornith-1.5*)  ARGS+=(--jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs "{"enable_thinking": false}" --cache-type-k q5_0 -b 2048 -ub 1024) ;;  # R60-v4: 262144 nativo + K=q5_0 (empírico 24/08: prefill 491, decode 67.8, VRAM pico 10.11GiB) — overrides por último  # sampling oficial unsloth p/ agentic/coding
+    Qwen3.8-9B*)  ARGS+=(--jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs "{"enable_thinking": false}" --cache-type-k q5_0 -b 2048 -ub 1024) ;;  # R60-v5: 204800 validado (decode 84.2 t/s, VRAM 14.47/15.85) — overrides por último
+    Ornith-1.5*)  ARGS+=(--jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs "{"enable_thinking": false}" --cache-type-k q5_0 -b 2048 -ub 1024) ;;  # reserva: 262144 nativo
     Bonsai*)     ARGS+=(--reasoning-budget 1024 --temp 0.8) ;;
     Qwen3.5*)    ARGS+=(--jinja --reasoning-budget 1024 --temp 1.0) ;;
     LFM2.5*)     ARGS+=(--temp 0.4) ;;

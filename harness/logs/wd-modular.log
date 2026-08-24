@@ -1,0 +1,22 @@
+[2026-08-24 18:31:08] ═══ wd modular iniciado (30s · 9 slots) ═══
+[2026-08-24 18:31:08] OK  :8083 (orchestrator)
+[2026-08-24 18:31:08] DOWN:9083 (bonsai-27b) critical=False — respawn
+[2026-08-24 18:31:08] respawn acionado — start-all-models.sh (só ausentes, GPU-only)
+[2026-08-24 18:31:49] OK  :9084 (qwen0.8b)
+[2026-08-24 18:31:49] OK  :9085 (judge-3b)
+[2026-08-24 18:31:49] OK  :9086 (lfm2.5)
+[2026-08-24 18:31:50] OK  :9087 (qwen38-2b)
+[2026-08-24 18:31:50] OK  :9088 (qwen1.7b)
+[2026-08-24 18:31:50] OK  :9089 (ternary1.7b)
+[2026-08-24 18:31:50] OK  :9090 (ternary8b)
+[2026-08-24 18:34:58] ═══ wd modular iniciado (30s · 9 slots) ═══
+[2026-08-24 18:34:58] OK  :8083 (orchestrator)
+[2026-08-24 18:34:58] DOWN:9083 (bonsai-27b) critical=False — respawn
+[2026-08-24 18:34:58] respawn acionado — start-all-models.sh (só ausentes, GPU-only)
+[2026-08-24 18:35:39] OK  :9084 (qwen0.8b)
+[2026-08-24 18:35:39] OK  :9085 (judge-3b)
+[2026-08-24 18:35:39] OK  :9086 (lfm2.5)
+[2026-08-24 18:35:40] OK  :9087 (qwen38-2b)
+[2026-08-24 18:35:40] OK  :9088 (qwen1.7b)
+[2026-08-24 18:35:40] OK  :9089 (ternary1.7b)
+[2026-08-24 18:35:40] OK  :9090 (ternary8b)
