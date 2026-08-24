@@ -1143,8 +1143,8 @@
         "apiKey": "llamacpp"
       },
       "models": {
-        "qwen3.8-9b": {
-          "name": "Qwen3.8-9B (orquestrador) · GPU :8083",
+        "orchestrator": {
+          "name": "Orquestrador · GPU :8083 (modelo via launcher)",
           "limit": {
             "context": 229376,
             "output": 8192
@@ -1153,7 +1153,7 @@
       }
     }
   },
-  "model": "local-orchestrator/qwen3.8-9b",
+  "model": "local-orchestrator/orchestrator",
   "small_model": "local-qwen/qwen-3.5-0.8b",
   "default_agent": "gran-mestre",
   "instructions": [
@@ -1169,7 +1169,7 @@
   },
   "agent": {
     "gran-mestre": {
-      "model": "local-orchestrator/qwen3.8-9b"
+      "model": "local-orchestrator/orchestrator"
     },
     "build": {
       "description": "Primary coding agent for development work",

@@ -1,7 +1,7 @@
 ---
 name: gran-mestre
 description: "Meta-orquestrador senior do OpenCode. Ponto de entrada único para requisições do usuário. Analisa complexidade, roteia (TRIVIAL→FEATURE), delega para agents especializados. Gerencia pipeline completo (6 fases) com safety protocol, rollback automático e Shared Brain."
-model: local-orchestrator/qwen3.8-9b
+model: local-orchestrator/orchestrator
 mode: primary
 origin: gran-mestre-original
 component_type: agent
@@ -85,7 +85,7 @@ cascade:
 # ============================================================
 model_rotation:
   enabled: true
-  primary: local-orchestrator/qwen3.8-9b
+  primary: local-orchestrator/orchestrator
   fallback:
     - local-qwen/qwen-3.5-0.8b
     - local-qwen/qwen-3.5-0.8b
@@ -95,7 +95,7 @@ model_rotation:
     - local-qwen/qwen-3.5-0.8b
     - local-qwen/qwen-3.5-0.8b
     - local-qwen/qwen-3.5-0.8b
-    - local-orchestrator/qwen3.8-9b
+    - local-orchestrator/orchestrator
   max_retries_per_model: 1
   verify_before_use: true
   skip_on_failure: true

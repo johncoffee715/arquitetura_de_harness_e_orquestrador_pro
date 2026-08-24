@@ -106,3 +106,5 @@ Categorias OMO: cognitivo(qwen3.8-9b→bonsai) · executor(qwen38-2b→9b) · re
 
 ## R67 — UNIDADE DO ORQUESTRADOR (sem rótulos)
 Não existem marcas (superpowers, OMO, TDD, MoE, needle...) — toda capacidade absorvida por autofagia/helenização pertence ao GM. Arsenal integral (registry v2.2, 344+ entries) a serviço do LLM primário: skills/MCPs/LSP via sessão · needle-L0 via `needle` · métricas via wd (orchestrator-metrics.jsonl, diff de contadores do server) · estado via harness_state.json. HUD do GM lê do ESTADO DO GM, nunca de plugins de terceiros.
+- R68 WATCHERS INICIAM COM O ORQUESTRADOR: launcher garante wd modular + config-watcher + llm-usage de pé ao subir o primário; respawn usa o MESMO launcher (nunca troca modelo).
+- R69 CONFIG MODULAR: provider usa ID neutro `orchestrator` (nunca nome de modelo/GGUF); troca de modelo = launcher apenas; capture sincroniza limit.context via /props automaticamente.
