@@ -1,0 +1,1041 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "oh-my-openagent@latest",
+    "./plugins/ecc-session-delete"
+  ],
+  "permission": {
+    "bash": "allow",
+    "read": "allow",
+    "edit": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "mcp_ghidra": "allow",
+    "mcp_openwork": "allow"
+  },
+  "mcp": {
+    "ghidra": {
+      "type": "remote",
+      "url": "http://127.0.0.1:8080/mcp",
+      "enabled": true,
+      "timeout": 300000
+    },
+    "openwork": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://api.openworklabs.com/mcp/agent",
+      "oauth": {}
+    },
+
+  "obsidian": {
+    "enabled": true,
+    "type": "local",
+    "command": "python3",
+    "args": [
+      "/mnt/dados/harness/mcp/obsidian_server.py"
+    ],
+    "env": {
+      "OBSIDIAN_VAULT": "/mnt/dados/cerebro com IA"
+    }
+  }
+
+  },
+  "provider": {
+    "local-lfm": {
+      "api": "openai",
+      "name": "LFM 2.5-1.6B (llama.cpp :8081)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8081/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "lfm-2.5-1.6b": {
+          "name": "lfm-2.5-1.6b",
+          "limit": {
+            "context": 2048,
+            "output": 1024
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-nanbeige": {
+      "api": "openai",
+      "name": "Nanbeige 4.2-3B (llama.cpp :8082)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8082/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "nanbeige-4.2-3b": {
+          "name": "nanbeige-4.2-3b",
+          "limit": {
+            "context": 4096,
+            "output": 2048
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-ornith": {
+      "api": "openai",
+      "name": "Ornith 9B (llama.cpp :8083)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8083/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "ornith-9b": {
+          "name": "ornith-9b",
+          "limit": {
+            "context": 4096,
+            "output": 2048
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-bonsai": {
+      "api": "openai",
+      "name": "Bonsai 27B (llama.cpp :8084)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8084/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "bonsai-27b": {
+          "name": "bonsai-27b",
+          "limit": {
+            "context": 4096,
+            "output": 2048
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        }
+      }
+    },
+    "omniroute": {
+      "api": "openai",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "{env:OMNIROUTE_API_KEY}"
+      },
+      "models": {
+        "auto/best-coding": {
+          "name": "auto/best-coding",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-reasoning": {
+          "name": "auto/best-reasoning",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-fast": {
+          "name": "auto/best-fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-vision": {
+          "name": "auto/best-vision",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-chat": {
+          "name": "auto/best-chat",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-coding-fast": {
+          "name": "auto/best-coding-fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-coding": {
+          "name": "auto/pro-coding",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-reasoning": {
+          "name": "auto/pro-reasoning",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-vision": {
+          "name": "auto/pro-vision",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-chat": {
+          "name": "auto/pro-chat",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-fast": {
+          "name": "auto/pro-fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding": {
+          "name": "auto/coding",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/fast": {
+          "name": "auto/fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/chat": {
+          "name": "auto/chat",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/cheap": {
+          "name": "auto/cheap",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/offline": {
+          "name": "auto/offline",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/smart": {
+          "name": "auto/smart",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/claude-opus": {
+          "name": "auto/claude-opus",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/claude-sonnet": {
+          "name": "auto/claude-sonnet",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-free": {
+          "name": "auto/best-free",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:fast": {
+          "name": "auto/coding:fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:cheap": {
+          "name": "auto/coding:cheap",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:free": {
+          "name": "auto/coding:free",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:pro": {
+          "name": "auto/coding:pro",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:reliable": {
+          "name": "auto/coding:reliable",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/reasoning": {
+          "name": "auto/reasoning",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/reasoning:pro": {
+          "name": "auto/reasoning:pro",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/vision": {
+          "name": "auto/vision",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/multimodal": {
+          "name": "auto/multimodal",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/glm": {
+          "name": "auto/glm",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/minimax": {
+          "name": "auto/minimax",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/mimo": {
+          "name": "auto/mimo",
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/zai": {
+          "name": "auto/zai",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/gemma": {
+          "name": "auto/gemma",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/llama": {
+          "name": "auto/llama",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/gemini": {
+          "name": "auto/gemini",
+          "limit": {
+            "context": 1000000,
+            "output": 65535
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "pepper/pepper-1": {
+          "name": "pepper/pepper-1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/gpt-4o-mini": {
+          "name": "ddgw/gpt-4o-mini",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true
+        },
+        "ddgw/gpt-5-mini": {
+          "name": "ddgw/gpt-5-mini",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/claude-3-5-haiku-20241022": {
+          "name": "ddgw/claude-3-5-haiku-20241022",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/llama-4-scout": {
+          "name": "ddgw/llama-4-scout",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/mistral-small-2501": {
+          "name": "ddgw/mistral-small-2501",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/o3-mini": {
+          "name": "ddgw/o3-mini",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-sonnet-4.6": {
+          "name": "aug/claude-sonnet-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-sonnet-4.6-thinking": {
+          "name": "aug/claude-sonnet-4.6-thinking",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-opus-4.6": {
+          "name": "aug/claude-opus-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-haiku-4.5": {
+          "name": "aug/claude-haiku-4.5",
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gemini-3.1-pro": {
+          "name": "aug/gemini-3.1-pro",
+          "limit": {
+            "context": 1000000,
+            "output": 65535
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gemini-3.0-flash": {
+          "name": "aug/gemini-3.0-flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.5-high": {
+          "name": "aug/gpt-5.5-high",
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.5-medium": {
+          "name": "aug/gpt-5.5-medium",
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.4-high": {
+          "name": "aug/gpt-5.4-high",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.4-medium": {
+          "name": "aug/gpt-5.4-medium",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/kimi-k2.6": {
+          "name": "aug/kimi-k2.6",
+          "limit": {
+            "context": 131000,
+            "output": 262144
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/prism": {
+          "name": "aug/prism",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/big-pickle": {
+          "name": "oc/big-pickle",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/deepseek-v4-flash-free": {
+          "name": "oc/deepseek-v4-flash-free",
+          "limit": {
+            "context": 1000000,
+            "output": 384000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/minimax-m3-free": {
+          "name": "oc/minimax-m3-free",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/minimax-m2.5-free": {
+          "name": "oc/minimax-m2.5-free",
+          "limit": {
+            "context": 204800,
+            "output": 131072
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/ling-2.6-1t-free": {
+          "name": "oc/ling-2.6-1t-free",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/trinity-large-preview-free": {
+          "name": "oc/trinity-large-preview-free",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/nemotron-3-super-free": {
+          "name": "oc/nemotron-3-super-free",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/qwen3.6-plus-free": {
+          "name": "oc/qwen3.6-plus-free",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_4": {
+          "name": "tllm/GPT_5_4",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_3": {
+          "name": "tllm/GPT_5_3",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_2": {
+          "name": "tllm/GPT_5_2",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_1": {
+          "name": "tllm/GPT_5_1",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5": {
+          "name": "tllm/GPT_5",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_o4_mini": {
+          "name": "tllm/GPT_o4_mini",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_o3_mini": {
+          "name": "tllm/GPT_o3_mini",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_3_pro": {
+          "name": "tllm/gemini_3_pro",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_2_5_pro": {
+          "name": "tllm/gemini_2_5_pro",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_2_0_flash": {
+          "name": "tllm/gemini_2_0_flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_1_5_flash": {
+          "name": "tllm/gemini_1_5_flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/CLAUDE_4_6_OPUS": {
+          "name": "tllm/CLAUDE_4_6_OPUS",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/CLAUDE_4_6_SONNET": {
+          "name": "tllm/CLAUDE_4_6_SONNET",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/CLAUDE_4_5_HAIKU": {
+          "name": "tllm/CLAUDE_4_5_HAIKU",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_gpt_4_o": {
+          "name": "tllm/openrouter_gpt_4_o",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_gpt_4_o_mini": {
+          "name": "tllm/openrouter_gpt_4_o_mini",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_grok_4": {
+          "name": "tllm/openrouter_grok_4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/together_deepseek_v3": {
+          "name": "tllm/together_deepseek_v3",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_deepseek_r1": {
+          "name": "tllm/openrouter_deepseek_r1",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/sonar-pro": {
+          "name": "tllm/sonar-pro",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_4o": {
+          "name": "tllm/GPT_4o",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/claude_opus_4": {
+          "name": "tllm/claude_opus_4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/claude_sonnet_4": {
+          "name": "tllm/claude_sonnet_4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/claude_haiku_3_5": {
+          "name": "tllm/claude_haiku_3_5",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/deepseek_v4": {
+          "name": "tllm/deepseek_v4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_3_flash": {
+          "name": "tllm/gemini_3_flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veo-free/veo": {
+          "name": "veo-free/veo",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veo-free/seedance": {
+          "name": "veo-free/seedance",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "mcode/mimo-auto": {
+          "name": "mcode/mimo-auto",
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veoaifree-web/veo": {
+          "name": "veoaifree-web/veo",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veoaifree-web/seedance": {
+          "name": "veoaifree-web/seedance",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "no-think/aug/claude-sonnet-4.6": {
+          "name": "no-think/aug/claude-sonnet-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "no-think/aug/claude-opus-4.6": {
+          "name": "no-think/aug/claude-opus-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "no-think/aug/claude-haiku-4.5": {
+          "name": "no-think/aug/claude-haiku-4.5",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        }
+      }
+    }
+  }
+}

@@ -3,11 +3,6 @@ name: athena
 description: "Agente de revisão macro do Gran-Mestre. Revisa o diff total de uma feature (coerência cross-task, acoplamento, arquitetura) — diferente do Code Reviewer, que revisa micro (por task)."
 model: github-copilot/claude-opus-4.7
 mode: subagent
-origin: gran-mestre-original
-metadata:
-  category: review
-  version: 3.3.0
-  author: Gran-Mestre
 ---
 
 # Atena — Revisão Macro

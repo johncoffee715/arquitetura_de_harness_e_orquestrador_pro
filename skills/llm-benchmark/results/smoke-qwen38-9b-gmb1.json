@@ -1,0 +1,78 @@
+{
+  "name": "qwen38-9b-gmb1",
+  "ts": "2026-08-23T16:43:01",
+  "endpoint": "http://127.0.0.1:8083",
+  "telemetry": null,
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": false,
+      "ok": true,
+      "dur": 15.43,
+      "tps": 66.37,
+      "details": {
+        "svg_valid": false,
+        "pelican": false,
+        "bike": false
+      },
+      "reason": null,
+      "raw": ""
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": true,
+      "ok": true,
+      "dur": 5.35,
+      "tps": 65.84,
+      "details": {
+        "count_3": true,
+        "reasoning": true
+      },
+      "reason": null,
+      "raw": "## Counting 'r's in \"strawberry\"\n\n**Step 1: Break down the word letter by letter.**\n\n| Position | Letter |\n|----------|--------|\n| 1        | s      |\n| 2        | t      |\n| 3        | **r**  |\n| 4        | a      |\n| 5        | w      |\n| 6        | b      |\n| 7        | e      |\n| 8        | **r*"
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": true,
+      "ok": true,
+      "dur": 1.73,
+      "tps": 53.9,
+      "details": {
+        "parseable": true,
+        "values_correct": true,
+        "markdown_fence": false
+      },
+      "reason": null,
+      "raw": "{\"name\": \"Maria\", \"age\": 28, \"city\": \"São Paulo\"}"
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": true,
+      "ok": true,
+      "dur": 1.21,
+      "tps": 41.98,
+      "details": {
+        "tool_call_count": 1,
+        "json_valid": true,
+        "name_args_ok": true
+      },
+      "reason": null,
+      "raw": "<tool_call>{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}</tool_call>"
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": false,
+      "ok": true,
+      "dur": 4.01,
+      "tps": 63.86,
+      "details": {
+        "admits_no_access": false,
+        "invented_number": false
+      },
+      "reason": null,
+      "raw": "```python\nfrom alpha_vantage import AlphaVantage\nfrom alpha_vantage.time_series import TimeSeries\n\ndef get_aapl_stock_price():\n    \"\"\"\n    Fetches the current stock price of AAPL (Apple Inc.) using Alpha Vantage API.\n    \n    Returns:\n        dict: A dictionary containing the current quote informati"
+    }
+  ],
+  "passed": 3,
+  "total": 5
+}

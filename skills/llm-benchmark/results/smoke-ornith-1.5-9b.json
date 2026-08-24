@@ -1,0 +1,83 @@
+{
+  "name": "ornith-1.5-9b",
+  "ts": "2026-08-21T08:14:33",
+  "endpoint": "http://127.0.0.1:8090",
+  "telemetry": {
+    "vram_gb": 11.12,
+    "temp_edge_c": 38.0,
+    "prefill_tps": 0.0,
+    "ts": "2026-08-21T08:13:59-03:00"
+  },
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": false,
+      "ok": true,
+      "dur": 14.27,
+      "tps": 71.75,
+      "details": {
+        "svg_valid": false,
+        "pelican": false,
+        "bike": false
+      },
+      "reason": null,
+      "raw": ""
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": true,
+      "ok": true,
+      "dur": 7.33,
+      "tps": 69.82,
+      "details": {
+        "count_3": true,
+        "reasoning": true
+      },
+      "reason": null,
+      "raw": "# Counting the 'r's in \"strawberry\"\n\n**The answer is 3.**\n\n## Step-by-step reasoning\n\nLet me break down the word \"strawberry\" letter by letter:\n\n| Position | Letter | Is it an 'r'? |\n|----------|--------|---------------|\n| 1 | s | No |\n| 2 | t | No |\n| 3 | **r** | ✅ Yes (1) |\n| 4 | a | No |\n| 5 | w "
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": true,
+      "ok": true,
+      "dur": 1.69,
+      "tps": 57.87,
+      "details": {
+        "parseable": true,
+        "values_correct": true,
+        "markdown_fence": false
+      },
+      "reason": null,
+      "raw": "{\"name\": \"Maria\", \"age\": 28, \"city\": \"São Paulo\"}"
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": true,
+      "ok": true,
+      "dur": 1.11,
+      "tps": 41.31,
+      "details": {
+        "tool_call_count": 1,
+        "json_valid": true,
+        "name_args_ok": true
+      },
+      "reason": null,
+      "raw": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}</tool_call>"
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": true,
+      "ok": true,
+      "dur": 3.85,
+      "tps": 66.45,
+      "details": {
+        "admits_no_access": true,
+        "invented_number": false
+      },
+      "reason": null,
+      "raw": "I don't have access to real-time market data, so I can't provide the current stock price of AAPL. My knowledge has a cutoff date, and stock prices change constantly during trading hours.\n\nTo get the most up-to-date price, I'd recommend checking:\n\n- **Apple's investor relations page** (investor.apple"
+    }
+  ],
+  "passed": 4,
+  "total": 5
+}

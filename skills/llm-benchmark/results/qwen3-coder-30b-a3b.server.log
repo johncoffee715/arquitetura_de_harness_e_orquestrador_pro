@@ -1,0 +1,38 @@
+0.00.244.262 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.244.590 I srv          init: The UI is disabled
+0.00.244.593 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.244.775 W srv  llama_server: -----------------
+0.00.244.778 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.244.778 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.244.778 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.244.779 W srv  llama_server: -----------------
+0.00.246.098 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3-Coder-30B-A3B-Instruct-Q3_K_M.gguf'
+0.00.890.402 W common_fit_params: failed to fit params to free device memory: n_gpu_layers already set by user to 99, abort
+0.01.184.550 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.49.766.440 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'
+0.49.808.297 I srv  llama_server: model loaded
+0.49.808.309 I srv  llama_server: listening on http://127.0.0.1:8083
+0.50.229.293 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.50.229.384 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.53.689.936 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   2048, progress = 0.35, t =   3.46 s / 591.82 tokens per second
+0.58.382.813 I slot print_timing: id  0 | task 0 | prompt processing, n_tokens =   4096, progress = 0.71, t =   8.15 s / 502.37 tokens per second
+1.05.112.361 I slot print_timing: id  0 | task 0 | prompt eval time =   14749.59 ms /  5788 tokens (    2.55 ms per token,   392.42 tokens per second)
+1.05.112.369 I slot print_timing: id  0 | task 0 |        eval time =     133.34 ms /     2 tokens (   66.67 ms per token,    15.00 tokens per second)
+1.05.112.371 I slot print_timing: id  0 | task 0 |       total time =   14882.92 ms /  5790 tokens
+1.05.112.377 I slot print_timing: id  0 | task 0 |    graphs reused =          1
+1.05.112.668 I slot      release: id  0 | task 0 | stop processing: n_tokens = 5789, truncated = 0
+1.05.417.428 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 87049581746
+1.05.616.173 I slot launch_slot_: id  0 | task 5 | processing task, is_child = 0
+1.06.845.984 I slot print_timing: id  0 | task 5 | prompt eval time =     540.58 ms /   102 tokens (    5.30 ms per token,   188.69 tokens per second)
+1.06.845.994 I slot print_timing: id  0 | task 5 |        eval time =     689.17 ms /    25 tokens (   27.57 ms per token,    36.28 tokens per second)
+1.06.845.995 I slot print_timing: id  0 | task 5 |       total time =    1229.76 ms /   127 tokens
+1.06.845.998 I slot print_timing: id  0 | task 5 |    graphs reused =         24
+1.06.846.083 I slot      release: id  0 | task 5 | stop processing: n_tokens = 129, truncated = 0
+1.06.885.583 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = 87051315160
+1.06.893.446 I slot launch_slot_: id  0 | task 31 | processing task, is_child = 0
+1.09.439.744 I slot print_timing: id  0 | task 31 | prompt eval time =     611.02 ms /   123 tokens (    4.97 ms per token,   201.30 tokens per second)
+1.09.439.752 I slot print_timing: id  0 | task 31 |        eval time =    1935.23 ms /    69 tokens (   28.05 ms per token,    35.65 tokens per second)
+1.09.439.754 I slot print_timing: id  0 | task 31 |       total time =    2546.25 ms /   192 tokens
+1.09.439.755 I slot print_timing: id  0 | task 31 |    graphs reused =         91
+1.09.439.799 I slot      release: id  0 | task 31 | stop processing: n_tokens = 194, truncated = 0
+1.09.510.106 I srv    operator(): operator(): cleaning up before exit...

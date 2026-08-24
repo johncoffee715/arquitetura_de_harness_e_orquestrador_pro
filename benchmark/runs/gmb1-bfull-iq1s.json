@@ -1,0 +1,22 @@
+{
+  "model": "tag:iq1s",
+  "planner_bfull": {
+    "dom1_ecommerce": {
+      "score_10": 5.0,
+      "componentes": 2,
+      "dependencias": true,
+      "prompt_tps": 14.8,
+      "wall_s": 27.7,
+      "chars": 3363
+    },
+    "dom2_bd": {
+      "score_10": 8.0,
+      "componentes": 5,
+      "dependencias": true,
+      "prompt_tps": 41.1,
+      "wall_s": 29.0,
+      "chars": 3530
+    }
+  },
+  "b_full_medio": 6.5
+}

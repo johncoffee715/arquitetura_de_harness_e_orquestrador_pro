@@ -1,0 +1,58 @@
+[
+  {
+    "tag": "qwen9b",
+    "score": "6/6",
+    "checks": {
+      "objetivo": true,
+      "decomposicao": true,
+      "ordem": true,
+      "dependencias": true,
+      "criterios": true,
+      "fallback": true
+    },
+    "chars": 3503,
+    "lat_s": 13.1
+  },
+  {
+    "tag": "qwen27b",
+    "score": "6/6",
+    "checks": {
+      "objetivo": true,
+      "decomposicao": true,
+      "ordem": true,
+      "dependencias": true,
+      "criterios": true,
+      "fallback": true
+    },
+    "chars": 3461,
+    "lat_s": 39.3
+  },
+  {
+    "tag": "bonsai1bit",
+    "score": "5/6",
+    "checks": {
+      "objetivo": true,
+      "decomposicao": true,
+      "ordem": true,
+      "dependencias": true,
+      "criterios": false,
+      "fallback": true
+    },
+    "chars": 3703,
+    "lat_s": 32.4
+  },
+  {
+    "tag": "ornith",
+    "score": "6/6",
+    "checks": {
+      "objetivo": true,
+      "decomposicao": true,
+      "ordem": true,
+      "dependencias": true,
+      "criterios": true,
+      "fallback": true
+    },
+    "chars": 3723,
+    "lat_s": 13.6
+  }
+]

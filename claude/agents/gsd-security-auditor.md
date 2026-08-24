@@ -9,8 +9,6 @@ tools:
   - Glob
   - Grep
   - Skill
-color: red
-effort: xhigh
 ---
 
 <role>

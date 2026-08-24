@@ -1,0 +1,2046 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "plugin": [
+    "/mnt/dados/opencode/plugins",
+    "oh-my-openagent@latest",
+    "/mnt/dados/opencode/config/plugins/ecc-session-delete"
+  ],
+  "permission": {
+    "bash": "allow",
+    "read": "allow",
+    "edit": "allow",
+    "webfetch": "allow",
+    "websearch": "allow",
+    "mcp_ghidra": "allow",
+    "mcp_openwork": "allow",
+    "mcp_*": "ask"
+  },
+  "mcp": {
+    "ghidra": {
+      "type": "remote",
+      "url": "http://127.0.0.1:8080/mcp",
+      "enabled": true,
+      "timeout": 300000
+    },
+    "openwork": {
+      "type": "remote",
+      "enabled": true,
+      "url": "https://api.openworklabs.com/mcp/agent",
+      "oauth": {}
+    },
+    "obsidian": {
+      "enabled": true,
+      "type": "local",
+      "command": "python3",
+      "args": [
+        "/mnt/dados/harness/mcp/obsidian_server.py"
+      ],
+      "env": {
+        "OBSIDIAN_VAULT": "/mnt/dados/cerebro com IA"
+      }
+    },
+    "siz_delimiter": {
+      "enabled": true,
+      "type": "local",
+      "command": "python3",
+      "args": [
+        "/mnt/dados/harness/mcp/siz_delimiter_server.py"
+      ],
+      "env": {
+        "SIZ_TOKENIZE_ENDPOINT": "http://127.0.0.1:8083/tokenize",
+        "SIZ_CACHE_DIR": "/mnt/dados/harness/cache",
+        "SIZ_SAFETY_FACTOR": "1.15",
+        "SIZ_BUDGET_TOKENS": "8700"
+      }
+    }
+  },
+  "provider": {
+    "local-ornith": {
+      "api": "openai",
+      "name": "ornith (GPU :8083)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8083/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "ornith-9b": {
+          "name": "ornith-9b",
+          "limit": {
+            "context": 262144,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true,
+          "reasoning": true
+        }
+      }
+    },
+    "local-bonsai": {
+      "api": "openai",
+      "name": "bonsai (CPU :9083)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9083/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "bonsai-27b": {
+          "name": "bonsai-27b",
+          "limit": {
+            "context": 50000,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "omniroute": {
+      "api": "openai",
+      "name": "OmniRoute",
+      "options": {
+        "baseURL": "http://localhost:20128/v1",
+        "apiKey": "{env:OMNIROUTE_API_KEY}"
+      },
+      "models": {
+        "auto/best-coding": {
+          "name": "auto/best-coding",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-reasoning": {
+          "name": "auto/best-reasoning",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-fast": {
+          "name": "auto/best-fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-vision": {
+          "name": "auto/best-vision",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-chat": {
+          "name": "auto/best-chat",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-coding-fast": {
+          "name": "auto/best-coding-fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-coding": {
+          "name": "auto/pro-coding",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-reasoning": {
+          "name": "auto/pro-reasoning",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-vision": {
+          "name": "auto/pro-vision",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-chat": {
+          "name": "auto/pro-chat",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/pro-fast": {
+          "name": "auto/pro-fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding": {
+          "name": "auto/coding",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/fast": {
+          "name": "auto/fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/chat": {
+          "name": "auto/chat",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/cheap": {
+          "name": "auto/cheap",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/offline": {
+          "name": "auto/offline",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/smart": {
+          "name": "auto/smart",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/claude-opus": {
+          "name": "auto/claude-opus",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/claude-sonnet": {
+          "name": "auto/claude-sonnet",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/best-free": {
+          "name": "auto/best-free",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:fast": {
+          "name": "auto/coding:fast",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:cheap": {
+          "name": "auto/coding:cheap",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:free": {
+          "name": "auto/coding:free",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:pro": {
+          "name": "auto/coding:pro",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/coding:reliable": {
+          "name": "auto/coding:reliable",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/reasoning": {
+          "name": "auto/reasoning",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/reasoning:pro": {
+          "name": "auto/reasoning:pro",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/vision": {
+          "name": "auto/vision",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/multimodal": {
+          "name": "auto/multimodal",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/glm": {
+          "name": "auto/glm",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/minimax": {
+          "name": "auto/minimax",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/mimo": {
+          "name": "auto/mimo",
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/zai": {
+          "name": "auto/zai",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/gemma": {
+          "name": "auto/gemma",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/llama": {
+          "name": "auto/llama",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "auto/gemini": {
+          "name": "auto/gemini",
+          "limit": {
+            "context": 1000000,
+            "output": 65535
+          },
+          "tool_call": true,
+          "reasoning": true,
+          "temperature": true
+        },
+        "pepper/pepper-1": {
+          "name": "pepper/pepper-1",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/gpt-4o-mini": {
+          "name": "ddgw/gpt-4o-mini",
+          "limit": {
+            "context": 128000,
+            "output": 16384
+          },
+          "tool_call": true
+        },
+        "ddgw/gpt-5-mini": {
+          "name": "ddgw/gpt-5-mini",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/claude-3-5-haiku-20241022": {
+          "name": "ddgw/claude-3-5-haiku-20241022",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/llama-4-scout": {
+          "name": "ddgw/llama-4-scout",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/mistral-small-2501": {
+          "name": "ddgw/mistral-small-2501",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "ddgw/o3-mini": {
+          "name": "ddgw/o3-mini",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-sonnet-4.6": {
+          "name": "aug/claude-sonnet-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-sonnet-4.6-thinking": {
+          "name": "aug/claude-sonnet-4.6-thinking",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-opus-4.6": {
+          "name": "aug/claude-opus-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/claude-haiku-4.5": {
+          "name": "aug/claude-haiku-4.5",
+          "limit": {
+            "context": 200000,
+            "output": 64000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gemini-3.1-pro": {
+          "name": "aug/gemini-3.1-pro",
+          "limit": {
+            "context": 1000000,
+            "output": 65535
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gemini-3.0-flash": {
+          "name": "aug/gemini-3.0-flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.5-high": {
+          "name": "aug/gpt-5.5-high",
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.5-medium": {
+          "name": "aug/gpt-5.5-medium",
+          "limit": {
+            "context": 200000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.4-high": {
+          "name": "aug/gpt-5.4-high",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/gpt-5.4-medium": {
+          "name": "aug/gpt-5.4-medium",
+          "limit": {
+            "context": 200000,
+            "output": 131072
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/kimi-k2.6": {
+          "name": "aug/kimi-k2.6",
+          "limit": {
+            "context": 131000,
+            "output": 262144
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "aug/prism": {
+          "name": "aug/prism",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/big-pickle": {
+          "name": "oc/big-pickle",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/deepseek-v4-flash-free": {
+          "name": "oc/deepseek-v4-flash-free",
+          "limit": {
+            "context": 1000000,
+            "output": 384000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/minimax-m3-free": {
+          "name": "oc/minimax-m3-free",
+          "limit": {
+            "context": 1048576,
+            "output": 512000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/minimax-m2.5-free": {
+          "name": "oc/minimax-m2.5-free",
+          "limit": {
+            "context": 204800,
+            "output": 131072
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/ling-2.6-1t-free": {
+          "name": "oc/ling-2.6-1t-free",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/trinity-large-preview-free": {
+          "name": "oc/trinity-large-preview-free",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/nemotron-3-super-free": {
+          "name": "oc/nemotron-3-super-free",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "oc/qwen3.6-plus-free": {
+          "name": "oc/qwen3.6-plus-free",
+          "limit": {
+            "context": 200000,
+            "output": 65536
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_4": {
+          "name": "tllm/GPT_5_4",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_3": {
+          "name": "tllm/GPT_5_3",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_2": {
+          "name": "tllm/GPT_5_2",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5_1": {
+          "name": "tllm/GPT_5_1",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_5": {
+          "name": "tllm/GPT_5",
+          "limit": {
+            "context": 400000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_o4_mini": {
+          "name": "tllm/GPT_o4_mini",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_o3_mini": {
+          "name": "tllm/GPT_o3_mini",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_3_pro": {
+          "name": "tllm/gemini_3_pro",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_2_5_pro": {
+          "name": "tllm/gemini_2_5_pro",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_2_0_flash": {
+          "name": "tllm/gemini_2_0_flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_1_5_flash": {
+          "name": "tllm/gemini_1_5_flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/CLAUDE_4_6_OPUS": {
+          "name": "tllm/CLAUDE_4_6_OPUS",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/CLAUDE_4_6_SONNET": {
+          "name": "tllm/CLAUDE_4_6_SONNET",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/CLAUDE_4_5_HAIKU": {
+          "name": "tllm/CLAUDE_4_5_HAIKU",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_gpt_4_o": {
+          "name": "tllm/openrouter_gpt_4_o",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_gpt_4_o_mini": {
+          "name": "tllm/openrouter_gpt_4_o_mini",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_grok_4": {
+          "name": "tllm/openrouter_grok_4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/together_deepseek_v3": {
+          "name": "tllm/together_deepseek_v3",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/openrouter_deepseek_r1": {
+          "name": "tllm/openrouter_deepseek_r1",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/sonar-pro": {
+          "name": "tllm/sonar-pro",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/GPT_4o": {
+          "name": "tllm/GPT_4o",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/claude_opus_4": {
+          "name": "tllm/claude_opus_4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/claude_sonnet_4": {
+          "name": "tllm/claude_sonnet_4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/claude_haiku_3_5": {
+          "name": "tllm/claude_haiku_3_5",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/deepseek_v4": {
+          "name": "tllm/deepseek_v4",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "tllm/gemini_3_flash": {
+          "name": "tllm/gemini_3_flash",
+          "limit": {
+            "context": 1000000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veo-free/veo": {
+          "name": "veo-free/veo",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veo-free/seedance": {
+          "name": "veo-free/seedance",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "mcode/mimo-auto": {
+          "name": "mcode/mimo-auto",
+          "limit": {
+            "context": 1000000,
+            "output": 128000
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veoaifree-web/veo": {
+          "name": "veoaifree-web/veo",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "veoaifree-web/seedance": {
+          "name": "veoaifree-web/seedance",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "no-think/aug/claude-sonnet-4.6": {
+          "name": "no-think/aug/claude-sonnet-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "no-think/aug/claude-opus-4.6": {
+          "name": "no-think/aug/claude-opus-4.6",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        },
+        "no-think/aug/claude-haiku-4.5": {
+          "name": "no-think/aug/claude-haiku-4.5",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true,
+          "reasoning": true
+        }
+      }
+    },
+    "local-qwen": {
+      "api": "openai",
+      "name": "qwen (CPU :9084)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9084/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "qwen-3.5-0.8b": {
+          "name": "qwen-3.5-0.8b",
+          "limit": {
+            "context": 262144,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-deepseek": {
+      "api": "openai",
+      "name": "deepseek (CPU :9085)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9085/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "deepseek-r1-0.5b": {
+          "name": "deepseek-r1-0.5b",
+          "limit": {
+            "context": 131072,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-lfm": {
+      "api": "openai",
+      "name": "lfm (CPU :9086)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9086/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "lfm2.5-230m": {
+          "name": "lfm2.5-230m",
+          "limit": {
+            "context": 128000,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-qwen-coder": {
+      "api": "openai",
+      "name": "Qwen2.5-Coder (CPU :9087)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9087/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "qwen2.5-coder-1.5b": {
+          "name": "qwen2.5-coder-1.5b",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    }
+  },
+  "model": "local-ornith/ornith-9b",
+  "small_model": "local-qwen/qwen-3.5-0.8b",
+  "default_agent": "gran-mestre",
+  "instructions": [
+    "~/.config/opencode/AGENTS.md"
+  ],
+  "skills": {
+    "paths": [
+      "/mnt/dados/opencode/skills",
+      "/mnt/dados/Assistente Pessoal/knowledge/skills",
+      "/home/johncoffee/.claude/skills",
+      "/home/johncoffee/.config/opencode/skills"
+    ]
+  },
+  "agent": {
+    "gran-mestre": {
+      "description": "Meta-orquestrador do OpenCode. Ponto de entrada unico. Auto-delega entre 61 subagents especializados. Gerencia pipeline completo com safety protocol, rollback automatico, attestation SHA-256 e Mixture-of-Agents.",
+      "mode": "primary",
+      "prompt": "/mnt/dados/opencode/agent/gran-mestre.md",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "task": true
+      }
+    },
+    "build": {
+      "description": "Primary coding agent for development work",
+      "mode": "primary",
+      "tools": {
+        "write": true,
+        "edit": true,
+        "bash": true,
+        "read": true,
+        "changed-files": true
+      },
+      "model": "local-ornith/ornith-9b"
+    },
+    "planner": {
+      "description": "Expert planning specialist for complex features and refactoring.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/planner.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      },
+      "model": "local-ornith/ornith-9b"
+    },
+    "architect": {
+      "description": "Software architecture specialist for system design, scalability, and technical decision-making.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/architect.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "code-reviewer": {
+      "description": "Expert code review specialist. Reviews code for quality, security, and maintainability.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/code-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      },
+      "model": "local-ornith/ornith-9b"
+    },
+    "security-reviewer": {
+      "description": "Security vulnerability detection and remediation specialist.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/security-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": true,
+        "edit": true
+      }
+    },
+    "tdd-guide": {
+      "description": "Test-Driven Development specialist enforcing write-tests-first methodology.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/tdd-guide.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "model": "local-ornith/ornith-9b"
+    },
+    "build-error-resolver": {
+      "description": "Build and TypeScript error resolution specialist.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/build-error-resolver.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "model": "local-ornith/ornith-9b"
+    },
+    "e2e-runner": {
+      "description": "End-to-end testing specialist using Playwright.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/e2e-runner.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      },
+      "model": "local-ornith/ornith-9b"
+    },
+    "doc-updater": {
+      "description": "Documentation and codemap specialist.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/doc-updater.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "refactor-cleaner": {
+      "description": "Dead code cleanup and consolidation specialist.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/refactor-cleaner.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "go-reviewer": {
+      "description": "Expert Go code reviewer.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/go-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "go-build-resolver": {
+      "description": "Go build, vet, and compilation error resolution specialist.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/go-build-resolver.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "database-reviewer": {
+      "description": "PostgreSQL database specialist for query optimization, schema design, security.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/database-reviewer.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "cpp-reviewer": {
+      "description": "Expert C++ code reviewer for memory safety, modern C++ idioms, concurrency.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/cpp-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "cpp-build-resolver": {
+      "description": "C++ build, CMake, and compilation error resolution specialist.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/cpp-build-resolver.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "docs-lookup": {
+      "description": "Documentation specialist using Context7 MCP for library API documentation.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/docs-lookup.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "harness-optimizer": {
+      "description": "Analyze and improve local agent harness configuration.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/harness-optimizer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "edit": true
+      }
+    },
+    "java-reviewer": {
+      "description": "Expert Java and Spring Boot code reviewer.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/java-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "java-build-resolver": {
+      "description": "Java/Maven/Gradle build, compilation, and dependency error resolution.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/java-build-resolver.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "kotlin-reviewer": {
+      "description": "Kotlin and Android/KMP code reviewer.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/kotlin-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "kotlin-build-resolver": {
+      "description": "Kotlin/Gradle build, compilation, and dependency error resolution.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/kotlin-build-resolver.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "loop-operator": {
+      "description": "Operate autonomous agent loops, monitor progress, intervene safely when loops stall.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/loop-operator.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "edit": true
+      }
+    },
+    "php-reviewer": {
+      "description": "Expert PHP code reviewer for PSR-12, PHP type system, Eloquent ORM, security.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/php-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "python-reviewer": {
+      "description": "Expert Python code reviewer for PEP 8, type hints, security, performance.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/python-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "rust-reviewer": {
+      "description": "Expert Rust code reviewer for ownership, lifetimes, concurrency, performance.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/rust-reviewer.txt",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "write": false,
+        "edit": false
+      }
+    },
+    "rust-build-resolver": {
+      "description": "Rust build, Cargo, and compilation error resolution specialist.",
+      "mode": "subagent",
+      "prompt": "/mnt/dados/opencode/prompts/agents/rust-build-resolver.txt",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "gsd-planner": {
+      "description": "Creates executable phase plans with task breakdown, dependency analysis, and goal-backward verification.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-planner.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true,
+        "edit": true
+      }
+    },
+    "gsd-executor": {
+      "description": "Executes GSD plans with atomic commits, deviation handling, checkpoint protocols, state management.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-executor.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true,
+        "edit": true
+      },
+      "model": "local-ornith/ornith-9b"
+    },
+    "gsd-code-reviewer": {
+      "description": "Reviews source files for bugs, security issues, code quality problems. Produces REVIEW.md.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-code-reviewer.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "gsd-code-fixer": {
+      "description": "Applies fixes to code review findings from REVIEW.md. Commits each fix atomically.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-code-fixer.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true,
+        "edit": true
+      }
+    },
+    "gsd-phase-researcher": {
+      "description": "Researches how to implement a phase before planning. Produces RESEARCH.md.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-phase-researcher.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "webfetch": true,
+        "websearch": true
+      }
+    },
+    "gsd-project-researcher": {
+      "description": "Researches domain ecosystem before roadmap creation. Produces files in .planning/research/.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-project-researcher.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "webfetch": true,
+        "websearch": true
+      }
+    },
+    "gsd-research-synthesizer": {
+      "description": "Synthesizes research outputs from parallel researcher agents into SUMMARY.md.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-research-synthesizer.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "gsd-roadmapper": {
+      "description": "Creates project roadmaps with phase breakdown, requirement mapping, success criteria derivation.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-roadmapper.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "gsd-pattern-mapper": {
+      "description": "Analyzes codebase for existing patterns. Produces PATTERNS.md mapping new files to closest analogs.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-pattern-mapper.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true
+      }
+    },
+    "gsd-codebase-mapper": {
+      "description": "Explores codebase and writes structured analysis documents.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-codebase-mapper.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "gsd-doc-writer": {
+      "description": "Writes and updates project documentation. Spawned with doc_assignment block.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-doc-writer.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "gsd-doc-classifier": {
+      "description": "Classifies planning documents as ADR, PRD, SPEC, DOC, or UNKNOWN.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-doc-classifier.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "bash": true
+      }
+    },
+    "gsd-doc-synthesizer": {
+      "description": "Synthesizes classified planning docs into consolidated context with conflict detection.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-doc-synthesizer.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "gsd-doc-verifier": {
+      "description": "Verifies factual claims in generated docs against the live codebase.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-doc-verifier.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true
+      }
+    },
+    "gsd-advisor-researcher": {
+      "description": "Researches single gray area decisions. Returns structured comparison table with rationale.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-advisor-researcher.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "webfetch": true,
+        "websearch": true
+      }
+    },
+    "gsd-assumptions-analyzer": {
+      "description": "Deeply analyzes codebase for a phase. Returns structured assumptions with evidence.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-assumptions-analyzer.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true
+      }
+    },
+    "gsd-ai-researcher": {
+      "description": "Researches AI frameworks official docs for implementation-ready guidance. Produces AI-SPEC.md sections.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-ai-researcher.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "webfetch": true,
+        "websearch": true
+      }
+    },
+    "gsd-framework-selector": {
+      "description": "Interactive decision matrix for AI/LLM framework selection. Produces scored recommendation.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-framework-selector.md}",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "webfetch": true,
+        "websearch": true
+      }
+    },
+    "gsd-domain-researcher": {
+      "description": "Researches business domain and real-world application context. Surfaces expert evaluation criteria.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-domain-researcher.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "webfetch": true,
+        "websearch": true
+      }
+    },
+    "gsd-eval-planner": {
+      "description": "Designs structured evaluation strategy for AI phases. Writes eval dimensions, rubrics, datasets.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-eval-planner.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "gsd-eval-auditor": {
+      "description": "Retroactive audit of implemented AI phase evaluation coverage. Produces scored EVAL-REVIEW.md.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-eval-auditor.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "gsd-verifier": {
+      "description": "Verifies phase goal achievement through goal-backward analysis. Creates VERIFICATION.md.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-verifier.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "gsd-plan-checker": {
+      "description": "Verifies plans will achieve phase goal before execution. Goal-backward analysis.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-plan-checker.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true
+      }
+    },
+    "gsd-security-auditor": {
+      "description": "Verifies threat mitigations from PLAN.md threat model in implemented code. Produces SECURITY.md.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-security-auditor.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "gsd-integration-checker": {
+      "description": "Verifies cross-phase integration and E2E flows. Checks phase connectivity.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-integration-checker.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true
+      }
+    },
+    "gsd-debugger": {
+      "description": "Investigates bugs using scientific method. Manages debug sessions, handles checkpoints.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-debugger.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "edit": true
+      }
+    },
+    "gsd-debug-session-manager": {
+      "description": "Manages multi-cycle debug checkpoint and continuation loops. Spawns debugger agents.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-debug-session-manager.md}",
+      "tools": {
+        "read": true,
+        "bash": true,
+        "task": true
+      }
+    },
+    "gsd-intel-updater": {
+      "description": "Analyzes codebase and writes structured intel files to .planning/intel/.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-intel-updater.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "gsd-nyquist-auditor": {
+      "description": "Fills Nyquist validation gaps by generating tests and verifying coverage for phase requirements.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-nyquist-auditor.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true,
+        "edit": true
+      }
+    },
+    "gsd-mempalace-curator": {
+      "description": "Ship-time MemPalace curation. Writes session diary, cross-project tunnels, temporal KG mirror.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-mempalace-curator.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "edit": true,
+        "bash": true
+      }
+    },
+    "gsd-user-profiler": {
+      "description": "Analyzes session messages across 8 behavioral dimensions. Produces scored developer profile.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-user-profiler.md}",
+      "tools": {
+        "read": true,
+        "write": true,
+        "bash": true
+      }
+    },
+    "gsd-ui-researcher": {
+      "description": "Produces UI-SPEC.md design contract for frontend phases. Detects design system state.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-ui-researcher.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "gsd-ui-checker": {
+      "description": "Validates UI-SPEC.md design contracts against 6 quality dimensions. BLOCK/FLAG/PASS.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-ui-checker.md}",
+      "tools": {
+        "read": true,
+        "bash": true
+      }
+    },
+    "gsd-ui-auditor": {
+      "description": "Retroactive 6-pillar visual audit of implemented frontend code. Produces UI-REVIEW.md.",
+      "mode": "subagent",
+      "prompt": "{file:/home/johncoffee/.config/opencode/agents/gsd-ui-auditor.md}",
+      "tools": {
+        "read": true,
+        "glob": true,
+        "grep": true,
+        "bash": true,
+        "write": true
+      }
+    },
+    "executor-deep": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "hestia": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "atena": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "Sisyphus-Junior": {
+      "model": "local-ornith/ornith-9b"
+    },
+    "general": {
+      "model": "local-ornith/ornith-9b"
+    }
+  },
+  "command": {
+    "gran-mestre": {
+      "description": "Run Gran-Mestre full pipeline: plan, validate, execute, review with Mixture of Agents routing",
+      "template": "/mnt/dados/opencode/command/gran-mestre.md\n\n$ARGUMENTS",
+      "agent": "gran-mestre",
+      "subtask": true
+    },
+    "/plan": {
+      "description": "Create detailed implementation plan",
+      "template": "/mnt/dados/opencode/commands/plan.md\n\n$ARGUMENTS",
+      "agent": "gsd-planner",
+      "subtask": true
+    },
+    "/tdd": {
+      "description": "Enforce TDD workflow with 80%+ coverage",
+      "template": "/mnt/dados/opencode/commands/tdd.md\n\n$ARGUMENTS",
+      "agent": "tdd-guide",
+      "subtask": true
+    },
+    "/code-review": {
+      "description": "Review code for quality and security",
+      "template": "/mnt/dados/opencode/commands/code-review.md\n\n$ARGUMENTS",
+      "agent": "gsd-code-reviewer",
+      "subtask": true
+    },
+    "/security": {
+      "description": "Run comprehensive security review",
+      "template": "/mnt/dados/opencode/commands/security.md\n\n$ARGUMENTS",
+      "agent": "gsd-security-auditor",
+      "subtask": true
+    },
+    "/build-fix": {
+      "description": "Fix build and TypeScript errors",
+      "template": "/mnt/dados/opencode/commands/build-fix.md\n\n$ARGUMENTS",
+      "agent": "build-error-resolver",
+      "subtask": true
+    },
+    "/e2e": {
+      "description": "Generate and run E2E tests with Playwright",
+      "template": "/mnt/dados/opencode/commands/e2e.md\n\n$ARGUMENTS",
+      "agent": "e2e-runner",
+      "subtask": true
+    },
+    "/refactor-clean": {
+      "description": "Remove dead code and consolidate duplicates",
+      "template": "/mnt/dados/opencode/commands/refactor-clean.md\n\n$ARGUMENTS",
+      "agent": "refactor-cleaner",
+      "subtask": true
+    },
+    "/orchestrate": {
+      "description": "Orchestrate multiple agents for complex tasks",
+      "template": "/mnt/dados/opencode/commands/orchestrate.md\n\n$ARGUMENTS",
+      "agent": "gran-mestre",
+      "subtask": true
+    },
+    "/learn": {
+      "description": "Extract patterns and learnings from session",
+      "template": "/mnt/dados/opencode/commands/learn.md\n\n$ARGUMENTS"
+    },
+    "/checkpoint": {
+      "description": "Save verification state and progress",
+      "template": "/mnt/dados/opencode/commands/checkpoint.md\n\n$ARGUMENTS"
+    },
+    "/verify": {
+      "description": "Run verification loop",
+      "template": "/mnt/dados/opencode/commands/verify.md\n\n$ARGUMENTS",
+      "agent": "gsd-verifier",
+      "subtask": true
+    },
+    "/eval": {
+      "description": "Run evaluation against criteria",
+      "template": "/mnt/dados/opencode/commands/eval.md\n\n$ARGUMENTS",
+      "agent": "gsd-eval-auditor",
+      "subtask": true
+    },
+    "/update-docs": {
+      "description": "Update documentation",
+      "template": "/mnt/dados/opencode/commands/update-docs.md\n\n$ARGUMENTS",
+      "agent": "gsd-doc-writer",
+      "subtask": true
+    },
+    "/update-codemaps": {
+      "description": "Update codemaps",
+      "template": "/mnt/dados/opencode/commands/update-codemaps.md\n\n$ARGUMENTS",
+      "agent": "gsd-codebase-mapper",
+      "subtask": true
+    },
+    "/test-coverage": {
+      "description": "Analyze test coverage",
+      "template": "/mnt/dados/opencode/commands/test-coverage.md\n\n$ARGUMENTS",
+      "agent": "tdd-guide",
+      "subtask": true
+    },
+    "/setup-pm": {
+      "description": "Configure package manager",
+      "template": "/mnt/dados/opencode/commands/setup-pm.md\n\n$ARGUMENTS"
+    },
+    "/go-review": {
+      "description": "Go code review",
+      "template": "/mnt/dados/opencode/commands/go-review.md\n\n$ARGUMENTS",
+      "agent": "go-reviewer",
+      "subtask": true
+    },
+    "/go-test": {
+      "description": "Go TDD workflow",
+      "template": "/mnt/dados/opencode/commands/go-test.md\n\n$ARGUMENTS",
+      "agent": "tdd-guide",
+      "subtask": true
+    },
+    "/go-build": {
+      "description": "Fix Go build errors",
+      "template": "/mnt/dados/opencode/commands/go-build.md\n\n$ARGUMENTS",
+      "agent": "go-build-resolver",
+      "subtask": true
+    },
+    "/gsd-plan": {
+      "description": "Create GSD phase plan with decomposition",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-planner",
+      "subtask": true
+    },
+    "/gsd-execute": {
+      "description": "Execute GSD phase plan",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-executor",
+      "subtask": true
+    },
+    "/gsd-research": {
+      "description": "Research phase implementation",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-phase-researcher",
+      "subtask": true
+    },
+    "/gsd-audit": {
+      "description": "Audit completed phase",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-eval-auditor",
+      "subtask": true
+    },
+    "/gsd-debug": {
+      "description": "Start debug session",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-debug-session-manager",
+      "subtask": true
+    },
+    "/gsd-verify": {
+      "description": "Verify phase completion",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-verifier",
+      "subtask": true
+    },
+    "/gsd-docs": {
+      "description": "Generate documentation",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-doc-writer",
+      "subtask": true
+    },
+    "/gsd-security": {
+      "description": "Run security audit on phase",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-security-auditor",
+      "subtask": true
+    },
+    "/gsd-map": {
+      "description": "Map codebase structure",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-codebase-mapper",
+      "subtask": true
+    },
+    "/gsd-architect": {
+      "description": "Design architecture for phase",
+      "template": "$ARGUMENTS",
+      "agent": "architect",
+      "subtask": true
+    },
+    "/gsd-roadmap": {
+      "description": "Create project roadmap",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-roadmapper",
+      "subtask": true
+    },
+    "/gsd-profile": {
+      "description": "Generate user behavioral profile",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-user-profiler",
+      "subtask": true
+    },
+    "/gsd-intel": {
+      "description": "Update codebase intelligence",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-intel-updater",
+      "subtask": true
+    },
+    "/gsd-mempalace": {
+      "description": "Curate MemPalace artifacts",
+      "template": "$ARGUMENTS",
+      "agent": "gsd-mempalace-curator",
+      "subtask": true
+    },
+    "/re": {
+      "description": "Reverse engineering via GhidraMCP",
+      "template": "$ARGUMENTS",
+      "agent": "reverser",
+      "subtask": true
+    },
+    "/bios": {
+      "description": "Carrega persona BIOS modding",
+      "template": "Carregue a persona em skills/ghidra-re-pipeline/prompts/$ARGUMENTS.md\n\n---\n\n",
+      "subtask": false
+    },
+    "/browser": {
+      "description": "Control browser via AI agent",
+      "template": "/mnt/dados/opencode/skills/browser-use/SKILL.md\n\nTAREFA: $ARGUMENTS",
+      "subtask": false
+    }
+  },
+  "hooks": {
+    "session.start": [
+      {
+        "command": "python3 /mnt/dados/harness/hooks/memory_inject.py",
+        "timeout": 5000
+      }
+    ]
+  }
+}

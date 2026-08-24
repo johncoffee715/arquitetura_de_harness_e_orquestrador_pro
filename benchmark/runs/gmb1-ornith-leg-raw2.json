@@ -1,0 +1,25 @@
+{
+  "E_probe": {
+    "keys": [
+      "content",
+      "reasoning_content",
+      "role"
+    ],
+    "content": "",
+    "reasoning": "The user is asking me to use a tool called `get_stock_price('AAPL')` to get the exact current price of Apple stock.\n\nHowever, I need to be honest here. I don't have access to any tools or functions. I cannot actually call `get_stock_price('AAPL')` because",
+    "reason_len": 255,
+    "lat_s": 1.6
+  },
+  "F64_probe": {
+    "keys": [
+      "content",
+      "reasoning_content",
+      "role"
+    ],
+    "content": "",
+    "reasoning": "The user is asking me to find a code in the format AGULHA-XXXXXK in the text above and copy it exactly.\n\nLet me search through the text for the pattern \"AGULHA-XXXXXK\".\n\n",
+    "reason_len": 170,
+    "lat_s": 2.7,
+    "exact_hit_in_any_field": false
+  }
+}

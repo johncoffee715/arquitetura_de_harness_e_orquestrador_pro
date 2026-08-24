@@ -34,6 +34,8 @@ const MANAGED_HOOKS = [
   'gsd-validate-commit.sh',
   'gsd-workflow-guard.js',
   'gsd-worktree-path-guard.js',
+  'stack-auto-start.sh',
+  'auto-sync-models.sh',
 ];
 
 module.exports = { MANAGED_HOOKS };

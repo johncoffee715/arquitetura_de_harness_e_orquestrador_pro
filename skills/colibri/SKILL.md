@@ -1,14 +1,6 @@
 ---
 name: colibri
 description: "Motor de inferência MoE puro C, zero deps: roda modelos frontier 744B-2.8T em hardware consumer tratando VRAM/RAM/storage como hierarquia única (multitiering). (absorvido de JustVugg/colibri)"
-origin: absorvido:JustVugg/colibri
-metadata:
-  autofagia: JustVugg/colibri (2026-08-10)
-  prioridade: 7
-  linguagem: C
-  topics: inference, moe, multitiering, vram, memory-hierarchy, gguf-free
-  artefatos: skill
-  padroes_absorvidos: 6
 ---
 # Colibrì
 

@@ -1,7 +1,7 @@
 ---
 name: gran-mestre
 description: "Meta-orquestrador senior do OpenCode. Ponto de entrada único para requisições do usuário. Analisa complexidade, roteia (TRIVIAL→FEATURE), delega para agents especializados. Gerencia pipeline completo (6 fases) com safety protocol, rollback automático e Shared Brain."
-model: github-copilot/claude-opus-4.7
+model: local-orchestrator/orchestrator-9b
 mode: primary
 origin: gran-mestre-original
 component_type: agent
@@ -85,18 +85,17 @@ cascade:
 # ============================================================
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: local-orchestrator/orchestrator-9b
   fallback:
-    - opencode/claude-opus-4-7
-    - github-copilot/gpt-5.5
-    - opencode/gpt-5.5
-    - github-copilot/gemini-3.1-pro-preview
-    - opencode/gemini-3.1-pro
-    - opencode/kimi-k2.5
-    - opencode/gpt-5-nano
-    - github-copilot/claude-haiku-4.5
-    - opencode/glm-5
-    - opencode/big-pickle
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
+    - local-orchestrator/orchestrator-9b
   max_retries_per_model: 1
   verify_before_use: true
   skip_on_failure: true

@@ -3,7 +3,9 @@
   "plugin": [
     "/mnt/dados/opencode/plugins",
     "oh-my-openagent@latest",
-    "/mnt/dados/opencode/config/plugins/ecc-session-delete"
+    "/mnt/dados/opencode/config/plugins/ecc-session-delete",
+    "file:///mnt/dados/opencode/config/plugins/circuit-breaker.ts",
+    "file:///mnt/dados/opencode/config/plugins/gran-mestre-state.ts"
   ],
   "permission": {
     "bash": "allow",
@@ -13,7 +15,72 @@
     "websearch": "allow",
     "mcp_ghidra": "allow",
     "mcp_openwork": "allow",
-    "mcp_*": "ask"
+    "mcp_*": "ask",
+    "skill": {
+      "*": "deny",
+      "gran-mestre": "allow",
+      "hestia": "allow",
+      "athena": "allow",
+      "atena": "allow",
+      "fable-judge": "allow",
+      "memory-recall": "allow",
+      "memory-local": "allow",
+      "context-compaction": "allow",
+      "context-mode": "allow",
+      "caveman": "allow",
+      "silverhawk": "allow",
+      "llm-benchmark": "allow",
+      "code-archaeologist": "allow",
+      "professional-decompilation": "allow",
+      "dev-loop": "allow",
+      "engenharia-de-harness": "allow",
+      "self-scaffold-guard": "allow",
+      "agent-reach": "allow",
+      "firecrawl": "allow",
+      "browser-use": "allow",
+      "omniroute": "allow",
+      "pxpipe": "allow",
+      "headroom-compress": "allow",
+      "llama-mtp": "allow",
+      "security-methodology": "allow",
+      "security-review": "allow",
+      "archify": "allow",
+      "impeccable": "allow",
+      "hallmark": "allow",
+      "book-to-skill": "allow",
+      "spec-kit": "allow",
+      "onp-spec-driven": "allow",
+      "react-bits": "allow",
+      "last30days-skill": "allow",
+      "context-selector": "allow",
+      "recursive-llm": "allow",
+      "deepagents": "allow",
+      "prime-agent": "allow",
+      "longhorizon-harness": "allow",
+      "orca": "allow",
+      "pi": "allow",
+      "superpowers-brainstorming": "allow",
+      "superpowers-writing-plans": "allow",
+      "superpowers-executing-plans": "allow",
+      "superpowers-subagent-driven-development": "allow",
+      "superpowers-using-superpowers": "allow",
+      "superpowers-verification-before-completion": "allow",
+      "gsd-progress": "allow",
+      "gsd-quick": "allow",
+      "gsd-fast": "allow",
+      "gsd-debug": "allow",
+      "gsd-verify-work": "allow",
+      "gsd-execute-phase": "allow",
+      "gsd-plan-phase": "allow",
+      "gsd-discuss-phase": "allow",
+      "gsd-code-review": "allow",
+      "gsd-new-project": "allow",
+      "gsd-cleanup": "allow",
+      "gsd-stats": "allow",
+      "gsd-help": "allow",
+      "i-have-adhd": "allow",
+      "worldmonitor": "allow"
+    }
   },
   "mcp": {
     "ghidra": {
@@ -27,54 +94,9 @@
       "enabled": true,
       "url": "https://api.openworklabs.com/mcp/agent",
       "oauth": {}
-    },
-    "obsidian": {
-      "enabled": true,
-      "type": "local",
-      "command": "python3",
-      "args": [
-        "/mnt/dados/harness/mcp/obsidian_server.py"
-      ],
-      "env": {
-        "OBSIDIAN_VAULT": "/mnt/dados/cerebro com IA"
-      }
-    },
-    "siz_delimiter": {
-      "enabled": true,
-      "type": "local",
-      "command": "python3",
-      "args": [
-        "/mnt/dados/harness/mcp/siz_delimiter_server.py"
-      ],
-      "env": {
-        "SIZ_TOKENIZE_ENDPOINT": "http://127.0.0.1:8083/tokenize",
-        "SIZ_CACHE_DIR": "/mnt/dados/harness/cache",
-        "SIZ_SAFETY_FACTOR": "1.15",
-        "SIZ_BUDGET_TOKENS": "8700"
-      }
     }
   },
   "provider": {
-    "local-ornith": {
-      "api": "openai",
-      "name": "ornith (GPU :8083)",
-      "options": {
-        "baseURL": "http://127.0.0.1:8083/v1",
-        "apiKey": "llamacpp"
-      },
-      "models": {
-        "ornith-9b": {
-          "name": "ornith-9b",
-          "limit": {
-            "context": 262144,
-            "output": 4096
-          },
-          "tool_call": true,
-          "temperature": true,
-          "reasoning": true
-        }
-      }
-    },
     "local-bonsai": {
       "api": "openai",
       "name": "bonsai (CPU :9083)",
@@ -86,11 +108,12 @@
         "bonsai-27b": {
           "name": "bonsai-27b",
           "limit": {
-            "context": 30000,
+            "context": 16384,
             "output": 4096
           },
           "tool_call": true,
-          "temperature": true
+          "temperature": true,
+          "id": "bonsai-27b"
         }
       }
     },
@@ -1027,26 +1050,8 @@
             "output": 4096
           },
           "tool_call": true,
-          "temperature": true
-        }
-      }
-    },
-    "local-deepseek": {
-      "api": "openai",
-      "name": "deepseek (CPU :9085)",
-      "options": {
-        "baseURL": "http://127.0.0.1:9085/v1",
-        "apiKey": "llamacpp"
-      },
-      "models": {
-        "deepseek-r1-0.5b": {
-          "name": "deepseek-r1-0.5b",
-          "limit": {
-            "context": 32768,
-            "output": 4096
-          },
-          "tool_call": true,
-          "temperature": true
+          "temperature": true,
+          "id": "qwen-3.5-0.8b"
         }
       }
     },
@@ -1065,20 +1070,42 @@
             "output": 4096
           },
           "tool_call": true,
-          "temperature": true
+          "temperature": true,
+          "id": "lfm2.5-230m"
         }
       }
     },
-    "local-qwen-coder": {
+    "local-qwen38-2b": {
       "api": "openai",
-      "name": "Qwen2.5-Coder (CPU :9087)",
+      "name": "qwen3.8-2b (CPU :9087)",
       "options": {
         "baseURL": "http://127.0.0.1:9087/v1",
         "apiKey": "llamacpp"
       },
       "models": {
-        "qwen2.5-coder-1.5b": {
-          "name": "qwen2.5-coder-1.5b",
+        "qwen3.8-2b": {
+          "name": "qwen3.8-2b",
+          "limit": {
+            "context": 131072,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true,
+          "id": "qwen3.8-2b"
+        }
+      }
+    },
+    "local-jamba": {
+      "api": "openai",
+      "name": "LLMJudge-3B (CPU :9085)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9085/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "llmjudge-3b": {
+          "name": "LLMJudge-3B (juiz, 11 t/s)",
+          "id": "LLMJudge-3B",
           "limit": {
             "context": 32768,
             "output": 4096
@@ -1087,9 +1114,49 @@
           "temperature": true
         }
       }
+    },
+    "local-minicpm": {
+      "api": "openai",
+      "name": "Qwen3-1.7B (CPU :9088)",
+      "options": {
+        "baseURL": "http://127.0.0.1:9088/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "qwen17-1b": {
+          "name": "Qwen3-1.7B (CPU, 16 t/s)",
+          "id": "Qwen3-1.7B",
+          "limit": {
+            "context": 32768,
+            "output": 4096
+          },
+          "tool_call": true,
+          "temperature": true
+        }
+      }
+    },
+    "local-orchestrator": {
+      "api": "openai",
+      "name": "Orchestrator (GPU :8083) — eleito GMB-1",
+      "options": {
+        "baseURL": "http://127.0.0.1:8083/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "orchestrator-9b": {
+          "name": "orchestrator-9b",
+          "limit": {
+            "context": 262144,
+            "output": 8192
+          },
+          "tool_call": true,
+          "temperature": true,
+          "id": "orchestrator-9b"
+        }
+      }
     }
   },
-  "model": "omniroute/aug/kimi-k2.6",
+  "model": "local-orchestrator/orchestrator-9b",
   "small_model": "local-qwen/qwen-3.5-0.8b",
   "default_agent": "gran-mestre",
   "instructions": [
@@ -1105,16 +1172,7 @@
   },
   "agent": {
     "gran-mestre": {
-      "description": "Meta-orquestrador do OpenCode. Ponto de entrada unico. Auto-delega entre 61 subagents especializados. Gerencia pipeline completo com safety protocol, rollback automatico, attestation SHA-256 e Mixture-of-Agents.",
-      "mode": "primary",
-      "prompt": "/mnt/dados/opencode/agent/gran-mestre.md",
-      "tools": {
-        "read": true,
-        "write": true,
-        "edit": true,
-        "bash": true,
-        "task": true
-      }
+      "model": "local-orchestrator/orchestrator-9b"
     },
     "build": {
       "description": "Primary coding agent for development work",
@@ -1126,7 +1184,7 @@
         "read": true,
         "changed-files": true
       },
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "planner": {
       "description": "Expert planning specialist for complex features and refactoring.",
@@ -1138,7 +1196,7 @@
         "write": false,
         "edit": false
       },
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "architect": {
       "description": "Software architecture specialist for system design, scalability, and technical decision-making.",
@@ -1149,7 +1207,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "code-reviewer": {
       "description": "Expert code review specialist. Reviews code for quality, security, and maintainability.",
@@ -1161,7 +1220,7 @@
         "write": false,
         "edit": false
       },
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "security-reviewer": {
       "description": "Security vulnerability detection and remediation specialist.",
@@ -1172,7 +1231,8 @@
         "bash": true,
         "write": true,
         "edit": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "tdd-guide": {
       "description": "Test-Driven Development specialist enforcing write-tests-first methodology.",
@@ -1184,7 +1244,7 @@
         "edit": true,
         "bash": true
       },
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "build-error-resolver": {
       "description": "Build and TypeScript error resolution specialist.",
@@ -1196,7 +1256,7 @@
         "edit": true,
         "bash": true
       },
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "e2e-runner": {
       "description": "End-to-end testing specialist using Playwright.",
@@ -1208,7 +1268,7 @@
         "edit": true,
         "bash": true
       },
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "doc-updater": {
       "description": "Documentation and codemap specialist.",
@@ -1219,7 +1279,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "refactor-cleaner": {
       "description": "Dead code cleanup and consolidation specialist.",
@@ -1230,7 +1291,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "go-reviewer": {
       "description": "Expert Go code reviewer.",
@@ -1241,7 +1303,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "go-build-resolver": {
       "description": "Go build, vet, and compilation error resolution specialist.",
@@ -1252,7 +1315,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "database-reviewer": {
       "description": "PostgreSQL database specialist for query optimization, schema design, security.",
@@ -1263,7 +1327,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "cpp-reviewer": {
       "description": "Expert C++ code reviewer for memory safety, modern C++ idioms, concurrency.",
@@ -1274,7 +1339,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "cpp-build-resolver": {
       "description": "C++ build, CMake, and compilation error resolution specialist.",
@@ -1285,7 +1351,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "docs-lookup": {
       "description": "Documentation specialist using Context7 MCP for library API documentation.",
@@ -1296,7 +1363,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "harness-optimizer": {
       "description": "Analyze and improve local agent harness configuration.",
@@ -1306,7 +1374,8 @@
         "read": true,
         "bash": true,
         "edit": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "java-reviewer": {
       "description": "Expert Java and Spring Boot code reviewer.",
@@ -1317,7 +1386,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "java-build-resolver": {
       "description": "Java/Maven/Gradle build, compilation, and dependency error resolution.",
@@ -1328,7 +1398,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "kotlin-reviewer": {
       "description": "Kotlin and Android/KMP code reviewer.",
@@ -1339,7 +1410,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "kotlin-build-resolver": {
       "description": "Kotlin/Gradle build, compilation, and dependency error resolution.",
@@ -1350,7 +1422,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "loop-operator": {
       "description": "Operate autonomous agent loops, monitor progress, intervene safely when loops stall.",
@@ -1360,7 +1433,8 @@
         "read": true,
         "bash": true,
         "edit": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "php-reviewer": {
       "description": "Expert PHP code reviewer for PSR-12, PHP type system, Eloquent ORM, security.",
@@ -1371,7 +1445,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "python-reviewer": {
       "description": "Expert Python code reviewer for PEP 8, type hints, security, performance.",
@@ -1382,7 +1457,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "rust-reviewer": {
       "description": "Expert Rust code reviewer for ownership, lifetimes, concurrency, performance.",
@@ -1393,7 +1469,8 @@
         "bash": true,
         "write": false,
         "edit": false
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "rust-build-resolver": {
       "description": "Rust build, Cargo, and compilation error resolution specialist.",
@@ -1404,7 +1481,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-planner": {
       "description": "Creates executable phase plans with task breakdown, dependency analysis, and goal-backward verification.",
@@ -1417,7 +1495,8 @@
         "bash": true,
         "write": true,
         "edit": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-executor": {
       "description": "Executes GSD plans with atomic commits, deviation handling, checkpoint protocols, state management.",
@@ -1431,7 +1510,7 @@
         "write": true,
         "edit": true
       },
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-code-reviewer": {
       "description": "Reviews source files for bugs, security issues, code quality problems. Produces REVIEW.md.",
@@ -1443,7 +1522,8 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-code-fixer": {
       "description": "Applies fixes to code review findings from REVIEW.md. Commits each fix atomically.",
@@ -1456,7 +1536,8 @@
         "bash": true,
         "write": true,
         "edit": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-phase-researcher": {
       "description": "Researches how to implement a phase before planning. Produces RESEARCH.md.",
@@ -1469,7 +1550,8 @@
         "bash": true,
         "webfetch": true,
         "websearch": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-project-researcher": {
       "description": "Researches domain ecosystem before roadmap creation. Produces files in .planning/research/.",
@@ -1482,7 +1564,8 @@
         "bash": true,
         "webfetch": true,
         "websearch": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-research-synthesizer": {
       "description": "Synthesizes research outputs from parallel researcher agents into SUMMARY.md.",
@@ -1493,7 +1576,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-roadmapper": {
       "description": "Creates project roadmaps with phase breakdown, requirement mapping, success criteria derivation.",
@@ -1504,7 +1588,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-pattern-mapper": {
       "description": "Analyzes codebase for existing patterns. Produces PATTERNS.md mapping new files to closest analogs.",
@@ -1515,7 +1600,8 @@
         "glob": true,
         "grep": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-codebase-mapper": {
       "description": "Explores codebase and writes structured analysis documents.",
@@ -1527,7 +1613,8 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-doc-writer": {
       "description": "Writes and updates project documentation. Spawned with doc_assignment block.",
@@ -1538,7 +1625,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-doc-classifier": {
       "description": "Classifies planning documents as ADR, PRD, SPEC, DOC, or UNKNOWN.",
@@ -1548,7 +1636,8 @@
         "read": true,
         "write": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-doc-synthesizer": {
       "description": "Synthesizes classified planning docs into consolidated context with conflict detection.",
@@ -1559,7 +1648,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-doc-verifier": {
       "description": "Verifies factual claims in generated docs against the live codebase.",
@@ -1570,7 +1660,8 @@
         "glob": true,
         "grep": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-advisor-researcher": {
       "description": "Researches single gray area decisions. Returns structured comparison table with rationale.",
@@ -1583,7 +1674,8 @@
         "bash": true,
         "webfetch": true,
         "websearch": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-assumptions-analyzer": {
       "description": "Deeply analyzes codebase for a phase. Returns structured assumptions with evidence.",
@@ -1594,7 +1686,8 @@
         "glob": true,
         "grep": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-ai-researcher": {
       "description": "Researches AI frameworks official docs for implementation-ready guidance. Produces AI-SPEC.md sections.",
@@ -1607,7 +1700,8 @@
         "bash": true,
         "webfetch": true,
         "websearch": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-framework-selector": {
       "description": "Interactive decision matrix for AI/LLM framework selection. Produces scored recommendation.",
@@ -1618,7 +1712,8 @@
         "bash": true,
         "webfetch": true,
         "websearch": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-domain-researcher": {
       "description": "Researches business domain and real-world application context. Surfaces expert evaluation criteria.",
@@ -1631,7 +1726,8 @@
         "bash": true,
         "webfetch": true,
         "websearch": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-eval-planner": {
       "description": "Designs structured evaluation strategy for AI phases. Writes eval dimensions, rubrics, datasets.",
@@ -1642,7 +1738,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-eval-auditor": {
       "description": "Retroactive audit of implemented AI phase evaluation coverage. Produces scored EVAL-REVIEW.md.",
@@ -1654,7 +1751,8 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-verifier": {
       "description": "Verifies phase goal achievement through goal-backward analysis. Creates VERIFICATION.md.",
@@ -1666,7 +1764,8 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-plan-checker": {
       "description": "Verifies plans will achieve phase goal before execution. Goal-backward analysis.",
@@ -1677,7 +1776,8 @@
         "glob": true,
         "grep": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-security-auditor": {
       "description": "Verifies threat mitigations from PLAN.md threat model in implemented code. Produces SECURITY.md.",
@@ -1689,7 +1789,8 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-integration-checker": {
       "description": "Verifies cross-phase integration and E2E flows. Checks phase connectivity.",
@@ -1700,7 +1801,8 @@
         "glob": true,
         "grep": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-debugger": {
       "description": "Investigates bugs using scientific method. Manages debug sessions, handles checkpoints.",
@@ -1712,7 +1814,8 @@
         "grep": true,
         "bash": true,
         "edit": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-debug-session-manager": {
       "description": "Manages multi-cycle debug checkpoint and continuation loops. Spawns debugger agents.",
@@ -1722,7 +1825,8 @@
         "read": true,
         "bash": true,
         "task": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-intel-updater": {
       "description": "Analyzes codebase and writes structured intel files to .planning/intel/.",
@@ -1734,7 +1838,8 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-nyquist-auditor": {
       "description": "Fills Nyquist validation gaps by generating tests and verifying coverage for phase requirements.",
@@ -1747,7 +1852,8 @@
         "bash": true,
         "write": true,
         "edit": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-mempalace-curator": {
       "description": "Ship-time MemPalace curation. Writes session diary, cross-project tunnels, temporal KG mirror.",
@@ -1758,7 +1864,8 @@
         "write": true,
         "edit": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "gsd-user-profiler": {
       "description": "Analyzes session messages across 8 behavioral dimensions. Produces scored developer profile.",
@@ -1768,7 +1875,8 @@
         "read": true,
         "write": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-ui-researcher": {
       "description": "Produces UI-SPEC.md design contract for frontend phases. Detects design system state.",
@@ -1780,7 +1888,8 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-ui-checker": {
       "description": "Validates UI-SPEC.md design contracts against 6 quality dimensions. BLOCK/FLAG/PASS.",
@@ -1789,7 +1898,8 @@
       "tools": {
         "read": true,
         "bash": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "gsd-ui-auditor": {
       "description": "Retroactive 6-pillar visual audit of implemented frontend code. Produces UI-REVIEW.md.",
@@ -1801,22 +1911,23 @@
         "grep": true,
         "bash": true,
         "write": true
-      }
+      },
+      "model": "local-qwen/qwen-3.5-0.8b"
     },
     "executor-deep": {
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "hestia": {
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "atena": {
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "Sisyphus-Junior": {
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen38-2b/qwen3.8-2b"
     },
     "general": {
-      "model": "local-ornith/ornith-9b"
+      "model": "local-qwen/qwen-3.5-0.8b"
     }
   },
   "command": {
@@ -2046,7 +2157,42 @@
       {
         "command": "python3 /mnt/dados/harness/hooks/memory_inject.py",
         "timeout": 5000
+      },
+      {
+        "command": "/home/johncoffee/.config/opencode/hooks/stack-auto-start.sh",
+        "timeout": 30000
+      },
+      {
+        "command": "/home/johncoffee/.config/opencode/hooks/auto-sync-models.sh",
+        "timeout": 15000
+      },
+      {
+        "command": "/home/johncoffee/.config/opencode/hooks/watch-registry-start.sh",
+        "timeout": 3000
+      }
+    ],
+    "user.prompt.submit": [
+      {
+        "command": "/home/johncoffee/.config/opencode/hooks/sensitive-data-check.sh",
+        "timeout": 5000
+      }
+    ],
+    "commit.create": [
+      {
+        "command": "/home/johncoffee/.config/opencode/hooks/prepare-commit-msg.sh",
+        "timeout": 5000
       }
     ]
+  },
+  "lsp": {
+    "pyright": {
+      "command": [
+        "/mnt/dados/node/bin/pyright-langserver",
+        "--stdio"
+      ],
+      "extensions": [
+        ".py"
+      ]
+    }
   }
 }

@@ -1,13 +1,6 @@
 ---
 name: sentry-mcp
 description: "MCP remoto do Sentry (mcp.sentry.dev) — debugging orientado a anotadores de código: erros, issues, traces, performance. absorvido de getsentry/sentry-mcp; middleware remoto p/ o fluxo dev workflow (human-in-the-loop)."
-user-invocable: true
-allowed-tools: "Read Write Bash"
-metadata:
-  version: "1.0.0"
-  origin: "https://github.com/getsentry/sentry-mcp + https://mcp.sentry.dev/mcp"
-  absorbed_at: "2026-08-05"
-  antropofagia: "Devorada a arquitetura de MCP remoto (Cloudflare-style) para debug de erros sentry — adiciona camada de erros de produção ao fluxo de QA/observabilidade local do harness."
 ---
 
 # 🐞 sentry-mcp — Skill de Erros de Produção para OpenCode

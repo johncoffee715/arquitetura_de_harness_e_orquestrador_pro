@@ -1,0 +1,36 @@
+{
+  "name": "qwen3-coder-30b-a3b",
+  "model": "Qwen3-Coder-30B-A3B-Instruct-Q3_K_M.gguf",
+  "ctx": 8192,
+  "gpu": true,
+  "mtp": 0,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "12/31",
+    "vram_pos": "16.7GB",
+    "vram_t1": "16.8GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "true",
+      "tempo_s": 14.9,
+      "prompt_tokens": 5788,
+      "out_tokens": 2,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}",
+      "tempo_s": 1.5,
+      "json_puro": true,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "**Nota: 30/100**\n\nA função é vulnerável a **condição de corrida** em ambientes multi-thread ou multi-core, pois `val1` e `val2` podem ser lidos de forma inconsistente se o valor em `*port` for alterado entre as leituras.",
+      "tempo_s": 2.6,
+      "acertou_volatile": false,
+      "nota_impressao": 30
+    }
+  }
+}

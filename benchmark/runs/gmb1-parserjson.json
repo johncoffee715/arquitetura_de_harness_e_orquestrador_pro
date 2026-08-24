@@ -1,0 +1,34 @@
+[
+  {
+    "tag": "qwen9b",
+    "task": "parser_json_malformado",
+    "peso": 3,
+    "pass": true,
+    "motivo": "verificado",
+    "codigo_trecho": "import json\nimport re\n\n\ndef corrigir_json(s: str) -> dict:\n    \"\"\"Corrige JSON malformatado com aspas simples e v\u00edrgulas soltas.\"\"\"\n    # Substitui as"
+  },
+  {
+    "tag": "qwen27b",
+    "task": "parser_json_malformado",
+    "peso": 3,
+    "pass": true,
+    "motivo": "verificado",
+    "codigo_trecho": "import json\nimport re\n\nimport ast\n\ndef corrigir_json(s):\n    # Remove v\u00edrgulas soltas antes de } ou ]\n    s = re.sub(r',\\s*([}\\]])', r'\\1', s)\n    # S"
+  },
+  {
+    "tag": "bonsai1bit",
+    "task": "parser_json_malformado",
+    "peso": 3,
+    "pass": false,
+    "motivo": "IndentationError: unexpected indent",
+    "codigo_trecho": "import json\n   import re\n\n   def corrigir_json(s):\n       # Replace single quotes with double quotes\n       s = s.replace(\"'\", '\"')\n       # Remove tr"
+  },
+  {
+    "tag": "ornith",
+    "task": "parser_json_malformado",
+    "peso": 3,
+    "pass": false,
+    "motivo": "TypeError: sub() missing 1 required positional argument: 'string'",
+    "codigo_trecho": "import json\nimport re\n\ndef corrigir_json(s):\n    # Replace single quotes with double quotes\n    s = s.replace(\"'\", '\"')\n    # Remove loose commas befo"
+  }
+]

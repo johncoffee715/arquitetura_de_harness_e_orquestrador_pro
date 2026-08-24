@@ -1,0 +1,28 @@
+{
+  "name": "qwen38-9b-t36",
+  "model": "Qwen3.8-9B-Q4_K_M.gguf",
+  "ctx": 32768,
+  "mtp": 3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "np": 1,
+  "threads": 36,
+  "telemetria": {
+    "ram": "13/31",
+    "vram_gb": 10.7
+  },
+  "rodada1": {
+    "wall_s": 3.7,
+    "prompt_n": 435,
+    "predicted_n": 256,
+    "prompt_per_second": 423.3,
+    "predicted_per_second": 97.5
+  },
+  "rodada2": {
+    "wall_s": 8.5,
+    "prompt_n": 3480,
+    "predicted_n": 256,
+    "prompt_per_second": 607.8,
+    "predicted_per_second": 93.1
+  }
+}

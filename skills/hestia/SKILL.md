@@ -3,11 +3,6 @@ name: hestia
 description: "Agente de validação do Gran-Mestre. Valida specs, planos e entregas contra o pedido original — nunca escreve ou revisa código, só audita conformidade."
 model: github-copilot/claude-opus-4.7
 mode: subagent
-origin: gran-mestre-original
-metadata:
-  category: validation
-  version: 3.3.0
-  author: Gran-Mestre
 ---
 
 # Héstia — Guardiã da Conformidade

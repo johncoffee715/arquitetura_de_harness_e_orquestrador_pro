@@ -1,14 +1,6 @@
 ---
 name: openwork-mcp
 description: "OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido. (absorvido de different-ai/openwork)"
-origin: absorvido:different-ai/openwork
-metadata:
-  autofagia: different-ai/openwork (2026-08-04)
-  prioridade: 8
-  linguagem: TypeScript
-  topics: mcp, capability-catalog, a2a
-  artefatos: mcp+subagent
-  padroes_absorvidos: 1
 ---
 # Openwork Mcp
 

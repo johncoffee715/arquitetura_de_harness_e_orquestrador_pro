@@ -5,16 +5,16 @@ mode: subagent
 origin: oh-my-openagent-helenizado
 model_rotation:
   enabled: true
-  primary: omniroute/auto/best-coding
+  primary: local-qwen-coder/qwen2.5-coder-1.5b
   fallback:
-    - omniroute/auto/best-coding
-    - omniroute/auto/pro-reasoning
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gpt-5.5
-    - omniroute/auto/gemini
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gemini-3.1-pro
     - opencode/kimi-k2.5
     - opencode/gpt-5-nano
-    - omniroute/auto/claude-sonnet
+    - local-qwen/qwen-3.5-0.8b
     - opencode/glm-5
     - opencode/big-pickle
   max_retries_per_model: 1
@@ -24,7 +24,7 @@ model_rotation:
   continue_after_escalate: true
   restart_cycle_on_exhaust: true
   restart_order: free_first
-model: anthropic/claude-sonnet-4-5
+model: local-qwen-coder/qwen2.5-coder-1.5b
 color: "#8B0000"
 temperature: 0.1
 permission:

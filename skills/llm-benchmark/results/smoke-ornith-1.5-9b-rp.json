@@ -1,0 +1,65 @@
+{
+  "name": "ornith-1.5-9b-rp",
+  "ts": "2026-08-21T09:45:10",
+  "endpoint": "http://127.0.0.1:8090",
+  "telemetry": {
+    "vram_gb": 3.28,
+    "temp_edge_c": 37.0,
+    "prefill_tps": 0.0,
+    "ts": "2026-08-21T09:44:59-03:00"
+  },
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": false,
+      "ok": false,
+      "dur": 0.01,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    }
+  ],
+  "passed": 0,
+  "total": 5
+}

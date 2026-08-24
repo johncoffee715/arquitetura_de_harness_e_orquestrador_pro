@@ -1,0 +1,28 @@
+{
+  "name": "ornith-9b-t36",
+  "model": "ornith-1.0-9B.Q4_K_M.gguf",
+  "ctx": 16384,
+  "mtp": 0,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "np": 1,
+  "threads": 36,
+  "telemetria": {
+    "ram": "12/31",
+    "vram_gb": 10.0
+  },
+  "rodada1": {
+    "wall_s": 5.1,
+    "prompt_n": 435,
+    "predicted_n": 256,
+    "prompt_per_second": 411.0,
+    "predicted_per_second": 63.9
+  },
+  "rodada2": {
+    "wall_s": 9.4,
+    "prompt_n": 3480,
+    "predicted_n": 256,
+    "prompt_per_second": 643.0,
+    "predicted_per_second": 64.0
+  }
+}

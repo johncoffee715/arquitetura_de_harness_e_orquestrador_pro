@@ -1,14 +1,6 @@
 ---
 name: cc-harness-iai
 description: "Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença). (absorvido de elberrd/cc-harness-iai)"
-origin: absorvido:elberrd/cc-harness-iai
-metadata:
-  autofagia: elberrd/cc-harness-iai (2026-08-04)
-  prioridade: 16
-  linguagem: Shell
-  topics: harness, task-decomposition, tools
-  artefatos: skill+feature
-  padroes_absorvidos: 1
 ---
 # Cc Harness Iai
 

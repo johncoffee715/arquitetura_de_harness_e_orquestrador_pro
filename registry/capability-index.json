@@ -142,7 +142,8 @@
   "evaluation": [
     "gsd-domain-researcher",
     "gsd-eval-auditor",
-    "gsd-eval-planner"
+    "gsd-eval-planner",
+    "llm-benchmark"
   ],
   "profiling": [
     "gsd-user-profiler",

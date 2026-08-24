@@ -1,7 +1,7 @@
 {
   "registry_version": "1.0.0",
-  "updated_at": "2026-07-28T03:52:36.178818Z",
-  "description": "Registry automático — sincronizado com componentes instalados",
+  "updated_at": "2026-08-20T11:33:29Z",
+  "description": "Registry autom\u00e1tico \u2014 sincronizado com componentes instalados",
   "auto_sync": true,
   "entries": [
     {
@@ -1550,6 +1550,13 @@
       "nome": "/registry-sync",
       "status": "ativo",
       "localizacao": "/home/johncoffee/.config/opencode/command/registry-sync.md"
+    },
+    {
+      "id": "skill-llm-benchmark",
+      "tipo": "skill",
+      "nome": "llm-benchmark",
+      "status": "ativo",
+      "localizacao": "/home/johncoffee/.opencode/skills/llm-benchmark"
     }
   ],
   "stats": {

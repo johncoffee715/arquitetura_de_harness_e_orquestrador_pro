@@ -1,14 +1,6 @@
 ---
 name: coderabbit
 description: "CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness. (absorvido de coderabbitai/awesome-coderabbit)"
-origin: absorvido:coderabbitai/awesome-coderabbit
-metadata:
-  autofagia: coderabbitai/awesome-coderabbit (2026-08-04)
-  prioridade: 7
-  linguagem: other
-  topics: code-review, pr, automation
-  artefatos: hook+feature
-  padroes_absorvidos: 1
 ---
 # Coderabbit
 

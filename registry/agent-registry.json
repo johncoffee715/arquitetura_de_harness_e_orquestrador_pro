@@ -1,11 +1,11 @@
 {
   "version": "1.1.0",
-  "last_sync": "2026-07-24T00:00:00.000000",
+  "last_sync": "2026-08-11T00:00:00-03:00",
   "total_agents": 52,
-  "total_skills": 3,
+  "total_skills": 6,
   "total_commands": 69,
-  "total_mcps": 1,
-  "total_hooks": 32,
+  "total_mcps": 2,
+  "total_hooks": 33,
   "agents": [
     {
       "name": "agent-reach",
@@ -1687,6 +1687,19 @@
       "url": "http://127.0.0.1:8080/mcp",
       "enabled": true,
       "timeout": 300000
+    },
+    "siz_delimiter": {
+      "name": "siz_delimiter",
+      "type": "local",
+      "command": "python3",
+      "args": [
+        "/mnt/dados/harness/mcp/siz_delimiter_server.py"
+      ],
+      "enabled": true,
+      "helenizado_de": [
+        "Downloads/siz_delimiter.py + SPEC v5.1 deltas"
+      ],
+      "qualification": "L4-producao"
     }
   },
   "hooks": {
@@ -1881,6 +1894,13 @@
       "phase": "SessionEnd",
       "matcher": "*",
       "description": "Session end lifecycle marker (non-blocking)"
+    },
+    "session.start": {
+      "name": "memory_inject",
+      "event": "session.start",
+      "command": "python3 /mnt/dados/harness/hooks/memory_inject.py",
+      "regra": "R26 (memoria Obsidian p/ todos modelos)",
+      "qualification": "L4-producao"
     }
   },
   "route_map": {
@@ -1896,6 +1916,63 @@
       },
       "safety": "SHA salvo ao fim da Fase 3; rollback somente se pipeline inteiro falhar",
       "escalation": "Implementer local falha 2x -> nuvem (oc/tllm -> opencode-go/kimi-k3 -> opencode-zen)"
+    }
+  },
+  "skills": {
+    "security-methodology": {
+      "name": "security-methodology",
+      "path": "~/.opencode/skills/security-methodology/SKILL.md",
+      "helenizado_de": [
+        "codex-security",
+        "video Mano Devin (5 vacilacoes)"
+      ],
+      "qualification": "L4-producao",
+      "trigger": "auditoria de seguranca, 'esta seguro?', 5 vacilacoes vibe-code"
+    },
+    "context-mode": {
+      "name": "context-mode",
+      "path": "~/.opencode/skills/context-mode/SKILL.md",
+      "helenizado_de": [
+        "kujohnson/context-mode"
+      ],
+      "qualification": "L4-producao",
+      "trigger": "contexto longo, PreCompact, sandbox tool output, FTS5"
+    },
+    "memory-local": {
+      "name": "memory-local",
+      "path": "~/.opencode/skills/memory-local/SKILL.md",
+      "helenizado_de": [
+        "mem0 v2.0.7 Apache-2.0"
+      ],
+      "qualification": "L3-beta",
+      "trigger": "memoria persistente local, embeddings locais, recall"
+    },
+    "react-bits": {
+      "name": "react-bits",
+      "path": "~/.opencode/skills/react-bits/SKILL.md",
+      "helenizado_de": [
+        "serif-ai/react-bits (90+ componentes, 4 variantes)"
+      ],
+      "qualification": "L4-producao",
+      "trigger": "componentes React UI, animacoes, backgrounds, textos"
+    },
+    "agentic-awesome-skills": {
+      "name": "agentic-awesome-skills",
+      "path": "~/.opencode/skills/agentic-awesome-skills/SKILL.md",
+      "helenizado_de": [
+        "agentics-org/agentic-awesome-skills"
+      ],
+      "qualification": "L3-beta",
+      "trigger": "catalogo de skills agentic, autofagia seletiva, padroes de skill"
+    },
+    "memory-recall": {
+      "name": "memory-recall",
+      "path": "~/.opencode/skills/memory-recall/SKILL.md",
+      "helenizado_de": [
+        "regra R26 (memoria Obsidian p/ todos modelos)"
+      ],
+      "qualification": "L4-producao",
+      "trigger": "memoria: <tema>, 'o que ja fizemos?', retomada de sessao"
     }
   }
 }

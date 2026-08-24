@@ -1,14 +1,6 @@
 ---
 name: claude-mem
 description: "Memória persistente entre sessões: captura o que o agente faz, comprime com IA e injeta contexto relevante de volta. Multi-agente (Claude Code, OpenClaw, Codex, Gemini, OpenCode+). (absorvido de thedotmack/claude-mem)"
-origin: absorvido:thedotmack/claude-mem
-metadata:
-  autofagia: thedotmack/claude-mem (2026-08-10)
-  prioridade: 8
-  linguagem: JavaScript
-  topics: memory, rag, embeddings, chromadb, sqlite, compression, claude-code
-  artefatos: skill
-  padroes_absorvidos: 7
 ---
 # Claude-Mem
 

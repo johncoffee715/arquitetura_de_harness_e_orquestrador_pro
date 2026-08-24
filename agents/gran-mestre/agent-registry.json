@@ -1,1835 +1,2516 @@
 {
-  "registry_version": "1.0.0",
-  "updated_at": "2026-08-04T10:09:06.902152+00:00",
-  "entries": [
-    {
-      "id": "gran-mestre",
-      "tipo": "agent",
-      "nome": "Gran-Mestre",
-      "versao": "7.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Meta-orquestrador senior que roteia toda tarefa recebida para o pipeline/subagent correto conforme complexidade (TRIVIAL→FEATURE). Único agent primary do sistema.",
-      "categoria_roteamento": "n/a",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": [
-          "opencode/claude-opus-4-7",
-          "github-copilot/gpt-5.5",
-          "opencode/gpt-5.5",
-          "github-copilot/gemini-3.1-pro-preview",
-          "opencode/gemini-3.1-pro"
-        ],
-        "provider": "github-copilot",
-        "vram_estimada_gb": 0
-      },
-      "capacidades": [
-        "classificar tarefa em TRIVIAL/SIMPLE/MEDIUM/COMPLEX/CRITICAL/FEATURE",
-        "acionar pipeline em cascata (6 fases) para rotas FEATURE",
-        "delegar para subagents especializados",
-        "gerenciar safety protocol (SHA + rollback)",
-        "orquestrar Shared Brain (memória persistente)"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não executa código de produção diretamente sem passar por subagent",
-          "não pula gates de aprovação em rotas CRITICAL",
-          "não decide tecnicamente sem passar pelo validador",
-          "não continua após rollback sem aprovação do usuário"
-        ],
-        "requer_aprovacao_humana_para": [
-          "rotas CRITICAL",
-          "mudanças em arquivos de config core"
-        ]
-      },
-      "validacao": {
-        "gates": [
-          "safety-sha",
-          "attestation-gate",
-          "completion-gate"
-        ],
-        "tdd_obrigatorio": false
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": [
-          "rota <= MEDIUM"
-        ]
-      },
-      "dependencias": {
-        "subagents": [
-          "prometheus",
-          "hestia",
-          "atlas",
-          "atena",
-          "sisyphus"
-        ],
-        "mcps": [
-          "mcp-obsidian-vault"
-        ],
-        "skills": [
-          "gran-mestre",
-          "hestia",
-          "athena",
-          "pxpipe"
-        ],
-        "hooks": [
-          "safety-sha",
-          "attestation-gate",
-          "2-action-rule",
-          "3-strike-protocol",
-          "completion-gate"
-        ]
-      },
-      "comandos_slash": [
-        "/gran-mestre"
-      ],
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25",
-      "notas": "Único agent primary. Seniority: senior. Core: context_analyzer + capability_index + trace_context."
-    },
-    {
-      "id": "prometheus",
-      "tipo": "subagent",
-      "nome": "Prometheus",
-      "versao": "1.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Planejamento: decompõe requisitos do usuário em plano de fases com acceptance criteria. Produz PLAN.md.",
-      "categoria_roteamento": "MEDIUM",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": [
-          "opencode/claude-opus-4-7",
-          "github-copilot/gpt-5.5"
-        ],
-        "provider": "github-copilot",
-        "vram_estimada_gb": 0
-      },
-      "capacidades": [
-        "decomposição de requisitos",
-        "geração de PLAN.md",
-        "análise de dependências"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não executa código",
-          "não edita arquivos de implementação"
-        ],
-        "escopo_maximo": "documentação e planejamento apenas"
-      },
-      "validacao": {
-        "gates": [
-          "completion-gate"
-        ],
-        "tdd_obrigatorio": false
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": []
-      },
-      "dependencias": {
-        "subagents": [],
-        "mcps": [],
-        "skills": [],
-        "hooks": [
-          "completion-gate"
-        ]
-      },
-      "comandos_slash": [],
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "hestia",
-      "tipo": "subagent",
-      "nome": "Héstia",
-      "versao": "3.3.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Validação: valida specs, planos e entregas contra o pedido original. Nunca escreve ou revisa código, só audita conformidade.",
-      "categoria_roteamento": "MEDIUM",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": [
-          "opencode/claude-opus-4-7",
-          "github-copilot/gpt-5.5",
-          "opencode/gpt-5.5",
-          "github-copilot/claude-sonnet-4.6",
-          "opencode/claude-sonnet-4-6"
-        ],
-        "provider": "github-copilot",
-        "vram_estimada_gb": 0
-      },
-      "capacidades": [
-        "validação de spec",
-        "validação de cobertura",
-        "validação de contratos",
-        "validação final"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não escreve código",
-          "não edita arquivos",
-          "não decide arquitetura"
-        ],
-        "escopo_maximo": "validação e conformidade apenas"
-      },
-      "validacao": {
-        "gates": [
-          "completion-gate"
-        ],
-        "tdd_obrigatorio": false
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": [
-          "modo C ativo"
-        ]
-      },
-      "dependencias": {
-        "subagents": [],
-        "mcps": [],
-        "skills": [
-          "hestia"
-        ],
-        "hooks": [
-          "completion-gate"
-        ]
-      },
-      "comandos_slash": [
-        "/hestia"
-      ],
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25",
-      "notas": "Max validation cycles: 3. Escala ao usuário após 2x reprovado no mesmo ponto."
-    },
-    {
-      "id": "atlas",
-      "tipo": "subagent",
-      "nome": "Atlas",
-      "versao": "1.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Execução: implementa o plano aprovado. Safety protocol: SHA antes de executar, rollback se falhar. Na cascata (rota FEATURE), atua como supervisor que gerencia git e sequencia tasks.",
-      "categoria_roteamento": "COMPLEX",
-      "modelo": {
-        "primario": "github-copilot/claude-sonnet-4.6",
-        "fallback": [
-          "opencode/claude-sonnet-4-6",
-          "github-copilot/gpt-5.5",
-          "opencode/gpt-5.5"
-        ],
-        "provider": "github-copilot",
-        "vram_estimada_gb": 0
-      },
-      "capacidades": [
-        "execução de plano",
-        "gerenciamento git",
-        "commits atômicos",
-        "sequenciamento de tasks"
-      ],
-      "regras": {
-        "nao_faz": [
-          "nunca escreve código na cascata (só gerencia)",
-          "nunca gerencia branch (só executa TDD)"
-        ],
-        "escopo_maximo": "implementação dentro do plano aprovado"
-      },
-      "validacao": {
-        "gates": [
-          "safety-sha",
-          "completion-gate"
-        ],
-        "tdd_obrigatorio": true
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": [
-          "plano aprovado"
-        ]
-      },
-      "dependencias": {
-        "subagents": [],
-        "mcps": [],
-        "skills": [],
-        "hooks": [
-          "safety-sha",
-          "completion-gate"
-        ]
-      },
-      "comandos_slash": [],
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25",
-      "notas": "Supervisor/worker split: inegociável. Atlas NUNCA escreve código na cascata."
-    },
-    {
-      "id": "atena",
-      "tipo": "subagent",
-      "nome": "Atena",
-      "versao": "3.3.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Revisão macro: revisa o diff total de uma feature (coerência cross-task, acoplamento, arquitetura). Chamada 1x por pipeline, Fase 5.",
-      "categoria_roteamento": "COMPLEX",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": [
-          "opencode/claude-opus-4-7",
-          "github-copilot/gpt-5.5",
-          "opencode/gpt-5.5",
-          "github-copilot/claude-sonnet-4.6",
-          "opencode/claude-sonnet-4-6"
-        ],
-        "provider": "github-copilot",
-        "vram_estimada_gb": 0
-      },
-      "capacidades": [
-        "revisão holística",
-        "verificação de coerência",
-        "análise de acoplamento",
-        "alinhamento arquitetural"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não revisa task isolada",
-          "não decide se plano estava certo",
-          "não escreve ou corrige código"
-        ],
-        "escopo_maximo": "revisão macro do diff total"
-      },
-      "validacao": {
-        "gates": [
-          "completion-gate"
-        ],
-        "tdd_obrigatorio": false
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": []
-      },
-      "dependencias": {
-        "subagents": [],
-        "mcps": [],
-        "skills": [
-          "athena"
-        ],
-        "hooks": [
-          "completion-gate"
-        ]
-      },
-      "comandos_slash": [
-        "/athena"
-      ],
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25",
-      "notas": "Max validation cycles: 2. Reprovação vai para Fable Judge antes de voltar ao usuário."
-    },
-    {
-      "id": "sisyphus",
-      "tipo": "subagent",
-      "nome": "Sisyphus",
-      "versao": "1.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Execução trivial: tarefas simples de 1 arquivo, <10 linhas, sem novo comportamento.",
-      "categoria_roteamento": "TRIVIAL",
-      "modelo": {
-        "primario": "opencode/gpt-5-nano",
-        "fallback": [
-          "github-copilot/claude-haiku-4.5"
-        ],
-        "provider": "opencode",
-        "vram_estimada_gb": 0
-      },
-      "capacidades": [
-        "execução trivial",
-        "edição simples",
-        "correção rápida"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não delega para subagents",
-          "não usa skills externas"
-        ],
-        "escopo_maximo": "1 arquivo, <10 linhas"
-      },
-      "validacao": {
-        "gates": [
-          "nenhum"
-        ],
-        "tdd_obrigatorio": false
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": []
-      },
-      "dependencias": {
-        "subagents": [],
-        "mcps": [],
-        "skills": [],
-        "hooks": []
-      },
-      "comandos_slash": [],
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "mcp-obsidian-vault",
-      "tipo": "mcp",
-      "nome": "MCP Shared Brain (Obsidian)",
-      "versao": "0.3",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Expõe o vault /mnt/dados/cerebro com IA como memória compartilhada entre agents.",
-      "modelo": {
-        "primario": "n/a"
-      },
-      "capacidades": [
-        "ler notas",
-        "escrever aprendizados",
-        "buscar por tag/pasta"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não deleta notas existentes",
-          "não escreve fora de wiki/aprendizados sem aprovação"
-        ]
-      },
-      "validacao": {
-        "gates": [
-          "safety-sha"
-        ]
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": [
-          "escrita restrita a pastas permitidas"
-        ]
-      },
-      "dependencias": {},
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "skill-gran-mestre",
-      "tipo": "skill",
-      "nome": "Gran-Mestre Skill",
-      "versao": "7.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Skill principal do meta-orquestrador. Define pipeline 6 fases, regras de roteamento, safety protocol.",
-      "modelo": {
-        "primario": "n/a"
-      },
-      "capacidades": [
-        "roteamento",
-        "pipeline 6 fases",
-        "safety protocol"
-      ],
-      "regras": {
-        "nao_faz": []
-      },
-      "validacao": {
-        "gates": []
-      },
-      "autonomia": {
-        "modo_autonomo": true
-      },
-      "dependencias": {},
-      "registrado_em": "2026-07-25",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "skill-hestia",
-      "tipo": "skill",
-      "nome": "Héstia Skill",
-      "versao": "3.3.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Skill de validação. Define comandos /hestia, critérios de validação, regras de conformidade.",
-      "modelo": {
-        "primario": "n/a"
-      },
-      "capacidades": [
-        "validação de spec",
-        "validação de cobertura",
-        "validação final"
-      ],
-      "regras": {
-        "nao_faz": []
-      },
-      "validacao": {
-        "gates": []
-      },
-      "autonomia": {
-        "modo_autonomo": true
-      },
-      "dependencias": {},
-      "registrado_em": "2026-07-25",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "skill-athena",
-      "tipo": "skill",
-      "nome": "Atena Skill",
-      "versao": "3.3.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno"
-      },
-      "proposito": "Skill de revisão macro. Define comandos /athena, critérios de revisão, regras de coerência.",
-      "modelo": {
-        "primario": "n/a"
-      },
-      "capacidades": [
-        "revisão macro",
-        "verificação de coerência",
-        "análise de acoplamento"
-      ],
-      "regras": {
-        "nao_faz": []
-      },
-      "validacao": {
-        "gates": []
-      },
-      "autonomia": {
-        "modo_autonomo": true
-      },
-      "dependencias": {},
-      "registrado_em": "2026-07-25",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "skill-pxpipe",
-      "tipo": "skill",
-      "nome": "pxpipe Skill",
-      "versao": "1.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "pxpipe",
-        "repo_url": "https://github.com/teamchong/pxpipe",
-        "adaptacoes": [
-          "integrado como skill de redução de tokens"
-        ]
-      },
-      "proposito": "Proxy local que reduz tokens de entrada renderizando contexto como imagens PNG.",
-      "modelo": {
-        "primario": "n/a"
-      },
-      "capacidades": [
-        "redução de tokens",
-        "renderização PNG",
-        "proxy local"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não modifica código-fonte"
-        ]
-      },
-      "validacao": {
-        "gates": []
-      },
-      "autonomia": {
-        "modo_autonomo": true
-      },
-      "dependencias": {},
-      "registrado_em": "2026-07-25",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "tool-safety-sha",
-      "tipo": "tool",
-      "nome": "Safety SHA Hook",
-      "versao": "1.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "interno",
-        "adaptacoes": [
-          "parte do sistema ECC Autofagia"
-        ]
-      },
-      "proposito": "Gera hash de verificação antes de qualquer ação que altere estado persistente.",
-      "modelo": {
-        "primario": "n/a"
-      },
-      "capacidades": [
-        "hash de estado pré-ação",
-        "comparação pós-ação"
-      ],
-      "regras": {
-        "nao_faz": [
-          "não bloqueia leitura, só escrita"
-        ]
-      },
-      "validacao": {
-        "gates": [
-          "nenhum"
-        ]
-      },
-      "autonomia": {
-        "modo_autonomo": true,
-        "condicoes": []
-      },
-      "dependencias": {},
-      "registrado_em": "2026-07-22",
-      "atualizado_em": "2026-07-25"
-    },
-    {
-      "id": "oh-my-opencode-slim",
-      "tipo": "subagent",
-      "nome": "Oh My Opencode Slim",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "alvinunreal/oh-my-opencode-slim",
-        "url": "https://github.com/alvinunreal/oh-my-opencode-slim"
-      },
-      "proposito": "Lean, fine-tuned Opencode multi agent suite. Mix any models, auto-delegate tasks.",
-      "padroes_absorvidos": [
-        "[Seven specialized agents](#meet-the-pantheon)** - Orchestrator, Explorer,",
-        "[Background orchestration](docs/background-orchestration.md)** - the",
-        "[Bundled skills](#skills)** - prompt-based workflows like `deepwork`,",
-        "[Council](docs/council.md)** - run multiple models in parallel on the same",
-        "[Companion](docs/companion.md)** - an optional floating desktop window",
-        "[Multiplexer integration](docs/multiplexer-integration.md)** - watch agents",
-        "[Preset switching](docs/preset-switching.md)** - swap the whole team's",
-        "[Code intelligence tools](docs/tools.md)** - LSP tools, AST-aware search"
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-13",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "oh-my-opencode-slim",
-        "agentic-ai",
-        "oh-my-opencode"
-      ],
-      "linguagem": "TypeScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "pi",
-      "tipo": "subagent",
-      "nome": "Pi",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "earendil-works/pi",
-        "url": "https://github.com/earendil-works/pi"
-      },
-      "proposito": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI.",
-      "padroes_absorvidos": [
-        "[@earendil-works/pi-coding-agent](packages/coding-agent)**: Interactive coding agent CLI",
-        "[@earendil-works/pi-agent-core](packages/agent)**: Agent runtime with tool calling and state management",
-        "[@earendil-works/pi-ai](packages/ai)**: Unified multi-provider LLM API (OpenAI, Anthropic, Google, …)",
-        "[Visit pi.dev](https://pi.dev), the project website with demos",
-        "[Read the documentation](https://pi.dev/docs/latest), but you can also ask the agent to explain itself",
-        "Gondolin extension**: keep `pi` and provider auth on the host while routing built-in tools and `!` commands into a local Linux micro-VM.",
-        "Plain Docker**: run the whole `pi` process in a local container for simple isolation.",
-        "OpenShell**: run the whole `pi` process in a policy-controlled sandbox."
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-10",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "pi",
-        "llm",
-        "agent-loop"
-      ],
-      "linguagem": "TypeScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "ruview",
-      "tipo": "skill",
-      "nome": "Ruview",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "ruvnet/RuView",
-        "url": "https://github.com/ruvnet/RuView"
-      },
-      "proposito": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, presence detection — without video.",
-      "padroes_absorvidos": [
-        "Presence and occupancy** — detect people through walls, count them, track entries and exits",
-        "Vital signs** — breathing rate and heart rate, contactless, while sleeping or sitting",
-        "Activity recognition** — walking, sitting, gestures, falls — from temporal CSI patterns",
-        "Environment mapping** — RF fingerprinting identifies rooms, detects moved furniture, spots new objects",
-        "Sleep quality** — overnight monitoring with sleep stage classification and apnea screening",
-        "Camera-free pose** — estimate 17 body keypoints from WiFi CSI",
-        "Built-in model workflow** — record CSI, train models, load RVF files, and switch LoRA profiles",
-        "Local automation** — HOMECORE provides state, history, automations, signed Wasm plugins, voice hooks, and HomeKit support"
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-9",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "ruview",
-        "wifi",
-        "spatial-intelligence"
-      ],
-      "linguagem": "Rust",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "openship",
-      "tipo": "subagent",
-      "nome": "Openship",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "oblien/openship",
-        "url": "https://github.com/oblien/openship"
-      },
-      "proposito": "Self-hosted deployment platform.",
-      "padroes_absorvidos": [
-        "Desktop app** — full GUI, real-time logs, one-click everything. Best for solo.",
-        "Web dashboard** — the same UI in the browser, built for teams.",
-        "CLI** — scriptable and CI-friendly; also how you install and manage a self-hosted instance.",
-        "Openship Cloud** — managed, auto-scaling, zero setup",
-        "Any VPS** — Hetzner, DigitalOcean, Linode, OVH, and the rest",
-        "Dedicated servers** — bare metal, colo, homelab",
-        "Multi-server** — spread workloads across machines",
-        "Report it here (preferred):** [Report a vulnerability](https://github.com/oblien/openship/security/advisories/new) — a private GitHub advisory, visible only to you and the maintainers."
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-8",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "openship",
-        "agents",
-        "deployments",
-        "self-hosted"
-      ],
-      "linguagem": "TypeScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "code-review-graph",
-      "tipo": "skill",
-      "nome": "Code Review Graph",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "tirth8205/code-review-graph",
-        "url": "https://github.com/tirth8205/code-review-graph"
-      },
-      "proposito": "Local-first code intelligence graph for MCP and CLI. Persistent map of codebase so AI tools read only what matters.",
-      "padroes_absorvidos": [
-        "Small single-file changes:** Graph context can exceed naive file reads for trivial edits (see express results above). The overhead is the structural metadata that enables multi-file analysis.",
-        "Search quality (MRR 0.35):** Keyword search finds the right result in the top-4 for most queries, but ranking needs improvement. Express queries return 0 hits due to module-pattern naming.",
-        "Flow detection (33% recall):** Framework and conventional entry patterns are strongest for Python and PHP/Laravel. JavaScript and Go flow detection needs work.",
-        "Precision vs recall trade-off:** Impact analysis is deliberately conservative. It flags files that *might* be affected, which means some false positives in large dependency graphs.",
-        "[vs RAG / embeddings](docs/FAQ.md#isnt-this-just-rag) — structural edges parsed from the AST, not similarity chunks; embeddings are optional and only assist search.",
-        "[vs grep / agentic search](docs/FAQ.md#why-not-just-grep) — grep wins on one-hop lookups; the graph wins on multi-hop questions (impact radius, callers-of-callers, tests-for, affected flows).",
-        "[vs Serena, codegraph, claude-context, repomix](docs/FAQ.md#how-does-it-compare-to-serena-codegraph-claude-context-and-repomix) — factual comparison table.",
-        "[When NOT to use it](docs/FAQ.md#when-should-i-not-use-it) — small repos, trivial single-file diffs, one-off questions."
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-7",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": true,
-        "lsp": false
-      },
-      "tags": [
-        "code-review-graph",
-        "code-review",
-        "mcp"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "i-have-adhd",
-      "tipo": "skill",
-      "nome": "I Have Adhd",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "ayghri/i-have-adhd",
-        "url": "https://github.com/ayghri/i-have-adhd"
-      },
-      "proposito": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
-      "padroes_absorvidos": [
-        "Lead with the next action: the first line is something the reader can do (command, path, or snippet first, prose after)",
-        "Number multi-step tasks with bounded, numbered steps; no step contains 'and then' twice; cut unneeded steps",
-        "End with one concrete next action the reader can do in under two minutes if anything is left open",
-        "Suppress tangents: finish the first issue, then offer the second as a separate question",
-        "Restate state every turn: the reader cannot hold 'step 3 of 5' between messages — restate progress explicitly",
-        "Give specific time estimates in concrete units (e.g. 'about 15 minutes'), never vague ('some work')",
-        "Make completed work visible: show what now works in concrete terms, do not bury wins in a recap",
-        "Matter-of-fact tone for errors: state cause and fix, never 'Uh oh' or 'There seems to be a problem'",
-        "Cap lists at 5 items: split into 'do now' vs 'later' or 'must' vs 'nice to have' past five",
-        "No preamble, no recap, no closing pleasantries: start with the answer, end when the answer is done"
-      ],
-      "numero_padraes": 10,
-      "categoria_roteamento": "baseado-em-6",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "i-have-adhd",
-        "adhd",
-        "claude-skills"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "orca",
-      "tipo": "subagent",
-      "nome": "Orca",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "stablyai/orca",
-        "url": "https://github.com/stablyai/orca"
-      },
-      "proposito": "Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription.",
-      "padroes_absorvidos": [
-        "[Quick open](https://www.onorca.dev/docs/model/quick-open)** — Search across worktrees, files, agents, commands, and repo context without leaving your flow.",
-        "[Account switcher &amp; usage tracking](https://www.onorca.dev/docs/agents/usage-tracking)** — See Claude and Codex usage and rate-limit resets, and hot-swap accounts without re-logging in.",
-        "[Rich repo previews](https://www.onorca.dev/docs/editing/markdown)** — Preview Markdown, images, PDFs, and repo docs in the workspace.",
-        "[Computer Use](https://www.onorca.dev/docs/cli/computer-use)** — Let agents operate desktop apps and visible UI when a workflow needs real interaction.",
-        "[Notifications and unread state](https://www.onorca.dev/docs/notifications)** — Know when an agent finishes or needs attention, then mark threads unread to come back later.",
-        "And many, many more** — we ship daily, so this list is perpetually behind. The [changelog](https://github.com/stablyai/orca/releases) is the real feature list.",
-        "[Download from onOrca.dev](https://onorca.dev/download)**",
-        "Running `orca serve` on a headless Linux server? See the [headless Linux server guide](docs/reference/headless-linux-server.md)."
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-5",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "orca",
-        "ade",
-        "parallel-agents"
-      ],
-      "linguagem": "TypeScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "omniroute",
-      "tipo": "skill",
-      "nome": "Omniroute",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "diegosouzapw/OmniRoute",
-        "url": "https://github.com/diegosouzapw/OmniRoute"
-      },
-      "proposito": "Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A.",
-      "padroes_absorvidos": [
-        "🗜️ Compression hardening** — default-on inflation guard, Caveman packs for DE / FR / JA + Chinese (wényán), RTK filters for Gradle & .NET. → [Compression](docs/compression/COMPRESSION_ENGINES.md)",
-        "💸 Honest flat-rate cost** — subscription / coding-plan providers read **$0** in cost analytics; budget, quota & routing keep estimating. → [API Reference](docs/reference/API_REFERENCE.md)",
-        "⚖️ Quota-Share routing** — split a shared account's quota fairly across pooled keys, work-conserving so idle slices are lent out. → [Resilience Guide](docs/architecture/RESILIENCE_GUIDE.md)",
-        "🤖 One-command CLI/agent setup** — `setup-*` configures 12+ coding tools; `omniroute launch` / `launch-codex` are zero-config. → [CLI Integrations](docs/guides/CLI-INTEGRATIONS.md)",
-        "🛰️ Remote mode** — drive a remote OmniRoute with scoped tokens (`connect` / `contexts` / `tokens`) + an `antigravity` OAuth helper for VPS installs. → [Remote Mode](docs/guides/REMOTE-MODE.md)",
-        "🕵️ Transparent MITM decrypt (TPROXY)** — capture CLIs that ignore proxy env vars, with a per-SNI CA + trust-store installer. → [MITM/TPROXY](docs/security/MITM-TPROXY-DECRYPT.md)",
-        "💸 Cost telemetry everywhere** — `X-OmniRoute-*` cost/usage headers on every endpoint, cache-HIT savings header, per-key USD spend quotas. → [API Reference](docs/reference/API_REFERENCE.md)",
-        "🧠 Memory you control** — off by default, opt-in int8 vector quantization + typed decay, per-request `x-omniroute-no-memory`. → [Memory](docs/frameworks/MEMORY.md)"
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-4",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": true,
-        "lsp": false
-      },
-      "tags": [
-        "omniroute",
-        "ai-gateway",
-        "mcp",
-        "a2a"
-      ],
-      "linguagem": "TypeScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "mattpocock-skills",
-      "tipo": "skill",
-      "nome": "Mattpocock Skills",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "mattpocock/skills",
-        "url": "https://github.com/mattpocock/skills"
-      },
-      "proposito": "Skills for Real Engineers. Straight from .agents directory.",
-      "padroes_absorvidos": [
-        "Ask you which issue tracker you want to use (GitHub, Linear, or local files)",
-        "Ask you what labels you apply to tickets when you triage them (`/triage` uses labels)",
-        "Ask you where you want to save any docs we create",
-        "[`/grill-me`](./skills/productivity/grill-me/SKILL.md) - for non-code uses",
-        "[`/grill-with-docs`](./skills/engineering/grill-with-docs/SKILL.md) - same as [`/grill-me`](./skills/productivity/grill-me/SKILL.md), but adds more goodies (see below)",
-        "BEFORE**: \"There's a problem when a lesson inside a section of a course is made 'real' (i.e. given a spot in the file system)\"",
-        "AFTER**: \"There's a problem with the materialization cascade\"",
-        "[`/to-spec`](./skills/engineering/to-spec/SKILL.md) quizzes you about which modules you're touching before creating a spec"
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-3",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "mattpocock-skills",
-        "skills",
-        "engineers"
-      ],
-      "linguagem": "Shell",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "worldmonitor",
-      "tipo": "skill",
-      "nome": "Worldmonitor",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "koala73/worldmonitor",
-        "url": "https://github.com/koala73/worldmonitor"
-      },
-      "proposito": "Real-time global intelligence dashboard. AI-powered news aggregation, geopolitical monitoring, infrastructure tracking.",
-      "padroes_absorvidos": [
-        "500+ curated news feeds** across 15 categories, AI-synthesized into briefs",
-        "Dual map engine** — 3D globe (globe.gl) and WebGL flat map (deck.gl) with 56 map layer types",
-        "Cross-stream correlation** — military, economic, disaster, and escalation signal convergence",
-        "Country Instability Index (CII)** — server-authoritative CII v8 stress scoring for 31 Tier-1 countries",
-        "Finance radar** — 29 stock exchanges, commodities, crypto, and 7-signal market composite",
-        "Local AI** — run everything with Ollama, no API keys required",
-        "6 site variants** from a single codebase (world, tech, finance, commodity, happy, energy)",
-        "Native desktop app** (Tauri 2) for macOS, Windows, and Linux"
-      ],
-      "numero_padraes": 8,
-      "categoria_roteamento": "baseado-em-2",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "worldmonitor",
-        "geopolitics",
-        "dashboard"
-      ],
-      "linguagem": "TypeScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "ai-agent-book",
-      "tipo": "skill",
-      "nome": "Ai Agent Book",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "bojieli/ai-agent-book",
-        "url": "https://github.com/bojieli/ai-agent-book"
-      },
-      "proposito": "《深入理解 AI Agent：设计原理与工程实践》开源主仓库: 全书正文、PDF 与按章配套代码.",
-      "padroes_absorvidos": [
-        "Orquestrar conhecimento de design de agentes de IA: usar o livro como fonte de princípios de engenharia, arquitetura e padrões de design de agentes (capítulos 1-10 disponíveis como markdown)",
-        "Consultar o código de exemplo por capítulo para implementar padrões de agentes (memória, tool calling, planejamento) em projetos reais",
-        "Seguir o fluxo de build do repo (pandoc + xelatex + ElegantBook) para gerar PDFs dos documentos técnicos do projeto"
-      ],
-      "numero_padraes": 3,
-      "categoria_roteamento": "baseado-em-1",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "ai-agent-book",
-        "agent-memory",
-        "book"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "onp-spec-driven",
-      "tipo": "skill",
-      "nome": "Onp Spec Driven",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "onovoprogramador/onp-spec-driven",
-        "url": "https://github.com/onovoprogramador/onp-spec-driven"
-      },
-      "proposito": "Spec-driven development workflow.",
-      "padroes_absorvidos": [
-        "Especificação legível** em `.spec/features/<feature>/` — histórias de",
-        "Plano de execução com paralelismo opcional** — tarefas que não se tocam",
-        "Você sempre sabe o que está rolando** — antes de executar, o agente avisa",
-        "Falhou uma faixa? refaça só ela** — peça *\"reexecuta só a faixa 2\"* e o",
-        "Gestão de commits e branches feita** — 1 tarefa = 1 commit rastreável,",
-        "A prova** — ao final, a auditoria mecânica: cada critério de aceite tem um"
-      ],
-      "numero_padraes": 6,
-      "categoria_roteamento": "baseado-em-11",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "onp-spec-driven",
-        "spec-driven"
-      ],
-      "linguagem": "JavaScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "hallmark",
-      "tipo": "subagent",
-      "nome": "Hallmark",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "nutlope/hallmark",
-        "url": "https://github.com/nutlope/hallmark"
-      },
-      "proposito": "Anti-AI-slop design skill for greenfield pages, audits, redesigns, and design extraction from URLs or screenshots.",
-      "padroes_absorvidos": [
-        "Anti-slop test: regras que impedem o fallback para defaults treinados",
-        "Variedade estrutural: briefs diferentes não compartilham o mesmo ritmo hero→features→CTA→footer",
-        "Verbs explícitos: audit/redesign/study + fluxo default",
-        "Safety rail: nunca apagar rotas/componentes sem aprovação explícita",
-        "design.md portátil com camada de recusa (não copiar pixels alheios)"
-      ],
-      "numero_padraes": 5,
-      "categoria_roteamento": "baseado-em-14",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "hallmark",
-        "design",
-        "anti-ai-slop",
-        "ui",
-        "frontend"
-      ],
-      "linguagem": "Markdown",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "book-to-skill",
-      "tipo": "subagent",
-      "nome": "Book To Skill",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "virgiliojr94/book-to-skill",
-        "url": "https://github.com/virgiliojr94/book-to-skill"
-      },
-      "proposito": "Turn any technical book PDF into a structured agent skill — frameworks, principles, techniques, anti-patterns.",
-      "padroes_absorvidos": [
-        "Extract structure, not summaries",
-        "Preserve a precisão do autor (nomes de frameworks exatos)",
-        "Depth por camadas (livro simples → skill simples; complexo → references + capítulos)",
-        "Pacote Python book_to_skill com parsers por formato",
-        "Agent-neutral: allowed-tools omitido para portabilidade entre hosts"
-      ],
-      "numero_padraes": 5,
-      "categoria_roteamento": "baseado-em-15",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "book-to-skill",
-        "skill-builder",
-        "meta-skill",
-        "study"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "context-selector",
-      "tipo": "subagent",
-      "nome": "Context Selector",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "ratel-ai/ratel",
-        "url": "https://github.com/ratel-ai/ratel"
-      },
-      "proposito": "Context engineering layer: seleciona tools/skills por turno via BM25 + disclosure progressivo — corta tokens e recupera acurácia perdida por tool-overload (sem vector DB).",
-      "padroes_absorvidos": [
-        "searchable_text: indexar so tokens semanticos (nome, descricao, valores enum) — pular type/required/braces/aspas via projecao deterministica (serde preserve_order)",
-        "BM25 como ranker default (model-free, nunca falha), k1=0.9 b=0.4 (descricoes curtas); semantic/hybrid opt-in com RRF",
-        "replace-vs-suggest: interceptar a lista de tools antes do modelo e substituir por top-K (replace default = economia direta e atribuivel)",
-        "Skills first-class {id,name,description,tags,tools,metadata,body}: tags indexadas, skills nunca esfomeadas por tool-matches; gateway e o unico loader (host nao auto-scaneia)",
-        "search_capabilities(query, topKTools, topKSkills) -> buckets independentes + invoke_tool + get_skill_content: disclosure progressivo por turno",
-        "Adaptive usage ranking: par impression/click dos traces do proprio uso (busca x tool invocada) vira relevancia confirmada pelo usuario (ADR-0014)"
-      ],
-      "numero_padraes": 6,
-      "categoria_roteamento": "baseado-em-16",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "context-selector",
-        "context-engineering",
-        "bm25",
-        "token-economy",
-        "tool-selection",
-        "skills"
-      ],
-      "linguagem": "Rust",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "dokku-deploy",
-      "tipo": "subagent",
-      "nome": "Dokku Deploy",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "dokku/dokku",
-        "url": "https://github.com/dokku/dokku"
-      },
-      "proposito": "Docker-powered mini-Heroku: deploy self-hosted via git push; app.json + plugin-hooks de ciclo de vida com triggers ordenados.",
-      "padroes_absorvidos": [
-        "Fluxo deploy: dokku apps:create <app> + git push dokku main + dokku ps:rebuild <app> (redeploy) / ps:set skip-deploy true",
-        "app.json: scripts predeploy/postdeploy + healthchecks + formations — contrato de ciclo de vida da app",
-        "Plugin-hooks prefixo numerico (00_dokku-standard, 20_events, app-json...) com triggers de ciclo de vida (pre-deploy, post-deploy...)",
-        "Command API dokku: commands (help) + subcommands/default + subcommands/<cmd> -> dokku <plugin>:<cmd>",
-        "plugin.toml obrigatorio (description+version); arquivos executaveis; adotar set -eo pipefail (dica oficial do dokku)"
-      ],
-      "numero_padraes": 5,
-      "categoria_roteamento": "baseado-em-17",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "dokku-deploy",
-        "deploy",
-        "paas",
-        "docker",
-        "self-hosted",
-        "plugin-hooks"
-      ],
-      "linguagem": "Shell",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "llama-mtp",
-      "tipo": "skill",
-      "nome": "Llama Mtp",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "ggml-org/llama.cpp",
-        "url": "https://github.com/ggml-org/llama.cpp"
-      },
-      "proposito": "Multi-Token Prediction (MTP) heads no llama.cpp (PR #22673 merged) — speculative decoding integrado, >2x speedup sem draft model separado; aplicar nos 4 modelos locais Vulkan.",
-      "padroes_absorvidos": [
-        "Multi-Token Prediction (MTP) heads no llama.cpp (PR #22673 merged) — speculative decoding integrado, >2x speedup sem draft model separado; aplicar nos 4 modelos locais Vulkan."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-20",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "llama-mtp",
-        "llm",
-        "inference",
-        "speculative-decoding"
-      ],
-      "linguagem": "C++",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "anthropics-skills",
-      "tipo": "skill",
-      "nome": "Anthropics Skills",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "anthropics/skills",
-        "url": "https://github.com/anthropics/skills"
-      },
-      "proposito": "Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness.",
-      "padroes_absorvidos": [
-        "Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-19",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "anthropics-skills",
-        "skills",
-        "mcp",
-        "design",
-        "docs"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "deepagents",
-      "tipo": "subagent",
-      "nome": "Deepagents",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "langchain-ai/deepagents",
-        "url": "https://github.com/langchain-ai/deepagents"
-      },
-      "proposito": "Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo.",
-      "padroes_absorvidos": [
-        "Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-18",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "deepagents",
-        "agent-harness",
-        "mcp",
-        "langgraph"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "last30days-skill",
-      "tipo": "skill",
-      "nome": "Last30days Skill",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "mvanhorn/last30days-skill",
-        "url": "https://github.com/mvanhorn/last30days-skill"
-      },
-      "proposito": "Pesquisa/síntese multi-plataforma 30d (Reddit, X, YouTube, HN, Polymarket) com ranking por upvotes — ADAPTADO: só a pipeline de briefing, nunca hook cru (RCE upstream corrigido).",
-      "padroes_absorvidos": [
-        "Pesquisa/síntese multi-plataforma 30d (Reddit, X, YouTube, HN, Polymarket) com ranking por upvotes — ADAPTADO: só a pipeline de briefing, nunca hook cru (RCE upstream corrigido)."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-17",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "last30days-skill",
-        "research",
-        "search",
-        "synthesis"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "cc-harness-iai",
-      "tipo": "skill",
-      "nome": "Cc Harness Iai",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "elberrd/cc-harness-iai",
-        "url": "https://github.com/elberrd/cc-harness-iai"
-      },
-      "proposito": "Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença).",
-      "padroes_absorvidos": [
-        "Padrão PRD→tasks→impl: task-master-generator (fan-out p/ inspecionar código e gerar tasks com dependencies) + task-sequencer/tools.yaml (pontuação de tools por task, Injeção 'Available Tools'). Inspiração (sem licença)."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-16",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "cc-harness-iai",
-        "harness",
-        "task-decomposition",
-        "tools"
-      ],
-      "linguagem": "Shell",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "impeccable",
-      "tipo": "subagent",
-      "nome": "Impeccable",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "pbakaus/impeccable",
-        "url": "https://github.com/pbakaus/impeccable"
-      },
-      "proposito": "Design language p/ harness de IA: 23 commands (craft/init/audit/critique/polish) + 59 deterministic detector rules (sem LLM) + PRODUCT.md/DESIGN.md (contexto de audiência/marca).",
-      "padroes_absorvidos": [
-        "Design language p/ harness de IA: 23 commands (craft/init/audit/critique/polish) + 59 deterministic detector rules (sem LLM) + PRODUCT.md/DESIGN.md (contexto de audiência/marca)."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-15",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "impeccable",
-        "design",
-        "frontend",
-        "qa"
-      ],
-      "linguagem": "JavaScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "spec-kit",
-      "tipo": "skill",
-      "nome": "Spec Kit",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "github/spec-kit",
-        "url": "https://github.com/github/spec-kit"
-      },
-      "proposito": "Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente.",
-      "padroes_absorvidos": [
-        "Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-14",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "spec-kit",
-        "spec-driven",
-        "planning"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "vercel-agent-skills",
-      "tipo": "skill",
-      "nome": "Vercel Agent Skills",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "vercel-labs/agent-skills",
-        "url": "https://github.com/vercel-labs/agent-skills"
-      },
-      "proposito": "Skills oficiais Vercel: react-best-practices (40+ regras/8 categorias), web-design-guidelines, composition-patterns, vercel-optimize (auditoria custo/perf).",
-      "padroes_absorvidos": [
-        "Skills oficiais Vercel: react-best-practices (40+ regras/8 categorias), web-design-guidelines, composition-patterns, vercel-optimize (auditoria custo/perf)."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-12",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "vercel-agent-skills",
-        "react",
-        "frontend",
-        "performance"
-      ],
-      "linguagem": "Markdown",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "openwork-mcp",
-      "tipo": "subagent",
-      "nome": "Openwork Mcp",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "different-ai/openwork",
-        "url": "https://github.com/different-ai/openwork"
-      },
-      "proposito": "OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido.",
-      "padroes_absorvidos": [
-        "OpenWork MCP: search_capabilities + execute_capability para compartilhar skills/MCPs/conexões entre ferramentas; ATUALIZA o subagent executor-deep já absorvido."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-8",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": true,
-        "lsp": false
-      },
-      "tags": [
-        "openwork-mcp",
-        "mcp",
-        "capability-catalog",
-        "a2a"
-      ],
-      "linguagem": "TypeScript",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "world-model-optimizer",
-      "tipo": "skill",
-      "nome": "World Model Optimizer",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "experientiallabs/world-model-optimizer",
-        "url": "https://github.com/experientiallabs/world-model-optimizer"
-      },
-      "proposito": "Distill traces de agentes → modelo oráculo menor + router frontier↔small (-27% custo, RouterBench). Inspiração p/ self-learning (sem licença).",
-      "padroes_absorvidos": [
-        "Distill traces de agentes → modelo oráculo menor + router frontier↔small (-27% custo, RouterBench). Inspiração p/ self-learning (sem licença)."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-6",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "world-model-optimizer",
-        "self-learning",
-        "distillation",
-        "routing"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "azure-skills",
-      "tipo": "skill",
-      "nome": "Azure Skills",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "microsoft/github-copilot-for-azure",
-        "url": "https://github.com/microsoft/github-copilot-for-azure"
-      },
-      "proposito": "Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada.",
-      "padroes_absorvidos": [
-        "Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-5",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "azure-skills",
-        "azure",
-        "cloud",
-        "diagnostics"
-      ],
-      "linguagem": "Markdown",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "awesome-llm-apps",
-      "tipo": "skill",
-      "nome": "Awesome Llm Apps",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "Shubhamsaboo/awesome-llm-apps",
-        "url": "https://github.com/Shubhamsaboo/awesome-llm-apps"
-      },
-      "proposito": "100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura.",
-      "padroes_absorvidos": [
-        "100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-5",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "awesome-llm-apps",
-        "llm-apps",
-        "rag",
-        "reference"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "coderabbit",
-      "tipo": "skill",
-      "nome": "Coderabbit",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "coderabbitai/awesome-coderabbit",
-        "url": "https://github.com/coderabbitai/awesome-coderabbit"
-      },
-      "proposito": "CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness.",
-      "padroes_absorvidos": [
-        "CodeRabbit AI code review: awesome list + pipeline de revisão automatizada de PRs (spans, dicas acionáveis) — padrão p/ feature/hook de review contínuo do harness."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-7",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "coderabbit",
-        "code-review",
-        "pr",
-        "automation"
-      ],
-      "linguagem": "other",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "llama-mtp-concept",
-      "tipo": "skill",
-      "nome": "Llama Mtp Concept",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "tryigit/cleveres-ai",
-        "url": "https://github.com/tryigit/cleveres-ai"
-      },
-      "proposito": "Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência.",
-      "padroes_absorvidos": [
-        "Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-4",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "llama-mtp-concept",
-        "llm",
-        "mtp",
-        "architecture"
-      ],
-      "linguagem": "Markdown",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    },
-    {
-      "id": "unsloth-zoo",
-      "tipo": "skill",
-      "nome": "Unsloth Zoo",
-      "versao": "2.0.0",
-      "status": "ativo",
-      "origem": {
-        "tipo_origem": "framework-externo",
-        "framework": "unslothai/unsloth-zoo",
-        "url": "https://github.com/unslothai/unsloth-zoo"
-      },
-      "proposito": "Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B.",
-      "padroes_absorvidos": [
-        "Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B."
-      ],
-      "numero_padraes": 1,
-      "categoria_roteamento": "baseado-em-6",
-      "formato_orquestravel": {
-        "skill": true,
-        "subagent": true,
-        "hook": true,
-        "plugin": true,
-        "mcp": false,
-        "lsp": false
-      },
-      "tags": [
-        "unsloth-zoo",
-        "finetune",
-        "vram",
-        "dataset"
-      ],
-      "linguagem": "Python",
-      "modelo": {
-        "primario": "github-copilot/claude-opus-4.7",
-        "fallback": []
-      }
-    }
-  ]
+ "registry_version": "2.0.0",
+ "updated_at": "2026-08-24T19:10:41.501849+00:00",
+ "fonte": "regeneracao automatica das fontes vivas (R44 self-scaffolding)",
+ "entries": [
+  {
+   "id": "gran-mestre",
+   "tipo": "agent",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "versao": "7.0.0",
+   "modelo_primario": "local-ornith/Ornith-1.5-9B-Q4_K_M (:8083 GPU ctx163840)",
+   "nota": "core herdado do v1"
+  },
+  {
+   "id": "prometheus",
+   "tipo": "agent",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "versao": null,
+   "modelo_primario": null,
+   "nota": "core herdado do v1"
+  },
+  {
+   "id": "hestia",
+   "tipo": "agent",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "versao": null,
+   "modelo_primario": null,
+   "nota": "core herdado do v1"
+  },
+  {
+   "id": "atlas",
+   "tipo": "agent",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "versao": null,
+   "modelo_primario": null,
+   "nota": "core herdado do v1"
+  },
+  {
+   "id": "atena",
+   "tipo": "agent",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "versao": null,
+   "modelo_primario": null,
+   "nota": "core herdado do v1"
+  },
+  {
+   "id": "sisyphus",
+   "tipo": "agent",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "versao": null,
+   "modelo_primario": null,
+   "nota": "core herdado do v1"
+  },
+  {
+   "id": "ai-agent-book",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/ai-agent-book.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "book-to-skill",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/book-to-skill.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "code-review-graph",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/code-review-graph.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "context-selector",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/context-selector.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "dokku-deploy",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/dokku-deploy.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "executor-deep",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/executor-deep.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "fallow-lsp-reviewer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/fallow-lsp-reviewer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "fallow-mcp-reviewer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/fallow-mcp-reviewer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "hallmark",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/hallmark.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "i-have-adhd",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/i-have-adhd.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "mattpocock-skills",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/mattpocock-skills.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "metrology-scientist",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/metrology-scientist.md",
+   "mode": "?"
+  },
+  {
+   "id": "oh-my-opencode-slim",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/oh-my-opencode-slim.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "omniroute",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/omniroute.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "onp-spec-driven",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/onp-spec-driven.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "openship",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/openship.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "orca",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/orca.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "pi",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/pi.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "ruview",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/ruview.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "worldmonitor",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/worldmonitor.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "anthropics-skills",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/anthropics-skills.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "awesome-llm-apps",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/awesome-llm-apps.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "azure-skills",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/azure-skills.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "cc-harness-iai",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/cc-harness-iai.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "coderabbit",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/coderabbit.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "deepagents",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/deepagents.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gran-mestre",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gran-mestre.md",
+   "mode": "primary"
+  },
+  {
+   "id": "impeccable",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/impeccable.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "last30days-skill",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/last30days-skill.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "llama-mtp-concept",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/llama-mtp-concept.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "llama-mtp",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/llama-mtp.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "openwork-mcp",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/openwork-mcp.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "spec-kit",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/spec-kit.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "unsloth-zoo",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/unsloth-zoo.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "vercel-agent-skills",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/vercel-agent-skills.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "world-model-optimizer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/world-model-optimizer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-advisor-researcher",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-advisor-researcher.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-ai-researcher",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-ai-researcher.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-assumptions-analyzer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-assumptions-analyzer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-codebase-mapper",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-codebase-mapper.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-code-fixer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-code-fixer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-code-reviewer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-code-reviewer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-debugger",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-debugger.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-debug-session-manager",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-debug-session-manager.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-doc-classifier",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-doc-classifier.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-doc-synthesizer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-doc-synthesizer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-doc-verifier",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-doc-verifier.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-doc-writer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-doc-writer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-domain-researcher",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-domain-researcher.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-eval-auditor",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-eval-auditor.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-eval-planner",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-eval-planner.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-executor",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-executor.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-framework-selector",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-framework-selector.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-integration-checker",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-integration-checker.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-intel-updater",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-intel-updater.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-mempalace-curator",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-mempalace-curator.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-nyquist-auditor",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-nyquist-auditor.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-pattern-mapper",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-pattern-mapper.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-phase-researcher",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-phase-researcher.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-plan-checker",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-plan-checker.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-planner",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-planner.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-project-researcher",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-project-researcher.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-research-synthesizer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-research-synthesizer.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-roadmapper",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-roadmapper.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-security-auditor",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-security-auditor.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-ui-auditor",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-ui-auditor.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-ui-checker",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-ui-checker.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-ui-researcher",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-ui-researcher.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-user-profiler",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-user-profiler.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "gsd-verifier",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/gsd-verifier.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "memory-keeper",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/memory-keeper.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "reverser",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/reverser.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "superpowers-code-reviewer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/superpowers-code-reviewer.md",
+   "mode": "?"
+  },
+  {
+   "id": "superpowers-implementer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/superpowers-implementer.md",
+   "mode": "?"
+  },
+  {
+   "id": "superpowers",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/superpowers.md",
+   "mode": "?"
+  },
+  {
+   "id": "superpowers-plan-writer-alt1",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/superpowers-plan-writer-alt1.md",
+   "mode": "?"
+  },
+  {
+   "id": "superpowers-plan-writer-alt2",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/superpowers-plan-writer-alt2.md",
+   "mode": "?"
+  },
+  {
+   "id": "superpowers-plan-writer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/superpowers-plan-writer.md",
+   "mode": "?"
+  },
+  {
+   "id": "superpowers-spec-writer",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/superpowers-spec-writer.md",
+   "mode": "?"
+  },
+  {
+   "id": "health-monitor",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/health-monitor.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "model-profiler",
+   "tipo": "agent-file",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/agents/model-profiler.md",
+   "mode": "subagent"
+  },
+  {
+   "id": "customize-opencode",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "<built-in>"
+  },
+  {
+   "id": "security-review",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.cache/opencode/skills/security-review/SKILL.md"
+  },
+  {
+   "id": "ecc-autofagia",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.claude/skills/ecc-autofagia/SKILL.md"
+  },
+  {
+   "id": "agent-reach",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/agent-reach/SKILL.md"
+  },
+  {
+   "id": "ck",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/ck/SKILL.md"
+  },
+  {
+   "id": "threejs-aaa-graphics-builder",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-aaa-graphics-builder/SKILL.md"
+  },
+  {
+   "id": "threejs-gameplay-systems",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-gameplay-systems/SKILL.md"
+  },
+  {
+   "id": "threejs-3d-generator",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-3d-generator/SKILL.md"
+  },
+  {
+   "id": "threejs-game-ui-designer",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-game-ui-designer/SKILL.md"
+  },
+  {
+   "id": "threejs-game-director",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-game-director/SKILL.md"
+  },
+  {
+   "id": "threejs-image-generator",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-image-generator/SKILL.md"
+  },
+  {
+   "id": "threejs-debug-profiler",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-debug-profiler/SKILL.md"
+  },
+  {
+   "id": "threejs-qa-release",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-qa-release/SKILL.md"
+  },
+  {
+   "id": "threejs-audio-generator",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.agents/skills/threejs-audio-generator/SKILL.md"
+  },
+  {
+   "id": "gsd-verify-work",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.config/opencode/skills/gsd-verify-work/SKILL.md"
+  },
+  {
+   "id": "gsd-plan-phase",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.config/opencode/skills/gsd-plan-phase/SKILL.md"
+  },
+  {
+   "id": "gsd-code-review",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.config/opencode/skills/gsd-code-review/SKILL.md"
+  },
+  {
+   "id": "gsd-help",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.config/opencode/skills/gsd-help/SKILL.md"
+  },
+  {
+   "id": "gsd-execute-phase",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.config/opencode/skills/gsd-execute-phase/SKILL.md"
+  },
+  {
+   "id": "vram-router",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.config/opencode/skills/vram-router/SKILL.md"
+  },
+  {
+   "id": "model-discovery",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.config/opencode/skills/model-discovery/SKILL.md"
+  },
+  {
+   "id": "sentry-mcp",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/sentry-mcp/SKILL.md"
+  },
+  {
+   "id": "pxpipe",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/pxpipe/SKILL.md"
+  },
+  {
+   "id": "recursive-llm",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/recursive-llm/SKILL.md"
+  },
+  {
+   "id": "prime-agent",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/prime-agent/SKILL.md"
+  },
+  {
+   "id": "longhorizon-harness",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/longhorizon-harness/SKILL.md"
+  },
+  {
+   "id": "gran-mestre",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/gran-mestre/SKILL.md"
+  },
+  {
+   "id": "hestia",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/hestia/SKILL.md"
+  },
+  {
+   "id": "gemini-mcp-tool",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/gemini-mcp-tool/SKILL.md"
+  },
+  {
+   "id": "firecrawl",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/firecrawl/SKILL.md"
+  },
+  {
+   "id": "fable-judge",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/fable-judge/SKILL.md"
+  },
+  {
+   "id": "engenharia-de-harness",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/engenharia-de-harness/SKILL.md"
+  },
+  {
+   "id": "colibri",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/colibri/SKILL.md"
+  },
+  {
+   "id": "claude-mem",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/claude-mem/SKILL.md"
+  },
+  {
+   "id": "llm-benchmark",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/llm-benchmark/SKILL.md"
+  },
+  {
+   "id": "memory-recall",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/memory-recall/SKILL.md"
+  },
+  {
+   "id": "context-mode",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/context-mode/SKILL.md"
+  },
+  {
+   "id": "agentic-awesome-skills",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/agentic-awesome-skills/SKILL.md"
+  },
+  {
+   "id": "react-bits",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/react-bits/SKILL.md"
+  },
+  {
+   "id": "memory-local",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/memory-local/SKILL.md"
+  },
+  {
+   "id": "security-methodology",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/security-methodology/SKILL.md"
+  },
+  {
+   "id": "last30days-skill",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/last30days-skill/SKILL.md"
+  },
+  {
+   "id": "impeccable",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/impeccable/SKILL.md"
+  },
+  {
+   "id": "coderabbit",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/coderabbit/SKILL.md"
+  },
+  {
+   "id": "deepagents",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/deepagents/SKILL.md"
+  },
+  {
+   "id": "cc-harness-iai",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/cc-harness-iai/SKILL.md"
+  },
+  {
+   "id": "azure-skills",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/azure-skills/SKILL.md"
+  },
+  {
+   "id": "awesome-llm-apps",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/awesome-llm-apps/SKILL.md"
+  },
+  {
+   "id": "anthropics-skills",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/anthropics-skills/SKILL.md"
+  },
+  {
+   "id": "athena",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/athena/SKILL.md"
+  },
+  {
+   "id": "professional-decompilation",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/professional-decompilation/SKILL.md"
+  },
+  {
+   "id": "llama-mtp",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/llama-mtp/SKILL.md"
+  },
+  {
+   "id": "llama-mtp-concept",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/llama-mtp-concept/SKILL.md"
+  },
+  {
+   "id": "openwork-mcp",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/openwork-mcp/SKILL.md"
+  },
+  {
+   "id": "vercel-agent-skills",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/vercel-agent-skills/SKILL.md"
+  },
+  {
+   "id": "unsloth-zoo",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/unsloth-zoo/SKILL.md"
+  },
+  {
+   "id": "spec-kit",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/spec-kit/SKILL.md"
+  },
+  {
+   "id": "world-model-optimizer",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/world-model-optimizer/SKILL.md"
+  },
+  {
+   "id": "context-compaction",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/context-compaction/SKILL.md"
+  },
+  {
+   "id": "book-to-skill",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/book-to-skill/SKILL.md"
+  },
+  {
+   "id": "dokku-deploy",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/dokku-deploy/SKILL.md"
+  },
+  {
+   "id": "context-selector",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/context-selector/SKILL.md"
+  },
+  {
+   "id": "orca",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/orca/SKILL.md"
+  },
+  {
+   "id": "archify",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/archify/SKILL.md"
+  },
+  {
+   "id": "omniroute",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/omniroute/SKILL.md"
+  },
+  {
+   "id": "mattpocock-skills",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/mattpocock-skills/SKILL.md"
+  },
+  {
+   "id": "hallmark",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/hallmark/SKILL.md"
+  },
+  {
+   "id": "ai-agent-book",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/ai-agent-book/SKILL.md"
+  },
+  {
+   "id": "onp-spec-driven",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/onp-spec-driven/SKILL.md"
+  },
+  {
+   "id": "worldmonitor",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/worldmonitor/SKILL.md"
+  },
+  {
+   "id": "pi",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/pi/SKILL.md"
+  },
+  {
+   "id": "ruview",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/ruview/SKILL.md"
+  },
+  {
+   "id": "openship",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/openship/SKILL.md"
+  },
+  {
+   "id": "oh-my-opencode-slim",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/oh-my-opencode-slim/SKILL.md"
+  },
+  {
+   "id": "code-review-graph",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/code-review-graph/SKILL.md"
+  },
+  {
+   "id": "i-have-adhd",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/i-have-adhd/SKILL.md"
+  },
+  {
+   "id": "dev-loop",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/dev-loop/SKILL.md"
+  },
+  {
+   "id": "reproduce-frontend-bug",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/better-harness/case-studies/agent-customize/bug-diagnosis-skills/reproduce-frontend-bug/SKILL.md"
+  },
+  {
+   "id": "browser-use",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/browser-use/SKILL.md"
+  },
+  {
+   "id": "better-harness",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/better-harness/skills/better-harness/SKILL.md"
+  },
+  {
+   "id": "diagnose-backend-bug",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/mnt/dados/opencode/skills/better-harness/case-studies/agent-customize/bug-diagnosis-skills/diagnose-backend-bug/SKILL.md"
+  },
+  {
+   "id": "security-research",
+   "tipo": "skill",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "location": "/home/johncoffee/.cache/opencode/skills/security-research/SKILL.md"
+  },
+  {
+   "id": "websearch",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": "remote",
+   "origem": "built-in/core"
+  },
+  {
+   "id": "context7",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": "remote",
+   "origem": "built-in/core"
+  },
+  {
+   "id": "grep_app",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": "remote",
+   "origem": "built-in/core"
+  },
+  {
+   "id": "lsp",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": "local",
+   "origem": "built-in/core"
+  },
+  {
+   "id": "codegraph",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": "local",
+   "origem": "built-in/core"
+  },
+  {
+   "id": "ghidra",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": "remote",
+   "origem": "opencode.json"
+  },
+  {
+   "id": "openwork",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": "remote",
+   "origem": "opencode.json"
+  },
+  {
+   "id": "obsidian",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": null,
+   "origem": "opencode.json"
+  },
+  {
+   "id": "siz_delimiter",
+   "tipo": "mcp",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "type": null,
+   "origem": "opencode.json"
+  },
+  {
+   "id": "circuit-breaker",
+   "tipo": "plugin-native",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/plugins/circuit-breaker.ts"
+  },
+  {
+   "id": "gran-mestre-state",
+   "tipo": "plugin-native",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/plugins/gran-mestre-state.ts"
+  },
+  {
+   "id": "ecc-compact-gate",
+   "tipo": "plugin-native",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "path": "/mnt/dados/opencode/config/plugins/ecc-compact-gate.ts"
+  },
+  {
+   "id": "oh-my-openagent@4.16.3",
+   "tipo": "plugin-npm",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00"
+  },
+  {
+   "id": "ecc-hooks (tool.execute.before/after → gsd-* hooks)",
+   "tipo": "plugin-suite",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00"
+  },
+  {
+   "id": "Ornith-1.5-9B-Q4_K_M @8083",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "GPU",
+   "ctx_ativo": 163840,
+   "tps_R63": 26.0,
+   "gm_oficial": 76.3,
+   "vocacao": "orquestrador primario · janela longa · F1/F2/F5 cognitivo",
+   "fases_bloqueadas": [
+    "F4"
+   ]
+  },
+  {
+   "id": "Bonsai-27B-1bit.Q4_K_M @9083",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 16384,
+   "tps_R63": 15.72,
+   "gm_oficial": 62.2,
+   "vocacao": "geracao estruturada GBNF · prosa · F2 design-doc",
+   "fases_bloqueadas": [
+    "F4"
+   ]
+  },
+  {
+   "id": "Qwen3.5-0.8B @9084",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 131072,
+   "tps_R63": 123.0,
+   "gm_oficial": null,
+   "vocacao": "exploracao barata · varredura · brainstorm volume",
+   "fases_bloqueadas": []
+  },
+  {
+   "id": "LLMJudge-Qwen2.5-3B.Q4_K_M @9085",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 32768,
+   "tps_R63": 139.0,
+   "gm_oficial": null,
+   "vocacao": "validador dedicado (temp<=0.15) · contratos de conclusao",
+   "fases_bloqueadas": []
+  },
+  {
+   "id": "LFM2.5-230M-Q4_0 @9086",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 128000,
+   "tps_R63": 228.0,
+   "gm_oficial": null,
+   "vocacao": "refutacao rapida · filtros binarios · F4 micro-checks",
+   "fases_bloqueadas": [
+    "F1",
+    "F5"
+   ]
+  },
+  {
+   "id": "Qwen3.8-2B-Q4_K_M @9087",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 262144,
+   "tps_R63": 155.0,
+   "gm_oficial": null,
+   "vocacao": "code/tool executor · TDD loop F4 · janela profunda",
+   "fases_bloqueadas": []
+  },
+  {
+   "id": "Qwen3-1.7B-Q4_K_M @9088",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 32768,
+   "tps_R63": 182.88,
+   "gm_oficial": null,
+   "vocacao": "curto · fallback F4 · tool calls rapidos",
+   "fases_bloqueadas": []
+  },
+  {
+   "id": "Ternary-Bonsai-1.7B-Q2_0_g64 @9089",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 8192,
+   "tps_R63": 207.0,
+   "gm_oficial": null,
+   "vocacao": "throughput maximo CPU · refutacao A2A · filtro F4",
+   "fases_bloqueadas": [
+    "F5"
+   ]
+  },
+  {
+   "id": "Ternary-Bonsai-8B-Q2_0_g64 @9090",
+   "tipo": "modelo-grafo",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00",
+   "device": "CPU",
+   "ctx_ativo": 4096,
+   "tps_R63": 44.5,
+   "gm_oficial": null,
+   "vocacao": "reserva cold/warm · A2A pesado sob demanda",
+   "fases_bloqueadas": [
+    "F4"
+   ]
+  },
+  {
+   "id": "gpu-watchdog",
+   "tipo": "watcher-systemd",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00"
+  },
+  {
+   "id": "config-watcher",
+   "tipo": "watcher-systemd",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00"
+  },
+  {
+   "id": "llm-usage@8083",
+   "tipo": "watcher-systemd",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00"
+  },
+  {
+   "id": "llm-usage@8090",
+   "tipo": "watcher-systemd",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00"
+  },
+  {
+   "id": "audio-watch",
+   "tipo": "watcher-systemd",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:10:41.501849+00:00"
+  },
+  {
+   "id": "auto-sync-models.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/auto-sync-models.sh"
+  },
+  {
+   "id": "gsd-check-update-worker.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-check-update-worker.js"
+  },
+  {
+   "id": "gsd-check-update.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-check-update.js"
+  },
+  {
+   "id": "gsd-config-reload.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-config-reload.js"
+  },
+  {
+   "id": "gsd-context-monitor.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-context-monitor.js"
+  },
+  {
+   "id": "gsd-cursor-post-tool.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-cursor-post-tool.js"
+  },
+  {
+   "id": "gsd-cursor-session-start.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-cursor-session-start.js"
+  },
+  {
+   "id": "gsd-ensure-canonical-path.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-ensure-canonical-path.js"
+  },
+  {
+   "id": "gsd-graphify-update.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-graphify-update.sh"
+  },
+  {
+   "id": "gsd-phase-boundary.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-phase-boundary.sh"
+  },
+  {
+   "id": "gsd-prompt-guard.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-prompt-guard.js"
+  },
+  {
+   "id": "gsd-read-guard.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-read-guard.js"
+  },
+  {
+   "id": "gsd-read-injection-scanner.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-read-injection-scanner.js"
+  },
+  {
+   "id": "gsd-session-state.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-session-state.sh"
+  },
+  {
+   "id": "gsd-statusline.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-statusline.js"
+  },
+  {
+   "id": "gsd-update-banner.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-update-banner.js"
+  },
+  {
+   "id": "gsd-validate-commit.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-validate-commit.sh"
+  },
+  {
+   "id": "gsd-workflow-guard.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-workflow-guard.js"
+  },
+  {
+   "id": "gsd-worktree-path-guard.js",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/gsd-worktree-path-guard.js"
+  },
+  {
+   "id": "helenize-ai-agent-book.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-ai-agent-book.sh"
+  },
+  {
+   "id": "helenize-anthropics-skills.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-anthropics-skills.sh"
+  },
+  {
+   "id": "helenize-awesome-llm-apps.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-awesome-llm-apps.sh"
+  },
+  {
+   "id": "helenize-azure-skills.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-azure-skills.sh"
+  },
+  {
+   "id": "helenize-book-to-skill.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-book-to-skill.sh"
+  },
+  {
+   "id": "helenize-cc-harness-iai.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-cc-harness-iai.sh"
+  },
+  {
+   "id": "helenize-code-review-graph.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-code-review-graph.sh"
+  },
+  {
+   "id": "helenize-coderabbit.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-coderabbit.sh"
+  },
+  {
+   "id": "helenize-context-selector.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-context-selector.sh"
+  },
+  {
+   "id": "helenize-deepagents.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-deepagents.sh"
+  },
+  {
+   "id": "helenize-dokku-deploy.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-dokku-deploy.sh"
+  },
+  {
+   "id": "helenize-gate.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-gate.sh"
+  },
+  {
+   "id": "helenize-hallmark.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-hallmark.sh"
+  },
+  {
+   "id": "helenize-i-have-adhd.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-i-have-adhd.sh"
+  },
+  {
+   "id": "helenize-impeccable.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-impeccable.sh"
+  },
+  {
+   "id": "helenize-last30days-skill.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-last30days-skill.sh"
+  },
+  {
+   "id": "helenize-llama-mtp-concept.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-llama-mtp-concept.sh"
+  },
+  {
+   "id": "helenize-llama-mtp.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-llama-mtp.sh"
+  },
+  {
+   "id": "helenize-mattpocock-skills.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-mattpocock-skills.sh"
+  },
+  {
+   "id": "helenize-oh-my-opencode-slim.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-oh-my-opencode-slim.sh"
+  },
+  {
+   "id": "helenize-omniroute.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-omniroute.sh"
+  },
+  {
+   "id": "helenize-onp-spec-driven.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-onp-spec-driven.sh"
+  },
+  {
+   "id": "helenize-openship.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-openship.sh"
+  },
+  {
+   "id": "helenize-openwork-mcp.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-openwork-mcp.sh"
+  },
+  {
+   "id": "helenize-orca.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-orca.sh"
+  },
+  {
+   "id": "helenize-pi.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-pi.sh"
+  },
+  {
+   "id": "helenize-ruview.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-ruview.sh"
+  },
+  {
+   "id": "helenize-spec-kit.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-spec-kit.sh"
+  },
+  {
+   "id": "helenize-unsloth-zoo.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-unsloth-zoo.sh"
+  },
+  {
+   "id": "helenize-vercel-agent-skills.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-vercel-agent-skills.sh"
+  },
+  {
+   "id": "helenize-world-model-optimizer.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-world-model-optimizer.sh"
+  },
+  {
+   "id": "helenize-worldmonitor.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/helenize-worldmonitor.sh"
+  },
+  {
+   "id": "lib",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/lib"
+  },
+  {
+   "id": "managed-hooks-registry.cjs",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/managed-hooks-registry.cjs"
+  },
+  {
+   "id": "prepare-commit-msg.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/prepare-commit-msg.sh"
+  },
+  {
+   "id": "sensitive-data-check.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/sensitive-data-check.sh"
+  },
+  {
+   "id": "stack-auto-start.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/stack-auto-start.sh"
+  },
+  {
+   "id": "watch-registry-start.sh",
+   "tipo": "hook",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/hooks/watch-registry-start.sh"
+  },
+  {
+   "id": "gran-mestre",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gran-mestre.md"
+  },
+  {
+   "id": "gsd-add-tests",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-add-tests.md"
+  },
+  {
+   "id": "gsd-ai-integration-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ai-integration-phase.md"
+  },
+  {
+   "id": "gsd-audit-fix",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-audit-fix.md"
+  },
+  {
+   "id": "gsd-audit-milestone",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-audit-milestone.md"
+  },
+  {
+   "id": "gsd-audit-uat",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-audit-uat.md"
+  },
+  {
+   "id": "gsd-autonomous",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-autonomous.md"
+  },
+  {
+   "id": "gsd-capture",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-capture.md"
+  },
+  {
+   "id": "gsd-cleanup",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-cleanup.md"
+  },
+  {
+   "id": "gsd-code-review",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-code-review.md"
+  },
+  {
+   "id": "gsd-complete-milestone",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-complete-milestone.md"
+  },
+  {
+   "id": "gsd-config",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-config.md"
+  },
+  {
+   "id": "gsd-debug",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-debug.md"
+  },
+  {
+   "id": "gsd-discuss-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-discuss-phase.md"
+  },
+  {
+   "id": "gsd-docs-update",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-docs-update.md"
+  },
+  {
+   "id": "gsd-eval-review",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-eval-review.md"
+  },
+  {
+   "id": "gsd-execute-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-execute-phase.md"
+  },
+  {
+   "id": "gsd-explore",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-explore.md"
+  },
+  {
+   "id": "gsd-extract-learnings",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-extract-learnings.md"
+  },
+  {
+   "id": "gsd-fast",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-fast.md"
+  },
+  {
+   "id": "gsd-forensics",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-forensics.md"
+  },
+  {
+   "id": "gsd-graphify",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-graphify.md"
+  },
+  {
+   "id": "gsd-health",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-health.md"
+  },
+  {
+   "id": "gsd-help",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-help.md"
+  },
+  {
+   "id": "gsd-import",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-import.md"
+  },
+  {
+   "id": "gsd-inbox",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-inbox.md"
+  },
+  {
+   "id": "gsd-ingest-docs",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ingest-docs.md"
+  },
+  {
+   "id": "gsd-manager",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-manager.md"
+  },
+  {
+   "id": "gsd-map-codebase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-map-codebase.md"
+  },
+  {
+   "id": "gsd-mempalace-capture",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-mempalace-capture.md"
+  },
+  {
+   "id": "gsd-mempalace-recall",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-mempalace-recall.md"
+  },
+  {
+   "id": "gsd-milestone-summary",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-milestone-summary.md"
+  },
+  {
+   "id": "gsd-mvp-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-mvp-phase.md"
+  },
+  {
+   "id": "gsd-new-milestone",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-new-milestone.md"
+  },
+  {
+   "id": "gsd-new-project",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-new-project.md"
+  },
+  {
+   "id": "gsd-ns-context",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ns-context.md"
+  },
+  {
+   "id": "gsd-ns-ideate",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ns-ideate.md"
+  },
+  {
+   "id": "gsd-ns-manage",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ns-manage.md"
+  },
+  {
+   "id": "gsd-ns-project",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ns-project.md"
+  },
+  {
+   "id": "gsd-ns-review",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ns-review.md"
+  },
+  {
+   "id": "gsd-ns-workflow",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ns-workflow.md"
+  },
+  {
+   "id": "gsd-pause-work",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-pause-work.md"
+  },
+  {
+   "id": "gsd-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-phase.md"
+  },
+  {
+   "id": "gsd-plan-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-plan-phase.md"
+  },
+  {
+   "id": "gsd-plan-review-convergence",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-plan-review-convergence.md"
+  },
+  {
+   "id": "gsd-pr-branch",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-pr-branch.md"
+  },
+  {
+   "id": "gsd-profile-user",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-profile-user.md"
+  },
+  {
+   "id": "gsd-progress",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-progress.md"
+  },
+  {
+   "id": "gsd-quick",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-quick.md"
+  },
+  {
+   "id": "gsd-resume-work",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-resume-work.md"
+  },
+  {
+   "id": "gsd-review-backlog",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-review-backlog.md"
+  },
+  {
+   "id": "gsd-review",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-review.md"
+  },
+  {
+   "id": "gsd-secure-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-secure-phase.md"
+  },
+  {
+   "id": "gsd-settings",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-settings.md"
+  },
+  {
+   "id": "gsd-ship",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ship.md"
+  },
+  {
+   "id": "gsd-sketch",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-sketch.md"
+  },
+  {
+   "id": "gsd-spec-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-spec-phase.md"
+  },
+  {
+   "id": "gsd-spike",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-spike.md"
+  },
+  {
+   "id": "gsd-stats",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-stats.md"
+  },
+  {
+   "id": "gsd-surface",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-surface.md"
+  },
+  {
+   "id": "gsd-thread",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-thread.md"
+  },
+  {
+   "id": "gsd-ui-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ui-phase.md"
+  },
+  {
+   "id": "gsd-ui-review",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ui-review.md"
+  },
+  {
+   "id": "gsd-ultraplan-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-ultraplan-phase.md"
+  },
+  {
+   "id": "gsd-undo",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-undo.md"
+  },
+  {
+   "id": "gsd-update",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-update.md"
+  },
+  {
+   "id": "gsd-validate-phase",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-validate-phase.md"
+  },
+  {
+   "id": "gsd-verify-work",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-verify-work.md"
+  },
+  {
+   "id": "gsd-workspace",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-workspace.md"
+  },
+  {
+   "id": "gsd-workstreams",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/gsd-workstreams.md"
+  },
+  {
+   "id": "registry-sync",
+   "tipo": "command",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "path": "/mnt/dados/opencode/config/command/registry-sync.md"
+  },
+  {
+   "id": "local-providers",
+   "tipo": "provider-local",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00"
+  },
+  {
+   "id": "local-bonsai",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://127.0.0.1:9083/v1"
+  },
+  {
+   "id": "omniroute",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://localhost:20128/v1"
+  },
+  {
+   "id": "local-qwen",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://127.0.0.1:9084/v1"
+  },
+  {
+   "id": "local-lfm",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://127.0.0.1:9086/v1"
+  },
+  {
+   "id": "local-qwen38-2b",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://127.0.0.1:9087/v1"
+  },
+  {
+   "id": "local-jamba",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://127.0.0.1:9085/v1"
+  },
+  {
+   "id": "local-minicpm",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://127.0.0.1:9088/v1"
+  },
+  {
+   "id": "local-orchestrator",
+   "tipo": "provider",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T19:11:44.713759+00:00",
+   "baseURL": "http://127.0.0.1:8083/v1"
+  },
+  {
+   "id": "pyright",
+   "tipo": "lsp",
+   "status": "ativo-validado",
+   "registrado_em": "2026-08-24T19:24:36.275663+00:00",
+   "evidencia": "7 diagnostico precisos em arquivo com erro proposital",
+   "extensions": [
+    ".py"
+   ],
+   "command": [
+    "/mnt/dados/node/bin/pyright-langserver",
+    "--stdio"
+   ]
+  },
+  {
+   "id": "typescript(builtin)",
+   "tipo": "lsp",
+   "status": "habilitado-validacao-pendente",
+   "registrado_em": "2026-08-24T19:24:36.275663+00:00",
+   "nota": "CLI debug retorna vazio p/ arquivos soltos; validar dentro de sessao TUI real"
+  }
+ ]
 }

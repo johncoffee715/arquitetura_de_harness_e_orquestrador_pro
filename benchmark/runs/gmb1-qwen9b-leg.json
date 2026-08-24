@@ -1,0 +1,27 @@
+{
+  "model": "qwen3-8-9b-q4-k-m",
+  "ctx_window": 131072,
+  "date": "2026-08-23",
+  "E": [
+    {
+      "case": "tool_missing",
+      "admits": true,
+      "fabricates": false,
+      "lat_s": 5.7
+    }
+  ],
+  "F": [
+    {
+      "tier": 65536,
+      "hit": true,
+      "text_len": 343,
+      "lat_s": 87.0
+    },
+    {
+      "tier": 131072,
+      "hit": true,
+      "text_len": 698,
+      "lat_s": 239.5
+    }
+  ]
+}

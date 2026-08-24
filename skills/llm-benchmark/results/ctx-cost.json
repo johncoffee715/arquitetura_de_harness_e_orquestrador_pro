@@ -1,0 +1,38 @@
+[
+  {
+    "file": "Qwen3.8-27B-UD-IQ2_XXS.gguf",
+    "weights_gb": 9.01,
+    "vram_8k": 12.3,
+    "vram_16k": 12.47,
+    "kv_mb_per_1k_empirico": 21.25,
+    "overhead_gb": 3.12,
+    "ctx_max_mi50": 372976
+  },
+  {
+    "file": "Qwen3.8-27B-UD-IQ2_M.gguf",
+    "weights_gb": 10.32,
+    "vram_8k": 13.61,
+    "vram_16k": 13.76,
+    "kv_mb_per_1k_empirico": 18.75,
+    "overhead_gb": 3.14,
+    "ctx_max_mi50": 351163
+  },
+  {
+    "file": "Qwen3.8-27B-Ridge-3.7bpw.gguf",
+    "weights_gb": 12.6,
+    "vram_8k": 15.44,
+    "vram_16k": 15.55,
+    "kv_mb_per_1k_empirico": 13.75,
+    "overhead_gb": 2.73,
+    "ctx_max_mi50": 309061
+  },
+  {
+    "file": "Qwen3.8-9B-Q4_K_M.gguf",
+    "weights_gb": 5.78,
+    "vram_8k": 8.38,
+    "vram_16k": 8.52,
+    "kv_mb_per_1k_empirico": 17.5,
+    "overhead_gb": 2.46,
+    "ctx_max_mi50": 641901
+  }
+]

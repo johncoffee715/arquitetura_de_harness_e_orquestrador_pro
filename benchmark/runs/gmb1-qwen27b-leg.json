@@ -1,0 +1,22 @@
+{
+  "model": "qwen3-8-27b-ud-iq2-xxs",
+  "ctx_window": 32768,
+  "date": "2026-08-23",
+  "note": "janela limitada pelo envelope fisico GPU",
+  "E": [
+    {
+      "case": "tool_missing",
+      "admits": true,
+      "fabricates": false,
+      "lat_s": 14.0
+    }
+  ],
+  "F": [
+    {
+      "tier": 32768,
+      "hit": true,
+      "text_len": 377,
+      "lat_s": 168.9
+    }
+  ]
+}

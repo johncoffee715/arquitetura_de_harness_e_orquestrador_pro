@@ -1,14 +1,6 @@
 ---
 name: llama-mtp-concept
 description: "Conceito Multi-Token Prediction (DeepSeek-V3, Nemotron 3) — fundamenta a feature llama-mtp; docs de arquitetura de inferência. (absorvido de tryigit/cleveres-ai)"
-origin: absorvido:tryigit/cleveres-ai
-metadata:
-  autofagia: tryigit/cleveres-ai (2026-08-04)
-  prioridade: 4
-  linguagem: Markdown
-  topics: llm, mtp, architecture
-  artefatos: skill
-  padroes_absorvidos: 1
 ---
 # Llama Mtp Concept
 

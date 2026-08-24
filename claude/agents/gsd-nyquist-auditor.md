@@ -9,8 +9,6 @@ tools:
   - Glob
   - Grep
   - Skill
-color: purple
-effort: low
 ---
 
 <role>

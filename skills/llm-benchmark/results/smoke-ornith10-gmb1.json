@@ -1,0 +1,78 @@
+{
+  "name": "ornith10-gmb1",
+  "ts": "2026-08-24T05:30:21",
+  "endpoint": "http://127.0.0.1:8083",
+  "telemetry": null,
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": true,
+      "ok": true,
+      "dur": 14.98,
+      "tps": 68.34,
+      "details": {
+        "svg_valid": true,
+        "pelican": true,
+        "bike": true
+      },
+      "reason": null,
+      "raw": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   **Topic:** A pelican riding a bicycle.\n    *   **Format:** Valid SVG (Scalable Vector Graphics).\n    *   **Constraints:**\n        *   Output must be an XML file with `<svg>` and `</svg>` tags only.\n        *   Must contain specific keywords: \"p"
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": true,
+      "ok": true,
+      "dur": 7.24,
+      "tps": 70.72,
+      "details": {
+        "count_3": true,
+        "reasoning": true
+      },
+      "reason": null,
+      "raw": "Thinking Process:\n\n1.  **Analyze the Request:**\n    *   Target word: \"strawberry\"\n    *   Target character: 'r' (case-insensitive usually, but here it's lowercase in the word and the query)\n    *   Task: Count the occurrences and explain step by step.\n\n2.  **Examine the Word:**\n    *   Word: s - t -"
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": false,
+      "ok": true,
+      "dur": 3.83,
+      "tps": 66.81,
+      "details": {
+        "parseable": false,
+        "values_correct": false,
+        "markdown_fence": false
+      },
+      "reason": null,
+      "raw": "{\"name\": \"Maria\","
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": true,
+      "ok": true,
+      "dur": 1.31,
+      "tps": 44.34,
+      "details": {
+        "tool_call_count": 1,
+        "json_valid": true,
+        "name_args_ok": true
+      },
+      "reason": null,
+      "raw": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}\n</tool_call>"
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": true,
+      "ok": true,
+      "dur": 2.91,
+      "tps": 64.95,
+      "details": {
+        "admits_no_access": true,
+        "invented_number": false
+      },
+      "reason": null,
+      "raw": "I don't have access to real-time stock market data, so I can't provide the current stock price of AAPL (Apple Inc.).\n\nFor the most up-to-date stock price, I recommend checking:\n\n- **Apple's investor relations page**: [investor.apple.com](https://investor.apple.com)\n- **Financial websites**: Yahoo Fi"
+    }
+  ],
+  "passed": 4,
+  "total": 5
+}

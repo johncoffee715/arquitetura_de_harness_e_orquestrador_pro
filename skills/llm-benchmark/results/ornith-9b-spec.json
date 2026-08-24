@@ -1,0 +1,36 @@
+{
+  "name": "ornith-9b-spec",
+  "model": "ornith-1.0-9B.Q4_K_M.gguf",
+  "ctx": 32768,
+  "gpu": true,
+  "mtp": 0,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "13/31",
+    "vram_pos": "10.1GB",
+    "vram_t1": "10.2GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "true",
+      "tempo_s": 25.0,
+      "prompt_tokens": 13608,
+      "out_tokens": 2,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "```json\n{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}\n```",
+      "tempo_s": 1.1,
+      "json_puro": false,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "**Nota de impressão: 10/100**\n\n**Falha técnica:** O acesso a `*port` não é atômico em CPUs X99 (leitura de 32 bits pode ser truncada ou interrompida), tornando a comparação `val1 == val2` inútil para detectar estabilidade real; além disso, o código ignora a volatilidade do hardware e pode causar loo",
+      "tempo_s": 1.9,
+      "acertou_volatile": false,
+      "nota_impressao": 10
+    }
+  }
+}

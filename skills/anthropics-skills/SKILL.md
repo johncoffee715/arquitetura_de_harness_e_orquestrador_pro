@@ -1,14 +1,6 @@
 ---
 name: anthropics-skills
 description: "Catálogo oficial de Agent Skills (17): mcp-builder, skill-creator (evals quantitativos), frontend-design, pdf/docx/xlsx/pptx, webapp-testing — habilita o padrão SKILL.md oficial no harness. (absorvido de anthropics/skills)"
-origin: absorvido:anthropics/skills
-metadata:
-  autofagia: anthropics/skills (2026-08-04)
-  prioridade: 19
-  linguagem: Python
-  topics: skills, mcp, design, docs
-  artefatos: skill
-  padroes_absorvidos: 1
 ---
 # Anthropics Skills
 

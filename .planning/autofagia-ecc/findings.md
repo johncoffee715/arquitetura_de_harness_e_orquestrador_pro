@@ -1613,3 +1613,1109 @@ ECC tem sugestões de compactação estratégica para reduzir tokens:
 
 ### Checkpoint 20:53:19
 ### Checkpoint 20:53:19
+
+### Checkpoint 05:59:20
+
+### Checkpoint 06:57:36
+
+### Checkpoint 06:57:36
+
+### Checkpoint 06:58:20
+
+### Checkpoint 07:27:31
+
+### Checkpoint 18:13:10
+
+### Checkpoint 19:45:58
+
+### Checkpoint 20:51:25
+
+### Checkpoint 22:17:16
+
+### Checkpoint 22:18:17
+
+### Checkpoint 22:53:06
+
+### Checkpoint 23:08:51
+
+### Checkpoint 23:10:59
+
+### Checkpoint 23:11:24
+
+### Checkpoint 23:16:00
+
+### Checkpoint 23:32:06
+
+### Checkpoint 23:47:39
+
+### Checkpoint 00:13:04
+
+### Checkpoint 00:13:23
+
+### Checkpoint 00:17:19
+
+### Checkpoint 00:21:44
+
+### Checkpoint 00:26:22
+
+### Checkpoint 00:26:46
+
+### Checkpoint 00:27:07
+
+### Checkpoint 00:27:16
+
+### Checkpoint 00:27:26
+
+### Checkpoint 00:28:17
+
+### Checkpoint 00:30:58
+
+### Checkpoint 00:36:13
+
+### Checkpoint 00:40:59
+
+### Checkpoint 00:41:11
+
+### Checkpoint 00:43:20
+
+### Checkpoint 00:51:28
+
+### Checkpoint 01:10:36
+
+### Checkpoint 01:26:10
+
+### Checkpoint 01:26:30
+
+### Checkpoint 01:36:01
+
+### Checkpoint 01:37:07
+
+
+### Checkpoint 01:41:49
+### Checkpoint 01:41:49
+
+### Checkpoint 01:59:56
+
+### Checkpoint 02:37:32
+
+### Checkpoint 02:37:41
+
+### Checkpoint 02:37:42
+
+### Checkpoint 02:37:53
+
+
+### Checkpoint 02:38:06
+### Checkpoint 02:38:06
+
+### Checkpoint 02:38:06
+
+
+### Checkpoint 02:38:17
+### Checkpoint 02:38:17
+
+
+### Checkpoint 02:38:25
+### Checkpoint 02:38:25
+
+### Checkpoint 02:38:25
+
+### Checkpoint 02:38:38
+
+### Checkpoint 02:49:49
+
+### Checkpoint 08:46:45
+
+### Checkpoint 22:29:04
+
+### Checkpoint 22:44:24
+
+### Checkpoint 22:45:18
+
+### Checkpoint 22:50:13
+
+### Checkpoint 22:50:15
+
+### Checkpoint 22:50:16
+
+### Checkpoint 22:50:25
+
+### Checkpoint 22:50:28
+
+### Checkpoint 22:53:30
+
+### Checkpoint 23:18:51
+
+### Checkpoint 23:18:55
+
+### Checkpoint 23:19:05
+
+### Checkpoint 23:19:10
+
+### Checkpoint 23:19:10
+
+### Checkpoint 23:20:16
+
+### Checkpoint 23:21:57
+
+### Checkpoint 23:35:11
+
+### Checkpoint 00:51:27
+
+### Checkpoint 00:52:12
+
+### Checkpoint 01:52:15
+
+### Checkpoint 01:52:15
+
+### Checkpoint 01:52:32
+
+### Checkpoint 01:52:35
+
+### Checkpoint 01:52:35
+
+### Checkpoint 01:52:35
+
+### Checkpoint 02:00:56
+
+### Checkpoint 02:00:58
+
+### Checkpoint 02:00:59
+
+### Checkpoint 02:01:01
+
+### Checkpoint 02:01:01
+
+### Checkpoint 02:04:26
+
+### Checkpoint 02:04:26
+
+### Checkpoint 02:04:32
+
+### Checkpoint 02:04:38
+
+### Checkpoint 02:04:38
+
+### Checkpoint 02:06:48
+
+### Checkpoint 02:06:49
+
+### Checkpoint 02:06:59
+
+### Checkpoint 02:07:06
+
+### Checkpoint 02:07:44
+
+### Checkpoint 02:15:00
+
+### Checkpoint 02:16:27
+
+### Checkpoint 02:16:28
+
+### Checkpoint 02:16:32
+
+### Checkpoint 02:17:13
+
+### Checkpoint 02:17:48
+
+### Checkpoint 02:18:53
+
+### Checkpoint 02:18:56
+
+### Checkpoint 02:21:15
+
+### Checkpoint 02:22:05
+
+### Checkpoint 02:27:25
+
+### Checkpoint 02:28:19
+
+### Checkpoint 02:28:36
+
+### Checkpoint 02:31:21
+
+### Checkpoint 02:48:21
+
+### Checkpoint 02:49:27
+
+### Checkpoint 02:50:15
+
+### Checkpoint 02:50:23
+
+### Checkpoint 02:50:28
+
+### Checkpoint 02:50:28
+
+### Checkpoint 02:50:32
+
+### Checkpoint 02:50:36
+
+### Checkpoint 02:50:37
+
+### Checkpoint 02:50:37
+
+### Checkpoint 02:50:39
+
+### Checkpoint 02:50:43
+
+### Checkpoint 02:50:47
+
+### Checkpoint 02:50:50
+
+### Checkpoint 02:50:53
+
+### Checkpoint 02:50:56
+
+### Checkpoint 02:50:57
+
+### Checkpoint 02:56:59
+
+### Checkpoint 02:57:36
+
+### Checkpoint 02:57:44
+
+### Checkpoint 02:57:44
+
+### Checkpoint 02:57:48
+
+### Checkpoint 02:57:54
+
+### Checkpoint 02:57:57
+
+### Checkpoint 02:58:02
+
+### Checkpoint 02:58:18
+
+### Checkpoint 02:58:24
+
+### Checkpoint 03:02:41
+
+### Checkpoint 03:03:00
+
+### Checkpoint 03:03:33
+
+### Checkpoint 03:06:27
+
+### Checkpoint 03:07:00
+
+### Checkpoint 03:09:59
+
+### Checkpoint 03:10:28
+
+### Checkpoint 03:11:18
+
+### Checkpoint 03:11:22
+
+### Checkpoint 03:11:24
+
+### Checkpoint 03:11:28
+
+### Checkpoint 03:11:30
+
+### Checkpoint 03:11:31
+
+### Checkpoint 03:11:33
+
+### Checkpoint 03:11:38
+
+### Checkpoint 03:11:47
+
+### Checkpoint 03:11:51
+
+### Checkpoint 03:11:55
+
+### Checkpoint 03:11:56
+
+### Checkpoint 03:12:01
+
+### Checkpoint 03:12:09
+
+### Checkpoint 03:12:48
+
+### Checkpoint 03:14:27
+
+### Checkpoint 03:17:49
+
+### Checkpoint 03:21:31
+
+### Checkpoint 03:23:24
+
+### Checkpoint 03:23:28
+
+### Checkpoint 03:24:03
+
+### Checkpoint 03:32:51
+
+### Checkpoint 03:32:52
+
+### Checkpoint 03:42:06
+
+### Checkpoint 04:17:55
+
+### Checkpoint 04:19:59
+
+### Checkpoint 04:26:56
+
+### Checkpoint 04:39:20
+
+### Checkpoint 04:41:20
+
+### Checkpoint 04:48:06
+
+### Checkpoint 04:50:43
+
+### Checkpoint 04:52:57
+
+### Checkpoint 04:54:55
+
+### Checkpoint 04:56:57
+
+### Checkpoint 05:05:34
+
+### Checkpoint 05:06:14
+
+### Checkpoint 05:07:13
+
+### Checkpoint 05:11:07
+
+### Checkpoint 05:13:50
+
+### Checkpoint 05:15:10
+
+### Checkpoint 05:19:40
+
+### Checkpoint 05:22:56
+
+### Checkpoint 05:23:51
+
+### Checkpoint 05:29:23
+
+### Checkpoint 05:31:32
+
+### Checkpoint 05:32:40
+
+### Checkpoint 05:34:38
+
+### Checkpoint 05:37:43
+
+### Checkpoint 05:38:35
+
+### Checkpoint 05:40:49
+
+### Checkpoint 05:42:40
+
+### Checkpoint 05:44:53
+
+### Checkpoint 05:51:42
+
+### Checkpoint 06:02:47
+
+### Checkpoint 06:05:50
+
+### Checkpoint 06:07:41
+
+### Checkpoint 06:08:40
+
+### Checkpoint 06:09:16
+
+### Checkpoint 06:12:07
+
+### Checkpoint 06:14:12
+
+### Checkpoint 06:20:14
+
+### Checkpoint 06:24:12
+
+### Checkpoint 06:26:16
+
+### Checkpoint 06:33:21
+
+### Checkpoint 06:33:22
+
+### Checkpoint 06:35:56
+
+### Checkpoint 06:38:23
+
+### Checkpoint 06:52:21
+
+### Checkpoint 06:55:07
+
+### Checkpoint 06:56:57
+
+### Checkpoint 06:57:29
+
+### Checkpoint 06:59:15
+
+### Checkpoint 07:01:16
+
+### Checkpoint 07:02:17
+
+### Checkpoint 07:06:10
+
+### Checkpoint 07:09:45
+
+### Checkpoint 07:14:21
+
+### Checkpoint 07:18:36
+
+### Checkpoint 07:21:09
+
+### Checkpoint 07:22:51
+
+### Checkpoint 07:26:59
+
+### Checkpoint 07:29:50
+
+### Checkpoint 07:29:56
+
+### Checkpoint 07:30:04
+
+### Checkpoint 07:30:11
+
+### Checkpoint 07:30:20
+
+### Checkpoint 07:40:14
+
+### Checkpoint 07:43:22
+
+### Checkpoint 14:51:42
+
+### Checkpoint 14:56:32
+
+### Checkpoint 15:27:51
+
+### Checkpoint 16:34:52
+
+### Checkpoint 16:35:53
+
+### Checkpoint 16:36:22
+
+### Checkpoint 16:36:39
+
+### Checkpoint 16:42:17
+
+### Checkpoint 16:42:44
+
+### Checkpoint 19:55:35
+
+### Checkpoint 20:27:29
+
+### Checkpoint 20:44:58
+
+### Checkpoint 20:49:13
+
+### Checkpoint 20:52:41
+
+### Checkpoint 22:54:27
+
+### Checkpoint 22:57:57
+
+### Checkpoint 23:03:17
+
+### Checkpoint 00:34:05
+
+### Checkpoint 01:26:10
+
+### Checkpoint 01:33:41
+
+### Checkpoint 01:33:41
+
+### Checkpoint 01:36:17
+
+### Checkpoint 01:37:00
+
+### Checkpoint 05:39:21
+
+### Checkpoint 06:30:53
+
+### Checkpoint 06:33:44
+
+### Checkpoint 06:34:18
+
+### Checkpoint 06:34:32
+
+### Checkpoint 06:44:00
+
+### Checkpoint 06:44:48
+
+### Checkpoint 07:13:44
+
+### Checkpoint 07:13:44
+
+### Checkpoint 11:59:44
+
+### Checkpoint 12:07:42
+
+### Checkpoint 12:08:12
+
+### Checkpoint 12:14:38
+
+### Checkpoint 12:14:50
+
+### Checkpoint 12:17:30
+
+### Checkpoint 12:20:31
+
+### Checkpoint 12:22:56
+
+### Checkpoint 12:23:49
+
+### Checkpoint 12:24:26
+
+### Checkpoint 11:33:44
+
+### Checkpoint 11:41:45
+
+### Checkpoint 11:42:11
+
+### Checkpoint 11:42:38
+
+### Checkpoint 11:42:38
+
+### Checkpoint 11:42:46
+
+
+### Checkpoint 11:43:17
+### Checkpoint 11:43:17
+
+### Checkpoint 11:43:58
+
+### Checkpoint 11:48:28
+
+### Checkpoint 11:50:56
+
+### Checkpoint 11:51:19
+
+### Checkpoint 11:51:54
+
+### Checkpoint 11:55:50
+
+### Checkpoint 11:56:22
+
+### Checkpoint 11:56:41
+
+### Checkpoint 11:57:13
+
+### Checkpoint 11:58:27
+
+### Checkpoint 12:05:54
+
+### Checkpoint 12:11:27
+
+### Checkpoint 12:13:46
+
+### Checkpoint 12:14:05
+
+### Checkpoint 12:18:34
+
+### Checkpoint 12:24:05
+
+### Checkpoint 12:25:28
+
+### Checkpoint 12:29:32
+
+### Checkpoint 12:32:26
+
+
+
+### Checkpoint 12:32:35
+### Checkpoint 12:32:35
+### Checkpoint 12:32:35
+
+### Checkpoint 12:35:24
+
+### Checkpoint 12:35:45
+
+### Checkpoint 12:35:48
+
+### Checkpoint 12:38:59
+
+### Checkpoint 12:40:55
+
+### Checkpoint 12:42:12
+
+### Checkpoint 12:45:48
+
+### Checkpoint 12:45:53
+
+### Checkpoint 12:46:20
+
+### Checkpoint 12:47:20
+
+### Checkpoint 12:48:41
+
+### Checkpoint 12:48:55
+
+### Checkpoint 12:49:14
+
+### Checkpoint 12:52:02
+
+### Checkpoint 12:52:54
+
+### Checkpoint 12:54:02
+
+### Checkpoint 12:54:47
+
+### Checkpoint 12:54:47
+
+### Checkpoint 12:54:55
+
+### Checkpoint 12:56:48
+
+
+
+### Checkpoint 12:57:00
+### Checkpoint 12:57:00
+### Checkpoint 12:57:00
+
+### Checkpoint 13:04:32
+
+### Checkpoint 13:04:32
+
+### Checkpoint 13:05:04
+
+### Checkpoint 13:05:23
+
+### Checkpoint 13:06:54
+
+### Checkpoint 13:07:12
+
+### Checkpoint 13:07:53
+
+### Checkpoint 13:09:05
+
+### Checkpoint 13:09:18
+
+### Checkpoint 13:10:00
+
+### Checkpoint 13:13:14
+
+### Checkpoint 13:20:00
+
+### Checkpoint 13:27:20
+
+### Checkpoint 13:28:44
+
+### Checkpoint 13:28:59
+
+
+### Checkpoint 13:36:23
+### Checkpoint 13:36:23
+
+### Checkpoint 13:36:56
+
+### Checkpoint 13:40:56
+
+### Checkpoint 13:41:05
+
+### Checkpoint 13:41:21
+
+### Checkpoint 13:59:19
+
+### Checkpoint 13:59:26
+
+### Checkpoint 14:01:59
+
+### Checkpoint 14:15:13
+
+### Checkpoint 14:16:11
+
+### Checkpoint 14:39:38
+
+### Checkpoint 21:51:27
+
+### Checkpoint 22:02:27
+
+### Checkpoint 22:05:44
+
+### Checkpoint 22:07:32
+
+### Checkpoint 22:14:32
+
+### Checkpoint 22:14:50
+
+### Checkpoint 22:16:57
+
+### Checkpoint 22:18:15
+
+### Checkpoint 22:22:35
+
+### Checkpoint 22:29:06
+
+### Checkpoint 22:33:38
+
+### Checkpoint 22:34:25
+
+### Checkpoint 22:39:23
+
+### Checkpoint 22:45:01
+
+### Checkpoint 22:47:57
+
+### Checkpoint 22:59:54
+
+### Checkpoint 23:02:25
+
+### Checkpoint 23:04:31
+
+### Checkpoint 23:07:19
+
+### Checkpoint 23:10:05
+
+### Checkpoint 23:16:46
+
+### Checkpoint 23:23:25
+
+
+### Checkpoint 23:31:25
+### Checkpoint 23:31:25
+
+### Checkpoint 23:33:36
+
+### Checkpoint 23:42:50
+
+### Checkpoint 23:59:09
+
+### Checkpoint 00:00:56
+
+### Checkpoint 00:06:31
+
+
+### Checkpoint 00:13:13
+### Checkpoint 00:13:13
+
+### Checkpoint 00:19:26
+
+### Checkpoint 00:38:55
+
+### Checkpoint 00:38:57
+
+### Checkpoint 00:51:38
+
+### Checkpoint 01:24:48
+
+### Checkpoint 01:28:39
+
+### Checkpoint 01:29:20
+
+### Checkpoint 01:31:04
+
+### Checkpoint 01:48:22
+
+### Checkpoint 02:13:00
+
+### Checkpoint 02:14:22
+
+### Checkpoint 03:41:49
+
+### Checkpoint 05:20:33
+
+### Checkpoint 05:50:56
+
+### Checkpoint 06:46:58
+
+### Checkpoint 06:49:24
+
+### Checkpoint 06:49:27
+
+### Checkpoint 06:49:31
+
+### Checkpoint 06:49:36
+
+### Checkpoint 06:49:40
+
+### Checkpoint 06:49:44
+
+### Checkpoint 06:49:48
+
+### Checkpoint 06:49:52
+
+### Checkpoint 06:50:51
+
+### Checkpoint 06:51:06
+
+### Checkpoint 06:52:00
+
+### Checkpoint 07:00:27
+
+### Checkpoint 07:08:18
+
+### Checkpoint 07:08:41
+
+### Checkpoint 07:09:02
+
+### Checkpoint 07:09:13
+
+### Checkpoint 07:09:53
+
+### Checkpoint 07:13:38
+
+### Checkpoint 07:14:18
+
+### Checkpoint 07:16:21
+
+### Checkpoint 07:16:36
+
+### Checkpoint 07:18:09
+
+### Checkpoint 07:19:32
+
+### Checkpoint 07:19:41
+
+### Checkpoint 07:23:43
+
+### Checkpoint 07:25:54
+
+### Checkpoint 07:26:13
+
+### Checkpoint 07:29:14
+
+### Checkpoint 07:29:22
+
+### Checkpoint 07:32:18
+
+### Checkpoint 07:32:27
+
+### Checkpoint 22:02:53
+
+### Checkpoint 22:04:40
+
+### Checkpoint 22:06:27
+
+### Checkpoint 22:06:29
+
+### Checkpoint 22:06:35
+
+### Checkpoint 22:08:06
+
+### Checkpoint 22:09:42
+
+### Checkpoint 09:27:12
+
+### Checkpoint 09:40:09
+
+### Checkpoint 09:40:10
+
+### Checkpoint 09:40:22
+
+### Checkpoint 09:40:23
+
+### Checkpoint 09:40:33
+
+### Checkpoint 09:40:33
+
+### Checkpoint 09:44:19
+
+### Checkpoint 09:49:45
+
+### Checkpoint 09:58:00
+
+### Checkpoint 09:58:39
+
+### Checkpoint 09:59:46
+
+### Checkpoint 10:05:15
+
+### Checkpoint 10:13:12
+
+### Checkpoint 10:18:00
+
+### Checkpoint 10:20:47
+
+### Checkpoint 10:20:59
+
+### Checkpoint 10:21:14
+
+### Checkpoint 10:23:42
+
+### Checkpoint 10:54:20
+
+### Checkpoint 11:06:16
+
+### Checkpoint 11:07:44
+
+### Checkpoint 11:19:21
+
+### Checkpoint 11:52:42
+
+### Checkpoint 11:53:00
+
+### Checkpoint 11:53:38
+
+### Checkpoint 15:16:14
+
+### Checkpoint 16:03:25
+
+### Checkpoint 16:03:43
+
+### Checkpoint 16:31:30
+
+### Checkpoint 17:38:37
+
+### Checkpoint 17:38:47
+
+### Checkpoint 21:02:48
+
+### Checkpoint 06:22:35
+
+### Checkpoint 06:34:15
+
+
+### Checkpoint 06:37:06
+### Checkpoint 06:37:06
+
+### Checkpoint 06:38:00
+
+### Checkpoint 06:39:37
+
+### Checkpoint 06:40:12
+
+### Checkpoint 06:44:50
+
+### Checkpoint 06:45:24
+
+### Checkpoint 06:47:42
+
+### Checkpoint 06:49:35
+
+
+### Checkpoint 06:50:45
+### Checkpoint 06:50:45
+
+### Checkpoint 06:51:45
+
+### Checkpoint 07:00:24
+
+### Checkpoint 07:00:45
+
+### Checkpoint 07:01:21
+
+### Checkpoint 07:06:38
+
+### Checkpoint 07:06:50
+
+### Checkpoint 07:08:46
+
+### Checkpoint 07:15:49
+
+### Checkpoint 07:21:16
+
+### Checkpoint 07:23:24
+
+### Checkpoint 07:23:56
+
+### Checkpoint 07:35:49
+
+### Checkpoint 07:37:46
+
+### Checkpoint 07:49:08
+
+### Checkpoint 07:49:44
+
+### Checkpoint 07:54:21
+
+### Checkpoint 07:55:32
+
+### Checkpoint 07:57:00
+
+### Checkpoint 07:57:56
+
+### Checkpoint 07:58:12
+
+### Checkpoint 08:54:22
+
+### Checkpoint 08:54:41
+
+### Checkpoint 08:55:23
+
+### Checkpoint 08:57:13
+
+### Checkpoint 08:58:08
+
+### Checkpoint 13:05:13
+
+### Checkpoint 13:11:16
+
+### Checkpoint 19:34:28
+
+### Checkpoint 07:37:50
+
+### Checkpoint 07:52:44
+
+### Checkpoint 07:56:02
+
+### Checkpoint 08:09:43
+
+### Checkpoint 08:12:23
+
+### Checkpoint 08:32:06
+
+### Checkpoint 08:34:37
+
+### Checkpoint 08:59:01
+
+### Checkpoint 09:07:46
+
+### Checkpoint 06:47:56
+
+### Checkpoint 08:58:42
+
+### Checkpoint 10:15:26
+
+### Checkpoint 10:56:43
+
+### Checkpoint 11:05:48
+
+### Checkpoint 12:20:56
+
+### Checkpoint 15:34:17
+
+### Checkpoint 15:42:28
+
+### Checkpoint 15:45:08
+
+### Checkpoint 15:48:54
+
+### Checkpoint 05:57:01
+
+### Checkpoint 06:56:28
+
+### Checkpoint 08:26:51
+
+### Checkpoint 08:42:18
+
+### Checkpoint 09:45:10
+
+### Checkpoint 11:30:29
+
+### Checkpoint 11:38:31
+
+### Checkpoint 12:19:10
+
+### Checkpoint 12:23:13
+
+### Checkpoint 12:36:36
+
+### Checkpoint 12:44:29
+
+### Checkpoint 12:44:30
+
+### Checkpoint 13:08:20
+
+### Checkpoint 13:10:31
+
+### Checkpoint 13:11:54
+
+### Checkpoint 13:35:59
+
+### Checkpoint 13:41:32
+
+### Checkpoint 13:41:49
+
+### Checkpoint 13:44:31
+
+### Checkpoint 13:46:55
+
+### Checkpoint 14:49:03
+
+### Checkpoint 16:01:02

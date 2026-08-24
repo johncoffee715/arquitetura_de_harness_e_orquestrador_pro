@@ -1,0 +1,39 @@
+0.00.248.697 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.249.008 I srv          init: The UI is disabled
+0.00.249.011 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.249.191 W srv  llama_server: -----------------
+0.00.249.194 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.249.194 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.249.195 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.249.195 W srv  llama_server: -----------------
+0.00.250.489 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-27B-UD-IQ2_XXS.gguf'
+0.29.235.900 I common_speculative_init_result: creating MTP draft context against the target model '/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-27B-UD-IQ2_XXS.gguf'
+0.29.331.179 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 16384, kv_unified = 'false'
+0.29.411.639 I srv          init: chat template supports preserving reasoning, consider enabling it via --reasoning-preserve
+0.29.411.701 I srv  llama_server: model loaded
+0.29.411.707 I srv  llama_server: listening on http://127.0.0.1:8083
+0.30.210.167 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.30.210.208 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.36.688.531 I slot print_timing: id  0 | task 0 | n_decoded =    103, tg =  28.76 t/s, tg_3s =  28.76 t/s
+0.39.719.923 I slot print_timing: id  0 | task 0 | n_decoded =    194, tg =  29.34 t/s, tg_3s =  30.02 t/s
+0.48.671.946 I slot print_timing: id  0 | task 0 | prompt eval time =    2896.75 ms /   435 tokens (    6.66 ms per token,   150.17 tokens per second)
+0.48.671.957 I slot print_timing: id  0 | task 0 |        eval time =   15564.89 ms /   256 tokens (   60.80 ms per token,    16.45 tokens per second)
+0.48.671.958 I slot print_timing: id  0 | task 0 |       total time =   18461.64 ms /   691 tokens
+0.48.671.970 I slot print_timing: id  0 | task 0 |    graphs reused =         85
+0.48.671.976 I slot print_timing: id  0 | task 0 | draft acceptance = 0.64615 (  168 accepted /   260 generated), mean len =  2.93
+0.48.672.100 I slot      release: id  0 | task 0 | stop processing: n_tokens = 690, truncated = 0
+0.48.686.144 I slot get_availabl: id  0 | task -1 | selected slot by LCP similarity, f_sim_best = 0.125 (> 0.100 thold), f_keep = 0.630
+0.48.686.187 I slot launch_slot_: id  0 | task 90 | processing task, is_child = 0
+1.00.326.472 I slot print_timing: id  0 | task 90 | prompt processing, n_tokens =   2048, progress = 0.59, t =  11.64 s / 175.94 tokens per second
+1.05.838.045 I slot print_timing: id  0 | task 90 | prompt processing, n_tokens =   2964, progress = 0.85, t =  17.15 s / 172.81 tokens per second
+1.09.029.593 I slot print_timing: id  0 | task 90 | prompt processing, n_tokens =   3476, progress = 1.00, t =  20.34 s / 170.87 tokens per second
+1.12.953.734 I slot print_timing: id  0 | task 90 | n_decoded =    100, tg =  27.56 t/s, tg_3s =  27.56 t/s
+1.15.960.912 I slot print_timing: id  0 | task 90 | n_decoded =    167, tg =  25.17 t/s, tg_3s =  22.28 t/s
+1.18.964.834 I slot print_timing: id  0 | task 90 | n_decoded =    238, tg =  24.69 t/s, tg_3s =  23.64 t/s
+1.19.861.140 I slot print_timing: id  0 | task 90 | prompt eval time =   20639.45 ms /  3480 tokens (    5.93 ms per token,   168.61 tokens per second)
+1.19.861.148 I slot print_timing: id  0 | task 90 |        eval time =   10535.48 ms /   256 tokens (   41.15 ms per token,    24.30 tokens per second)
+1.19.861.149 I slot print_timing: id  0 | task 90 |       total time =   31174.92 ms /  3736 tokens
+1.19.861.151 I slot print_timing: id  0 | task 90 |    graphs reused =        184
+1.19.861.157 I slot print_timing: id  0 | task 90 | draft acceptance = 0.50495 (  153 accepted /   303 generated), mean len =  2.51
+1.19.861.313 I slot      release: id  0 | task 90 | stop processing: n_tokens = 3735, truncated = 0
+1.19.932.215 I srv    operator(): operator(): cleaning up before exit...

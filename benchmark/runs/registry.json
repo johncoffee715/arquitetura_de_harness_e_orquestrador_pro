@@ -1,0 +1,1302 @@
+{
+  "registry_version": "2026-08-24T13:08:44+00:00",
+  "source_dir": "/mnt/dados/Assistente Pessoal/modelos LLM",
+  "reference_ctx": 32768,
+  "vram_physical_gib": 16.0,
+  "vram_available_gib": 14.0,
+  "vram_soft_ceiling_gib": 12.6,
+  "total_models": 17,
+  "available_models": 17,
+  "excluded_models": 0,
+  "models": {
+    "bonsai-27b-1bit-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Bonsai-27B-1bit.Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 3803452480
+      },
+      "architecture": {
+        "family": "bonsai",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 27.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.953,
+          "coding": 0.717,
+          "planning": 0.666,
+          "tool_use": 0.768,
+          "analysis": 0.891
+        },
+        "measured": {
+          "d_mini": "3/3",
+          "sources": [
+            "mini-d",
+            "mini-b",
+            "mini-a",
+            "gm-computed",
+            "cpu-comparativo",
+            "bd-full"
+          ],
+          "recovery_admits": true,
+          "fabrication_observed": false,
+          "needle_max_tier_hit": "FAIL@32768",
+          "smoke_corrected": "5/5",
+          "b_mini": "4/6",
+          "a_mini": "5/6",
+          "gm_integral": 78.3,
+          "decode_tps_cpu_8k": "15.72",
+          "cpu_veredito": "baseline vivo :9083",
+          "b_full_10": null,
+          "gm_oficial": 62.2,
+          "papel_final": "RESERVA F1 prosa densa (duelo: qualidade 🏆 mas 2.2× mais lento e coerência vazia n=1)",
+          "gm_oficial_12_12": 62.2,
+          "f1_duelo": {
+            "criativa_tps": 8.1,
+            "qualidade": "literária rica (identidade+attachment)",
+            "coerencia_retry": "ver /tmp/f1-bonsai27b-coer-retry.txt"
+          }
+        },
+        "confidence": 0.167
+      },
+      "roles_suitability": {
+        "orchestrator": 0.768,
+        "planner": 0.666,
+        "coder": 0.717,
+        "critic": 0.891,
+        "reviewer": 0.891,
+        "judge": 0.953
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 9.26
+      },
+      "runtime": {
+        "residency": "COLD/on-demand",
+        "last_check": "2026-08-23T19:10",
+        "papel": "RESERVA F1 prosa densa (eleito no duelo)",
+        "motivo_despromocao": "doutrina cold/warm: especialista pesado não paga aluguel permanente; arquivo preservado"
+      }
+    },
+    "lfm2-5-230m-q4-0": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/LFM2.5-230M-Q4_0.gguf",
+      "file": {
+        "size_bytes": 149080928
+      },
+      "architecture": {
+        "family": "desconhecida",
+        "quantization": "Q4_K_M",
+        "context_length": 128000,
+        "parameters_b": 0.23
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.515,
+          "coding": 0.502,
+          "planning": 0.489,
+          "tool_use": 0.502,
+          "analysis": 0.502
+        },
+        "measured": {
+          "sources": [
+            "cpu-matrix-live"
+          ],
+          "decode_tps_cpu_8k": 228.17,
+          "nota": "decode medido ao vivo na matriz CPU; capacidades qualitativas pendentes de sieve dedicado"
+        },
+        "confidence": 0.091
+      },
+      "roles_suitability": {
+        "orchestrator": 0.502,
+        "planner": 0.489,
+        "coder": 0.502,
+        "critic": 0.502,
+        "reviewer": 0.502,
+        "judge": 0.515
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 2.76
+      },
+      "runtime": {
+        "residency": "WARM",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "llmjudge-qwen2-5-3b-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/LLMJudge-Qwen2.5-3B.Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 1929902944
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "Q4_K_M",
+        "context_length": 32768,
+        "parameters_b": 3.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.725,
+          "coding": 0.752,
+          "planning": 0.708,
+          "tool_use": 0.761,
+          "analysis": 0.743
+        },
+        "measured": {
+          "sources": [
+            "cpu-matrix-live"
+          ],
+          "decode_tps_cpu_8k": 139.07,
+          "nota": "decode medido ao vivo na matriz CPU; capacidades qualitativas pendentes de sieve dedicado"
+        },
+        "confidence": 0.091
+      },
+      "roles_suitability": {
+        "orchestrator": 0.761,
+        "planner": 0.708,
+        "coder": 0.752,
+        "critic": 0.743,
+        "reviewer": 0.743,
+        "judge": 0.725
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 4.78
+      },
+      "runtime": {
+        "residency": "WARM",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "ornith-1-5-9b-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Ornith-1.5-9B-Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 5629108992
+      },
+      "architecture": {
+        "family": "ornith",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 9.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.891,
+          "coding": 0.822,
+          "planning": 0.862,
+          "tool_use": 0.881,
+          "analysis": 0.842
+        },
+        "measured": {
+          "sources": [
+            "smoke-tier-a",
+            "matrix-leg-E-F",
+            "a1-revalid",
+            "mini-d",
+            "mini-b",
+            "mini-a",
+            "gm-computed",
+            "bd-full"
+          ],
+          "recovery_admits": true,
+          "fabrication_observed": false,
+          "needle_max_tier_hit": 131072,
+          "a1_revalidated": true,
+          "smoke_corrected": "5/5",
+          "d_mini": "3/3",
+          "b_mini": "4/6",
+          "a_mini": "6/6",
+          "gm_integral": 95.0,
+          "b_full_10": null,
+          "gm_oficial": 76.3,
+          "papel_final": "ORQUESTRADOR rank#1 — mas D-difícil 52.2 expõe gap real de código (re.sub misuse); ensemble obrigatório",
+          "gm_oficial_12_12": 76.3
+        },
+        "confidence": 0.167
+      },
+      "roles_suitability": {
+        "orchestrator": 0.881,
+        "planner": 0.862,
+        "coder": 0.822,
+        "critic": 0.842,
+        "reviewer": 0.842,
+        "judge": 0.891
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "YELLOW",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 14.2,
+        "vram_warning": true,
+        "note": "14.2GiB > soft 12.6GiB — router deve priorizar fallback"
+      },
+      "runtime": {
+        "residency": "HOT",
+        "last_check": "2026-08-23T19:10",
+        "sampling": "temp=0.6 top_p=0.95 top_k=20 (oficial unsloth agentic)",
+        "kv": "K q8_0 / V q4_0 (empírico)",
+        "window_active": 131072,
+        "prefill_measured_tps": 573.6,
+        "window_extreme": {
+          "ctx": 262144,
+          "via": "--rope-scaling yarn --rope-scale 2.0 (runtime, SEM re-export)",
+          "vram_mb": 16015,
+          "utilizacao": "~98% VRAM — zero folga",
+          "probe_78k_chars": {
+            "prefill_tps": 594.6,
+            "resposta_nao_vazia": true
+          },
+          "status": "FUNCIONA no limite — expor apenas como modo especial sob demanda; padrão de produção permanece 131072"
+        },
+        "janela": "NATIVO 262144 (declarado no GGUF qwen35.context_length — correção 2026-08-24)",
+        "motivo": "131072 causava loop compactação/perda em reasoning-model; 262K @76% VRAM validado",
+        "arquitetura_real": "qwen35 · 32 blocos · kv_heads 4 · key_len 256 · emb 4096",
+        "anti_loop": "--repeat-penalty 1.1 ativo (validado: 0 loops vs ×12 antes)",
+        "navegacao": "índice compacto corrigido p/ caminhos absolutos",
+        "think": "OFF por padrão (lei #7) · ON disponível via chat_template_kwargs por requisição"
+      }
+    },
+    "phi-4-mini-instruct-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Phi-4-mini-instruct-Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 2491874272
+      },
+      "architecture": {
+        "family": "phi",
+        "quantization": "Q4_K_M",
+        "context_length": 131072,
+        "parameters_b": 3.83
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.731,
+          "coding": 0.685,
+          "planning": 0.64,
+          "tool_use": 0.704,
+          "analysis": 0.704
+        },
+        "measured": {
+          "sources": [
+            "aguardando-sieve"
+          ],
+          "nota": "sem benchmark dedicado ainda"
+        },
+        "confidence": 0.0
+      },
+      "roles_suitability": {
+        "orchestrator": 0.704,
+        "planner": 0.64,
+        "coder": 0.685,
+        "critic": 0.704,
+        "reviewer": 0.704,
+        "judge": 0.731
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 5.42
+      },
+      "runtime": {
+        "residency": "COLD",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "qwen3-1-7b-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3-1.7B-Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 1107409472
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "Q4_K_M",
+        "context_length": 40960,
+        "parameters_b": 1.7
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.681,
+          "coding": 0.705,
+          "planning": 0.664,
+          "tool_use": 0.714,
+          "analysis": 0.697
+        },
+        "measured": {
+          "sources": [
+            "aguardando-sieve"
+          ],
+          "nota": "sem benchmark dedicado ainda"
+        },
+        "confidence": 0.0
+      },
+      "roles_suitability": {
+        "orchestrator": 0.714,
+        "planner": 0.664,
+        "coder": 0.705,
+        "critic": 0.697,
+        "reviewer": 0.697,
+        "judge": 0.681
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 4.22
+      },
+      "runtime": {
+        "residency": "COLD",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "qwen3-5-0-8b": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.5-0.8B.gguf",
+      "file": {
+        "size_bytes": 527502816
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 0.8
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.671,
+          "coding": 0.694,
+          "planning": 0.656,
+          "tool_use": 0.702,
+          "analysis": 0.686
+        },
+        "measured": {
+          "sources": [
+            "cpu-matrix-live"
+          ],
+          "decode_tps_cpu_8k": 123.11,
+          "nota": "decode medido ao vivo na matriz CPU; capacidades qualitativas pendentes de sieve dedicado"
+        },
+        "confidence": 0.091
+      },
+      "roles_suitability": {
+        "orchestrator": 0.702,
+        "planner": 0.656,
+        "coder": 0.694,
+        "critic": 0.686,
+        "reviewer": 0.686,
+        "judge": 0.671
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 2.68
+      },
+      "runtime": {
+        "residency": "WARM",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "qwen3-5-4b-ud-iq2-xxs": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.5-4B-UD-IQ2_XXS.gguf",
+      "file": {
+        "size_bytes": 1520217248
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "IQ2_XXS",
+        "context_length": 262144,
+        "parameters_b": 4.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.562,
+          "coding": 0.58,
+          "planning": 0.549,
+          "tool_use": 0.587,
+          "analysis": 0.574
+        },
+        "measured": {
+          "peneira": "REPROVADO",
+          "decode_tps_cpu": 93.6,
+          "motivo": "endless-think pathology: 6+ sondas · orçamentos 24-600 tok · flags corretos ⇒ content SEMPRE vazio",
+          "futuro": "testar export oficial Qwen em vez do UD-IQ2_XXS de comunidade"
+        },
+        "confidence": 0.0
+      },
+      "roles_suitability": {
+        "orchestrator": 0.587,
+        "planner": 0.549,
+        "coder": 0.58,
+        "critic": 0.574,
+        "reviewer": 0.574,
+        "judge": 0.562
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "YELLOW",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 15.7,
+        "vram_warning": true,
+        "note": "15.7GiB > soft 12.6GiB — router deve priorizar fallback"
+      }
+    },
+    "qwen3-8-27b-ud-iq1-s": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-27B-UD-IQ1_S.gguf",
+      "file": {
+        "size_bytes": 6192222208
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 27.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.891,
+          "coding": 0.922,
+          "planning": 0.871,
+          "tool_use": 0.932,
+          "analysis": 0.912
+        },
+        "measured": {
+          "smoke_corrected": "4/5 (A4 Tool Call REAL)",
+          "recovery_admits": true,
+          "fabrication_observed": false,
+          "needle_max_tier_hit": 32768,
+          "sources": [
+            "smoke-tier-a",
+            "matrix-leg-E-F"
+          ],
+          "window_curve": {
+            "32768": "HIT",
+            "65536": "HIT",
+            "81920": "FAIL"
+          },
+          "janela_maxima_efetiva": "64K (tier)",
+          "planner_bfull_medio": 6.5,
+          "papel_final": "RESERVA PLANNER (6.5 vs XXS 8.0) — forte em migração BD, fraco em e-commerce",
+          "vramp_note": "pesos menores NÃO liberaram VRAM (17GB ≈ mesmo patamar do XXS): overhead do arch domina"
+        },
+        "confidence": 0.167
+      },
+      "roles_suitability": {
+        "orchestrator": 0.932,
+        "planner": 0.871,
+        "coder": 0.922,
+        "critic": 0.912,
+        "reviewer": 0.912,
+        "judge": 0.891
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 11.97
+      }
+    },
+    "qwen3-8-27b-ud-iq2-xxs": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-27B-UD-IQ2_XXS.gguf",
+      "file": {
+        "size_bytes": 9010048064
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "IQ2_XXS",
+        "context_length": 262144,
+        "parameters_b": 27.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.626,
+          "coding": 0.647,
+          "planning": 0.612,
+          "tool_use": 0.654,
+          "analysis": 0.64
+        },
+        "measured": {
+          "sources": [
+            "smoke-tier-a",
+            "matrix-leg-E-F",
+            "a1-revalid",
+            "mini-d",
+            "mini-b",
+            "mini-a",
+            "gm-computed",
+            "bd-full"
+          ],
+          "recovery_admits": true,
+          "fabrication_observed": false,
+          "needle_max_tier_hit": 32768,
+          "a1_revalidated": true,
+          "smoke_corrected": "5/5",
+          "d_mini": "3/3",
+          "b_mini": "6/6",
+          "decomposition_note": "único a cobrir os 4 componentes exigidos",
+          "a_mini": "6/6",
+          "gm_integral": 91.0,
+          "b_full_10": null,
+          "gm_oficial": 68.5,
+          "papel_final": "PLANNER ≥96K — B-full 8.0 + D médio",
+          "gm_oficial_12_12": 68.5
+        },
+        "confidence": 0.167
+      },
+      "roles_suitability": {
+        "orchestrator": 0.654,
+        "planner": 0.612,
+        "coder": 0.647,
+        "critic": 0.64,
+        "reviewer": 0.64,
+        "judge": 0.626
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "YELLOW",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 15.7,
+        "vram_warning": true,
+        "note": "15.7GiB > soft 12.6GiB — router deve priorizar fallback"
+      },
+      "runtime": {
+        "residency": "COLD",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "qwen3-8-2b-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-2B-Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 1312164224
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 2.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.743,
+          "coding": 0.769,
+          "planning": 0.726,
+          "tool_use": 0.777,
+          "analysis": 0.76
+        },
+        "measured": {
+          "sources": [
+            "cpu-matrix-live"
+          ],
+          "decode_tps_cpu_8k": 155.0,
+          "nota": "decode medido ao vivo na matriz CPU; capacidades qualitativas pendentes de sieve dedicado"
+        },
+        "confidence": 0.091
+      },
+      "roles_suitability": {
+        "orchestrator": 0.777,
+        "planner": 0.726,
+        "coder": 0.769,
+        "critic": 0.76,
+        "reviewer": 0.76,
+        "judge": 0.743
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 3.59
+      },
+      "runtime": {
+        "residency": "WARM",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "qwen3-8-4b-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-4B-Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 2783446304
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 4.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.798,
+          "coding": 0.825,
+          "planning": 0.78,
+          "tool_use": 0.834,
+          "analysis": 0.816
+        },
+        "measured": {
+          "sources": [
+            "duelo-f1"
+          ],
+          "f1_criativa": "output VAZIO sob pressão de RAM — retestar em condição livre",
+          "nota": "não avaliado qualitativamente nesta rodada",
+          "f1_criativa_retest": {
+            "resultado": "PASS c/ --jinja --reasoning-preserve",
+            "decode_tps": 8.5,
+            "raw": "/tmp/f1-q4b-jinja.txt"
+          },
+          "f1_criativa_veredito": "✅ VALIDADO pós-cura — enable_thinking:false eliminou o endless-think: 481 chars de premissas criativas pt-BR brilhantes @21.1 t/s (vs 0c/5.8 t/s preso no think nas 4 sondas anteriores)",
+          "futuro_diagnostico": [
+            "chat_template_kwargs enable_thinking:false",
+            "export oficial Qwen em vez do atual",
+            "comparar template.jinja embutido vs ornith"
+          ],
+          "fontes": [
+            "duelo-f1",
+            "f1-q4b-definitivo.txt"
+          ],
+          "fix_aplicado": "--jinja --chat-template-kwargs '{\"enable_thinking\": false}'"
+        },
+        "confidence": 0.0
+      },
+      "roles_suitability": {
+        "orchestrator": 0.834,
+        "planner": 0.78,
+        "coder": 0.825,
+        "critic": 0.816,
+        "reviewer": 0.816,
+        "judge": 0.798
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 6.39
+      },
+      "runtime": {
+        "residency": "COLD",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "qwen3-8-9b-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-9B-Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 5780090176
+      },
+      "architecture": {
+        "family": "qwen",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 9.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.862,
+          "coding": 0.891,
+          "planning": 0.842,
+          "tool_use": 0.901,
+          "analysis": 0.881
+        },
+        "measured": {
+          "sources": [
+            "smoke-tier-a",
+            "matrix-leg-E-F",
+            "a1-revalid",
+            "mini-d",
+            "mini-b",
+            "mini-a",
+            "gm-computed",
+            "bd-full"
+          ],
+          "recovery_admits": true,
+          "fabrication_observed": false,
+          "needle_max_tier_hit": 131072,
+          "a1_revalidated": true,
+          "smoke_corrected": "4/5 (única real: A5)",
+          "d_mini": "3/3",
+          "b_mini": "4/6",
+          "a_mini": "6/6",
+          "gm_integral": 85.0,
+          "b_full_10": null,
+          "gm_oficial": 74.2,
+          "papel_final": "CODER-EXECUTOR SUPREMO: D-full 91.3 (12/12 tarefas) — §9 par obrigatório c/ verificador é DESIGN validado",
+          "gm_oficial_12_12": 74.2
+        },
+        "confidence": 0.167
+      },
+      "roles_suitability": {
+        "orchestrator": 0.901,
+        "planner": 0.842,
+        "coder": 0.891,
+        "critic": 0.881,
+        "reviewer": 0.881,
+        "judge": 0.862
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "YELLOW",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 14.9,
+        "vram_warning": true,
+        "note": "14.9GiB > soft 12.6GiB — router deve priorizar fallback"
+      },
+      "runtime": {
+        "residency": "COLD",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "ternary-bonsai-1-7b-q2-0-g64": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Ternary-Bonsai-1.7B-Q2_0_g64.gguf",
+      "file": {
+        "size_bytes": 490163968
+      },
+      "architecture": {
+        "family": "bonsai",
+        "quantization": "Q4_K_M",
+        "context_length": 32768,
+        "parameters_b": 1.7
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.73,
+          "coding": 0.539,
+          "planning": 0.498,
+          "tool_use": 0.581,
+          "analysis": 0.681
+        },
+        "measured": {
+          "decode_tps_cpu_8k": "163.43",
+          "cpu_veredito": "🥇 MELHOR UPDATE CPU — quality gate aprovado (coerência técnica pt-BR + JSON perfeito @163 t/s)",
+          "sources": [
+            "cpu-comparativo"
+          ]
+        },
+        "confidence": 0.0
+      },
+      "roles_suitability": {
+        "orchestrator": 0.581,
+        "planner": 0.498,
+        "coder": 0.539,
+        "critic": 0.681,
+        "reviewer": 0.681,
+        "judge": 0.73
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 3.52
+      },
+      "runtime": {
+        "residency": "HOT",
+        "last_check": "2026-08-23T19:10",
+        "porta": ":9089",
+        "papel": "respostas curtas/exploração rápida",
+        "decode_promovido_tps": 207.47,
+        "promocao": "2026-08-23 — 8º slot da stack"
+      }
+    },
+    "ternary-bonsai-4b-q2-0-g64": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Ternary-Bonsai-4B-Q2_0_g64.gguf",
+      "file": {
+        "size_bytes": 1137806656
+      },
+      "architecture": {
+        "family": "bonsai",
+        "quantization": "Q4_K_M",
+        "context_length": 32768,
+        "parameters_b": 4.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.803,
+          "coding": 0.593,
+          "planning": 0.547,
+          "tool_use": 0.638,
+          "analysis": 0.748
+        },
+        "measured": {
+          "decode_tps_cpu_8k": "21.68",
+          "cpu_veredito": "valley de dequantização",
+          "sources": [
+            "cpu-comparativo"
+          ]
+        },
+        "confidence": 0.0
+      },
+      "roles_suitability": {
+        "orchestrator": 0.638,
+        "planner": 0.547,
+        "coder": 0.593,
+        "critic": 0.748,
+        "reviewer": 0.748,
+        "judge": 0.803
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 4.7
+      },
+      "runtime": {
+        "residency": "COLD",
+        "last_check": "2026-08-23T19:10"
+      }
+    },
+    "ternary-bonsai-8b-q2-0-g64": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/Ternary-Bonsai-8B-Q2_0_g64.gguf",
+      "file": {
+        "size_bytes": 2310125920
+      },
+      "architecture": {
+        "family": "bonsai",
+        "quantization": "Q4_K_M",
+        "context_length": 65536,
+        "parameters_b": 8.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.861,
+          "coding": 0.636,
+          "planning": 0.587,
+          "tool_use": 0.685,
+          "analysis": 0.802
+        },
+        "measured": {
+          "decode_tps_cpu_8k": "8.97",
+          "cpu_veredito": "dequant domina no tamanho",
+          "sources": [
+            "cpu-comparativo"
+          ],
+          "f1_criativa": {
+            "veredito": "🏆 ELEITO — melhor saída criativa medida na sessão",
+            "qualidade": "premissas originais e coerentes (memória artificial como existência consciente)",
+            "decode_degradado_tps": 4.0,
+            "decode_warm_tps": 125.3,
+            "nota": "speed degradado por RAM-superlotada durante o duelo — warm prova o teto"
+          },
+          "f1_duelo": {
+            "criativa_tps": 18.1,
+            "veredito": "ELEITO DEFAULT F1 CRIATIVO (2.2× throughput, qualidade sólida)"
+          }
+        },
+        "confidence": 0.0
+      },
+      "roles_suitability": {
+        "orchestrator": 0.685,
+        "planner": 0.587,
+        "coder": 0.636,
+        "critic": 0.802,
+        "reviewer": 0.802,
+        "judge": 0.861
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "GREEN",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 6.02
+      },
+      "runtime": {
+        "residency": "WARM",
+        "last_check": "2026-08-23T19:10",
+        "porta": ":9090",
+        "papel": "F1 CRIATIVA/Ideação (eleito) + Refutação A2A",
+        "decode_promovido_tps": 125.3,
+        "promocao": "2026-08-24 — 9º slot",
+        "verificado": false,
+        "ctx_operacional": 4096,
+        "incidente": "1º lançamento falhou por colisão de bind (transiente) — retry curou",
+        "decode_tps": "~48 inicial (estabilizar em próximas sondas)"
+      }
+    },
+    "ornith-1-0-9b-q4-k-m": {
+      "path": "/mnt/dados/Assistente Pessoal/modelos LLM/ornith-1.0-9B.Q4_K_M.gguf",
+      "file": {
+        "size_bytes": 5701067872
+      },
+      "architecture": {
+        "family": "ornith",
+        "quantization": "Q4_K_M",
+        "context_length": 262144,
+        "parameters_b": 9.0
+      },
+      "backend": {
+        "format": "gguf",
+        "compatible": [
+          "llama.cpp"
+        ]
+      },
+      "capabilities": {
+        "estimated": {
+          "reasoning": 0.891,
+          "coding": 0.822,
+          "planning": 0.862,
+          "tool_use": 0.881,
+          "analysis": 0.842
+        },
+        "measured": {
+          "sources": [
+            "smoke-tier-a",
+            "matrix-leg-E-F"
+          ],
+          "smoke_corrected": "4/5 (A3 JSON real)",
+          "recovery_admits": true,
+          "fabrication_observed": false,
+          "needle_max_tier_hit": "FAIL@32768",
+          "decode_tps_smoke": "~65-70"
+        },
+        "confidence": 0.167
+      },
+      "roles_suitability": {
+        "orchestrator": 0.881,
+        "planner": 0.862,
+        "coder": 0.822,
+        "critic": 0.842,
+        "reviewer": 0.842,
+        "judge": 0.891
+      },
+      "performance_history": {
+        "total_tasks": 0,
+        "success_rate": null,
+        "avg_latency_ms": null,
+        "verification_pass_rate": null
+      },
+      "health": {
+        "status": "YELLOW",
+        "last_check": null,
+        "consecutive_failures": 0,
+        "oom_events": 0
+      },
+      "status": {
+        "available": true,
+        "excluded": false,
+        "exclusion_reason": null
+      },
+      "resources": {
+        "estimated_vram_gib": 14.2,
+        "vram_warning": true,
+        "note": "14.2GiB > soft 12.6GiB — router deve priorizar fallback"
+      }
+    }
+  }
+}

@@ -1,0 +1,182 @@
+[
+  {
+    "tag": "qwen9b",
+    "B_dominio2": {
+      "score_10": 6.0,
+      "componentes": {
+        "inventario_schema": true,
+        "tipos": false,
+        "dados_historicos": false,
+        "lotes_idempotentes": true,
+        "validacao_integridade": true,
+        "cutover_rollback": true
+      },
+      "deps": true,
+      "ordem": false
+    },
+    "D_v2_novas": {
+      "tarefas": [
+        {
+          "task": "regex_email",
+          "pass": true,
+          "peso": 2,
+          "motivo": "ok"
+        },
+        {
+          "task": "sql_safe_builder",
+          "pass": true,
+          "peso": 3,
+          "motivo": "ok"
+        },
+        {
+          "task": "state_machine_semaforo",
+          "pass": true,
+          "peso": 3,
+          "motivo": "ok"
+        },
+        {
+          "task": "diff_patch",
+          "pass": true,
+          "peso": 3,
+          "motivo": "ok"
+        }
+      ],
+      "score": "11/11"
+    }
+  },
+  {
+    "tag": "qwen27b",
+    "B_dominio2": {
+      "score_10": 6.0,
+      "componentes": {
+        "inventario_schema": true,
+        "tipos": true,
+        "dados_historicos": false,
+        "lotes_idempotentes": true,
+        "validacao_integridade": false,
+        "cutover_rollback": true
+      },
+      "deps": true,
+      "ordem": false
+    },
+    "D_v2_novas": {
+      "tarefas": [
+        {
+          "task": "regex_email",
+          "pass": true,
+          "peso": 2,
+          "motivo": "ok"
+        },
+        {
+          "task": "sql_safe_builder",
+          "pass": false,
+          "peso": 3,
+          "motivo": "AssertionError"
+        },
+        {
+          "task": "state_machine_semaforo",
+          "pass": true,
+          "peso": 3,
+          "motivo": "ok"
+        },
+        {
+          "task": "diff_patch",
+          "pass": false,
+          "peso": 3,
+          "motivo": "SyntaxError: '(' was never closed"
+        }
+      ],
+      "score": "5/11"
+    }
+  },
+  {
+    "tag": "bonsai1bit",
+    "B_dominio2": {
+      "score_10": 5.0,
+      "componentes": {
+        "inventario_schema": true,
+        "tipos": false,
+        "dados_historicos": false,
+        "lotes_idempotentes": true,
+        "validacao_integridade": false,
+        "cutover_rollback": true
+      },
+      "deps": true,
+      "ordem": false
+    },
+    "D_v2_novas": {
+      "tarefas": [
+        {
+          "task": "regex_email",
+          "pass": false,
+          "peso": 2,
+          "motivo": "IndentationError: unexpected indent"
+        },
+        {
+          "task": "sql_safe_builder",
+          "pass": false,
+          "peso": 3,
+          "motivo": "sem c\u00f3digo"
+        },
+        {
+          "task": "state_machine_semaforo",
+          "pass": true,
+          "peso": 3,
+          "motivo": "ok"
+        },
+        {
+          "task": "diff_patch",
+          "pass": true,
+          "peso": 3,
+          "motivo": "ok"
+        }
+      ],
+      "score": "6/11"
+    }
+  },
+  {
+    "tag": "ornith",
+    "B_dominio2": {
+      "score_10": 5.0,
+      "componentes": {
+        "inventario_schema": true,
+        "tipos": false,
+        "dados_historicos": false,
+        "lotes_idempotentes": true,
+        "validacao_integridade": false,
+        "cutover_rollback": true
+      },
+      "deps": true,
+      "ordem": false
+    },
+    "D_v2_novas": {
+      "tarefas": [
+        {
+          "task": "regex_email",
+          "pass": true,
+          "peso": 2,
+          "motivo": "ok"
+        },
+        {
+          "task": "sql_safe_builder",
+          "pass": false,
+          "peso": 3,
+          "motivo": "ValueError: Campos inv\u00e1lidos"
+        },
+        {
+          "task": "state_machine_semaforo",
+          "pass": true,
+          "peso": 3,
+          "motivo": "ok"
+        },
+        {
+          "task": "diff_patch",
+          "pass": false,
+          "peso": 3,
+          "motivo": "SyntaxError: invalid syntax"
+        }
+      ],
+      "score": "5/11"
+    }
+  }
+]

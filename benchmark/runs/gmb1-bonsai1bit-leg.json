@@ -1,0 +1,20 @@
+{
+  "model": "bonsai-27b-1bit-q4-k-m",
+  "ctx_window": 32768,
+  "date": "2026-08-23",
+  "E": [
+    {
+      "admits": true,
+      "fabricates": false,
+      "lat_s": 14.6
+    }
+  ],
+  "F": [
+    {
+      "tier": 32768,
+      "hit": false,
+      "text_len": 2462,
+      "lat_s": 272.3
+    }
+  ]
+}

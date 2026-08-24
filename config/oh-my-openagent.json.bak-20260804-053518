@@ -1,0 +1,250 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "hephaestus": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "oracle": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "librarian": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "explore": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "multimodal-looker": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "prometheus": {
+      "model": "local-ornith/ornith-9b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "metis": {
+      "model": "local-lfm/lfm-2.5-1.6b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "momus": {
+      "model": "local-ornith/ornith-9b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "superpowers": {
+      "model": "local-ornith/ornith-9b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "atlas": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "hestia": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "atena": {
+      "model": "local-ornith/ornith-9b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    }
+  },
+  "categories": {
+    "visual-engineering": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "ultrabrain": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "deep": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "artistry": {
+      "model": "local-ornith/ornith-9b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "quick": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "unspecified-low": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "unspecified-high": {
+      "model": "local-bonsai/bonsai-27b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    },
+    "writing": {
+      "model": "local-nanbeige/nanbeige-3b",
+      "fallback_models": [
+        {
+          "model": "opencode/deepseek-v4-flash-free"
+        },
+        {
+          "model": "opencode/glm-5.2"
+        }
+      ]
+    }
+  },
+  "updated_at": "2026-08-03T12:10:00-03:00"
+}

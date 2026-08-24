@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <PROJECT>
     <PROJECT_DATA_XML_NAME NAME="DISPLAY_DATA">
-        <SAVE_STATE />
+        <SAVE_STATE>
+            <ARRAY NAME="EXPANDED_PATHS" TYPE="string">
+                <A VALUE="MCP_Auto:" />
+            </ARRAY>
+            <STATE NAME="SHOW_TABLE" TYPE="boolean" VALUE="false" />
+        </SAVE_STATE>
     </PROJECT_DATA_XML_NAME>
     <TOOL_MANAGER ACTIVE_WORKSPACE="Workspace">
         <WORKSPACE NAME="Workspace" ACTIVE="true">
@@ -22,11 +27,15 @@
                     </WINDOW_NODE>
                     <WINDOW_NODE X_POS="1720" Y_POS="1006" WIDTH="400" HEIGHT="103">
                         <COMPONENT_NODE TOP_INFO="0">
-                            <COMPONENT_INFO NAME="Breakpoint Timeline" OWNER="BreakpointTimelinePlugin" TITLE="Breakpoint Timeline" ACTIVE="false" GROUP="Default" INSTANCE_ID="3741635933358971385" />
+                            <COMPONENT_INFO NAME="Breakpoint Timeline" OWNER="BreakpointTimelinePlugin" TITLE="Breakpoint Timeline" ACTIVE="false" GROUP="Default" INSTANCE_ID="3747256864744926949" />
                         </COMPONENT_NODE>
                     </WINDOW_NODE>
                 </ROOT_NODE>
-                <DATA_STATE />
+                <DATA_STATE>
+                    <PLUGIN NAME="DebuggerTraceManagerServicePlugin">
+                        <STATE NAME="NUM_TRACES" TYPE="int" VALUE="0" />
+                    </PLUGIN>
+                </DATA_STATE>
             </RUNNING_TOOL>
         </WORKSPACE>
     </TOOL_MANAGER>

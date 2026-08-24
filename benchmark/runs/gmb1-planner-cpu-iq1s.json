@@ -1,0 +1,22 @@
+{
+  "model": "iq1s",
+  "planner_cpu": {
+    "dom1_ecommerce": {
+      "score_10": 5.0,
+      "comps": "2/4",
+      "deps": true,
+      "decode_tps": 3.6,
+      "wall_s": 88.8,
+      "chars": 1263
+    },
+    "dom2_bd": {
+      "score_10": 6.5,
+      "comps": "3/5",
+      "deps": true,
+      "decode_tps": 3.6,
+      "wall_s": 254.5,
+      "chars": 2813
+    }
+  },
+  "planner_cpu_medio": 5.8
+}

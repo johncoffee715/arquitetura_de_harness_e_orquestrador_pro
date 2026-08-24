@@ -1,14 +1,6 @@
 ---
 name: spec-kit
 description: "Spec-Driven Development toolkit (github): specify CLI (inspect/doctor/promote), bundles role-based, presets — define WHAT antes de HOW com qualquer agente. (absorvido de github/spec-kit)"
-origin: absorvido:github/spec-kit
-metadata:
-  autofagia: github/spec-kit (2026-08-04)
-  prioridade: 14
-  linguagem: Python
-  topics: spec-driven, planning
-  artefatos: skill+feature
-  padroes_absorvidos: 1
 ---
 # Spec Kit
 

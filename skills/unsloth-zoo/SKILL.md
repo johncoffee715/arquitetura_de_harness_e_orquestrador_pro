@@ -1,14 +1,6 @@
 ---
 name: unsloth-zoo
 description: "Fine-tune 2x mais rápido / 70-80% menos VRAM (gpt-oss, Qwen3 GRPO) — candidato p/ pipeline de fine-tune do oráculo local 9B. (absorvido de unslothai/unsloth-zoo)"
-origin: absorvido:unslothai/unsloth-zoo
-metadata:
-  autofagia: unslothai/unsloth-zoo (2026-08-04)
-  prioridade: 6
-  linguagem: Python
-  topics: finetune, vram, dataset
-  artefatos: skill
-  padroes_absorvidos: 1
 ---
 # Unsloth Zoo
 

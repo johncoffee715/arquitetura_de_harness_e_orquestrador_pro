@@ -1,0 +1,27 @@
+{
+  "obsidian": {
+    "enabled": true,
+    "type": "local",
+    "command": "python3",
+    "args": [
+      "/mnt/dados/harness/mcp/obsidian_server.py"
+    ],
+    "env": {
+      "OBSIDIAN_VAULT": "/mnt/dados/cerebro com IA"
+    }
+  },
+  "siz_delimiter": {
+    "enabled": true,
+    "type": "local",
+    "command": "python3",
+    "args": [
+      "/mnt/dados/harness/mcp/siz_delimiter_server.py"
+    ],
+    "env": {
+      "SIZ_TOKENIZE_ENDPOINT": "http://127.0.0.1:8083/tokenize",
+      "SIZ_CACHE_DIR": "/mnt/dados/harness/cache",
+      "SIZ_SAFETY_FACTOR": "1.15",
+      "SIZ_BUDGET_TOKENS": "8700"
+    }
+  }
+}

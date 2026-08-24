@@ -2,12 +2,16 @@
   "mcpServers": {
     "nexus": {
       "command": "nexus",
-      "args": ["mcp"],
+      "args": [
+        "mcp"
+      ],
       "description": "Local cost/privacy proxy - query your own usage & savings, route to the cheapest capable model, and mask secrets/PII before egress (nexus_stats, nexus_savings, nexus_recent, nexus_providers, nexus_cost_breakdown)"
     },
     "jira": {
       "command": "uvx",
-      "args": ["mcp-atlassian==0.21.0"],
+      "args": [
+        "mcp-atlassian==0.21.0"
+      ],
       "env": {
         "JIRA_URL": "YOUR_JIRA_URL_HERE",
         "JIRA_EMAIL": "YOUR_JIRA_EMAIL_HERE",
@@ -17,7 +21,10 @@
     },
     "github": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-github"
+      ],
       "env": {
         "GITHUB_PERSONAL_ACCESS_TOKEN": "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"
       },
@@ -25,7 +32,10 @@
     },
     "firecrawl": {
       "command": "npx",
-      "args": ["-y", "firecrawl-mcp"],
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
       "env": {
         "FIRECRAWL_API_KEY": "YOUR_FIRECRAWL_KEY_HERE"
       },
@@ -33,22 +43,34 @@
     },
     "supabase": {
       "command": "npx",
-      "args": ["-y", "@supabase/mcp-server-supabase@latest", "--project-ref=YOUR_PROJECT_REF"],
+      "args": [
+        "-y",
+        "@supabase/mcp-server-supabase@latest",
+        "--project-ref=YOUR_PROJECT_REF"
+      ],
       "description": "Supabase database operations"
     },
     "memory": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-memory"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-memory"
+      ],
       "description": "Persistent memory across sessions"
     },
     "longhand": {
       "command": "longhand",
-      "args": ["mcp-server"],
+      "args": [
+        "mcp-server"
+      ],
       "description": "Lossless Claude Code session history — indexes raw tool calls, file edits, and thinking blocks from ~/.claude/projects/*.jsonl into local SQLite + ChromaDB before Claude Code rotates them. Complements memory/omega-memory (synthesized) with verbatim recall. Install: pip install longhand && longhand setup"
     },
     "sequential-thinking": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
       "description": "Chain-of-thought reasoning"
     },
     "vercel": {
@@ -58,7 +80,10 @@
     },
     "railway": {
       "command": "npx",
-      "args": ["-y", "@railway/mcp-server"],
+      "args": [
+        "-y",
+        "@railway/mcp-server"
+      ],
       "description": "Railway deployments"
     },
     "cloudflare-docs": {
@@ -66,7 +91,6 @@
       "url": "https://docs.mcp.cloudflare.com/mcp",
       "description": "Cloudflare documentation search"
     },
-
     "clickhouse": {
       "type": "http",
       "url": "https://mcp.clickhouse.cloud/mcp",
@@ -74,7 +98,10 @@
     },
     "exa-web-search": {
       "command": "npx",
-      "args": ["-y", "exa-mcp-server"],
+      "args": [
+        "-y",
+        "exa-mcp-server"
+      ],
       "env": {
         "EXA_API_KEY": "YOUR_EXA_API_KEY_HERE"
       },
@@ -87,12 +114,18 @@
     },
     "context7": {
       "command": "npx",
-      "args": ["-y", "@upstash/context7-mcp@latest"],
+      "args": [
+        "-y",
+        "@upstash/context7-mcp@latest"
+      ],
       "description": "Live documentation lookup — use with /docs command and documentation-lookup skill (resolve-library-id, query-docs)."
     },
     "codescene": {
       "command": "npx",
-      "args": ["-y", "@codescene/codehealth-mcp"],
+      "args": [
+        "-y",
+        "@codescene/codehealth-mcp"
+      ],
       "env": {
         "CS_ACCESS_TOKEN": "YOUR_CS_ACCESS_TOKEN_HERE"
       },
@@ -100,22 +133,37 @@
     },
     "magic": {
       "command": "npx",
-      "args": ["-y", "@magicuidesign/mcp@latest"],
+      "args": [
+        "-y",
+        "@magicuidesign/mcp@latest"
+      ],
       "description": "Magic UI components"
     },
     "filesystem": {
       "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-filesystem", "/path/to/your/projects"],
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "/path/to/your/projects"
+      ],
       "description": "Filesystem operations (set your path)"
     },
     "playwright": {
       "command": "npx",
-      "args": ["-y", "@playwright/mcp", "--browser", "chrome"],
+      "args": [
+        "-y",
+        "@playwright/mcp",
+        "--browser",
+        "firefox"
+      ],
       "description": "Browser automation and testing via Playwright"
     },
     "fal-ai": {
       "command": "npx",
-      "args": ["-y", "fal-ai-mcp-server"],
+      "args": [
+        "-y",
+        "fal-ai-mcp-server"
+      ],
       "env": {
         "FAL_KEY": "YOUR_FAL_KEY_HERE"
       },
@@ -123,7 +171,10 @@
     },
     "browserbase": {
       "command": "npx",
-      "args": ["-y", "@browserbasehq/mcp-server-browserbase"],
+      "args": [
+        "-y",
+        "@browserbasehq/mcp-server-browserbase"
+      ],
       "env": {
         "BROWSERBASE_API_KEY": "YOUR_BROWSERBASE_KEY_HERE"
       },
@@ -144,7 +195,10 @@
     },
     "token-optimizer": {
       "command": "npx",
-      "args": ["-y", "token-optimizer-mcp"],
+      "args": [
+        "-y",
+        "token-optimizer-mcp"
+      ],
       "description": "Token optimization for 95%+ context reduction via content deduplication and compression"
     },
     "laraplugins": {
@@ -154,7 +208,10 @@
     },
     "confluence": {
       "command": "npx",
-      "args": ["-y", "confluence-mcp-server"],
+      "args": [
+        "-y",
+        "confluence-mcp-server"
+      ],
       "env": {
         "CONFLUENCE_BASE_URL": "YOUR_CONFLUENCE_URL_HERE",
         "CONFLUENCE_EMAIL": "YOUR_EMAIL_HERE",
@@ -164,7 +221,12 @@
     },
     "evalview": {
       "command": "python3",
-      "args": ["-m", "evalview", "mcp", "serve"],
+      "args": [
+        "-m",
+        "evalview",
+        "mcp",
+        "serve"
+      ],
       "env": {
         "OPENAI_API_KEY": "YOUR_OPENAI_API_KEY_HERE"
       },
@@ -172,7 +234,10 @@
     },
     "squish": {
       "command": "npx",
-      "args": ["-y", "squish-memory"],
+      "args": [
+        "-y",
+        "squish-memory"
+      ],
       "description": "Local-first persistent memory runtime for AI agents — MCP server for Claude Code, Cursor, OpenCode, Codex, Cline. Auto-captures context across sessions. 1-20ms recall, 283KB, no second LLM needed. Runs locally with SQLite. Supports cloud sync via Stripe checkout ($9-$99/mo). GitHub: https://github.com/michielhdoteth/squish | Docs: https://squishplugin.dev | (also available via local `squish run mcp`)"
     }
   },

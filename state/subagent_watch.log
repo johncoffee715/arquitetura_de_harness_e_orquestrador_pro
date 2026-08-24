@@ -1,0 +1,108 @@
+  [2026-08-17T00:00:38.670Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:00:49.812Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:00:56.069Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:01:12.275Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:01:26.688Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:01:41.033Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:01:55.451Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:02:09.862Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:02:24.421Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:02:38.859Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:02:53.301Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:03:07.783Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:03:22.234Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:03:36.667Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:03:51.128Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:04:05.682Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:04:20.362Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:04:34.869Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:04:49.606Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+  [2026-08-17T00:05:04.269Z] DELEGAÇÃO: librarian → local-qwen/qwen-3.5-0.8b
+timestamp=2026-08-18T01:03:23.404Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:03:23.404Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:08.756Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:08.756Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:12.715Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:12.715Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:26.060Z level=INFO run=2ef79836 message=stream providerID=nvidia modelID=openai/gpt-oss-20b session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:26.060Z] DELEGAÇÃO: gran-mestre → nvidia/openai/gpt-oss-20b
+timestamp=2026-08-18T01:04:27.924Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:27.924Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:34.566Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:34.566Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:40.860Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:40.860Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:44.756Z level=INFO run=2ef79836 message=stream providerID=nvidia modelID=openai/gpt-oss-20b session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:44.756Z] DELEGAÇÃO: gran-mestre → nvidia/openai/gpt-oss-20b
+timestamp=2026-08-18T01:04:49.794Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:49.794Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:54.726Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:54.726Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:04:55.104Z level=INFO run=2ef79836 message=stream providerID=nvidia modelID=openai/gpt-oss-20b session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:04:55.104Z] DELEGAÇÃO: gran-mestre → nvidia/openai/gpt-oss-20b
+timestamp=2026-08-18T01:05:00.757Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:05:00.757Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:05:03.505Z level=INFO run=2ef79836 message=stream providerID=nvidia modelID=openai/gpt-oss-20b session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:05:03.505Z] DELEGAÇÃO: gran-mestre → nvidia/openai/gpt-oss-20b
+timestamp=2026-08-18T01:05:05.199Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:05:05.199Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:06:03.642Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:06:03.642Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:06:15.370Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:06:15.370Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:06:23.375Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:06:23.375Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:06:29.567Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:06:29.567Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:06:36.018Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:06:36.018Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:06:46.910Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:06:46.910Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:06:56.656Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:06:56.656Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:07:01.156Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:07:01.156Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:07:07.922Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:07:07.922Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:07:46.853Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:07:46.853Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:08:06.877Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:08:06.877Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:08:10.079Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:08:10.079Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:08:28.054Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:08:28.054Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:09:10.827Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:09:10.827Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:09:28.457Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:09:28.457Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:09:32.498Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:09:32.498Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:09:36.524Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:09:36.524Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:09:39.171Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:09:39.171Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:09:42.801Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:09:42.801Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:09:52.147Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:09:52.147Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:10:01.426Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:10:01.426Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:10:11.803Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:10:11.803Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:10:14.545Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:10:14.545Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:10:21.949Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:10:21.949Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:10:24.925Z level=INFO run=fa4d0858 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_fed9bf945ffeuhReTdVtlRQHNZ small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:10:24.925Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:10:35.376Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:10:35.376Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:11:51.482Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:11:51.482Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:12:33.333Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:12:33.333Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:13:07.247Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:13:07.247Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free
+timestamp=2026-08-18T01:13:16.433Z level=INFO run=2ef79836 message=stream providerID=opencode modelID=deepseek-v4-flash-free session.id=ses_ff1321d1dffecbXx7vNvCLm8xr small=false agent=gran-mestre mode=primary
+  [2026-08-18T01:13:16.433Z] DELEGAÇÃO: gran-mestre → opencode/deepseek-v4-flash-free

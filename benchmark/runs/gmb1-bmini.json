@@ -1,0 +1,58 @@
+[
+  {
+    "tag": "qwen9b",
+    "score": "4/6",
+    "checks": {
+      "numerada": true,
+      "catalogo": false,
+      "carrinho": false,
+      "pagamento_pix": true,
+      "email": true,
+      "dependencias": true
+    },
+    "chars": 2870,
+    "lat_s": 10.7
+  },
+  {
+    "tag": "qwen27b",
+    "score": "6/6",
+    "checks": {
+      "numerada": true,
+      "catalogo": true,
+      "carrinho": true,
+      "pagamento_pix": true,
+      "email": true,
+      "dependencias": true
+    },
+    "chars": 2661,
+    "lat_s": 33.9
+  },
+  {
+    "tag": "bonsai1bit",
+    "score": "4/6",
+    "checks": {
+      "numerada": true,
+      "catalogo": false,
+      "carrinho": false,
+      "pagamento_pix": true,
+      "email": true,
+      "dependencias": true
+    },
+    "chars": 3421,
+    "lat_s": 40.8
+  },
+  {
+    "tag": "ornith",
+    "score": "4/6",
+    "checks": {
+      "numerada": true,
+      "catalogo": false,
+      "carrinho": false,
+      "pagamento_pix": true,
+      "email": true,
+      "dependencias": true
+    },
+    "chars": 3554,
+    "lat_s": 10.8
+  }
+]

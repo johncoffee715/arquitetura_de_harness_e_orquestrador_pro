@@ -1,16 +1,6 @@
 ---
 name: ck
 description: Persistent per-project memory for Claude Code. Auto-loads project context on session start, tracks sessions with git activity, and writes to native memory. Commands run deterministic Node.js scripts — behavior is consistent across model versions.
-triggers:
-  - context: /ck /context /memory /save /resume /lembrar /salvar /continuar /retomar
-  - persist: salvar contexto/guardar memória/save state/checkpoint
-  - resume: continuar de onde parou/retomar/continue from/onde paramos
-metadata:
-  origin: community
-  category: memory
-version: 2.0.0
-author: sreedhargs89
-repo: https://github.com/sreedhargs89/context-keeper
 ---
 
 # ck — Context Keeper

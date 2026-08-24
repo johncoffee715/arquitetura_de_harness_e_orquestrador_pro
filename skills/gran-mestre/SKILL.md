@@ -3,11 +3,6 @@ name: gran-mestre
 description: "Meta-orquestrador do OpenCode. Ponto de entrada único para requisições do usuário. Analisa complexidade, delega para agents especializados (Prometheus, Héstia, Atlas, Atena) e garante segurança com rollback automático."
 model: github-copilot/claude-opus-4.7
 mode: primary
-origin: gran-mestre-original
-metadata:
-  category: orchestration
-  version: 6.0.0
-  author: Gran-Mestre
 ---
 
 # Gran-Mestre — Meta-Orquestrador

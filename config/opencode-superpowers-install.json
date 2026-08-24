@@ -33,5 +33,7 @@
   "tuiPlugin": {
     "config": "/home/johncoffee/.config/opencode/tui.json",
     "spec": "file:///home/johncoffee/.config/opencode/plugins/model-guide/index.ts"
-  }
+  },
+  "last_sync": "2026-08-17T08:52:48.151275+00:00",
+  "sync_source": "harness/sync-local-models.sh"
 }

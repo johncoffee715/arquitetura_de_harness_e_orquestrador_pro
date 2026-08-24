@@ -1,0 +1,36 @@
+{
+  "name": "qwen38-27b-iq2m-spec",
+  "model": "Qwen3.8-27B-UD-IQ2_M.gguf",
+  "ctx": 16384,
+  "gpu": true,
+  "mtp": 3,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "15/31",
+    "vram_pos": "14.0GB",
+    "vram_t1": "14.0GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "true",
+      "tempo_s": 90.8,
+      "prompt_tokens": 13608,
+      "out_tokens": 2,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}",
+      "tempo_s": 2.7,
+      "json_puro": true,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "Nota: 0/100\n\nFalha técnica: A variável `val1` não é volátil, permitindo que o compilador otimize a segunda leitura (`val2`) para usar o mesmo valor em cache, invalidando a verificação de estabilidade.",
+      "tempo_s": 3.7,
+      "acertou_volatile": false,
+      "nota_impressao": 0
+    }
+  }
+}

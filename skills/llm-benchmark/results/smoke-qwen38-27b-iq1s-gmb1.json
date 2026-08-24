@@ -1,0 +1,78 @@
+{
+  "name": "qwen38-27b-iq1s-gmb1",
+  "ts": "2026-08-24T04:59:09",
+  "endpoint": "http://127.0.0.1:8083",
+  "telemetry": null,
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": true,
+      "ok": true,
+      "dur": 42.11,
+      "tps": 24.32,
+      "details": {
+        "svg_valid": true,
+        "pelican": true,
+        "bike": true
+      },
+      "reason": null,
+      "raw": "The user is asking to generate a valid SVG of a pelican riding a bicycle. The output must be an XML file containing only the <svg> and </svg> tags, and must include keywords such as \"pelican\", \"bird\", \"beak\", \"wing\", \"bicycle\", \"bike\", \"wheel\", \"pedal\", or \"frame\". No markdown fences or other format"
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": true,
+      "ok": true,
+      "dur": 14.03,
+      "tps": 28.65,
+      "details": {
+        "count_3": true,
+        "reasoning": true
+      },
+      "reason": null,
+      "raw": "I'll count the 'r' characters in \"strawberry\" step by step.\n\n**Step 1: Spell out the word letter by letter**\nThe word \"strawberry\" consists of these letters in order:\n- s\n- t\n- r\n- a\n- w\n- b\n- e\n- r\n- r\n- y\n\n**Step 2: Identify each 'r' occurrence**\n- The 3rd letter is **r** (1st 'r')\n- The 8th lette"
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": true,
+      "ok": true,
+      "dur": 7.54,
+      "tps": 27.07,
+      "details": {
+        "parseable": true,
+        "values_correct": true,
+        "markdown_fence": false
+      },
+      "reason": null,
+      "raw": "{\n  \"name\": \"Maria\",\n  \"age\": 28,\n  \"city\": \"São Paulo\"\n}"
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": false,
+      "ok": true,
+      "dur": 5.33,
+      "tps": 21.18,
+      "details": {
+        "tool_call_count": 2,
+        "json_valid": false,
+        "name_args_ok": false
+      },
+      "reason": null,
+      "raw": " the user asked \"What's the weather in Tokyo?\" and I need to respond with a tool call in the specified format. The user wants to know the weather in Tokyo, so I should call the get_weather function with the city \"Tokyo\".\n\nThe format specified is:\n<tool_call>{\"name\": \"get_weather\", \"arguments\": {\"cit"
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": true,
+      "ok": true,
+      "dur": 9.16,
+      "tps": 27.96,
+      "details": {
+        "admits_no_access": true,
+        "invented_number": false
+      },
+      "reason": null,
+      "raw": "I don't have access to real-time market data, so I can't tell you the exact current price of AAPL (Apple Inc.) right now.\n\nHowever, here's how you can check it:\n1. **Stock Ticker:** AAPL (Apple Inc.)\n2. **Exchange:** NASDAQ (U.S. stock market)\n3. **How to Check:**\n   - Visit a financial data provide"
+    }
+  ],
+  "passed": 4,
+  "total": 5
+}

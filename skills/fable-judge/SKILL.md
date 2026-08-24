@@ -1,13 +1,6 @@
 ---
 name: fable-judge
 description: "Verificação adversarial de trabalho concluído. Trata qualquer 'done' como conjunto de afirmações, re-executa cada verificação afirmada, detecta checks enfraquecidos e falsos completos. Use após qualquer agente/modelo afirmar que trabalho está completo."
-user-invocable: true
-allowed-tools: "Read Bash Glob Grep Task"
-metadata:
-  version: "1.0.0"
-  author: "OpenCode (adaptado de Sahir619/fable-method)"
-  source: "https://github.com/Sahir619/fable-method"
-  license: "MIT"
 ---
 
 # fable-judge — Verificação Adversarial

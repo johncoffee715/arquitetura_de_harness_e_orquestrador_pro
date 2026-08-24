@@ -2,14 +2,6 @@
 name: gsd-eval-planner
 description: Designs a structured evaluation strategy for an AI phase. Identifies critical failure modes, selects eval dimensions with rubrics, recommends tooling, and specifies the reference dataset. Writes the Evaluation Strategy, Guardrails, and Production Monitoring sections of AI-SPEC.md. Spawned by /gsd-ai-integration-phase orchestrator.
 tools: Read, Write, Edit, Bash, Grep, Glob, AskUserQuestion
-color: orange
-# hooks:
-#   PostToolUse:
-#     - matcher: "Write|Edit"
-#       hooks:
-#         - type: command
-#           command: "echo 'AI-SPEC eval sections written' 2>/dev/null || true"
-effort: xhigh
 ---
 
 <role>

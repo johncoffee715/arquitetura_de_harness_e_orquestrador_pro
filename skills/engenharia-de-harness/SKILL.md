@@ -1,13 +1,6 @@
 ---
 name: engenharia-de-harness
 description: "Canonização da engenharia de harness híbrido (arquivo local 'engenharia de harness.md'): arquitetura Gran-Mestre 6 fases, Model Provider, memória Obsidian, eventos LangGraph, hot-swap assíncrono, alocação de VRAM na MI50 (16GB), gramática GBNF estrita e regras de segurança — fonte viva p/ autofagia contínua do próprio harness."
-user-invocable: true
-allowed-tools: "Read Write Bash"
-metadata:
-  version: "1.0.0"
-  origin: "local:/mnt/win1/123 tranqueiras e projetos/engenharia de harness.md (533 linhas)"
-  absorbed_at: "2026-08-05"
-  antropofagia: "Digestão do blueprint original do harness: o doc que define o papel dos 4 modelos (Ornith 9B Gran-Mestre, Nanbeige 3B Qualidade, LFM 1.6B checks binárias, Bonsai 27B 1-bit executor) vira skill operacional para toda decisão de arquitetura futura."
 ---
 
 # 🎛️ engenharia-de-harness — Skill de Arquitetura do Harness Híbrido

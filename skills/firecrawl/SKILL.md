@@ -1,13 +1,6 @@
 ---
 name: firecrawl
 description: "A context API to search, scrape, and interact with the web at scale — absorvido criticamente de firecrawl/firecrawl (161k★ AGPL-3.0). Scrape de páginas JS-heavy → Markdown limpo, search de fontes, extração estruturada e turnos de interação para agentes (deep research, RAG, data extraction)."
-user-invocable: true
-allowed-tools: "Read Write Bash WebFetch WebSearch"
-metadata:
-  version: "1.0.0"
-  origin: "https://github.com/firecrawl/firecrawl (AGPL-3.0)"
-  absorbed_at: "2026-08-05"
-  antropofagia: "Devorada a API de contexto web (search/scrape/interact) e adaptada para o harness OpenCode: firecrawl vira camada de ingestão web do Gran-Mestre, complementando agent-reach (plataformas) e browser-use (navegador real)."
 ---
 
 # 🔥 firecrawl — Skill de Ingestão Web em Escala para OpenCode

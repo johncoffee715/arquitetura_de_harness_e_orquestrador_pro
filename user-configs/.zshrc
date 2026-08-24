@@ -1,0 +1,3 @@
+source /usr/share/cachyos-zsh-config/cachyos-config.zsh
+export TWITTER_AUTH_TOKEN="be1f921dcf1e3704cab8e99276f1cd65428037ac"
+export TWITTER_CT0="e5cc7f33ffd5fccfc5ab80038248001129eb1d45d30c9885d48212e2d5bbcc486bb3af6dc4c8815092410cc0bb12a44e0eee85088b5bf4b55adb3568c144b0eca70ea72a40a64d35f35394f5489a4b94"

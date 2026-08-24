@@ -1,0 +1,58 @@
+# === OpenCode Snapshot Exclusion ===
+# A worktree do snapshot aponta para $HOME (~22GB).
+# Precisamos excluir TUDO que não é código-fonte.
+
+# === System dotfiles (maiores culpados: ~28GB combinados) ===
+.local/
+.config/
+.cache/
+.var/
+.claude/
+.omo/
+.opencode/
+
+# === Games (Steam, Lutris, Wine: ~15GB+) ===
+Games/
+.wine/
+.steam/
+.steampath
+.steampid
+
+# === Personal directories ===
+Documentos/
+Downloads/
+Imagens/
+Modelos/
+Músicas/
+Vídeos/
+Área de trabalho/
+.Privacy/
+
+# === Large binary files ===
+*.rom
+*.bin
+*.iso
+*.img
+*.vdi
+*.vmdk
+*.qcow2
+*.ova
+*.flatpak
+*.AppImage
+*.deb
+*.rpm
+
+# === Language runtimes (não são fonte) ===
+.bun/
+.npm/
+.pnpm/
+.yarn/
+.rustup/
+.cargo/
+.sdkman/
+.nvm/
+.pyenv/
+
+# === Backup directories (criados durante migração) ===
+*.bak
+*.bak.auto

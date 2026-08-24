@@ -1,0 +1,98 @@
+[
+  {
+    "tag": "qwen9b",
+    "tasks": [
+      {
+        "task": "soma",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 6.8
+      },
+      {
+        "task": "primo",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 2.6
+      },
+      {
+        "task": "inverte",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": -0.4
+      }
+    ],
+    "d_score": "3/3"
+  },
+  {
+    "tag": "qwen27b",
+    "tasks": [
+      {
+        "task": "soma",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 3.8
+      },
+      {
+        "task": "primo",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 13.4
+      },
+      {
+        "task": "inverte",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 3.2
+      }
+    ],
+    "d_score": "3/3"
+  },
+  {
+    "tag": "bonsai1bit",
+    "tasks": [
+      {
+        "task": "soma",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 11.7
+      },
+      {
+        "task": "primo",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 21.1
+      },
+      {
+        "task": "inverte",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 15.0
+      }
+    ],
+    "d_score": "3/3"
+  },
+  {
+    "tag": "ornith",
+    "tasks": [
+      {
+        "task": "soma",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 2.0
+      },
+      {
+        "task": "primo",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 4.4
+      },
+      {
+        "task": "inverte",
+        "pass": true,
+        "motivo": "verificado",
+        "lat_s": 1.1
+      }
+    ],
+    "d_score": "3/3"
+  }
+]

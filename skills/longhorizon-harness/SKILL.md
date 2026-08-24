@@ -1,14 +1,6 @@
 ---
 name: longhorizon-harness
 description: "Harness de execução long-horizon: 3 papéis (Manager/Executor/Auditor), estado verificado durável e contexto-fresco por rodada p/ tarefas de várias horas em desktop+CLI. (absorvido de AMAP-ML/LongHorizon-Harness)"
-origin: absorvido:AMAP-ML/LongHorizon-Harness
-metadata:
-  autofagia: AMAP-ML/LongHorizon-Harness (2026-08-10)
-  prioridade: 7
-  linguagem: Python
-  topics: long-horizon, harness, agent, loop-engineering, claude-code, codex
-  artefatos: skill
-  padroes_absorvidos: 6
 ---
 # LongHorizon-Harness
 

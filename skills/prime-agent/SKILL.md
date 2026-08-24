@@ -1,14 +1,6 @@
 ---
 name: prime-agent
 description: "Agente RLM self-improving: contexto como variável, tools como funções, subagents recursivos, harness contínuo com estado durável, IPython persistente. (absorvido de PrimeIntellect-ai/prime-agent)"
-origin: absorvido:PrimeIntellect-ai/prime-agent
-metadata:
-  autofagia: PrimeIntellect-ai/prime-agent (2026-08-10)
-  prioridade: 8
-  linguagem: TypeScript
-  topics: rlm, recursive-language-model, continual-harness, ipython, self-improving, coding-agent
-  artefatos: skill
-  padroes_absorvidos: 8
 ---
 # Prime Agent
 

@@ -539,5 +539,7 @@
     "scripts/lib/allowlist-ratchet.cjs": "ffaceaac3efc2660bd85c0fe59539b63ae73f6b74ce639026c5c13ac42b212bf",
     "scripts/lib/cli-exit.cjs": "612d0c372c75b7e7a77d4c244467961f4981ef502867413fd1507e3ce8c49f0c",
     "scripts/fix-slash-commands.cjs": "0519742531ff3529c5daadf557244b24c9dbec475d43a621b7a3ca77e293f68b"
-  }
+  },
+  "last_sync": "2026-08-17T08:52:48.151275+00:00",
+  "sync_source": "harness/sync-local-models.sh"
 }

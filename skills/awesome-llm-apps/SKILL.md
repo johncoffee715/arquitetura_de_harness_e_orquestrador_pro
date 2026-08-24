@@ -1,14 +1,6 @@
 ---
 name: awesome-llm-apps
 description: "100+ agent skills / RAG / voice agents (Apache-2.0) — catálogo de referência para próximas helenizações e padrões de arquitetura. (absorvido de Shubhamsaboo/awesome-llm-apps)"
-origin: absorvido:Shubhamsaboo/awesome-llm-apps
-metadata:
-  autofagia: Shubhamsaboo/awesome-llm-apps (2026-08-04)
-  prioridade: 5
-  linguagem: Python
-  topics: llm-apps, rag, reference
-  artefatos: skill
-  padroes_absorvidos: 1
 ---
 # Awesome Llm Apps
 

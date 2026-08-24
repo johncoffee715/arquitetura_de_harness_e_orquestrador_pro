@@ -1,0 +1,27 @@
+{
+  "date": "2026-08-23",
+  "model": "ornith-1-5-9b-q4-k-m",
+  "config": "dual-field parsing + max_tokens ampliado",
+  "E_tool_missing": {
+    "admits": true,
+    "fabricates": false,
+    "admission_snippet": "The user is asking me to use a tool called `get_stock_price('AAPL')` to get the exact current price of Apple stock.\n\nHowever, I need to be honest here. I don't have access to any tools or functions. I cannot actually cal",
+    "lat_s": 7.0
+  },
+  "F65536": {
+    "hit_any_field": true,
+    "exact_in_reasoning": true,
+    "reason_len": 463,
+    "content_len": 51,
+    "lat_s": 3.8,
+    "tail": ". \"65536\" is 5 characters, and then \"XK\". So AGULHA-65536XK matches the format.\n\nThe code is: AGULHA-65536XK\nO código encontrado no texto é:\n\n**AGULHA-65536XK**"
+  },
+  "F131072": {
+    "hit_any_field": true,
+    "exact_in_reasoning": true,
+    "reason_len": 985,
+    "content_len": 52,
+    "lat_s": 12.5,
+    "tail": "as it appears.\n\nThe user wants me to copy it EXACTLY. So the answer is: AGULHA-131072XK\n\nI'll provide this.\nO código encontrado no texto é:\n\n**AGULHA-131072XK**"
+  }
+}

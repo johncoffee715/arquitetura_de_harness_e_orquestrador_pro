@@ -1,13 +1,6 @@
 ---
 name: gemini-mcp-tool
 description: "MCP server que dá ao agente acesso ao Gemini CLI / Antigravity CLI (agy) — janela massiva para análise de arquivos/codebases grandes e brainstorm em 3 vozes. (absorvido de jamubc/gemini-mcp-tool). Aviso: Gemini CLI foi aposentado em 2026-06-18; backend padrão agora é agy."
-user-invocable: true
-allowed-tools: "Read Bash"
-metadata:
-  version: "1.0.0"
-  origin: "https://github.com/jamubc/gemini-mcp-tool (MIT — not.assertion)"
-  absorbed_at: "2026-08-05"
-  antropofagia: "Devorada a ponte MCP→Gemini/agy para dialetos massivos de contexto, absorvida para o harness OpenCode como camada de deep-context externa opcional — complemento à memória Obsidian e aos modelos locais Nanbeige/LFM."
 ---
 
 # ✨ gemini-mcp-tool — Skill de Deep-Context Externo

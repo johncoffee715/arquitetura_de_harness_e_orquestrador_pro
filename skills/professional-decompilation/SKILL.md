@@ -1,15 +1,6 @@
 ---
 name: professional-decompilation
 description: "Descompilação e engenharia reversa profissional de binários, firmware, bibliotecas, executáveis e componentes embarcados — metodologia baseada em evidências (nunca hipótese vira fato sem prova). Pipeline INTAKE→IDENTIFICATION→FINGERPRINT→TRIAGE→STATIC/DYNAMIC→CORRELATION→RECONSTRUCTION→VALIDATION→REPORT, com classificação de confiança (CONFIRMED/HIGH_CONFIDENCE/PROBABLE/POSSIBLE/UNKNOWN/CONTRADICTED), base de evidências E-XXX, hypothesis engine e output contract. Use para analisar binário, firmware, BIOS/UEFI, ROM dump, malware, executável desconhecido, descompilar função, entender protocolo embarcado, reconstruir estrutura de dados ou produzir relatório técnico reproduzível de RE. Integra com o agente reverser (GhidraMCP) e com fable-judge para validação adversarial das conclusões."
-user-invocable: true
-allowed-tools: "Read Bash Glob Grep Task WebSearch WebFetch"
-metadata:
-  version: "1.1.0"
-  author: "OpenCode Gran-Mestre (helenizada do documento 'Professional Binary Decompilation & Reverse Engineering' fornecido pelo usuário)"
-  source: "Documento do usuário — Professional Binary Decompilation & Reverse Engineering"
-  license: "MIT"
-  helenizado_em: "2026-08-15"
-  reversao_ecossistema: "v1.1.0 — comando /decompile + arquivamento Obsidian + catalogo"
 ---
 
 # professional-decompilation — Descompilação & Engenharia Reversa Profissional

@@ -1,0 +1,29 @@
+[
+  {
+    "tag": "qwen9b",
+    "svg": true,
+    "pelican": true,
+    "bike": true,
+    "PASS": true,
+    "chars": 3629,
+    "lat_s": 14.3
+  },
+  {
+    "tag": "qwen27b",
+    "svg": true,
+    "pelican": true,
+    "bike": true,
+    "PASS": true,
+    "chars": 2500,
+    "lat_s": 43.9
+  },
+  {
+    "tag": "ornith",
+    "svg": true,
+    "pelican": true,
+    "bike": true,
+    "PASS": true,
+    "chars": 2841,
+    "lat_s": 14.2
+  }
+]

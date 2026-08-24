@@ -4,16 +4,16 @@ metadata:
   priority: CRITICAL
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: local-orchestrator/orchestrator-9b
   fallback:
-    - opencode/claude-opus-4-7
-    - github-copilot/gpt-5.5
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gpt-5.5
-    - github-copilot/gemini-3.1-pro-preview
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gemini-3.1-pro
     - opencode/kimi-k2.5
     - opencode/gpt-5-nano
-    - github-copilot/claude-haiku-4.5
+    - local-qwen/qwen-3.5-0.8b
     - opencode/glm-5
     - opencode/big-pickle
   max_retries_per_model: 1
@@ -26,7 +26,7 @@ model_rotation:
 ---
 name: superpowers
 description: Superpowers-driven agent. Brainstorms with you, then delegates spec writing, planning, implementation, and implementation review to specialized subagents. Enforces the bundled skill-first workflow.
-model: local/qwen3.5-27b
+model: local-orchestrator/orchestrator-9b
 mode: primary
 color: "#8b5cf6"
 permission:
@@ -62,12 +62,12 @@ permission:
     "superpowers-code-reviewer": allow
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: local-qwen/qwen-3.5-0.8b
   fallback:
-    - opencode/claude-opus-4-7
-    - github-copilot/gpt-5.5
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gpt-5.5
-    - github-copilot/claude-sonnet-4.6
+    - local-qwen/qwen-3.5-0.8b
     - opencode/claude-sonnet-4-6
   max_retries_per_model: 1
   escalate_on_failure: true

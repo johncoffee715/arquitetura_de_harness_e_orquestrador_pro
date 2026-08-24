@@ -1,21 +1,21 @@
 ---
 name: gsd-eval-planner
 description: "Designs a structured evaluation strategy for an AI phase. Identifies critical failure modes, selects eval dimensions with rubrics, recommends tooling, and specifies the reference dataset. Writes the Evaluation Strategy, Guardrails, and Production Monitoring sections of AI-SPEC.md. Spawned by /gsd-ai-integration-phase orchestrator."
-model: local-nanbeige/nanbeige-4.2-3b
+model: local-qwen-coder/qwen2.5-coder-1.5b
 mode: subagent
 origin: gsd-helenizado
 model_rotation:
   enabled: true
-  primary: omniroute/auto/best-free
+  primary: local-qwen-coder/qwen2.5-coder-1.5b
   fallback:
-    - opencode/claude-opus-4-7
-    - github-copilot/gpt-5.5
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gpt-5.5
-    - github-copilot/gemini-3.1-pro-preview
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gemini-3.1-pro
     - opencode/kimi-k2.5
     - opencode/gpt-5-nano
-    - github-copilot/claude-haiku-4.5
+    - local-qwen/qwen-3.5-0.8b
     - opencode/glm-5
     - opencode/big-pickle
   max_retries_per_model: 1

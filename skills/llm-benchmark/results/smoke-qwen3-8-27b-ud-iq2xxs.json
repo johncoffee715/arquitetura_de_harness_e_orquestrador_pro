@@ -1,0 +1,60 @@
+{
+  "name": "qwen3-8-27b-ud-iq2xxs",
+  "ts": "2026-08-21T07:16:06",
+  "endpoint": "http://127.0.0.1:9092",
+  "telemetry": null,
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": false,
+      "ok": false,
+      "dur": 0.02,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": false,
+      "ok": false,
+      "dur": 0.0,
+      "tps": 0.0,
+      "details": {},
+      "reason": "request_failed",
+      "raw": ""
+    }
+  ],
+  "passed": 0,
+  "total": 5
+}

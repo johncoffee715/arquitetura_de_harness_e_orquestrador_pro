@@ -3,12 +3,6 @@ name: pxpipe
 description: "Proxy local que reduz tokens de entrada do Claude Code renderizando contexto volumoso como imagens PNG. Economia de 59-70% em tokens de entrada."
 model: opencode/gpt-5-nano
 mode: skill
-origin: gran-mestre-original
-metadata:
-  category: optimization
-  version: 1.0.0
-  author: Gran-Mestre
-  source: https://github.com/teamchong/pxpipe
 ---
 
 # pxpipe — Redutor de Tokens de Entrada

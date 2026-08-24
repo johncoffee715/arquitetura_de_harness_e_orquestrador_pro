@@ -1,0 +1,46 @@
+Data: seg 27 jul 2026 15:25:00 -03
+Hostname: JohnCoffeeDesk
+OS: CachyOS Linux
+Kernel: Linux JohnCoffeeDesk 7.1.4-1-cachyos #1 SMP PREEMPT_DYNAMIC Sun, 19 Jul 2026 18:57:38 +0000 x86_64 GNU/Linux
+OpenCode: 1.18.7
+UID/GID: uid=1000(johncoffee) gid=1000(johncoffee) grupos=1000(johncoffee),3(sys),90(network),998(wheel),995(audio),989(lp),985(storage),983(video),982(users),980(rfkill),957(nopasswdlogin)
+
+=== DISK ===
+Sist. Arq.      Tam. Usado Disp. Uso% Montado em
+/dev/sda2       371G   92G  278G  25% /
+/dev/sda2       371G   92G  278G  25% /home
+/dev/sdb        120G   29G   90G  24% /mnt/dados
+
+=== FSTAB ===
+# /etc/fstab: static file system information.
+#
+# Use 'blkid' to print the universally unique identifier for a device; this may
+# be used with UUID= as a more robust way to name devices that works even if
+# disks are added and removed. See fstab(5).
+#
+# <file system>             <mount point>  <type>  <options>  <dump>  <pass>
+UUID=E70C-F9F7                            /boot          vfat    defaults,umask=0077 0 2
+UUID=9981322b-ac8e-4036-865b-c420b8846b84 /              btrfs   subvol=/@,defaults,noatime,compress=zstd 0 0
+UUID=9981322b-ac8e-4036-865b-c420b8846b84 /home          btrfs   subvol=/@home,defaults,noatime,compress=zstd 0 0
+UUID=9981322b-ac8e-4036-865b-c420b8846b84 /root          btrfs   subvol=/@root,defaults,noatime,compress=zstd 0 0
+UUID=9981322b-ac8e-4036-865b-c420b8846b84 /srv           btrfs   subvol=/@srv,defaults,noatime,compress=zstd 0 0
+UUID=9981322b-ac8e-4036-865b-c420b8846b84 /var/cache     btrfs   subvol=/@cache,defaults,noatime,compress=zstd 0 0
+UUID=9981322b-ac8e-4036-865b-c420b8846b84 /var/tmp       btrfs   subvol=/@tmp,defaults,noatime,compress=zstd 0 0
+UUID=9981322b-ac8e-4036-865b-c420b8846b84 /var/log       btrfs   subvol=/@log,defaults,noatime,compress=zstd 0 0
+tmpfs                                     /tmp           tmpfs   defaults,noatime,mode=1777 0 0
+UUID=3C30EA8730EA478A  /mnt/win1  ntfs3  rw,noatime,uid=1000,gid=1000,force,exec,prealloc,windows_names,nofail,x-systemd.automount  0  0
+UUID=1C32FD8832FD6764  /mnt/win2  ntfs3  rw,noatime,uid=1000,gid=1000,force,exec,prealloc,windows_names,nofail,x-systemd.automount  0  0
+UUID=f42ca24a-a9fb-4911-9aff-d56f9068ef47  /mnt/dados  btrfs  rw,noatime,compress=zstd:3,nofail  0  0
+
+=== MOUNTED ===
+/dev/sda2 on / type btrfs (rw,noatime,compress=zstd:3,ssd,space_cache=v2,subvolid=256,subvol=/@)
+/dev/sda2 on /root type btrfs (rw,noatime,compress=zstd:3,ssd,space_cache=v2,subvolid=258,subvol=/@root)
+/dev/sda2 on /srv type btrfs (rw,noatime,compress=zstd:3,ssd,space_cache=v2,subvolid=259,subvol=/@srv)
+/dev/sda2 on /home type btrfs (rw,noatime,compress=zstd:3,ssd,space_cache=v2,subvolid=257,subvol=/@home)
+/dev/sda2 on /var/cache type btrfs (rw,noatime,compress=zstd:3,ssd,space_cache=v2,subvolid=260,subvol=/@cache)
+/dev/sdb on /mnt/dados type btrfs (rw,noatime,compress=zstd:3,ssd,discard=async,space_cache=v2,subvolid=5,subvol=/)
+/dev/sda2 on /var/log type btrfs (rw,noatime,compress=zstd:3,ssd,space_cache=v2,subvolid=262,subvol=/@log)
+/dev/sda2 on /var/tmp type btrfs (rw,noatime,compress=zstd:3,ssd,space_cache=v2,subvolid=261,subvol=/@tmp)
+/dev/sda1 on /boot type vfat (rw,relatime,fmask=0077,dmask=0077,codepage=437,iocharset=ascii,shortname=mixed,utf8,errors=remount-ro)
+/dev/sdd1 on /mnt/win2 type ntfs3 (rw,noatime,uid=1000,gid=1000,force,windows_names,acl,iocharset=utf8,prealloc,x-systemd.automount)
+/dev/sdc1 on /mnt/win1 type ntfs3 (rw,noatime,uid=1000,gid=1000,force,windows_names,acl,iocharset=utf8,prealloc,x-systemd.automount)

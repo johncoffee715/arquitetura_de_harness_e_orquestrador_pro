@@ -1,0 +1,1 @@
+{"type":"user","timestamp":"2026-08-11T09:48:16.555Z","content":"Quick test: read the first 30 lines of /home/johncoffee/Downloads/siz_delimiter.py and report: (1) the module docstring/header, (2) the list of imports, (3) whether it imports mcp/stdio or fastapi/flask (i.e. is it an MCP server?). Answer in at most 120 words."}

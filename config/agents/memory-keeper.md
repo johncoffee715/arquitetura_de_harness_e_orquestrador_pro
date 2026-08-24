@@ -5,16 +5,16 @@ mode: subagent
 origin: oh-my-openagent-helenizado
 model_rotation:
   enabled: true
-  primary: github-copilot/claude-opus-4.7
+  primary: local-qwen-coder/qwen2.5-coder-1.5b
   fallback:
-    - opencode/claude-opus-4-7
-    - github-copilot/gpt-5.5
+    - local-qwen/qwen-3.5-0.8b
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gpt-5.5
-    - github-copilot/gemini-3.1-pro-preview
+    - local-qwen/qwen-3.5-0.8b
     - opencode/gemini-3.1-pro
     - opencode/kimi-k2.5
     - opencode/gpt-5-nano
-    - github-copilot/claude-haiku-4.5
+    - local-qwen/qwen-3.5-0.8b
     - opencode/glm-5
     - opencode/big-pickle
   max_retries_per_model: 1
@@ -24,7 +24,7 @@ model_rotation:
   continue_after_escalate: true
   restart_cycle_on_exhaust: true
   restart_order: free_first
-model: opencode-go/glm-5.2
+model: local-qwen-coder/qwen2.5-coder-1.5b
 color: info
 metadata:
   category: memory

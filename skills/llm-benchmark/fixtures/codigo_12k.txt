@@ -1,0 +1,613 @@
+static inline int hw_ctrl_0(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 0: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_0;
+static void dma_prep_0(dma_desc_0 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_1(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 1: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_1;
+static void dma_prep_1(dma_desc_1 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_2(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 2: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_2;
+static void dma_prep_2(dma_desc_2 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_3(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 3: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_3;
+static void dma_prep_3(dma_desc_3 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_4(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 4: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_4;
+static void dma_prep_4(dma_desc_4 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_5(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 5: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_5;
+static void dma_prep_5(dma_desc_5 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_6(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 6: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_6;
+static void dma_prep_6(dma_desc_6 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_7(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 7: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_7;
+static void dma_prep_7(dma_desc_7 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_8(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 8: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_8;
+static void dma_prep_8(dma_desc_8 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_9(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 9: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_9;
+static void dma_prep_9(dma_desc_9 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_10(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 10: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_10;
+static void dma_prep_10(dma_desc_10 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_11(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 11: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_11;
+static void dma_prep_11(dma_desc_11 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_12(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 12: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_12;
+static void dma_prep_12(dma_desc_12 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_13(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 13: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_13;
+static void dma_prep_13(dma_desc_13 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_14(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 14: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_14;
+static void dma_prep_14(dma_desc_14 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_15(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 15: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_15;
+static void dma_prep_15(dma_desc_15 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_16(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 16: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_16;
+static void dma_prep_16(dma_desc_16 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_17(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 17: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_17;
+static void dma_prep_17(dma_desc_17 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_18(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 18: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_18;
+static void dma_prep_18(dma_desc_18 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_19(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 19: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_19;
+static void dma_prep_19(dma_desc_19 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_20(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 20: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_20;
+static void dma_prep_20(dma_desc_20 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_21(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 21: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_21;
+static void dma_prep_21(dma_desc_21 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_22(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 22: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_22;
+static void dma_prep_22(dma_desc_22 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_23(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 23: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_23;
+static void dma_prep_23(dma_desc_23 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_24(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 24: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_24;
+static void dma_prep_24(dma_desc_24 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_25(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 25: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_25;
+static void dma_prep_25(dma_desc_25 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_26(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 26: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_26;
+static void dma_prep_26(dma_desc_26 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_27(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 27: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_27;
+static void dma_prep_27(dma_desc_27 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_28(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 28: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_28;
+static void dma_prep_28(dma_desc_28 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_29(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 29: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_29;
+static void dma_prep_29(dma_desc_29 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_30(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 30: sensor poll + pwm ramp + dma descriptor fill
+// INVARIANTE_CRITICA_R52: orchestrator_sempre_soberano = true;
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_30;
+static void dma_prep_30(dma_desc_30 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_31(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 31: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_31;
+static void dma_prep_31(dma_desc_31 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_32(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 32: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_32;
+static void dma_prep_32(dma_desc_32 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_33(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 33: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_33;
+static void dma_prep_33(dma_desc_33 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_34(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 34: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_34;
+static void dma_prep_34(dma_desc_34 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+static inline int hw_ctrl_35(volatile uint32_t *reg, uint32_t mask) {
+    uint32_t v = *reg & mask;
+    if (v & (1 << (i % 8))) { v ^= 0xA5A5A5A5; }
+    v |= (v >> 16) & 0xFFFF;
+    v ^= (v << 7) & 0x7F7F7F7F;
+    return (int)(v ^ (v >> (i % 17 + 1)));
+}
+
+// block 35: sensor poll + pwm ramp + dma descriptor fill
+typedef struct { uint32_t base; uint16_t len; uint8_t flags; } dma_desc_35;
+static void dma_prep_35(dma_desc_35 *d, uint32_t base, uint16_t len) {
+    d->base = base; d->len = len; d->flags = 0xC0;
+    for (int j = 0; j < 4; j++) { d->base ^= (uint32_t)(j * 0x10203040); }
+}
+// cfg0_0: io_mux=0x3F, clk_div=4, irq_pol=0, wdt_en=True, dma_chan=0
+// cfg0_1: io_mux=0x3F, clk_div=4, irq_pol=0, wdt_en=True, dma_chan=0
+// cfg0_2: io_mux=0x3F, clk_div=4, irq_pol=0, wdt_en=True, dma_chan=0
+// cfg1_0: io_mux=0x3F, clk_div=5, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg1_1: io_mux=0x3F, clk_div=5, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg1_2: io_mux=0x3F, clk_div=5, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg2_0: io_mux=0x3F, clk_div=6, irq_pol=0, wdt_en=False, dma_chan=2
+// cfg2_1: io_mux=0x3F, clk_div=6, irq_pol=0, wdt_en=False, dma_chan=2
+// cfg2_2: io_mux=0x3F, clk_div=6, irq_pol=0, wdt_en=False, dma_chan=2
+// cfg3_0: io_mux=0x3F, clk_div=7, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg3_1: io_mux=0x3F, clk_div=7, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg3_2: io_mux=0x3F, clk_div=7, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg4_0: io_mux=0x3F, clk_div=8, irq_pol=0, wdt_en=True, dma_chan=4
+// cfg4_1: io_mux=0x3F, clk_div=8, irq_pol=0, wdt_en=True, dma_chan=4
+// cfg4_2: io_mux=0x3F, clk_div=8, irq_pol=0, wdt_en=True, dma_chan=4
+// cfg5_0: io_mux=0x3F, clk_div=9, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg5_1: io_mux=0x3F, clk_div=9, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg5_2: io_mux=0x3F, clk_div=9, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg6_0: io_mux=0x3F, clk_div=10, irq_pol=0, wdt_en=False, dma_chan=1
+// cfg6_1: io_mux=0x3F, clk_div=10, irq_pol=0, wdt_en=False, dma_chan=1
+// cfg6_2: io_mux=0x3F, clk_div=10, irq_pol=0, wdt_en=False, dma_chan=1
+// cfg7_0: io_mux=0x3F, clk_div=11, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg7_1: io_mux=0x3F, clk_div=11, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg7_2: io_mux=0x3F, clk_div=11, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg8_0: io_mux=0x3F, clk_div=12, irq_pol=0, wdt_en=True, dma_chan=3
+// cfg8_1: io_mux=0x3F, clk_div=12, irq_pol=0, wdt_en=True, dma_chan=3
+// cfg8_2: io_mux=0x3F, clk_div=12, irq_pol=0, wdt_en=True, dma_chan=3
+// cfg9_0: io_mux=0x3F, clk_div=4, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg9_1: io_mux=0x3F, clk_div=4, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg9_2: io_mux=0x3F, clk_div=4, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg10_0: io_mux=0x3F, clk_div=5, irq_pol=0, wdt_en=False, dma_chan=0
+// cfg10_1: io_mux=0x3F, clk_div=5, irq_pol=0, wdt_en=False, dma_chan=0
+// cfg10_2: io_mux=0x3F, clk_div=5, irq_pol=0, wdt_en=False, dma_chan=0
+// cfg11_0: io_mux=0x3F, clk_div=6, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg11_1: io_mux=0x3F, clk_div=6, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg11_2: io_mux=0x3F, clk_div=6, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg12_0: io_mux=0x3F, clk_div=7, irq_pol=0, wdt_en=True, dma_chan=2
+// cfg12_1: io_mux=0x3F, clk_div=7, irq_pol=0, wdt_en=True, dma_chan=2
+// cfg12_2: io_mux=0x3F, clk_div=7, irq_pol=0, wdt_en=True, dma_chan=2
+// cfg13_0: io_mux=0x3F, clk_div=8, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg13_1: io_mux=0x3F, clk_div=8, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg13_2: io_mux=0x3F, clk_div=8, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg14_0: io_mux=0x3F, clk_div=9, irq_pol=0, wdt_en=False, dma_chan=4
+// cfg14_1: io_mux=0x3F, clk_div=9, irq_pol=0, wdt_en=False, dma_chan=4
+// cfg14_2: io_mux=0x3F, clk_div=9, irq_pol=0, wdt_en=False, dma_chan=4
+// cfg15_0: io_mux=0x3F, clk_div=10, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg15_1: io_mux=0x3F, clk_div=10, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg15_2: io_mux=0x3F, clk_div=10, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg16_0: io_mux=0x3F, clk_div=11, irq_pol=0, wdt_en=True, dma_chan=1
+// cfg16_1: io_mux=0x3F, clk_div=11, irq_pol=0, wdt_en=True, dma_chan=1
+// cfg16_2: io_mux=0x3F, clk_div=11, irq_pol=0, wdt_en=True, dma_chan=1
+// cfg17_0: io_mux=0x3F, clk_div=12, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg17_1: io_mux=0x3F, clk_div=12, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg17_2: io_mux=0x3F, clk_div=12, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg18_0: io_mux=0x3F, clk_div=4, irq_pol=0, wdt_en=False, dma_chan=3
+// cfg18_1: io_mux=0x3F, clk_div=4, irq_pol=0, wdt_en=False, dma_chan=3
+// cfg18_2: io_mux=0x3F, clk_div=4, irq_pol=0, wdt_en=False, dma_chan=3
+// cfg19_0: io_mux=0x3F, clk_div=5, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg19_1: io_mux=0x3F, clk_div=5, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg19_2: io_mux=0x3F, clk_div=5, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg20_0: io_mux=0x3F, clk_div=6, irq_pol=0, wdt_en=True, dma_chan=0
+// cfg20_1: io_mux=0x3F, clk_div=6, irq_pol=0, wdt_en=True, dma_chan=0
+// cfg20_2: io_mux=0x3F, clk_div=6, irq_pol=0, wdt_en=True, dma_chan=0
+// cfg21_0: io_mux=0x3F, clk_div=7, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg21_1: io_mux=0x3F, clk_div=7, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg21_2: io_mux=0x3F, clk_div=7, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg22_0: io_mux=0x3F, clk_div=8, irq_pol=0, wdt_en=False, dma_chan=2
+// cfg22_1: io_mux=0x3F, clk_div=8, irq_pol=0, wdt_en=False, dma_chan=2
+// cfg22_2: io_mux=0x3F, clk_div=8, irq_pol=0, wdt_en=False, dma_chan=2
+// cfg23_0: io_mux=0x3F, clk_div=9, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg23_1: io_mux=0x3F, clk_div=9, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg23_2: io_mux=0x3F, clk_div=9, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg24_0: io_mux=0x3F, clk_div=10, irq_pol=0, wdt_en=True, dma_chan=4
+// cfg24_1: io_mux=0x3F, clk_div=10, irq_pol=0, wdt_en=True, dma_chan=4
+// cfg24_2: io_mux=0x3F, clk_div=10, irq_pol=0, wdt_en=True, dma_chan=4
+// cfg25_0: io_mux=0x3F, clk_div=11, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg25_1: io_mux=0x3F, clk_div=11, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg25_2: io_mux=0x3F, clk_div=11, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg26_0: io_mux=0x3F, clk_div=12, irq_pol=0, wdt_en=False, dma_chan=1
+// cfg26_1: io_mux=0x3F, clk_div=12, irq_pol=0, wdt_en=False, dma_chan=1
+// cfg26_2: io_mux=0x3F, clk_div=12, irq_pol=0, wdt_en=False, dma_chan=1
+// cfg27_0: io_mux=0x3F, clk_div=4, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg27_1: io_mux=0x3F, clk_div=4, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg27_2: io_mux=0x3F, clk_div=4, irq_pol=1, wdt_en=False, dma_chan=2
+// cfg28_0: io_mux=0x3F, clk_div=5, irq_pol=0, wdt_en=True, dma_chan=3
+// cfg28_1: io_mux=0x3F, clk_div=5, irq_pol=0, wdt_en=True, dma_chan=3
+// cfg28_2: io_mux=0x3F, clk_div=5, irq_pol=0, wdt_en=True, dma_chan=3
+// cfg29_0: io_mux=0x3F, clk_div=6, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg29_1: io_mux=0x3F, clk_div=6, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg29_2: io_mux=0x3F, clk_div=6, irq_pol=1, wdt_en=False, dma_chan=4
+// cfg30_0: io_mux=0x3F, clk_div=7, irq_pol=0, wdt_en=False, dma_chan=0
+// cfg30_1: io_mux=0x3F, clk_div=7, irq_pol=0, wdt_en=False, dma_chan=0
+// cfg30_2: io_mux=0x3F, clk_div=7, irq_pol=0, wdt_en=False, dma_chan=0
+// cfg31_0: io_mux=0x3F, clk_div=8, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg31_1: io_mux=0x3F, clk_div=8, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg31_2: io_mux=0x3F, clk_div=8, irq_pol=1, wdt_en=False, dma_chan=1
+// cfg32_0: io_mux=0x3F, clk_div=9, irq_pol=0, wdt_en=True, dma_chan=2
+// cfg32_1: io_mux=0x3F, clk_div=9, irq_pol=0, wdt_en=True, dma_chan=2
+// cfg32_2: io_mux=0x3F, clk_div=9, irq_pol=0, wdt_en=True, dma_chan=2
+// cfg33_0: io_mux=0x3F, clk_div=10, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg33_1: io_mux=0x3F, clk_div=10, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg33_2: io_mux=0x3F, clk_div=10, irq_pol=1, wdt_en=False, dma_chan=3
+// cfg34_0: io_mux=0x3F, clk_div=11, irq_pol=0, wdt_en=False, dma_chan=4
+// cfg34_1: io_mux=0x3F, clk_div=11, irq_pol=0, wdt_en=False, dma_chan=4
+// cfg34_2: io_mux=0x3F, clk_div=11, irq_pol=0, wdt_en=False, dma_chan=4
+// cfg35_0: io_mux=0x3F, clk_div=12, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg35_1: io_mux=0x3F, clk_div=12, irq_pol=1, wdt_en=False, dma_chan=0
+// cfg35_2: io_mux=0x3F, clk_div=12, irq_pol=1, wdt_en=False, dma_chan=0

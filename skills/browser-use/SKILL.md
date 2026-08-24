@@ -1,13 +1,6 @@
 ---
 name: browser-use
 description: "Automação de navegador via AI Agent — absorvido criticamente de browser-use/browser-use (106k★ MIT). Integra Playwright MCP + Gran-Mestre para tarefas web complexas: formulários, scraping, QA, extração."
-user-invocable: true
-allowed-tools: "Read Write Edit Bash Task"
-metadata:
-  version: "1.0.0"
-  origin: "https://github.com/browser-use/browser-use (MIT)"
-  absorbed_at: "2026-07-22"
-  antropofagia: "Devorada arquitetura Agent+Controller+Tools+MCP+CLI. Adaptada para ecossistema OpenCode com Gran-Mestre routing."
 ---
 
 # 🦎 browser-use — Skill de Automação Web para OpenCode

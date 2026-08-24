@@ -1,14 +1,6 @@
 ---
 name: deepagents
 description: "Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo. (absorvido de langchain-ai/deepagents)"
-origin: absorvido:langchain-ai/deepagents
-metadata:
-  autofagia: langchain-ai/deepagents (2026-08-04)
-  prioridade: 18
-  linguagem: Python
-  topics: agent-harness, mcp, langgraph
-  artefatos: skill+subagent
-  padroes_absorvidos: 1
 ---
 # Deepagents
 

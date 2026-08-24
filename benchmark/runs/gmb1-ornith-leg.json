@@ -1,0 +1,31 @@
+{
+  "model": "ornith-1-5-9b-q4-k-m",
+  "leg": "E_recovery+F_needle",
+  "date": "2026-08-23",
+  "E": [
+    {
+      "case": "tool_missing",
+      "admits": false,
+      "fabricates": false,
+      "lat_s": 2.7
+    },
+    {
+      "case": "param_invalid",
+      "admits": false,
+      "fabricates": false,
+      "lat_s": 2.3
+    }
+  ],
+  "F": [
+    {
+      "tier": 65536,
+      "hit": false,
+      "lat_s": 85.2
+    },
+    {
+      "tier": 131072,
+      "hit": false,
+      "lat_s": 234.6
+    }
+  ]
+}

@@ -1,14 +1,6 @@
 ---
 name: recursive-llm
 description: "RLM (Recursive Language Model) p/ contexto longo eficiente: contexto vive em REPL Python, modelo explora/particiona recursivamente — 1M+ tokens com menos tokens de LLM e sem context rot. (absorvido de grishahq/recursive-llm)"
-origin: absorvido:grishahq/recursive-llm
-metadata:
-  autofagia: grishahq/recursive-llm (2026-08-10)
-  prioridade: 8
-  linguagem: Python
-  topics: rlm, long-context, repl, token-reduction, context-rot, recursive
-  artefatos: skill
-  padroes_absorvidos: 6
 ---
 # Recursive LLM (RLM)
 

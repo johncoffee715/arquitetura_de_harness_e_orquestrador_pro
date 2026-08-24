@@ -1,14 +1,6 @@
 ---
 name: azure-skills
 description: "Suite de skills MS Azure: ai, diagnostics, observability — referência de deployment e diagnóstico de agentes em nuvem gerenciada. (absorvido de microsoft/github-copilot-for-azure)"
-origin: absorvido:microsoft/github-copilot-for-azure
-metadata:
-  autofagia: microsoft/github-copilot-for-azure (2026-08-04)
-  prioridade: 5
-  linguagem: Markdown
-  topics: azure, cloud, diagnostics
-  artefatos: skill
-  padroes_absorvidos: 1
 ---
 # Azure Skills
 
