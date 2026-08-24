@@ -42,3 +42,10 @@ Teste controlado: rollback para -c 131072 → resposta em **0.4s, decode 71.3 t/
 Lição R62 reforçada: buffer dinâmico existe; teoria KV+pesos sem margem de compute = OOM escondido.
 Achado ambiental: RAM 29/31GB + swap 16GB usado (pressão dos 8 slots CPU + desktop) — monitorar via llm-usage@.
 Vídeo apoio Ornith: yt CSzffKuzUaI (ViktorKav) "a IA de 6GB que enfim termina o trabalho".
+
+## OMO 4.19.4 — pipeline alinhado ao grafo desenho (24/08 noite)
+- doctor 81→0 issues: omo.jsonc canonizado (categories={model,models[]}, agents={category})
+- Mapeamento: F1=prometheus+artistry+momus · F2=oracle+metis · F3=metis+hephaestus · F4=hephaestus+quick+needle-L0 · F5=atlas+momus · F6=oracle
+- Categorias vocacionais: cognitivo(9b→bonsai) · executor(2b→9b) · refutação(lfm→2b) · exploração(0.8b→2b) · criativo(bonsai→9b)
+- GM orquestra via scaffolding sob demanda — perfil é DEFAULT, não gaiola
+- Qwen3.8-9B @229376 ativo :8083 (decode 81.2 t/s); ornith reserva warm
