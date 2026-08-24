@@ -3,11 +3,15 @@
 // Regra: status="failed" BLOQUEIA bash/edit até `gm-validate` assinar o retorno.
 // Atômico (tmp+rename), defensivo, nunca derruba a sessão por erro interno.
 
-import { existsSync, readFileSync, mkdirSync, renameSync, writeFileSync } from "node:fs"
+import { existsSync, readFileSync, statSync, mkdirSync, renameSync, writeFileSync } from "node:fs"
 import { dirname } from "node:path"
 
 const STATE_PATH =
   process.env.GM_STATE_FILE ?? "/mnt/dados/harness/state/harness_state.json"
+
+// R70 window-guard: bytes lidos acumulados por sessão (leitura extensa = janela perdida)
+const READ_LIMIT_BYTES = 262144
+const readBytes = new Map<string, number>()
 
 interface HarnessState {
   version: number
@@ -56,6 +60,20 @@ export const GranMestreState = async () => {
       input: { tool: string; sessionID: string; callID: string },
       _output: { args: any },
     ) => {
+      if (input.tool === "read" || input.tool === "grep") {
+        const path = String(_output?.args?.path ?? _output?.args?.pattern ?? "")
+        let size = 32768 // grep: estimativa default
+        try { size = statSync(path.startsWith("/") ? path : path).size } catch {}
+        const acc = (readBytes.get(input.sessionID) ?? 0) + size
+        if (acc > READ_LIMIT_BYTES && size > 32768) {
+          throw new Error(
+            `[R70 WINDOW-GUARD] Leitura acumulada ${(acc/1048576).toFixed(1)}MB > 256KB nesta sessão — janela do primário em risco.\n` +
+            `ARQUIVO: ${path} (${(size/1024).toFixed(0)}KB) — LEITURA NEGADA.\n` +
+            `OBRIGATÓRIO: delegue via task ao subagente explore/general: "Leia ${path} e responda APENAS: <sua pergunta>" — consuma o resumo (<2KB). R70: o primário não lê matéria-prima.`)
+        }
+        readBytes.set(input.sessionID, acc)
+        return
+      }
       if (input.tool !== "bash" && input.tool !== "edit") return
       const s = readState()
       if (!isBlocked(s)) return
@@ -80,6 +98,17 @@ export const GranMestreState = async () => {
       }
       // heartbeat barato em comandos git (prova de atividade)
       if (/^git(\s|$)/.test(title.trim())) writeState({ status: "running" })
+      // R70-v2 (vetor 2): output pesado NUNCA entra na janela do primário — vira head+tail
+      if (input.tool === "read" || input.tool === "bash" || input.tool === "grep") {
+        const out = String(output?.output ?? "")
+        const nLines = out ? out.split("\n").length : 0
+        if (out.length > 131072 || nLines > 2000) {
+          const head = out.slice(0, 4096)
+          const tail = out.slice(-2048)
+          if (output) output.output =
+            head + `\n[R70-v2: OUTPUT ${Math.round(out.length/1024)}KB/${nLines} linhas TRUNCADO — integral disponível ao subagente; delegue a análise se necessário]\n` + tail
+        }
+      }
     },
 
     event: async (input: { type?: string; properties?: any }) => {

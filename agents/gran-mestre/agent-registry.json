@@ -2609,12 +2609,10 @@
     "--net (rede on)",
     "--harness-ro (mnt/dados leitura)"
    ],
-   "testes": [
-    "benigno ✓",
-    "isolamento home/rede/mnt ✓",
-    "harness-ro ✓"
-   ],
-   "auditoria": "/tmp/opencode_tasks/_done/ (últimos 50)"
+   "testes": "4/4: harness-RO ✓ · vault invisível ✓ · workspace RW ✓ · rede off ✓",
+   "auditoria": "/tmp/opencode_tasks/_done/ (últimos 50)",
+   "versao": "v3-whitelist",
+   "politica": "PoLP: só /mnt/dados/opencode/harness RO + workspace RW; vault INVISÍVEL (escrita via memory_keeper fora da jaula); rede off default"
   },
   {
    "id": "memory_keeper",
