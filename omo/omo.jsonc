@@ -1,179 +1,179 @@
 {
-  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/omo.schema.json",
-  "[opencode]": {
-    "agents": {
-      "sisyphus": {},
-      "hephaestus": {
-        "category": "executor"
-      },
-      "oracle": {
-        "category": "cognitivo"
-      },
-      "librarian": {
-        "category": "exploracao"
-      },
-      "explore": {
-        "category": "exploracao"
-      },
-      "multimodal-looker": {
-        "category": "cognitivo"
-      },
-      "prometheus": {
-        "category": "cognitivo"
-      },
-      "metis": {
-        "category": "cognitivo"
-      },
-      "momus": {
-        "category": "refutacao"
-      },
-      "superpowers": {},
-      "atlas": {
-        "category": "cognitivo"
-      },
-      "sisyphus-junior": {},
-      "hestia": {},
-      "atena": {},
-      "ai-agent-book": {},
-      "book-to-skill": {},
-      "code-review-graph": {},
-      "context-selector": {},
-      "dokku-deploy": {},
-      "executor-deep": {},
-      "fallow-lsp-reviewer": {},
-      "fallow-mcp-reviewer": {},
-      "gran-mestre": {},
-      "gsd-advisor-researcher": {},
-      "gsd-ai-researcher": {},
-      "gsd-assumptions-analyzer": {},
-      "gsd-code-fixer": {},
-      "gsd-code-reviewer": {},
-      "gsd-codebase-mapper": {},
-      "gsd-debug-session-manager": {},
-      "gsd-debugger": {},
-      "gsd-doc-classifier": {},
-      "gsd-doc-synthesizer": {},
-      "gsd-doc-verifier": {},
-      "gsd-doc-writer": {},
-      "gsd-domain-researcher": {},
-      "gsd-eval-auditor": {},
-      "gsd-eval-planner": {},
-      "gsd-executor": {},
-      "gsd-framework-selector": {},
-      "gsd-integration-checker": {},
-      "gsd-intel-updater": {},
-      "gsd-mempalace-curator": {},
-      "gsd-nyquist-auditor": {},
-      "gsd-pattern-mapper": {},
-      "gsd-phase-researcher": {},
-      "gsd-plan-checker": {},
-      "gsd-planner": {},
-      "gsd-project-researcher": {},
-      "gsd-research-synthesizer": {},
-      "gsd-roadmapper": {},
-      "gsd-security-auditor": {},
-      "gsd-ui-auditor": {},
-      "gsd-ui-checker": {},
-      "gsd-ui-researcher": {},
-      "gsd-user-profiler": {},
-      "gsd-verifier": {},
-      "hallmark": {},
-      "i-have-adhd": {},
-      "mattpocock-skills": {},
-      "memory-keeper": {},
-      "oh-my-opencode-slim": {},
-      "omniroute": {},
-      "onp-spec-driven": {},
-      "openship": {},
-      "orca": {},
-      "pi": {},
-      "reverser": {},
-      "ruview": {},
-      "superpowers-code-reviewer": {},
-      "superpowers-implementer": {},
-      "superpowers-plan-writer-alt1": {},
-      "superpowers-plan-writer-alt2": {},
-      "superpowers-plan-writer": {},
-      "superpowers-spec-writer": {},
-      "worldmonitor": {},
-      "deep": {
-        "description": "pipeline deep (criado 24/08)",
-        "category": "cognitivo"
-      },
-      "quick": {
-        "description": "pipeline quick (criado 24/08)",
-        "category": "executor"
-      },
-      "artistry": {
-        "description": "pipeline artistry (criado 24/08)",
-        "category": "criativo"
-      }
-    },
-    "categories": {
-      "cognitivo": {
-        "description": "F1 DESCOBERTA(prometheus·artistry·momus) + F2 CONTRATO(oracle·metis) + F5 REVISÃO(atlas·momus) + deep/multimodal transversal",
-        "model": "local-orchestrator/qwen3.8-9b",
-        "models": [
-          {
-            "model": "local-orchestrator/qwen3.8-9b"
-          },
-          {
-            "model": "local-bonsai/bonsai-27b"
-          }
-        ]
-      },
-      "executor": {
-        "description": "F4 EXECUÇÃO(hephaestus·quick·needle-L0) + F3 PLANO TDD(hephaestus)",
-        "model": "local-qwen38-2b/qwen3.8-2b",
-        "models": [
-          {
-            "model": "local-qwen38-2b/qwen3.8-2b"
-          },
-          {
-            "model": "local-orchestrator/qwen3.8-9b"
-          }
-        ]
-      },
-      "refutacao": {
-        "description": "loops de refutação: F1 brainstorm · F2 auditoria · F5 arquitetura (momus)",
-        "model": "local-lfm/lfm2.5-230m",
-        "models": [
-          {
-            "model": "local-lfm/lfm2.5-230m"
-          },
-          {
-            "model": "local-qwen38-2b/qwen3.8-2b"
-          }
-        ]
-      },
-      "exploracao": {
-        "description": "apoio transversal: busca/RAG (librarian·explore)",
-        "model": "local-qwen/qwen-3.5-0.8b",
-        "models": [
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          },
-          {
-            "model": "local-qwen38-2b/qwen3.8-2b"
-          }
-        ]
-      },
-      "criativo": {
-        "description": "F1 ideação/prosa sem viés (artistry)",
-        "model": "local-bonsai/bonsai-27b",
-        "models": [
-          {
-            "model": "local-bonsai/bonsai-27b"
-          },
-          {
-            "model": "local-orchestrator/qwen3.8-9b"
-          }
-        ]
-      }
-    }
+ "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/omo.schema.json",
+ "[opencode]": {
+  "agents": {
+   "sisyphus": {},
+   "hephaestus": {
+    "category": "executor"
+   },
+   "oracle": {
+    "category": "cognitivo"
+   },
+   "librarian": {
+    "category": "exploracao"
+   },
+   "explore": {
+    "category": "exploracao"
+   },
+   "multimodal-looker": {
+    "category": "cognitivo"
+   },
+   "prometheus": {
+    "category": "cognitivo"
+   },
+   "metis": {
+    "category": "cognitivo"
+   },
+   "momus": {
+    "category": "refutacao"
+   },
+   "superpowers": {},
+   "atlas": {
+    "category": "cognitivo"
+   },
+   "sisyphus-junior": {},
+   "hestia": {},
+   "atena": {},
+   "ai-agent-book": {},
+   "book-to-skill": {},
+   "code-review-graph": {},
+   "context-selector": {},
+   "dokku-deploy": {},
+   "executor-deep": {},
+   "fallow-lsp-reviewer": {},
+   "fallow-mcp-reviewer": {},
+   "gran-mestre": {},
+   "gsd-advisor-researcher": {},
+   "gsd-ai-researcher": {},
+   "gsd-assumptions-analyzer": {},
+   "gsd-code-fixer": {},
+   "gsd-code-reviewer": {},
+   "gsd-codebase-mapper": {},
+   "gsd-debug-session-manager": {},
+   "gsd-debugger": {},
+   "gsd-doc-classifier": {},
+   "gsd-doc-synthesizer": {},
+   "gsd-doc-verifier": {},
+   "gsd-doc-writer": {},
+   "gsd-domain-researcher": {},
+   "gsd-eval-auditor": {},
+   "gsd-eval-planner": {},
+   "gsd-executor": {},
+   "gsd-framework-selector": {},
+   "gsd-integration-checker": {},
+   "gsd-intel-updater": {},
+   "gsd-mempalace-curator": {},
+   "gsd-nyquist-auditor": {},
+   "gsd-pattern-mapper": {},
+   "gsd-phase-researcher": {},
+   "gsd-plan-checker": {},
+   "gsd-planner": {},
+   "gsd-project-researcher": {},
+   "gsd-research-synthesizer": {},
+   "gsd-roadmapper": {},
+   "gsd-security-auditor": {},
+   "gsd-ui-auditor": {},
+   "gsd-ui-checker": {},
+   "gsd-ui-researcher": {},
+   "gsd-user-profiler": {},
+   "gsd-verifier": {},
+   "hallmark": {},
+   "i-have-adhd": {},
+   "mattpocock-skills": {},
+   "memory-keeper": {},
+   "oh-my-opencode-slim": {},
+   "omniroute": {},
+   "onp-spec-driven": {},
+   "openship": {},
+   "orca": {},
+   "pi": {},
+   "reverser": {},
+   "ruview": {},
+   "superpowers-code-reviewer": {},
+   "superpowers-implementer": {},
+   "superpowers-plan-writer-alt1": {},
+   "superpowers-plan-writer-alt2": {},
+   "superpowers-plan-writer": {},
+   "superpowers-spec-writer": {},
+   "worldmonitor": {},
+   "deep": {
+    "description": "pipeline deep (criado 24/08)",
+    "category": "cognitivo"
+   },
+   "quick": {
+    "description": "pipeline quick (criado 24/08)",
+    "category": "executor"
+   },
+   "artistry": {
+    "description": "pipeline artistry (criado 24/08)",
+    "category": "criativo"
+   }
   },
-  "_migrations": [
-    "2026-07-opencode-config-unification",
-    "2026-08-reasoning-unification"
-  ]
+  "categories": {
+   "cognitivo": {
+    "description": "F1 DESCOBERTA(prometheus·artistry·momus) + F2 CONTRATO(oracle·metis) + F5 REVISÃO(atlas·momus) + deep/multimodal transversal",
+    "model": "local-orchestrator/orchestrator",
+    "models": [
+     {
+      "model": "local-orchestrator/orchestrator"
+     },
+     {
+      "model": "local-bonsai/bonsai-27b"
+     }
+    ]
+   },
+   "executor": {
+    "description": "F4 EXECUÇÃO(hephaestus·quick·needle-L0) + F3 PLANO TDD(hephaestus)",
+    "model": "local-qwen38-2b/qwen3.8-2b",
+    "models": [
+     {
+      "model": "local-qwen38-2b/qwen3.8-2b"
+     },
+     {
+      "model": "local-orchestrator/orchestrator"
+     }
+    ]
+   },
+   "refutacao": {
+    "description": "loops de refutação: F1 brainstorm · F2 auditoria · F5 arquitetura (momus)",
+    "model": "local-lfm/lfm2.5-230m",
+    "models": [
+     {
+      "model": "local-lfm/lfm2.5-230m"
+     },
+     {
+      "model": "local-qwen38-2b/qwen3.8-2b"
+     }
+    ]
+   },
+   "exploracao": {
+    "description": "apoio transversal: busca/RAG (librarian·explore)",
+    "model": "local-qwen/qwen-3.5-0.8b",
+    "models": [
+     {
+      "model": "local-qwen/qwen-3.5-0.8b"
+     },
+     {
+      "model": "local-qwen38-2b/qwen3.8-2b"
+     }
+    ]
+   },
+   "criativo": {
+    "description": "F1 ideação/prosa sem viés (artistry)",
+    "model": "local-bonsai/bonsai-27b",
+    "models": [
+     {
+      "model": "local-bonsai/bonsai-27b"
+     },
+     {
+      "model": "local-orchestrator/orchestrator"
+     }
+    ]
+   }
+  }
+ },
+ "_migrations": [
+  "2026-07-opencode-config-unification",
+  "2026-08-reasoning-unification"
+ ]
 }
