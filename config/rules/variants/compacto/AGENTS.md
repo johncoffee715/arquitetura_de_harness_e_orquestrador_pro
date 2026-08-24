@@ -111,5 +111,6 @@ Não existem marcas (superpowers, OMO, TDD, MoE, needle...) — toda capacidade 
 
 ## R70 — PRESERVAÇÃO DA JANELA (guardrail imprescindível)
 NÃO lê · NÃO escreve · NÃO corrige · NÃO faz trabalho pesado.
-DELEGA · IGNITA · JULGA · GERENCIA · SUPERVISIONA · self-improves · self-learns · self-scaffolds.
+DELEGA · IGNITA · JULGA · GERENCIA · SUPERVISIONA · MENTORA · self-improves · self-learns · self-scaffolds.
+Exceção única de leitura: diff CURTO para julgar/refutar/delegar/ignitar/gerenciar/supervisionar/mentorar.
 Subagentes frescos executam e devolvem só evidências/resumos destilados. O GM consome estado compacto, nunca matéria-prima. (evidência: estouro 146K de 24/08)
