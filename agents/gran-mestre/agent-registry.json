@@ -2511,6 +2511,92 @@
    "status": "habilitado-validacao-pendente",
    "registrado_em": "2026-08-24T19:24:36.275663+00:00",
    "nota": "CLI debug retorna vazio p/ arquivos soltos; validar dentro de sessao TUI real"
+  },
+  {
+   "id": "needle-2",
+   "tipo": "dispatcher-l0",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "invocacao": "echo 'task' | needle",
+   "wrapper": "/home/johncoffee/.local/bin/needle",
+   "dispatcher": "/mnt/dados/opencode/harness/needle-dispatch.py",
+   "venv": "/mnt/dados/opencode/harness/needle-env",
+   "modelo_hf": "Cactus-Compute/needle2 (~28MB)",
+   "throughput": "~1500 t/s CPU (in-process, sem porta)",
+   "caps": [
+    "run_shell",
+    "read_file",
+    "write_file",
+    "list_dir",
+    "search_files",
+    "grep_content"
+   ],
+   "index": "/mnt/dados/opencode/harness/needle_tool_index.bin",
+   "nota": "L0 on-demand: executa e morre — zero overhead ocioso; catálogo ≤5 via vector_cache_surrogate"
+  },
+  {
+   "id": "gran-mestre",
+   "tipo": "cli",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "path": "/home/johncoffee/.local/bin/gran-mestre",
+   "cmds": [
+    "models-up",
+    "registry"
+   ]
+  },
+  {
+   "id": "gm-validate",
+   "tipo": "cli",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "path": "/home/johncoffee/.local/bin/gm-validate",
+   "uso": "assina retorno do pipeline GM (R47)"
+  },
+  {
+   "id": "context_memory.db",
+   "tipo": "infra",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "path": "/mnt/dados/opencode/harness/context_memory.db",
+   "tabelas": [
+    "interactions_history",
+    "vector_cache_surrogate",
+    "gate_telemetry"
+   ]
+  },
+  {
+   "id": "needle_tool_index.bin",
+   "tipo": "infra",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "path": "/mnt/dados/opencode/harness/needle_tool_index.bin"
+  },
+  {
+   "id": "grammars-gbnf",
+   "tipo": "infra",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "paths": [
+    "/mnt/dados/harness/grammars/code.gbnf",
+    "/mnt/dados/harness/grammars/verdict.gbnf"
+   ]
+  },
+  {
+   "id": "pp_table.expected",
+   "tipo": "infra",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "path": "/mnt/dados/harness/pp_table.expected",
+   "uso": "baseline do guard GPU (R60-v3)"
+  },
+  {
+   "id": "needle-pipeline",
+   "tipo": "pipeline",
+   "status": "ativo",
+   "registrado_em": "2026-08-24T21:25:29.536116+00:00",
+   "path": "/mnt/dados/opencode/harness/needle-pipeline/",
+   "conteudo": "pytest plugin + evidencias jsonl"
   }
  ]
 }

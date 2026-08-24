@@ -90,16 +90,10 @@
       "on-demand": {
         "description": "agents sob demanda (movidos da lista legacy)"
       }
-    },
-    "updated_at": "2026-08-19T13:10:00-03:00",
-    "aliases": {
-      "qwen27b-iq2m": "local-qwen27b/qwen27b-iq2m",
-      "qwen27b-iq2xxs": "local-qwen27b/qwen27b-iq2xxs"
     }
   },
   "_migrations": [
     "2026-07-opencode-config-unification",
     "2026-08-reasoning-unification"
-  ],
-  "_probe_xyz": 1
+  ]
 }

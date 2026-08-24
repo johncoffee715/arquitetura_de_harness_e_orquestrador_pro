@@ -4,7 +4,7 @@ metadata:
   priority: CRITICAL
 model_rotation:
   enabled: true
-  primary: local-orchestrator/orchestrator-9b
+  primary: local-orchestrator/qwen3.8-9b
   fallback:
     - local-qwen/qwen-3.5-0.8b
     - local-qwen/qwen-3.5-0.8b
@@ -26,7 +26,7 @@ model_rotation:
 ---
 name: superpowers
 description: Superpowers-driven agent. Brainstorms with you, then delegates spec writing, planning, implementation, and implementation review to specialized subagents. Enforces the bundled skill-first workflow.
-model: local-orchestrator/orchestrator-9b
+model: local-orchestrator/qwen3.8-9b
 mode: primary
 color: "#8b5cf6"
 permission:
