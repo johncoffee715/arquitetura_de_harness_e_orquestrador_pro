@@ -23,5 +23,6 @@ while true; do
     fi
   done < <(jq -c '.slots[]' "$SLOTS" 2>/dev/null)
   bash "$BASE/lib/capture.sh" >/dev/null 2>&1
+  bash "$BASE/lib/metrics.sh" >/dev/null 2>&1
   sleep "$INTERVAL"
 done

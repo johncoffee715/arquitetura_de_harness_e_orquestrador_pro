@@ -23,3 +23,5 @@ cerebro com IA/textos, pdf e esquemas/**/*.pdf
 harness/watchdog/orchestrator-state.json
 harness/watchdog/orchestrator-history.jsonl
 harness/logs/wd-modular.log
+harness/watchdog/orchestrator-metrics.jsonl
+harness/watchdog/orchestrator-metrics.state

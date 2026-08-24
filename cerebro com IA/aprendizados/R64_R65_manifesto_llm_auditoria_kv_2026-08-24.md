@@ -49,3 +49,8 @@ Vídeo apoio Ornith: yt CSzffKuzUaI (ViktorKav) "a IA de 6GB que enfim termina o
 - Categorias vocacionais: cognitivo(9b→bonsai) · executor(2b→9b) · refutação(lfm→2b) · exploração(0.8b→2b) · criativo(bonsai→9b)
 - GM orquestra via scaffolding sob demanda — perfil é DEFAULT, não gaiola
 - Qwen3.8-9B @229376 ativo :8083 (decode 81.2 t/s); ornith reserva warm
+
+## R67 + métricas do GM (24/08 noite)
+- Doutrina: sem rótulos — tudo pertence ao Orquestrador; arsenal integral a serviço do primário.
+- metrics.sh: diff de contadores cumulativos do :8083 (n_prompt_tokens_processed + n_decoded) → orchestrator-metrics.jsonl por ciclo do wd. Validado: capturou 48 tok/3.6s (throughput real percebido).
+- Crivo orquestrador final: Qwen3.8-9B @229376 (224K) decode 81.2 t/s ATIVO; ornith reserva; IQ1_S eliminado+apagado.
