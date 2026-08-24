@@ -1,0 +1,10 @@
+{"event": "track", "thread_id": "cli", "model": "gran_mestre", "used_tokens": 200000, "max_tokens": 262144, "ratio": 0.7629, "trigger": "normal", "offload_path": null}
+{"event": "track", "thread_id": "cli", "model": "gran_mestre", "used_tokens": 200000, "max_tokens": 262144, "ratio": 0.7629, "trigger": "normal", "offload_path": null}
+{"event": "track", "thread_id": "cli", "model": "gran_mestre", "used_tokens": 210000, "max_tokens": 262144, "ratio": 0.8011, "trigger": "normal", "offload_path": null}
+{"event": "track", "thread_id": "cli", "model": "gran_mestre", "used_tokens": 210000, "max_tokens": 262144, "ratio": 0.8011, "trigger": "normal", "offload_path": null}
+{"event": "track", "thread_id": "orchestrator", "model": "gran_mestre", "used_tokens": 5114, "max_tokens": 262144, "ratio": 0.0195, "trigger": "none", "offload_path": null}
+{"event": "track", "thread_id": "orchestrator", "model": "heavy_execution", "used_tokens": 10228, "max_tokens": 262144, "ratio": 0.039, "trigger": "none", "offload_path": null}
+{"event": "track", "thread_id": "orchestrator", "model": "heavy_execution", "used_tokens": 15342, "max_tokens": 262144, "ratio": 0.0585, "trigger": "none", "offload_path": null}
+{"event": "track", "thread_id": "orchestrator", "model": "heavy_execution", "used_tokens": 20456, "max_tokens": 262144, "ratio": 0.078, "trigger": "none", "offload_path": null}
+{"event": "track", "thread_id": "orchestrator", "model": "gran_mestre", "used_tokens": 25570, "max_tokens": 262144, "ratio": 0.0975, "trigger": "none", "offload_path": null}
+{"event": "track", "thread_id": "orchestrator", "model": "gran_mestre", "used_tokens": 30684, "max_tokens": 262144, "ratio": 0.1171, "trigger": "none", "offload_path": null}

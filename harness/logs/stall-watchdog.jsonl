@@ -1,0 +1,6 @@
+{"kind": "stall_check", "ready": true, "healthy_backend": "omniroute", "down_backends": ["local-ornith", "local-bonsai", "local-nanbeige", "local-lfm"], "recommendation": "delegação autorizada", "ts": "2026-08-04T07:50:43Z"}
+{"kind": "resolve", "resource": "gsd-planner", "category": "subagent", "backend": "omniroute", "healthy": true, "fallback_used": true, "ts": "2026-08-04T07:50:43Z"}
+{"kind": "resolve", "resource": "gsd-planner", "category": "subagent", "backend": "local-ornith", "healthy": true, "fallback_used": false, "ts": "2026-08-04T08:29:19Z"}
+{"kind": "resolve", "resource": "gsd-planner", "category": "subagent", "backend": "local-ornith", "healthy": true, "fallback_used": false, "ts": "2026-08-04T08:31:03Z"}
+{"kind": "resolve", "resource": "gsd-planner", "category": "subagent", "backend": "omniroute", "healthy": true, "fallback_used": false, "ts": "2026-08-04T08:33:03Z"}
+{"kind": "resolve", "resource": "gsd-planner", "category": "subagent", "backend": "local-ornith", "healthy": true, "fallback_used": false, "ts": "2026-08-04T08:52:24Z"}

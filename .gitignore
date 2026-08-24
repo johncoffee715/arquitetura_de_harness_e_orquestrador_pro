@@ -1,0 +1,16 @@
+llama.cpp-master/
+node/
+vscode/
+projetos/
+opencode-source/
+ocp-log/
+.Trash-1000/
+.omo/
+.vscode/
+harness/__pycache__/
+harness/*/__pycache__/
+harness/cache/
+harness/memory/*.db
+harness/decision-log.jsonl
+harness/backup-rename-*/
+*.bak-*

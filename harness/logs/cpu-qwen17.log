@@ -1,0 +1,12 @@
+0.00.190.204 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.191.111 W srv  llama_server: -----------------
+0.00.191.115 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.191.115 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.191.116 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.191.116 W srv  llama_server: -----------------
+0.00.192.467 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3-1.7B-Q4_K_M.gguf'
+0.01.159.874 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.13.354.864 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 32768, kv_unified = 'false'
+0.13.373.693 I srv  llama_server: model loaded
+0.13.373.709 I srv  llama_server: listening on http://127.0.0.1:9088
+25.27.086.835 I srv    operator(): operator(): cleaning up before exit...

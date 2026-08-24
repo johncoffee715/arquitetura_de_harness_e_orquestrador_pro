@@ -1,0 +1,11 @@
+0.00.190.202 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.191.103 W srv  llama_server: -----------------
+0.00.191.107 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.191.107 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.191.107 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.191.108 W srv  llama_server: -----------------
+0.00.192.707 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/LFM2.5-230M-Q4_0.gguf'
+0.01.211.237 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 128000, kv_unified = 'false'
+0.01.217.312 I srv  llama_server: model loaded
+0.01.217.325 I srv  llama_server: listening on http://127.0.0.1:9086
+25.27.086.837 I srv    operator(): operator(): cleaning up before exit...

@@ -1,0 +1,21 @@
+0.00.006.295 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.006.502 I srv          init: The UI is disabled
+0.00.006.507 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.006.839 W srv  llama_server: -----------------
+0.00.006.844 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.006.844 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.006.845 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.006.845 W srv  llama_server: -----------------
+0.00.008.299 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/LFM2.5-230M-Q4_0.gguf'
+0.01.410.250 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 128000, kv_unified = 'false'
+0.01.415.998 I srv  llama_server: model loaded
+0.01.416.006 I srv  llama_server: listening on http://127.0.0.1:9086
+0.55.478.753 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+0.55.479.346 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+0.55.625.519 I slot print_timing: id  0 | task 0 | prompt eval time =      82.55 ms /     6 tokens (   13.76 ms per token,    72.69 tokens per second)
+0.55.625.543 I slot print_timing: id  0 | task 0 |        eval time =      63.49 ms /     8 tokens (    7.94 ms per token,   126.01 tokens per second)
+0.55.625.547 I slot print_timing: id  0 | task 0 |       total time =     146.03 ms /    14 tokens
+0.55.625.553 I slot print_timing: id  0 | task 0 |    graphs reused =          7
+0.55.625.661 I slot      release: id  0 | task 0 | stop processing: n_tokens = 13, truncated = 0
+89.45.170.302 W srv    operator(): got exception: {"error":{"code":500,"message":"image input is not supported - hint: if this is unexpected, you may need to provide the mmproj","type":"server_error"}}
+105.44.475.074 I srv    operator(): operator(): cleaning up before exit...

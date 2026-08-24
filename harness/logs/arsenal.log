@@ -1,0 +1,151 @@
+{"timestamp": "2026-08-04T05:55:18.033647+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T05:55:18.139534+00:00", "level": "INFO", "message": "Registry reconstruído e salvo: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T05:55:18.140239+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T05:55:26.321441+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T05:55:26.417305+00:00", "level": "INFO", "message": "Registry reconstruído e salvo: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T05:55:26.417956+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T05:57:11.331364+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T05:57:11.427404+00:00", "level": "INFO", "message": "Registry reconstruído e salvo: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:57:28.664316+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:57:28.762247+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:57:35.971076+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:57:36.065584+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:58:34.474886+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:58:34.591228+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:58:34.592073+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:58:34.739648+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:13.701845+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:13.804668+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:13.805461+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:20.950856+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:21.067881+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:21.068728+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:31.038766+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:31.134947+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:31.135800+00:00", "level": "ERROR", "message": "Erro inesperado", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:59.039012+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T06:59:59.139992+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:04:26.025107+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:04:26.184513+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /mnt/dados/harness/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:29:03.564293+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-0/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:29:03.566617+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:29:46.981586+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:29:46.982032+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-1/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:29:46.984006+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-1/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:29:46.985812+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:30:22.425180+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:30:22.425596+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-2/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:30:22.427523+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-2/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T07:30:22.429406+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:20:10.772090+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:20:10.772704+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-5/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:20:10.774475+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-5/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:20:10.776163+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:23:09.567273+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:23:09.568086+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-6/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:23:09.570027+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-6/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T08:23:09.571868+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-04T10:28:26.070226+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T10:28:26.071050+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-7/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T10:28:26.073118+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-7/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T10:28:26.075044+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-04T11:42:26.805631+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-04T11:42:26.806425+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-8/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T11:42:26.808579+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-8/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-04T11:42:26.810552+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-05T23:01:02.169115+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-05T23:01:02.169990+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-0/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-05T23:01:02.171714+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-0/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-05T23:01:02.173351+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:13:15.974352+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:13:15.974980+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-0/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:13:15.976674+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-0/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:13:15.978268+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:20:20.881947+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:20:20.882314+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-2/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:20:20.884065+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-2/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:20:20.885812+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:21:44.578138+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:21:44.578857+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-4/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:21:44.580705+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-4/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:21:44.582408+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:22:43.121212+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:22:43.121613+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-5/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:22:43.123333+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-5/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-07T19:22:43.124994+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:19:22.741037+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:19:22.741621+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-2/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:19:22.743295+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-2/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:19:22.744903+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:35:40.954597+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:35:40.955331+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-3/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:35:40.957274+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-3/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:35:40.958960+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:40:00.381835+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:40:00.382162+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-4/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:40:00.383857+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-4/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:40:00.385483+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:43:23.654138+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:43:23.654733+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-5/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:43:23.656604+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-5/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:43:23.658364+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:47:27.308291+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:47:27.308900+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-6/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:47:27.310581+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-6/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:47:27.312193+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:50:20.049573+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:50:20.050223+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-11/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:50:20.052312+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-11/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-09T22:50:20.054241+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:09:09.001763+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:09:09.002462+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-5/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:09:09.004352+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-5/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:09:09.006068+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:19:44.460738+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:19:44.461145+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-6/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:19:44.462980+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-6/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:19:44.464753+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:27:35.945649+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:27:35.946307+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-8/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:27:35.948445+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-8/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:27:35.950173+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:51:09.252417+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:51:09.252806+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-9/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:51:09.254536+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-9/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T03:51:09.256197+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-10T04:00:27.989341+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-10T04:00:27.989966+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-10/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T04:00:27.991659+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-10/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T04:00:27.993350+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-10T19:40:50.513304+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-10T19:40:50.514072+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-0/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T19:40:50.515861+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-0/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-10T19:40:50.517563+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-11T02:30:26.958406+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-11T02:30:26.959016+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-0/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T02:30:26.960784+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-0/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T02:30:26.962446+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:30:48.127896+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:30:48.128531+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-1/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:30:48.130484+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-1/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:30:48.132315+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:31:36.901435+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:31:36.901888+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-2/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:31:36.903598+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-2/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:31:36.905259+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:33:47.516072+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:33:47.516477+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-3/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:33:47.518313+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-3/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-11T05:33:47.520290+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-19T11:07:19.975690+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-19T11:07:19.976563+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-0/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-19T11:07:19.979249+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-0/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-19T11:07:19.981823+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:44:21.480755+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:44:21.481623+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-1/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:44:21.484202+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-1/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:44:21.486609+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:49:08.456383+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/harness/core/integration.py", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:49:08.457207+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /tmp/pytest-of-johncoffee/pytest-2/test_cenario5_fresh_subprocess0/registry.json", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:49:08.459874+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /tmp/pytest-of-johncoffee/pytest-2/test_cenario6_agent_registry_a0/nao-existe.json", "script": "arsenal"}
+{"timestamp": "2026-08-19T12:49:08.462387+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
