@@ -1,0 +1,119 @@
+{
+ "catalog": "ctx-catalog",
+ "updated": "2026-08-24T20:17:26.650196+00:00",
+ "models": [
+  {
+   "model": "Ornith-1.5-9B-Q4_K_M.gguf",
+   "port": 8083,
+   "local": "gpu",
+   "ctx": 131072,
+   "kv_type": "q8_0/q4_0",
+   "weights_gb": 5.24,
+   "caps": [
+    "reasoning",
+    "orchestration",
+    "planning",
+    "governance",
+    "self-scaffolding"
+   ],
+   "nota": "R60-v3: 131072=MAX VALIDADO; 163840 trava kernel Vulkan (sem headroom compute)"
+  },
+  {
+   "model": "Bonsai-27B-1bit.Q4_K_M.gguf",
+   "port": 9083,
+   "local": "cpu",
+   "ctx": 16384,
+   "kv_type": "q8_0/q4_0",
+   "weights_gb": 3.54,
+   "caps": [
+    "geracao-estruturada",
+    "gbnf",
+    "prosa"
+   ]
+  },
+  {
+   "model": "Qwen3.5-0.8B.gguf",
+   "port": 9084,
+   "local": "cpu",
+   "ctx": 131072,
+   "kv_type": "q8_0/q4_0",
+   "weights_gb": 0.49,
+   "caps": [
+    "exploracao"
+   ]
+  },
+  {
+   "model": "LLMJudge-Qwen2.5-3B.Q4_K_M.gguf",
+   "port": 9085,
+   "local": "cpu",
+   "ctx": 32768,
+   "kv_type": "híbrido",
+   "weights_gb": 1.79,
+   "caps": [
+    "validacao",
+    "contratos"
+   ]
+  },
+  {
+   "model": "LFM2.5-230M-Q4_0.gguf",
+   "port": 9086,
+   "local": "cpu",
+   "ctx": 128000,
+   "kv_type": "híbrido",
+   "weights_gb": 0.14,
+   "caps": [
+    "refutacao-rapida",
+    "filtros"
+   ]
+  },
+  {
+   "model": "Qwen3.8-2B-Q4_K_M.gguf",
+   "port": 9087,
+   "local": "cpu",
+   "ctx": 262144,
+   "kv_type": "q8_0/q4_0",
+   "weights_gb": 1.22,
+   "caps": [
+    "code",
+    "tool",
+    "TDD-F4"
+   ]
+  },
+  {
+   "model": "Qwen3-1.7B-Q4_K_M.gguf",
+   "port": 9088,
+   "local": "cpu",
+   "ctx": 32768,
+   "kv_type": "q8_0/q4_0",
+   "weights_gb": 1.03,
+   "caps": [
+    "curto",
+    "tool-calls"
+   ]
+  },
+  {
+   "model": "Ternary-Bonsai-1.7B-Q2_0_g64.gguf",
+   "port": 9089,
+   "local": "cpu",
+   "ctx": 8192,
+   "kv_type": "q8_0/q4_0",
+   "weights_gb": 0.46,
+   "caps": [
+    "throughput",
+    "refutacao-A2A"
+   ]
+  },
+  {
+   "model": "Ternary-Bonsai-8B-Q2_0_g64.gguf",
+   "port": 9090,
+   "local": "cpu",
+   "ctx": 4096,
+   "kv_type": "q8_0/q4_0",
+   "weights_gb": 2.15,
+   "caps": [
+    "reserva-warm",
+    "A2A-pesado"
+   ]
+  }
+ ]
+}

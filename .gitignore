@@ -15,3 +15,7 @@ harness/decision-log.jsonl
 harness/backup-rename-*/
 *.bak-*
 !Assistente Pessoal/modelos LLM/manifesto_llm.json
+
+# Arquivos gigantes fora do GitHub
+cerebro com IA/textos, pdf e esquemas/**/*.pdf
+**/*.rar
