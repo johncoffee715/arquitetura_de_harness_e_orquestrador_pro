@@ -14,3 +14,4 @@ harness/memory/*.db
 harness/decision-log.jsonl
 harness/backup-rename-*/
 *.bak-*
+!Assistente Pessoal/modelos LLM/manifesto_llm.json
