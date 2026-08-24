@@ -20,3 +20,6 @@ harness/backup-rename-*/
 cerebro com IA/textos, pdf e esquemas/**/*.pdf
 **/*.rar
 *.gguf
+harness/watchdog/orchestrator-state.json
+harness/watchdog/orchestrator-history.jsonl
+harness/logs/wd-modular.log
