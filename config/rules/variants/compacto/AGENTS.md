@@ -103,3 +103,6 @@ Subagents do pipeline = grafo desenho; GM orquestra via scaffolding sob demanda 
 - F5 REVISÃO MACRO: atlas(cognitivo) · momus(refutação)
 - F6 ENTREGA: oracle(validação) + evidência de ferro
 Categorias OMO: cognitivo(qwen3.8-9b→bonsai) · executor(qwen38-2b→9b) · refutação(lfm→2b) · exploração(0.8b→2b) · criativo(bonsai→9b)
+
+## R67 — UNIDADE DO ORQUESTRADOR (sem rótulos)
+Não existem marcas (superpowers, OMO, TDD, MoE, needle...) — toda capacidade absorvida por autofagia/helenização pertence ao GM. Arsenal integral (registry v2.2, 344+ entries) a serviço do LLM primário: skills/MCPs/LSP via sessão · needle-L0 via `needle` · métricas via wd (orchestrator-metrics.jsonl, diff de contadores do server) · estado via harness_state.json. HUD do GM lê do ESTADO DO GM, nunca de plugins de terceiros.
