@@ -1,859 +1,95 @@
-// OMO configuration
 {
   "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/omo.schema.json",
   "[opencode]": {
     "agents": {
-      "sisyphus": {
-        "models": [
-          "local-qwen38-2b/qwen38-2b-4.1-3b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "hephaestus": {
-        "models": [
-          "local-qwen38-2b/qwen38-2b-4.1-3b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "oracle": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "librarian": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "explore": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "multimodal-looker": {
-        "models": [
-          "omniroute/auto/best-vision",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "prometheus": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "metis": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "momus": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "superpowers": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "atlas": {
-        "models": [
-          "local-qwen38-2b/qwen38-2b-4.1-3b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "sisyphus-junior": {
-        "models": [
-          "local-qwen38-2b/qwen38-2b-4.1-3b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "hestia": {
-        "models": [
-          "local-qwen38-2b/qwen38-2b-4.1-3b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "atena": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "ai-agent-book": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "book-to-skill": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "code-review-graph": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "context-selector": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "dokku-deploy": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "executor-deep": {
-        "models": [
-          "local-qwen38-2b/qwen38-2b-4.1-3b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "fallow-lsp-reviewer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "fallow-mcp-reviewer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gran-mestre": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-advisor-researcher": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-ai-researcher": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-assumptions-analyzer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-code-fixer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-code-reviewer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-codebase-mapper": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-debug-session-manager": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-debugger": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-doc-classifier": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-doc-synthesizer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-doc-verifier": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-doc-writer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-domain-researcher": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-eval-auditor": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-eval-planner": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-executor": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-framework-selector": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-integration-checker": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-intel-updater": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-mempalace-curator": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-nyquist-auditor": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-pattern-mapper": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-phase-researcher": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-plan-checker": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-planner": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-project-researcher": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-research-synthesizer": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-roadmapper": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-security-auditor": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-ui-auditor": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-ui-checker": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-ui-researcher": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-user-profiler": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "gsd-verifier": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "hallmark": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "i-have-adhd": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "mattpocock-skills": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "memory-keeper": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "oh-my-opencode-slim": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "omniroute": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "onp-spec-driven": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "openship": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "orca": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "pi": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "reverser": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "ruview": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "superpowers-code-reviewer": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "superpowers-implementer": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "superpowers-plan-writer-alt1": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "superpowers-plan-writer-alt2": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "superpowers-plan-writer": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "superpowers-spec-writer": {
-        "models": [
-          "local-orchestrator/orchestrator-9b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      },
-      "worldmonitor": {
-        "models": [
-          "local-qwen/qwen-3.5-0.8b",
-          {
-            "model": "omniroute/auto/best-fast"
-          },
-          {
-            "model": "local-qwen/qwen-3.5-0.8b"
-          }
-        ]
-      }
+      "sisyphus": {},
+      "hephaestus": {},
+      "oracle": {},
+      "librarian": {},
+      "explore": {},
+      "multimodal-looker": {},
+      "prometheus": {},
+      "metis": {},
+      "momus": {},
+      "superpowers": {},
+      "atlas": {},
+      "sisyphus-junior": {},
+      "hestia": {},
+      "atena": {},
+      "ai-agent-book": {},
+      "book-to-skill": {},
+      "code-review-graph": {},
+      "context-selector": {},
+      "dokku-deploy": {},
+      "executor-deep": {},
+      "fallow-lsp-reviewer": {},
+      "fallow-mcp-reviewer": {},
+      "gran-mestre": {},
+      "gsd-advisor-researcher": {},
+      "gsd-ai-researcher": {},
+      "gsd-assumptions-analyzer": {},
+      "gsd-code-fixer": {},
+      "gsd-code-reviewer": {},
+      "gsd-codebase-mapper": {},
+      "gsd-debug-session-manager": {},
+      "gsd-debugger": {},
+      "gsd-doc-classifier": {},
+      "gsd-doc-synthesizer": {},
+      "gsd-doc-verifier": {},
+      "gsd-doc-writer": {},
+      "gsd-domain-researcher": {},
+      "gsd-eval-auditor": {},
+      "gsd-eval-planner": {},
+      "gsd-executor": {},
+      "gsd-framework-selector": {},
+      "gsd-integration-checker": {},
+      "gsd-intel-updater": {},
+      "gsd-mempalace-curator": {},
+      "gsd-nyquist-auditor": {},
+      "gsd-pattern-mapper": {},
+      "gsd-phase-researcher": {},
+      "gsd-plan-checker": {},
+      "gsd-planner": {},
+      "gsd-project-researcher": {},
+      "gsd-research-synthesizer": {},
+      "gsd-roadmapper": {},
+      "gsd-security-auditor": {},
+      "gsd-ui-auditor": {},
+      "gsd-ui-checker": {},
+      "gsd-ui-researcher": {},
+      "gsd-user-profiler": {},
+      "gsd-verifier": {},
+      "hallmark": {},
+      "i-have-adhd": {},
+      "mattpocock-skills": {},
+      "memory-keeper": {},
+      "oh-my-opencode-slim": {},
+      "omniroute": {},
+      "onp-spec-driven": {},
+      "openship": {},
+      "orca": {},
+      "pi": {},
+      "reverser": {},
+      "ruview": {},
+      "superpowers-code-reviewer": {},
+      "superpowers-implementer": {},
+      "superpowers-plan-writer-alt1": {},
+      "superpowers-plan-writer-alt2": {},
+      "superpowers-plan-writer": {},
+      "superpowers-spec-writer": {},
+      "worldmonitor": {}
     },
     "categories": {
-      "orquestrador": [
-        "gran-mestre"
-      ],
-      "gsd-core": [
-        "gsd-plan-phase",
-        "gsd-execute-phase",
-        "gsd-code-review",
-        "gsd-help",
-        "gsd-verify-work"
-      ],
-      "on-demand": [
-        "__movidas__: ['agent-reach', 'better-harness', 'caveman', 'code-archaeologist', 'graphify', 'headroom-compress', 'procedural-audio', 'procedural-textures', 'silverhawk', 'superpowers-executing-plans', 'superpowers-subagent-driven-development', 'superpowers-using-superpowers', 'superpowers-verification-before-completion', 'superpowers-writing-plans', 'threejs-game-harness', 'gsd-add-tests', 'gsd-ai-integration-phase', 'gsd-audit-fix', 'gsd-audit-milestone', 'gsd-audit-uat', 'gsd-autonomous', 'gsd-capture', 'gsd-cleanup', 'gsd-complete-milestone', 'gsd-config', 'gsd-debug', 'gsd-discuss-phase', 'gsd-docs-update', 'gsd-eval-review', 'gsd-explore', 'gsd-extract-learnings', 'gsd-fast', 'gsd-forensics', 'gsd-graphify', 'gsd-health', 'gsd-import', 'gsd-inbox', 'gsd-ingest-docs', 'gsd-manager', 'gsd-map-codebase', 'gsd-mempalace-capture', 'gsd-mempalace-recall', 'gsd-milestone-summary', 'gsd-mvp-phase', 'gsd-new-milestone', 'gsd-new-project', 'gsd-ns-context', 'gsd-ns-ideate', 'gsd-ns-manage', 'gsd-ns-project', 'gsd-ns-review', 'gsd-ns-workflow', 'gsd-pause-work', 'gsd-phase', 'gsd-plan-review-convergence', 'gsd-pr-branch', 'gsd-profile-user', 'gsd-progress', 'gsd-quick', 'gsd-resume-work', 'gsd-review', 'gsd-review-backlog', 'gsd-secure-phase', 'gsd-settings', 'gsd-ship', 'gsd-sketch', 'gsd-spec-phase', 'gsd-spike', 'gsd-stats', 'gsd-surface', 'gsd-thread', 'gsd-ui-phase', 'gsd-ui-review', 'gsd-ultraplan-phase', 'gsd-undo', 'gsd-update', 'gsd-validate-phase', 'gsd-workspace', 'gsd-workstreams', 'self-scaffold-guard', 'superpowers-brainstorming']"
-      ]
+      "orquestrador": {
+        "description": "Gran-Mestre e roteamento",
+        "model": "local-orchestrator/Ornith-1.5-9B"
+      },
+      "gsd-core": {
+        "description": "nucleo GSD de fases"
+      },
+      "on-demand": {
+        "description": "agents sob demanda (movidos da lista legacy)"
+      }
     },
     "updated_at": "2026-08-19T13:10:00-03:00",
     "aliases": {
@@ -864,5 +100,6 @@
   "_migrations": [
     "2026-07-opencode-config-unification",
     "2026-08-reasoning-unification"
-  ]
+  ],
+  "_probe_xyz": 1
 }

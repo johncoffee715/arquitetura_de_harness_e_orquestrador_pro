@@ -94,3 +94,4 @@ orquestrador compra janela gigante de propósito).
 ## REGRAS DA SESSÃO 2026-08-24 · TARDE (R64–R65 + manifesto)
 - R64 escada de contexto = TOPOLOGIA estática por vocação (16K→262K); scheduler dinâmico intra-modelo proibido (R60 contra-evidência + VRAM). TTFT ganha-se na camada CONTEXTO (filtrar pré-prefill), não no serving.
 - R65 roteamento híbrido: disjuntores rígidos primeiro (F4: tps≥100 · F1/F2/F5: GM≥60 · refutação: tps≥180), score elástico só dentro do elegível. Fonte: `/mnt/dados/Assistente Pessoal/modelos LLM/manifesto_llm.json` — nulls restantes = busca web paralelizada.
+- R66 PERFIL FIXO POR CATEGORIA: todo LLM passa por crivo empírico (sweep prefill/decode/VRAM-pico vs teto 15.85GB) e recebe perfil FIXO — temp, quant pesos, quant KV (K e V), ctx, batch/ubatch. Exemplo canônico Ornith: 262144 nativo · K=q5_0 · V=q4_0 · b2048/ub1024 · t0.6 → 491/67.8 t/s · pico 10.11GB. Perfil sem crivo = proibido.
