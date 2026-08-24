@@ -61,7 +61,7 @@ export const GranMestreState = async () => {
       _output: { args: any },
     ) => {
       if (input.tool === "read" || input.tool === "grep") {
-        const path = String(_output?.args?.path ?? _output?.args?.pattern ?? "")
+        const path = String(_output?.args?.filePath ?? _output?.args?.file_path ?? _output?.args?.path ?? _output?.args?.pattern ?? "")
         let size = 32768 // grep: estimativa default
         try { size = statSync(path.startsWith("/") ? path : path).size } catch {}
         const acc = (readBytes.get(input.sessionID) ?? 0) + size
