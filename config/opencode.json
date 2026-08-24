@@ -1146,7 +1146,8 @@
         "qwen3.8-9b": {
           "name": "Qwen3.8-9B (orquestrador) · GPU :8083",
           "limit": {
-            "context": 229376
+            "context": 229376,
+            "output": 8192
           }
         }
       }
