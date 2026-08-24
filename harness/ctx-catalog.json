@@ -6,8 +6,8 @@
    "model": "Ornith-1.5-9B-Q4_K_M.gguf",
    "port": 8083,
    "local": "gpu",
-   "ctx": 131072,
-   "kv_type": "q8_0/q4_0",
+   "ctx": 262144,
+   "kv_type": "q5_0/q4_0",
    "weights_gb": 5.24,
    "caps": [
     "reasoning",

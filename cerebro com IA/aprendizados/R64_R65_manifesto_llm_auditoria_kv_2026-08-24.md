@@ -33,3 +33,12 @@ KV@262K=13.95GB+pesos 5.24GB=OOM na MI50 → **ctx efetivo fixado 163840** (teto
 Ornith PERMANECE Gran-Mestre (GM-local 76.3, prefill 770 t/s, harness-trained). Qwen3.8-27B IQ2_XXS = PLANNER WARM F1/F2/F5 via hot-swap (GPQA community 89.2 · TB 73.0 · DeepSWE 42.2; bloqueios medidos: cache-reuse disabled, prefill 86K≈9min). Reversão se qwen27b ≥76 no re-run GMB.
 
 Tags: R60-v2, R64, R65, manifesto, auditoria-kv, experimento-kq4, decisao-orquestrador
+
+## R60-v3 (FINAL 24/08 noite) — teto empiricamente validado
+Sintoma: slot :8083 preso is_processing eterno com QUALQUER request @163840 (restart não resolve).
+Causa: compute buffers dinâmicos do prefill estouram headroom Vulkan — a matemática estática de KV+pesos ignora esse buffer.
+Teste controlado: rollback para -c 131072 → resposta em **0.4s, decode 71.3 t/s**, zero slots presos.
+**FIXADO: 131072 = MAX VALIDADO** em launcher + ctx-catalog.json + llama_budget.py + manifesto.
+Lição R62 reforçada: buffer dinâmico existe; teoria KV+pesos sem margem de compute = OOM escondido.
+Achado ambiental: RAM 29/31GB + swap 16GB usado (pressão dos 8 slots CPU + desktop) — monitorar via llm-usage@.
+Vídeo apoio Ornith: yt CSzffKuzUaI (ViktorKav) "a IA de 6GB que enfim termina o trabalho".

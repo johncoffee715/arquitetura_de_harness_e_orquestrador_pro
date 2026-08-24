@@ -83,12 +83,15 @@
    "fisica_inferencia": {
     "quantizacao": "Q4_K_M",
     "pesos_gb": 5.24,
-    "ctx_ativo": 163840,
-    "cache_k": "q8_0",
+    "ctx_ativo": 262144,
+    "cache_k": "q5_0",
     "cache_v": "q4_0",
-    "kv_per_token_kb": 52.0,
-    "kv_total_gb_at_ctx": 8.12,
-    "tps_decode_baseline_R63": 26.0
+    "kv_per_token_kb": 40.0,
+    "kv_total_gb_at_ctx": 10.0,
+    "tps_decode_baseline_R63": 26.0,
+    "batch_ubatch": "2048/1024",
+    "vram_pico_medido_gb": 10.11,
+    "teto_vram_nota": "R66 perfil FIXO: prefill 491 t/s · decode 67.8 t/s · validado empiricamente 24/08"
    },
    "indicadores_raciocinio": {
     "gm_oficial": 76.3,
@@ -107,6 +110,17 @@
     "ttft_ms": null,
     "math_500": null,
     "ifeval_strict": null
+   },
+   "perfil_fixo": {
+    "temperatura": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "enable_thinking": false,
+    "quant_pesos": "Q4_K_M",
+    "quant_kv": "K=q5_0 V=q4_0",
+    "ctx": 262144,
+    "batch": 2048,
+    "ubatch": 1024
    }
   },
   {
