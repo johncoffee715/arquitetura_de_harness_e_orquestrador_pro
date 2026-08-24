@@ -30,17 +30,16 @@ flock -n 9 || { echo "[start-all] outra instância já está levantando os model
 # ── Definição dos modelos ──
 # Formato: arquivo|porta|grammar|ctx|slots|local(gpu|cpu)
 declare -A MODELS=(
-  [orchestrator]="Qwen3.8-9B-Q4_K_M.gguf|8083|none|229376|1|gpu"
-  [bonsai]="Bonsai-27B-1bit.Q4_K_M.gguf|9083|code.gbnf|16384|1|cpu"
+  [orchestrator]="Ornith-1.5-9B-Q4_K_M.gguf|8083|none|262144|1|gpu"
   [qwen]="Qwen3.5-0.8B.gguf|9084|none|131072|1|cpu"
       [lfm]="LFM2.5-230M-Q4_0.gguf|9086|none|128000|1|cpu"
   [qwen38-2b]="Qwen3.8-2B-Q4_K_M.gguf|9087|none|262144|1|cpu"
-  [qwen31-7b]="Qwen3-1.7B-Q4_K_M.gguf|9088|none|32768|1|cpu"
+  [qwen31-7b]="Qwen3-1.7B-Q4_K_M.gguf|9088|none|40960|1|cpu"
   [llmjudge]="LLMJudge-Qwen2.5-3B.Q4_K_M.gguf|9085|none|32768|1|cpu"
-  [ternary17]="Ternary-Bonsai-1.7B-Q2_0_g64.gguf|9089|none|8192|1|cpu"
-  [ternary8b]="Ternary-Bonsai-8B-Q2_0_g64.gguf|9090|none|8192|1|cpu"
+  [ternary17]="Ternary-Bonsai-1.7B-Q2_0_g64.gguf|9089|none|32768|1|cpu"
+  [ternary8b]="Ternary-Bonsai-8B-Q2_0_g64.gguf|9090|none|65536|1|cpu"
     )
-KEYS=(orchestrator bonsai qwen lfm qwen38-2b qwen31-7b llmjudge ternary17 ternary8b)
+KEYS=(orchestrator qwen lfm qwen38-2b qwen31-7b llmjudge ternary17 ternary8b)
 N_MODELS=${#KEYS[@]}
 
 # Health-check ANTES do pkill
@@ -100,13 +99,13 @@ for key in "${KEYS[@]}"; do
     ARGS+=(--grammar-file "/mnt/dados/harness/grammars/$GRAMMAR")
   fi
 
-  ARGS+=(--cache-type-k q8_0 --cache-type-v q4_0)  # R-empírico 2026-08-23: K=q4 regride prefill 770→82 t/s e infla VRAM >16G (spill) — revertido com dados
+  ARGS+=(--cache-type-k q4_0 --cache-type-v q4_0)  # R71-b CPU: backend GGML tem kernel q4_0 nativo (o colapso 770→82 era VULKAN/GPU); economiza 31% KV RAMrtido com dados
 
   # Modelos específicos
   case "$FILE" in
-    Qwen3.8-9B*)  ARGS+=(--jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs "{"enable_thinking": false}" --cache-type-k q5_0 -b 2048 -ub 1024) ;;  # R60-v5: 204800 validado (decode 84.2 t/s, VRAM 14.47/15.85) — overrides por último
-    Ornith-1.5*)  ARGS+=(--jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs "{"enable_thinking": false}" --cache-type-k q5_0 -b 2048 -ub 1024) ;;  # reserva: 262144 nativo
-    Bonsai*)     ARGS+=(--reasoning-budget 1024 --temp 0.8) ;;
+    Qwen3.8-9B*)  ARGS+=(--jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs '{"enable_thinking": false}' --cache-type-k q5_0) ;;  # R60-v5
+    Ornith-1.5*)  ARGS+=(--jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs '{"enable_thinking": false}' --cache-type-k q5_0 -b 2048 -ub 1024) ;;  # reserva R66
+    Bonsai*)     ARGS+=(--reasoning-budget 1024 --temp 0.8 --cache-type-k q5_0) ;;  # R71-audit: KV 104→80 KB/tok
     Qwen3.5*)    ARGS+=(--jinja --reasoning-budget 1024 --temp 1.0) ;;
     LFM2.5*)     ARGS+=(--temp 0.4) ;;
     LLMJudge*)   ARGS+=(--temp 0.15) ;;

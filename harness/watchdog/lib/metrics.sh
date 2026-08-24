@@ -19,7 +19,6 @@ PT=$(echo $PREV | cut -d" " -f1); PP=$(echo $PREV | cut -d" " -f2); PD=$(echo $P
 DT=$(python3 -c "print(f'{$NOW-$PT:.3f}')")
 [ "$(python3 -c "print(1 if $NOW-$PT>0.5 else 0)")" = "0" ] && exit 0
 MODEL=$(python3 -c "import json;print(json.load(open('/mnt/dados/harness/watchdog/orchestrator-state.json')).get('modelo','?'))" 2>/dev/null)
-DP=$((PPROMPT-PD0)); DD=$((PDECODE-PD0))
 DPR=$((PPROMPT-PP)); DDC=$((PDECODE-PD))
 python3 -c "
 import json,datetime

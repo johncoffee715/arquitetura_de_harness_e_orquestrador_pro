@@ -69,7 +69,7 @@
  "models": [
   {
    "model_id": "Qwen3.8-9B-Q4_K_M",
-   "slot_port": 8083,
+   "slot_port": 9087,
    "device": "GPU",
    "topologia_arquitetura": {
     "tipo_fundacao": "qwen35",
@@ -97,7 +97,7 @@
     "gm_oficial": 74.2,
     "fonte": "GMB-local spec B/D-FULL (#2 do placar)"
    },
-   "vocacao_grafo": "ORQUESTRADOR ATIVO · janela 200K · F1-F6",
+   "vocacao_grafo": "EXECUTOR F4 · decode 84.2 t/s (maior do crivo) · janela 200K",
    "fases_bloqueadas": [],
    "null_para_busca_web": {
     "ttft_ms": null,
@@ -108,7 +108,7 @@
   },
   {
    "model_id": "Ornith-1.5-9B-Q4_K_M",
-   "slot_port": 0,
+   "slot_port": 8083,
    "device": "GPU",
    "topologia_arquitetura": {
     "tipo_fundacao": "qwen35",
@@ -141,7 +141,7 @@
     "terminal_bench_21": 46.2,
     "benchlm_geral": "36.9/100 #204/224 — fraco fora coding/agentic => vocacao restrita confirmada"
    },
-   "vocacao_grafo": "RESERVA warm · ex-orquestrador (GM 76.3) · reversível via launcher",
+   "vocacao_grafo": "ORQUESTRADOR ATIVO · 262144 nativo · K=q5_0/V=q4_0 · GM-oficial 76.3",
    "fases_bloqueadas": [
     "F4"
    ],
