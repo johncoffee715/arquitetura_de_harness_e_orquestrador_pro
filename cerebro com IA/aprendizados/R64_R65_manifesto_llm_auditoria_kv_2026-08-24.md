@@ -54,3 +54,10 @@ Vídeo apoio Ornith: yt CSzffKuzUaI (ViktorKav) "a IA de 6GB que enfim termina o
 - Doutrina: sem rótulos — tudo pertence ao Orquestrador; arsenal integral a serviço do primário.
 - metrics.sh: diff de contadores cumulativos do :8083 (n_prompt_tokens_processed + n_decoded) → orchestrator-metrics.jsonl por ciclo do wd. Validado: capturou 48 tok/3.6s (throughput real percebido).
 - Crivo orquestrador final: Qwen3.8-9B @229376 (224K) decode 81.2 t/s ATIVO; ornith reserva; IQ1_S eliminado+apagado.
+
+## R70 — Preservação da janela do orquestrador (24/08 noite)
+Diretiva: primário não lê/escreve/corrige/faz trabalho pesado — delega, ignita, julga, gerencia, supervisiona, self-improves/learns/scaffolds.
+Evidência viva: estouro 146K (task de leitura de regras no primário). Subagentes frescos executam e devolvem resumos destilados; GM consome estado compacto.
+
+## R70 refinada (24/08 noite) — exceção cirúrgica
+Exceção única de leitura: diff CURTO quando necessário para julgar, refutar, delegar, ignitar, gerenciar, supervisionar ou mentorar. + papel MENTORA adicionado.

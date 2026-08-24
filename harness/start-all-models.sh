@@ -160,3 +160,10 @@ if [ -n "$VRAM" ]; then
   echo "VRAM: $((VRAM / 1024 / 1024))MB / 16GB"
 fi
 echo "RAM: $(free -h | awk '/Mem:/{print $3 " / " $2}')"
+
+# R68 — watchers iniciam com o orquestrador (vigias seguem o primário)
+for u in gran-mestre-wd.service config-watcher.service llm-usage@8083.service; do
+  systemctl --user is-active --quiet "$u" 2>/dev/null || systemctl --user start "$u" 2>/dev/null || true
+done
+systemctl --user is-enabled --quiet gran-mestre-wd.service 2>/dev/null || systemctl --user enable gran-mestre-wd.service 2>/dev/null || true
+echo "[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)"

@@ -22,3 +22,15 @@ if modelo!=prev:
     open('$HIST','a').write(line+'\n')
     print('TROCA registrada:',modelo,'ctx',ctx)
 " 2>/dev/null
+# R69 — sync modular: limit.context do provider segue o ctx REAL do server
+OC=/mnt/dados/opencode/config/opencode.json
+CTX_REAL=$(echo "$RAW" | python3 -c "import json,sys;print(json.load(sys.stdin).get('default_generation_settings',{}).get('n_ctx',''))" 2>/dev/null)
+[ -n "$CTX_REAL" ] && python3 -c "
+import json
+d=json.load(open('$OC'))
+cur=d['provider']['local-orchestrator']['models']['orchestrator'].get('limit',{}).get('context')
+if cur != $CTX_REAL:
+    d['provider']['local-orchestrator']['models']['orchestrator']['limit']['context']=$CTX_REAL
+    json.dump(d,open('$OC','w'),indent=1,ensure_ascii=False)
+    print('R69: provider limit.context sincronizado →',$CTX_REAL)
+" 2>/dev/null
