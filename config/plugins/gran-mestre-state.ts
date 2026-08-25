@@ -102,11 +102,11 @@ export const GranMestreState = async () => {
       if (input.tool === "read" || input.tool === "bash" || input.tool === "grep") {
         const out = String(output?.output ?? "")
         const nLines = out ? out.split("\n").length : 0
-        if (out.length > 131072 || nLines > 2000) {
+        if (out.length > 20480 || nLines > 250) {  // fast-fail: 20KB ≈ 6.6K tok (julgamento cirúrgico)
           const head = out.slice(0, 4096)
           const tail = out.slice(-2048)
           if (output) output.output =
-            head + `\n[R70-v2: OUTPUT ${Math.round(out.length/1024)}KB/${nLines} linhas TRUNCADO — integral disponível ao subagente; delegue a análise se necessário]\n` + tail
+            head + `\n[R70-v2 FAST-FAIL: OUTPUT ${Math.round(out.length/1024)}KB/${nLines} linhas — pxpipe/caveman em background; delegue a análise — integral disponível ao subagente; delegue a análise se necessário]\n` + tail
         }
       }
     },

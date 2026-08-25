@@ -4,32 +4,41 @@
     "agents": {
       "sisyphus": {},
       "hephaestus": {
-        "category": "executor"
+        "category": "executor",
+        "model": "local-qwen38-2b/qwen3.8-2b"
       },
       "oracle": {
-        "category": "cognitivo"
+        "category": "cognitivo",
+        "model": "local-orchestrator/qwen3.8-9b"
       },
       "librarian": {
-        "category": "exploracao"
+        "category": "exploracao",
+        "model": "local-qwen/qwen-3.5-0.8b"
       },
       "explore": {
-        "category": "exploracao"
+        "category": "exploracao",
+        "model": "local-qwen/qwen-3.5-0.8b"
       },
       "multimodal-looker": {
-        "category": "cognitivo"
+        "category": "cognitivo",
+        "model": "local-orchestrator/qwen3.8-9b"
       },
       "prometheus": {
-        "category": "cognitivo"
+        "category": "cognitivo",
+        "model": "local-orchestrator/qwen3.8-9b"
       },
       "metis": {
-        "category": "cognitivo"
+        "category": "cognitivo",
+        "model": "local-orchestrator/qwen3.8-9b"
       },
       "momus": {
-        "category": "refutacao"
+        "category": "refutacao",
+        "model": "local-lfm/lfm2.5-230m"
       },
       "superpowers": {},
       "atlas": {
-        "category": "cognitivo"
+        "category": "cognitivo",
+        "model": "local-orchestrator/qwen3.8-9b"
       },
       "sisyphus-junior": {},
       "hestia": {},
@@ -98,15 +107,18 @@
       "worldmonitor": {},
       "deep": {
         "description": "pipeline deep (criado 24/08)",
-        "category": "cognitivo"
+        "category": "cognitivo",
+        "model": "local-orchestrator/qwen3.8-9b"
       },
       "quick": {
         "description": "pipeline quick (criado 24/08)",
-        "category": "executor"
+        "category": "executor",
+        "model": "local-qwen38-2b/qwen3.8-2b"
       },
       "artistry": {
         "description": "pipeline artistry (criado 24/08)",
-        "category": "criativo"
+        "category": "criativo",
+        "model": "local-bonsai/bonsai-27b"
       }
     },
     "categories": {
