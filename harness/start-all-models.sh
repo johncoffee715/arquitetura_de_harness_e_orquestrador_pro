@@ -33,13 +33,13 @@ declare -A MODELS=(
   [orchestrator]="Ornith-1.5-9B-Q4_K_M.gguf|8083|none|262144|1|gpu"
   [qwen]="Qwen3.5-0.8B.gguf|9084|none|131072|1|cpu"
       [lfm]="LFM2.5-230M-Q4_0.gguf|9086|none|128000|1|cpu"
-  [qwen38-2b]="Qwen3.8-2B-Q4_K_M.gguf|9087|none|262144|1|cpu"
+  [qwen38-9b]="Qwen3.8-9B-Q4_K_M.gguf|9087|none|131072|1|cpu"
   [qwen31-7b]="Qwen3-1.7B-Q4_K_M.gguf|9088|none|40960|1|cpu"
   [llmjudge]="LLMJudge-Qwen2.5-3B.Q4_K_M.gguf|9085|none|32768|1|cpu"
   [ternary17]="Ternary-Bonsai-1.7B-Q2_0_g64.gguf|9089|none|32768|1|cpu"
   [ternary8b]="Ternary-Bonsai-8B-Q2_0_g64.gguf|9090|none|65536|1|cpu"
     )
-KEYS=(orchestrator qwen lfm qwen38-2b qwen31-7b llmjudge ternary17 ternary8b)
+KEYS=(orchestrator qwen lfm qwen38-9b qwen31-7b llmjudge ternary17 ternary8b)
 N_MODELS=${#KEYS[@]}
 
 # Health-check ANTES do pkill
