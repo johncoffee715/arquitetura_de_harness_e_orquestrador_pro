@@ -1146,3 +1146,6 @@ Templates de command/agent agora usam paths absolutos (o arquivo vive em config/
 - [Safety] SHA: 7ae265a08156b887ef4b0c4a382eda5f26dab248 | 2026-08-21 10:15:14
 - [Safety] SHA: 7ae265a08156b887ef4b0c4a382eda5f26dab248 | 2026-08-24 08:27:54
 - [Safety] SHA: 7ae265a08156b887ef4b0c4a382eda5f26dab248 | 2026-08-24 11:34:01
+- [Safety] SHA: ef3012b31097f7735dd0f6309ec5ace3c912c869 | 2026-08-24 21:18:26
+- [Safety] SHA: ef3012b31097f7735dd0f6309ec5ace3c912c869 | 2026-08-24 21:20:49
+- [Safety] SHA: ef3012b31097f7735dd0f6309ec5ace3c912c869 | 2026-08-24 21:22:30
