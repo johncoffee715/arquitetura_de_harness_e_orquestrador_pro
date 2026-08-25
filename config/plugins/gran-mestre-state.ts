@@ -89,28 +89,27 @@ export const GranMestreState = async () => {
       input: { tool: string; sessionID: string; callID: string },
       output: { title?: string; output?: string; metadata?: any },
     ) => {
-      if (input.tool !== "bash") return
-      const title = String(output?.title ?? "")
-      // captura de SHA de segurança (F3): qualquer rev-parse HEAD bem-sucedido
-      if (/git\s+rev-parse\s+HEAD/.test(title)) {
-        const out = String(output?.output ?? "").trim()
-        if (/^[0-9a-f]{7,40}$/.test(out)) writeState({ sha: out })
-      }
-      // heartbeat barato em comandos git (prova de atividade)
-      if (/^git(\s|$)/.test(title.trim())) writeState({ status: "running" })
-      // R70-v2 (vetor 2): output pesado NUNCA entra na janela do primário — vira head+tail
-      if (input.tool === "read" || input.tool === "bash" || input.tool === "grep") {
+      // R70-v3: limites POR FERRAMENTA — read 16KB · bash/diff 24KB · grep 16KB
+      const OUTPUT_LIMITS: Record<string, number> = { read: 16384, bash: 24576, grep: 16384 }
+      if (input.tool in OUTPUT_LIMITS) {
         const out = String(output?.output ?? "")
         const nLines = out ? out.split("\n").length : 0
-        if (out.length > 20480 || nLines > 250) {  // fast-fail: 20KB ≈ 6.6K tok (julgamento cirúrgico)
-          const head = out.slice(0, 4096)
-          const tail = out.slice(-2048)
+        const lim = OUTPUT_LIMITS[input.tool]
+        if (out.length > lim || nLines > 250) {
+          const headLen = Math.min(out.length, Math.floor(lim * 0.65))
+          const tailLen = Math.min(out.length - headLen, Math.floor(lim * 0.3))
           if (output) output.output =
-            head + `\n[R70-v2 FAST-FAIL: OUTPUT ${Math.round(out.length/1024)}KB/${nLines} linhas — pxpipe/caveman em background; delegue a análise — integral disponível ao subagente; delegue a análise se necessário]\n` + tail
+            out.slice(0, headLen) + `\n[R70-v3 FAST-FAIL ${input.tool}: ${Math.round(out.length/1024)}KB/${nLines} linhas > ${Math.round(lim/1024)}KB — delegue a análise a um subagente]\n` + (tailLen > 0 ? out.slice(out.length - tailLen) : "")
         }
       }
+      if (input.tool !== "bash") return
+      const title = String(output?.title ?? "")
+      if (/git\s+rev-parse\s+HEAD/.test(title)) {
+        const shaOut = String(output?.output ?? "").trim()
+        if (/^[0-9a-f]{7,40}$/.test(shaOut)) writeState({ sha: shaOut })
+      }
+      if (/^git(\s|$)/.test(title.trim())) writeState({ status: "running" })
     },
-
     event: async (input: { type?: string; properties?: any }) => {
       const t = String(input?.type ?? "")
       if (t === "session.idle") {
