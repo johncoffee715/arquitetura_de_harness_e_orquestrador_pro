@@ -2626,6 +2626,17 @@
     "NUL sanitizado ✓"
    ],
    "politica": "ÚNICO caminho de escrita no vault (R71)"
+  },
+  {
+   "id": "task-validate",
+   "tipo": "scaffold-f4",
+   "status": "ativo-validado",
+   "registrado_em": "2026-08-25T00:35:36.524571+00:00",
+   "path": "/mnt/dados/harness/scaffold/task-validate.sh",
+   "uso": "task-validate.sh <task_id> <project_path> <test_cmd...>",
+   "fluxo": "GM cria o teste → scaffold executa/captura evidência (harness/evidence/<task_id>/) → PASS/FAIL",
+   "papel": "self-scaffolding F4: evidência de verificação por task (R70: GM não executa — o scaffold executa)",
+   "testes": "PASS captura JSON ✓ · FAIL propaga exit 1 ✓"
   }
  ]
 }

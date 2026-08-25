@@ -100,6 +100,7 @@ Subagents do pipeline = grafo desenho; GM orquestra via scaffolding sob demanda 
 - F2 CONTRATO: oracle(cognitivo) · metis(cognitivo)
 - F3 PLANO: metis + hephaestus(plano TDD)
 - F4 EXECUÇÃO: hephaestus(executor) · quick(triagem) · needle-L0(1500t/s) · subagentes frescos por task
+- SCAFFOLD F4 (self-scaffolding operacional): task-validate.sh <task_id> <project> <test_cmd> — GM cria o teste, o scaffold executa e captura evidência (harness/evidence/<id>/), reporta PASS/FAIL. GM declara task completa SÓ com evidência PASS.
 - F5 REVISÃO MACRO: atlas(cognitivo) · momus(refutação)
 - F6 ENTREGA: oracle(validação) + evidência de ferro
 Categorias OMO: cognitivo(qwen3.8-9b→bonsai) · executor(qwen38-2b→9b) · refutação(lfm→2b) · exploração(0.8b→2b) · criativo(bonsai→9b)
