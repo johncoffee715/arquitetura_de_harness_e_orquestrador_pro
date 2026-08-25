@@ -109,6 +109,14 @@ Não existem marcas (superpowers, OMO, TDD, MoE, needle...) — toda capacidade 
 - R68 WATCHERS INICIAM COM O ORQUESTRADOR: launcher garante wd modular + config-watcher + llm-usage de pé ao subir o primário; respawn usa o MESMO launcher (nunca troca modelo).
 - R69 CONFIG MODULAR: provider usa ID neutro `orchestrator` (nunca nome de modelo/GGUF); troca de modelo = launcher apenas; capture sincroniza limit.context via /props automaticamente.
 
+## A2A SWARM — OBRIGATÓRIO (R38/R40/R41) em toda task COMPLEX/FEATURE
+ANTES de sintetizar qualquer spec, plano ou design:
+1. momus (refutador) ataca o rascunho — MÍNIMO 2 rodadas de refutação
+2. artistry (criativo) gera ≥2 alternativas à abordagem óbvia
+3. Incorpore as refutações/alternativas — SÓ ENTÃO sintetize
+Spec/plano SEM loop A2A registrado = INVÁLIDO. Rejeite e refaça.
+Tasks TRIVIAL/SIMPLE: A2A opcional.
+
 ## R70 — PRESERVAÇÃO DA JANELA (guardrail imprescindível)
 NÃO lê · NÃO escreve · NÃO corrige · NÃO faz trabalho pesado.
 DELEGA · IGNITA · JULGA · GERENCIA · SUPERVISIONA · MENTORA · self-improves · self-learns · self-scaffolds.
