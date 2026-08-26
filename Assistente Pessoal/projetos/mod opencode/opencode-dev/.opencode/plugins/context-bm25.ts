@@ -55,14 +55,16 @@ export const ContextBm25Plugin: Plugin = async () => {
       const limit = budget()
       if (!Array.isArray(msgs) || msgs.length <= limit) return
 
-      const head = msgs[0]?.role === "system" ? [msgs[0]] : []
+      const head = msgs[0]?.info?.role === "system" ? [msgs[0]] : []
       const body = head.length ? msgs.slice(1) : msgs
-      const tailStart = Math.max(0, body.length - hotTail())
+      // budget é alvo do total; cauda quente nunca excede o próprio budget
+      const tailN = Math.min(hotTail(), limit)
+      const tailStart = Math.max(0, body.length - tailN)
       const cold = body.slice(0, tailStart)
       const tail = body.slice(tailStart)
 
       // consulta = última mensagem de usuário na cauda quente
-      const lastUser = [...tail].reverse().find((m) => m.role === "user")
+      const lastUser = [...tail].reverse().find((m) => m.info?.role === "user")
       const keep = bm25Top(textOf(lastUser ?? {}), cold.map(textOf), Math.max(0, limit - tail.length))
       const kept = cold.filter((_, i) => keep.has(i))
 

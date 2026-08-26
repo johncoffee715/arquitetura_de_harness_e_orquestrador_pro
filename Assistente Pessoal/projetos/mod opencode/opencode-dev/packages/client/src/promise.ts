@@ -1,4 +1,7 @@
 // Camada de compatibilidade `./promise` — Ciclo E2/E3 (2026-08-25)
+// ⚠️ Aliases valem só p/ dados já normalizados pelo client. Casts diretos de
+// payload bruto do servidor precisam de guard: o canônico FileDiff.Info tem
+// campos opcionais e um cast as FileDiffInfo[] colapsaria entradas sem file.
 // Ponte p/ consumidores que usavam o vocabulário do cliente publicado antigo
 // (tarball 1.17.13-v2). Aliases estruturais espelham os tipos canônicos atuais;
 // cada entrada documenta o equivalente canônico p/ alinhamento futuro.

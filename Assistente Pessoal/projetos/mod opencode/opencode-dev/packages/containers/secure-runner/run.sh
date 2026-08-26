@@ -25,13 +25,17 @@ done
 BWRAP_ARGS=()
 for bind in $READONLY_BINDS; do BWRAP_ARGS+=(--ro-bind "${bind%%:*}" "${bind##*:}"); done
 
+# merged-usr: host pode ter /lib64 como symlink p/ usr/lib — sem este bind
+# o loader dinâmico não é encontrado e NADA executa dentro da jaula.
+[ -e /lib64 ] && BWRAP_ARGS+=(--ro-bind /lib64 /lib64)
+
 exec bwrap \
     --dev /dev --proc /proc \
     --tmpfs /tmp --tmpfs /home --tmpfs /var \
     "${BWRAP_ARGS[@]}" \
     --bind "$WORKSPACE" /tmp/workspace \
-    "$NET_FLAG" \
     --unshare-all \
+    $NET_FLAG \
     --die-with-parent \
     --new-session \
     --chdir /tmp/workspace \
