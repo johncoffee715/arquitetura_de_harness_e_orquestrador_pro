@@ -63,6 +63,26 @@ Remote `fork` → github.com/johncoffee715/opencode adicionado e verificado (loc
 
 ## 6. ROADMAP REMANESCENTE (especificado, pronto p/ próximo ciclo)
 
+**ATUALIZAÇÃO 2026-08-26 — Dev Loop executou 8 ciclos adicionais (C9→faec4e034, 16 commits totais):**
+- ✔ **E2 (hefesto)**: suíte completa core **1097/0** (143 arquivos); teste do FIX-B2 atualizado ao contrato CONTEXT.md:194
+- ✔ **B implementada**: `.opencode/plugins/context-bm25.ts` (BM25 sem deps, env-gated) — registro global em `config/opencode/plugins/`
+- ✔ **C implementada**: `packages/containers/secure-runner/` first-class (R71 helenizado, bwrap PoLP, contrato `secure_exec`) — global em `config/opencode/containers/`
+- ✔ **Turbo-test universal**: task genérica no turbo.json (7 alvos fixos → dinâmico; dry-run valida)
+- ✔ **Poda SaaS**: deploy/stats/notify-discord/containers.yml removidos
+- ✔ **Plugin timeout**: 30s por hook (`Effect.timeoutOption`) — stall silencioso eliminado
+- ✔ **Lockfile regenerado**: patch fff-bun aplicado de fato (`bun.lock:1068`)
+- ◐ **Client vendado (E3/E4)**: session-ui **MIGRADA** p/ workspace client via nova export `./promise` (83 testes verde); app permanece no tarball — **334 erros locais PRÉ-EXISTENTES documentados** (app nunca foi verde: d.ts quebrado reparado); manifesto completo em `client-parity-report.md` (53 símbolos/51 mapas) + padrão FileDiffInfo provado
+- ✔ **Infra Dev Loop**: `dev-loop.sh` reinvocável + `dev-loop-metrics.jsonl` (scorecard vivo) · hefesto `COMO-APLICAR.md` instalado global
+- ⬜ Restante: migração app (sessão dedicada c/ manifesto) · i18n unificação · temas fonte única · aposentar V1
+
+### Roadmap original (histórico)
+
+### APOIO MIX (2026-08-26, hefesto ciclo-F+) — planos validados p/ execução futura
+1. **Temas fonte-única**: medição real → TUI 33 temas = subconjunto perfeito da UI 37 (0 só-TUI, 4 só-UI). **FORMATOS DIVERGENTES confirmados**: TUI=`{$schema:theme.json, defs, theme}` (flat terminal) × UI=`{name,id,light,dark}` (dual-mode desktop) — 33/33 diferentes byte-a-byte.
+   **SPEC COMPLETO (loader verificado, `tui/src/theme/index.ts`)**: byte-roundtrip impossível por construção (TUI referencia cores por NOME de def autoral; UI usa hex direto). Gate correto = **igualdade semântica de cores resolvidas**. Loader aceita HEX DIRETO no `theme` (`defs[c] ?? theme.theme[c]`, linha 254) com fallbacks opcionais (`backgroundMenu→backgroundElement`, :284) e `DEFAULT_THEMES` (:130). Execução: tabela de 50 tokens (origem: UI.dark.palette p/ semânticos, overrides p/ syntax-*, derivações documentadas no loader p/ os demais) → gerar theme c/ hex direto → validar cor-resolvida igual aos 33 existentes → emitir os 4 só-UI. Sessão dedicada, ~2-3h.
+2. **i18n**: app 65 × ui 62 locales sobrepostos — unificar sobre a base typed de `ui/i18n` (mesma recomendação Frente C), migração por-chave assistida por diff.
+3. **Context engineering (Fowler/Thoughtworks, fev-2026)**: setor em fase "storming" convergindo p/ Skills absorverem rules e slash-commands; hooks raros e crescentes; aviso "ilusão de controle" — pensar em probabilidades, oversight humano proporcional. **Valida as apostas desta sessão**: plugins/hooks nativos (A), seleção semântica de contexto (B), skills progressivas — e condena overengineering de contexto copiado de estranhos (exatamente o que `melhorias.md` propunha).
+
 1. `bun install` p/ regenerar lockfile c/ fff-bun 0.9.3+patch
 2. Timeout por-plugin no `Plugin.trigger` (B-P4; lição openclaw #87327)
 3. Perspectiva B: portar context-selector BM25 via hook `chat.messages.transform`
