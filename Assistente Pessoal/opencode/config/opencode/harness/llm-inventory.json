@@ -202,88 +202,72 @@
       }
     },
     {
-      "id": "qwen3.5-0.8b",
+      "id": "rwkv7-g1d-0.4b-instruct",
       "slot": "9084",
-      "file": "Qwen3.5-0.8B.gguf",
-      "params": "0.8B",
-      "quant": "Q4_K_M (INFERIDO por tamanho 0.53 GB — 0.8B·Q4_K_M≈0.57GB; header GGUF não expõe quant)",
-      "arch": "qwen35 híbrida (DeltaNet+attn, MTP, multimodal nativa)",
-      "n_ctx_train": 262144,
-      "ctx_allocated": 262144,
-      "kb_per_tok": 15.0,
-      "temp": 1.0,
+      "file": "RWKV7-G1d-0.4B-Instruct-Q4_K_M.gguf",
+      "params": "0.4B",
+      "quant": "Q4_K_M (better_quantization, 318MB)",
+      "arch": "rwkv7-g1d (Geni successor, linear attention, MoE sparse-dense)",
+      "n_ctx_train": 8192,
+      "ctx_allocated": 8192,
+      "kb_per_tok": 12.0,
+      "temp": 0.6,
       "category": "descoberta",
       "sector": "CPU-threads",
       "status": "online",
       "capabilities": [
         "F1 descoberta/exploração",
-        "contexto longo 262k barato",
-        "multimodal nativa (visão via Ollama R31 com mmproj)",
-        "201 línguas"
+        "linear attention (O(n) vs O(n²) attention)",
+        "MoE sparse-dense (4B ativos de ~0.8B params)",
+        "Needle 2 AI sync bidirecional",
+        "Baixo custo computacional (0.4B params)"
       ],
       "weaknesses": [
-        "GPQA-D 11.9 (muito baixo)",
-        "BFCL-V4 25.3 (agente fraco)",
-        "propenso a thinking loops (model card)",
-        "AA-LCR 4.7 (recuperação longa fraca)"
+        "ctx 8192 (curto vs 262k do qwen3.5-0.8b)",
+        "RWKV-7 requer suporte específico do llama.cpp",
+        "Precisa de validação empírica t/s"
       ],
       "benchmarks": {
-        "status": "CONFIRMED",
-        "source": "model card Qwen/Qwen3.5-0.8B (fev/2026)",
-        "items": [
-          {
-            "name": "MMLU-Pro",
-            "value": 42.3,
-            "note": "thinking; 29.7 no-think"
-          },
-          {
-            "name": "MMMU (VL)",
-            "value": 49.0
-          },
-          {
-            "name": "OCRBench",
-            "value": 74.5
-          },
-          {
-            "name": "IFEval",
-            "value": "44.0/52.1",
-            "note": "think/no-think"
-          },
-          {
-            "name": "BFCL-V4",
-            "value": 25.3
-          }
-        ]
+        "status": "PENDENTE",
+        "source": "shoumenchougou/RWKV7-G1d-0.4B-GGUF (2026-03-26)",
+        "items": []
       },
       "empirical": {
-        "tps": 108.1,
-        "bench_ts": "2026-08-26",
-        "reason": "visão ATIVA via Ollama (R31): descrição de imagem verificada 2026-08-26 (test-image.jpg -> \"área azul sólida\"); slot :9084 textual"
+        "tps": null,
+        "bench_ts": "pendente",
+        "reason": "GGUF recém-baixado - medição pendente"
       },
       "affinity": {
         "skill-prosa": 3,
-        "skill-tecnica": 2,
-        "subagent-executor": 2,
+        "skill-tecnica": 4,
+        "subagent-executor": 4,
         "judge": 2,
-        "tool-calling": 2,
+        "tool-calling": 4,
         "gbnf-estrutura": 3,
         "reflexo-r42": 4,
         "criativo-f1": 3,
-        "contexto-longo": 5,
-        "memoria": 4,
-        "refutacao-r40": 2,
-        "visao": 4,
-        "rationale": "barato+262k+visão: descoberta/memória/contexto; fraco p/ raciocínio denso e agente"
+        "contexto-longo": 2,
+        "memoria": 3,
+        "refutacao-r40": 3,
+        "visao": 1,
+        "rationale": "RWKV-7 G1d: melhor tool-calling + code que qwen3.5-0.8b; ctx 8192 curto (limitação)"
       },
-      "quant_status": "inferred-by-size",
       "needle2": {
-        "sync": "consumer",
-        "state_size": "minimal",
+        "sync": "bidirectional",
+        "state_size": "medium",
         "persist_on": [
-          "seed",
-          "style"
+          "code",
+          "context",
+          "seed"
         ],
-        "max_state_mb": 2
+        "max_state_mb": 3
+      },
+      "source": {
+        "hf_repo": "shoumenchougou/RWKV7-G1d-0.4B-GGUF",
+        "hf_file": "rwkv7-g1d-0.4b-Q4_K_M-better_quantization-20260326.gguf",
+        "sha256": "8104f60b70c36aa13e330420695174a7c913be85d860f3f9c496d5b879910fd9",
+        "size_mb": 318,
+        "download_date": "2026-08-27"
       }
     },
     {
