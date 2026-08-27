@@ -1,0 +1,784 @@
+{
+  "schema_version": 1,
+  "last_updated": "2026-08-26",
+  "governance": {
+    "rule": "R52 — Inventário Global de LLMs Locais (Regra Global Guardrail)",
+    "source_of_truth": "config/opencode/AGENTS.md §R52",
+    "motor": "scripts/llm-inventory.py",
+    "doctrine": "harness/INVENTARIO.md",
+    "rules_cross": [
+      "R13",
+      "R23",
+      "R27",
+      "R46",
+      "R47",
+      "R50"
+    ]
+  },
+  "feature_types": [
+    "skill-prosa",
+    "skill-tecnica",
+    "subagent-executor",
+    "judge",
+    "tool-calling",
+    "gbnf-estrutura",
+    "reflexo-r42",
+    "criativo-f1",
+    "contexto-longo",
+    "memoria",
+    "refutacao-r40",
+    "visao"
+  ],
+  "models": [
+    {
+      "id": "ornith-1.5-9b-q5",
+      "slot": "8083",
+      "file": "Ornith-1.5-9B-Q5_K_M.gguf",
+      "params": "9B",
+      "quant": "Q5_K_M",
+      "arch": "qwen35-base (RL DeepReinforce/ornith.ai self-improvement)",
+      "n_ctx_train": 262144,
+      "ctx_allocated": 212992,
+      "kb_per_tok": 44.0,
+      "temp": 0.6,
+      "category": "orquestrador",
+      "sector": "GPU-MI50-Vulkan",
+      "status": "online",
+      "capabilities": [
+        "raciocínio profundo",
+        "agentic code (SWE-bench Verified 70.6)",
+        "MCP/tool uso (MCP-Atlas 54.2)",
+        "janela 262144 nativa",
+        "executor seletivo tasks curtas"
+      ],
+      "weaknesses": [
+        "alucina além do limiar cognitivo ~146K (R60-v3, probe 26/08)",
+        "GPU-only: monopoliza 16GiB",
+        "Q5_K_M: 6.6GiB",
+        "temperatura fixa 0.6 (pouca flexibilidade p/ criativo)"
+      ],
+      "benchmarks": {
+        "status": "CONFIRMED",
+        "source": "model card ornith.ai/hf, 2026-08",
+        "items": [
+          {
+            "name": "GPQA-Diamond",
+            "value": 86.4,
+            "note": "vs Qwen3.5-9B base 81.7"
+          },
+          {
+            "name": "SWE-bench Verified",
+            "value": 70.6,
+            "note": "vs base 53.2"
+          },
+          {
+            "name": "Terminal-Bench 2.1",
+            "value": 46.2
+          },
+          {
+            "name": "HLE",
+            "value": 20.2
+          },
+          {
+            "name": "MCP-Atlas",
+            "value": 54.2
+          },
+          {
+            "name": "Toolathlon",
+            "value": 41.2
+          }
+        ]
+      },
+      "empirical": {
+        "tps": null,
+        "bench_ts": "2026-08-26 2nd probe",
+        "reason": "timeout 100s sob carga (9 slots, RAM 25/31G, swap ativo) — instável; re-medir com stack enxuta"
+      },
+      "affinity": {
+        "skill-prosa": 4,
+        "skill-tecnica": 5,
+        "subagent-executor": 5,
+        "judge": 4,
+        "tool-calling": 5,
+        "gbnf-estrutura": 3,
+        "reflexo-r42": 3,
+        "criativo-f1": 3,
+        "contexto-longo": 4,
+        "memoria": 3,
+        "refutacao-r40": 5,
+        "visao": 2,
+        "rationale": "melhor raciocínio/código da stack (RL agentic); custo: 1 slot GPU, visão sem mmproj local"
+      },
+      "needle2": {
+        "sync": "consumer",
+        "state_size": "large",
+        "persist_on": [
+          "reasoning",
+          "tool_calls",
+          "context"
+        ],
+        "max_state_mb": 5
+      }
+    },
+    {
+      "id": "qwen3.5-4b-iq2xxs",
+      "slot": "9083",
+      "file": "Qwen3.5-4B-UD-IQ2_XXS.gguf",
+      "params": "4B",
+      "quant": "IQ2_XXS (unsloth dynamic 2.0, 1.52GB)",
+      "arch": "qwen35 híbrida (DeltaNet, MTP, multimodal)",
+      "n_ctx_train": 262144,
+      "ctx_allocated": 32768,
+      "kb_per_tok": 40.0,
+      "temp": 0.6,
+      "category": "prosa",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "F2 prosa/GBNF criativa",
+        "base forte: GPQA-D 76.2, IFEval 89.8, TAU2 79.9, BFCL-V4 50.3",
+        "multimodal nativa"
+      ],
+      "weaknesses": [
+        "quant IQ2_XXS: ACURÁCIA SEM BENCH PÚBLICO (vendor claim only) — risco p/ tool-calling estrito (R52: evitar)",
+        "1.52GB em 2-4B: 2-bit degrada mais (literatura geral)",
+        "contexto 1M via YaRN exige ≥128k p/ thinking"
+      ],
+      "benchmarks": {
+        "status": "INFERRED",
+        "source": "model card Qwen3.5-4B oficial (fev/2026) — valores da base; quant IQ2 NÃO tem bench público (seção A da verificação) — marcar isto ao usar",
+        "items": [
+          {
+            "name": "GPQA-Diamond",
+            "value": 76.2,
+            "note": "base (INFERRED)"
+          },
+          {
+            "name": "IFEval",
+            "value": 89.8,
+            "note": "base (INFERRED)"
+          },
+          {
+            "name": "TAU2-Bench",
+            "value": 79.9,
+            "note": "base (INFERRED)"
+          },
+          {
+            "name": "BFCL-V4",
+            "value": 50.3,
+            "note": "base (INFERRED)"
+          }
+        ]
+      },
+      "empirical": {
+        "tps": 2.4,
+        "bench_ts": "2026-08-26 2nd probe",
+        "reason": "medido sob saturação (RAM 25/31G): 2.4 t/s"
+      },
+      "affinity": {
+        "skill-prosa": 5,
+        "skill-tecnica": 3,
+        "subagent-executor": 3,
+        "judge": 3,
+        "tool-calling": 2,
+        "gbnf-estrutura": 5,
+        "reflexo-r42": 2,
+        "criativo-f1": 5,
+        "contexto-longo": 3,
+        "memoria": 3,
+        "refutacao-r40": 2,
+        "visao": 2,
+        "rationale": "prosa criativa/GBNF campeã da base barata; IQ2 → NÃO usar p/ tool estrito (UNKNOWN de quant)"
+      },
+      "needle2": {
+        "sync": "consumer",
+        "state_size": "minimal",
+        "persist_on": [
+          "seed",
+          "tone"
+        ],
+        "lazy": true,
+        "max_state_mb": 1
+      }
+    },
+    {
+      "id": "rwkv-6-geni-0.4b-instruct",
+      "slot": "9084",
+      "file": "RWKV-6-Geni-0.4B-Instruct-Q4_K_M.gguf",
+      "params": "0.4B",
+      "quant": "Q4_K_M",
+      "arch": "RWKV-6 (World; MoE sparse-dense hybrid; 4B params active)",
+      "n_ctx_train": 262144,
+      "ctx_allocated": 262144,
+      "kb_per_tok": 12.0,
+      "temp": 0.6,
+      "category": "orquestrador",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "Codinador nativo (code generation)",
+        "Janela 262k nativa",
+        "MoE sparse-dense (4B ativos de 6B)",
+        "Needle 2 AI sync bidirecional",
+        "Baixo custo computacional (0.4B params)"
+      ],
+      "weaknesses": [
+        "GGUF Q4_K_M ainda não localizado no HuggingFace",
+        "Precisa de validação empírica t/s",
+        "Arquitetura RWKV diferente de Qwen3 (não compatível com llama.cpp nativo)"
+      ],
+      "benchmarks": {
+        "status": "PENDENTE",
+        "source": "aguardando download GGUF",
+        "items": []
+      },
+      "empirical": {
+        "tps": null,
+        "bench_ts": "pendente",
+        "reason": "GGUF não baixado ainda"
+      },
+      "affinity": {
+        "skill-prosa": 4,
+        "skill-tecnica": 5,
+        "subagent-executor": 5,
+        "judge": 3,
+        "tool-calling": 5,
+        "gbnf-estrutura": 4,
+        "reflexo-r42": 3,
+        "criativo-f1": 3,
+        "contexto-longo": 5,
+        "memoria": 3,
+        "refutacao-r40": 3,
+        "visao": 1,
+        "rationale": "substituto do qwen3.5-0.8b como Córtex Sensorial; melhor tool-calling + code"
+      },
+      "needle2": {
+        "sync": "bidirectional",
+        "state_size": "medium",
+        "persist_on": [
+          "code",
+          "context",
+          "seed"
+        ],
+        "max_state_mb": 3
+      }
+    },
+    {
+      "id": "llmjudge-qwen2.5-3b",
+      "slot": "9085",
+      "file": "LLMJudge-Qwen2.5-3B.Q4_K_M.gguf",
+      "params": "3B",
+      "quant": "Q4_K_M",
+      "arch": "qwen2 dense",
+      "n_ctx_train": 32768,
+      "ctx_allocated": 32768,
+      "kb_per_tok": 11.2,
+      "temp": 0.15,
+      "category": "judge",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "F5/F6 revisão/entrega",
+        "temp 0.15 = sampling estrito (RS5)",
+        "eval estruturado 0-5/0-100",
+        "29+ línguas"
+      ],
+      "weaknesses": [
+        "janela 32k (curta p/ diffs grandes)",
+        "GPQA 26.3",
+        "BFCL 3B não publicado (UNKNOWN)",
+        "juiz 3B: aquém de juízes LLM maiores (bias/fluência R40)"
+      ],
+      "benchmarks": {
+        "status": "CONFIRMED",
+        "source": "blog Qwen2.5 (set/2024): MMLU 65.6, IFEval 58.2 (instruct), HumanEval 74.4, GSM8K 86.7; BFCL 3B: UNKNOWN (não publicado p/ 3B)",
+        "items": [
+          {
+            "name": "MMLU",
+            "value": 65.6
+          },
+          {
+            "name": "IFEval",
+            "value": 58.2
+          },
+          {
+            "name": "HumanEval",
+            "value": 74.4
+          },
+          {
+            "name": "GPQA",
+            "value": 26.3
+          }
+        ]
+      },
+      "empirical": {
+        "tps": 16.3,
+        "bench_ts": "2026-08-26",
+        "reason": "medido via /v1/chat/completions (max_tokens=60, 1 request)"
+      },
+      "affinity": {
+        "skill-prosa": 3,
+        "skill-tecnica": 3,
+        "subagent-executor": 2,
+        "judge": 5,
+        "tool-calling": 3,
+        "gbnf-estrutura": 4,
+        "reflexo-r42": 3,
+        "criativo-f1": 2,
+        "contexto-longo": 2,
+        "memoria": 3,
+        "refutacao-r40": 3,
+        "visao": 1,
+        "rationale": "especialista em julgar com sampling 0.15; janela curta não impede gate métrica-métrica"
+      },
+      "needle2": {
+        "sync": "bidirectional",
+        "state_size": "minimal",
+        "persist_on": [
+          "evaluation",
+          "score",
+          "critique"
+        ],
+        "max_state_mb": 2
+      }
+    },
+    {
+      "id": "lfm2.5-1.2b-thinking-tomoe",
+      "slot": "9086",
+      "file": "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M.gguf",
+      "params": "1.2B",
+      "quant": "Q4_K_M",
+      "arch": "lfm2 híbrida (10 conv double-gated + 6 GQA) — GGUF dense-equivalent: ToMoE sem suporte nativo no llama.cpp (MoE real: safetensors/vLLM)",
+      "n_ctx_train": 128000,
+      "ctx_allocated": 32768,
+      "kb_per_tok": 3.8,
+      "temp": 0.05,
+      "category": "reflexo",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "reflexo R42 (loop alta velocidade)",
+        "GBNF/estrutura (IFEval 88.42)",
+        "tool use (BFCLv3 56.97)",
+        "raciocínio on-device (GPQA-D 37.86, MMLU-Pro 49.65)",
+        "thinking nativo (<think>) com temp 0.05/top_k 50"
+      ],
+      "weaknesses": [
+        "benchmarks = base LFM2.5-1.2B-Thinking (GGUF é dense-equivalent do mesmo checkpoint)",
+        "não usar p/ conhecimento denso/auditoria factual",
+        "thinking tax: 1000-4800c reasoning antes do content (max_tokens 150 => content vazio)",
+        "PT não-oficial (8 línguas sem PT) => JSON fenced em PT",
+        "t/s 30 pico / 10 sob carga (5x params vs 230M)"
+      ],
+      "benchmarks": {
+        "status": "CONFIRMED",
+        "source": "model card LiquidAI/LFM2.5-1.2B-Thinking (2026) + card Nichonauta (GGUF dense-eq)",
+        "items": [
+          {
+            "name": "IFEval",
+            "value": 88.42
+          },
+          {
+            "name": "MMLU-Pro",
+            "value": 49.65
+          },
+          {
+            "name": "GPQA-Diamond",
+            "value": 37.86
+          },
+          {
+            "name": "BFCLv3",
+            "value": 56.97
+          },
+          {
+            "name": "GSM8K",
+            "value": 85.6
+          },
+          {
+            "name": "MATH-500",
+            "value": 87.96
+          },
+          {
+            "name": "AIME25",
+            "value": 31.73
+          },
+          {
+            "name": "IFBench",
+            "value": 44.85
+          },
+          {
+            "name": "Multi-IF",
+            "value": 69.33
+          }
+        ]
+      },
+      "empirical": {
+        "tps": 30.5,
+        "bench_ts": "2026-08-26",
+        "reason": "medido BENCH-01: 5x256 pico med 30.5 t/s (10.3 sob carga load 7.7), prefill 402 tok/s; thinking tax 1000-4800c reasoning_content"
+      },
+      "affinity": {
+        "skill-prosa": 4,
+        "skill-tecnica": 3,
+        "subagent-executor": 3,
+        "judge": 3,
+        "tool-calling": 4,
+        "gbnf-estrutura": 5,
+        "reflexo-r42": 5,
+        "criativo-f1": 3,
+        "contexto-longo": 3,
+        "memoria": 3,
+        "refutacao-r40": 5,
+        "visao": 1,
+        "rationale": "sucessor do lfm-230M: mesma família/KV (3.8 KB/tok) com qualidade 2-3x superior (IFEval 88, BFCLv3 57); pensa mais (thinking), -c 32768"
+      },
+      "needle2": {
+        "sync": "bidirectional",
+        "state_size": "medium",
+        "think_state": true,
+        "persist_on": [
+          "reflexo",
+          "loop",
+          "r42"
+        ],
+        "max_thinking_tokens": 8192,
+        "max_state_mb": 3
+      }
+    },
+    {
+      "id": "granite-4.2-3b-q4_k_m",
+      "slot": "9087",
+      "file": "granite-4.2-3b-Q4_K_M.gguf",
+      "params": "3B",
+      "quant": "Q4_K_M",
+      "arch": "granite dense (GQA 40/8, RoPE θ=10M, SwiGLU 8192)",
+      "n_ctx_train": 131072,
+      "ctx_allocated": 32768,
+      "kb_per_tok": 25.0,
+      "temp": 1.0,
+      "category": "executor",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "raciocínio nativo <think> (3 modos: full/low_effort/non-thinking)",
+        "tool-calling com reasoning (BFCL v4 52.41, τ-bench 45.78)",
+        "contexto longo 131K nativo (RULER 64K 67.52 / 128K 55.30, ext. 512K)",
+        "código/raciocínio (AIME25 78.33, GPQA 54.80, LiveCodeBench 69.71)",
+        "Apache-2.0 + suporte nativo OpenCode/vLLM granite_thinking_parser"
+      ],
+      "weaknesses": [
+        "Arena-Hard-V2 34.96 e MMLU-ProX 27.78 fracos (multilíngue/chat)",
+        "SWE-Bench não avaliado p/ 3B (8B faz 47.67 Verified) — executor TDD não comprovado",
+        "thinking overhead: latência + tokens (max 8192 thinking)",
+        "temp 1.0/top_p 0.95 obrigatório (pouca flexibilidade)",
+        "t/s CPU ~3.2 (lento vs 2B 63 t/s, mas 8x mais rápido que 9B 0.4 t/s)"
+      ],
+      "benchmarks": {
+        "status": "CONFIRMED",
+        "source": "model card ibm-granite/granite-4.2-3b (25/08/2026) + HF granite-4.2-3b-GGUF",
+        "items": [
+          {
+            "name": "AIME25",
+            "value": 78.33
+          },
+          {
+            "name": "HMMT Feb25",
+            "value": 66.67
+          },
+          {
+            "name": "GPQA",
+            "value": 54.8
+          },
+          {
+            "name": "LiveCodeBench v6",
+            "value": 69.71
+          },
+          {
+            "name": "MMLU-Pro",
+            "value": 67.84
+          },
+          {
+            "name": "IFBench (prompt)",
+            "value": 74.33
+          },
+          {
+            "name": "BFCL v4",
+            "value": 52.41
+          },
+          {
+            "name": "τ-bench AVG",
+            "value": 45.78
+          },
+          {
+            "name": "RULER 64K",
+            "value": 67.52
+          },
+          {
+            "name": "RULER 128K",
+            "value": 55.3
+          },
+          {
+            "name": "Arena-Hard-V2",
+            "value": 34.96
+          },
+          {
+            "name": "MMLU-ProX lite",
+            "value": 27.78
+          }
+        ]
+      },
+      "empirical": {
+        "tps": 3.25,
+        "bench_ts": "2026-08-26 probe 9087",
+        "reason": "medido via /v1/chat/completions max_tokens=60 (3 reqs: 3.25/3.18/3.35 t/s); prompt 16-18 t/s; tool-calling OK (reasoning_content + tool_calls); thinking OK (15*37=555); KV 25.0 KB/tok q4_0+q4_0, c=32768 => 0.84GB KV + 2.24GB modelo = 3.08GB"
+      },
+      "affinity": {
+        "skill-prosa": 3,
+        "skill-tecnica": 4,
+        "subagent-executor": 3,
+        "judge": 3,
+        "tool-calling": 4,
+        "gbnf-estrutura": 4,
+        "reflexo-r42": 4,
+        "criativo-f1": 3,
+        "contexto-longo": 5,
+        "memoria": 3,
+        "refutacao-r40": 4,
+        "visao": 1,
+        "rationale": "raciocínio+longo+tool CONFIRMED (GPQA 54, AIME 78, RULER 67/55, BFCL 52); t/s 3.2 CPU, KV 25.0; perde p/ 9B em executor puro mas ganha em tudo com bench verificável"
+      },
+      "needle2": {
+        "sync": "consumer",
+        "state_size": "medium",
+        "persist_on": [
+          "reasoning",
+          "tool_calls"
+        ],
+        "max_state_mb": 3
+      }
+    },
+    {
+      "id": "qwen3.8-4b-distill",
+      "slot": "9088",
+      "file": "Qwen3.8-4B-Q4_K_M.gguf",
+      "params": "4B",
+      "quant": "Q4_K_M",
+      "arch": "qwen35 dense (distilla comunitária; base = Qwen3.5-4B)",
+      "n_ctx_train": 262144,
+      "ctx_allocated": 40960,
+      "kb_per_tok": 41.2,
+      "temp": 0.6,
+      "category": "contrato-plano",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "F2/F3 contrato+plano",
+        "prosa estruturada/schema (base 4B: MMLU-Pro 79.1, IFEval 89.8, TAU2 79.9)",
+        "tool-calling decente (base BFCL 50.3)"
+      ],
+      "weaknesses": [
+        "distilla sem card oficial (bench INFERRED da base)",
+        "Q4_K_M com 4B: atenção/tool fino mediano",
+        "41.2 KB/tok cara na RAM"
+      ],
+      "benchmarks": {
+        "status": "INFERRED",
+        "source": "INFERRED da base Qwen3.5-4B oficial (model card Qwen fev/2026) — distila pode divergir",
+        "items": [
+          {
+            "name": "MMLU-Pro",
+            "value": 79.1,
+            "note": "base 4B (INFERRED)"
+          },
+          {
+            "name": "IFEval",
+            "value": 89.8,
+            "note": "base 4B (INFERRED)"
+          },
+          {
+            "name": "BFCL-V4",
+            "value": 50.3,
+            "note": "base 4B (INFERRED)"
+          }
+        ]
+      },
+      "empirical": {
+        "tps": 46.7,
+        "bench_ts": "2026-08-26",
+        "reason": "medido via /v1/chat/completions (max_tokens=60, 1 request)"
+      },
+      "affinity": {
+        "skill-prosa": 4,
+        "skill-tecnica": 3,
+        "subagent-executor": 3,
+        "judge": 3,
+        "tool-calling": 4,
+        "gbnf-estrutura": 4,
+        "reflexo-r42": 2,
+        "criativo-f1": 3,
+        "contexto-longo": 3,
+        "memoria": 3,
+        "refutacao-r40": 3,
+        "visao": 1,
+        "rationale": "contrato/prosa+schema com base forte; desconhecido p/ distila real (empiria decide)"
+      },
+      "needle2": {
+        "sync": "consumer",
+        "state_size": "medium",
+        "persist_on": [
+          "contract",
+          "plan",
+          "schema"
+        ],
+        "max_state_mb": 3
+      }
+    },
+    {
+      "id": "qwen3.8-2b-distill",
+      "slot": "9089",
+      "file": "Qwen3.8-2B-Q4_K_M.gguf",
+      "params": "2B",
+      "quant": "Q4_K_M",
+      "arch": "qwen35 dense (distilla comunitária)",
+      "n_ctx_train": 262144,
+      "ctx_allocated": 32768,
+      "kb_per_tok": 15.6,
+      "temp": 0.3,
+      "category": "tool-leve",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "tool-leve N1.5 (calls simples)",
+        "leve e rápido (15.6 KB/tok)"
+      ],
+      "weaknesses": [
+        "2B: capacidade geral limitada",
+        "distilla sem bench público (UNKNOWN)",
+        "tool-calling estrito não recomendado sem evidência"
+      ],
+      "benchmarks": {
+        "status": "UNKNOWN",
+        "source": "nenhum bench localizado p/ Qwen3.8-2B (distilla); família 2B: esperado mediano",
+        "items": []
+      },
+      "empirical": {
+        "tps": 63.3,
+        "bench_ts": "2026-08-26",
+        "reason": "medido via /v1/chat/completions (max_tokens=60, 1 request)"
+      },
+      "affinity": {
+        "skill-prosa": 2,
+        "skill-tecnica": 2,
+        "subagent-executor": 2,
+        "judge": 2,
+        "tool-calling": 4,
+        "gbnf-estrutura": 3,
+        "reflexo-r42": 4,
+        "criativo-f1": 2,
+        "contexto-longo": 2,
+        "memoria": 3,
+        "refutacao-r40": 4,
+        "visao": 1,
+        "rationale": "rápido p/ loops triviais de tool; sem evidência pública → empiria"
+      },
+      "needle2": {
+        "sync": "consumer",
+        "state_size": "minimal",
+        "persist_on": [
+          "tool_calls"
+        ],
+        "lazy": true,
+        "max_state_mb": 1
+      }
+    },
+    {
+      "id": "ternary-bonsai-8b",
+      "slot": "9090",
+      "file": "Ternary-Bonsai-8B-Q2_0_g64.gguf",
+      "params": "8B",
+      "quant": "Q2_0_g64 (ternário 1.58-bit nativo {-1,0,+1} + scale FP16/128)",
+      "arch": "qwen3 dense retreinado ternário (Prism ML, abr/2026)",
+      "n_ctx_train": 65536,
+      "ctx_allocated": 65536,
+      "kb_per_tok": 45.0,
+      "temp": 0.8,
+      "category": "refutacao",
+      "sector": "CPU-threads",
+      "status": "online",
+      "capabilities": [
+        "refutação A2A descartável (R40/R41)",
+        "IFeEval 81.8 (+0.8 vs base)",
+        "BFCL 73.9 (tool-calling forte)",
+        "GSM8K 91",
+        "2.03GiB — 7.5x menor",
+        "dado rápido (barato p/ loop R42)"
+      ],
+      "weaknesses": [
+        "media geral 75.5 vs 79.3 da base: -3.8",
+        "MMLU-R 72.6: -10.4 (conhecimento fraco)",
+        "fork llama.cpp necessário p/ Q2_0 (Q2_0 não é mainline)",
+        "alta perda em conhecimento → não usar p/ fact-check/auditoria"
+      ],
+      "benchmarks": {
+        "status": "CONFIRMED",
+        "source": "HF card Ternary-8B + whitepaper PrismML (EvalScope 1.4.2, vLLM 0.15.1, H100) — 2026",
+        "items": [
+          {
+            "name": "avg",
+            "value": 75.5,
+            "note": "vs Qwen3-8B 79.3"
+          },
+          {
+            "name": "MMLU-Redux",
+            "value": 72.6,
+            "note": "-10.4"
+          },
+          {
+            "name": "GSM8K",
+            "value": 91.0
+          },
+          {
+            "name": "IFEval",
+            "value": 81.8,
+            "note": "+0.8"
+          },
+          {
+            "name": "BFCL",
+            "value": 73.9,
+            "note": "-7.1"
+          }
+        ]
+      },
+      "empirical": {
+        "tps": 2.0,
+        "bench_ts": "2026-08-26",
+        "reason": "medido via /v1/chat/completions (max_tokens=60, 1 request)"
+      },
+      "affinity": {
+        "skill-prosa": 3,
+        "skill-tecnica": 3,
+        "subagent-executor": 4,
+        "judge": 3,
+        "tool-calling": 4,
+        "gbnf-estrutura": 4,
+        "reflexo-r42": 5,
+        "criativo-f1": 3,
+        "contexto-longo": 3,
+        "memoria": 3,
+        "refutacao-r40": 5,
+        "visao": 1,
+        "rationale": "melhor custo/velocidade por interação; refutação sem limite (R42) sem estourar RAM"
+      },
+      "needle2": {
+        "sync": "bidirectional",
+        "state_size": "variable",
+        "persist_on": [
+          "debate",
+          "refutacao",
+          "round"
+        ],
+        "max_state_mb": 4
+      }
+    }
+  ]
+}
