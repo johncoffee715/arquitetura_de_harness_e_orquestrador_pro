@@ -18,6 +18,7 @@
   "feature_types": [
     "skill-prosa",
     "skill-tecnica",
+    "skill-guardrail",
     "subagent-executor",
     "judge",
     "tool-calling",
@@ -28,6 +29,138 @@
     "memoria",
     "refutacao-r40",
     "visao"
+  ],
+  "skills": [
+    {
+      "id": "harness-kronjob-guardrail",
+      "type": "skill",
+      "path": "skills/harness-kronjob-guardrail/SKILL.md",
+      "origin": "hefesto: HARNESS KRONJOB GLOBAL GUARDRAIL.py (sha256 054754c86bacfcf0f6c595cec297856cfa6933f17ce53559b87202c5ddd5c5bd)",
+      "version": "1.0.0",
+      "date": "2026-08-27",
+      "author": "Gran-Mestre",
+      "panteao_score": 96.625,
+      "status": "OLYMPian_PERFECTION",
+      "description": "Global guardrail specification for 10-element architecture (1x VRAM, 8x CPU, 1x C-LIB)",
+      "hooks": [
+        "hooks/kronjob-talamus-filter.py"
+      ],
+      "affinity": {
+        "skill-guardrail": 5,
+        "skill-prosa": 2,
+        "skill-tecnica": 3,
+        "subagent-executor": 2,
+        "judge": 3,
+        "tool-calling": 3,
+        "gbnf-estrutura": 3,
+        "reflexo-r42": 3,
+        "criativo-f1": 2,
+        "contexto-longo": 3,
+        "memoria": 2,
+        "refutacao-r40": 4,
+        "visao": 1
+      },
+      "rationale": "Guardrail v2.5: Tálamos pre-filter + Protected Core hierarchy + Intent routing. Complementa sentinel-guard para segurança e gran-mestre para orquestração."
+    },
+    {
+      "id": "gran-mestre",
+      "type": "skill",
+      "path": "skills/gran-mestre/SKILL.md",
+      "origin": "helenizado: Orquestrador de IA de Forma Profissional.md",
+      "version": "8.4.0",
+      "date": "2026-08-26",
+      "author": "Gran-Mestre",
+      "description": "Meta-orquestrador enterprise core: 4 pilares, Task Packet, gates categóricos",
+      "affinity": {
+        "skill-prosa": 5,
+        "skill-tecnica": 5,
+        "subagent-executor": 5,
+        "judge": 4,
+        "tool-calling": 5,
+        "gbnf-estrutura": 3,
+        "reflexo-r42": 3,
+        "criativo-f1": 3,
+        "contexto-longo": 4,
+        "memoria": 3,
+        "refutacao-r40": 5,
+        "visao": 2
+      }
+    },
+    {
+      "id": "sentinel-guard-security",
+      "type": "skill",
+      "path": "skills/sentinel-guard-security/SKILL.md",
+      "origin": "hefesto: sentinel-guard (forno)",
+      "version": "1.0.0",
+      "date": "2026-08-26",
+      "author": "Gran-Mestre",
+      "description": "Guardrails de acesso hardened: autenticação/autorização sem SQL injection, segredos fora do código, token revogável",
+      "affinity": {
+        "skill-prosa": 2,
+        "skill-tecnica": 4,
+        "skill-guardrail": 5,
+        "subagent-executor": 3,
+        "judge": 4,
+        "tool-calling": 4,
+        "gbnf-estrutura": 3,
+        "reflexo-r42": 2,
+        "criativo-f1": 2,
+        "contexto-longo": 2,
+        "memoria": 2,
+        "refutacao-r40": 3,
+        "visao": 1
+      }
+    },
+    {
+      "id": "hefesto",
+      "type": "skill",
+      "path": "skills/hefesto/SKILL.md",
+      "origin": "hefesto-creationist-v6-helenizado",
+      "version": "1.0.0",
+      "date": "2026-08-26",
+      "author": "Gran-Mestre",
+      "description": "Doutrina unificada de absorção tecnológica: DECOMPILAÇÃO → AUTOFAGIA → HELENIZAÇÃO → FORJA",
+      "affinity": {
+        "skill-prosa": 3,
+        "skill-tecnica": 5,
+        "skill-guardrail": 3,
+        "subagent-executor": 3,
+        "judge": 4,
+        "tool-calling": 3,
+        "gbnf-estrutura": 4,
+        "reflexo-r42": 3,
+        "criativo-f1": 3,
+        "contexto-longo": 3,
+        "memoria": 3,
+        "refutacao-r40": 4,
+        "visao": 1
+      }
+    },
+    {
+      "id": "context-selector",
+      "type": "skill",
+      "path": "skills/context-selector/SKILL.md",
+      "origin": "absorvido: ratel-ai/ratel",
+      "version": "1.0.0",
+      "date": "2026-08-26",
+      "author": "Gran-Mestre",
+      "description": "Context engineering layer: BM25 + disclosure progressivo — corta tokens e recupera acurácia",
+      "affinity": {
+        "skill-prosa": 3,
+        "skill-tecnica": 4,
+        "skill-guardrail": 3,
+        "subagent-executor": 3,
+        "judge": 3,
+        "tool-calling": 3,
+        "gbnf-estrutura": 4,
+        "reflexo-r42": 3,
+        "criativo-f1": 2,
+        "contexto-longo": 4,
+        "memoria": 4,
+        "refutacao-r40": 3,
+        "visao": 1
+      }
+    }
   ],
   "models": [
     {
@@ -204,9 +337,9 @@
     {
       "id": "rwkv7-g1d-0.4b-instruct",
       "slot": "9084",
-      "file": "RWKV7-G1d-0.4B-Instruct-Q4_K_M.gguf",
+      "file": "RWKV7-G1d-0.4B-Instruct-Q8_0.gguf",
       "params": "0.4B",
-      "quant": "Q4_K_M (better_quantization, 318MB)",
+      "quant": "Q8_0 (501 MB - melhor qualidade para 0.4B)",
       "arch": "rwkv7-g1d (Geni successor, linear attention, MoE sparse-dense)",
       "n_ctx_train": 8192,
       "ctx_allocated": 8192,
@@ -228,8 +361,7 @@
       "weaknesses": [
         "ctx 8192 (curto vs 262k do qwen3.5-0.8b)",
         "RWKV-7 requer suporte específico do llama.cpp",
-        "Precisa de validação empírica t/s",
-        "Quantização Q4_K_M pode degradar para 0.4B (recomenda FP16/Q8_0 para melhor qualidade)"
+        "Precisa de validação empírica t/s"
       ],
       "benchmarks": {
         "status": "PENDENTE",
@@ -273,7 +405,10 @@
         "size_mb": 318,
         "download_date": "2026-08-27"
       },
-      "rationale": "RWKV-7 G1d: Dynamic State Evolution, melhor contexto longo, Instruct Tuning. Substitui qwen3.5-0.8b como Córtex Sensorial alternativo (ctx limitado a 8192)."
+      "rationale": "RWKV-7 G1d: Dynamic State Evolution, melhor contexto longo, Instruct Tuning. Quantização Q8_0 (501 MB) - qualidade ótima para 0.4B. Substitui qwen3.5-0.8b como Córtex Sensorial alternativo (ctx limitado a 8192).",
+      "size_mb": 501,
+      "sha256": "3220739f87b89b020ef3a20109afecad8cfff57f25c657abf880c8bcb175e36a",
+      "download_date": "2026-08-27"
     },
     {
       "id": "llmjudge-qwen2.5-3b",
