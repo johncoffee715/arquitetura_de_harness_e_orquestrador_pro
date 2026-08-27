@@ -220,12 +220,16 @@
         "linear attention (O(n) vs O(n²) attention)",
         "MoE sparse-dense (4B ativos de ~0.8B params)",
         "Needle 2 AI sync bidirecional",
-        "Baixo custo computacional (0.4B params)"
+        "Baixo custo computacional (0.4B params)",
+        "Dynamic State Evolution (pesos internos adaptativos)",
+        "Contexto longo gerenciado melhor que RWKV-6",
+        "Instruct Tuning: resposta direta a comandos humanos"
       ],
       "weaknesses": [
         "ctx 8192 (curto vs 262k do qwen3.5-0.8b)",
         "RWKV-7 requer suporte específico do llama.cpp",
-        "Precisa de validação empírica t/s"
+        "Precisa de validação empírica t/s",
+        "Quantização Q4_K_M pode degradar para 0.4B (recomenda FP16/Q8_0 para melhor qualidade)"
       ],
       "benchmarks": {
         "status": "PENDENTE",
@@ -268,7 +272,8 @@
         "sha256": "8104f60b70c36aa13e330420695174a7c913be85d860f3f9c496d5b879910fd9",
         "size_mb": 318,
         "download_date": "2026-08-27"
-      }
+      },
+      "rationale": "RWKV-7 G1d: Dynamic State Evolution, melhor contexto longo, Instruct Tuning. Substitui qwen3.5-0.8b como Córtex Sensorial alternativo (ctx limitado a 8192)."
     },
     {
       "id": "llmjudge-qwen2.5-3b",
