@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-08-26",
+  "last_updated": "2026-08-27",
   "governance": {
     "rule": "R52 — Inventário Global de LLMs Locais (Regra Global Guardrail)",
     "source_of_truth": "config/opencode/AGENTS.md §R52",
@@ -202,65 +202,88 @@
       }
     },
     {
-      "id": "rwkv-6-geni-0.4b-instruct",
+      "id": "qwen3.5-0.8b",
       "slot": "9084",
-      "file": "RWKV-6-Geni-0.4B-Instruct-Q4_K_M.gguf",
-      "params": "0.4B",
-      "quant": "Q4_K_M",
-      "arch": "RWKV-6 (World; MoE sparse-dense hybrid; 4B params active)",
+      "file": "Qwen3.5-0.8B.gguf",
+      "params": "0.8B",
+      "quant": "Q4_K_M (INFERIDO por tamanho 0.53 GB — 0.8B·Q4_K_M≈0.57GB; header GGUF não expõe quant)",
+      "arch": "qwen35 híbrida (DeltaNet+attn, MTP, multimodal nativa)",
       "n_ctx_train": 262144,
       "ctx_allocated": 262144,
-      "kb_per_tok": 12.0,
-      "temp": 0.6,
-      "category": "orquestrador",
+      "kb_per_tok": 15.0,
+      "temp": 1.0,
+      "category": "descoberta",
       "sector": "CPU-threads",
       "status": "online",
       "capabilities": [
-        "Codinador nativo (code generation)",
-        "Janela 262k nativa",
-        "MoE sparse-dense (4B ativos de 6B)",
-        "Needle 2 AI sync bidirecional",
-        "Baixo custo computacional (0.4B params)"
+        "F1 descoberta/exploração",
+        "contexto longo 262k barato",
+        "multimodal nativa (visão via Ollama R31 com mmproj)",
+        "201 línguas"
       ],
       "weaknesses": [
-        "GGUF Q4_K_M ainda não localizado no HuggingFace",
-        "Precisa de validação empírica t/s",
-        "Arquitetura RWKV diferente de Qwen3 (não compatível com llama.cpp nativo)"
+        "GPQA-D 11.9 (muito baixo)",
+        "BFCL-V4 25.3 (agente fraco)",
+        "propenso a thinking loops (model card)",
+        "AA-LCR 4.7 (recuperação longa fraca)"
       ],
       "benchmarks": {
-        "status": "PENDENTE",
-        "source": "aguardando download GGUF",
-        "items": []
+        "status": "CONFIRMED",
+        "source": "model card Qwen/Qwen3.5-0.8B (fev/2026)",
+        "items": [
+          {
+            "name": "MMLU-Pro",
+            "value": 42.3,
+            "note": "thinking; 29.7 no-think"
+          },
+          {
+            "name": "MMMU (VL)",
+            "value": 49.0
+          },
+          {
+            "name": "OCRBench",
+            "value": 74.5
+          },
+          {
+            "name": "IFEval",
+            "value": "44.0/52.1",
+            "note": "think/no-think"
+          },
+          {
+            "name": "BFCL-V4",
+            "value": 25.3
+          }
+        ]
       },
       "empirical": {
-        "tps": null,
-        "bench_ts": "pendente",
-        "reason": "GGUF não baixado ainda"
+        "tps": 108.1,
+        "bench_ts": "2026-08-26",
+        "reason": "visão ATIVA via Ollama (R31): descrição de imagem verificada 2026-08-26 (test-image.jpg -> \"área azul sólida\"); slot :9084 textual"
       },
       "affinity": {
-        "skill-prosa": 4,
-        "skill-tecnica": 5,
-        "subagent-executor": 5,
-        "judge": 3,
-        "tool-calling": 5,
-        "gbnf-estrutura": 4,
-        "reflexo-r42": 3,
+        "skill-prosa": 3,
+        "skill-tecnica": 2,
+        "subagent-executor": 2,
+        "judge": 2,
+        "tool-calling": 2,
+        "gbnf-estrutura": 3,
+        "reflexo-r42": 4,
         "criativo-f1": 3,
         "contexto-longo": 5,
-        "memoria": 3,
-        "refutacao-r40": 3,
-        "visao": 1,
-        "rationale": "substituto do qwen3.5-0.8b como Córtex Sensorial; melhor tool-calling + code"
+        "memoria": 4,
+        "refutacao-r40": 2,
+        "visao": 4,
+        "rationale": "barato+262k+visão: descoberta/memória/contexto; fraco p/ raciocínio denso e agente"
       },
+      "quant_status": "inferred-by-size",
       "needle2": {
-        "sync": "bidirectional",
-        "state_size": "medium",
+        "sync": "consumer",
+        "state_size": "minimal",
         "persist_on": [
-          "code",
-          "context",
-          "seed"
+          "seed",
+          "style"
         ],
-        "max_state_mb": 3
+        "max_state_mb": 2
       }
     },
     {
