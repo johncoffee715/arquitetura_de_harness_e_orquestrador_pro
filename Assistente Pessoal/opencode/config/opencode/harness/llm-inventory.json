@@ -411,15 +411,10 @@
       "download_date": "2026-08-27",
       "notes": {
         "context_1m": "Usar RWKV7-0.4B-World-BF16.gguf (840 MB) - dynamic range = FP32, sem overflow em 1M tokens",
-        "context_131k": "Usar RWKV7-G1d-0.4B-Instruct-FP16.gguf (910 MB) - máxima precisão + instruction tuning",
-        "context_32k": "Usar RWKV7-G1d-0.4B-Instruct-Q8_0.gguf (501 MB) - boa qualidade, ekonomiya de VRAM",
-        "bf16_vs_fp16": "BF16 = mesmo dynamic range que FP32 (8 bits expoente) vs FP16 (5 bits expoente) - evita overflow/NaN em 1M tokens"
+        "bf16_mandatory": "BF16 obrigatório para 1M context: FP16 (5 bits expoente) estouraria em overflow/NaN"
       },
       "use_cases": {
-        "1M_context": "RWKV7-0.4B-World-BF16.gguf (slot 9084)",
-        "131k_context": "RWKV7-G1d-0.4B-Instruct-FP16.gguf (slot 9091)",
-        "32k_context": "RWKV7-G1d-0.4B-Instruct-Q8_0.gguf (slot 9092)",
-        "emergencia": "RWKV7-G1d-0.4B-Instruct-Q4_K_M.gguf (slot 9093)"
+        "1M_context": "RWKV7-0.4B-World-BF16.gguf (slot 9084)"
       },
       "bf16_required": true,
       "bf16_reason": "1M context: FP16 (5 bits expoente) estouraria em overflow/NaN. BF16 (8 bits expoente = FP32) é obrigatório."
