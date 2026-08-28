@@ -337,9 +337,9 @@
     {
       "id": "rwkv7-g1d-0.4b-instruct",
       "slot": "9084",
-      "file": "RWKV7-G1d-0.4B-Instruct-Q8_0.gguf",
+      "file": "RWKV7-G1d-0.4B-Instruct-FP16.gguf",
       "params": "0.4B",
-      "quant": "Q8_0 (501 MB - melhor qualidade para 0.4B)",
+      "quant": "FP16 (910 MB - versão original de fábrica)",
       "arch": "rwkv7-g1d (Geni successor, linear attention, MoE sparse-dense)",
       "n_ctx_train": 8192,
       "ctx_allocated": 8192,
@@ -405,9 +405,9 @@
         "size_mb": 318,
         "download_date": "2026-08-27"
       },
-      "rationale": "RWKV-7 G1d: Dynamic State Evolution, melhor contexto longo, Instruct Tuning. Quantização Q8_0 (501 MB) - qualidade ótima para 0.4B. Substitui qwen3.5-0.8b como Córtex Sensorial alternativo (ctx limitado a 8192).",
-      "size_mb": 501,
-      "sha256": "3220739f87b89b020ef3a20109afecad8cfff57f25c657abf880c8bcb175e36a",
+      "rationale": "RWKV-7 G1d: Dynamic State Evolution, melhor contexto longo, Instruct Tuning. FP16 = versão original de fábrica, máxima precisão para 0.4B. Substitui qwen3.5-0.8b como Córtex Sensorial alternativo (ctx limitado a 8192).",
+      "size_mb": 910,
+      "sha256": "6e4039fbca5725de64e3497ea39efc396591d6410fc397bd183512fb88ebf869",
       "download_date": "2026-08-27"
     },
     {
