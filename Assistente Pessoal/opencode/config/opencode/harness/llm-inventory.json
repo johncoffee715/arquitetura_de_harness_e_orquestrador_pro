@@ -337,9 +337,9 @@
     {
       "id": "rwkv7-g1d-0.4b-instruct",
       "slot": "9084",
-      "file": "RWKV7-0.4B-World-BF16.gguf",
+      "file": "RWKV7-G1d-0.4B-Instruct-FP16.gguf",
       "params": "0.4B",
-      "quant": "BF16 (840 MB - dynamic range = FP32, ideal para 1M context)",
+      "quant": "FP16 (910 MB - ótimo para Xeon V3 sem BF16)",
       "arch": "rwkv7-g1d (Geni successor, linear attention, MoE sparse-dense)",
       "n_ctx_train": 8192,
       "ctx_allocated": 8192,
@@ -405,19 +405,21 @@
         "size_mb": 318,
         "download_date": "2026-08-27"
       },
-      "rationale": "RWKV-7 World BF16: dynamic range = FP32 (8 bits expoente), evita overflow/NaN em 1M tokens. RWKV O(1) context memory - não explode VRAM como Transformers. Ideal para 1M context.",
-      "size_mb": 840,
-      "sha256": "d17bfd08839792c4e7096c939a196395ffd66e81b42df70c6091bbae9ca23374",
+      "rationale": "RWKV-7 G1d FP16: Xeon V3 sem suporte nativo BF16. FP16 usa AVX2 maduro, evita emulação lenta. Ideal para 1M context com Xeon E5-2699 v3.",
+      "size_mb": 910,
+      "sha256": "6e4039fbca5725de64e3497ea39efc396591d6410fc397bd183512fb88ebf869",
       "download_date": "2026-08-27",
       "notes": {
         "context_1m": "Usar RWKV7-0.4B-World-BF16.gguf (840 MB) - dynamic range = FP32, sem overflow em 1M tokens",
         "bf16_mandatory": "BF16 obrigatório para 1M context: FP16 (5 bits expoente) estouraria em overflow/NaN"
       },
       "use_cases": {
-        "1M_context": "RWKV7-0.4B-World-BF16.gguf (slot 9084)"
+        "1M_context": "RWKV7-G1d-0.4B-Instruct-FP16.gguf (slot 9084)",
+        "hardware": "Xeon E5-2699 v3 (Haswell-EP) - FP16 nativo AVX2"
       },
       "bf16_required": true,
-      "bf16_reason": "1M context: FP16 (5 bits expoente) estouraria em overflow/NaN. BF16 (8 bits expoente = FP32) é obrigatório."
+      "bf16_reason": "Xeon V3 não tem suporte nativo BF16 (só Ice Lake+). Emulação via software mataria performance.",
+      "bf16_not_supported": true
     },
     {
       "id": "llmjudge-qwen2.5-3b",
