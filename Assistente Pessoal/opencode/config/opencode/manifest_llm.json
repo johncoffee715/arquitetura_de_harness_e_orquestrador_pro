@@ -1,0 +1,134 @@
+{
+  "schema_version": "1.0",
+  "last_updated": "2026-08-28T00:17:24.336681Z",
+  "description": "Manifesto de modelos LLM para o Grafo Híbrido v2",
+  "cortex_sensorial": {
+    "model": "rwkv7-g1d-0.4b-instruct",
+    "slot": "9084",
+    "role": "Córtex Sensorial Primário",
+    "function": "Filtro ultraveloz de input context bruto"
+  },
+  "models": {
+    "ornith-1.5-9b-q5": {
+      "slot": "8083",
+      "category": "orquestrador",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 146000,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 212992,
+      "ctx_allocated": 212992,
+      "status": "online"
+    },
+    "rwkv7-g1d-0.4b-instruct": {
+      "slot": "9084",
+      "category": "descoberta",
+      "high_precision": false,
+      "input_hygiene_required": false,
+      "cortex_sensorial": null,
+      "safe_input_size": 262144,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 8192,
+      "ctx_allocated": 8192,
+      "status": "online"
+    },
+    "llmjudge-qwen2.5-3b": {
+      "slot": "9085",
+      "category": "judge",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 32768,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 32768,
+      "ctx_allocated": 32768,
+      "status": "online"
+    },
+    "lfm2.5-1.2b-thinking-tomoe": {
+      "slot": "9086",
+      "category": "reflexo",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 32768,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 32768,
+      "ctx_allocated": 32768,
+      "status": "online"
+    },
+    "granite-4.2-3b-q4_k_m": {
+      "slot": "9087",
+      "category": "executor",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 32768,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 32768,
+      "ctx_allocated": 32768,
+      "status": "online"
+    },
+    "qwen3.8-4b-distill": {
+      "slot": "9088",
+      "category": "contrato-plano",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 40960,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 40960,
+      "ctx_allocated": 40960,
+      "status": "online"
+    },
+    "qwen3.8-2b-distill": {
+      "slot": "9089",
+      "category": "tool-leve",
+      "high_precision": false,
+      "input_hygiene_required": false,
+      "cortex_sensorial": null,
+      "safe_input_size": 32768,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 32768,
+      "ctx_allocated": 32768,
+      "status": "online"
+    },
+    "qwen3.5-4b-iq2xxs": {
+      "slot": "9083",
+      "category": "prosa",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 32768,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 32768,
+      "ctx_allocated": 32768,
+      "status": "online"
+    },
+    "ternary-bonsai-8b": {
+      "slot": "9090",
+      "category": "refutacao",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 65536,
+      "ctx_allocated_preserved": true,
+      "cognitive_threshold": 65536,
+      "ctx_allocated": 65536,
+      "status": "online"
+    }
+  },
+  "high_precision_thresholds": {
+    "GPQA": 50,
+    "IFEval": 80,
+    "MMLU": 65
+  },
+  "auto_ameliorative": {
+    "enabled": true,
+    "cycle": "F6 → F0",
+    "mechanism": "Hefesto tri-partite (.md → .json → .py)",
+    "obsidian_path": "cerebro com IA/aprendizados/",
+    "config_path": "config/opencode/harness/",
+    "script_path": "scripts/hefesto_motor.py"
+  }
+}
