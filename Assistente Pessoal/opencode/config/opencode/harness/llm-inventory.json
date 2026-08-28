@@ -337,9 +337,9 @@
     {
       "id": "rwkv7-g1d-0.4b-instruct",
       "slot": "9084",
-      "file": "RWKV7-G1d-0.4B-Instruct-FP16.gguf",
+      "file": "RWKV7-0.4B-World-BF16.gguf",
       "params": "0.4B",
-      "quant": "FP16 (910 MB - versão original de fábrica)",
+      "quant": "BF16 (840 MB - dynamic range = FP32, ideal para 1M context)",
       "arch": "rwkv7-g1d (Geni successor, linear attention, MoE sparse-dense)",
       "n_ctx_train": 8192,
       "ctx_allocated": 8192,
@@ -405,10 +405,24 @@
         "size_mb": 318,
         "download_date": "2026-08-27"
       },
-      "rationale": "RWKV-7 G1d: Dynamic State Evolution, melhor contexto longo, Instruct Tuning. FP16 = versão original de fábrica, máxima precisão para 0.4B. Substitui qwen3.5-0.8b como Córtex Sensorial alternativo (ctx limitado a 8192).",
-      "size_mb": 910,
-      "sha256": "6e4039fbca5725de64e3497ea39efc396591d6410fc397bd183512fb88ebf869",
-      "download_date": "2026-08-27"
+      "rationale": "RWKV-7 World BF16: dynamic range = FP32 (8 bits expoente), evita overflow/NaN em 1M tokens. RWKV O(1) context memory - não explode VRAM como Transformers. Ideal para 1M context.",
+      "size_mb": 840,
+      "sha256": "d17bfd08839792c4e7096c939a196395ffd66e81b42df70c6091bbae9ca23374",
+      "download_date": "2026-08-27",
+      "notes": {
+        "context_1m": "Usar RWKV7-0.4B-World-BF16.gguf (840 MB) - dynamic range = FP32, sem overflow em 1M tokens",
+        "context_131k": "Usar RWKV7-G1d-0.4B-Instruct-FP16.gguf (910 MB) - máxima precisão + instruction tuning",
+        "context_32k": "Usar RWKV7-G1d-0.4B-Instruct-Q8_0.gguf (501 MB) - boa qualidade, ekonomiya de VRAM",
+        "bf16_vs_fp16": "BF16 = mesmo dynamic range que FP32 (8 bits expoente) vs FP16 (5 bits expoente) - evita overflow/NaN em 1M tokens"
+      },
+      "use_cases": {
+        "1M_context": "RWKV7-0.4B-World-BF16.gguf (slot 9084)",
+        "131k_context": "RWKV7-G1d-0.4B-Instruct-FP16.gguf (slot 9091)",
+        "32k_context": "RWKV7-G1d-0.4B-Instruct-Q8_0.gguf (slot 9092)",
+        "emergencia": "RWKV7-G1d-0.4B-Instruct-Q4_K_M.gguf (slot 9093)"
+      },
+      "bf16_required": true,
+      "bf16_reason": "1M context: FP16 (5 bits expoente) estouraria em overflow/NaN. BF16 (8 bits expoente = FP32) é obrigatório."
     },
     {
       "id": "llmjudge-qwen2.5-3b",
