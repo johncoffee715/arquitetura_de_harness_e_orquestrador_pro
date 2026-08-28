@@ -419,7 +419,45 @@
       },
       "bf16_required": true,
       "bf16_reason": "Xeon V3 não tem suporte nativo BF16 (só Ice Lake+). Emulação via software mataria performance.",
-      "bf16_not_supported": true
+      "bf16_not_supported": true,
+      "benchmark": {
+        "date": "2026-08-27",
+        "hardware": "Xeon E5-2699 v3 (Haswell-EP, 18 cores/36 threads, AVX2, DDR4 2400MHz Quad-Channel)",
+        "software": "llama.cpp v0.3.0-dev (build ca3d5a3)",
+        "single_thread": {
+          "FP16": {
+            "speed_tps": 23.1,
+            "prompt_eval_tps": 164.16,
+            "eval_tps": 24.09,
+            "total_ms": 1493.51
+          },
+          "BF16": {
+            "speed_tps": 22.97,
+            "prompt_eval_tps": 159.7,
+            "eval_tps": 24.0,
+            "total_ms": 1500.0
+          },
+          "winner": "FP16",
+          "difference_pct": 0.6
+        },
+        "multi_thread_18": {
+          "FP16": {
+            "speed_tps": 23.18,
+            "prompt_eval_tps": 170.15,
+            "eval_tps": 24.23,
+            "total_ms": 1495.75
+          },
+          "BF16": {
+            "speed_tps": 23.7,
+            "prompt_eval_tps": 167.75,
+            "eval_tps": 24.85,
+            "total_ms": 1455.66
+          },
+          "winner": "BF16",
+          "difference_pct": 2.2
+        },
+        "conclusion": "Performance equivalente (<3% diferença). llama.cpp converte BF16 para FP32 internamente, eliminando penalidade de emulação no Xeon V3. Ambos os formatos são viáveis."
+      }
     },
     {
       "id": "llmjudge-qwen2.5-3b",
