@@ -24,3 +24,7 @@
 - [Safety] SHA: 477d7cf31e480d2aff5f94764e7651a9b8df544b
 - Rollback: git reset --hard (máx 1) — não utilizado
 - Órfãos movidos para /tmp/opencode/orfaos-hefesto-2026-08-30/ (backup não-destrutivo)
+## RunID HEF-05 — TESTE REAL: feature needle-schema-validator (R77 build real)
+- [RunID] HEF-05 pending — criar skill needle-schema-validator (3 camadas R77 + SKILL.md + TDD) via dispatcher hefesto
+- Motor: forja :9091 (Needle, tool validate_schema) · fallback jsonschema Python
+- Zero-trust: verificar filesystem após retorno do subagente

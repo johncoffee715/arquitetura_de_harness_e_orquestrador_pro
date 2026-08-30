@@ -160,7 +160,8 @@
     "hefesto-forja": {},
     "sdd": {},
     "sentinel-guard-security": {},
-    "guardrail-llm-fitragem": {}
+    "guardrail-llm-fitragem": {},
+    "bibliotecario": {}
   },
   "agents": [
     "gran-mestre",
@@ -176,7 +177,8 @@
     "explorador-tool",
     "cortex-sensorial",
     "general",
-    "explore"
+    "explore",
+    "bibliotecario"
   ],
   "watchers": {
     "features": {

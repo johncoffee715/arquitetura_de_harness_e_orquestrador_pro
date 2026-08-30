@@ -1,0 +1,30 @@
+{
+  "feature": "bibliotecario",
+  "version": "1.0.0",
+  "descricao": "Firewall do Bibliotecário — recupera contexto exato do Vault; proibido inventar paths, metadados ou trechos; acesso restrito ao Vault + APIs locais.",
+  "allow": {
+    "tools": ["read", "grep", "glob", "bash(read-only)", "tool-calling"],
+    "paths": ["/mnt/dados/Assistente Pessoal/cerebro com IA/**", "/tmp/opencode/**"],
+    "apis": ["http://127.0.0.1:9084/v1/**", "http://localhost:6333/**"],
+    "formats": ["md", "json", "txt"],
+    "sampling": {
+      "temp": 0.1,
+      "top_k": 10,
+      "top_p": 0.9,
+      "repeat_penalty": 1.1,
+      "max_tokens": 1024
+    }
+  },
+  "deny": {
+    "tools": ["edit", "write"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem", "/mnt/dados/Assistente Pessoal/modelos LLM/**"],
+    "behaviors": [
+      "inventar path",
+      "inventar metadados",
+      "inventar trecho de nota",
+      "alucinar mapeamento de caminho",
+      "raciocínio profundo de engenharia",
+      "score default alto sem evidência"
+    ]
+  }
+}
