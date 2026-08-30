@@ -1,0 +1,27 @@
+{
+  "feature": "hefesto-decompilacao",
+  "version": "1.0.0",
+  "descricao": "Firewall do Arqueólogo — leitura profunda com evidência; proibido escrever, modificar original ou inventar fato.",
+  "allow": {
+    "tools": ["read", "grep", "glob", "bash(read-only)"],
+    "paths": ["/mnt/dados/**", "/tmp/opencode/**"],
+    "formats": ["md", "json", "py", "ts", "go", "rs", "c", "cpp", "bin", "zip"],
+    "sampling": {
+      "temp": 0.2,
+      "top_k": 20,
+      "top_p": 0.95,
+      "repeat_penalty": 1.1
+    }
+  },
+  "deny": {
+    "tools": ["write", "edit", "bash(write)"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem"],
+    "behaviors": [
+      "modificar o original",
+      "inventar evidência",
+      "declarar fato sem E-xxx",
+      "preencher lacuna com invenção",
+      "copiar implementação literal"
+    ]
+  }
+}

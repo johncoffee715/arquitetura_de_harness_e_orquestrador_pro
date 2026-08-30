@@ -1,0 +1,28 @@
+{
+  "feature": "hefesto-helenizacao",
+  "version": "1.0.0",
+  "descricao": "Firewall do Tradutor — escreve global idiomático; proibido copiar literal, atalhos preguiçosos ou deixar artefato fora do path global.",
+  "allow": {
+    "tools": ["read", "grep", "glob", "write", "edit", "bash"],
+    "paths": ["/mnt/dados/Assistente Pessoal/opencode/config/opencode/**", "/tmp/opencode/**"],
+    "formats": ["md", "json", "py", "ts", "go", "rs", "c", "cpp", "yaml", "yml"],
+    "sampling": {
+      "temp": 0.2,
+      "top_k": 20,
+      "top_p": 0.95,
+      "repeat_penalty": 1.1
+    }
+  },
+  "deny": {
+    "tools": [],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem"],
+    "behaviors": [
+      "copiar implementação literal",
+      "atalhos preguiçosos (R71)",
+      "comentários vagos",
+      "path local/sessão isolada",
+      "recurso novo sem GAP (R8)",
+      "score default alto sem evidência"
+    ]
+  }
+}

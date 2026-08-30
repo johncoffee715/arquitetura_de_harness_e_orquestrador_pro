@@ -1,0 +1,188 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "local-thalamus": {
+      "api": "openai",
+      "name": "CÓRTEX SENSORIAL PRIMÁRIO (Filtro Talâmico) :9084 — role:ingestor",
+      "options": {
+        "baseURL": "http://127.0.0.1:9084/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "ingestor": {
+          "name": "role:ingestor",
+          "limit": {
+            "context": 1048576,
+            "output": 4096
+          },
+          "tool_call": false
+        }
+      }
+    },
+    "local-judge": {
+      "api": "openai",
+      "name": "F5/F6 JUDGE :9085 — role:judge",
+      "options": {
+        "baseURL": "http://127.0.0.1:9085/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "judge": {
+          "name": "role:judge",
+          "limit": {
+            "context": 32768,
+            "output": 8192
+          },
+          "tool_call": true
+        }
+      }
+    },
+    "local-reflexo": {
+      "api": "openai",
+      "name": "reflexo R42 :9086 — role:reflexo",
+      "options": {
+        "baseURL": "http://127.0.0.1:9086/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "reflexo": {
+          "name": "role:reflexo",
+          "limit": {
+            "context": 128000,
+            "output": 8192
+          },
+          "tool_call": true
+        }
+      }
+    },
+    "local-forge": {
+      "api": "openai",
+      "name": "F2/F3 CONTRATO+PLANO :9088 — role:proposer",
+      "options": {
+        "baseURL": "http://127.0.0.1:9088/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "proposer": {
+          "name": "role:proposer",
+          "limit": {
+            "context": 200000,
+            "output": 8192
+          },
+          "tool_call": true
+        }
+      }
+    },
+    "local-ternary": {
+      "api": "openai",
+      "name": "refutação A2A :9090 — role:refuter",
+      "options": {
+        "baseURL": "http://127.0.0.1:9090/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "refuter": {
+          "name": "role:refuter",
+          "limit": {
+            "context": 65536,
+            "output": 8192
+          },
+          "tool_call": false
+        }
+      }
+    },
+    "local-orchestrator": {
+      "api": "openai",
+      "name": "ORQUESTRADOR ATIVO :8083 — role:orchestrator",
+      "options": {
+        "baseURL": "http://127.0.0.1:8083/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "orchestrator": {
+          "name": "role:orchestrator",
+          "limit": {
+            "context": 262144,
+            "output": 8192
+          },
+          "tool_call": true
+        }
+      }
+    }
+  },
+  "model": "local-orchestrator/orchestrator",
+  "small_model": "local-thalamus/ingestor",
+  "instructions": [
+    "/mnt/dados/Assistente Pessoal/opencode/config/opencode/AGENTS.md"
+  ],
+  "hooks": {
+    "session.start": [
+      "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/kronjob-talamus-filter.py",
+      "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/sdd/sdd-talamus-filter.py",
+      "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/sync-llm-stack.py",
+      "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/stack-health-check.py"
+    ]
+  },
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "*": "allow",
+      "sudo *": "ask",
+      "rm -rf /*": "deny",
+      "mkfs*": "deny",
+      "dd *of=/dev/*": "deny",
+      "shutdown *": "ask",
+      "reboot *": "ask",
+      "git push *": "ask",
+      "git push --force*": "deny"
+    },
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny",
+      "*auth.json": "deny"
+    },
+    "external_directory": {
+      "/mnt/dados/**": "allow",
+      "/run/media/johncoffee/Ventoy/**": "allow"
+    }
+  },
+  "skills": {
+    "context-selector": {},
+    "gran-mestre": {},
+    "harness-kronjob-guardrail": {},
+    "hefesto": {},
+    "hefesto-decompilacao": {},
+    "hefesto-autofagia": {},
+    "hefesto-helenizacao": {},
+    "hefesto-forja": {},
+    "sdd": {},
+    "sentinel-guard-security": {},
+    "guardrail-llm-fitragem": {}
+  },
+  "agents": [
+    "gran-mestre",
+    "hefesto",
+    "sentinel-guard",
+    "sdd-executor",
+    "executor-f4",
+    "planejador-f23",
+    "juiz-limbico",
+    "refutador-limbico",
+    "reflexo-r42",
+    "prosa-f2",
+    "explorador-tool",
+    "cortex-sensorial",
+    "general",
+    "explore"
+  ],
+  "watchers": {
+    "features": {
+      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode",
+      "interval_seconds": 30,
+      "log": "/mnt/dados/Assistente Pessoal/opencode/state/watcher/features.log"
+    }
+  }
+}

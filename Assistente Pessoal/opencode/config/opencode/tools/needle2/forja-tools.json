@@ -1,0 +1,49 @@
+[
+  {
+    "name": "validate_schema",
+    "description": "Validate a JSON payload against a strict JSON schema; returns valid flag and list of errors (byte-level conformance)",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "payload": {"type": "object", "description": "the payload to validate"},
+        "schema": {"type": "object", "description": "strict JSON schema (draft-07)"}
+      },
+      "required": ["payload", "schema"]
+    }
+  },
+  {
+    "name": "write_artifact",
+    "description": "Persist a final artifact to the filesystem at the given path",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {"type": "string", "description": "absolute path under /mnt/dados/Assistente Pessoal/opencode/config/opencode/"},
+        "content": {"type": "string", "description": "full artifact content"}
+      },
+      "required": ["path", "content"]
+    }
+  },
+  {
+    "name": "upsert_vault",
+    "description": "Upsert a note into the Obsidian vault (cerebro com IA)",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "path": {"type": "string", "description": "vault-relative path like aprendizados/2026-08-30_x.md"},
+        "content": {"type": "string", "description": "note content (markdown)"}
+      },
+      "required": ["path", "content"]
+    }
+  },
+  {
+    "name": "emit_manifest",
+    "description": "Emit the final artifact manifest with name, sha256, origin and metadata",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "artifact": {"type": "object", "description": "artifact metadata: name, sha256, origin, version"}
+      },
+      "required": ["artifact"]
+    }
+  }
+]

@@ -1,0 +1,27 @@
+{
+  "feature": "hefesto-autofagia",
+  "version": "1.0.0",
+  "descricao": "Firewall do Estômago — digere e expurga; intermediários só em /tmp/opencode; proibido tocar original ou copiar literal.",
+  "allow": {
+    "tools": ["read", "grep", "glob", "write", "bash"],
+    "paths": ["/mnt/dados/**", "/tmp/opencode/**"],
+    "formats": ["md", "json"],
+    "sampling": {
+      "temp": 0.3,
+      "top_k": 20,
+      "top_p": 0.95,
+      "repeat_penalty": 1.1
+    }
+  },
+  "deny": {
+    "tools": ["edit"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem"],
+    "behaviors": [
+      "tocar o original",
+      "copiar implementação literal",
+      "manter ruído (gordura sintática, dependências obsoletas)",
+      "declarar GAP sem varrer catálogo (R8)",
+      "score default alto sem evidência"
+    ]
+  }
+}

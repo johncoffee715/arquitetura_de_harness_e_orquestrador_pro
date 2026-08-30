@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-HEFESTO MOTOR — Full Modular Engine (Helenizado v1.0.0)
+HEFESTO MOTOR — Full Modular Engine v2.0.0 (Dispatcher)
 
-Motor full modular do Hefesto para resolução dinâmica de slots CPU/GPU vivos
-via inventário real, execução do pipeline criacionista com Panteão de validadores.
+Motor do Hefesto para resolução dinâmica de slots via inventário real (R75),
+validação de gabarito (R77 camada 2) e execução do pipeline com Panteão (R34).
 
 Origin: helenizado: hefesto-creationist-v6 (sha256 0057067d732eb4c1704fb3160a809d50375dfab8d84af4d50470e626c85ae793)
+Refatorado 2026-08-30: role_mapping obsoleto (bonsai/nanbeige/ornith) → categorias R75.
 """
 
 import sys
@@ -18,7 +19,22 @@ from pathlib import Path
 
 # Paths globais (R2/R44)
 INVENTORY_PATH = Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/harness/llm-inventory.json")
-SCRIPTS_DIR = Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/scripts")
+SKILLS_DIR = Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills")
+
+# R75 — mapeamento fase → categoria (bindings por categoria, nunca nome de GGUF)
+CATEGORY_ROUTES = {
+    "decompilacao": "contrato-plano",
+    "autofagia": "refutacao",
+    "helenizacao": "contrato-plano",
+    "forja": "forja",
+}
+# Fallback por categoria (R10/R9 — hot-swap quando primário offline)
+FALLBACK_ROUTES = {
+    "forja": "judge",
+    "contrato-plano": "orquestrador",
+    "refutacao": "contrato-plano",
+}
+
 
 def setup_logger(p="/tmp/opencode/hefesto.log"):
     """Setup logger com path seguro (não hardcoded /var/log)."""
@@ -26,7 +42,7 @@ def setup_logger(p="/tmp/opencode/hefesto.log"):
     l = logging.getLogger("HefestoMotor")
     l.setLevel(logging.WARNING)
     if not l.handlers:
-        h = RotatingFileHandler(p, maxBytes=2*1024*1024, backupCount=2)
+        h = RotatingFileHandler(p, maxBytes=2 * 1024 * 1024, backupCount=2)
         h.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] [HEFESTO-MOTOR]: %(message)s'))
         l.addHandler(h)
     return l
@@ -48,136 +64,167 @@ def list_cpu_slots(logger) -> list:
         sector = model.get("sector", "")
         if sector.startswith("CPU") and model.get("status") == "online":
             cpu_slots.append({
-                "id": model["id"],
-                "port": model["slot"],
-                "params": model["params"],
+                "id": model.get("id"),
+                "port": model.get("slot"),
+                "category": model.get("category"),
                 "ctx": model.get("ctx_allocated", 0),
-                "temp": model.get("temp", 0.6)
+                "temp": model.get("temp", 0.6),
             })
     return cpu_slots
 
 
 def resolve_slot_for_role(role: str, logger) -> dict | None:
-    """Resolve o melhor slot vivo para o papel especificado (R47)."""
+    """Resolve o melhor slot vivo para a fase/categoria (R75) com fallback (R10)."""
     inventory = load_inventory()
-    role_mapping = {
-        "forja": "ornith",
-        "judge": "bonsai",
-        "refutador": "ternary",
-        "descoberta": "ornith",
-        "reflexo": "nanbeige",
-        "tool-leve": "ornith"
-    }
-    
-    target_id = role_mapping.get(role)
-    if not target_id:
-        logger.warning(f"Role desconhecido: {role}")
+    models = inventory.get("models", [])
+
+    # R75: fase → categoria (decompilacao → contrato-plano, etc.)
+    category = CATEGORY_ROUTES.get(role, role)
+
+    def find(cat: str) -> dict | None:
+        for model in models:
+            if model.get("category") == cat and model.get("status") == "online":
+                return {
+                    "id": model.get("id"),
+                    "port": model.get("slot"),
+                    "baseURL": f"http://localhost:{model.get('slot')}",
+                    "ctx": model.get("ctx_allocated", 0),
+                    "temp": model.get("temp", 0.6),
+                    "category": cat,
+                    "api": model.get("api", "openai"),
+                }
         return None
-    
-    for model in inventory.get("models", []):
-        if target_id in model.get("id", "").lower() and model.get("status") == "online":
-            return {
-                "id": model["id"],
-                "port": model["slot"],
-                "baseURL": f"http://localhost:{model['slot']}",
-                "ctx": model.get("ctx_allocated", 0),
-                "temp": model.get("temp", 0.6)
-            }
-    
-    logger.warning(f"Modelo {target_id} não encontrado ou offline")
+
+    # Categoria direta (R75)
+    slot = find(category)
+    if slot:
+        return slot
+    # Fallback (R10/R9)
+    fb = FALLBACK_ROUTES.get(category)
+    if fb:
+        slot = find(fb)
+        if slot:
+            logger.warning(f"Categoria {category} offline → fallback {fb}")
+            slot["fallback_from"] = category
+            return slot
+    logger.warning(f"Categoria {category} (e fallback) não encontrada ou offline")
     return None
 
 
-def execute_workflow(payload: dict, logger) -> dict:
-    """Executa o workflow criacionista com Panteão de validadores."""
-    fallback_active = payload.get("fallback_automatico", False)
-    if fallback_active:
-        logger.warning("Timeout detectado pelo orquestrador (30s). Ignorando peso humano e acionando validador automático subsequente.")
-    
-    active_model = resolve_slot_for_role("forja", logger)
-    
-    # Panteão de validadores (R28)
-    validators = {
-        "autophagy": lambda data: _evaluate_pillar("autophagy", data, logger),
-        "decompilation": lambda data: _evaluate_pillar("decompilation", data, logger),
-        "helenization": lambda data: _evaluate_pillar("helenization", data, logger),
-        "forging": lambda data: _evaluate_pillar("forging", data, logger)
-    }
-    
-    scores = {}
-    for pillar, validator_fn in validators.items():
-        scores[pillar] = validator_fn(payload)
-    
-    total_score = sum(item["score"] for item in scores.values()) / len(scores)
-    loop_terminated = total_score > 95.0
-    
-    return {
-        "agent": "hefesto-motor",
-        "version": "1.0.0",
-        "active_model": active_model,
-        "fallback_triggered": fallback_active,
-        "pantheon_audit": scores,
-        "average_score": round(total_score, 5),
-        "dev_loop_terminated": loop_terminated,
-        "status": "OLYMPIAN_PERFECTION" if loop_terminated else "FREEZE_PAUSE_REQUIRED"
-    }
+def validate_gabarito(skill_name: str, action: str, logger) -> bool:
+    """R77 camada 2 — lê gabarito.json da skill e recusa ignição se violar deny."""
+    gabarito_path = SKILLS_DIR / skill_name / "gabarito.json"
+    if not gabarito_path.exists():
+        logger.warning(f"Gabarito não encontrado para {skill_name} — ignorando validação")
+        return True
+    try:
+        with open(gabarito_path, 'r', encoding='utf-8') as f:
+            gabarito = json.load(f)
+    except json.JSONDecodeError as e:
+        logger.error(f"Gabarito inválido para {skill_name}: {e}")
+        return False
+    deny = gabarito.get("deny", {})
+    denied = deny.get("behaviors", []) + deny.get("tools", []) + deny.get("paths", [])
+    if action in denied:
+        logger.error(f"REJEITADO: {skill_name}({action}) violou deny: {denied}")
+        return False
+    return True
 
 
 def _evaluate_pillar(pillar_name: str, data: dict, logger) -> dict:
-    """Avalia pilar com evidência (não auto-aprovação)."""
-    # Verifica se há evidência real no payload
-    evidence = data.get("evidence", {})
-    score = data.get(f"{pillar_name}_score", None)
-    
-    if score is not None and 0.0000001 <= score <= 100:
-        return {
-            "pillar": pillar_name,
-            "score": score,
-            "status": "validated_by_evidence"
-        }
-    
-    # Sem evidência → UNKNOWN (não auto-aprovação)
-    logger.warning(f"Pilar {pillar_name} sem evidência → UNKNOWN")
+    """Avalia pilar com escala R34 (0.0000001-100). Sem evidência → UNKNOWN + piso."""
+    evidence = data.get(f"{pillar_name}_evidence", [])
+    if not evidence:
+        return {"pillar": pillar_name, "score": 0.0000001, "status": "UNKNOWN",
+                "note": "sem evidência — piso R34 (nunca default alto)"}
+    score = float(data.get(f"{pillar_name}_score", 0.0))
+    score = max(0.0000001, min(100.0, score))
+    return {"pillar": pillar_name, "score": score, "status": "EVALUATED",
+            "evidence_count": len(evidence)}
+
+
+def execute_workflow(payload: dict, logger) -> dict:
+    """Executa o workflow criacionista com Panteão de validadores (R28/R34)."""
+    phase = payload.get("phase", "forja")
+    artifact = payload.get("artifact", "unknown")
+    skill_name = f"hefesto-{phase}"
+
+    # Fase fora do pipeline = violação de escopo (R77 deny)
+    if phase not in CATEGORY_ROUTES:
+        return {"status": "GABARITO_VIOLADO", "skill": skill_name, "artifact": artifact,
+                "error": f"fase '{phase}' fora do pipeline Hefesto"}
+
+    # R77 camada 2 — valida gabarito antes de qualquer ignição
+    if not validate_gabarito(skill_name, "execute", logger):
+        return {"status": "GABARITO_VIOLADO", "skill": skill_name, "artifact": artifact}
+
+    # R75 — resolve motor por categoria
+    category = CATEGORY_ROUTES.get(phase, "contrato-plano")
+    active_model = resolve_slot_for_role(category, logger)
+    if not active_model:
+        return {"status": "NO_BACKEND", "phase": phase, "artifact": artifact,
+                "error": f"sem slot vivo para {category}"}
+
+    # Panteão de validadores (R28)
+    validators = {
+        "autophagy": lambda d: _evaluate_pillar("autophagy", d, logger),
+        "decompilation": lambda d: _evaluate_pillar("decompilation", d, logger),
+        "helenization": lambda d: _evaluate_pillar("helenization", d, logger),
+        "forging": lambda d: _evaluate_pillar("forging", d, logger),
+    }
+    scores = {pillar: fn(payload) for pillar, fn in validators.items()}
+    total_score = sum(item["score"] for item in scores.values()) / len(scores)
+    loop_terminated = total_score > 95.0
+
     return {
-        "pillar": pillar_name,
-        "score": 0.0000001,  # Piso R34
-        "status": "UNKNOWN",
-        "note": "sem evidência documentada"
+        "agent": "hefesto-motor",
+        "version": "2.0.0",
+        "artifact": artifact,
+        "phase": phase,
+        "category": category,
+        "active_model": active_model,
+        "gabarito_validado": True,
+        "pantheon_audit": scores,
+        "average_score": round(total_score, 5),
+        "dev_loop_terminated": loop_terminated,
+        "status": "OLYMPIAN_PERFECTION" if loop_terminated else "FREEZE_PAUSE_REQUIRED",
     }
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Hefesto Motor - Full Modular Engine")
-    parser.add_argument("--list-cpu", action="store_true", help="Lista slots CPU vivos")
-    parser.add_argument("--resolve", type=str, help="Resolve slot para o role especificado")
-    parser.add_argument("--execute", type=str, help="Executa workflow com payload JSON")
+    parser = argparse.ArgumentParser(description="Hefesto Motor v2.0.0 (Dispatcher)")
+    parser.add_argument("--list-cpu", action="store_true", help="Listar slots CPU vivos (R35)")
+    parser.add_argument("--resolve", type=str, help="Resolver categoria → slot (R75)")
+    parser.add_argument("--execute", type=str, help="Executar workflow (JSON)")
     args = parser.parse_args()
-    
     logger = setup_logger()
-    
+
     if args.list_cpu:
         slots = list_cpu_slots(logger)
-        print(json.dumps(slots, indent=2))
-        return
-    
+        print(json.dumps({"cpu_slots": slots}, indent=2, ensure_ascii=False))
+        return 0
+
     if args.resolve:
         slot = resolve_slot_for_role(args.resolve, logger)
-        print(json.dumps(slot, indent=2) if slot else json.dumps({"error": "Slot não encontrado"}))
-        return
-    
+        if not slot:
+            print(json.dumps({"error": f"categoria {args.resolve} indisponível"}, ensure_ascii=False))
+            return 1
+        print(json.dumps(slot, indent=2, ensure_ascii=False))
+        return 0
+
     if args.execute:
         try:
             payload = json.loads(args.execute)
-            result = execute_workflow(payload, logger)
-            print(json.dumps(result, separators=(',', ':')))
-        except json.JSONDecodeError as e:
-            print(json.dumps({"error": f"JSON inválido: {e}"}))
-            sys.exit(1)
-        return
-    
-    # Nenhum argumento → ajuda
+        except json.JSONDecodeError:
+            print(json.dumps({"error": "JSON inválido"}, ensure_ascii=False))
+            return 1
+        result = execute_workflow(payload, logger)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+        return 0 if result.get("status") in ("OLYMPIAN_PERFECTION", "FREEZE_PAUSE_REQUIRED") else 1
+
     parser.print_help()
+    return 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

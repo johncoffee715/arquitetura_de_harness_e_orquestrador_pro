@@ -1,0 +1,29 @@
+{
+  "feature": "hefesto-forja",
+  "version": "1.0.0",
+  "descricao": "Firewall do Selador — valida byte-level e persiste; proibido saída não-validada, schema frouxo ou veredito sem evidência.",
+  "allow": {
+    "tools": ["read", "grep", "glob", "write", "bash", "tool-calling"],
+    "tool_calls": ["validate_schema", "write_artifact", "upsert_vault", "emit_manifest"],
+    "paths": ["/mnt/dados/Assistente Pessoal/opencode/config/opencode/**", "/mnt/dados/Assistente Pessoal/cerebro com IA/**", "/tmp/opencode/**"],
+    "formats": ["json", "md", "yaml", "yml"],
+    "sampling": {
+      "temp": 0.0,
+      "top_k": 1,
+      "top_p": 1.0,
+      "repeat_penalty": 1.0
+    }
+  },
+  "deny": {
+    "tools": ["edit"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem"],
+    "behaviors": [
+      "saída não-validada",
+      "schema frouxo",
+      "persistir sem validação",
+      "score default alto sem evidência",
+      "aprovação burocrática (ok, passou)",
+      "impressão simulada"
+    ]
+  }
+}
