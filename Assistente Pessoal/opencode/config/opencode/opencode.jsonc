@@ -162,7 +162,8 @@
     "sentinel-guard-security": {},
     "guardrail-llm-fitragem": {},
     "bibliotecario": {},
-    "a2a-brainstorm": {}
+    "a2a-brainstorm": {},
+    "log-summarizer": {}
   },
   "agents": [
     "gran-mestre",

@@ -1,0 +1,27 @@
+{
+  "feature": "log-summarizer",
+  "version": "1.0.0",
+  "descricao": "Firewall do Contador — sumarização determinística de logs; proibido chamar LLM, inventar resumo ou processar binário.",
+  "allow": {
+    "tools": ["read", "bash(read-only)"],
+    "paths": ["/tmp/opencode/**", "/mnt/dados/Assistente Pessoal/opencode/config/opencode/**"],
+    "formats": ["txt", "log", "json", "md"],
+    "sampling": {
+      "temp": 0.0,
+      "top_k": 1,
+      "top_p": 1.0,
+      "max_tokens": 0
+    }
+  },
+  "deny": {
+    "tools": ["edit", "write", "tool-calling"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key"],
+    "behaviors": [
+      "chamar LLM para sumarizar",
+      "inventar resumo",
+      "processar binário",
+      "interpretação semântica",
+      "score default alto sem evidência"
+    ]
+  }
+}
