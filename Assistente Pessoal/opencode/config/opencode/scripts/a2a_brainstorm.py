@@ -19,6 +19,7 @@ import json
 import sys
 import urllib.request
 import urllib.error
+from pathlib import Path
 
 # Tríade fixa (R75 — bindings por categoria, slots reais)
 # Escalação: Judge-3B (rápido 152 t/s) — 35B é EXCLUSIVO de orquestração (R46:
@@ -66,7 +67,7 @@ ESCALACAO_SYS = (
 )
 
 
-def chamar_slot(papel: str, messages: list) -> dict:
+def chamar_slot(papel: str, messages: list, grammar: str | None = None) -> dict:
     """Chama um slot llama.cpp via API OpenAI-compatible."""
     cfg = TRIADE[papel]
     payload = {
@@ -74,6 +75,8 @@ def chamar_slot(papel: str, messages: list) -> dict:
         "temperature": cfg["temp"],
         "max_tokens": cfg["max_tokens"],
     }
+    if grammar:
+        payload["grammar"] = grammar  # GBNF — restrição na camada de amostragem (frente 1)
     req = urllib.request.Request(
         f"http://127.0.0.1:{cfg['port']}/v1/chat/completions",
         data=json.dumps(payload).encode(),
@@ -89,16 +92,20 @@ def chamar_slot(papel: str, messages: list) -> dict:
         return {"ok": False, "error": str(e)}
 
 
+# GBNF — gramática estrita para o Árbitro (frente 1: restrição na amostragem)
+ARBITRO_GRAMMAR = 'root ::= "winner_model_1" | "winner_model_2"'
+
+
 def parse_arbitro(raw: str, rodada: int = 1) -> dict:
     """Converte a escolha emparelhada do Judge (winner_model_1/2) em veredito R34.
 
-    Judge-3B é treinado para avaliação emparelhada (R46) — não emite JSON.
+    Com GBNF (ARBITRO_GRAMMAR), o output é ESTRITO — sem ruído, parse determinístico.
     Alternância de ordem (rodada ímpar: 1=proposta, 2=refutação; par: invertido)
     elimina viés de posição.
     Mapeamento recalibrado homeopático (R34 — notas baixas gradativas, piso real):
     proposta vence → nota 70 (avança se elogios); refutação procede → nota 45.
     """
-    raw_l = raw.lower()
+    raw_l = raw.strip().lower()
     proposta_venceu = None
     if "winner_model_1" in raw_l:
         proposta_venceu = (rodada % 2 == 1)  # ímpar: opção 1 = proposta
@@ -188,7 +195,7 @@ def brainstorm(topic: str, contrato: str = "") -> dict:
             {"role": "user", "content": f"OPÇÃO 1:\n{op1}\n\nOPÇÃO 2:\n{op2}"
              + (f"\n\nREFUTAÇÃO ÁGIL (Gemma): {refutacao_agil[:500]}" if refutacao_agil else "")
              + (f"\n\nOPINIÃO DO REFLEXO: {opiniao_reflexo[:500]}" if opiniao_reflexo else "")},
-        ])
+        ], grammar=ARBITRO_GRAMMAR)
         if not r["ok"]:
             return {"status": "ERRO", "error": f"árbitro offline: {r['error']}"}
         veredito = parse_arbitro(r["content"], rodada)
@@ -229,23 +236,22 @@ def brainstorm(topic: str, contrato: str = "") -> dict:
             proposta = r["content"]
             historico.append({"round": rodada, "papel": "propositor", "content": proposta})
 
-    # Escalação via Judge-3B (rápido 152 t/s — Suprema Corte local).
-    # 35B é EXCLUSIVO de orquestração (R46): nunca usar para escalação.
+    # Escalação: Judge-3B (Suprema Corte local, rápida) + fila assíncrona p/ 35B (frente 3)
     if not converged:
         escalado = True
-        hist_curto = []
-        for h in historico[-4:]:
-            c = h["content"]
-            hist_curto.append({"round": h["round"], "papel": h["papel"],
-                               "content": c[:400] + ("…" if len(c) > 400 else "")})
         r = chamar_slot("escalacao", [
             {"role": "system", "content": ESCALACAO_SYS},
             {"role": "user", "content": (
                 f"TÓPICO: {topic}\n\nHISTÓRICO COMPILADO:\n"
-                + json.dumps(hist_curto, ensure_ascii=False, indent=1)
+                + json.dumps(historico[-4:], ensure_ascii=False, indent=1)[:3000]
             )},
         ])
         decisao = r["content"] if r["ok"] else f"[escalação offline: {r.get('error')}]"
+        # Enfileira para o 35B processar em background (não-bloqueante)
+        try:
+            escalar_35b_assincrono(topic, contrato, historico)
+        except Exception:
+            pass  # fila é best-effort
         nota_final = max(n for n in [rod["nota"] for rod in rodadas]) if rodadas else 0.0000001
 
     media = sum(rod["nota"] for rod in rodadas) / len(rodadas) if rodadas else 0.0000001
@@ -263,6 +269,28 @@ def brainstorm(topic: str, contrato: str = "") -> dict:
         "rounds_detail": rodadas,
         "escalation_decision": decisao if escalado else None,
     }
+
+
+def escalar_35b_assincrono(topic: str, contrato: str, historico: list) -> str:
+    """Frente 3 — escalação assíncrona para o 35B (fila não-bloqueante).
+
+    O 35B é exclusivo de orquestração (R46) — a escalação padrão é o Judge-3B.
+    Esta função ENFILEIRA o histórico para o 35B processar em background
+    (quando o orquestrador estiver ocioso), sem bloquear o loop A2A.
+    """
+    fila = Path("/tmp/opencode/a2a-escalacao-35b")
+    fila.mkdir(parents=True, exist_ok=True)
+    arquivo = fila / f"{abs(hash(topic)) % 100000}.json"
+    hist_curto = []
+    for h in historico[-4:]:
+        c = h["content"]
+        hist_curto.append({"round": h["round"], "papel": h["papel"],
+                           "content": c[:400] + ("…" if len(c) > 400 else "")})
+    with open(arquivo, "w", encoding="utf-8") as f:
+        json.dump({"topic": topic, "contrato": contrato, "historico": hist_curto},
+                  f, ensure_ascii=False, indent=2)
+    return (f"ESCALADO — histórico enfileirado para o 35B (assíncrono): {arquivo}. "
+            "Decisão padrão já emitida pelo Judge-3B (Suprema Corte local).")
 
 
 def escalar_35b(arquivo: str) -> dict:
