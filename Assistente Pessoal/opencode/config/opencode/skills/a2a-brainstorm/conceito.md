@@ -9,10 +9,10 @@
 ## O que esta feature É
 
 - Loop A2A (Agent-to-Agent) de brainstorming com **tríade de papéis** na VRAM:
-  - 🛠️ **Propositor (Criador)**: Qwen3.8-4B (:9088) — gera a 1ª versão (plano/código/extração), pragmático e rápido, tool calling preciso.
+  - 🛠️ **Propositor (Criador)**: proposer (:9088) — gera a 1ª versão (plano/código/extração), pragmático e rápido, tool calling preciso.
   - 🧠 **Refutador (Crítico)**: Ternary-8B (:9090) — inspeciona a proposta buscando falhas lógicas, desvios de contrato (spec.md), gargalos de arquitetura; tenta "quebrar" a ideia.
-  - ⚖️ **Árbitro (Juiz)**: LLMJudge-3B (:9085) — pondera o embate, decide se a refutação procede (força reescrita) ou se a proposta avança.
-  - 🏛️ **Escalação (Suprema Corte)**: Ornith-1.5-35B (:8083 CPU) — decide o impasse quando o Árbitro registra repetidos deadlocks.
+  - ⚖️ **Árbitro (Juiz)**: judge-3B (:9085) — pondera o embate, decide se a refutação procede (força reescrita) ou se a proposta avança.
+  - 🏛️ **Escalação (Suprema Corte)**: orchestrator (35B MoE) (:8083 CPU) — decide o impasse quando o Árbitro registra repetidos deadlocks.
 - Diversidade de pesos e treinamento → tensão cognitiva real, sem concordância preguiçosa.
 - Roda a >60 t/s na GPU sem tocar a CPU (exceto escalação).
 

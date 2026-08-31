@@ -11,7 +11,7 @@ REDESIGN 2026-08-31 (diretriz usuário):
 - Judge-3B (escalacao) só em IMPASSE final (Suprema Corte opcional — coexistência justificada).
 
 Papéis: Propositor (Qwen-4B) · Refutador (Ternary-8B) · Refutador Ágil (Gemma-2-2B) ·
-Reflexo (LFM-1.2B, opinião verbal) · Ingestor (RWKV7, contexto) · Escalação (Judge-3B, raro).
+Reflexo (LFM-1.2B, opinião verbal) · Ingestor (ingestor, contexto) · Escalação (Judge-3B, raro).
 """
 
 import argparse
@@ -23,11 +23,11 @@ from pathlib import Path
 
 # Papéis (R75 — bindings por categoria)
 TRIADE = {
-    "propositor": {"port": 9088, "model": "qwen3.8-4b-distill", "temp": 0.6, "max_tokens": 1024},
-    "refutador": {"port": 9090, "model": "ternary-bonsai-8b", "temp": 0.8, "max_tokens": 512},
+    "propositor": {"port": 9088, "model": "proposer-distill", "temp": 0.6, "max_tokens": 1024},
+    "refutador": {"port": 9090, "model": "refuter", "temp": 0.8, "max_tokens": 512},
     "refutador_agil": {"port": 9092, "model": "gemma-2-2b-it", "temp": 0.8, "max_tokens": 512},
-    "reflexo": {"port": 9086, "model": "lfm2.5-1.2b-thinking-tomoe", "temp": 0.8, "max_tokens": 256},
-    "ingestor": {"port": 9084, "model": "rwkv7-g1d-0.4b-instruct", "temp": 0.1, "max_tokens": 256},
+    "reflexo": {"port": 9086, "model": "reflexo", "temp": 0.8, "max_tokens": 256},
+    "ingestor": {"port": 9084, "model": "ingestor-instruct", "temp": 0.1, "max_tokens": 256},
     "escalacao": {"port": 9092, "model": "gemma-2-2b-it", "temp": 0.8, "max_tokens": 512},
 }
 

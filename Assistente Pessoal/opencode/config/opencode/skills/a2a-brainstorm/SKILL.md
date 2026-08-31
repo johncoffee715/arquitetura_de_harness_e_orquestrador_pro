@@ -1,6 +1,6 @@
 ---
 name: a2a-brainstorm
-description: "Loop A2A (Agent-to-Agent) de refutação INCANSÁVEL com nota retroativa (R40/R34): os LLMs se refutam sem árbitro externo no loop, a nota inicial (piso 0.0000001) alimenta retroativamente cada rodada com deltas homeopáticos (+1..+3 por melhoria real). Papéis: Propositor (Qwen-4B :9088), Refutador (Ternary-8B :9090), Refutador Ágil (Gemma-2-2B :9092), Reflexo (LFM :9086), Ingestor (RWKV7 :9084). Gemma-2-2B (escalação) só em impasse final. Use para brainstorm de arquitetura/plano/código com amadurecimento progressivo do produto."
+description: "Loop A2A (Agent-to-Agent) de refutação INCANSÁVEL com nota retroativa (R40/R34): os LLMs se refutam sem árbitro externo no loop, a nota inicial (piso 0.0000001) alimenta retroativamente cada rodada com deltas homeopáticos (+1..+3 por melhoria real). Papéis: Propositor (Qwen-4B :9088), Refutador (Ternary-8B :9090), Refutador Ágil (Gemma-2-2B :9092), Reflexo (LFM :9086), Ingestor (ingestor :9084). Gemma-2-2B (escalação) só em impasse final. Use para brainstorm de arquitetura/plano/código com amadurecimento progressivo do produto."
 mode: skill
 tags: "a2a, brainstorm, refutacao, incansavel, nota-retroativa, homeopatica, r40, r34, tensao-cognitiva"
 origin: helenizado:hefesto-v1
@@ -20,12 +20,12 @@ Loop A2A onde os **próprios LLMs se refutam incansavelmente** (R40), sem árbit
 
 | Papel | Modelo | Slot | Função |
 |---|---|---|---|
-| 🛠️ Propositor | Qwen3.8-4B | :9088 | gera/reescreve a proposta corrigindo refutações |
+| 🛠️ Propositor | proposer | :9088 | gera/reescreve a proposta corrigindo refutações |
 | 🧠 Refutador | Ternary-8B | :9090 | refuta incansavelmente (falhas/contrato/gargalos) + avalia delta |
 | ⚡ Refutador Ágil | Gemma-2-2B | :9092 | 2ª voz crítica (lógica/matemática) |
 | 💬 Reflexo | LFM-1.2B | :9086 | opinião verbal rápida (opcional) |
-| 🧠 Ingestor | RWKV7-0.4B | :9084 | contexto massivo (1M) |
-| 🏛️ Escalação | LLMJudge-3B | :9085 | Suprema Corte — APENAS em impasse final (raro) |
+| 🧠 Ingestor | ingestor | :9084 | contexto massivo (1M) |
+| 🏛️ Escalação | judge-3B | :9085 | Suprema Corte — APENAS em impasse final (raro) |
 
 ## Notas homeopáticas (R34 — recalibradas 31/08)
 

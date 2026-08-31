@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
 """
-ROTEADOR HÍBRIDO L0/L0.5 — Coexistência RWKV7 (semântico) + Needle 2 (sintático).
+ROTEADOR HÍBRIDO L0/L0.5 — Coexistência ingestor (semântico) + Needle 2 (sintático).
 
-Implementa o fluxo do documento "RWKV7-0.4B L0.5":
-- FASE 0: RWKV7 :9084 classifica a intenção (semântico, 1M ctx, TTFT imediato).
+Implementa o fluxo do documento "ingestor L0.5":
+- FASE 0: ingestor :9084 classifica a intenção (semântico, 1M ctx, TTFT imediato).
   → comando operacional direto → Needle 2 (L0 sintático) executa payload JSON estrito.
   → raciocínio complexo → roteia para LLMs densos (F1/F2).
-- FASE 4: RWKV7 ingere logs longos SEM perda (RNN O(1)) e extrai a causa raiz;
+- FASE 4: ingestor ingere logs longos SEM perda (RNN O(1)) e extrai a causa raiz;
   Needle 2 valida o payload estruturado (schema 100%).
 
-Origin: helenizado: doc RWKV7 L0.5 + Needle L0 (2026-08-31)
+Origin: helenizado: doc ingestor L0.5 + Needle L0 (2026-08-31)
 """
 
 import argparse
@@ -22,7 +22,7 @@ RWKV_URL = "http://127.0.0.1:9084/v1/chat/completions"
 NEEDLE_URL = "http://127.0.0.1:9091/complete"
 
 RWKV_SYSTEM = (
-    "Você é o Córtex Cognitivo L0.5 (RWKV7, janela 1M). Classifique a intenção do usuário. "
+    "Você é o Córtex Cognitivo L0.5 (ingestor, janela 1M). Classifique a intenção do usuário. "
     "Responda APENAS com JSON: {\"intent\": \"operacional\" | \"complexo\" | \"saudacao\", "
     "\"tipo\": \"mcp\" | \"hook\" | \"cli\" | \"git\" | \"brainstorm\" | \"codigo\" | \"rag\" | \"outro\", "
     "\"confianca\": 0.0-1.0, \"resumo\": \"1 linha\"}"
@@ -38,9 +38,9 @@ ROTAS_COMPLEXAS = {"brainstorm", "codigo", "rag"}
 
 
 def chamar_rwkv(texto: str) -> dict:
-    """RWKV7 :9084 — classificação semântica (Fase 0) com GBNF estrito.
+    """ingestor :9084 — classificação semântica (Fase 0) com GBNF estrito.
 
-    O RWKV7-0.4B NÃO segue JSON sem grammar (documento L0.5: 'necessita de
+    O ingestor NÃO segue JSON sem grammar (documento L0.5: 'necessita de
     prompting e/ou Grammar-Guided Decoding para 100% conformidade JSON').
     """
     grammar = (
@@ -77,7 +77,7 @@ def chamar_needle(instrucao: str) -> dict:
 
 
 def parse_intent(raw: str) -> dict:
-    """Extrai o JSON da classificação do RWKV7 (tolerante a ruído)."""
+    """Extrai o JSON da classificação do ingestor (tolerante a ruído)."""
     try:
         start = raw.find("{")
         end = raw.rfind("}") + 1
@@ -90,7 +90,7 @@ def parse_intent(raw: str) -> dict:
 
 def rotear(texto: str) -> dict:
     """Roteia a entrada pelo fluxo híbrido L0.5 → L0."""
-    # FASE 0: RWKV7 classifica
+    # FASE 0: ingestor classifica
     try:
         r = chamar_rwkv(texto)
         raw = r["choices"][0]["message"]["content"]
@@ -120,7 +120,7 @@ def rotear(texto: str) -> dict:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Roteador Híbrido L0/L0.5 (RWKV7 + Needle)")
+    parser = argparse.ArgumentParser(description="Roteador Híbrido L0/L0.5 (ingestor + Needle)")
     parser.add_argument("texto", help="entrada do usuário")
     parser.add_argument("--json", action="store_true", help="saída JSON")
     args = parser.parse_args()

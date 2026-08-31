@@ -3,7 +3,7 @@
   "provider": {
     "local-thalamus": {
       "api": "openai",
-      "name": "CÓRTEX SENSORIAL PRIMÁRIO (Filtro Talâmico) :9084 — role:ingestor",
+      "name": "L0.5 CÓRTEX COGNITIVO — roteamento semântico F0 (intent classification), ingestão de logs longos F4 SEM perda (RNN O(1)), validação semântica F3, auditoria de diffs F5/6. Coexiste com Needle L0 (sintático). :9084 — role:ingestor",
       "options": {
         "baseURL": "http://127.0.0.1:9084/v1",
         "apiKey": "llamacpp"
@@ -85,6 +85,24 @@
           "name": "role:orchestrator",
           "limit": {
             "context": 262144,
+            "output": 8192
+          },
+          "tool_call": true
+        }
+      }
+    },
+    "local-judge": {
+      "api": "openai",
+      "name": "F5/F6 JUDGE :9085 — role:judge",
+      "options": {
+        "baseURL": "http://127.0.0.1:9085/v1",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "judge": {
+          "name": "role:judge",
+          "limit": {
+            "context": 32768,
             "output": 8192
           },
           "tool_call": true

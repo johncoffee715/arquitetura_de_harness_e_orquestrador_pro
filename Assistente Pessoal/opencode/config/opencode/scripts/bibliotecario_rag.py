@@ -3,7 +3,7 @@
 BIBLIOTECARIO RAG — Recuperação híbrida sobre o Vault Obsidian.
 
 Pipeline: query → busca lexical (grep/glob) → reforço Qdrant (graceful) →
-prefill RWKV7 :9084 (janela 1M) → resposta com referências reais.
+prefill ingestor :9084 (janela 1M) → resposta com referências reais.
 
 Origin: helenizado:hefesto-v1 (R77 3 camadas — skill bibliotecario)
 """
@@ -57,7 +57,7 @@ def reforco_qdrant(query: str, top_n: int = 5) -> list[str]:
 
 
 def prefill_rwkv(contexto: str, query: str) -> dict:
-    """Prefill RWKV7 :9084 com contexto recuperado (janela 1M)."""
+    """Prefill ingestor :9084 com contexto recuperado (janela 1M)."""
     payload = {
         "messages": [
             {"role": "system", "content": SYSTEM_PROMPT},
@@ -114,7 +114,7 @@ def main():
             continue
     contexto_txt = "\n\n".join(contexto)
 
-    # 4. prefill RWKV7
+    # 4. prefill ingestor
     rwkv_used = False
     resposta = ""
     try:

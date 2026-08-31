@@ -1,5 +1,5 @@
 ---
-description: "Bibliotecário — Guardião do Vault Obsidian. RAG híbrido local: busca lexical (grep/glob) + Qdrant (:6333 gran_mestre_docs) + prefill RWKV7-0.4B (:9084, janela 1M) para recuperar e injetar contexto exato com referências reais. Anti-alucinação de paths. Use para perguntas de retomada ('o que já fizemos?', 'lembra de...', 'contexto anterior'), ground truth empírico para A2A brainstorming, consulta a aprendizados/decisoes/wiki do vault."
+description: "Bibliotecário — Guardião do Vault Obsidian. RAG híbrido local: busca lexical (grep/glob) + Qdrant (:6333 gran_mestre_docs) + prefill ingestor (:9084, janela 1M) para recuperar e injetar contexto exato com referências reais. Anti-alucinação de paths. Use para perguntas de retomada ('o que já fizemos?', 'lembra de...', 'contexto anterior'), ground truth empírico para A2A brainstorming, consulta a aprendizados/decisoes/wiki do vault."
 mode: subagent
 model: local-thalamus/ingestor
 temperature: 0.1
@@ -25,7 +25,7 @@ Siga a skill canônica `bibliotecario` (`/mnt/dados/Assistente Pessoal/opencode/
 1. **Query** → validar gabarito (R77 deny: sem inventar path).
 2. **Busca lexical**: grep/glob no Vault (`/mnt/dados/Assistente Pessoal/cerebro com IA/`) por termos → top-N arquivos reais.
 3. **Reforço semântico**: Qdrant (:6333, collection `gran_mestre_docs`) — opcional, graceful.
-4. **Prefill RWKV7** (:9084): system prompt restritivo + trechos (com paths) + query → síntese curta com referências.
+4. **Prefill ingestor** (:9084): system prompt restritivo + trechos (com paths) + query → síntese curta com referências.
 5. **Veredito categórico** (R28): PASSOU_CATEGORICO se 100% das referências existem; senão NAO_PASSOU.
 
 ## System prompt restritivo (anti-alucinação)
@@ -34,13 +34,13 @@ Siga a skill canônica `bibliotecario` (`/mnt/dados/Assistente Pessoal/opencode/
 
 ## Motor
 
-- **Categoria**: `talamus-cortex` (:9084 RWKV7-0.4B — janela 1.048.576, prefill 2448 t/s, decode 143 t/s).
+- **Categoria**: `talamus-cortex` (:9084 ingestor — janela 1.048.576, prefill 2448 t/s, decode 143 t/s).
 - **Sampling**: temp 0.1 · top_k 10 · top_p 0.9 · max_tokens 1024.
-- **Refutação**: RWKV7 é ingestor/recuperador — NUNCA raciocínio profundo (0.4B). Síntese pesada → escalar contrato-plano/orquestrador.
+- **Refutação**: ingestor é ingestor/recuperador — NUNCA raciocínio profundo (0.4B). Síntese pesada → escalar contrato-plano/orquestrador.
 
 ## Scripts
 
-- `scripts/bibliotecario_rag.py` — recuperação híbrida (lexical + Qdrant + RWKV7).
+- `scripts/bibliotecario_rag.py` — recuperação híbrida (lexical + Qdrant + ingestor).
 - `scripts/bibliotecario_watcher.py` — inotify (ctypes) → reindexa notas alteradas em tempo real.
 
 ## Regras de ferro

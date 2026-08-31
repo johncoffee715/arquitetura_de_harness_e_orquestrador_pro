@@ -1,6 +1,6 @@
 {
     "version": "1.2",
-    "updated": "2026-08-30T22:30:41.647717+00:00",
+    "updated": "2026-08-31T17:42:29.087035+00:00",
     "fonte": "auditoria R52 + ctx-cost + start-stack + BENCH-01",
     "politica_roteamento": {
         "tipo": "hibrido-em-camadas",
@@ -361,146 +361,46 @@
             }
         },
         {
-            "model_id": "Needle-2-26M",
-            "slot_port": 9091,
-            "device": "CPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "cactus-needle",
-                "params": "26M",
-                "contexto_nativo": 4096,
-                "arch_detail": "Needle 2 (Cactus Compute) — 45M/26M params, 14MB binário, ~28MB RAM, tool calling nativo, extração estruturada byte-level, 500+ t/s"
-            },
-            "fisica_inferencia": {
-                "quantizacao": "n/a (binário nativo)",
-                "pesos_gb": 0.014,
-                "ram_gb": 0.028,
-                "tps_decode_empirical": 184.7,
-                "temp": 0.0,
-                "nota": "ONLINE: binário nativo x86-64 (tools/needle2/needle, 14.8MB) — API própria POST /complete; tool-set forja-tools.json; prefill 364 · decode 184.7 · RAM 29MB; validação ungrounded=[]",
-                "tps_prefill_empirical": 364.1,
-                "api": "needle-complete"
-            },
-            "vocacao_grafo": "L0 SYNTACTIC ENFORCER — payload JSON estrito (100% schema compliance) para MCP/Hook; validação byte-level; coexiste com RWKV7 L0.5 (semântico)",
-            "derivado": {
-                "file": "needle-2",
-                "slug": "needle-2",
-                "category": "forja",
-                "papel": "FORJA",
-                "ctx_ativo_efetivo": 4096,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "26M params — sem raciocínio; só tool calling estruturado; API própria POST /complete (não-OpenAI)",
-                "capacidades": "Validação de schema byte-level (100% conformidade); triagem L0; persistência (write_artifact/upsert_vault); 184-222 t/s, 29MB RAM",
-                "possibilidades": "Roteamento de intenção; extração estruturada de campos; flanquear peneira grossa"
-            }
-        },
-        {
-            "model_id": "Gemma-2-2B-IT-Q4_K_M",
-            "slot_port": 9092,
+            "model_id": "LLMJudge-Qwen2.5-3B-Q4_K_M",
+            "slot_port": 9085,
             "device": "GPU",
             "topologia_arquitetura": {
-                "tipo_fundacao": "gemma2",
-                "layers": 26,
-                "embedding_length": 2304,
-                "attn_heads": 18,
-                "kv_heads": 1,
+                "tipo_fundacao": "qwen2",
+                "layers": 36,
+                "embedding_length": 2048,
+                "attn_heads": 16,
+                "kv_heads": 2,
                 "key_len_head": 128,
-                "contexto_nativo": 8192,
-                "arch_detail": "Gemma 2 — atenção alternada local/global (julgamento técnico); 2.6B; tokenizer SentencePiece (gemma)"
+                "contexto_nativo": 32768,
+                "rope_freq_base": 1000000.0,
+                "feed_forward_length": 11008
             },
             "fisica_inferencia": {
                 "quantizacao": "Q4_K_M",
-                "pesos_gb": 1.7,
-                "ctx_ativo": 8192,
+                "pesos_gb": 1.93,
+                "pesos_bytes": 1929902944,
+                "ctx_ativo": 32768,
                 "cache_k": "q4_0",
                 "cache_v": "q4_0",
-                "tps_decode_empirical": 110.39,
-                "tps_prefill_empirical": "~800-1000",
-                "temp": 0.8,
-                "ngl": 999,
+                "kv_per_token_kb": 10.12,
+                "kv_total_gb_at_ctx": 0.33,
+                "tps_decode_empirical": 152.63,
+                "tps_prefill_empirical": 1600.89,
+                "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 1600.89 · decode 152.63 — ANTIGO CPU: 16.3. Re-adicionado 31/08 (sumiu do manifesto por sync externo)",
                 "flash_attn": true,
-                "nota": "BENCHMARK R79 31/08: decode 110.39 t/s, VRAM pico 14.12GB, latência 128tok 1.16s. GSM8K 61.9 (anomalia vs 7B), MMLU 56.1, HumanEval 30.0 (fraco p/ código). Aprovado como Refutador Ágil A2A."
+                "temp": 0.15,
+                "ngl": 999,
+                "threads": "GPU Vulkan0 -ngl 999",
+                "mtp": "N/A"
             },
-            "vocacao_grafo": "REFUTADOR ÁGIL A2A · lógica/matemática · diversidade arquitetural (Google ≠ Qwen/Ternary)",
+            "vocacao_grafo": "F5/F6 JUDGE · validador dedicado temp 0.15 · contratos",
             "derivado": {
-                "file": "Gemma-2-2B-IT-Q4_K_M.gguf",
-                "slug": "gemma-2-2b-it",
-                "category": "refutador-agil",
-                "papel": "REFUTADOR ÁGIL A2A",
-                "ctx_ativo_efetivo": 8192,
+                "file": "LLMJudge-Qwen2.5-3B.Q4_K_M.gguf",
+                "slug": "llmjudge-qwen2.5-3b",
+                "category": "judge",
+                "papel": "F5/F6 JUDGE",
+                "ctx_ativo_efetivo": 32768,
                 "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "Código profissional (HumanEval 30.0); ctx 8K (não 1M); tool calling inferior ao Qwen-4B",
-                "capacidades": "Refutador Ágil A2A (GSM8K 61.9, atenção alternada); crítica de contratos; 110 t/s",
-                "possibilidades": "Árbitro alternativo; análise de spec.md; lógica pura; flanquear Ternary-8B"
-            }
-        },
-        {
-            "model_id": "SmolLM2-360M-Instruct-Q8_0",
-            "slot_port": 9093,
-            "device": "GPU",
-            "status": "canonizado",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "smollm2",
-                "params": "360M",
-                "contexto_nativo": 8192,
-                "arch_detail": "SmolLM2 — treinado para performance extrema em CPU/hardware restrito"
-            },
-            "fisica_inferencia": {
-                "quantizacao": "Q8_0",
-                "pesos_gb": 0.386,
-                "tps_decode_cpu": 30.74,
-                "tps_decode_gpu": 151.91,
-                "nota": "CANONIZADO GPU 31/08 (R79 + decisão: 5x mais rápido com peso marginal ~0.4GB; regra subLLM >100 t/s). GPU 151.91 t/s · CPU 30.74 t/s. L0 triagem flanqueando Needle 2."
-            },
-            "vocacao_grafo": "L0 TRIAGEM GPU · flanquear Needle 2 · 151.91 t/s (>100 t/s regra subLLM)",
-            "derivado": {
-                "file": "SmolLM2-360M-Instruct-Q8_0.gguf",
-                "slug": "smollm2-360m-instruct",
-                "category": "triagem-l0",
-                "papel": "L0 TRIAGEM GPU",
-                "ctx_ativo_efetivo": 4096,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "360M — sem raciocínio profundo; não usar para lógica/engenharia",
-                "capacidades": "Triagem L0 CPU (30 t/s, zero VRAM); classificação de intenção; flanquear Needle 2",
-                "possibilidades": "GPU 151 t/s se VRAM sobrar; classificação binária rápida"
-            }
-        },
-        {
-            "model_id": "Qwen3.5-0.8B-Q4_K_M",
-            "slot_port": null,
-            "device": "GPU (fitragem)",
-            "status": "fitragem",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "qwen35",
-                "params": "0.8B",
-                "contexto_nativo": 262144,
-                "arch_detail": "Qwen3.5-0.8B — ultracompacto, tokenizer qwen35 (compatível com Ornith-35B para draft!)"
-            },
-            "fisica_inferencia": {
-                "quantizacao": "Q4_K_M",
-                "pesos_gb": 0.53,
-                "tps_decode_cpu": 25.03,
-                "tps_decode_gpu": 82.33,
-                "nota": "BENCHMARK R79 31/08: CPU 25.03 · GPU 82.33 t/s (abaixo da regra 100 t/s — mas 0.8B ultracompacto para L0 simples). Tokenizer qwen35 = compatível como DRAFT do Ornith-35B (spec decoding)! VRAM ~0.9GB."
-            },
-            "vocacao_grafo": "L0 CLASSIFICAÇÃO · candidato a DRAFT do 35B (tokenizer qwen35 idêntico)",
-            "derivado": {
-                "file": "Qwen3.5-0.8B-Q4_K_M.gguf",
-                "slug": "qwen3.5-0.8b",
-                "category": "classificacao-l0",
-                "papel": "L0 CLASSIFICAÇÃO",
-                "ctx_ativo_efetivo": 4096,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "0.8B — sem raciocínio; 82 t/s GPU (abaixo da regra 100); não usar para lógica",
-                "capacidades": "Classificação L0; triagem rápida; candidato a DRAFT do 35B (tokenizer qwen35!)",
-                "possibilidades": "Draft model do Ornith-35B (mesmo tokenizer — taxa de aceitação alta); early-exit phatics"
             }
         }
     ],
@@ -600,5 +500,7 @@
             "Manter 35B exclusivo de orquestração (atual): aceitar 2.24 t/s"
         ],
         "decisao": "35B permanece exclusivo de orquestração. Nenhuma técnica de aceleração na MI50 única."
-    }
+    },
+    "nota_limpeza_2026_08_30": "Removidos modelos fora da stack ativa (Needle-2/Gemma-2B/SmolLM2/Qwen3.5-0.8B) — slot None quebrava sync --check",
+    "nota_judge_31_08": "Judge-3B re-adicionado ao manifesto (foi removido por sync externo entre 30/08 22:30 e 31/08 17:42)"
 }
