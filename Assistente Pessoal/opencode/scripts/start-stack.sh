@@ -67,6 +67,11 @@ launch 9088 "Qwen3.8-4B-Q4_K_M.gguf" \
   -c 200000 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
 
+# GPU 9093 · triagem-l0 · SmolLM2-360M-Instruct-Q8_0 (FA on) — canonizado 31/08 (151 t/s)
+launch 9093 "SmolLM2-360M-Instruct-Q8_0.gguf" \
+  -c 4096 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
+  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
+
 # GPU 9092 · refutador-agil · Gemma-2-2B-IT-Q4_K_M (FA on) — R79 aprovado 31/08
 launch 9092 "Gemma-2-2B-IT-Q4_K_M.gguf" \
   -c 8192 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
