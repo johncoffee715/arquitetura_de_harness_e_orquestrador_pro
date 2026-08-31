@@ -146,7 +146,8 @@
     "bibliotecario": {},
     "a2a-brainstorm": {},
     "log-summarizer": {},
-    "needle-pytest-filter": {}
+    "needle-pytest-filter": {},
+    "roteador-hibrido": {}
   },
   "agents": [
     "gran-mestre",

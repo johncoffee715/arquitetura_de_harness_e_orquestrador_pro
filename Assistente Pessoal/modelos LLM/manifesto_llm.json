@@ -118,7 +118,7 @@
                 "tps_prefill_empirical": 2448.65,
                 "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 2448.65 · decode 143.29 — ANTIGO CPU: 143.29"
             },
-            "vocacao_grafo": "CÓRTEX SENSORIAL PRIMÁRIO (Filtro Talâmico) · captura cxt bruto pré-LLM · ctx 1M · SDD",
+            "vocacao_grafo": "L0.5 CÓRTEX COGNITIVO — roteamento semântico F0 (intent classification), ingestão de logs longos F4 SEM perda (RNN O(1)), validação semântica F3, auditoria de diffs F5/6. Coexiste com Needle L0 (sintático).",
             "derivado": {
                 "file": "RWKV7-G1d-0.4B-Instruct-FP16.gguf",
                 "slug": "rwkv7-g1d-0.4b-instruct",
@@ -128,8 +128,8 @@
                 "generator_version": "1.0.0"
             },
             "metrica_avaliativa_r78": {
-                "debilidade": "Raciocínio profundo (0.4B — lost in the middle em 1M); síntese longa repete padrões; NUNCA para lógica/engenharia",
-                "capacidades": "Peneira grossa/ingestor 1M ctx (prefill 2448 t/s); varredura linear de MBs; RAG do Bibliotecário; filtro talâmico L0 — INSUBSTITUÍVEL até prova em contrário",
+                "debilidade": "Raciocínio denso F1/F2 (0.4B); JSON estrito exige grammar (não força sintaxe por construção como Needle)",
+                "capacidades": "L0.5: roteamento semântico, intent classification, ingestão de logs longos sem perda (1M ctx), parsing TDD, validação de diffs",
                 "possibilidades": "Draft model se tokenizer compatível (não é — rwkv ≠ qwen35); classificação leve de intenção"
             }
         },
@@ -380,7 +380,7 @@
                 "tps_prefill_empirical": 364.1,
                 "api": "needle-complete"
             },
-            "vocacao_grafo": "FORJA — tool calling + validação de schema byte-level (100% conformidade de dados)",
+            "vocacao_grafo": "L0 SYNTACTIC ENFORCER — payload JSON estrito (100% schema compliance) para MCP/Hook; validação byte-level; coexiste com RWKV7 L0.5 (semântico)",
             "derivado": {
                 "file": "needle-2",
                 "slug": "needle-2",
