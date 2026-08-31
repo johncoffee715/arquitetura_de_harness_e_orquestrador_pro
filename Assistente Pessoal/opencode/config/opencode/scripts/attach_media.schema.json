@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "attach_media_output",
+  "description": "Contrato de saída do anexo de mídia (R51 tripé .md/.py/.json) — consumido pelo orquestrador para integrar o anexo ao contexto.",
+  "type": "object",
+  "required": ["tool", "version", "generated_at", "attachments"],
+  "additionalProperties": false,
+  "properties": {
+    "tool": { "const": "attach_media" },
+    "version": { "type": "string", "pattern": "^1\\." },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "attachments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "kind", "status", "summary"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "kind": { "enum": ["image", "video", "audio", "unknown"] },
+          "status": { "enum": ["ok", "partial", "error"] },
+          "summary": { "type": "string", "description": "resumo em pt-BR pronto para ir ao contexto" },
+          "media": {
+            "type": "object",
+            "properties": {
+              "duration_s": { "type": ["number", "null"] },
+              "width": { "type": ["integer", "null"] },
+              "height": { "type": ["integer", "null"] },
+              "fps": { "type": ["number", "null"] },
+              "codec": { "type": ["string", "null"] },
+              "format": { "type": ["string", "null"] },
+              "size_bytes": { "type": ["integer", "null"] },
+              "frames": { "type": "array", "items": { "type": "string" }, "description": "caminhos absolutos dos frames extraídos (vídeo)" },
+              "transcript": { "type": ["string", "null"], "description": "transcrição quando OCR/ASR disponível" },
+              "error": { "type": ["string", "null"] }
+            },
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  }
+}

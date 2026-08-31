@@ -2,7 +2,7 @@
 """
 filtro-veloz.py — Integração do Córtex Sensorial nas Fases 1-6 do Grafo Híbrido v2
 
-Este script implementa o filtro veloz (LFM2.5-230M) que limpa/compacta o input
+Este script implementa o filtro veloz (role ingestor/reflexo) que limpa/compacta o input
 antes de enviá-lo ao LLM primário de cada fase.
 
 Uso:
@@ -37,9 +37,9 @@ def load_cortex():
     }
     return CORTEX_SENSORIAL
 
-# Filtro Ultraveloz (LFM2.5-230M)
+# Filtro Ultraveloz (role:reflexo)
 FILTRO_ULTRAVELOZ = {
-    "model": "lfm2.5-1.2b-thinking-tomoe",
+    "model": "reflexo",
     "slot": "9086",
     "endpoint": "http://127.0.0.1:9086",
     "tps": 399  # tokens/second
@@ -49,42 +49,42 @@ FILTRO_ULTRAVELOZ = {
 FASES = {
     1: {
         "nome": "Descoberta",
-        "llm_primario": "ornith-1.5-9b-q5",
+        "llm_primario": "orchestrator",
         "slot": "8083",
         "endpoint": "http://127.0.0.1:8083",
         "cortex_sensorial": True
     },
     2: {
         "nome": "Contrato",
-        "llm_primario": "granite-4.2-3b-q4_k_m",
-        "slot": "9087",
-        "endpoint": "http://127.0.0.1:9087",
+        "llm_primario": "proposer",
+        "slot": "9088",
+        "endpoint": "http://127.0.0.1:9088",
         "cortex_sensorial": True
     },
     3: {
         "nome": "Plano",
-        "llm_primario": "qwen3.8-4b-distill",
+        "llm_primario": "proposer",
         "slot": "9088",
         "endpoint": "http://127.0.0.1:9088",
         "cortex_sensorial": True
     },
     4: {
         "nome": "Execução",
-        "llm_primario": "ornith-1.5-9b-q5",
+        "llm_primario": "orchestrator",
         "slot": "8083",
         "endpoint": "http://127.0.0.1:8083",
         "cortex_sensorial": True
     },
     5: {
         "nome": "Revisão",
-        "llm_primario": "llmjudge-qwen2.5-3b",
-        "slot": "9085",
-        "endpoint": "http://127.0.0.1:9085",
+        "llm_primario": "judge",
+        "slot": "9088",
+        "endpoint": "http://127.0.0.1:9088",
         "cortex_sensorial": True
     },
     6: {
         "nome": "Entrega",
-        "llm_primario": "ornith-1.5-9b-q5",
+        "llm_primario": "orchestrator",
         "slot": "8083",
         "endpoint": "http://127.0.0.1:8083",
         "cortex_sensorial": True
