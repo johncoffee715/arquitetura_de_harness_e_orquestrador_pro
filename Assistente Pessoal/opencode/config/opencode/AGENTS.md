@@ -1066,3 +1066,101 @@ Fontes: Adendas 7-21 · validação GM-oficial 12/12 tarefas ×4 candidatos · r
 
 <Exemplo canônico (2026-08-31)>
 - Gemma-2-2B-IT (candidato Refutador Ágil): benchmark empírico local (prefill/decode/VRAM na MI50) + especulativo (lógica/matemática por arquitetura alternada) + conflito com benchmarks famosos (anomalia matemática vs 7B) + R78 preenchido → veredito antes de entrar no A2A.
+
+---
+
+# ═══ REGRA GLOBAL R80 — PESQUISA COMUNITÁRIA MULTI-IDIOMA OBRIGATÓRIA — promulgado 2026-08-31 ═══
+
+**Regra**: toda pesquisa na internet (busca de LLM candidato, substituição de modelo, benchmarks
+comunitários, apoio de decisão R50) DEVE: (1) cobrir sites/fóruns em TODAS as línguas possíveis
+(EN, PT, ES, ZH, JA, KO, RU, DE, FR, IT…) via motores nativos (habr, zhihu, qiita, bilibili, clien,
+reddit, HN, discuss.huggingface, yandex…); (2) usar TODOS os subagentes disponíveis correspondentes à
+task em paralelo (waves); (3) priorizar opções MoE não-oficiais da comunidade com evidências de
+desempenho/eficácia (downloads, likes, benchmarks, posts, vídeos — yt-dlp) quando o caso for
+substituir/melhorar LLM; (4) evidência rastreável (URL) para cada afirmação; (5) sintetizar e registrar
+no decision-log + reference. Fonte externa é APOIO — empírico local e veredito do pipeline prevalecem (R45).
+
+---
+
+# ═══ REGRA GLOBAL R81 — PADRÃO DE GERAÇÃO RESTRITA UNIVERSAL (CONSTRAINED DECODING) PARA TODO LLM — promulgado 2026-08-31 ═══
+
+**Regra**: o padrão de **Geração Restrita + Pipeline de Validação Determinístico** é EXIGIDO para
+**QUALQUER LLM do ecossistema, independentemente das capacidades cognitivas** (pequeno OU grande):
+todo output estruturado (JSON, tool call, schema, extração) produzido por LLM local deve ser envelopado
+em arquitetura de controle — o LLM é **motor de preenchimento de estados**, nunca gerador livre de sintaxe.
+
+<Stack de controle obrigatório (5 camadas)>
+1. **Definição de Tipos** — Python/Pydantic (ou JSON Schema): esquema rígido; o modelo só pode responder o que está tipado.
+2. **Geração Restrita** — GBNF no motor (llama.cpp) ou FSM (Outlines/Instructor): tokens fora da regra = probabilidade zero (logit bias infinito negativo) ANTES do softmax; o modelo é FISICAMENTE impedido de alucinar sintaxe. Fonte única: gabarito.json (R77) → Pydantic → JSON Schema → GBNF em runtime (`LlamaGrammar.from_json_schema`); .gbnf manual = legado/fallback, nunca fonte nova.
+3. **Controle de Estado** — .md (system prompts com tags XML separando instrução de dado) + .json (few-shot perfeito 3–5 interações Input→Output).
+4. **Motor de Inferência estrito** — temp=0.0 para determinismo (f(x)=y), stop_tokens brutos (ex.: `["\n\n","```","<|eot_id|>"]`), max_tokens calculado do schema (trava física — modelo bate no muro rápido, economiza VRAM/tempo).
+5. **Validação e Correção anti-loop** — Pydantic `model_validate_json` + retry com parse do erro re-injetado; `max_retries=3` (3 falhas = exceção no Python, NUNCA loop no LLM); fallback default obrigatório (JSON vazio/log), jamais realimentar falha em loop.
+
+<Aplicação>
+- Vale para TODOS os slots e TODAS as features (hefesto/forja, roteador-hibrido, needle, sdd, extractors, tool calling de qualquer subagente) — independente do modelo (Ornith-35B, granite-4.2-3b, ternary-8B, gemma-2B, lfm, rwkv).
+- O gabarito R77 (.json) é a FONTE ÚNICA que transpila para Pydantic e GBNF — sem camadas duplicadas.
+- Ferramental de referência: `skills/hefesto/tooling/hefesto_llama_bridge.py` (bridge + GBNF runtime) · `skills/hefesto/reference/constrained-decoding-doutrina.md` (doutrina completa) · `llama_cpp_config.json` (flags estritas).
+- Exceção documentada: respostas livres/criativas (F1/F2 brainstorm, prosa R61 criativo) NÃO exigem GBNF — mas qualquer output que será consumido por máquina (JSON/tool call/schema) SIM.
+- **Previsibilidade de LLM não vem do prompt ("seja cuidadoso") — vem da barreira física no amostrador + validação determinística + anti-loop de máquina (R43: scaffolding estrutural em vez de pedido).**
+
+<Exemplo canônico (2026-08-31)>
+- Hefesto upgrade: doutrina registrada em skills/hefesto/reference/constrained-decoding-doutrina.md + decision-log HEFESTO-CONSTRAINED-DECODING-2026-08-31; bridge já existente (hefesto_llama_bridge.py + hefesto_deep_spec.gbnf + hefesto_feature.gbnf) recebe o stack como motor padrão; pipeline FORJA passa a usar tool calling estruturado byte-level com schema 100% conforme (R29/R28).
+
+---
+
+# ═══ REGRA GLOBAL R82 — ESTRANGULAMENTO DE FEATURES VIA TRÍPLICE (.md .json .py .gbnf) — promulgado 2026-08-31 ═══
+
+**Regra**: TODA feature gerada ou helenizada através do Hefesto (skill, subagent, hook, plugin, MCP, LSP,
+script, watcher, gabarito, motor) **DEVE ser estrangulada via a tríplice/quadrúplice como estratégia
+anti-loop, anti-alucinação e coesão ativa**:
+- **.md** — ontologia/persona/instrução (system prompt imutável; tags XML separando instrução de dado).
+- **.json** — gabarito/firewall (definição-fonte R77; esquema rígido; allow/deny; transpilável para Pydantic/GBNF).
+- **.py** — mecânica de ignição/validação (motor determinístico; Pydantic `model_validate_json`; anti-loop max_retries=3 + fallback).
+- **.gbnf** — barreira física no amostrador (gerada em runtime de Pydantic/JSON Schema; nunca fonte nova manual).
+
+<Aplicação>
+- Vale para QUALQUER feature nova ou helenizada (R74/R77/R81) — independente do modelo que a executa.
+- Estrangulamento = o LLM da feature é envelopado: não gera livre, preenche estados dentro do contrato
+  da tríplice; qualquer desvio é cortado na camada física (GBNF) ou determinística (Python).
+- Coesão ativa: os 4 artefatos referenciam-se (fonte única no .json); mudança no contrato propaga para
+  Pydantic e GBNF sem duplicação.
+- Anti-loop: 3 falhas de validação = exceção Python + fallback default (nunca realimentar erro no LLM).
+- Anti-alucinação: schemas rígidos + stop_tokens + max_tokens calculado (a feature não pode "inventar"
+  campos nem se perder em justificativas).
+
+<Exemplo canônico (2026-08-31)>
+- Roadmap R81 implementado: `hefesto_llama_bridge.py` com `PydanticToGbnf` (transpilador runtime) +
+  `constrained_generate` (retry/re-inject/fallback) + TDD (test_hefesto_bridge_r81.py); FORJA passa a
+  consumir schema byte-level via bridge; gabarito.json → Pydantic → GBNF.
+
+---
+
+# ═══ REGRA GLOBAL R83 — CRIVO SISTÊMICO OBRIGATÓRIO (FATOS · DADOS · MEMORIAL COMPARATIVO) — promulgado 2026-08-31 ═══
+
+**Regra**: TUDO dentro do ecossistema (LLM, feature, hook, subagent, skill, motor, pipeline — qualquer
+coisa que execute) DEVE passar pelo **crivo sistêmico** através de **fatos, dados, argumentos
+plausíveis e irrefutáveis que comprovem as capacidades do LLM/feature em teste empírico** — registrados
+em **memorial comparativo** (append-only, comparável entre rodadas/versões/modelos).
+
+<Etapas obrigatórias do crivo (feature interna de benchmark)>:
+1. **Etapa A — ANTI-ALUCINAÇÃO**: prompts com GROUND TRUTH verificável (fatos conhecidos, extração
+   estruturada com schema, verificação de não-invenção de campos/valores/arquivos). Métricas:
+   conformidade de schema (Pydantic model_validate_json), acurácia factual vs ground truth, taxa de
+   invenção (campos/valores que não existem na fonte).
+2. **Etapa B — ANTI-LOOP**: N amostras do mesmo prompt (temp 0.0 e variada). Métricas: determinismo
+   (respostas idênticas em temp 0), repetição n-gram (loop de tokens), finish_reason length vs stop
+   (bateu no muro = explosão/loop), content vazio com reasoning infinito (R57), latência anômala.
+3. **Veredito categórico por métrica (R28)**: PASSOU_CATEGORICO / NAO_PASSOU com limiares configuráveis
+   (default: alucinação <10%, loop <10%, determinismo ≥90%). Resultado que não impressiona (R40) NÃO transita.
+4. **Memorial comparativo**: append em `harness/logs/llm-crivo-memorial.jsonl` (schema com ts, alvo,
+   versão, métricas, veredito) + relatório legível; comparável entre modelos/versões para decisão (R45).
+
+<Aplicação>
+- Vale para: canonização de novo LLM (R79), troca de slot (R27), dúvida sobre capacidade de feature,
+  antes de entrar no A2A/conselho, e REGRESSÃO ao trocar prompt/modelo/tool (R28 trajectory).
+- Nada é aceito por "parece bom" ou benchmark externo sozinho — o crivo empírico local prevalece (R45).
+- Feature implementada em `scripts/llm_crivo.py` (+ testes) — parte do arsenal do Gran-Mestre (R44).
+
+<Exemplo canônico (2026-08-31)>
+- granite-4.2-3b :9088 cravado: Etapa A taxa de alucinação ~0%; Etapa B determinismo 100% (temp0),
+  stop vs length saudável; memorial registrado.

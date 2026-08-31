@@ -1,6 +1,6 @@
 {
     "version": "1.2",
-    "updated": "2026-08-31T17:42:29.087035+00:00",
+    "updated": "2026-08-31T17:46:37.640581+00:00",
     "fonte": "auditoria R52 + ctx-cost + start-stack + BENCH-01",
     "politica_roteamento": {
         "tipo": "hibrido-em-camadas",
@@ -359,49 +359,6 @@
                 "capacidades": "Orquestração/suprema corte (lógica 12/12); síntese macro; decisão final — INSUBSTITUÍVEL até prova em contrário",
                 "possibilidades": "Offload parcial (testado — degrada 1.63 t/s); draft (testado — degrada); única via real = 2ª MI50"
             }
-        },
-        {
-            "model_id": "LLMJudge-Qwen2.5-3B-Q4_K_M",
-            "slot_port": 9085,
-            "device": "GPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "qwen2",
-                "layers": 36,
-                "embedding_length": 2048,
-                "attn_heads": 16,
-                "kv_heads": 2,
-                "key_len_head": 128,
-                "contexto_nativo": 32768,
-                "rope_freq_base": 1000000.0,
-                "feed_forward_length": 11008
-            },
-            "fisica_inferencia": {
-                "quantizacao": "Q4_K_M",
-                "pesos_gb": 1.93,
-                "pesos_bytes": 1929902944,
-                "ctx_ativo": 32768,
-                "cache_k": "q4_0",
-                "cache_v": "q4_0",
-                "kv_per_token_kb": 10.12,
-                "kv_total_gb_at_ctx": 0.33,
-                "tps_decode_empirical": 152.63,
-                "tps_prefill_empirical": 1600.89,
-                "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 1600.89 · decode 152.63 — ANTIGO CPU: 16.3. Re-adicionado 31/08 (sumiu do manifesto por sync externo)",
-                "flash_attn": true,
-                "temp": 0.15,
-                "ngl": 999,
-                "threads": "GPU Vulkan0 -ngl 999",
-                "mtp": "N/A"
-            },
-            "vocacao_grafo": "F5/F6 JUDGE · validador dedicado temp 0.15 · contratos",
-            "derivado": {
-                "file": "LLMJudge-Qwen2.5-3B.Q4_K_M.gguf",
-                "slug": "llmjudge-qwen2.5-3b",
-                "category": "judge",
-                "papel": "F5/F6 JUDGE",
-                "ctx_ativo_efetivo": 32768,
-                "generator_version": "1.0.0"
-            }
         }
     ],
     "sync_state": {
@@ -502,5 +459,5 @@
         "decisao": "35B permanece exclusivo de orquestração. Nenhuma técnica de aceleração na MI50 única."
     },
     "nota_limpeza_2026_08_30": "Removidos modelos fora da stack ativa (Needle-2/Gemma-2B/SmolLM2/Qwen3.5-0.8B) — slot None quebrava sync --check",
-    "nota_judge_31_08": "Judge-3B re-adicionado ao manifesto (foi removido por sync externo entre 30/08 22:30 e 31/08 17:42)"
+    "nota_judge_31_08": "Judge-3B removido por decisão do usuário (outra sessão) — não re-adicionar"
 }

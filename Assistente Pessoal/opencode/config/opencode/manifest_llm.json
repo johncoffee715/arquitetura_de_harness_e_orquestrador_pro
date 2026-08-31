@@ -1,48 +1,22 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-08-28T00:17:24.336681Z",
-  "description": "Manifesto de modelos LLM para o Grafo Híbrido v2",
+  "last_updated": "2026-08-31T17:46:37.938934Z",
+  "description": "Manifesto de modelos LLM para o Grafo Híbrido v2 — regenerado por sync-llm-stack.py a partir de modelos LLM/manifesto_llm.json.",
   "cortex_sensorial": {
     "model": "rwkv7-g1d-0.4b-instruct",
     "slot": "9084",
     "role": "Córtex Sensorial Primário",
-    "function": "Filtro ultraveloz de input context bruto"
+    "function": "Filtro ultraveloz de input context bruto (R71)"
   },
   "models": {
-    "ornith-1.5-9b-q5": {
-      "slot": "8083",
-      "category": "orquestrador",
-      "high_precision": true,
-      "input_hygiene_required": true,
-      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
-      "safe_input_size": 146000,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 212992,
-      "ctx_allocated": 212992,
-      "status": "online"
-    },
     "rwkv7-g1d-0.4b-instruct": {
       "slot": "9084",
-      "category": "descoberta",
+      "category": "talamus-cortex",
       "high_precision": false,
       "input_hygiene_required": false,
       "cortex_sensorial": null,
-      "safe_input_size": 262144,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 8192,
-      "ctx_allocated": 8192,
-      "status": "online"
-    },
-    "llmjudge-qwen2.5-3b": {
-      "slot": "9085",
-      "category": "judge",
-      "high_precision": true,
-      "input_hygiene_required": true,
-      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
-      "safe_input_size": 32768,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 32768,
-      "ctx_allocated": 32768,
+      "safe_input_size": 1048576,
+      "ctx_allocated": 1048576,
       "status": "online"
     },
     "lfm2.5-1.2b-thinking-tomoe": {
@@ -51,58 +25,8 @@
       "high_precision": true,
       "input_hygiene_required": true,
       "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
-      "safe_input_size": 32768,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 32768,
-      "ctx_allocated": 32768,
-      "status": "online"
-    },
-    "granite-4.2-3b-q4_k_m": {
-      "slot": "9087",
-      "category": "executor",
-      "high_precision": true,
-      "input_hygiene_required": true,
-      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
-      "safe_input_size": 32768,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 32768,
-      "ctx_allocated": 32768,
-      "status": "online"
-    },
-    "qwen3.8-4b-distill": {
-      "slot": "9088",
-      "category": "contrato-plano",
-      "high_precision": true,
-      "input_hygiene_required": true,
-      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
-      "safe_input_size": 40960,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 40960,
-      "ctx_allocated": 40960,
-      "status": "online"
-    },
-    "qwen3.8-2b-distill": {
-      "slot": "9089",
-      "category": "tool-leve",
-      "high_precision": false,
-      "input_hygiene_required": false,
-      "cortex_sensorial": null,
-      "safe_input_size": 32768,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 32768,
-      "ctx_allocated": 32768,
-      "status": "online"
-    },
-    "qwen3.5-4b-iq2xxs": {
-      "slot": "9083",
-      "category": "prosa",
-      "high_precision": true,
-      "input_hygiene_required": true,
-      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
-      "safe_input_size": 32768,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 32768,
-      "ctx_allocated": 32768,
+      "safe_input_size": 128000,
+      "ctx_allocated": 128000,
       "status": "online"
     },
     "ternary-bonsai-8b": {
@@ -112,10 +36,73 @@
       "input_hygiene_required": true,
       "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
       "safe_input_size": 65536,
-      "ctx_allocated_preserved": true,
-      "cognitive_threshold": 65536,
       "ctx_allocated": 65536,
       "status": "online"
+    },
+    "ornith-1.5-35b-a3b-iq4_xs": {
+      "slot": "8083",
+      "category": "orquestrador",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 262144,
+      "ctx_allocated": 262144,
+      "status": "online"
+    },
+    "granite-4.2-3b": {
+      "slot": "9088",
+      "category": "contrato-plano",
+      "high_precision": true,
+      "input_hygiene_required": true,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 131072,
+      "ctx_allocated": 131072,
+      "status": "online",
+      "file": "granite-4.2-3b-Q4_K_M.gguf",
+      "temp": 0.8,
+      "sampling": {
+        "temperature": 0.8,
+        "top_p": 0.95
+      },
+      "fisica_inferencia": {
+        "backend": "Vulkan0",
+        "flash_attn": true,
+        "cache_type_k": "q4_0",
+        "cache_type_v": "q4_0",
+        "batch": 512,
+        "n_ctx": 131072,
+        "kv_q4_q4_validado": true
+      },
+      "metrica_R78": {
+        "debilidade": "SWE-Bench não avaliado (3B) — código F4 profundo limitado; BFCL 52.41 (tool calling bom, igual ou melhor que Qwen4B); card exige temp 1.0/top_p 0.95 — usar crivo empírico",
+        "capacidades": "proposer/planejamento F2-F3, hefesto, tool calling OpenAI-schema, raciocínio thinking, 131K ctx, RULER 64K 67.5, τ³-bench 45.8, AIME25 78.3",
+        "possibilidades": "F4 leve sob supervisão; substituir Qwen3.8-4B :9088 (2026-08-31, issue alucinação)"
+      },
+      "benchmark_R79": {
+        "fonte": "ibm-granite/granite-4.2-3b (Apache-2.0, card oficial 2026-08-25) + BFCL-V4",
+        "bfcl_v4": 52.41,
+        "rul er_64k": 67.52,
+        "aime25": 78.33,
+        "t3_bench": 45.78,
+        "status": "evidencia_externa_conflitada_em_andamento"
+      }
+    },
+    "gemma-2-2b": {
+      "slot": "9092",
+      "category": "refutador-agil",
+      "high_precision": false,
+      "input_hygiene_required": false,
+      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
+      "safe_input_size": 8192,
+      "ctx_allocated": 8192,
+      "status": "online",
+      "file": "Gemma-2-2B-IT-Q4_K_M.gguf",
+      "temp": 0.8,
+      "metrica_R78": {
+        "debilidade": "janela 8K curta; não para contexto longo",
+        "capacidades": "refutador ágil / fallback forja (tool calling light); veredito rápido",
+        "possibilidades": "juiz rápido em retornos curtos"
+      }
     }
   },
   "high_precision_thresholds": {

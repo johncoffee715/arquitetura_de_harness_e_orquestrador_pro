@@ -1,0 +1,195 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Guardrails Triade Hefesto Schema",
+  "description": "Contrato estrito de máquina para a triade .md/.py/.json — schema validável, additionalProperties:false, required completo, gerado de Pydantic, nunca à mão (R51).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "artifact",
+    "sha256",
+    "origin",
+    "mode",
+    "pillars",
+    "self_healing",
+    "self_learning",
+    "self_scaffolding",
+    "validators",
+    "convergence"
+  ],
+  "properties": {
+    "artifact": {
+      "type": "string",
+      "enum": ["guardrails-triade"],
+      "description": "Identificador único do artefato triade"
+    },
+    "sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "Hash SHA256 do artefato .md (fonte de verdade)"
+    },
+    "origin": {
+      "type": "string",
+      "pattern": "^hefesto:|^absorvido:|^helenizado:",
+      "description": "Origem do artefato: hefesto pipeline, absorvido de fonte externa, ou helenizado"
+    },
+    "mode": {
+      "type": "string",
+      "enum": ["triade"],
+      "description": "Modo de confecção: triade indissociável .md/.py/.json (R51)"
+    },
+    "pillars": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "rule_base", "triade_components"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100,
+            "description": "Nome do pilar (ex: Controlador Irredutível)"
+          },
+          "rule_base": {
+            "type": "string",
+            "pattern": "^R\\d+$",
+            "description": "Regra base da constituição (ex: R1, R2, R8, R44)"
+          },
+          "triade_components": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "enum": [".md", ".py", ".json"]
+            },
+            "description": "Componentes da triade que implementam este pilar"
+          }
+        }
+      }
+    },
+    "self_healing": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "mechanism", "gate"],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "const": true,
+          "description": "Self-healing deve estar sempre habilitado"
+        },
+        "mechanism": {
+          "type": "string",
+          "enum": ["schema_validation", "pca_band_check", "r1_blocklist_check", "auto_correction"],
+          "description": "Mecanismo de cura ativo"
+        },
+        "gate": {
+          "type": "string",
+          "enum": ["G-D", "G-A", "G-H", "G-F"],
+          "description": "Gate onde o self-healing atua"
+        }
+      }
+    },
+    "self_learning": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "lesson_storage", "pattern_mining"],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "const": true,
+          "description": "Self-learning deve estar sempre habilitado"
+        },
+        "lesson_storage": {
+          "type": "string",
+          "enum": ["decision_log_jsonl", "vault_obsidian", "both"],
+          "description": "Onde as lições são armazenadas"
+        },
+        "pattern_mining": {
+          "type": "string",
+          "enum": ["recurring_2plus", "instinct_generation", "adaptive_scores"],
+          "description": "Método de mineração de padrões (R10: 2+ ocorrências = instinto)"
+        }
+      }
+    },
+    "self_scaffolding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["enabled", "gap_detection", "global_registration"],
+      "properties": {
+        "enabled": {
+          "type": "boolean",
+          "const": true,
+          "description": "Self-scaffolding deve estar sempre habilitado"
+        },
+        "gap_detection": {
+          "type": "string",
+          "enum": ["registry_audit", "config_audit", "hooks_audit", "ctx_catalog_audit", "health_audit"],
+          "description": "Fonte de detecção de GAPs (R44)"
+        },
+        "global_registration": {
+          "type": "string",
+          "enum": ["opencode_config_global", "never_tmp", "never_isolated_session"],
+          "description": "Registro global obrigatório (R2/R44)"
+        }
+      }
+    },
+    "validators": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["D", "A", "H", "F"],
+      "properties": {
+        "D": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Gate G-D (Decompilação) — estrutura extraída de R1-R54"
+        },
+        "A": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Gate G-A (Autofagia) — essência digerida, ruído descartado"
+        },
+        "H": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Gate G-H (Helenização) — normalização OpenCode completa"
+        },
+        "F": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Gate G-F (Forja) — validação categórica + TDD + memória cerebral"
+        }
+      }
+    },
+    "convergence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["average", "threshold", "converged"],
+      "properties": {
+        "average": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Média dos 4 validadores (D+A+H+F)/4"
+        },
+        "threshold": {
+          "type": "number",
+          "minimum": 90,
+          "maximum": 100,
+          "description": "Limiar de convergência (R40: ≥90 impressão real; R53: ≥95 excelência rara)"
+        },
+        "converged": {
+          "type": "boolean",
+          "description": "True se todos PASSOU_CATEGORICO e média ≥ threshold"
+        }
+      }
+    }
+  }
+}

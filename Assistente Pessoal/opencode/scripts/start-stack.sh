@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 # start-stack.sh — sobe todos os slots LLM da stack híbrida (idempotente)
 # GPU MI50: :8083 orquestrador · CPU: micro-slots especialistas
+# Modo WARM (R21/R58): slots sob demanda, só ESSENTIAL sobem por padrão
 # Fonte de física: manifesto_llm.json (R65/R66) — flags por slot fixadas por crivo
 set -u
 ROOT="/mnt/dados/Assistente Pessoal/opencode"
@@ -9,11 +10,30 @@ MODELS="/mnt/dados/Assistente Pessoal/modelos LLM"
 LOGDIR="$ROOT/state/watcher"
 mkdir -p "$LOGDIR"
 
+# ── MODELO WARM (R21/R58): sobe SÓ sob demanda ──
+MODE_WARM=1
+MODE_WARM_PORTS=(9086 9088 9090 9093 9095)
+
+# ── PORTAS CANÔNICAS ──
+ESSENTIAL_PORTS=(8083 9084)
+WARM_PORTS=(9086 9088 9090 9093 9095)
+NEEDLE_PORTS=(8097 9091)
+ALL_PORTS=(8083 9084 9086 9088 9090 9093 9095 8097 9091)
+
+# ── FUNÇÃO DE LAUNCH (R19: idempotente, setsid nohup, desanexado) ──
 launch() { # $1=port $2=model $3...=flags extras
   local port="$1"; local model="$2"; shift 2
+  # R19: health check idempotente — se já UP, skip
   if curl -sf -m 2 "http://127.0.0.1:$port/health" >/dev/null 2>&1; then
-    echo "[$port] já ativo — skip"; return 0
+    echo "[$port] já ativo — skip"
+    return 0
   fi
+  # R58: WARM slots só sobem sob demanda
+  if [ "$MODE_WARM" -eq 1 ] && [[ " ${MODE_WARM_PORTS[*]} " =~ " $port " ]]; then
+    echo "[$port] WARM — skip (sob demanda: ${MODE_WARM_PORTS[*]})"
+    return 0
+  fi
+  # launch desanexado R19: setsid + nohup, stdout/stderr para log
   (setsid nohup "$BIN" -m "$MODELS/$model" --port "$port" --host 127.0.0.1 \
     "$@" > "$LOGDIR/llama-$port.log" 2>&1 < /dev/null &)
   echo "[$port] lançando $model"
@@ -52,27 +72,14 @@ launch 9084 "RWKV7-G1d-0.4B-Instruct-FP16.gguf" \
   -c 1048576 -np 1 -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja
 
-  -c 32768 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
-  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.15
-
 # GPU 9086 · reflexo · LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M (FA on)
 launch 9086 "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M.gguf" \
   -c 128000 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.05
 
-# GPU 9088 · contrato-plano · Qwen3.8-4B-Q4_K_M (FA on)
-launch 9088 "Qwen3.8-4B-Q4_K_M.gguf" \
-  -c 200000 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
-  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
-
-# GPU 9093 · triagem-l0 · SmolLM2-360M-Instruct-Q8_0 (FA on) — canonizado 31/08 (151 t/s)
-launch 9093 "SmolLM2-360M-Instruct-Q8_0.gguf" \
-  -c 4096 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
-  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
-
-# GPU 9092 · refutador-agil · Gemma-2-2B-IT-Q4_K_M (FA on) — R79 aprovado 31/08
-launch 9092 "Gemma-2-2B-IT-Q4_K_M.gguf" \
-  -c 8192 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
+# GPU 9088 · contrato-plano · granite-4.2-3b-Q4_K_M (FA on) — trocado 2026-08-31 (issue alucinação; decision-log SH-2026-08-31-antilixo)
+launch 9088 "granite-4.2-3b-Q4_K_M.gguf" \
+  -c 131072 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.8
 
 # GPU 9090 · refutacao · Ternary-Bonsai-8B-Q2_0_g64 (FA on)

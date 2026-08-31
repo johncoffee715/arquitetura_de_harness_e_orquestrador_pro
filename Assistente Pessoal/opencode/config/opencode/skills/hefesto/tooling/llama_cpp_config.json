@@ -13,7 +13,7 @@
       "properties": {
         "model": {
           "type": "string",
-          "default": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-4B-Q4_K_M.gguf"
+          "default": "/mnt/dados/Assistente Pessoal/modelos LLM/proposer.gguf"
         },
         "hf-repo": {
           "type": [
@@ -111,5 +111,17 @@
     "ctx-size": "PENDING_GBNF_VAL",
     "model": "PENDING_GBNF_VAL",
     "new-hyper-parameter": "PENDING_GBNF_VAL"
+  },
+  "sampling_estrito_r81": {
+    "temperature": 0.0,
+    "stop": [
+      "\n\n",
+      "```",
+      "<|eot_id|>"
+    ],
+    "max_tokens_calc": true,
+    "enable_thinking": false,
+    "grammar_runtime": "PydanticToGbnf.to_gbnf() — fonte única gabarito→Pydantic→GBNF (R81/R82)",
+    "validado_em": "granite-4.2-3b :9088 (2026-08-31 — forja byte-level OK, JSON conforme)"
   }
 }

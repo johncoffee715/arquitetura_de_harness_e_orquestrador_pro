@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-08-31T17:42:29.199402Z",
+  "last_updated": "2026-08-31T17:46:37.937837Z",
   "governance": {
     "rule": "R52 — Inventário Global de LLMs Locais (Regra Global Guardrail)",
     "source_of_truth": "config/opencode/AGENTS.md §R52",
@@ -188,16 +188,16 @@
       "status": "online"
     },
     {
-      "id": "qwen3.8-4b-distill",
+      "id": "granite-4.2-3b",
       "slot": "9088",
-      "file": "Qwen3.8-4B-Q4_K_M.gguf",
-      "params": "4B",
+      "file": "granite-4.2-3b-Q4_K_M.gguf",
+      "params": "3B",
       "quant": "Q4_K_M",
-      "arch": "qwen35",
-      "n_ctx_train": 262144,
-      "ctx_allocated": 200000,
-      "kb_per_tok": 41.2,
-      "temp": 0.6,
+      "arch": "granite4.2",
+      "n_ctx_train": 131072,
+      "ctx_allocated": 131072,
+      "kb_per_tok": 22.4,
+      "temp": 0.8,
       "category": "contrato-plano",
       "sector": "GPU-MI50-Vulkan",
       "status": "online"
@@ -233,17 +233,17 @@
       "status": "online"
     },
     {
-      "id": "llmjudge-qwen2.5-3b",
-      "slot": "9085",
-      "file": "LLMJudge-Qwen2.5-3B-Q4_K_M.gguf",
-      "params": "3B",
+      "id": "gemma-2-2b",
+      "slot": "9092",
+      "file": "Gemma-2-2B-IT-Q4_K_M.gguf",
+      "params": "2B",
       "quant": "Q4_K_M",
-      "arch": "qwen2",
-      "n_ctx_train": 32768,
-      "ctx_allocated": 32768,
-      "kb_per_tok": 10.12,
-      "temp": 0.15,
-      "category": "judge",
+      "arch": "gemma2",
+      "n_ctx_train": 8192,
+      "ctx_allocated": 8192,
+      "kb_per_tok": 10.0,
+      "temp": 0.8,
+      "category": "refutador-agil",
       "sector": "GPU-MI50-Vulkan",
       "status": "online"
     }
