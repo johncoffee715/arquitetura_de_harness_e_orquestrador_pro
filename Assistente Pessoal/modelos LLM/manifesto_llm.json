@@ -487,6 +487,39 @@
                 "capacidades": "Refutador Ágil A2A (GSM8K 61.9, atenção alternada); crítica de contratos; 110 t/s",
                 "possibilidades": "Árbitro alternativo; análise de spec.md; lógica pura; flanquear Ternary-8B"
             }
+        },
+        {
+            "model_id": "SmolLM2-360M-Instruct-Q8_0",
+            "slot_port": null,
+            "device": "CPU (fitragem)",
+            "status": "fitragem",
+            "topologia_arquitetura": {
+                "tipo_fundacao": "smollm2",
+                "params": "360M",
+                "contexto_nativo": 8192,
+                "arch_detail": "SmolLM2 — treinado para performance extrema em CPU/hardware restrito"
+            },
+            "fisica_inferencia": {
+                "quantizacao": "Q8_0",
+                "pesos_gb": 0.386,
+                "tps_decode_cpu": 30.74,
+                "tps_decode_gpu": 151.91,
+                "nota": "BENCHMARK R79 31/08: CPU 30.74 t/s (0.75s/23tok) · GPU 151.91 t/s (0.07s/10tok). Papel: L0 CPU flanqueando Needle 2 (zero VRAM)."
+            },
+            "vocacao_grafo": "L0 TRIAGEM CPU · flanquear Needle 2 · classificação de intenção ultra-rápida",
+            "derivado": {
+                "file": "SmolLM2-360M-Instruct-Q8_0.gguf",
+                "slug": "smollm2-360m-instruct",
+                "category": "triagem-l0",
+                "papel": "L0 TRIAGEM CPU",
+                "ctx_ativo_efetivo": 4096,
+                "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "360M — sem raciocínio profundo; não usar para lógica/engenharia",
+                "capacidades": "Triagem L0 CPU (30 t/s, zero VRAM); classificação de intenção; flanquear Needle 2",
+                "possibilidades": "GPU 151 t/s se VRAM sobrar; classificação binária rápida"
+            }
         }
     ],
     "sync_state": {
