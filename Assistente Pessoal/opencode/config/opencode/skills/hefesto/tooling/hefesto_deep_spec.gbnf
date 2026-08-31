@@ -1,0 +1,13 @@
+# Estrutura Raiz: Objeto JSON completo e validado para a especificação do Hefesto
+root ::= "{\n" "  \"flag_name\": " string ",\n" "  \"type\": " data-type ",\n" "  \"default_value\": " value ",\n" "  \"description\": " string "\n}"
+
+# Restrição de tipos aceitos pelo ecossistema do llama.cpp / Hefesto
+data-type ::= "\"string\"" | "\"integer\"" | "\"float\"" | "\"boolean\""
+
+# Valores polimórficos baseados no tipo escolhido acima
+value ::= string | number | boolean-value | "null"
+
+# Regras de sintaxe primitiva
+string ::= "\"" [^\"]* "\""
+number ::= [0-1] | [0-9]+ | [0-9]+ "." [0-9]+ | "-" [0-9]+
+boolean-value ::= "true" | "false"

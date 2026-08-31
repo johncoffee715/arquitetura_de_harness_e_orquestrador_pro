@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-08-30T21:45:00+00:00",
+  "last_updated": "2026-08-31T10:30:00+00:00",
   "governance": {
     "rule": "R52 — Inventário Global de LLMs Locais (Regra Global Guardrail)",
     "source_of_truth": "config/opencode/AGENTS.md §R52",
@@ -261,8 +261,16 @@
       "category": "forja",
       "sector": "CPU",
       "status": "online",
-      "nota": "binário nativo x86-64 (tools/needle2/needle) — API própria POST /complete (não-OpenAI); tool-set forja-tools.json; 184-222 t/s, ~29MB RAM",
-      "api": "needle-complete"
+      "nota": "Needle 2 sincronizado: tool-sets forja-tools.json + unified-tools.json; compatível com todos os LLMs da stack (validação/estruturação/triagem); API POST /complete",
+      "api": "needle-complete",
+      "compativel_com": [
+        "contrato-plano",
+        "refutacao",
+        "judge",
+        "reflexo",
+        "talamus-cortex",
+        "orquestrador"
+      ]
     }
   ],
   "description": "Inventário Global de LLMs Locais (R52) — regenerado por sync-llm-stack.py a partir de modelos LLM/manifesto_llm.json (fonte única)."

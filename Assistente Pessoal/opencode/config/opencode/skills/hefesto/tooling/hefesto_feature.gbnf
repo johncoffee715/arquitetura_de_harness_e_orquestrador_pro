@@ -1,0 +1,13 @@
+# Definição do nó raiz (Objeto JSON estrito)
+root ::= "{\n" "  \"feature_name\": " string ",\n" "  \"category\": " string ",\n" "  \"enabled\": " boolean ",\n" "  \"parameters\": " string-list "\n}"
+
+# Tipos Primitivos e Estruturas
+string ::= "\"" [^\"]* "\""
+boolean ::= "true" | "false"
+
+# Lista de Strings (ex: ["--flag1", "--flag2"])
+string-list ::= "[\n" whitespace-list "]" | "[\n" string-elements "\n  ]"
+string-elements ::= "    " string | "    " string ",\n" string-elements
+
+# Auxiliares de formatação
+whitespace-list ::= "  " | "    "

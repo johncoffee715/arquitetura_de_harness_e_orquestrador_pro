@@ -52,6 +52,35 @@ python3 scripts/hefesto_motor.py --execute '{"artifact":"...","phase":"forja"}'
 
 O motor resolve categoria→slot via `harness/llm-inventory.json` (R75) e valida gabarito antes de ignição (R77 camada 2).
 
+## Ferramental da Tríplice (.md/.py/.json/.gbnf) — tooling/
+
+O Hefesto usa a tríplice estruturada como base na construção de novas features, integrando o llama.cpp como motor de inferência:
+
+| Arquivo | Função |
+|---|---|
+| `tooling/llama_cpp_config.json` | Contrato de dados (schema) — Single Source of Truth dos parâmetros |
+| `tooling/hefesto_llama_bridge.py` | Bridge unificado: compila flags + autodescoberta + webhook |
+| `tooling/hefesto_feature.gbnf` | Gramática GBNF para features (JSON estrito) |
+| `tooling/hefesto_deep_spec.gbnf` | Gramática GBNF para especificação profunda (types/defaults) |
+| `tooling/llama_cpp_spec.md` | Spec Markdown gerada/atualizada pelo pipeline |
+
+**Fluxo automático (webhook/agendamento):**
+1. **Gatilho**: llama.cpp atualiza → GitHub Actions/CRON → POST no webhook (:8098).
+2. **Descoberta**: `hefesto_llama_bridge.py --discover` detecta flags novas → injeta `"nova-flag": "PENDING_GBNF_VAL"` no JSON.
+3. **Enriquecimento**: LLM preenche detalhes técnicos (types/defaults) com gramática `hefesto_deep_spec.gbnf`.
+4. **Consolidação**: Python substitui valores pendentes e atualiza `llama_cpp_spec.md`.
+
+```bash
+# Compilar flags do config em comando executável
+python3 skills/hefesto/tooling/hefesto_llama_bridge.py --compile
+
+# Descobrir novas flags do llama.cpp e injetar no JSON
+python3 skills/hefesto/tooling/hefesto_llama_bridge.py --discover
+
+# Subir webhook de gatilho (GitHub Actions/CRON)
+python3 skills/hefesto/tooling/hefesto_llama_bridge.py --webhook 8098
+```
+
 ## Pré-requisitos herdados
 
 **Self-Learning** (minerar conhecimento tácito) · **Self-Scaffold** (parsers/ganchos como subproduto) · **Self-Healing** (refutar input inválido, nunca aceitar acriticamente).

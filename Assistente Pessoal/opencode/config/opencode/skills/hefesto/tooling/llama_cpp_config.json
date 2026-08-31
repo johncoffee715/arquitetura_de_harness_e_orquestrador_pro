@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org",
+  "title": "HefestoLlamaCppConfig",
+  "type": "object",
+  "required": [
+    "model_lifecycle",
+    "context_management",
+    "sampling_profiles"
+  ],
+  "properties": {
+    "model_lifecycle": {
+      "type": "object",
+      "properties": {
+        "model": {
+          "type": "string",
+          "default": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-4B-Q4_K_M.gguf"
+        },
+        "hf-repo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "lazy-mode": {
+          "type": "boolean"
+        }
+      }
+    },
+    "hardware_allocation": {
+      "type": "object",
+      "properties": {
+        "threads": {
+          "type": [
+            "integer",
+            "string"
+          ],
+          "default": "auto"
+        },
+        "n-gpu-layers": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 999
+        },
+        "flash-attn": {
+          "type": "boolean",
+          "default": true
+        },
+        "device": {
+          "type": "string",
+          "enum": [
+            "Vulkan0",
+            "CPU"
+          ],
+          "default": "Vulkan0"
+        }
+      }
+    },
+    "context_management": {
+      "type": "object",
+      "properties": {
+        "ctx-size": {
+          "type": "integer",
+          "minimum": 0,
+          "default": 65536
+        },
+        "batch-size": {
+          "type": "integer",
+          "minimum": 1,
+          "default": 512
+        },
+        "n-predict": {
+          "type": "integer",
+          "default": -1
+        }
+      }
+    },
+    "sampling_profiles": {
+      "type": "object",
+      "properties": {
+        "temp": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 2.0,
+          "default": 0.6
+        },
+        "top_k": {
+          "type": "integer",
+          "default": 20
+        },
+        "top_p": {
+          "type": "number",
+          "default": 0.95
+        },
+        "min-p": {
+          "type": "number",
+          "minimum": 0.0,
+          "maximum": 1.0,
+          "default": 0.05
+        },
+        "grammar": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "default": null
+        }
+      }
+    }
+  },
+  "auto_discovered_features": {
+    "ctx-size": "PENDING_GBNF_VAL",
+    "model": "PENDING_GBNF_VAL",
+    "new-hyper-parameter": "PENDING_GBNF_VAL"
+  }
+}
