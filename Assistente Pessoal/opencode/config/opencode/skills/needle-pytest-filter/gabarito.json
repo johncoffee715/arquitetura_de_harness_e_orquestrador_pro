@@ -1,0 +1,27 @@
+{
+  "feature": "needle-pytest-filter",
+  "version": "1.0.0",
+  "descricao": "Firewall do Cirurgião — extrai densidade pura de logs pytest para o Needle 2 (janela 256); proibido chamar LLM, inventar extração ou processar binário.",
+  "allow": {
+    "tools": ["read", "bash(read-only)"],
+    "paths": ["/tmp/opencode/**", "/mnt/dados/Assistente Pessoal/opencode/config/opencode/**"],
+    "formats": ["txt", "log", "json"],
+    "sampling": {
+      "temp": 0.0,
+      "top_k": 1,
+      "top_p": 1.0,
+      "max_tokens": 0
+    }
+  },
+  "deny": {
+    "tools": ["edit", "write", "tool-calling"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key"],
+    "behaviors": [
+      "chamar LLM para extrair",
+      "inventar localização/assinatura/delta",
+      "processar binário",
+      "exceder janela 256 sem avisar",
+      "score default alto sem evidência"
+    ]
+  }
+}

@@ -163,7 +163,8 @@
     "guardrail-llm-fitragem": {},
     "bibliotecario": {},
     "a2a-brainstorm": {},
-    "log-summarizer": {}
+    "log-summarizer": {},
+    "needle-pytest-filter": {}
   },
   "agents": [
     "gran-mestre",
