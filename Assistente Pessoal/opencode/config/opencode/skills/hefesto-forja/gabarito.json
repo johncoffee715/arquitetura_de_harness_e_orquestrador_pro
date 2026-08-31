@@ -5,7 +5,20 @@
   "allow": {
     "tools": ["read", "grep", "glob", "write", "bash", "tool-calling"],
     "tool_calls": ["validate_schema", "write_artifact", "upsert_vault", "emit_manifest"],
-    "paths": ["/mnt/dados/Assistente Pessoal/opencode/config/opencode/**", "/mnt/dados/Assistente Pessoal/cerebro com IA/**", "/tmp/opencode/**"],
+    "paths": [
+      "/mnt/dados/Assistente Pessoal/opencode/config/opencode/**",
+      "/mnt/dados/Assistente Pessoal/opencode/scripts/**",
+      "/mnt/dados/Assistente Pessoal/opencode/tools/**",
+      "/mnt/dados/Assistente Pessoal/opencode/tests/**",
+      "/mnt/dados/Assistente Pessoal/opencode/state/**",
+      "/mnt/dados/Assistente Pessoal/opencode/bin/**",
+      "/mnt/dados/Assistente Pessoal/opencode/templates/**",
+      "/mnt/dados/Assistente Pessoal/opencode/data/**",
+      "/mnt/dados/Assistente Pessoal/cerebro com IA/**",
+      "/tmp/opencode/**",
+      "/home/johncoffee/.opencode/**",
+      "/home/johncoffee/.config/opencode/**"
+    ],
     "formats": ["json", "md", "yaml", "yml"],
     "sampling": {
       "temp": 0.0,
@@ -16,7 +29,19 @@
   },
   "deny": {
     "tools": ["edit"],
-    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem"],
+    "paths": [
+      "/etc/**",
+      "/usr/**",
+      "**/.env",
+      "**/*.key",
+      "**/*.pem",
+      "/mnt/dados/Assistente Pessoal/opencode/repos/**",
+      "/mnt/dados/Assistente Pessoal/opencode/cactus-build/**",
+      "/mnt/dados/Assistente Pessoal/opencode/llama.cpp/**",
+      "/mnt/dados/Assistente Pessoal/opencode/cache/**",
+      "/mnt/dados/Assistente Pessoal/projetos/**",
+      "/mnt/dados/Assistente Pessoal/tranqueiras/**"
+    ],
     "behaviors": [
       "saída não-validada",
       "schema frouxo",

@@ -14,32 +14,37 @@ metadata:
 
 # A2A-BRAINSTORM — A Ágora
 
-Loop A2A estruturado com **tríade de papéis** na VRAM. O enxame corrige as próprias alucinações antes de entregar ao Orquestrador (Ornith-35B CPU).
+Loop A2A estruturado com **todos os LLMs rápidos** na VRAM (R42 — alta velocidade permite mais iterações). O enxame corrige as próprias alucinações antes de entregar ao Orquestrador (Ornith-35B CPU — exclusivo de orquestração, R46).
 
-## Tríade (fixa — diversidade de pesos = tensão real)
+## Papéis (todos os LLMs rápidos — vocação R46 + debilidades documentadas)
 
-| Papel | Modelo | Slot | Função |
-|---|---|---|---|
-| 🛠️ Propositor | Qwen3.8-4B | :9088 | gera 1ª versão (plano/código/extração), pragmático |
-| 🧠 Refutador | Ternary-8B | :9090 | inspeciona falhas lógicas, desvios de contrato, gargalos |
-| ⚖️ Árbitro | LLMJudge-3B | :9085 | pondera o embate, decide com nota R34 |
-| 🏛️ Escalação | Ornith-35B | :8083 CPU | Suprema Corte — decisão final em impasse |
+| Papel | Modelo | Slot | Vocação | Debilidade (NÃO usar para) |
+|---|---|---|---|---|
+| 🛠️ Propositor | Qwen3.8-4B | :9088 | tool calling, sintaxe, velocidade | refatoração limpa profissional (q4_k_m → linhas preguiçosas "# insira seu código") |
+| 🧠 Refutador | Ternary-8B | :9090 | profundidade conceitual, BFCL 73.9 | — |
+| ⚖️ Árbitro | LLMJudge-3B | :9085 | avaliação emparelhada, pontuação | NUNCA gerar conteúdo original (código/MD/JSON) — só julgar |
+| 🏛️ Escalação | LLMJudge-3B | :9085 | Suprema Corte local (rápida) | — |
+| ⚡ Reflexo | LFM-1.2B | :9086 | raciocínio verbal rápido, testes acadêmicos | produção/JSON/Python (imaturidade de engenharia) |
+| 🧠 Ingestor | RWKV7-0.4B | :9084 | peneira grossa, contexto 1M, prefill 2448 t/s | raciocínio profundo (0.4B) |
+
+**35B (Ornith :8083)**: EXCLUSIVO de orquestração — nunca escalação síncrona (2× 35B em RAM = ~40GB + contenção DDR).
 
 ## Regras de engajamento (anti-loop-infinito)
 
 1. **Propositor** propõe (contrato/spec.md no contexto).
 2. **Refutador** refuta com evidência (nunca opinião solta).
-3. **Árbitro** decide: nota R34 (0.0000001-100) + bugs concretos.
-   - Nota < 90 → Propositor reescreve.
-   - Nota ≥ 90 + elogios concretos → **PASSOU_CATEGORICO** (R28/R40).
-4. **Max iterações**: convergência média > 95.0 (R34) OU 3 rodadas sem impressão → **escalar 35B** (R18).
-5. Veredito registrado no decision-log (`[Refutação] rodada N → veredito → nota → evidência`).
+3. **Árbitro** decide emparelhado (alternância de ordem elimina viés de posição):
+   - Proposta vence → nota 70 (PASSOU_CATEGORICO se elogios).
+   - Refutação procede → nota 45 (REESCREVER).
+4. **Progresso gradativo (homeopatia R34)**: nota deve SUBIR ≥ PROGRESSO_MIN por rodada; estagnou/regrediu → impasse real → escala.
+5. **Max iterações**: MAX_ROUNDS = 12 (alta velocidade GPU — R42) OU convergência (nota ≥ 70 + elogios) OU sem progresso → **escalar Judge-3B** (Suprema Corte local, rápida).
+6. Veredito registrado no decision-log (`[Refutação] rodada N → veredito → nota → evidência`).
 
 ## Motor
 
-- **Script**: `scripts/a2a_brainstorm.py` — loop com tríade via API OpenAI-compatible dos slots.
-- **Sampling por papel** (R61/R77): propositor temp 0.6 · refutador temp 0.8 · árbitro temp 0.15 · escalação temp 0.3.
-- **Refutação do catálogo**: slot da tríade caiu (R10) → NÃO reatribuir papel (mata tensão) → redflag + escalar 35B.
+- **Script**: `scripts/a2a_brainstorm.py` — loop com papéis via API OpenAI-compatible dos slots.
+- **Sampling por papel** (R61/R77): propositor temp 0.6 · refutador temp 0.8 · árbitro/escalação temp 0.15 · reflexo temp 0.8 · ingestor temp 0.1.
+- **Refutação do catálogo**: slot caiu (R10) → NÃO reatribuir papel (mata tensão) → redflag + escalar.
 
 ## Output contract
 

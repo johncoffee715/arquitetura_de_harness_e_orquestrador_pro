@@ -27,6 +27,10 @@
 3. Receber artefato helenizado (rolling summary + ponteiros — R22).
 4. Empacotar + validar schema byte-level (validate_schema).
 5. Persistir via tool calling (write_artifact / upsert_vault) + emit_manifest.
+   Escopo de escrita = gabarito allow.paths (SPIEGEL com guard-gap-p5): governança (config/opencode,
+   vault, state), harness operacional (scripts/tools/tests/bin/templates/data), globais
+   (~/.opencode, ~/.config/opencode) e sandbox /tmp/opencode. Código de terceiros (repos/,
+   cactus-build/, llama.cpp/, projetos/, cache/) = DENY ABSOLUTO — persistir via delegação/PR.
 6. Panteão de validadores (R28/R34) + gate G-F com evidência fresca (R29).
 
 ## 4. Funções focadas
