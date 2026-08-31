@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """
-Testes TDD para o A2A Brainstorm (R40/R34/R18/R77).
+Testes TDD para o A2A Brainstorm v2 (R40/R34 — refutação incansável, nota retroativa).
 
-Cobre: tríade fixa, parse do árbitro, regras de engajamento (max iterações,
-convergência, escalação), gabarito, 3 camadas R77.
+Cobre: papéis (sem árbitro no loop), constantes homeopáticas recalibradas,
+parse de avaliação GBNF, gabarito, 3 camadas R77.
 """
 
 import json
@@ -13,94 +13,74 @@ from pathlib import Path
 sys.path.insert(0, "/mnt/dados/Assistente Pessoal/opencode/config/opencode/scripts")
 
 from a2a_brainstorm import (
-    TRIADE, MAX_ROUNDS, CONVERGENCIA, IMPRESSAO,
-    parse_arbitro, chamar_slot,
+    TRIADE, NOTA_INICIAL, LIMIAR_CONVERGENCIA, MAX_ROUNDS, DELTA_ACEITO,
+    parse_avaliacao, chamar_slot,
 )
 
 
-class TestTriade:
-    def test_sete_papeis(self):
-        """Tríade + refutador ágil + escalação + reflexo + ingestor = 7 papéis."""
-        assert set(TRIADE.keys()) == {"propositor", "refutador", "refutador_agil", "arbitro", "escalacao", "reflexo", "ingestor"}
+class TestPapéis:
+    def test_seis_papeis_sem_arbitro(self):
+        """Sem árbitro no loop — refutação incansável entre os LLMs (R40)."""
+        assert set(TRIADE.keys()) == {"propositor", "refutador", "refutador_agil",
+                                      "reflexo", "ingestor", "escalacao"}
+        assert "arbitro" not in TRIADE, "árbitro removido do loop (custo alto p/ binário)"
 
-    def test_papeis_em_slots_distintos(self):
-        """Propositor/Refutador/Árbitro/Reflexo/Ingestor em slots distintos; escalação = Judge."""
-        ports = [v["port"] for v in TRIADE.values()]
-        assert len(set(ports)) == 6, "6 slots distintos (escalação compartilha Judge)"
-        assert TRIADE["arbitro"]["port"] == TRIADE["escalacao"]["port"] == 9085
-        assert TRIADE["reflexo"]["port"] == 9086
-        assert TRIADE["ingestor"]["port"] == 9084
-        assert TRIADE["refutador_agil"]["port"] == 9092
-
-    def test_slots_reais(self):
-        """Slots devem bater com o inventário R75."""
+    def test_escalacao_judge_impasse(self):
+        """Judge-3B (escalacao) só em impasse — coexistência justificada."""
+        assert TRIADE["escalacao"]["port"] == 9085
         assert TRIADE["propositor"]["port"] == 9088
         assert TRIADE["refutador"]["port"] == 9090
-        assert TRIADE["arbitro"]["port"] == 9085
-        assert TRIADE["escalacao"]["port"] == 9085
-
-    def test_sampling_por_papel(self):
-        """Sampling por papel (R61): árbitro temp baixo, refutador temp alto."""
-        assert TRIADE["arbitro"]["temp"] <= 0.15
-        assert TRIADE["refutador"]["temp"] >= 0.8
-        assert TRIADE["propositor"]["temp"] == 0.6
+        assert TRIADE["refutador_agil"]["port"] == 9092
 
 
-class TestRegrasEngajamento:
-    def test_max_rounds(self):
-        """Max 3 rodadas (R18) antes de escalar."""
-        assert MAX_ROUNDS == 12
+class TestConstantesHomeopaticas:
+    def test_piso_real(self):
+        """Piso real R34: 0.0000001 — nada é perfeito."""
+        assert NOTA_INICIAL == 0.0000001
 
-    def test_convergencia(self):
-        """Convergência média > 95 (R34)."""
-        assert CONVERGENCIA == 75.0
+    def test_limiar_recalibrado_baixo(self):
+        """Limiar recalibrado para BAIXO (era 70 — inflado)."""
+        assert LIMIAR_CONVERGENCIA <= 30.0
+        assert LIMIAR_CONVERGENCIA < 70
 
-    def test_impressao(self):
-        """Impressão ≥ 90 (R40)."""
-        assert IMPRESSAO == 70.0
+    def test_delta_homeopatico(self):
+        """Delta mínimo homeopático (subida lenta, nunca salto)."""
+        assert DELTA_ACEITO >= 1.0
+        assert DELTA_ACEITO <= 3.0
+
+    def test_max_rounds_teto(self):
+        """Teto de segurança anti-loop-infinito (refutação incansável com trava)."""
+        assert MAX_ROUNDS >= 5
 
 
-class TestParseArbitro:
+class TestParseAvaliacao:
     def test_parse_valido(self):
-        """JSON válido do árbitro é parseado."""
-        raw = 'winner_model_1'
-        v = parse_arbitro(raw, rodada=1)
-        assert v["nota"] == 70.0
-        assert v["veredito"] == "PASSOU_CATEGORICO"
-        assert v["veredito"] == "PASSOU_CATEGORICO"
+        """JSON estrito do GBNF é parseado."""
+        v = parse_avaliacao('{"delta": 2, "impresso": true}')
+        assert v["delta"] == 2
+        assert v["impresso"] is True
 
-    def test_parse_ruidoso(self):
-        """JSON com ruído ao redor é extraído."""
-        raw = 'winner_model_2'
-        v = parse_arbitro(raw, rodada=1)
-        assert v["nota"] == 45.0
-        assert v["veredito"] == "REESCREVER"
-        assert v["veredito"] == "REESCREVER"
+    def test_parse_delta_negativo(self):
+        """Delta negativo (regressão) é aceito — nota cai."""
+        v = parse_avaliacao('{"delta": -1, "impresso": false}')
+        assert v["delta"] == -1
 
-    def test_parse_invalido_piso(self):
-        """JSON inválido → piso R34 (0.0000001) + REESCREVER."""
-        v = parse_arbitro("resposta sem json", rodada=1)
-        assert v["nota"] == 0.0000001
-        assert v["veredito"] == "REESCREVER"
+    def test_parse_invalido_default(self):
+        """JSON inválido → delta 0, impresso false (fail-safe)."""
+        v = parse_avaliacao("lixo")
+        assert v["delta"] == 0
+        assert v["impresso"] is False
 
 
 class TestChamarSlot:
     def test_slot_offline_graceful(self):
-        """Slot offline → ok=False (graceful, não quebra)."""
+        """Slot offline → ok=False (graceful)."""
         r = chamar_slot("propositor", [{"role": "user", "content": "teste"}])
         assert isinstance(r, dict)
         assert "ok" in r
 
 
 class TestGabarito:
-    def test_gabarito_valido(self):
-        """Gabarito JSON válido com allow/deny."""
-        gp = Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/a2a-brainstorm/gabarito.json")
-        g = json.loads(gp.read_text(encoding="utf-8"))
-        assert g["feature"] == "a2a-brainstorm"
-        assert any("concordância preguiçosa" in b for b in g["deny"]["behaviors"])
-        assert "loop infinito de discordância" in g["deny"]["behaviors"]
-
     def test_tres_camadas(self):
         """Skill com 3 camadas R77."""
         d = Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/a2a-brainstorm")
@@ -108,3 +88,9 @@ class TestGabarito:
         assert (d / "gabarito.json").exists()
         assert (d / "mecanica.md").exists()
         assert (d / "SKILL.md").exists()
+
+    def test_gabarito_valido(self):
+        """Gabarito JSON válido."""
+        g = json.loads(Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/a2a-brainstorm/gabarito.json").read_text())
+        assert g["feature"] == "a2a-brainstorm"
+        assert "concordância preguiçosa" in " ".join(g["deny"]["behaviors"])

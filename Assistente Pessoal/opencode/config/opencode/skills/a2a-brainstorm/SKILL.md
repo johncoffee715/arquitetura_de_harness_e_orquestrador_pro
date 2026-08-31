@@ -1,50 +1,56 @@
 ---
 name: a2a-brainstorm
-description: "Loop A2A (Agent-to-Agent) de brainstorming com tríade fixa na VRAM: Propositor (Qwen3.8-4B :9088) → Refutador (Ternary-8B :9090) → Árbitro (LLMJudge-3B :9085) → Escalação (Ornith-35B :8083). Tensão cognitiva produtiva com regras de engajamento, max iterações por nota R34 (convergência >95) e escalação R18 após 3 impasses. Use para brainstorm de arquitetura/plano/código, troubleshooting com ground truth, decisões com tradeoff aberto."
+description: "Loop A2A (Agent-to-Agent) de refutação INCANSÁVEL com nota retroativa (R40/R34): os LLMs se refutam sem árbitro externo no loop, a nota inicial (piso 0.0000001) alimenta retroativamente cada rodada com deltas homeopáticos (+1..+3 por melhoria real). Papéis: Propositor (Qwen-4B :9088), Refutador (Ternary-8B :9090), Refutador Ágil (Gemma-2-2B :9092), Reflexo (LFM :9086), Ingestor (RWKV7 :9084). Judge-3B (escalação) só em impasse final. Use para brainstorm de arquitetura/plano/código com amadurecimento progressivo do produto."
 mode: skill
-tags: "a2a, brainstorm, debate, propositor, refutador, arbitro, tensao-cognitiva, tríade, loop, escalacao"
+tags: "a2a, brainstorm, refutacao, incansavel, nota-retroativa, homeopatica, r40, r34, tensao-cognitiva"
 origin: helenizado:hefesto-v1
 metadata:
   category: methodology
-  version: 1.0.0
-  date: 2026-08-30
+  version: 2.0.0
+  date: 2026-08-31
   author: Gran-Mestre
-  motor: tríade VRAM (contrato-plano + refutacao + judge)
+  motor: refutação incansável (sem árbitro no loop)
 ---
 
-# A2A-BRAINSTORM — A Ágora
+# A2A-BRAINSTORM — Refutação Incansável com Nota Retroativa
 
-Loop A2A estruturado com **todos os LLMs rápidos** na VRAM (R42 — alta velocidade permite mais iterações). O enxame corrige as próprias alucinações antes de entregar ao Orquestrador (Ornith-35B CPU — exclusivo de orquestração, R46).
+Loop A2A onde os **próprios LLMs se refutam incansavelmente** (R40), sem árbitro externo caro. A métrica de nota inicial é o **alimento retroativo de aprendizado**: cada rodada recebe a nota atual no prompt e deve justificar a subida.
 
-## Papéis (todos os LLMs rápidos — vocação R46 + debilidades documentadas)
+## Papéis (refutação entre os LLMs — sem árbitro no loop)
 
-| Papel | Modelo | Slot | Vocação | Debilidade (NÃO usar para) |
-|---|---|---|---|---|
-| 🛠️ Propositor | Qwen3.8-4B | :9088 | tool calling, sintaxe, velocidade | refatoração limpa profissional (q4_k_m → linhas preguiçosas "# insira seu código") |
-| 🧠 Refutador | Ternary-8B | :9090 | profundidade conceitual, BFCL 73.9 | — |
-| ⚖️ Árbitro | LLMJudge-3B | :9085 | avaliação emparelhada, pontuação | NUNCA gerar conteúdo original (código/MD/JSON) — só julgar |
-| 🏛️ Escalação | LLMJudge-3B | :9085 | Suprema Corte local (rápida) | — |
-| ⚡ Reflexo | LFM-1.2B | :9086 | raciocínio verbal rápido, testes acadêmicos | produção/JSON/Python (imaturidade de engenharia) |
-| 🧠 Ingestor | RWKV7-0.4B | :9084 | peneira grossa, contexto 1M, prefill 2448 t/s | raciocínio profundo (0.4B) |
+| Papel | Modelo | Slot | Função |
+|---|---|---|---|
+| 🛠️ Propositor | Qwen3.8-4B | :9088 | gera/reescreve a proposta corrigindo refutações |
+| 🧠 Refutador | Ternary-8B | :9090 | refuta incansavelmente (falhas/contrato/gargalos) + avalia delta |
+| ⚡ Refutador Ágil | Gemma-2-2B | :9092 | 2ª voz crítica (lógica/matemática) |
+| 💬 Reflexo | LFM-1.2B | :9086 | opinião verbal rápida (opcional) |
+| 🧠 Ingestor | RWKV7-0.4B | :9084 | contexto massivo (1M) |
+| 🏛️ Escalação | LLMJudge-3B | :9085 | Suprema Corte — APENAS em impasse final (raro) |
 
-**35B (Ornith :8083)**: EXCLUSIVO de orquestração — nunca escalação síncrona (2× 35B em RAM = ~40GB + contenção DDR).
+## Notas homeopáticas (R34 — recalibradas 31/08)
 
-## Regras de engajamento (anti-loop-infinito)
+- **Piso real**: 0.0000001 (nada é perfeito — nunca 0 absoluto, nunca salto).
+- **Delta por rodada**: +1 a +3 por melhoria real (subida LENTA e gradativa), 0 se estagnou, negativo se regrediu.
+- **Convergência**: nota ≥ 30.0 (limiar BAIXO — era 70, inflado) **E** impressão real (R40: elogios concretos).
+- **Alimento retroativo**: a nota atual entra no prompt de cada rodada ("NOTA ATUAL: X — sua correção deve justificar subir").
 
-1. **Propositor** propõe (contrato/spec.md no contexto).
-2. **Refutador** refuta com evidência (nunca opinião solta).
-3. **Árbitro** decide emparelhado (alternância de ordem elimina viés de posição):
-   - Proposta vence → nota 70 (PASSOU_CATEGORICO se elogios).
-   - Refutação procede → nota 45 (REESCREVER).
-4. **Progresso gradativo (homeopatia R34)**: nota deve SUBIR ≥ PROGRESSO_MIN por rodada; estagnou/regrediu → impasse real → escala.
-5. **Max iterações**: MAX_ROUNDS = 12 (alta velocidade GPU — R42) OU convergência (nota ≥ 70 + elogios) OU sem progresso → **escalar Judge-3B** (Suprema Corte local, rápida).
-6. Veredito registrado no decision-log (`[Refutação] rodada N → veredito → nota → evidência`).
+## Regras de engajamento
+
+1. Propositor propõe (nota inicial = piso).
+2. Refutador (Ternary) ataca — nota no contexto.
+3. Refutador Ágil (Gemma) ataca com lógica.
+4. Propositor corrige TODOS os pontos.
+5. Refutador avalia com GBNF estrito: `{"delta": +1..+3|0|-1..-3, "impresso": bool}`.
+6. Nota evolui homeopaticamente → alimenta a próxima rodada.
+7. **Convergência**: nota ≥ limiar + impresso → PASSOU_CATEGORICO.
+8. **Estagnação** (delta < 1 em 2+ rodadas) → impasse → ESCALA (Judge-3B).
+9. **Teto**: max 10 rodadas (refutação incansável com trava anti-loop).
 
 ## Motor
 
-- **Script**: `scripts/a2a_brainstorm.py` — loop com papéis via API OpenAI-compatible dos slots.
-- **Sampling por papel** (R61/R77): propositor temp 0.6 · refutador temp 0.8 · árbitro/escalação temp 0.15 · reflexo temp 0.8 · ingestor temp 0.1.
-- **Refutação do catálogo**: slot caiu (R10) → NÃO reatribuir papel (mata tensão) → redflag + escalar.
+- **Script**: `scripts/a2a_brainstorm.py` — loop com GBNF estrito para avaliação.
+- **Sampling** (R61/R77): propositor 0.6 · refutador 0.8 · escalação 0.15.
+- **Refutação do catálogo**: slot caiu → NÃO reatribuir papel (mata tensão) → redflag + escalar.
 
 ## Output contract
 
@@ -52,19 +58,19 @@ Loop A2A estruturado com **todos os LLMs rápidos** na VRAM (R42 — alta veloci
 a2a_brainstorm:
   topic: "..."
   rounds: n
-  proposer: {model, proposal_v1, rewrites: n}
-  refuter: {model, refutations: [{round, evidence}]}
-  arbiter: {model, scores: [{round, nota, bugs}]}
   converged: bool
-  average_score: x.x
-  escalated_to_35b: bool
+  nota_final: x.xxxxx      # homeopática (piso 0.0000001 → convergência ~30)
+  nota_media: x.xxxxx
+  motivo_parada: "convergência | estagnação"
   verdict: PASSOU_CATEGORICO | ESCALADO
-  memory: {decision_log: true}
+  rounds_detail: [{round, delta, nota, impresso}]
+  escalation_decision: ... # se escalado
 ```
 
 ## Anti-padrões
 
+- Árbitro externo por rodada (custo alto p/ escolha binária — removido).
+- Notas infladas (70/45 — recalibradas para homeopatia real).
 - Concordância preguiçosa ("ok", "passou") — R40 proíbe.
-- Loop infinito de discordância — max iterações por nota R34.
-- Mesmo modelo em 2 papéis — mata a tensão cognitiva.
-- Refutar sem evidência; aprovar sem nota; escalar sem 3 impasses.
+- Loop infinito sem trava — teto 10 rodadas.
+- Mesmo modelo em 2 papéis — mata tensão.
