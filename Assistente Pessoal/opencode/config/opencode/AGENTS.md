@@ -1024,3 +1024,45 @@ Fontes: Adendas 7-21 · validação GM-oficial 12/12 tarefas ×4 candidatos · r
 
 <Exemplo canônico (2026-08-30)>
 - Refatoração Hefesto: 4 skills atômicas (hefesto-decompilacao, hefesto-autofagia, hefesto-helenizacao, hefesto-forja), cada uma com conceito.md + gabarito.json + mecanica.md + SKILL.md; Hefesto vira dispatcher que invoca a skill certa por fase; material existente helenizado/unificado; órfãos apagados.
+
+---
+
+# ═══ REGRA GLOBAL R78 — MÉTRICA AVALIATIVA POR LLM (DEBILIDADE · CAPACIDADES · POSSIBILIDADES) — promulgado 2026-08-31 ═══
+
+**Regra**: TODO LLM do ecossistema (stack local, fitragem, candidatos) DEVE ter métrica avaliativa estruturada em 3 campos, registrada no `manifesto_llm.json` e no `llm-inventory.json`:
+
+1. **Debilidade (Onde NÃO usar)** — limitações reais, contextos onde o modelo falha ou degrada (ex.: q4_k_m pula trechos de código → linhas preguiçosas; LFM-1.2B instável para JSON/Python; Judge nunca gera conteúdo original).
+2. **Capacidades (Onde usar)** — vocação real, especialidade, papéis no grafo onde o modelo entrega (ex.: RWKV7 = peneira grossa/ingestor 1M ctx; Ternary = refutação conceitual).
+3. **Possibilidades (não foi feito pra isso, porém possíveis)** — usos experimentais/alternativos que NÃO são a vocação, mas podem funcionar com ressalvas (ex.: usar Judge para escalação final; usar LFM como draft se tokenizer compatível).
+
+<Aplicação>
+- Todo modelo no manifesto ganha os 3 campos (debilidade/capacidades/possibilidades) — preenchidos por dissecação R46 + benchmarks empíricos + auditoria.
+- O roteamento R75 usa CAPACIDADES como critério primário; DEBILIDADES como bloqueio; POSSIBILIDADES como fallback documentado.
+- Ao agregar novo LLM (R27/R76), preencher os 3 campos ANTES de canonizar.
+- O A2A Brainstorm usa as métricas para escalar/refutar com precisão (nunca pedir a um modelo o que sua debilidade proíbe).
+- **Sincronização total de descobertas frescas ao ecossistema**: toda descoberta empírica nova (benchmark, teste A/B, auditoria, sweep R76, conflito com benchmarks famosos R79) DEVE ser sincronizada imediatamente nos 5 pontos de verdade (R27): manifesto_llm.json + llm-inventory.json + opencode.jsonc + start-stack.sh + sync-llm-stack.py — e refletida nas métricas R78 (debilidade/capacidades/possibilidades) dos modelos afetados. Nada de descoberta fresca presa em log/tmp: ela vira estado do ecossistema.
+
+<Exemplo canônico (2026-08-31)>
+- RWKV7-0.4B: Capacidade = peneira grossa/ingestor 1M ctx (insubstituível até prova em contrário); Debilidade = raciocínio profundo (0.4B); Possibilidade = draft se tokenizer compatível (não é — rwkv ≠ qwen35).
+- Ornith-35B: Capacidade = orquestração/suprema corte (insubstituível até prova em contrário); Debilidade = 2.24 t/s CPU (bandwidth-bound DDR); Possibilidade = offload parcial (testado — degrada).
+
+---
+
+# ═══ REGRA GLOBAL R79 — GUARDRAIL DE ONBOARDING DE LLM (BENCHMARK COMPLETO ESPECULATIVO) — promulgado 2026-08-31 ═══
+
+**Regra**: TODO LLM novo que entrar na stack (path canônico ou fitragem) DEVE passar por **benchmark completo especulativo** ANTES de ser usado em produção real, produzindo **dados empíricos e especulativos conflitados com benchmarks famosos**, por **busca empírica fresca** de métricas avaliativas por LLM (R78: Debilidades/Capacidades/Possibilidades).
+
+<Procedimento obrigatório (antes de canonizar — R27/R76/R78)>
+1. **Benchmark empírico local**: medir na MI50/Xeon reais — prefill t/s, decode t/s, VRAM pico, RAM, latência TTFT, batch/ubatch ótimo (R76 sweep), KV q4/q4, FA on/off, MTP (se head), speculative (draft/ngram se aplicável).
+2. **Benchmark especulativo**: estimar comportamento em cenários não medidos (ctx longo, tool calling, JSON estrito, refutação) por dissecação R46 (arquitetura, quantização, tokenizer, vocação).
+3. **Conflito com benchmarks famosos**: buscar dados frescos (HF eval-results, papers, leaderboards, BenchLM, GAIA, BFCL, RULER, IFEval) e CONFLITAR com os dados empíricos locais — divergência > 20% exige investigação (hardware? quant? prompt?).
+4. **Métricas avaliativas R78**: preencher Debilidade/Capacidades/Possibilidades com base nos dados conflitados (nunca só teoria).
+5. **Veredito de canonização**: Conselho (R75) decide — empírico local prevalece sobre benchmark externo (R45); sem veredito → permanece em fitragem/ (guardrail-llm-fitragem).
+
+<Fontes de busca empírica fresca>
+- HF eval-results / model cards · papers with code · leaderboards (BFCL, RULER, IFEval, GAIA, BenchLM)
+- Repos de GGUF (unsloth, bartowski) com notas de quantização
+- Testes A/B locais com os MESMOS prompts do harness (nunca só benchmark externo)
+
+<Exemplo canônico (2026-08-31)>
+- Gemma-2-2B-IT (candidato Refutador Ágil): benchmark empírico local (prefill/decode/VRAM na MI50) + especulativo (lógica/matemática por arquitetura alternada) + conflito com benchmarks famosos (anomalia matemática vs 7B) + R78 preenchido → veredito antes de entrar no A2A.

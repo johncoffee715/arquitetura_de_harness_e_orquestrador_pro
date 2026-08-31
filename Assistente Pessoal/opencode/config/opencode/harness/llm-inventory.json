@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-08-31T10:30:00+00:00",
+  "last_updated": "2026-08-31T12:00:00+00:00",
   "governance": {
     "rule": "R52 — Inventário Global de LLMs Locais (Regra Global Guardrail)",
     "source_of_truth": "config/opencode/AGENTS.md §R52",
@@ -271,6 +271,26 @@
         "talamus-cortex",
         "orquestrador"
       ]
+    },
+    {
+      "id": "gemma-2-2b-it",
+      "slot": "9092",
+      "file": "Gemma-2-2B-IT-Q4_K_M.gguf",
+      "params": "2.6B",
+      "quant": "Q4_K_M",
+      "arch": "gemma2",
+      "n_ctx_train": 8192,
+      "ctx_allocated": 8192,
+      "kb_per_tok": 1.0,
+      "temp": 0.8,
+      "category": "refutador-agil",
+      "sector": "GPU-MI50-Vulkan",
+      "status": "online",
+      "metrica_r78": {
+        "debilidade": "código profissional; ctx 8K; tool calling inferior",
+        "capacidades": "refutador ágil A2A; lógica/matemática; 110 t/s",
+        "possibilidades": "árbitro alternativo; análise spec.md"
+      }
     }
   ],
   "description": "Inventário Global de LLMs Locais (R52) — regenerado por sync-llm-stack.py a partir de modelos LLM/manifesto_llm.json (fonte única)."

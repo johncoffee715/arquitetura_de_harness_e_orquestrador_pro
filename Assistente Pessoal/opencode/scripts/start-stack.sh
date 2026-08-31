@@ -67,6 +67,11 @@ launch 9088 "Qwen3.8-4B-Q4_K_M.gguf" \
   -c 200000 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
 
+# GPU 9092 · refutador-agil · Gemma-2-2B-IT-Q4_K_M (FA on) — R79 aprovado 31/08
+launch 9092 "Gemma-2-2B-IT-Q4_K_M.gguf" \
+  -c 8192 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
+  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.8
+
 # GPU 9090 · refutacao · Ternary-Bonsai-8B-Q2_0_g64 (FA on)
 launch 9090 "Ternary-Bonsai-8B-Q2_0_g64.gguf" \
   -c 65536 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \

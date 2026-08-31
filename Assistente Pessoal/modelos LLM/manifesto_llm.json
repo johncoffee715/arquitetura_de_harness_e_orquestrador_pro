@@ -70,7 +70,7 @@
     "stack_atual": {
         "gpu": "9084 RWKV7-0.4B-FP16 + 9085 Judge-3B + 9086 LFM-1.2B + 9088 Qwen3.8-4B + 9090 Ternary-8B (VRAM)",
         "cpu_slots": 1,
-        "total_slots": 7,
+        "total_slots": 8,
         "substituicoes_2026_08_30": [
             "8083 Ornith-1.5-9B-Q5_K_M GPU -> Ornith-1.5-35B-A3B-IQ4_XS CPU (decisão usuário; 9B removido do SSD)",
             "9083 Qwen3.5-4B-UD-IQ2_XXS removido (SSD excluído)",
@@ -126,6 +126,11 @@
                 "papel": "CÓRTEX SENSORIAL PRIMÁRIO (Filtro Talâmico)",
                 "ctx_ativo_efetivo": 1048576,
                 "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "Raciocínio profundo (0.4B — lost in the middle em 1M); síntese longa repete padrões; NUNCA para lógica/engenharia",
+                "capacidades": "Peneira grossa/ingestor 1M ctx (prefill 2448 t/s); varredura linear de MBs; RAG do Bibliotecário; filtro talâmico L0 — INSUBSTITUÍVEL até prova em contrário",
+                "possibilidades": "Draft model se tokenizer compatível (não é — rwkv ≠ qwen35); classificação leve de intenção"
             }
         },
         {
@@ -172,6 +177,11 @@
                 "papel": "F5/F6 JUDGE",
                 "ctx_ativo_efetivo": 32768,
                 "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "NUNCA gerar conteúdo original (código/MD/JSON do zero); não foi treinado para criar",
+                "capacidades": "Avaliação emparelhada (winner_model_a/b); pontuação R34; árbitro/escalação A2A; vereditos categóricos R28 — temp 0.15",
+                "possibilidades": "Escalação final do A2A (já usado); classificação binária; auditoria de conformidade"
             }
         },
         {
@@ -238,6 +248,11 @@
                 "papel": "reflexo R42",
                 "ctx_ativo_efetivo": 128000,
                 "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "Instável para JSON/Python (imaturidade de engenharia); produção comercial; estruturas rígidas",
+                "capacidades": "Raciocínio verbal rápido (317 t/s); reflexo R42; testes acadêmicos; opinião rápida no A2A",
+                "possibilidades": "Draft model se tokenizer compatível (não é — lfm2 ≠ qwen35); geração criativa curta"
             }
         },
         {
@@ -286,6 +301,11 @@
                 "papel": "F2/F3 CONTRATO+PLANO",
                 "ctx_ativo_efetivo": 200000,
                 "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "Refatoração limpa profissional (q4_k_m → linhas preguiçosas '# insira seu código'); pula trechos em código longo",
+                "capacidades": "Tool calling preciso (BFCL); propositor A2A; contrato/plano F2-F3; sintaxe e velocidade (103 t/s)",
+                "possibilidades": "Executor F4 para tasks curtas; geração de schema JSON com GBNF"
             }
         },
         {
@@ -332,6 +352,11 @@
                 "papel": "refutação A2A",
                 "ctx_ativo_efetivo": 65536,
                 "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "Q2_0_g64 sensível a ruído; não usar para saída criativa longa",
+                "capacidades": "Refutação conceitual A2A (BFCL 73.9); profundidade 8B; estruturação Markdown/JSON; autofagia",
+                "possibilidades": "Propositor alternativo; análise de contrato spec.md"
             }
         },
         {
@@ -360,13 +385,13 @@
                 "cache_v": "q4_0",
                 "kv_per_token_kb": 5.76,
                 "kv_total_gb_at_ctx": 1.51,
-                "tps_decode_empirical": 8.08,
+                "tps_decode_empirical": 2.24,
                 "tps_decode_nota": "BENCH-30/08 CPU standalone: pp512 52.61 · pp2048 48.59 · tg 7.88/8.08 · FA sem ganho (<2%) · t36 degrada 2.8x (bandwidth-bound) · batch maior degrada (8192/2048=7.33) · lógica 12/12 ~21s/teste · RAM RSS 20.2GB",
                 "temp": 0.6,
                 "ngl": 0,
                 "threads": "auto(18)",
                 "flash_attn": false,
-                "nota": "substitui Ornith-1.5-9B-Q5_K_M como GM 2026-08-30 (decisão usuário). MoE 3B ativos — decode CPU ~8 t/s vs 67.8 GPU do 9B; lógica 12/12 (~21s/teste vs 46s do 9B CPU)",
+                "nota": "substitui Ornith-1.5-9B-Q5_K_M como GM 2026-08-30 (decisão usuário). MoE 3B ativos — decode CPU ~8 t/s vs 67.8 GPU do 9B; lógica 12/12 (~21s/teste vs 46s do 9B CPU) | ACELERAÇÃO 31/08: sweep completo (baseline 2.24; draft CPU 1.34; ngram 1.72; draft GPU 1.32; offload ngl10 1.63) — TODAS degradam; bandwidth-bound DDR; única via = 2ª MI50",
                 "batch_ubatch": "2048/512",
                 "tps_prefill_empirical": 52.61,
                 "mtp": "N/A (arquivo sem head MTP — jashepp removeu 22/08)"
@@ -379,6 +404,11 @@
                 "papel": "ORQUESTRADOR ATIVO",
                 "ctx_ativo_efetivo": 262144,
                 "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "2.24 t/s CPU (bandwidth-bound DDR 18.73GB MoE); NUNCA síncrono em loop; 2× em RAM = 40GB",
+                "capacidades": "Orquestração/suprema corte (lógica 12/12); síntese macro; decisão final — INSUBSTITUÍVEL até prova em contrário",
+                "possibilidades": "Offload parcial (testado — degrada 1.63 t/s); draft (testado — degrada); única via real = 2ª MI50"
             }
         },
         {
@@ -409,6 +439,53 @@
                 "papel": "FORJA",
                 "ctx_ativo_efetivo": 4096,
                 "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "26M params — sem raciocínio; só tool calling estruturado; API própria POST /complete (não-OpenAI)",
+                "capacidades": "Validação de schema byte-level (100% conformidade); triagem L0; persistência (write_artifact/upsert_vault); 184-222 t/s, 29MB RAM",
+                "possibilidades": "Roteamento de intenção; extração estruturada de campos; flanquear peneira grossa"
+            }
+        },
+        {
+            "model_id": "Gemma-2-2B-IT-Q4_K_M",
+            "slot_port": 9092,
+            "device": "GPU",
+            "topologia_arquitetura": {
+                "tipo_fundacao": "gemma2",
+                "layers": 26,
+                "embedding_length": 2304,
+                "attn_heads": 18,
+                "kv_heads": 1,
+                "key_len_head": 128,
+                "contexto_nativo": 8192,
+                "arch_detail": "Gemma 2 — atenção alternada local/global (julgamento técnico); 2.6B; tokenizer SentencePiece (gemma)"
+            },
+            "fisica_inferencia": {
+                "quantizacao": "Q4_K_M",
+                "pesos_gb": 1.7,
+                "ctx_ativo": 8192,
+                "cache_k": "q4_0",
+                "cache_v": "q4_0",
+                "tps_decode_empirical": 110.39,
+                "tps_prefill_empirical": "~800-1000",
+                "temp": 0.8,
+                "ngl": 999,
+                "flash_attn": true,
+                "nota": "BENCHMARK R79 31/08: decode 110.39 t/s, VRAM pico 14.12GB, latência 128tok 1.16s. GSM8K 61.9 (anomalia vs 7B), MMLU 56.1, HumanEval 30.0 (fraco p/ código). Aprovado como Refutador Ágil A2A."
+            },
+            "vocacao_grafo": "REFUTADOR ÁGIL A2A · lógica/matemática · diversidade arquitetural (Google ≠ Qwen/Ternary)",
+            "derivado": {
+                "file": "Gemma-2-2B-IT-Q4_K_M.gguf",
+                "slug": "gemma-2-2b-it",
+                "category": "refutador-agil",
+                "papel": "REFUTADOR ÁGIL A2A",
+                "ctx_ativo_efetivo": 8192,
+                "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "Código profissional (HumanEval 30.0); ctx 8K (não 1M); tool calling inferior ao Qwen-4B",
+                "capacidades": "Refutador Ágil A2A (GSM8K 61.9, atenção alternada); crítica de contratos; 110 t/s",
+                "possibilidades": "Árbitro alternativo; análise de spec.md; lógica pura; flanquear Ternary-8B"
             }
         }
     ],
@@ -476,5 +553,37 @@
                 "fa": true
             }
         }
+    },
+    "aceleracao_ornith_35b_2026_08_31": {
+        "conclusao": "35B é bandwidth-bound na DDR (18.73GB pesos MoE 256 experts; ngl 0 pois não cabe na MI50 16GB). NENHUMA técnica de aceleração é viável na MI50 única.",
+        "sweep_empirico": {
+            "baseline_cpu_puro": {
+                "tps": 2.24,
+                "nota": "teto físico do hardware"
+            },
+            "draft_simple_cpu_qwen4b": {
+                "tps": 1.34,
+                "delta": "-40%"
+            },
+            "ngram_simple_n32": {
+                "tps": 1.72,
+                "delta": "-23%"
+            },
+            "draft_simple_gpu_lfm_hbm2": {
+                "tps": 1.32,
+                "delta": "-41%"
+            },
+            "offload_ngl10": {
+                "tps": 1.63,
+                "delta": "-27%"
+            }
+        },
+        "causa_raiz": "Spec decoding adiciona overhead de validação/rollback; offload cria sync HBM2<->DDR por token (atenção GPU + experts RAM). MoE bandwidth-bound: overhead > ganho.",
+        "recomendacoes": [
+            "2ª MI50 (32GB total → 35B inteiro na HBM2): ganho 8-10x (~20 t/s) — único caminho real",
+            "Modelo menor como orquestrador (Qwen-4B GPU 103 t/s): 45x, porém perde robustez",
+            "Manter 35B exclusivo de orquestração (atual): aceitar 2.24 t/s"
+        ],
+        "decisao": "35B permanece exclusivo de orquestração. Nenhuma técnica de aceleração na MI50 única."
     }
 }

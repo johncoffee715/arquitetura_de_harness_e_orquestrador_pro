@@ -21,16 +21,23 @@ import urllib.request
 import urllib.error
 
 # Tríade fixa (R75 — bindings por categoria, slots reais)
+# Escalação: Judge-3B (rápido 152 t/s) — 35B é EXCLUSIVO de orquestração (R46:
+# dois 35B em RAM = ~40GB + contenção DDR; nunca usar 35B para outras funções)
+# Reflexo (LFM-1.2B) e Ingestor (RWKV7) são papéis opcionais de apoio (R42)
 TRIADE = {
-    "propositor": {"port": 9088, "model": "qwen3.8-4b-distill", "temp": 0.6, "max_tokens": 2048},
-    "refutador": {"port": 9090, "model": "ternary-bonsai-8b", "temp": 0.8, "max_tokens": 2048},
-    "arbitro": {"port": 9085, "model": "llmjudge-qwen2.5-3b", "temp": 0.15, "max_tokens": 1024},
-    "escalacao": {"port": 8083, "model": "ornith-1.5-35b-a3b-iq4_xs", "temp": 0.3, "max_tokens": 128},
+    "propositor": {"port": 9088, "model": "qwen3.8-4b-distill", "temp": 0.6, "max_tokens": 1024},
+    "refutador": {"port": 9090, "model": "ternary-bonsai-8b", "temp": 0.8, "max_tokens": 512},
+    "refutador_agil": {"port": 9092, "model": "gemma-2-2b-it", "temp": 0.8, "max_tokens": 512},
+    "arbitro": {"port": 9085, "model": "llmjudge-qwen2.5-3b", "temp": 0.15, "max_tokens": 256},
+    "escalacao": {"port": 9085, "model": "llmjudge-qwen2.5-3b", "temp": 0.15, "max_tokens": 512},
+    "reflexo": {"port": 9086, "model": "lfm2.5-1.2b-thinking-tomoe", "temp": 0.8, "max_tokens": 256},
+    "ingestor": {"port": 9084, "model": "rwkv7-g1d-0.4b-instruct", "temp": 0.1, "max_tokens": 256},
 }
 
-MAX_ROUNDS = 3          # R18: 3 rodadas sem impressão → escalar
-CONVERGENCIA = 95.0     # R34: média > 95 encerra
-IMPRESSAO = 90.0        # R40: nota ≥ 90 + elogios concretos
+MAX_ROUNDS = 12         # alta velocidade GPU (R42) — teto de segurança; critério real é progresso
+CONVERGENCIA = 75.0     # R34 recalibrado homeopático: média > 75 encerra (era 95 — inflado)
+IMPRESSAO = 70.0        # R40 recalibrado: nota ≥ 70 + elogios (era 90 — inflado)
+PROGRESSO_MIN = 5.0     # subida homeopática mínima por rodada (nota baixa gradativa)
 
 PROPOSITOR_SYS = (
     "Você é o Propositor (Criador) no loop A2A. Gere a primeira versão da proposta "
@@ -44,15 +51,18 @@ REFUTADOR_SYS = (
 )
 ARBITRO_SYS = (
     "Você é o Árbitro (Juiz) no loop A2A, especialista em avaliação emparelhada. "
-    "Compare a PROPOSTA (A) com a REFUTAÇÃO (B) e decida qual é mais correta, "
-    "considerando falhas lógicas, desvios de contrato e gargalos. "
-    "Responda APENAS com: winner_model_a (se a proposta vence) ou winner_model_b "
-    "(se a refutação vence). Nada mais."
+    "Compare as duas opções apresentadas (OPÇÃO 1 e OPÇÃO 2) e decida qual é mais "
+    "correta, considerando falhas lógicas, desvios de contrato e gargalos. "
+    "Seja CRÍTICO: não aprove por padrão — examine se a opção tem falhas reais. "
+    "Responda APENAS com: winner_model_1 (se a OPÇÃO 1 vence) ou winner_model_2 "
+    "(se a OPÇÃO 2 vence). Nada mais."
 )
 ESCALACAO_SYS = (
-    "Você é a Suprema Corte (Meta-Orquestrador). O Árbitro registrou impasses repetidos "
-    "sem consenso entre Propositor e Refutador. Analise o histórico compilado e emita a "
-    "decisão final com nota R34 e veredito categórico."
+    "Você é a Suprema Corte (Árbitro Final). O debate entre Propositor e Refutador "
+    "não convergiu. Analise o histórico compilado e emita a DECISÃO FINAL: "
+    "escolha entre a proposta (winner_model_a) ou a refutação (winner_model_b), "
+    "com justificativa curta. Responda APENAS com winner_model_a ou winner_model_b "
+    "seguido de 1-2 frases de justificativa."
 )
 
 
@@ -70,7 +80,7 @@ def chamar_slot(papel: str, messages: list) -> dict:
         headers={"Content-Type": "application/json"},
     )
     # Escalação (35B CPU) é lenta — timeout generoso; tríade GPU 180s
-    timeout = 600 if papel == "escalacao" else 180
+    timeout = 600 if papel == "escalacao" else 300
     try:
         with urllib.request.urlopen(req, timeout=timeout) as resp:
             data = json.loads(resp.read())
@@ -79,19 +89,31 @@ def chamar_slot(papel: str, messages: list) -> dict:
         return {"ok": False, "error": str(e)}
 
 
-def parse_arbitro(raw: str) -> dict:
-    """Converte a escolha emparelhada do Judge (winner_model_a/b) em veredito R34.
+def parse_arbitro(raw: str, rodada: int = 1) -> dict:
+    """Converte a escolha emparelhada do Judge (winner_model_1/2) em veredito R34.
 
     Judge-3B é treinado para avaliação emparelhada (R46) — não emite JSON.
-    Mapeamento: winner_model_a → proposta vence (nota 85, avança se elogios);
-    winner_model_b → refutação procede (nota 60, reescrever).
+    Alternância de ordem (rodada ímpar: 1=proposta, 2=refutação; par: invertido)
+    elimina viés de posição.
+    Mapeamento recalibrado homeopático (R34 — notas baixas gradativas, piso real):
+    proposta vence → nota 70 (avança se elogios); refutação procede → nota 45.
     """
     raw_l = raw.lower()
-    if "winner_model_a" in raw_l or "model_a" in raw_l:
-        return {"nota": 85.0, "bugs": [], "elogios": ["proposta venceu o embate"],
+    proposta_venceu = None
+    if "winner_model_1" in raw_l:
+        proposta_venceu = (rodada % 2 == 1)  # ímpar: opção 1 = proposta
+    elif "winner_model_2" in raw_l:
+        proposta_venceu = (rodada % 2 == 0)  # par: opção 2 = proposta
+    elif "winner_model_a" in raw_l:
+        proposta_venceu = True  # compat legado
+    elif "winner_model_b" in raw_l:
+        proposta_venceu = False  # compat legado
+
+    if proposta_venceu is True:
+        return {"nota": 70.0, "bugs": [], "elogios": ["proposta venceu o embate"],
                 "procede_refutacao": False, "veredito": "PASSOU_CATEGORICO"}
-    if "winner_model_b" in raw_l or "model_b" in raw_l:
-        return {"nota": 60.0, "bugs": ["refutação procede — proposta precisa reescrever"],
+    if proposta_venceu is False:
+        return {"nota": 45.0, "bugs": ["refutação procede — proposta precisa reescrever"],
                 "elogios": [], "procede_refutacao": True, "veredito": "REESCREVER"}
     # Fallback: tenta JSON (caso o modelo siga o formato antigo)
     try:
@@ -138,14 +160,38 @@ def brainstorm(topic: str, contrato: str = "") -> dict:
         refutacao = r["content"] if r["ok"] else f"[refutador offline: {r.get('error')}]"
         historico.append({"round": rodada, "papel": "refutador", "content": refutacao})
 
-        # Árbitro decide
+        # Refutador Ágil (Gemma-2-2B) — 2ª voz crítica (lógica/matemática, diversidade Google)
+        r_agil = chamar_slot("refutador_agil", [
+            {"role": "system", "content": "Você é o Refutador Ágil no loop A2A. Analise a proposta com lógica rigorosa: aponte falhas matemáticas, lógicas e de consistência. Seja conciso e específico. 2-3 pontos."},
+            {"role": "user", "content": f"PROPOSTA:\n{proposta[:2000]}\n\nCONTRATO: {contrato or '(livre)'}"},
+        ])
+        refutacao_agil = r_agil["content"] if r_agil["ok"] else ""
+        if refutacao_agil:
+            historico.append({"round": rodada, "papel": "refutador_agil", "content": refutacao_agil[:600]})
+
+        # Reflexo (LFM-1.2B) — segunda opinião rápida (R42, fail-open)
+        r_reflexo = chamar_slot("reflexo", [
+            {"role": "system", "content": "Você é o Reflexo no loop A2A. Dê um palpite rápido e verbal sobre o embate: a proposta é sólida ou a refutação procede? 1-2 frases."},
+            {"role": "user", "content": f"PROPOSTA:\n{proposta[:1500]}\n\nREFUTAÇÃO:\n{refutacao[:1500]}"},
+        ])
+        opiniao_reflexo = r_reflexo["content"] if r_reflexo["ok"] else ""
+        if opiniao_reflexo:
+            historico.append({"round": rodada, "papel": "reflexo", "content": opiniao_reflexo[:500]})
+
+        # Árbitro decide — alterna ordem (elimina viés de posição: 1ª opção tende a vencer)
+        if rodada % 2 == 1:
+            op1, op2 = f"PROPOSTA:\n{proposta}", f"REFUTAÇÃO:\n{refutacao}"
+        else:
+            op1, op2 = f"REFUTAÇÃO:\n{refutacao}", f"PROPOSTA:\n{proposta}"
         r = chamar_slot("arbitro", [
             {"role": "system", "content": ARBITRO_SYS},
-            {"role": "user", "content": f"PROPOSTA:\n{proposta}\n\nREFUTAÇÃO:\n{refutacao}"},
+            {"role": "user", "content": f"OPÇÃO 1:\n{op1}\n\nOPÇÃO 2:\n{op2}"
+             + (f"\n\nREFUTAÇÃO ÁGIL (Gemma): {refutacao_agil[:500]}" if refutacao_agil else "")
+             + (f"\n\nOPINIÃO DO REFLEXO: {opiniao_reflexo[:500]}" if opiniao_reflexo else "")},
         ])
         if not r["ok"]:
             return {"status": "ERRO", "error": f"árbitro offline: {r['error']}"}
-        veredito = parse_arbitro(r["content"])
+        veredito = parse_arbitro(r["content"], rodada)
         nota = max(0.0000001, min(100.0, float(veredito.get("nota", 0.0000001))))
         rodadas.append({
             "round": rodada,
@@ -158,10 +204,17 @@ def brainstorm(topic: str, contrato: str = "") -> dict:
 
         # Convergência: proposta venceu o embate (winner_model_a) → PASSOU (R40)
         # Judge-3B é emparelhado (A/B) — A venceu = proposta madura para avançar
-        if nota >= 85.0 and veredito.get("elogios"):
+        if nota >= IMPRESSAO and veredito.get("elogios"):
             converged = True
             nota_final = nota
             break
+
+        # Progresso gradativo (homeopatia R34): nota deve SUBIR ≥ PROGRESSO_MIN
+        # por rodada. Se estagnar/regredir → para e escala (não força loop).
+        if len(rodadas) >= 2:
+            nota_anterior = rodadas[-2]["nota"]
+            if nota <= nota_anterior + PROGRESSO_MIN * 0.5:
+                break  # sem progresso homeopático → impasse real
 
         # Reescrever: Propositor responde à refutação
         r = chamar_slot("propositor", [
@@ -176,21 +229,23 @@ def brainstorm(topic: str, contrato: str = "") -> dict:
             proposta = r["content"]
             historico.append({"round": rodada, "papel": "propositor", "content": proposta})
 
-    # Escalação ASSÍNCRONA (35B CPU ~73s/50tok — síncrono inviável no loop):
-    # salva histórico compilado em arquivo; decisão consultada via --escalar
+    # Escalação via Judge-3B (rápido 152 t/s — Suprema Corte local).
+    # 35B é EXCLUSIVO de orquestração (R46): nunca usar para escalação.
     if not converged:
         escalado = True
         hist_curto = []
-        for h in historico[-3:]:  # apenas últimas 3 entradas (35B CPU é lento)
+        for h in historico[-4:]:
             c = h["content"]
             hist_curto.append({"round": h["round"], "papel": h["papel"],
-                               "content": c[:300] + ("…" if len(c) > 300 else "")})
-        decisao = ("ESCALADO — histórico compilado salvo. "
-                   "Consulte a decisão do 35B com: python3 scripts/a2a_brainstorm.py --escalar <arquivo>")
-        escalacao_file = f"/tmp/opencode/a2a-escalacao-{abs(hash(topic)) % 100000}.json"
-        with open(escalacao_file, "w", encoding="utf-8") as f:
-            json.dump({"topic": topic, "contrato": contrato, "historico": hist_curto},
-                      f, ensure_ascii=False, indent=2)
+                               "content": c[:400] + ("…" if len(c) > 400 else "")})
+        r = chamar_slot("escalacao", [
+            {"role": "system", "content": ESCALACAO_SYS},
+            {"role": "user", "content": (
+                f"TÓPICO: {topic}\n\nHISTÓRICO COMPILADO:\n"
+                + json.dumps(hist_curto, ensure_ascii=False, indent=1)
+            )},
+        ])
+        decisao = r["content"] if r["ok"] else f"[escalação offline: {r.get('error')}]"
         nota_final = max(n for n in [rod["nota"] for rod in rodadas]) if rodadas else 0.0000001
 
     media = sum(rod["nota"] for rod in rodadas) / len(rodadas) if rodadas else 0.0000001

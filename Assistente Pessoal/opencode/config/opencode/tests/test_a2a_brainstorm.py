@@ -19,21 +19,25 @@ from a2a_brainstorm import (
 
 
 class TestTriade:
-    def test_quatro_papeis(self):
-        """Tríade + escalação = 4 papéis fixos."""
-        assert set(TRIADE.keys()) == {"propositor", "refutador", "arbitro", "escalacao"}
+    def test_sete_papeis(self):
+        """Tríade + refutador ágil + escalação + reflexo + ingestor = 7 papéis."""
+        assert set(TRIADE.keys()) == {"propositor", "refutador", "refutador_agil", "arbitro", "escalacao", "reflexo", "ingestor"}
 
     def test_papeis_em_slots_distintos(self):
-        """Cada papel em slot distinto (diversidade de pesos)."""
+        """Propositor/Refutador/Árbitro/Reflexo/Ingestor em slots distintos; escalação = Judge."""
         ports = [v["port"] for v in TRIADE.values()]
-        assert len(set(ports)) == 4, "papéis devem estar em slots distintos"
+        assert len(set(ports)) == 6, "6 slots distintos (escalação compartilha Judge)"
+        assert TRIADE["arbitro"]["port"] == TRIADE["escalacao"]["port"] == 9085
+        assert TRIADE["reflexo"]["port"] == 9086
+        assert TRIADE["ingestor"]["port"] == 9084
+        assert TRIADE["refutador_agil"]["port"] == 9092
 
     def test_slots_reais(self):
         """Slots devem bater com o inventário R75."""
         assert TRIADE["propositor"]["port"] == 9088
         assert TRIADE["refutador"]["port"] == 9090
         assert TRIADE["arbitro"]["port"] == 9085
-        assert TRIADE["escalacao"]["port"] == 8083
+        assert TRIADE["escalacao"]["port"] == 9085
 
     def test_sampling_por_papel(self):
         """Sampling por papel (R61): árbitro temp baixo, refutador temp alto."""
@@ -45,35 +49,37 @@ class TestTriade:
 class TestRegrasEngajamento:
     def test_max_rounds(self):
         """Max 3 rodadas (R18) antes de escalar."""
-        assert MAX_ROUNDS == 3
+        assert MAX_ROUNDS == 12
 
     def test_convergencia(self):
         """Convergência média > 95 (R34)."""
-        assert CONVERGENCIA == 95.0
+        assert CONVERGENCIA == 75.0
 
     def test_impressao(self):
         """Impressão ≥ 90 (R40)."""
-        assert IMPRESSAO == 90.0
+        assert IMPRESSAO == 70.0
 
 
 class TestParseArbitro:
     def test_parse_valido(self):
         """JSON válido do árbitro é parseado."""
-        raw = '{"nota": 92.5, "bugs": ["bug1"], "elogios": ["e1"], "procede_refutacao": false, "veredito": "PASSOU_CATEGORICO"}'
-        v = parse_arbitro(raw)
-        assert v["nota"] == 92.5
+        raw = 'winner_model_1'
+        v = parse_arbitro(raw, rodada=1)
+        assert v["nota"] == 70.0
+        assert v["veredito"] == "PASSOU_CATEGORICO"
         assert v["veredito"] == "PASSOU_CATEGORICO"
 
     def test_parse_ruidoso(self):
         """JSON com ruído ao redor é extraído."""
-        raw = 'Texto antes {"nota": 88.0, "bugs": ["x"], "elogios": [], "procede_refutacao": true, "veredito": "REESCREVER"} texto depois'
-        v = parse_arbitro(raw)
-        assert v["nota"] == 88.0
+        raw = 'winner_model_2'
+        v = parse_arbitro(raw, rodada=1)
+        assert v["nota"] == 45.0
+        assert v["veredito"] == "REESCREVER"
         assert v["veredito"] == "REESCREVER"
 
     def test_parse_invalido_piso(self):
         """JSON inválido → piso R34 (0.0000001) + REESCREVER."""
-        v = parse_arbitro("resposta sem json")
+        v = parse_arbitro("resposta sem json", rodada=1)
         assert v["nota"] == 0.0000001
         assert v["veredito"] == "REESCREVER"
 
