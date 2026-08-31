@@ -6,7 +6,7 @@
 |---|---|---|---|
 | 🛠️ Propositor | `contrato-plano` | :9088 Qwen3.8-4B | tool calling, velocidade, precisão de sintaxe |
 | 🧠 Refutador | `refutacao` | :9090 Ternary-8B | 8B de profundidade conceitual, BFCL 73.9 |
-| ⚖️ Árbitro | `judge` | :9085 LLMJudge-3B | treinado para pontuação emparelhada, temp 0.15 |
+| ⚖️ Árbitro | `refutador-agil` | :9085 LLMJudge-3B | treinado para pontuação emparelhada, temp 0.15 |
 | 🏛️ Escalação | `orquestrador` | :8083 Ornith-35B CPU | Suprema Corte — decisão final em impasse |
 
 **Refutação do catálogo**: se um slot da tríade cair (R10), o loop NÃO reatribui papel (mata tensão) — registra redflag e escala direto ao 35B.

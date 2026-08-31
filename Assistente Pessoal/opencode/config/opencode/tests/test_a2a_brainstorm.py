@@ -25,9 +25,9 @@ class TestPapéis:
                                       "reflexo", "ingestor", "escalacao"}
         assert "arbitro" not in TRIADE, "árbitro removido do loop (custo alto p/ binário)"
 
-    def test_escalacao_judge_impasse(self):
-        """Judge-3B (escalacao) só em impasse — coexistência justificada."""
-        assert TRIADE["escalacao"]["port"] == 9085
+    def test_escalacao_gemma_impasse(self):
+        """Gemma-2-2B na escalação (Judge-3B removido 31/08 — desperdício)."""
+        assert TRIADE["escalacao"]["port"] == 9092
         assert TRIADE["propositor"]["port"] == 9088
         assert TRIADE["refutador"]["port"] == 9090
         assert TRIADE["refutador_agil"]["port"] == 9092

@@ -28,7 +28,7 @@ TRIADE = {
     "refutador_agil": {"port": 9092, "model": "gemma-2-2b-it", "temp": 0.8, "max_tokens": 512},
     "reflexo": {"port": 9086, "model": "lfm2.5-1.2b-thinking-tomoe", "temp": 0.8, "max_tokens": 256},
     "ingestor": {"port": 9084, "model": "rwkv7-g1d-0.4b-instruct", "temp": 0.1, "max_tokens": 256},
-    "escalacao": {"port": 9085, "model": "llmjudge-qwen2.5-3b", "temp": 0.15, "max_tokens": 512},
+    "escalacao": {"port": 9092, "model": "gemma-2-2b-it", "temp": 0.8, "max_tokens": 512},
 }
 
 # Constantes recalibradas — homeopatia real (R34, piso 0.0000001)

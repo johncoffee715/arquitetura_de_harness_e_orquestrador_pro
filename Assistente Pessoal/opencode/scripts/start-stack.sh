@@ -52,8 +52,6 @@ launch 9084 "RWKV7-G1d-0.4B-Instruct-FP16.gguf" \
   -c 1048576 -np 1 -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja
 
-# GPU 9085 · judge · LLMJudge-Qwen2.5-3B-Q4_K_M (FA on)
-launch 9085 "LLMJudge-Qwen2.5-3B.Q4_K_M.gguf" \
   -c 32768 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.15
 
@@ -102,7 +100,7 @@ fi
 echo "--- health check ---"
 sleep 2
 ok=0; total=0
-for p in 8083 9084 9085 9086 9088 9090; do
+for p in 8083 9084 9086 9088 9090; do
   total=$((total+1))
   for i in $(seq 1 45); do
     curl -sf -m 2 "http://127.0.0.1:$p/health" >/dev/null 2>&1 && break

@@ -70,7 +70,7 @@
     "stack_atual": {
         "gpu": "9084 RWKV7-0.4B-FP16 + 9085 Judge-3B + 9086 LFM-1.2B + 9088 Qwen3.8-4B + 9090 Ternary-8B (VRAM)",
         "cpu_slots": 1,
-        "total_slots": 8,
+        "total_slots": 9,
         "substituicoes_2026_08_30": [
             "8083 Ornith-1.5-9B-Q5_K_M GPU -> Ornith-1.5-35B-A3B-IQ4_XS CPU (decisão usuário; 9B removido do SSD)",
             "9083 Qwen3.5-4B-UD-IQ2_XXS removido (SSD excluído)",
@@ -131,57 +131,6 @@
                 "debilidade": "Raciocínio profundo (0.4B — lost in the middle em 1M); síntese longa repete padrões; NUNCA para lógica/engenharia",
                 "capacidades": "Peneira grossa/ingestor 1M ctx (prefill 2448 t/s); varredura linear de MBs; RAG do Bibliotecário; filtro talâmico L0 — INSUBSTITUÍVEL até prova em contrário",
                 "possibilidades": "Draft model se tokenizer compatível (não é — rwkv ≠ qwen35); classificação leve de intenção"
-            }
-        },
-        {
-            "model_id": "LLMJudge-Qwen2.5-3B-Q4_K_M",
-            "slot_port": 9085,
-            "device": "GPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "qwen2",
-                "layers": 36,
-                "embedding_length": 2048,
-                "attn_heads": 16,
-                "kv_heads": 2,
-                "key_len_head": 128,
-                "contexto_nativo": 32768,
-                "rope_freq_base": 1000000.0,
-                "feed_forward_length": 11008
-            },
-            "fisica_inferencia": {
-                "quantizacao": "Q4_K_M",
-                "pesos_gb": 1.93,
-                "pesos_bytes": 1929902944,
-                "ctx_ativo": 32768,
-                "cache_k": "q4_0",
-                "cache_v": "q4_0",
-                "kv_per_token_kb": 11.2,
-                "kv_total_gb_at_ctx": 0.38,
-                "tps_decode_empirical": 152.63,
-                "temp": 0.15,
-                "ngl": 999,
-                "threads": "GPU Vulkan0 -ngl 999",
-                "nota": " | movido p/ VRAM 2026-08-30 (decisão usuário)",
-                "flash_attn": true,
-                "mtp": "N/A",
-                "device_gpu_fa": "FA on desde 30/08 (R76)",
-                "tps_prefill_empirical": 1600.89,
-                "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 1600.89 · decode 152.63 — ANTIGO CPU: 152.63",
-                "device": "GPU"
-            },
-            "vocacao_grafo": "F5/F6 JUDGE · validador dedicado temp 0.15 · contratos",
-            "derivado": {
-                "file": "LLMJudge-Qwen2.5-3B.Q4_K_M.gguf",
-                "slug": "llmjudge-qwen2.5-3b",
-                "category": "judge",
-                "papel": "F5/F6 JUDGE",
-                "ctx_ativo_efetivo": 32768,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "NUNCA gerar conteúdo original (código/MD/JSON do zero); não foi treinado para criar",
-                "capacidades": "Avaliação emparelhada (winner_model_a/b); pontuação R34; árbitro/escalação A2A; vereditos categóricos R28 — temp 0.15",
-                "possibilidades": "Escalação final do A2A (já usado); classificação binária; auditoria de conformidade"
             }
         },
         {
@@ -519,6 +468,39 @@
                 "debilidade": "360M — sem raciocínio profundo; não usar para lógica/engenharia",
                 "capacidades": "Triagem L0 CPU (30 t/s, zero VRAM); classificação de intenção; flanquear Needle 2",
                 "possibilidades": "GPU 151 t/s se VRAM sobrar; classificação binária rápida"
+            }
+        },
+        {
+            "model_id": "Qwen3.5-0.8B-Q4_K_M",
+            "slot_port": null,
+            "device": "GPU (fitragem)",
+            "status": "fitragem",
+            "topologia_arquitetura": {
+                "tipo_fundacao": "qwen35",
+                "params": "0.8B",
+                "contexto_nativo": 262144,
+                "arch_detail": "Qwen3.5-0.8B — ultracompacto, tokenizer qwen35 (compatível com Ornith-35B para draft!)"
+            },
+            "fisica_inferencia": {
+                "quantizacao": "Q4_K_M",
+                "pesos_gb": 0.53,
+                "tps_decode_cpu": 25.03,
+                "tps_decode_gpu": 82.33,
+                "nota": "BENCHMARK R79 31/08: CPU 25.03 · GPU 82.33 t/s (abaixo da regra 100 t/s — mas 0.8B ultracompacto para L0 simples). Tokenizer qwen35 = compatível como DRAFT do Ornith-35B (spec decoding)! VRAM ~0.9GB."
+            },
+            "vocacao_grafo": "L0 CLASSIFICAÇÃO · candidato a DRAFT do 35B (tokenizer qwen35 idêntico)",
+            "derivado": {
+                "file": "Qwen3.5-0.8B-Q4_K_M.gguf",
+                "slug": "qwen3.5-0.8b",
+                "category": "classificacao-l0",
+                "papel": "L0 CLASSIFICAÇÃO",
+                "ctx_ativo_efetivo": 4096,
+                "generator_version": "1.0.0"
+            },
+            "metrica_avaliativa_r78": {
+                "debilidade": "0.8B — sem raciocínio; 82 t/s GPU (abaixo da regra 100); não usar para lógica",
+                "capacidades": "Classificação L0; triagem rápida; candidato a DRAFT do 35B (tokenizer qwen35!)",
+                "possibilidades": "Draft model do Ornith-35B (mesmo tokenizer — taxa de aceitação alta); early-exit phatics"
             }
         }
     ],

@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-08-31T13:30:00+00:00",
+  "last_updated": "2026-08-31T14:30:00+00:00",
   "governance": {
     "rule": "R52 — Inventário Global de LLMs Locais (Regra Global Guardrail)",
     "source_of_truth": "config/opencode/AGENTS.md §R52",
@@ -173,21 +173,6 @@
       "status": "online"
     },
     {
-      "id": "llmjudge-qwen2.5-3b",
-      "slot": "9085",
-      "file": "LLMJudge-Qwen2.5-3B.Q4_K_M.gguf",
-      "params": "3B",
-      "quant": "Q4_K_M",
-      "arch": "qwen2",
-      "n_ctx_train": 32768,
-      "ctx_allocated": 32768,
-      "kb_per_tok": 11.2,
-      "temp": 0.15,
-      "category": "judge",
-      "sector": "GPU-MI50-Vulkan",
-      "status": "online"
-    },
-    {
       "id": "lfm2.5-1.2b-thinking-tomoe",
       "slot": "9086",
       "file": "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M.gguf",
@@ -312,6 +297,26 @@
         "possibilidades": "GPU 151 t/s se VRAM sobrar"
       },
       "nota": "canonizado GPU 151.91 t/s (regra subLLM >100 t/s)"
+    },
+    {
+      "id": "qwen3.5-0.8b",
+      "slot": "9094",
+      "file": "Qwen3.5-0.8B-Q4_K_M.gguf",
+      "params": "0.8B",
+      "quant": "Q4_K_M",
+      "arch": "qwen35",
+      "n_ctx_train": 262144,
+      "ctx_allocated": 4096,
+      "kb_per_tok": 1.0,
+      "temp": 0.6,
+      "category": "classificacao-l0",
+      "sector": "GPU-MI50-Vulkan",
+      "status": "fitragem",
+      "metrica_r78": {
+        "debilidade": "sem raciocínio; 82 t/s",
+        "capacidades": "classificação L0; draft do 35B (tokenizer qwen35)",
+        "possibilidades": "draft model do Ornith-35B"
+      }
     }
   ],
   "description": "Inventário Global de LLMs Locais (R52) — regenerado por sync-llm-stack.py a partir de modelos LLM/manifesto_llm.json (fonte única)."

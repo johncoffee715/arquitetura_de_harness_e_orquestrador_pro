@@ -19,24 +19,6 @@
         }
       }
     },
-    "local-judge": {
-      "api": "openai",
-      "name": "F5/F6 JUDGE :9085 — role:judge",
-      "options": {
-        "baseURL": "http://127.0.0.1:9085/v1",
-        "apiKey": "llamacpp"
-      },
-      "models": {
-        "judge": {
-          "name": "role:judge",
-          "limit": {
-            "context": 32768,
-            "output": 8192
-          },
-          "tool_call": true
-        }
-      }
-    },
     "local-reflexo": {
       "api": "openai",
       "name": "reflexo R42 :9086 — role:reflexo",

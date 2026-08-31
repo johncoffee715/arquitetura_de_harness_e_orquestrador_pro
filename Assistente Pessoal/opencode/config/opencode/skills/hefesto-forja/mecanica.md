@@ -3,8 +3,8 @@
 ## 1. Seleção de motor (catálogo R75 — sempre refutando)
 
 - **Categoria alvo**: `forja` (Needle 2, :9091 — 26M params, tool calling nativo, extração estruturada 100% conformidade, extrator de nível de byte).
-- **Refutação do catálogo**: se o Needle estiver offline ou o payload exigir validação semântica profunda, refutar → `judge` (:9085, temp 0.15). Se exigir tool calling complexo, manter forja.
-- **Fallback**: `judge` (:9085).
+- **Refutação do catálogo**: se o Needle estiver offline ou o payload exigir validação semântica profunda, refutar → `refutador-agil` (:9085, temp 0.15). Se exigir tool calling complexo, manter forja.
+- **Fallback**: `refutador-agil` (:9085).
 
 ## 2. Parâmetros de ignição
 
@@ -18,12 +18,12 @@
 }
 ```
 
-- **Ganchos de backend**: cactus serve (OpenAI-compatible, :9091) — tool calling nativo; llama.cpp Vulkan para fallback judge.
+- **Ganchos de backend**: cactus serve (OpenAI-compatible, :9091) — tool calling nativo; llama.cpp Vulkan para fallback refutador-agil.
 
 ## 3. Sequência de ignição
 
 1. Validar gabarito (deny) — nenhuma ação antes.
-2. Resolver motor via inventário (R75) — categoria `forja` (fallback judge).
+2. Resolver motor via inventário (R75) — categoria `forja` (fallback refutador-agil).
 3. Receber artefato helenizado (rolling summary + ponteiros — R22).
 4. Empacotar + validar schema byte-level (validate_schema).
 5. Persistir via tool calling (write_artifact / upsert_vault) + emit_manifest.

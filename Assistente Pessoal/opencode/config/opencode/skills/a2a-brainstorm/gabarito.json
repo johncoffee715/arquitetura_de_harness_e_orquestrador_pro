@@ -7,7 +7,7 @@
     "apis": [
       "http://127.0.0.1:9088/v1/**",
       "http://127.0.0.1:9090/v1/**",
-      "http://127.0.0.1:9085/v1/**",
+      "http://127.0.0.1:9092/v1/**",
       "http://127.0.0.1:8083/v1/**"
     ],
     "paths": ["/tmp/opencode/**", "/mnt/dados/Assistente Pessoal/opencode/config/opencode/**"],

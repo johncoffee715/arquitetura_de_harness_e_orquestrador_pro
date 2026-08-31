@@ -30,7 +30,7 @@ CATEGORY_ROUTES = {
 }
 # Fallback por categoria (R10/R9 — hot-swap quando primário offline)
 FALLBACK_ROUTES = {
-    "forja": "judge",
+    "forja": "refutador-agil",
     "contrato-plano": "orquestrador",
     "refutacao": "contrato-plano",
 }
