@@ -200,7 +200,12 @@
       "temp": 0.8,
       "category": "contrato-plano",
       "sector": "GPU-MI50-Vulkan",
-      "status": "online"
+      "status": "online",
+      "bench_empirico": {
+        "decode_tok_s": 104.5,
+        "prefill_med_tok_s": 1401,
+        "crivo": "PASSOU_CATEGORICO"
+      }
     },
     {
       "id": "ternary-bonsai-8b",

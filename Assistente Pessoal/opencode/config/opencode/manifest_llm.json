@@ -85,6 +85,20 @@
         "aime25": 78.33,
         "t3_bench": 45.78,
         "status": "evidencia_externa_conflitada_em_andamento"
+      },
+      "benchmark_empirico_local_2026-08-31": {
+        "prefill_short_tok_s": 78.4,
+        "prefill_medium_tok_s": 1401.3,
+        "decode_short_tok_s": 103.3,
+        "decode_med_tok_s": 97.8,
+        "decode_long_tok_s": 112.4,
+        "decode_media": 104.5,
+        "latencia_geracao_s": 1.9,
+        "vram_usado_gb": 15.22,
+        "vram_total_gb": 17.16,
+        "folga_gb": 1.94,
+        "crivo_r83": "PASSOU_CATEGORICO",
+        "limiar_f4_r65": "decode >=100 -> PASS (104.5 medio)"
       }
     },
     "gemma-2-2b": {
@@ -102,6 +116,23 @@
         "debilidade": "janela 8K curta; não para contexto longo",
         "capacidades": "refutador ágil / fallback forja (tool calling light); veredito rápido",
         "possibilidades": "juiz rápido em retornos curtos"
+      }
+    },
+    "qwen3.8-4b-distill": {
+      "slot": "9087",
+      "category": "contrato-plano",
+      "status": "offline_bench",
+      "benchmark_empirico_local_2026-08-31": {
+        "prefill_short_tok_s": 59.7,
+        "prefill_medium_tok_s": 714.0,
+        "decode_short_tok_s": 83.8,
+        "decode_med_tok_s": 82.7,
+        "decode_long_tok_s": 89.3,
+        "decode_media": 85.3,
+        "latencia_geracao_s": 2.7,
+        "crivo_r83": "NAO_PASSOU (fence markdown na extracao — mesmo padrao ternary)",
+        "etapa_a": "alucinacao 0.333 (conteudo 0 invencoes, formato quebrado)",
+        "etapa_b": "determinismo 100%, loop 0, lat 0.82s"
       }
     }
   },
