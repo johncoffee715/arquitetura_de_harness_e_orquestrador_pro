@@ -27,7 +27,7 @@ Fase 4 do pipeline Hefesto. Síntese determinística com precisão cirúrgica (t
 ## Motor
 
 - **Categoria**: `forja` (:9091 Needle 2 — 26M params, tool calling nativo, extração estruturada com 100% de conformidade de dados, extrator de nível de byte).
-- **Fallback**: `judge` (:9085 LLMJudge-3B, temp 0.15) se forja offline.
+- **Fallback**: `refutador-agil` (:9092 Gemma-2-2B) se forja offline (Judge-3B removido 31/08).
 - **Sampling**: temp 0.0 (determinístico) · max_tokens 4096.
 
 ## Panteão — validação categórica (R28/R34/R37/R40)
