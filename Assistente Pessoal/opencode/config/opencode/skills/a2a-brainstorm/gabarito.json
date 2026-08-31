@@ -1,0 +1,35 @@
+{
+  "feature": "a2a-brainstorm",
+  "version": "1.0.0",
+  "descricao": "Firewall da Ágora — debate estruturado com tríade fixa; proibido concordância preguiçosa, loops infinitos, mesmo modelo em 2 papéis.",
+  "allow": {
+    "tools": ["read", "bash(read-only)", "tool-calling"],
+    "apis": [
+      "http://127.0.0.1:9088/v1/**",
+      "http://127.0.0.1:9090/v1/**",
+      "http://127.0.0.1:9085/v1/**",
+      "http://127.0.0.1:8083/v1/**"
+    ],
+    "paths": ["/tmp/opencode/**", "/mnt/dados/Assistente Pessoal/opencode/config/opencode/**"],
+    "formats": ["json", "md"],
+    "sampling": {
+      "propositor": {"temp": 0.6, "top_k": 20, "top_p": 0.95},
+      "refutador": {"temp": 0.8, "top_k": 20, "top_p": 0.95},
+      "arbitro": {"temp": 0.15, "top_k": 10, "top_p": 0.9},
+      "escalacao": {"temp": 0.3, "top_k": 20, "top_p": 0.95}
+    }
+  },
+  "deny": {
+    "tools": ["edit", "write"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem"],
+    "behaviors": [
+      "concordância preguiçosa (ok, passou)",
+      "loop infinito de discordância",
+      "mesmo modelo em 2 papéis",
+      "refutar sem evidência",
+      "aprovar sem nota R34",
+      "escalar sem 3 impasses registrados",
+      "score default alto sem evidência"
+    ]
+  }
+}
