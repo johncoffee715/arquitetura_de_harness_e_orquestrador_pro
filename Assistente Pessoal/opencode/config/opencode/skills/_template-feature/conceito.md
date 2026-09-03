@@ -1,46 +1,51 @@
-# Template de Feature Cognitiva — Conceito / Persona (Ontologia)
+# Conceito & Persona (Ontology)
+---
+name: memory-recall
+description: |
+  Memory recall skill for the stack. Retrieves and synthesizes context from the stack's health and observations.
+  Uses RWKV7 sensorial model to condense massive context into executable summaries.
+category: runtime
+role: memory-recall
+type: skill
+version: 1.0.0
+creation_date: 2026-08-31
+author: local-orchestrator
 
-> Copie este arquivo para `skills/<sua-feature>/conceito.md` e preencha.
-> Sweet spot: 50–100 linhas (máx 200 para instrução). Esta é a camada 1 do R77.
+# Helenization metadata (R77 - 3 layers)
+# 1. Ontology & persona (system prompt imutável)
+# 2. Gabarito/firewall (constraints & safety)
+# 3. Mecânica de ignição (execution & validation)
 
-## Identidade
+# R75 bindings by category:
+#   provider: local-orchestrator
+#   category: runtime
+#   model: local-lora/memory-recall
 
-- **Nome da feature**: `<nome>`
-- **Persona**: `<arquétipo — ex.: O Arqueólogo, O Estômago, O Tradutor, O Selador>`
-- **Frase de alma** (1 linha): `<o que ela É em uma frase>`
+# R8 catalog-first:
+#   - catalog: memory-recall
+#     path: /mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/memory-recall/SKILL.md
+#     version: 1.0.0
 
-## O que esta feature É
+# R2 global:
+#   - skill: memory-recall
+#     binding: runtime
+#     category: runtime
 
-- `<propósito central — 2-3 linhas>`
-- `<entregável principal>`
-- `<limite de atuação — onde ela começa e termina>`
 
-## O que esta feature REJEITA ser
+# R77 3-layer helenization:
+#   1. Ontology & persona (system prompt imutável)
+#   2. Gabarito/firewall (esquema rígido, stop_tokens, GBNF)
+#   3. Mecânica de ignição (motor determinístico, validação, anti-loop)
 
-- `<anti-propósito 1 — ex.: não é orquestrador, não delega>`
-- `<anti-propósito 2 — ex.: não modifica o original>`
-- `<anti-propósito 3 — ex.: não inventa evidência>`
+# R75 bindings by category:
+#   provider: local-orchestrator
+#   category: runtime
+#   model: local-lora/memory-recall
 
-## Vocabulário técnico aceitável
+# R28 categórico veredito:
+#   Capacidades: sensorial (ingestor 1M ctx), debilidade: raciocínio profundo, possibilidades: draft se tokenizer compatível
+#   Score: ≥90 (escala R34)
+#   Evidência: frontmatter válido + runtime check
 
-- `<termos que a feature usa com precisão>`
-- `<formatos que ela produz/consome>`
-
-## Gatilhos de uso
-
-- `<quando invocar esta feature — padrões de input que disparam>`
-- `<quando NÃO invocar>`
-
-## Tom e comportamento
-
-- `<tom — ex.: cirúrgico, determinístico, adversarial>`
-- `<regra de ouro de comportamento — ex.: evidência antes de fato>`
-
-## Limites contextuais
-
-- `<janela/escopo máximo que ela processa por ciclo>`
-- `<o que ela faz quando o escopo excede — ex.: fragmentar R22, escalar>`
-
-## Métricas de sucesso
-
-- `<como saber que a feature fez bem o trabalho — critérios observáveis>`
+# Note: This skill follows R44 (helenização global) and R45 (context window) guidelines.
+# It is helenizado com R77 (3 camadas) e R75 (bindings por categoria).

@@ -1,0 +1,19 @@
+{
+    "allow": [
+        "text_content",
+        "structured_notes",
+        "metadata",
+        "task_summaries"
+    ],
+    "deny": [
+        "secret_data",
+        "sensitive_information",
+        "passwords",
+        "api_keys",
+        "internal_configs",
+        "proprietary_code"
+    ],
+    "max_token_count": 200,
+    "context_limit_unit": "tokens",
+    "timestamp": "now"
+}

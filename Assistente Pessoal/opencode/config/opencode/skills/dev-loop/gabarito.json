@@ -1,0 +1,34 @@
+{
+  "type": "object",
+  "properties": {
+    "spec": {
+      "type": "string",
+      "description": "Accepts feature spec with 1-3 acceptance sentences"
+    },
+    "tasks": [
+      {
+        "id": "task-1",
+        "type": "tdd-loop",
+        "title": "Write failing test for task 1",
+        "description": "Create a test that should fail (RED) for the first task in TDD loop"
+      },
+      {
+        "id": "task-2",
+        "type": "tdd-loop",
+        "title": "Implement minimal code to pass task 2",
+        "description": "Create minimal code that satisfies the test (GREEN)"
+      },
+      {
+        "id": "task-3",
+        "type": "tdd-loop",
+        "title": "Refactor task 3 code",
+        "description": "Clean up and improve the implementation (REFACTOR)"
+      }
+    ],
+    "spec_accepted": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "additionalProperties": false
+}

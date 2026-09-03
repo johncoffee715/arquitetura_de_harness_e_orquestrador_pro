@@ -1,0 +1,41 @@
+root ::= MemoryRecallContext
+
+MemoryRecallContext ::=
+    MemoryRecallContext_Header
+    MemoryRecallContext_Body
+
+MemoryRecallContext_Header ::=
+    context_content: str
+    retrieval_metadata: dict
+    validation_results: dict
+    error_info: dict
+
+MemoryRecallContext_Body ::=
+    context_content: str
+    retrieval_metadata: dict
+    validation_results: dict
+    error_info: dict
+
+MemoryRecallContext_Header ::=
+    context_content: str = "Retrieved context from vault"
+    retrieval_metadata: dict = {
+        "retrieved_at": str,
+        "source_file": str,
+        "tags": list,
+        "user_context": str
+    }
+    validation_results: dict = {
+        "token_count": int,
+        "sensitive_detected": bool,
+        "error_reason": str
+    }
+    error_info: dict = {
+        "type": str,
+        "message": str
+    }
+
+MemoryRecallContext_Body ::=
+    context_content: str
+    retrieval_metadata: dict
+    validation_results: dict
+    error_info: dict

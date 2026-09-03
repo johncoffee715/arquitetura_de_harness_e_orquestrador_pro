@@ -1,0 +1,20 @@
+{
+  "name": "memory-local",
+  "description": "Memória persistente de longo prazo 100% local para agentes...",
+  "category": "memory",
+  "role": "memory-keeper",
+  "gabarito": {
+    "debar": {
+      "allowed_models": ["local-orchestrator/orchestrator", "local-bonsai/bonsai"],
+      "max_tokens": 200,
+      "max_entities": 50,
+      "allowed_contexts": ["session", "task"],
+      "timeout_seconds": 300
+    },
+    "constraints": {
+      "device": "local",
+      "janela": "local-first",
+      "embedding_type": "local-only"
+    }
+  }
+}

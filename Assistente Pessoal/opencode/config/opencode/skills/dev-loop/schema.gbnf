@@ -1,0 +1,32 @@
+// Schema GBNF for Dev Loop skill
+
+// GBNF grammar for Dev Loop feature specification
+
+%external   feature_slug      = /\*[a-zA-Z0-9_]*\*/ ;
+%external   task_type         = "task-tdd-loop";
+%external   spec_text         = /[a-zA-Z0-9 ]+;
+
+// Feature specification root
+FeatureSpec = {
+    type: "feature",
+    slug: feature_slug,
+    spec_text: spec_text,
+    acceptance_sentences: [
+        "Task 1 should produce expected output",
+        "Task 2 should produce expected output",
+        "Task 3 should produce expected output"
+    ]
+};
+
+// Task definition
+Task = {
+    id: task_type,
+    title: "Write failing test for task 1",
+    description: "Create a test that should fail (RED) for task 1",
+    spec_input: spec_text,
+    expected_output: /expected-output/,
+    task_type: task_type
+};
+
+// Main root
+Root = FeatureSpec;

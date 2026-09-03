@@ -1,0 +1,27 @@
+# GBNF schema for Context Compaction Skill
+# This defines the grammar structure for the context compaction skill
+
+# Token types
+WORD
+NUMBER
+PUNCTUATION
+NEWLINE
+
+# Grammar rules
+CONTEXT = Paragraphs END
+
+Paragraphs = Paragraph (NEWLINE Paragraph)* END
+
+Paragraph = Text (NEWLINE Paragraph)* END
+
+Text = [^ \n]* END
+
+END = \n
+
+# The grammar is designed to match the structured output
+# It represents the compaction process where:
+# - Raw context is parsed
+# - Key entities are extracted
+# - Output is generated in structured format
+
+# This schema defines the expected input format and output structure

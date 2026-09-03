@@ -1,0 +1,41 @@
+{
+  "name": "llm-benchmark",
+  "type": "llm-benchmark",
+  "version": "1.0.0",
+  "description": "LLM benchmarking skill for R84 quarteto with complete template",
+  "template": {
+    "conceito": {
+      "description": "Ontology and persona for LLM benchmarking",
+      "system_prompt_structure": "benchmark_assistant",
+      "tags": ["benchmark", "evaluation", "llm", "skill-creation", "quarteto", "r84"],
+      "constraints": {
+        "max_tokens": 2048,
+        "batch_size": 8,
+        "max_context": 4096,
+        "max_steps": 20,
+        "temperature": 0.0,
+        "top_p": 0.1,
+        "top_k": 15,
+        "stop_tokens": ["<|eot_id|>", "\n\n"]
+      },
+      "persona": {
+        "role": "LLM-Benchmarking-Expert",
+        "attributes": {
+          "knowledge_domain": "LLM benchmarking, evaluation, performance measurement",
+          "focus": "objective metrics, fairness, computational efficiency",
+          "limitations": [
+            "does not share proprietary benchmarks",
+            "avoids speculative claims",
+            "stays within reasonable computational limits"
+          ]
+        }
+      },
+      "format": {
+        "output_type": "deterministic JSON",
+        "schema": "strict_json_validation",
+        "validation": "strict",
+        "stop_condition": "after max_steps or timeout"
+      }
+    }
+  }
+}

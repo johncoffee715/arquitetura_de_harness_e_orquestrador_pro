@@ -1,0 +1,59 @@
+# Schema GBNF para auditoria de segurança (security-methodology)
+
+root: SecurityAudit
+
+fields:
+  - name: vacilias
+    type: list
+    items:
+      - name: issue
+        type: string
+        default: "Banco sem tranca (RLS off)"
+      - name: description
+        type: string
+        default: ""
+      - name: severity
+        type: string
+        default: "HIGH"
+  - name: status
+    type: string
+    default: "REPORTED"
+  - name: checklist_order
+    type: list
+    items:
+      - type: string
+        default: "Banco sem tranca (RLS off)"
+      - type: string
+        default: "Permissão decisiva no navegador"
+      - type: string
+        default: "Rota entregando dado pelo ID (IDOR)"
+      - type: string
+        default: "Segredo exposto (hardcoded)"
+      - type: string
+        default: "Input sem tratamento (XSS)"
+  - name: found_issues
+    type: list
+    items:
+      - type: string
+        default: "Banco sem tranca (RLS off)"
+      - type: string
+        default: "Permissão decisiva no navegador"
+      - type: string
+        default: "Rota entregando dado pelo ID (IDOR)"
+      - type: string
+        default: "Segredo exposto (hardcoded)"
+      - type: string
+        default: "Input sem tratamento (XSS)"
+  - name: recommendations
+    type: list
+    items:
+      - type: string
+        default: "Implement RLS (RLS on)"
+      - type: string
+        default: "Use if (isAdmin) no front"
+      - type: string
+        default: "Add ownership check and rate limit"
+      - type: string
+        default: "Sanitize secrets"
+      - type: string
+        default: "Escape inputs"

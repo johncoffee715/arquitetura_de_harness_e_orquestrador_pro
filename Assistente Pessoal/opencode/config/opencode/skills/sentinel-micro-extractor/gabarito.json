@@ -1,0 +1,6 @@
+{
+  "feature": "sentinel-micro-extractor",
+  "version": "1.0.0",
+  "allow": {"tools": ["read","bash"], "paths": ["/mnt/dados/**"], "formats": ["json"]},
+  "deny": {"tools": ["write"], "paths": ["/etc/**"], "behaviors": ["alucinar codigo"]}
+}

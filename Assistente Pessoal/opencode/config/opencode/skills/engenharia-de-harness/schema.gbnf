@@ -1,0 +1,19 @@
+
+{
+  "type": "object",
+  "properties": {
+    "task_id": {
+      "type": "string",
+      "description": "The task identifier"
+    },
+    "run_id": {
+      "type": "string",
+      "description": "The run identifier"
+    },
+    "objective": {
+      "type": "string",
+      "description": "Objective of the skill"
+    }
+  },
+  "required": ["task_id", "run_id", "objective"]
+}

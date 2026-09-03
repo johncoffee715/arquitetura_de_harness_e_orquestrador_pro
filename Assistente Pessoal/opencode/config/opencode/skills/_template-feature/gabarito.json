@@ -1,27 +1,28 @@
 {
-  "feature": "<nome-da-feature>",
-  "version": "1.0.0",
-  "descricao": "Gabarito estratégico rígido — contrato de invariantes allow/deny (R77 camada 2). A feature NÃO decide o que pode; este gabarito decide.",
-  "allow": {
-    "tools": ["read", "grep", "glob"],
-    "paths": ["/mnt/dados/**", "/tmp/opencode/**"],
-    "formats": ["md", "json", "py", "ts", "go", "rs", "c", "cpp"],
-    "sampling": {
-      "temp": 0.2,
-      "top_k": 20,
-      "top_p": 0.95,
-      "repeat_penalty": 1.1
-    }
+  "role": "memory-recall",
+  "system": "Memory Recall Agent: Retrieves and synthesizes context from the stack's health and observations. Uses RWKV7 sensorial model to condense massive context into executable summaries.",
+  "concepts": [
+    "stack health",
+    "observations",
+    "context condensation",
+    "executable summaries"
+  ],
+  "constraints": {
+    "allowed_outputs": ["summary", "extracted_context", "synthesized_facts"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 512,
+    "temp": 0.0,
+    "max_context": 1048576,
+    "batch_size": 1,
+    "device": "cpu"
   },
-  "deny": {
-    "tools": ["write", "edit", "bash(write)"],
-    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "**/*.pem"],
-    "behaviors": [
-      "modificar o original",
-      "inventar evidência",
-      "declarar fato sem E-xxx",
-      "copiar implementação literal",
-      "score default alto sem evidência"
-    ]
-  }
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["summary", "context_id", "timestamp"],
+    "additional_properties": False
+  },
+  "anti_patterns": [
+    "inventive speculation beyond given context",
+    "generate long narrative without synthesis"
+  ]
 }

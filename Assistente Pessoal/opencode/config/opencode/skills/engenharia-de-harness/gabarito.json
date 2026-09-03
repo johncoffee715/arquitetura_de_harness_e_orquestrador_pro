@@ -1,0 +1,57 @@
+{
+  "name": "R84_R4etiquetas_engenharia-de-harness",
+  "description": "Skill template for R84 R4etiquetas based on the engenharia-de-harness concept",
+  "type": "skill",
+  "version": "1.0",
+  "schema": {
+    "title": "R84 R4etiquetas",
+    "type": "object",
+    "properties": {
+      "task_id": {
+        "type": "string",
+        "description": "The task identifier (e.g., AUT-W1-engenharia-de-harness)"
+      },
+      "run_id": {
+        "type": "string",
+        "description": "The run identifier (e.g., 23d0f51a-5cb7-465a-a522-46cf968cfc4b)"
+      },
+      "objective": {
+        "type": "string",
+        "description": "Objective of the skill"
+      },
+      "evidence_in": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "description": "Files from evidence (e.g., backup SKILL.md, template)"
+        }
+      },
+      "tools_allowlist": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "description": "Allowed tools"
+        }
+      },
+      "budget_tokens": {
+        "type": "integer",
+        "description": "Token budget"
+      },
+      "acceptance_criteria": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": [
+      "task_id",
+      "run_id",
+      "objective",
+      "evidence_in",
+      "tools_allowlist",
+      "budget_tokens",
+      "acceptance_criteria"
+    ]
+  }
+}

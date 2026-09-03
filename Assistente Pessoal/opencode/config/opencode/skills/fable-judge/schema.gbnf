@@ -1,0 +1,16 @@
+# GBNF schema for fable-judge feature evaluation output
+# Root schema: fable-judge-feature
+# Format: JSON with specific structure
+root ::= {
+  "verdict": "PASS" | "FAIL" | "PARTIAL",
+  "reasoning": "structured explanation",
+  "suggestions": [
+    "Improvement 1 suggestion",
+    "Improvement 2 suggestion"
+  ],
+  "metrics": {
+    "accuracy": [0.0, 1.0],
+    "coherence": [0.0, 1.0],
+    "staleness": [0.0, 1.0]
+  }
+}

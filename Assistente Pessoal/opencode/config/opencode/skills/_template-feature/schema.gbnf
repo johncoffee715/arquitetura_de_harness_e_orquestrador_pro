@@ -1,0 +1,24 @@
+# GBNF schema for memory-recall output
+# This defines the token-level constraints and structure for constrained decoding
+
+MemoryRecallOutput:
+  summary: text
+  context_id: text
+  timestamp: iso8601
+  status: text
+  validation_details: object
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 512
+
+# Required fields (as per schema)
+required: [summary, context_id, timestamp, status]
+
+# Optional fields with defaults
+validation_details: {
+  "token_count": number,
+  "schema_check": boolean,
+  "condensed_successfully": boolean,
+  "max_context_tokens": number
+}

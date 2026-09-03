@@ -1,0 +1,21 @@
+# GBNF schema for pxpipe quarteto (R84)
+# Constrained decoding for the pxpipe skill
+
+{
+  "type": "function",
+  "name": "pxpipe_check",
+  "arguments": {
+    "skill": {
+      "type": "string",
+      "value": "pxpipe"
+    },
+    "command": {
+      "type": "string",
+      "value": "start"
+    }
+  },
+  "return": {
+    "type": "bool",
+    "value": "true"
+  }
+}

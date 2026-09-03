@@ -1,463 +1,463 @@
 {
-    "version": "1.2",
-    "updated": "2026-08-31T17:46:37.640581+00:00",
-    "fonte": "auditoria R52 + ctx-cost + start-stack + BENCH-01",
-    "politica_roteamento": {
-        "tipo": "hibrido-em-camadas",
-        "camada1_disjuntores": {
-            "F4_execucao_tdd": {
-                "min_tps_decode": 100
-            },
-            "F1_F2_F5_cognitivo": {
-                "min_gm_oficial": 60
-            },
-            "refutacao": {
-                "min_tps_decode": 180
-            }
-        },
-        "camada2_score_elastico": {
-            "formula": "score = w_logic*gm_oficial + w_speed*norm(tps)",
-            "pesos_por_fase": {
-                "F1": {
-                    "w_logic": 0.7,
-                    "w_speed": 0.3
-                },
-                "F2": {
-                    "w_logic": 0.7,
-                    "w_speed": 0.3
-                },
-                "F4": {
-                    "w_logic": 0.3,
-                    "w_speed": 0.7
-                },
-                "F5": {
-                    "w_logic": 0.8,
-                    "w_speed": 0.2
-                }
-            }
-        },
-        "nota": "score roda SOMENTE dentro do conjunto aprovado pelos disjuntores"
+  "version": "1.2",
+  "updated": "2026-08-31T17:46:37.640581+00:00",
+  "fonte": "auditoria R52 + ctx-cost + start-stack + BENCH-01",
+  "politica_roteamento": {
+    "tipo": "hibrido-em-camadas",
+    "camada1_disjuntores": {
+      "F4_execucao_tdd": {
+        "min_tps_decode": 100
+      },
+      "F1_F2_F5_cognitivo": {
+        "min_gm_oficial": 60
+      },
+      "refutacao": {
+        "min_tps_decode": 180
+      }
     },
-    "decisao_orquestrador_2026-08-24": {
-        "veredito": "Qwen3.8-9B @229376 (224K MAX VALIDADO 24/08: decode 81.2 t/s, prefill 487, VRAM pico 10.28GiB global). Ornith reserva warm.",
-        "dados": {
-            "ornith": {
-                "gm_local": 76.3,
-                "gpqa_diamond_hf": 86.4,
-                "prefill_tps": 770,
-                "benchlm_geral": "36.9 #204/224 (vocacao restrita coding/agentic)"
-            },
-            "qwen27b_iq2xxs": {
-                "gm_local": 68.5,
-                "gpqa_community": 89.2,
-                "terminal_bench_21": 73.0,
-                "deep_swe": 42.2,
-                "bloqueios_medidos": [
-                    "cache-reuse disabled runtime",
-                    "prefill system prompt 86K ~9min @150t/s"
-                ]
-            },
-            "fontes": [
-                "HF ornith-ai eval-results",
-                "BenchLM 22/08/2026",
-                "HN community table (explainx.ai)",
-                "yt ZqkljdI1HT0 Mitjana"
-            ]
+    "camada2_score_elastico": {
+      "formula": "score = w_logic*gm_oficial + w_speed*norm(tps)",
+      "pesos_por_fase": {
+        "F1": {
+          "w_logic": 0.7,
+          "w_speed": 0.3
         },
-        "condicao_de_substituicao": "GM-local qwen27b >= 76 em re-run spec B/D-FULL identico",
-        "nota_v1_2": "mantida; Granite-4.2-3B assume executor F4 no lugar do Qwen3.8-9B (ver stack_atual.substituicoes)"
-    },
-    "stack_atual": {
-        "gpu": "9084 RWKV7-0.4B-FP16 + 9085 Judge-3B + 9086 LFM-1.2B + 9088 Qwen3.8-4B + 9090 Ternary-8B (VRAM)",
-        "cpu_slots": 1,
-        "total_slots": 9,
-        "substituicoes_2026_08_30": [
-            "8083 Ornith-1.5-9B-Q5_K_M GPU -> Ornith-1.5-35B-A3B-IQ4_XS CPU (decisão usuário; 9B removido do SSD)",
-            "9083 Qwen3.5-4B-UD-IQ2_XXS removido (SSD excluído)",
-            "9087 granite-4.2-3b-Q4_K_M removido (SSD excluído)",
-            "9089 Qwen3.8-2B-Q4_K_M removido (SSD excluído)",
-            "9085/9086/9088/9090 movidos CPU -> GPU/VRAM"
-        ],
-        "nota_forja": "Needle-2 ONLINE :9091 (binário nativo x86) — API POST /complete; triagem L0 :8097 + forja :9091"
-    },
-    "models": [
-        {
-            "model_id": "RWKV7-G1d-0.4B-Instruct-FP16",
-            "slot_port": 9084,
-            "device": "GPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "rwkv",
-                "layers": 16,
-                "embedding_length": 1024,
-                "attn_heads": 8,
-                "kv_heads": 8,
-                "key_len_head": 64,
-                "value_len_head": 64,
-                "contexto_nativo": 1048576,
-                "rope_freq_base": 10000000.0,
-                "feed_forward_length": 4096,
-                "arch_detail": "RWKV v7 DeltaNet + attention hybrid — FP16 nativo"
-            },
-            "fisica_inferencia": {
-                "quantizacao": "FP16 (não quantizado)",
-                "pesos_gb": 0.91,
-                "pesos_bytes": 910442656,
-                "ctx_ativo": 1048576,
-                "cache_k": "FP16",
-                "cache_v": "FP16",
-                "kv_per_token_kb": 0.0,
-                "kv_total_gb_at_ctx": 0.064,
-                "tps_decode_empirical": 143.29,
-                "threads": "auto",
-                "nota": "RWKV state fixo por camada — custo NÃO escala com ctx; n_ctx_train real 1048576 (GGUF header rwkv7.context_length)",
-                "device": "GPU",
-                "ngl": 999,
-                "tps_solo": 86.82,
-                "flash_attn": "N/A (state fixo)",
-                "mtp": "N/A",
-                "tps_prefill_empirical": 2448.65,
-                "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 2448.65 · decode 143.29 — ANTIGO CPU: 143.29"
-            },
-            "vocacao_grafo": "L0.5 CÓRTEX COGNITIVO — roteamento semântico F0 (intent classification), ingestão de logs longos F4 SEM perda (RNN O(1)), validação semântica F3, auditoria de diffs F5/6. Coexiste com Needle L0 (sintático).",
-            "derivado": {
-                "file": "RWKV7-G1d-0.4B-Instruct-FP16.gguf",
-                "slug": "rwkv7-g1d-0.4b-instruct",
-                "category": "talamus-cortex",
-                "papel": "CÓRTEX SENSORIAL PRIMÁRIO (Filtro Talâmico)",
-                "ctx_ativo_efetivo": 1048576,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "Raciocínio denso F1/F2 (0.4B); JSON estrito exige grammar (não força sintaxe por construção como Needle)",
-                "capacidades": "L0.5: roteamento semântico, intent classification, ingestão de logs longos sem perda (1M ctx), parsing TDD, validação de diffs",
-                "possibilidades": "Draft model se tokenizer compatível (não é — rwkv ≠ qwen35); classificação leve de intenção"
-            }
+        "F2": {
+          "w_logic": 0.7,
+          "w_speed": 0.3
         },
-        {
-            "model_id": "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M",
-            "slot_port": 9086,
-            "device": "GPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "lfm2",
-                "layers": 16,
-                "attn_layers": 6,
-                "embedding_length": 2048,
-                "attn_heads": 32,
-                "kv_heads": 8,
-                "kv_heads_array": [
-                    0,
-                    0,
-                    8,
-                    0,
-                    0,
-                    8,
-                    0,
-                    0,
-                    8,
-                    0,
-                    0,
-                    8,
-                    0,
-                    0,
-                    8,
-                    0
-                ],
-                "contexto_nativo": 128000,
-                "rope_freq_base": 1000000.0,
-                "feed_forward_length": 8192,
-                "arch_detail": "lfm2 híbrida 10 conv double-gated +6 GQA — ToMoE dense-equivalent (MoE real só safetensors/vLLM)"
-            },
-            "fisica_inferencia": {
-                "quantizacao": "Q4_K_M",
-                "pesos_gb": 0.73,
-                "pesos_bytes": 730898432,
-                "ctx_ativo": 128000,
-                "cache_k": "q4_0",
-                "cache_v": "q4_0",
-                "kv_per_token_kb": 3.8,
-                "kv_total_gb_at_ctx": 0.72,
-                "tps_decode_empirical": 317.13,
-                "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 3609.25 · decode 317.13 — ANTIGO CPU: 317.13",
-                "temp": 0.05,
-                "ngl": 999,
-                "threads": "GPU Vulkan0 -ngl 999",
-                "nota": " | movido p/ VRAM 2026-08-30 (decisão usuário)",
-                "flash_attn": true,
-                "mtp": "N/A",
-                "device_gpu_fa": "FA on desde 30/08 (R76)",
-                "tps_prefill_empirical": 3609.25,
-                "device": "GPU",
-                "ctx_nota": "expandido 32768→128000 em 30/08 (decisão usuário — nativo)"
-            },
-            "vocacao_grafo": "reflexo R42 · loop alta velocidade · GBNF/estrutura IFEval 88.42",
-            "derivado": {
-                "file": "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M.gguf",
-                "slug": "lfm2.5-1.2b-thinking-tomoe",
-                "category": "reflexo",
-                "papel": "reflexo R42",
-                "ctx_ativo_efetivo": 128000,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "Instável para JSON/Python (imaturidade de engenharia); produção comercial; estruturas rígidas",
-                "capacidades": "Raciocínio verbal rápido (317 t/s); reflexo R42; testes acadêmicos; opinião rápida no A2A",
-                "possibilidades": "Draft model se tokenizer compatível (não é — lfm2 ≠ qwen35); geração criativa curta"
-            }
+        "F4": {
+          "w_logic": 0.3,
+          "w_speed": 0.7
         },
-        {
-            "model_id": "Qwen3.8-4B-Q4_K_M",
-            "slot_port": 9088,
-            "device": "GPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "qwen35",
-                "layers": 33,
-                "embedding_length": 2560,
-                "attn_heads": 16,
-                "kv_heads": 4,
-                "key_len_head": 256,
-                "value_len_head": 256,
-                "contexto_nativo": 262144,
-                "rope_freq_base": 10000000.0,
-                "feed_forward_length": 9216
-            },
-            "fisica_inferencia": {
-                "quantizacao": "Q4_K_M",
-                "pesos_gb": 2.78,
-                "pesos_bytes": 2783446304,
-                "ctx_ativo": 200000,
-                "cache_k": "q4_0",
-                "cache_v": "q4_0",
-                "kv_per_token_kb": 41.2,
-                "kv_total_gb_at_ctx": 2.02,
-                "tps_decode_empirical": 103.66,
-                "temp": 0.6,
-                "ngl": 999,
-                "threads": "GPU Vulkan0 -ngl 999",
-                "nota": " | movido p/ VRAM 2026-08-30 (decisão usuário)",
-                "flash_attn": true,
-                "mtp": "N/A",
-                "device_gpu_fa": "FA on desde 30/08 (R76)",
-                "tps_prefill_empirical": 1033.07,
-                "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 1033.07 · decode 103.66 — ANTIGO CPU: 103.66",
-                "device": "GPU",
-                "ctx_nota": "expandido 131072→200000 em 30/08 (decisão usuário)"
-            },
-            "vocacao_grafo": "F2/F3 CONTRATO+PLANO · prosa estruturada/schema",
-            "derivado": {
-                "file": "Qwen3.8-4B-Q4_K_M.gguf",
-                "slug": "qwen3.8-4b-distill",
-                "category": "contrato-plano",
-                "papel": "F2/F3 CONTRATO+PLANO",
-                "ctx_ativo_efetivo": 200000,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "Refatoração limpa profissional (q4_k_m → linhas preguiçosas '# insira seu código'); pula trechos em código longo",
-                "capacidades": "Tool calling preciso (BFCL); propositor A2A; contrato/plano F2-F3; sintaxe e velocidade (103 t/s)",
-                "possibilidades": "Executor F4 para tasks curtas; geração de schema JSON com GBNF"
-            }
-        },
-        {
-            "model_id": "Ternary-Bonsai-8B-Q2_0_g64",
-            "slot_port": 9090,
-            "device": "GPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "qwen3",
-                "layers": 36,
-                "embedding_length": 4096,
-                "attn_heads": 32,
-                "kv_heads": 8,
-                "key_len_head": 128,
-                "contexto_nativo": 65536,
-                "feed_forward_length": 12288,
-                "arch_detail": "qwen3 dense retreinado ternário Prism ML 1.58-bit {-1,0,+1}+scale FP16/128 — gguf-dump não parseia Q2_0 type 42 (fork)"
-            },
-            "fisica_inferencia": {
-                "quantizacao": "Q2_0_g64",
-                "pesos_gb": 2.31,
-                "pesos_bytes": 2310125920,
-                "ctx_ativo": 65536,
-                "cache_k": "q4_0",
-                "cache_v": "q4_0",
-                "kv_per_token_kb": 45.0,
-                "kv_total_gb_at_ctx": 3.02,
-                "tps_decode_empirical": 115.52,
-                "temp": 0.8,
-                "ngl": 999,
-                "threads": "GPU Vulkan0 -ngl 999",
-                "nota": " | movido p/ VRAM 2026-08-30 (decisão usuário)",
-                "flash_attn": true,
-                "mtp": "N/A",
-                "device_gpu_fa": "FA on desde 30/08 (R76)",
-                "tps_prefill_empirical": 827.92,
-                "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 827.92 · decode 115.52 — ANTIGO CPU: 115.52",
-                "device": "GPU"
-            },
-            "vocacao_grafo": "refutação A2A · descartável R40/R41 · IFeval 81.8 BFCL 73.9",
-            "derivado": {
-                "file": "Ternary-Bonsai-8B-Q2_0_g64.gguf",
-                "slug": "ternary-bonsai-8b",
-                "category": "refutacao",
-                "papel": "refutação A2A",
-                "ctx_ativo_efetivo": 65536,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "Q2_0_g64 sensível a ruído; não usar para saída criativa longa",
-                "capacidades": "Refutação conceitual A2A (BFCL 73.9); profundidade 8B; estruturação Markdown/JSON; autofagia",
-                "possibilidades": "Propositor alternativo; análise de contrato spec.md"
-            }
-        },
-        {
-            "model_id": "Ornith-1.5-35B-A3B-IQ4_XS",
-            "slot_port": 8083,
-            "device": "CPU",
-            "topologia_arquitetura": {
-                "tipo_fundacao": "qwen35moe",
-                "layers": 40,
-                "embedding_length": 2048,
-                "attn_heads": 8,
-                "kv_heads": 2,
-                "key_len_head": 256,
-                "value_len_head": 256,
-                "contexto_nativo": 262144,
-                "expert_count": 256,
-                "expert_used_count": 8,
-                "arch_detail": "qwen35moe MoE 35B A3B — 256 experts, 8 ativos/token, full_attn_interval=4 (10/40 full-attn), 30/40 linear (SSM)"
-            },
-            "fisica_inferencia": {
-                "quantizacao": "IQ4_XS",
-                "pesos_gb": 18.73,
-                "pesos_bytes": 18728777920,
-                "ctx_ativo": 262144,
-                "cache_k": "q4_0",
-                "cache_v": "q4_0",
-                "kv_per_token_kb": 5.76,
-                "kv_total_gb_at_ctx": 1.51,
-                "tps_decode_empirical": 2.24,
-                "tps_decode_nota": "BENCH-30/08 CPU standalone: pp512 52.61 · pp2048 48.59 · tg 7.88/8.08 · FA sem ganho (<2%) · t36 degrada 2.8x (bandwidth-bound) · batch maior degrada (8192/2048=7.33) · lógica 12/12 ~21s/teste · RAM RSS 20.2GB",
-                "temp": 0.6,
-                "ngl": 0,
-                "threads": "auto(18)",
-                "flash_attn": false,
-                "nota": "substitui Ornith-1.5-9B-Q5_K_M como GM 2026-08-30 (decisão usuário). MoE 3B ativos — decode CPU ~8 t/s vs 67.8 GPU do 9B; lógica 12/12 (~21s/teste vs 46s do 9B CPU) | ACELERAÇÃO 31/08: sweep completo (baseline 2.24; draft CPU 1.34; ngram 1.72; draft GPU 1.32; offload ngl10 1.63) — TODAS degradam; bandwidth-bound DDR; única via = 2ª MI50",
-                "batch_ubatch": "2048/512",
-                "tps_prefill_empirical": 52.61,
-                "mtp": "N/A (arquivo sem head MTP — jashepp removeu 22/08)"
-            },
-            "vocacao_grafo": "ORQUESTRADOR ATIVO · 35B MoE · CPU · KV q4/q4 @262144",
-            "derivado": {
-                "file": "Ornith-1.5-35B-A3B-IQ4_XS.gguf",
-                "slug": "ornith-1.5-35b-a3b-iq4_xs",
-                "category": "orquestrador",
-                "papel": "ORQUESTRADOR ATIVO",
-                "ctx_ativo_efetivo": 262144,
-                "generator_version": "1.0.0"
-            },
-            "metrica_avaliativa_r78": {
-                "debilidade": "2.24 t/s CPU (bandwidth-bound DDR 18.73GB MoE); NUNCA síncrono em loop; 2× em RAM = 40GB",
-                "capacidades": "Orquestração/suprema corte (lógica 12/12); síntese macro; decisão final — INSUBSTITUÍVEL até prova em contrário",
-                "possibilidades": "Offload parcial (testado — degrada 1.63 t/s); draft (testado — degrada); única via real = 2ª MI50"
-            }
+        "F5": {
+          "w_logic": 0.8,
+          "w_speed": 0.2
         }
+      }
+    },
+    "nota": "score roda SOMENTE dentro do conjunto aprovado pelos disjuntores"
+  },
+  "decisao_orquestrador_2026-08-24": {
+    "veredito": "Qwen3.8-9B @229376 (224K MAX VALIDADO 24/08: decode 81.2 t/s, prefill 487, VRAM pico 10.28GiB global). Ornith reserva warm.",
+    "dados": {
+      "ornith": {
+        "gm_local": 76.3,
+        "gpqa_diamond_hf": 86.4,
+        "prefill_tps": 770,
+        "benchlm_geral": "36.9 #204/224 (vocacao restrita coding/agentic)"
+      },
+      "qwen27b_iq2xxs": {
+        "gm_local": 68.5,
+        "gpqa_community": 89.2,
+        "terminal_bench_21": 73.0,
+        "deep_swe": 42.2,
+        "bloqueios_medidos": [
+          "cache-reuse disabled runtime",
+          "prefill system prompt 86K ~9min @150t/s"
+        ]
+      },
+      "fontes": [
+        "HF ornith-ai eval-results",
+        "BenchLM 22/08/2026",
+        "HN community table (explainx.ai)",
+        "yt ZqkljdI1HT0 Mitjana"
+      ]
+    },
+    "condicao_de_substituicao": "GM-local qwen27b >= 76 em re-run spec B/D-FULL identico",
+    "nota_v1_2": "mantida; Granite-4.2-3B assume executor F4 no lugar do Qwen3.8-9B (ver stack_atual.substituicoes)"
+  },
+  "stack_atual": {
+    "gpu": "9084 RWKV7-0.4B-FP16 + 9085 Judge-3B + 9086 LFM-1.2B + 9088 Qwen3.8-4B + 9090 Ternary-8B (VRAM)",
+    "cpu_slots": 1,
+    "total_slots": 9,
+    "substituicoes_2026_08_30": [
+      "8083 Ornith-1.5-9B-Q5_K_M GPU -> Ornith-1.5-35B-A3B-IQ4_XS CPU (decisão usuário; 9B removido do SSD)",
+      "9083 Qwen3.5-4B-UD-IQ2_XXS removido (SSD excluído)",
+      "9087 granite-4.2-3b-Q4_K_M removido (SSD excluído)",
+      "9089 Qwen3.8-2B-Q4_K_M removido (SSD excluído)",
+      "9085/9086/9088/9090 movidos CPU -> GPU/VRAM"
     ],
-    "sync_state": {
-        "generator_version": "1.0.0",
-        "last_sync": "2026-08-28T16:34:15.144197Z",
-        "health": {
-            "ts": "2026-08-28T17:10:59.341044Z",
-            "slots": {
-                "8083": "online",
-                "9083": "online",
-                "9084": "online",
-                "9085": "online",
-                "9086": "online",
-                "9087": "online",
-                "9088": "online",
-                "9089": "online",
-                "9090": "online"
-            }
-        }
+    "nota_forja": "Needle-2 ONLINE :9091 (binário nativo x86) — API POST /complete; triagem L0 :8097 + forja :9091"
+  },
+  "models": [
+    {
+      "model_id": "RWKV7-G1d-0.4B-Instruct-FP16",
+      "slot_port": 9084,
+      "device": "GPU",
+      "topologia_arquitetura": {
+        "tipo_fundacao": "rwkv",
+        "layers": 16,
+        "embedding_length": 1024,
+        "attn_heads": 8,
+        "kv_heads": 8,
+        "key_len_head": 64,
+        "value_len_head": 64,
+        "contexto_nativo": 1048576,
+        "rope_freq_base": 10000000.0,
+        "feed_forward_length": 4096,
+        "arch_detail": "RWKV v7 DeltaNet + attention hybrid — FP16 nativo"
+      },
+      "fisica_inferencia": {
+        "quantizacao": "FP16 (não quantizado)",
+        "pesos_gb": 0.91,
+        "pesos_bytes": 910442656,
+        "ctx_ativo": 1048576,
+        "cache_k": "FP16",
+        "cache_v": "FP16",
+        "kv_per_token_kb": 0.0,
+        "kv_total_gb_at_ctx": 0.064,
+        "tps_decode_empirical": 143.29,
+        "threads": "auto",
+        "nota": "RWKV state fixo por camada — custo NÃO escala com ctx; n_ctx_train real 1048576 (GGUF header rwkv7.context_length)",
+        "device": "GPU",
+        "ngl": 999,
+        "tps_solo": 86.82,
+        "flash_attn": "N/A (state fixo)",
+        "mtp": "N/A",
+        "tps_prefill_empirical": 2448.65,
+        "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 2448.65 · decode 143.29 — ANTIGO CPU: 143.29"
+      },
+      "vocacao_grafo": "L0.5 CÓRTEX COGNITIVO — roteamento semântico F0 (intent classification), ingestão de logs longos F4 SEM perda (RNN O(1)), validação semântica F3, auditoria de diffs F5/6. Coexiste com Needle L0 (sintático).",
+      "derivado": {
+        "file": "RWKV7-G1d-0.4B-Instruct-FP16.gguf",
+        "slug": "rwkv7-g1d-0.4b-instruct",
+        "category": "talamus-cortex",
+        "papel": "CÓRTEX SENSORIAL PRIMÁRIO (Filtro Talâmico)",
+        "ctx_ativo_efetivo": 1048576,
+        "generator_version": "1.0.0"
+      },
+      "metrica_avaliativa_r78": {
+        "debilidade": "Raciocínio denso F1/F2 (0.4B); JSON estrito exige grammar (não força sintaxe por construção como Needle)",
+        "capacidades": "L0.5: roteamento semântico, intent classification, ingestão de logs longos sem perda (1M ctx), parsing TDD, validação de diffs",
+        "possibilidades": "Draft model se tokenizer compatível (não é — rwkv ≠ qwen35); classificação leve de intenção"
+      }
     },
-    "benchmarks_2026_08_30": {
-        "ornith-35b-iq4-xs": {
-            "prefill_512": 52.61,
-            "prefill_2048": 48.59,
-            "decode_128": 7.88,
-            "decode_128_p2048": 8.08,
-            "logica": "12/12 (~21s/teste)",
-            "ram_rss_gb": 20.2,
-            "kv_kb_tok": 5.76,
-            "batch_otimo": "2048/512",
-            "flash_attn_cpu": "sem ganho <2%",
-            "threads_36": "degrada 2.8x",
-            "mtp": "N/A"
-        },
-        "ornith-9b-q5-removido": {
-            "logica_cpu": "12/12 (~46s/teste)",
-            "decode_gpu_hist": 67.8,
-            "prefill_gpu_hist": 491
-        },
-        "gpu_slots": {
-            "RWKV7-G1d-0.4B-Instruct-FP16": {
-                "tps_decode": 143.29,
-                "tps_prefill": 2448.65,
-                "fa": "N/A (state fixo)"
-            },
-            "LLMJudge-Qwen2.5-3B-Q4_K_M": {
-                "tps_decode": 152.63,
-                "tps_prefill": 1600.89,
-                "fa": true
-            },
-            "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M": {
-                "tps_decode": 317.13,
-                "tps_prefill": 3609.25,
-                "fa": true
-            },
-            "Qwen3.8-4B-Q4_K_M": {
-                "tps_decode": 103.66,
-                "tps_prefill": 1033.07,
-                "fa": true
-            },
-            "Ternary-Bonsai-8B-Q2_0_g64": {
-                "tps_decode": 115.52,
-                "tps_prefill": 827.92,
-                "fa": true
-            }
-        }
-    },
-    "aceleracao_ornith_35b_2026_08_31": {
-        "conclusao": "35B é bandwidth-bound na DDR (18.73GB pesos MoE 256 experts; ngl 0 pois não cabe na MI50 16GB). NENHUMA técnica de aceleração é viável na MI50 única.",
-        "sweep_empirico": {
-            "baseline_cpu_puro": {
-                "tps": 2.24,
-                "nota": "teto físico do hardware"
-            },
-            "draft_simple_cpu_qwen4b": {
-                "tps": 1.34,
-                "delta": "-40%"
-            },
-            "ngram_simple_n32": {
-                "tps": 1.72,
-                "delta": "-23%"
-            },
-            "draft_simple_gpu_lfm_hbm2": {
-                "tps": 1.32,
-                "delta": "-41%"
-            },
-            "offload_ngl10": {
-                "tps": 1.63,
-                "delta": "-27%"
-            }
-        },
-        "causa_raiz": "Spec decoding adiciona overhead de validação/rollback; offload cria sync HBM2<->DDR por token (atenção GPU + experts RAM). MoE bandwidth-bound: overhead > ganho.",
-        "recomendacoes": [
-            "2ª MI50 (32GB total → 35B inteiro na HBM2): ganho 8-10x (~20 t/s) — único caminho real",
-            "Modelo menor como orquestrador (Qwen-4B GPU 103 t/s): 45x, porém perde robustez",
-            "Manter 35B exclusivo de orquestração (atual): aceitar 2.24 t/s"
+    {
+      "model_id": "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M",
+      "slot_port": 9086,
+      "device": "GPU",
+      "topologia_arquitetura": {
+        "tipo_fundacao": "lfm2",
+        "layers": 16,
+        "attn_layers": 6,
+        "embedding_length": 2048,
+        "attn_heads": 32,
+        "kv_heads": 8,
+        "kv_heads_array": [
+          0,
+          0,
+          8,
+          0,
+          0,
+          8,
+          0,
+          0,
+          8,
+          0,
+          0,
+          8,
+          0,
+          0,
+          8,
+          0
         ],
-        "decisao": "35B permanece exclusivo de orquestração. Nenhuma técnica de aceleração na MI50 única."
+        "contexto_nativo": 128000,
+        "rope_freq_base": 1000000.0,
+        "feed_forward_length": 8192,
+        "arch_detail": "lfm2 híbrida 10 conv double-gated +6 GQA — ToMoE dense-equivalent (MoE real só safetensors/vLLM)"
+      },
+      "fisica_inferencia": {
+        "quantizacao": "Q4_K_M",
+        "pesos_gb": 0.73,
+        "pesos_bytes": 730898432,
+        "ctx_ativo": 128000,
+        "cache_k": "q4_0",
+        "cache_v": "q4_0",
+        "kv_per_token_kb": 3.8,
+        "kv_total_gb_at_ctx": 0.72,
+        "tps_decode_empirical": 317.13,
+        "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 3609.25 · decode 317.13 — ANTIGO CPU: 317.13",
+        "temp": 0.05,
+        "ngl": 999,
+        "threads": "GPU Vulkan0 -ngl 999",
+        "nota": " | movido p/ VRAM 2026-08-30 (decisão usuário)",
+        "flash_attn": true,
+        "mtp": "N/A",
+        "device_gpu_fa": "FA on desde 30/08 (R76)",
+        "tps_prefill_empirical": 3609.25,
+        "device": "GPU",
+        "ctx_nota": "expandido 32768→128000 em 30/08 (decisão usuário — nativo)"
+      },
+      "vocacao_grafo": "reflexo R42 · loop alta velocidade · GBNF/estrutura IFEval 88.42",
+      "derivado": {
+        "file": "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M.gguf",
+        "slug": "lfm2.5-1.2b-thinking-tomoe",
+        "category": "reflexo",
+        "papel": "reflexo R42",
+        "ctx_ativo_efetivo": 128000,
+        "generator_version": "1.0.0"
+      },
+      "metrica_avaliativa_r78": {
+        "debilidade": "Instável para JSON/Python (imaturidade de engenharia); produção comercial; estruturas rígidas",
+        "capacidades": "Raciocínio verbal rápido (317 t/s); reflexo R42; testes acadêmicos; opinião rápida no A2A",
+        "possibilidades": "Draft model se tokenizer compatível (não é — lfm2 ≠ qwen35); geração criativa curta"
+      }
     },
-    "nota_limpeza_2026_08_30": "Removidos modelos fora da stack ativa (Needle-2/Gemma-2B/SmolLM2/Qwen3.5-0.8B) — slot None quebrava sync --check",
-    "nota_judge_31_08": "Judge-3B removido por decisão do usuário (outra sessão) — não re-adicionar"
+    {
+      "model_id": "Qwen3.8-4B-Q4_K_M",
+      "slot_port": 9088,
+      "device": "GPU",
+      "topologia_arquitetura": {
+        "tipo_fundacao": "qwen35",
+        "layers": 33,
+        "embedding_length": 2560,
+        "attn_heads": 16,
+        "kv_heads": 4,
+        "key_len_head": 256,
+        "value_len_head": 256,
+        "contexto_nativo": 262144,
+        "rope_freq_base": 10000000.0,
+        "feed_forward_length": 9216
+      },
+      "fisica_inferencia": {
+        "quantizacao": "Q4_K_M",
+        "pesos_gb": 2.78,
+        "pesos_bytes": 2783446304,
+        "ctx_ativo": 200000,
+        "cache_k": "q4_0",
+        "cache_v": "q4_0",
+        "kv_per_token_kb": 41.2,
+        "kv_total_gb_at_ctx": 2.02,
+        "tps_decode_empirical": 103.66,
+        "temp": 0.6,
+        "ngl": 999,
+        "threads": "GPU Vulkan0 -ngl 999",
+        "nota": " | movido p/ VRAM 2026-08-30 (decisão usuário)",
+        "flash_attn": true,
+        "mtp": "N/A",
+        "device_gpu_fa": "FA on desde 30/08 (R76)",
+        "tps_prefill_empirical": 1033.07,
+        "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 1033.07 · decode 103.66 — ANTIGO CPU: 103.66",
+        "device": "GPU",
+        "ctx_nota": "expandido 131072→200000 em 30/08 (decisão usuário)"
+      },
+      "vocacao_grafo": "F2/F3 CONTRATO+PLANO · prosa estruturada/schema",
+      "derivado": {
+        "file": "Qwen3.8-4B-Q4_K_M.gguf",
+        "slug": "qwen3.8-4b-distill",
+        "category": "contrato-plano",
+        "papel": "F2/F3 CONTRATO+PLANO",
+        "ctx_ativo_efetivo": 200000,
+        "generator_version": "1.0.0"
+      },
+      "metrica_avaliativa_r78": {
+        "debilidade": "Refatoração limpa profissional (q4_k_m → linhas preguiçosas '# insira seu código'); pula trechos em código longo",
+        "capacidades": "Tool calling preciso (BFCL); propositor A2A; contrato/plano F2-F3; sintaxe e velocidade (103 t/s)",
+        "possibilidades": "Executor F4 para tasks curtas; geração de schema JSON com GBNF"
+      }
+    },
+    {
+      "model_id": "Ternary-Bonsai-8B-Q2_0_g64",
+      "slot_port": 9090,
+      "device": "GPU",
+      "topologia_arquitetura": {
+        "tipo_fundacao": "qwen3",
+        "layers": 36,
+        "embedding_length": 4096,
+        "attn_heads": 32,
+        "kv_heads": 8,
+        "key_len_head": 128,
+        "contexto_nativo": 65536,
+        "feed_forward_length": 12288,
+        "arch_detail": "qwen3 dense retreinado ternário Prism ML 1.58-bit {-1,0,+1}+scale FP16/128 — gguf-dump não parseia Q2_0 type 42 (fork)"
+      },
+      "fisica_inferencia": {
+        "quantizacao": "Q2_0_g64",
+        "pesos_gb": 2.31,
+        "pesos_bytes": 2310125920,
+        "ctx_ativo": 65536,
+        "cache_k": "q4_0",
+        "cache_v": "q4_0",
+        "kv_per_token_kb": 45.0,
+        "kv_total_gb_at_ctx": 3.02,
+        "tps_decode_empirical": 115.52,
+        "temp": 0.8,
+        "ngl": 999,
+        "threads": "GPU Vulkan0 -ngl 999",
+        "nota": " | movido p/ VRAM 2026-08-30 (decisão usuário)",
+        "flash_attn": true,
+        "mtp": "N/A",
+        "device_gpu_fa": "FA on desde 30/08 (R76)",
+        "tps_prefill_empirical": 827.92,
+        "tps_decode_nota": "BENCH-GPU 30/08 (produção, Vulkan, FA on): prefill 827.92 · decode 115.52 — ANTIGO CPU: 115.52",
+        "device": "GPU"
+      },
+      "vocacao_grafo": "refutação A2A · descartável R40/R41 · IFeval 81.8 BFCL 73.9",
+      "derivado": {
+        "file": "Ternary-Bonsai-8B-Q2_0_g64.gguf",
+        "slug": "ternary-bonsai-8b",
+        "category": "refutacao",
+        "papel": "refutação A2A",
+        "ctx_ativo_efetivo": 65536,
+        "generator_version": "1.0.0"
+      },
+      "metrica_avaliativa_r78": {
+        "debilidade": "Q2_0_g64 sensível a ruído; não usar para saída criativa longa",
+        "capacidades": "Refutação conceitual A2A (BFCL 73.9); profundidade 8B; estruturação Markdown/JSON; autofagia",
+        "possibilidades": "Propositor alternativo; análise de contrato spec.md"
+      }
+    },
+    {
+      "model_id": "Ornith-1.5-35B-A3B-IQ4_XS",
+      "slot_port": 8083,
+      "device": "CPU",
+      "topologia_arquitetura": {
+        "tipo_fundacao": "qwen35moe",
+        "layers": 40,
+        "embedding_length": 2048,
+        "attn_heads": 8,
+        "kv_heads": 2,
+        "key_len_head": 256,
+        "value_len_head": 256,
+        "contexto_nativo": 262144,
+        "expert_count": 256,
+        "expert_used_count": 8,
+        "arch_detail": "qwen35moe MoE 35B A3B — 256 experts, 8 ativos/token, full_attn_interval=4 (10/40 full-attn), 30/40 linear (SSM)"
+      },
+      "fisica_inferencia": {
+        "quantizacao": "IQ4_XS",
+        "pesos_gb": 18.73,
+        "pesos_bytes": 18728777920,
+        "ctx_ativo": 262144,
+        "cache_k": "q4_0",
+        "cache_v": "q4_0",
+        "kv_per_token_kb": 5.76,
+        "kv_total_gb_at_ctx": 1.51,
+        "tps_decode_empirical": 2.24,
+        "tps_decode_nota": "BENCH-30/08 CPU standalone: pp512 52.61 · pp2048 48.59 · tg 7.88/8.08 · FA sem ganho (<2%) · t36 degrada 2.8x (bandwidth-bound) · batch maior degrada (8192/2048=7.33) · lógica 12/12 ~21s/teste · RAM RSS 20.2GB",
+        "temp": 0.6,
+        "ngl": 0,
+        "threads": "auto(18)",
+        "flash_attn": false,
+        "nota": "substitui Ornith-1.5-9B-Q5_K_M como GM 2026-08-30 (decisão usuário). MoE 3B ativos — decode CPU ~8 t/s vs 67.8 GPU do 9B; lógica 12/12 (~21s/teste vs 46s do 9B CPU) | ACELERAÇÃO 31/08: sweep completo (baseline 2.24; draft CPU 1.34; ngram 1.72; draft GPU 1.32; offload ngl10 1.63) — TODAS degradam; bandwidth-bound DDR; única via = 2ª MI50",
+        "batch_ubatch": "2048/512",
+        "tps_prefill_empirical": 52.61,
+        "mtp": "N/A (arquivo sem head MTP — jashepp removeu 22/08)"
+      },
+      "vocacao_grafo": "ORQUESTRADOR ATIVO · 35B MoE · CPU · KV q4/q4 @262144",
+      "derivado": {
+        "file": "Ornith-1.5-35B-A3B-IQ4_XS.gguf",
+        "slug": "ornith-1.5-35b-a3b-iq4_xs",
+        "category": "orquestrador",
+        "papel": "ORQUESTRADOR ATIVO",
+        "ctx_ativo_efetivo": 262144,
+        "generator_version": "1.0.0"
+      },
+      "metrica_avaliativa_r78": {
+        "debilidade": "2.24 t/s CPU (bandwidth-bound DDR 18.73GB MoE); NUNCA síncrono em loop; 2× em RAM = 40GB",
+        "capacidades": "Orquestração/suprema corte (lógica 12/12); síntese macro; decisão final — INSUBSTITUÍVEL até prova em contrário",
+        "possibilidades": "Offload parcial (testado — degrada 1.63 t/s); draft (testado — degrada); única via real = 2ª MI50"
+      }
+    }
+  ],
+  "sync_state": {
+    "generator_version": "1.0.0",
+    "last_sync": "2026-08-28T16:34:15.144197Z",
+    "health": {
+      "ts": "2026-08-28T17:10:59.341044Z",
+      "slots": {
+        "8083": "online",
+        "9083": "online",
+        "9084": "online",
+        "9085": "online",
+        "9086": "online",
+        "9087": "online",
+        "9088": "online",
+        "9089": "online",
+        "9090": "online"
+      }
+    }
+  },
+  "benchmarks_2026_08_30": {
+    "ornith-35b-iq4-xs": {
+      "prefill_512": 52.61,
+      "prefill_2048": 48.59,
+      "decode_128": 7.88,
+      "decode_128_p2048": 8.08,
+      "logica": "12/12 (~21s/teste)",
+      "ram_rss_gb": 20.2,
+      "kv_kb_tok": 5.76,
+      "batch_otimo": "2048/512",
+      "flash_attn_cpu": "sem ganho <2%",
+      "threads_36": "degrada 2.8x",
+      "mtp": "N/A"
+    },
+    "ornith-9b-q5-removido": {
+      "logica_cpu": "12/12 (~46s/teste)",
+      "decode_gpu_hist": 67.8,
+      "prefill_gpu_hist": 491
+    },
+    "gpu_slots": {
+      "RWKV7-G1d-0.4B-Instruct-FP16": {
+        "tps_decode": 143.29,
+        "tps_prefill": 2448.65,
+        "fa": "N/A (state fixo)"
+      },
+      "LLMJudge-Qwen2.5-3B-Q4_K_M": {
+        "tps_decode": 152.63,
+        "tps_prefill": 1600.89,
+        "fa": true
+      },
+      "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M": {
+        "tps_decode": 317.13,
+        "tps_prefill": 3609.25,
+        "fa": true
+      },
+      "Qwen3.8-4B-Q4_K_M": {
+        "tps_decode": 103.66,
+        "tps_prefill": 1033.07,
+        "fa": true
+      },
+      "Ternary-Bonsai-8B-Q2_0_g64": {
+        "tps_decode": 115.52,
+        "tps_prefill": 827.92,
+        "fa": true
+      }
+    }
+  },
+  "aceleracao_ornith_35b_2026_08_31": {
+    "conclusao": "35B é bandwidth-bound na DDR (18.73GB pesos MoE 256 experts; ngl 0 pois não cabe na MI50 16GB). NENHUMA técnica de aceleração é viável na MI50 única.",
+    "sweep_empirico": {
+      "baseline_cpu_puro": {
+        "tps": 2.24,
+        "nota": "teto físico do hardware"
+      },
+      "draft_simple_cpu_qwen4b": {
+        "tps": 1.34,
+        "delta": "-40%"
+      },
+      "ngram_simple_n32": {
+        "tps": 1.72,
+        "delta": "-23%"
+      },
+      "draft_simple_gpu_lfm_hbm2": {
+        "tps": 1.32,
+        "delta": "-41%"
+      },
+      "offload_ngl10": {
+        "tps": 1.63,
+        "delta": "-27%"
+      }
+    },
+    "causa_raiz": "Spec decoding adiciona overhead de validação/rollback; offload cria sync HBM2<->DDR por token (atenção GPU + experts RAM). MoE bandwidth-bound: overhead > ganho.",
+    "recomendacoes": [
+      "2ª MI50 (32GB total → 35B inteiro na HBM2): ganho 8-10x (~20 t/s) — único caminho real",
+      "Modelo menor como orquestrador (Qwen-4B GPU 103 t/s): 45x, porém perde robustez",
+      "Manter 35B exclusivo de orquestração (atual): aceitar 2.24 t/s"
+    ],
+    "decisao": "35B permanece exclusivo de orquestração. Nenhuma técnica de aceleração na MI50 única."
+  },
+  "nota_limpeza_2026_08_30": "Removidos modelos fora da stack ativa (Needle-2/Gemma-2B/SmolLM2/Qwen3.5-0.8B) — slot None quebrava sync --check",
+  "nota_judge_31_08": "Judge-3B removido por decisão do usuário (outra sessão) — não re-adicionar"
 }

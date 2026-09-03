@@ -1,0 +1,35 @@
+{
+  "title": "Context Compaction",
+  "type": "object",
+  "properties": {
+    "context_length": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10000
+    },
+    "output_format": {
+      "type": "string",
+      "enum": ["structured", "concise", "summary", "brief"],
+      "default": "summary"
+    },
+    "language": {
+      "type": "string",
+      "enum": ["en", "pt", "es", "zh", "ja", "ko", "ru", "fr", "it"],
+      "default": "en"
+    },
+    "entities": {
+      "type": "boolean",
+      "default": true
+    },
+    "entities_type": {
+      "type": "string",
+      "enum": ["person", "location", "organization", "concept", "date", "number", "file"],
+      "default": "concept"
+    },
+    "relationships": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": ["context_length", "output_format", "language", "entities", "relationships"]
+}

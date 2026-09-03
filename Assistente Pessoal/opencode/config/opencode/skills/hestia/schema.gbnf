@@ -1,0 +1,30 @@
+root ::= hestia_loop_correction
+
+{
+  type: sequence,
+  items: [
+    {
+      type: action,
+      name: load_ontology,
+      args: [
+        { type: file, path: ontologia.md }
+      ]
+    },
+    {
+      type: action,
+      name: create_aliases,
+      args: [
+        { type: file, path: aliases.py }
+      ]
+    },
+    {
+      type: action,
+      name: loop_correction,
+      args: [
+        { type: integer, value: 100 },
+        { type: integer, value: 10 },
+        { type: file, path: mecanica.py }
+      ]
+    }
+  ]
+}

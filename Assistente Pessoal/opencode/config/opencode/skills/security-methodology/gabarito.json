@@ -1,0 +1,12 @@
+{
+  "name": "security-methodology",
+  "firewall": {
+    "allowed_roles": ["backend"],
+    "excluded_roles": ["frontend"],
+    "sensitive_data": ["API_KEY", "SECRET", "sk-", "token"],
+    "allowed_actions": ["query", "read"],
+    "denied_actions": ["write", "execute"],
+    "max_depth": 2,
+    "max_tokens": 1000
+  }
+}

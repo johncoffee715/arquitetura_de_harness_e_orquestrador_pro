@@ -803,19 +803,17 @@ Fontes: Adendas 7-21 · validação GM-oficial 12/12 tarefas ×4 candidatos · r
 ## LLMs de ALTA PRECISÃO (janela DEVE ser economizada — alto índice em benchmarks complexos online + empíricos internos)
 | Modelo | Slot | Papel | Por que economizar |
 |--------|------|-------|--------------------|
-| ornith-1.5-9b-q5 | :8083 | Orquestrador (GPU) | raciocínio profundo + agentic (SWE-bench 70.6); VRAM 16GB limitada |
-| granite-4.2-3b-q4_k_m | :9087 | Executor F4 | thinking+131K+RULER 67/55, BFCL 52.41; contexto-longo caro |
-| qwen3.8-4b-distill | :9088 | Contrato/Plano F2-F3 | alta precisão em planejamento; ctx 40960 |
-| llmjudge-qwen2.5-3b | :9085 | Judge F5/F6 | veredito categórico exige precisão; temp 0.15 |
-| lfm2.5-1.2b-thinking-tomoe | :9086 | Reflexo R42 | thinking ToMoE; alta precisão em refutação |
-| qwen3.5-4b-iq2xxs | :9083 | Prosa F2/GBNF | criativo; IQ2_XXS sensível a ruído |
-| ternary-bonsai-8b | :9090 | Refutação A2A | 8B Q2_0_g64; refutação incansável R40 |
-| qwen3.8-2b-distill | :9089 | Tool-leve N1.5 | precisão em tool calling |
+| ornith-1.5-35b-a3b-iq4_xs | :8083 CPU | Orquestrador | MoE 35B A3B (256 experts/8 ativos), 262K, 2.24 t/s; RULER+agentic; KV 5.76KB/tok — janela cara |
+| granite-4.2-3b-q4_k_m | :9088 GPU | Executor F4 / Contrato F2-F3 | thinking 131K (512K ext), RULER 67/55, BFCL 52.41, 104.5 t/s; 41.2KB/tok — contexto-longo caro |
+| ternary-bonsai-8b-q2_0_g64 | :9090 GPU | Refutação A2A | 8B 1.58-bit, BFCL 73.9, 115 t/s; 45KB/tok — refutação incansável R40 |
+| gemma-2-2b-it-q4_k_m | :9092 GPU | Juiz F5/F6 (refutador-ágil) | veredito categórico R28/R34, 139 t/s, 8K — precisão de juízo |
+| lfm2.5-1.2b-thinking-tomoe-q4_k_m | :9086 GPU | Reflexo R42 | ToMoE, IFEval 88.42, 317 t/s, 128K; GBNF nativo — precisão estrutural |
 
-## CÓRTEX SENSORIAL PRIMÁRIO (Filtro Talâmico de Larga Escala) — o mais veloz + ctx enorme
-| Modelo | Slot | Ctx | Por quê |
-|--------|------|-----|---------|
-| **rwkv7-g1d-0.4b-instruct** | :9084 | **1048576 (1M)** | 0.4B FP16, ~14.4 t/s, ctx 1M — ingere massivo, cospe suco condensado |
+## CÓRTEX SENSORIAL PRIMÁRIO — DUAL (Filtro Talâmico de Larga Escala) — os mais velozes + ctx enorme
+| Modelo | Slot | Ctx | T/s | Papel dual | Por quê |
+|--------|------|-----|-----|------------|---------|
+| **rwkv7-g1d-0.4b-instruct-fp16** | :9084 GPU | **1048576 (1M)** | 143 (86 GPU c/ Ornith) | **Massivo** — RAG 150K, histórico 20→1, logs, scraping | state fixo 10MB, não escala KV, ingere massivo e cospe IDs/JSON |
+| **smollm2-360m-instruct-q8_0** | :9093 GPU | 4096 | **400** | **Micro 1-bit** — classificador/extrator ultra-rápido | Q8_0, 1.0KB/tok, Edge, Pydantic 1-bit, latência imperceptível |
 
 ## Tasks mecânicas do Córtex (intercepta ANTES dos alta-precisão)
 1. **Reranking de Contexto em RAG**: 150k tokens brutos → córtex lista IDs dos 3 parágrafos relevantes → alvo recebe só o essencial (zero OOM).
@@ -826,9 +824,9 @@ Fontes: Adendas 7-21 · validação GM-oficial 12/12 tarefas ×4 candidatos · r
 6. **Sincronia com needle 2 AI**: triagem → se padrão exigir busca exata, POST /complete cirúrgico na porta do needle 2 (sem inundar a lib C).
 
 ## Implementação obrigatória
-- Hooks `kronjob-talamus-filter.py` + `sdd-talamus-filter.py` (session.start) DEVEM: ler stdin JSON do opencode, classificar intent, rotear phatics para early-exit, e injetar `__KRONJOB_TALAMUS__` no contexto da sessão.
-- A cada atualização da stack local (R27), re-descrever alta-precisão vs córtex neste documento e sincronizar `manifest_llm.json` + `llm-inventory.json`.
-- O córtex (rwkv7 :9084) NUNCA recebe tarefas de raciocínio profundo — só mecânicas (ler/limpar/estruturar/extrair IDs).
+- Hooks `kronjob-talamus-filter.py` + `sdd-talamus-filter.py` (session.start) DEVEM: ler stdin JSON do opencode, classificar intent, rotear phatics para early-exit (RWKV :9084 ou SmolLM2 :9093), e injetar `__KRONJOB_TALAMUS__` no contexto da sessão.
+- A cada atualização da stack local (R27), re-descrever alta-precisão vs córtex DUAL neste documento e sincronizar `manifest_llm.json` + `llm-inventory.json`.
+- O córtex DUAL (RWKV :9084 massivo + SmolLM2 :9093 micro) NUNCA recebe tarefas de raciocínio profundo — só mecânicas (ler/limpar/estruturar/extrair IDs/1-bit).
 
 ---
 

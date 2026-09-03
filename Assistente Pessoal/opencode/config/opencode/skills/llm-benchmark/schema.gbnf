@@ -1,0 +1,15 @@
+# GBNF schema root (root-level schema)
+[
+  {
+    "type": "object",
+    "properties": {
+      "task_id": {"type": "string"},
+      "run_id": {"type": "string"},
+      "objective": {"type": "string"},
+      "evidence_lines": {"type": "array", "items": {"type": "string"}},
+      "status": {"type": "string"},
+      "validation": {"type": "boolean"}
+    },
+    "required": ["task_id", "run_id", "objective", "evidence_lines", "status", "validation"]
+  }
+]

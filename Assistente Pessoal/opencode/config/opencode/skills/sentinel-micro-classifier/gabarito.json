@@ -1,0 +1,34 @@
+{
+  "allow": {
+    "type": "object",
+    "properties": {
+      "text": {
+        "type": "string",
+        "maxLength": 256,
+        "pattern": "^[a-zA-Z0-9\\s-]+$"
+      },
+      "sentimento": {
+        "type": "string",
+        "enum": ["positivo", "negativo", "neutro"]
+      },
+      "prova": {
+        "type": "string",
+        "maxLength": 16
+      },
+      "checksum": {
+        "type": "string",
+        "maxLength": 8
+      }
+    },
+    "required": ["text", "sentimento", "prova", "checksum"],
+    "minProperties": 4
+  },
+  "deny": {
+    "type": "object",
+    "properties": {
+      "invalid": true,
+      "extra": true
+    },
+    "additionalProperties": false
+  }
+}

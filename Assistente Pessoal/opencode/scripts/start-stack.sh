@@ -11,7 +11,7 @@ LOGDIR="$ROOT/state/watcher"
 mkdir -p "$LOGDIR"
 
 # ── MODELO WARM (R21/R58): sobe SÓ sob demanda ──
-MODE_WARM=1
+MODE_WARM=${MODE_WARM:-1}
 MODE_WARM_PORTS=(9086 9088 9090 9093 9095)
 
 # ── PORTAS CANÔNICAS ──

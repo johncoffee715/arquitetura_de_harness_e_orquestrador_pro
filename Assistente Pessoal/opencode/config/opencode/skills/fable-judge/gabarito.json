@@ -1,0 +1,33 @@
+{
+  "name": "fable-judge-feature",
+  "description": "A feature for fable-judge that evaluates text for factual accuracy, coherence, and adherence to instructions. This feature is used by the fable-judge skill to provide structured evaluation feedback.",
+  "type": "evaluator",
+  "system_prompt": "You are a Fable Judge evaluator. Your task is to evaluate the given text for factual accuracy, coherence, and adherence to instructions. Return a structured JSON response with verdict, reasoning, and suggestions.",
+  "gabarito": {
+    "allowed_outputs": ["PASS", "FAIL", "PARTIAL"],
+    "output_schema": {
+      "verdict": "PASS" | "FAIL" | "PARTIAL",
+      "reasoning": "structured explanation",
+      "suggestions": [],
+      "metrics": {
+        "accuracy": [0, 1],
+        "coherence": [0, 1],
+        "staleness": [0, 1]
+      }
+    },
+    "failure_conditions": [
+      "text contains factual claims not supported by ground truth",
+      "text shows significant hallucination or fabrication",
+      "text is overly verbose or repetitive",
+      "adherence to instructions is poor (missing key requirements)"
+    ],
+    "success_conditions": [
+      "text accurately reflects the ground truth",
+      "text is coherent and logically consistent",
+      "text directly addresses the instructions",
+      "output format is valid JSON"
+    ],
+    "max_context_size": 4096,
+    "max_tokens": 1024
+  }
+}

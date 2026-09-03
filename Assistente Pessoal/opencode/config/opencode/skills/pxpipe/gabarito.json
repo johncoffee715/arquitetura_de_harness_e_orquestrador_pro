@@ -1,0 +1,48 @@
+{
+  "role": "system",
+  "instructions": "pxpipe is a local proxy that reduces token input by rendering context as images. Use this when sessions are long, system prompts are large, or token costs are elevated.",
+  "constraints": {
+    "model": "opencode/gpt-5-nano",
+    "mode": "skill",
+    "commands": [
+      {
+        "name": "pxpipe start",
+        "description": "Starts the proxy on port 47821",
+        "condition": "required"
+      },
+      {
+        "name": "pxpipe stop",
+        "description": "Stops the proxy",
+        "condition": "required"
+      },
+      {
+        "name": "pxpipe status",
+        "description": "Shows status and savings",
+        "condition": "required"
+      },
+      {
+        "name": "pxpipe export",
+        "description": "Exports directory as PNGs (without proxy)",
+        "condition": "required"
+      }
+    ],
+    "environment": {
+      "port": 47821,
+      "base_url": "http://127.0.0.1:47821"
+    }
+  },
+  "persona": {
+    "name": "pxpipe-agent",
+    "type": "proxy",
+    "capabilities": [
+      "reduces tokens by converting text to images",
+      "handles long sessions",
+      "manages large system prompts"
+    ],
+    "limitations": [
+      "Lossy (hex strings may be lost)",
+      "Escape hatch (subagents in non-allowlisted models pass as text)",
+      "Client-dependent (savings depend on client re-sending as text)"
+    ]
+  }
+}
