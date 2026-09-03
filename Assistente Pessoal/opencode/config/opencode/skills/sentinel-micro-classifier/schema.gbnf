@@ -1,20 +1,2 @@
-{
-  "start": {
-    "type": "object",
-    "properties": {
-      "sentimento": {
-        "type": "string",
-        "value": "positivo"
-      },
-      "prova": {
-        "type": "string",
-        "value": "abc123"
-      },
-      "checksum": {
-        "type": "string",
-        "value": "abc"
-      }
-    },
-    "required": ["sentimento", "prova", "checksum"]
-  }
-}
+root ::= "{" ws "\"sentimento\"" ws ":" ws ("\"positivo\"" | "\"negativo\"" | "\"neutro\"") ws "}"
+ws ::= [ \t\n]*

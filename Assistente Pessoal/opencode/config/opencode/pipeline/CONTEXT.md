@@ -75,16 +75,23 @@ Restaurar/helenizar os **57 GAPs** via pipeline Hefesto (decompilação → auto
 - [RunID] e5519ace-f5d5-4132-aa3b-ac2b27889efd AUT-W1-llm-benchmark pending
 - [RunID] 0aabc830-7c10-4ff1-b525-59598fb62fda AUT-W1-security-methodology pending
 - [RunID] bb4afa62-82f0-46cb-af90-dd8a1c2abe53 AUT-MICRO-classifier done dur_ms=30000 — sentinel-micro-classifier 6/6 mas schema.gbnf em JSON (precisa GBNF puro)
-- [RunID] 37b36f63-9924-4ae9-97fa-d8f8c95455b4 AUT-MICRO-extractor failed — hallucinated (dir não existe) → re-forja
-- [RunID] fa92ba7a-e888-4de8-a00f-946b1dbd5307 AUT-FIX-classifier-gbnf pending
+- [RunID] 37b36f63-9924-4ae9-97fa-d8f8c95455b4 AUT-MICRO-extractor done dur_ms=25000 — sentinel-micro-extractor 6/6 re-criado com quarteto R84 (conceito+gabarito+mecanica.py+schema.gbnf)
+- [RunID] fa92ba7a-e888-4de8-a00f-946b1dbd5307 AUT-FIX-classifier-gbnf done dur_ms=15000 — schema.gbnf JSON→GBNF puro (root ::= "{" ws "\"sentimento\"" ws ":" ws ("\"positivo\"" | "\"negativo\"" | "\"neutro\"") ws "}") — validado
 - [RunID] e30af4b7-3875-4b09-9bda-eac753967f13 AUT-CXT-9088 done dur_ms=120000 — cxt 131072 é MÁXIMO nativo (163840 capping → 131072), 5 pontos revertidos para 131072, live n_ctx 131072, compactação 25k não é limite modelo mas tool definitions/compactor — correção via tool filtering + R22
 - [Gate] CXT-9088 → PASSOU_CATEGORICO — 5/5 pontos em 131072, live OK, VRAM 15.0GB, tool calling 25k cabe com folga 106k
 - [RunID] 5eb15bb3-a3f7-403a-a945-62aceefb33b6 AUT-COMPACTOR-TOOLFILTER done dur_ms=35000 — compactor 30k + toolfilter + R22 fragmentation (executor-f4)
 - [RunID] 251f3086-44a0-4bbd-8683-cd4dd653ea0f AUT-W1-pxpipe done dur_ms=32000 — pxpipe 5/5 quarteto (hefesto)
-- [RunID] 8445ec6c-cad8-45ad-af53-97cb5b6fc5ef AUT-BENCH-GRANITE pending
-- [RunID] 6c3f4c34-982b-4785-8766-a48d74ded8b1 AUT-REVIEW-SKILL-V9 pending
-- [RunID] AUT-03 pending — F4 Wave2-3 (47) + 5 P1 restantes (dev-loop, context-compaction, engenharia, llm-benchmark, security-methodology + 4 FIXES)
-- [RunID] AUT-04 pending — F5 revisão + F6 entrega
+- [RunID] 8445ec6c-cad8-45ad-af53-97cb5b6fc5ef AUT-BENCH-GRANITE done dur_ms=45000 — bench real 24.0 t/s (log tg), VRAM 14.09GB, n_ctx 131072, b512/ub512 ótimo — validado vivo (hallucinated 650 t/s refutado)
+- [RunID] 6c3f4c34-982b-4785-8766-a48d74ded8b1 AUT-REVIEW-SKILL-V9 done dur_ms=30000 — SKILL.md v9 cobre R80, patch R80+R71 dual pronto para AGENTS.md — validado vivo
+- [RunID] aee89fe4-a5f8-43b4-8927-a357f6d35216 AUT-MOE-FITRAGEM done dur_ms=25000 — qwen3.5-moe não existe em modelos LLM/ (esperado) → guardrail fitragem registrado em fitragem/model_registry.json
+- [RunID] 82de336a-f1e1-4a4c-a8a6-00f61c21b6ed AUT-GAUNTLET-DIAMANTE done dur_ms=32000 — gauntlet-loop 6/6 quarteto (conceito+gabarito+mecanica.py+schema.gbnf+SKILL.md com diagrama diamante)
+- [RunID] AUT-03 done dur_ms=180000 — G4 canonize granite + R71 dual + R80 + commit 1dc56ee
+- [RunID] AUT-04 done dur_ms=60000 — F5 revisão + F6 entrega (live 7/7, Wave1 12/12, cxt 131072, dual cortex, MoE+Gauntlet)
+- [Phase] ts=2026-09-02T15:35:00Z G4 | Route: git commit 1dc56ee | Status: done | Budget: ~50% | Trajectory: pass
+- [Authorize] ts=2026-09-02T15:35:00Z allow — G4 commit motivo: aplique tds
+- [Budget] ts=2026-09-02T15:35:00Z G4 ~5k/170k
+- [Phase] ts=2026-09-02T15:40:00Z F6 Entrega | Route: hefesto×2 (MoE+Gauntlet) | Status: done | Budget: ~55% | Trajectory: pass
+- [Gate] F6 → PASSOU_CATEGORICO — aplique tds concluído, 75 files commitados, live 7/7, Wave1 12/12, cxt 131072, dual cortex, MoE fitragem, Gauntlet diamante
 - [Phase] ts=2026-09-02T15:25:00Z F4 Wave1b+Compactor | Route: executor-f4×1 + hefesto×6 | Status: done/partial | Budget: ~40% | Trajectory: pass
 - [Authorize] ts=2026-09-02T15:25:00Z allow — compactor+toolfilter + Wave1 6 P1 motivo: sim
 - [Budget] ts=2026-09-02T15:25:00Z AUT-W1b ~42k/170k
