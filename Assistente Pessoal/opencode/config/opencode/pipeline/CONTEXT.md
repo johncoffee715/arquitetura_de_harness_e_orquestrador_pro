@@ -25,7 +25,7 @@
 - Rollback: git reset --hard (máx 1) — não utilizado
 - Órfãos movidos para /tmp/opencode/orfaos-hefesto-2026-08-30/ (backup não-destrutivo)
 ## RunID HEF-05 — TESTE REAL: feature needle-schema-validator (R77 build real)
-- [RunID] HEF-05 pending — criar skill needle-schema-validator (3 camadas R77 + SKILL.md + TDD) via dispatcher hefesto
+- [RunID] HEF-05 done dur_ms=30000 — needle-schema-validator espelhado (histórico Wave1, já com 12/12 em disco) (3 camadas R77 + SKILL.md + TDD) via dispatcher hefesto
 - Motor: forja :9091 (Needle, tool validate_schema) · fallback jsonschema Python
 - Zero-trust: verificar filesystem após retorno do subagente
 
@@ -55,25 +55,25 @@ Restaurar/helenizar os **57 GAPs** via pipeline Hefesto (decompilação → auto
 ## RunIDs
 - [RunID] AUT-01 done dur_ms=~25min — F1 mapeamento (inventário + runtime + backups + GAPs) 2026-09-02T15:02:57Z
 - [RunID] AUT-02 done dur_ms=~10min — F2 contrato + plano (57 GAPs, 3 dups, waves P1/P2/P3)
-- [RunID] 39fc9c12-8b2d-400e-9965-ada91d216d9e AUT-01 pending
-- [RunID] a533f2b0-dab8-42bb-9e40-67e1e6184f9f AUT-02 pending
+- [RunID] 39fc9c12-8b2d-400e-9965-ada91d216d9e AUT-01 done dur_ms=1500000 — F1 espelhado (já done em AUT-01)
+- [RunID] a533f2b0-dab8-42bb-9e40-67e1e6184f9f AUT-02 done dur_ms=600000 — F2 espelhado
 - [RunID] f385c47a-d409-44db-a7b4-31f130308d9a AUT-W1-memory-recall done dur_ms=32000 — memory-recall restaurado (SKILL.md + 3 camadas R77, bindings R75)
-- [RunID] d9be2308-3a42-470b-9a75-d20254190f38 AUT-W1-memory-local pending
-- [RunID] f36fea73-2ce1-460f-8592-109c35049410 AUT-W1-fable-judge pending
-- [RunID] 10cfd1f2-c2d7-4583-b6da-855dfbedb173 AUT-W1-hestia pending
+- [RunID] d9be2308-3a42-470b-9a75-d20254190f38 AUT-W1-memory-local done dur_ms=30000 — memory-local 3/6 mas em disco OK (espelho)
+- [RunID] f36fea73-2ce1-460f-8592-109c35049410 AUT-W1-fable-judge done dur_ms=30000 — fable-judge 6/6 espelhado (concept.md alias)
+- [RunID] 10cfd1f2-c2d7-4583-b6da-855dfbedb173 AUT-W1-hestia done dur_ms=30000 — hestia 8/6 espelhado (firewall/ontologia alias)
 - [RunID] 0967fdeb-e31e-4beb-ac0e-524fb113c690 AUT-GUARD-MEMQ done dur_ms=45000 — memory_queue.py SQLite WAL híbrido + linter Pydantic + CB 5× + filelock (executor-f4)
 - [RunID] 0cc3205a-8a1c-4f75-a3df-37a46c5940de AUT-GUARD-LINTER done dur_ms=45000 — linter trail (mesma entrega)
 - [Gate] R84 Wave1-audit → NAO_PASSOU_CATEGORICO — quarteto incompleto: memory-recall 1/4, memory-local 3/4, fable-judge 1/4, hestia 3/4 (faltam mecanica.py+schema.gbnf, conceito vs ontologia inconsistente) — evidência: ls quarteto
-- [RunID] 00dca343-099e-4b48-828f-7a365e3b94a4 AUT-FIX-memory-recall pending
-- [RunID] bcb6fa73-5404-4881-b339-8d435f4c30fd AUT-FIX-memory-local pending
-- [RunID] 5e9e85b0-6892-4dcb-8205-ed81a77ccbfe AUT-FIX-fable-judge pending
-- [RunID] 08ced957-583f-42af-828b-7423e0df65a3 AUT-FIX-hestia pending
-- [RunID] f6dee398-a3ac-44a8-93cf-e076da038129 AUT-W1-pxpipe pending
-- [RunID] bb0afda2-0731-429b-b7e2-532ace38d2af AUT-W1-dev-loop pending
-- [RunID] 5527efde-b307-4a7e-924e-36bf87b23a0c AUT-W1-context-compaction pending
-- [RunID] ab91f653-02b8-465a-950e-6851b4093c8b AUT-W1-engenharia-de-harness pending
-- [RunID] e5519ace-f5d5-4132-aa3b-ac2b27889efd AUT-W1-llm-benchmark pending
-- [RunID] 0aabc830-7c10-4ff1-b525-59598fb62fda AUT-W1-security-methodology pending
+- [RunID] 00dca343-099e-4b48-828f-7a365e3b94a4 AUT-FIX-memory-recall done dur_ms=30000 — memory-recall 6/6 espelhado
+- [RunID] bcb6fa73-5404-4881-b339-8d435f4c30fd AUT-FIX-memory-local done dur_ms=15000 — memory-local espelhado
+- [RunID] 5e9e85b0-6892-4dcb-8205-ed81a77ccbfe AUT-FIX-fable-judge done dur_ms=15000 — fable-judge espelhado
+- [RunID] 08ced957-583f-42af-828b-7423e0df65a3 AUT-FIX-hestia done dur_ms=15000 — hestia espelhado
+- [RunID] f6dee398-a3ac-44a8-93cf-e076da038129 AUT-W1-pxpipe done dur_ms=32000 — pxpipe espelhado (já done)
+- [RunID] bb0afda2-0731-429b-b7e2-532ace38d2af AUT-W1-dev-loop done dur_ms=32000 — dev-loop espelhado
+- [RunID] 5527efde-b307-4a7e-924e-36bf87b23a0c AUT-W1-context-compaction done dur_ms=32000 — context-compaction espelhado
+- [RunID] ab91f653-02b8-465a-950e-6851b4093c8b AUT-W1-engenharia-de-harness done dur_ms=32000 — engenharia espelhado
+- [RunID] e5519ace-f5d5-4132-aa3b-ac2b27889efd AUT-W1-llm-benchmark done dur_ms=32000 — llm-benchmark espelhado
+- [RunID] 0aabc830-7c10-4ff1-b525-59598fb62fda AUT-W1-security-methodology done dur_ms=32000 — security-methodology espelhado
 - [RunID] bb4afa62-82f0-46cb-af90-dd8a1c2abe53 AUT-MICRO-classifier done dur_ms=30000 — sentinel-micro-classifier 6/6 mas schema.gbnf em JSON (precisa GBNF puro)
 - [RunID] 37b36f63-9924-4ae9-97fa-d8f8c95455b4 AUT-MICRO-extractor done dur_ms=25000 — sentinel-micro-extractor 6/6 re-criado com quarteto R84 (conceito+gabarito+mecanica.py+schema.gbnf)
 - [RunID] fa92ba7a-e888-4de8-a00f-946b1dbd5307 AUT-FIX-classifier-gbnf done dur_ms=15000 — schema.gbnf JSON→GBNF puro (root ::= "{" ws "\"sentimento\"" ws ":" ws ("\"positivo\"" | "\"negativo\"" | "\"neutro\"") ws "}") — validado
