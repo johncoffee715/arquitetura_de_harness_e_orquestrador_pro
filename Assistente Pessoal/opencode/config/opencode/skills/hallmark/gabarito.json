@@ -1,0 +1,32 @@
+{
+  "version": "1.0",
+  "skill_name": "hallmark",
+  "purpose": "Create and manage hallmark skill with R84 quarteto (Córtex Talâmico) compliance",
+  "quarteto": {
+    "r1": {
+      "name": "conceito",
+      "description": "Descrição detalhada do conceito de marcação",
+      "max_lines": 100,
+      "min_lines": 50
+    },
+    "r2": {
+      "name": "firewall",
+      "description": "Regras de segurança e restrições",
+      "max_tokens": 1000,
+      "min_tokens": 200
+    },
+    "r3": {
+      "name": "mecanica",
+      "description": "Lógica de ignição e validação",
+      "max_lines": 100,
+      "min_lines": 30
+    },
+    "r4": {
+      "name": "gabarito",
+      "description": "Schema de validação e parâmetros",
+      "type": "object",
+      "min_properties": 1,
+      "max_properties": 10
+    }
+  }
+}

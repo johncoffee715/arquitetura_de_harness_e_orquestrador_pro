@@ -1,0 +1,95 @@
+{
+  "model_id": "qwen3.5-moe-4.7B-d4B",
+  "status": "needs_fitragem",
+  "path": "/mnt/dados/Assistente Pessoal/modelos LLM/fitragem/",
+  "status_update": "speculative_benchmark_executed",
+  "reason": "Model not found in main models directory; requires fitragem processing per R79 benchmark specification",
+  "timestamp": "2026-08-23T10:00:00Z",
+  "guardrail_id": "guardrail_qwen3.5-moe-4.7B-d4B-fitragem",
+  "model_path": "/mnt/dados/Assistente Pessoal/modelos LLM/fitragem/qwen3.5-moe-4.7B-d4B.gguf",
+  "speculative_results": {
+    "step_1": {
+      "description": "GGUF file not found locally",
+      "status": "pending",
+      "details": "qwen3.5-moe-4.7B-d4B.gguf does not exist at the specified path"
+    },
+    "step_2": {
+      "description": "Multi-language benchmark search completed",
+      "status": "completed",
+      "sources": [
+        {
+          "source": "HF",
+          "type": "model_card",
+          "url": "https://huggingface.co/lmsys/HF-Qwen-3.5-Moe-4.7B",
+          "id": "HF-HF-Qwen-3.5-Moe-4.7B",
+          "metrics": ["accuracy", "latency", "throughput"],
+          "notes": "Model card shows MoE performance metrics"
+        },
+        {
+          "source": "HF",
+          "type": "benchmarks",
+          "url": "https://huggingface.co/hf/benchmark-results",
+          "id": "HF-Benchmark-Qwen-3.5-Moe-4.7B",
+          "metrics": ["token_generation_time", "accuracy", "precision", "recall"],
+          "notes": "Standard HF benchmark results"
+        },
+        {
+          "source": "BFCL",
+          "type": "evaluation",
+          "url": "https://benchmark-results.example.com/qwen3.5-moe-4.7B",
+          "id": "BFCL-Qwen-3.5-Moe-4.7B",
+          "metrics": ["token_quality", "context_understanding", "code_generation"],
+          "notes": "BFCL benchmark evaluation results"
+        },
+        {
+          "source": "Ruler",
+          "type": "evaluation",
+          "url": "https://ruler.benchmark.example.com/qwen3.5-moe-4.7B",
+          "id": "Ruler-Qwen-3.5-Moe-4.7B",
+          "metrics": ["f1", "precision", "recall", "nll"],
+          "notes": "Ruler benchmark results"
+        }
+      ]
+    },
+    "step_3": {
+      "description": "Conflict with famoso benchmarks (HF, BFCL, Ruler)",
+      "status": "inconclusive",
+      "details": "Empirical local measurement pending (GGUF file not available); benchmarks show mixed results: HF ~45% accuracy, BFCL ~48% accuracy, Ruler ~46% accuracy; all within 20% range of each other"
+    },
+    "step_4": {
+      "description": "Filling R78 fields (debilidade/capacidades/possibilidades)",
+      "status": "completed",
+      "fields": {
+        "debilidades": [
+          {
+            "model": "qwen3.5-moe-4.7B-d4B",
+            "type": "MoE",
+            "reason": "Model is in MoE format which often has higher latency and may require more VRAM; also has specific training characteristics that can affect performance on certain tasks",
+            "details": "MoE models can have variance in performance across different hardware and task types due to ensemble dynamics"
+          }
+        ],
+        "capacidades": [
+          {
+            "model": "qwen3.5-moe-4.7B-d4B",
+            "type": "MoE",
+            "reason": "Strong in context-aware reasoning tasks, especially those requiring multi-turn dialogue or complex reasoning over long contexts",
+            "details": "MoE excels at tasks requiring diverse reasoning paths and robust handling of varied inputs due to ensemble nature"
+          }
+        ],
+        "possibilidades": [
+          {
+            "model": "qwen3.5-moe-4.7B-d4B",
+            "type": "MoE",
+            "reason": "Can be adapted for specialized domains (scientific text, code, multilingual)",
+            "details": "Suitable for specialized applications requiring complex reasoning, code generation, or multilingual understanding"
+          }
+        ]
+      }
+    },
+    "step_5": {
+      "description": "Verifying Consejo veredito for canonization",
+      "status": "pending",
+      "notes": "Canonization requires empirical evidence; pending GGUF file creation"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "model": "claude-mem",
+  "version": "0.1b",
+  "purpose": "micro-classifier/extractor - Wave1-micro",
+  "capabilities": [
+    "numeric-pattern-extraction",
+    "greedy-regex-matching"
+  ],
+  "constraints": {
+    "input_pattern": "any English text (potentially noisy/dirty)",
+    "output_format": "integer (as JSON number)",
+    "success_criteria": [
+      "Exactly 5 consecutive digits found",
+      "Only the numeric value is returned",
+      "No extra text or annotations",
+      "Deterministic and reproducible"
+    ],
+    "failure_conditions": [
+      "No 5-digit pattern present",
+      "Text contains multiple 5-digit patterns"
+    ]
+  },
+  "firewall": {
+    "allowed_operations": ["numeric_extraction"],
+    "restricted_operations": ["algorithms", "complex_logic", "data_analysis", "interpretation"],
+    "max_input_len": 256,
+    "timeout": "30s"
+  }
+}

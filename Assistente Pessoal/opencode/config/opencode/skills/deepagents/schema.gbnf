@@ -1,0 +1,7 @@
+# GBNF schema root for DeepAgents skill
+# Defines the expected input format for the skill
+
+root:
+    task_description: string
+    code_template: string
+    max_tokens: integer

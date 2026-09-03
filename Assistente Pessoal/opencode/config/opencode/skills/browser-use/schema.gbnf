@@ -1,0 +1,15 @@
+{
+  "name": "browser-use",
+  "description": "Browser-use skill for extracting and summarizing web content for task completion.",
+  "type": "skill",
+  "parameters": {
+    "url": {
+      "type": "string",
+      "example": "https://example.com/page"
+    },
+    "max_context": {
+      "type": "integer",
+      "example": 4096
+    }
+  }
+}

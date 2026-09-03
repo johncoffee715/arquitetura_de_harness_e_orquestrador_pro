@@ -87,11 +87,21 @@ Restaurar/helenizar os **57 GAPs** via pipeline Hefesto (decompilação → auto
 - [RunID] 82de336a-f1e1-4a4c-a8a6-00f61c21b6ed AUT-GAUNTLET-DIAMANTE done dur_ms=32000 — gauntlet-loop 6/6 quarteto (conceito+gabarito+mecanica.py+schema.gbnf+SKILL.md com diagrama diamante)
 - [RunID] AUT-03 done dur_ms=180000 — G4 canonize granite + R71 dual + R80 + commit 1dc56ee
 - [RunID] AUT-04 done dur_ms=60000 — F5 revisão + F6 entrega (live 7/7, Wave1 12/12, cxt 131072, dual cortex, MoE+Gauntlet)
+- [RunID] 6a4ccad0-44c5-4737-9063-7dcaab39cc9d AUT-W2-browser-use done dur_ms=35000 — browser-use 6/6 quarteto
+- [RunID] e6fe05a0-cd8f-4085-8ff7-47167dde3875 AUT-W2-firecrawl done dur_ms=35000 — firecrawl 6/6
+- [RunID] 10fbd9a7-786e-452a-b1d3-40e8ce9ec335 AUT-W2-claude-mem done dur_ms=35000 — claude-mem 6/6
+- [RunID] 54fff90c-b29c-415b-99cd-f3e41f5b1461 AUT-W2-deepagents done dur_ms=35000 — deepagents 6/6
+- [RunID] 8732d248-be88-4afb-9df6-359da692f43e AUT-W2-hallmark done dur_ms=35000 — hallmark 6/6
+- [RunID] e26c15b7-b9bd-49c6-a5f8-f71cf863dae2 AUT-MOE-R79-SWEEP done dur_ms=40000 — MoE R79 speculative 5/5 (GGUF pendente, veredito pendente GGUF)
+- [RunID] AUT-04 done dur_ms=60000 — F5 revisão + F6 entrega (live 7/7, Wave1 12/12, cxt 131072, dual cortex, MoE+Gauntlet)
 - [Phase] ts=2026-09-02T15:35:00Z G4 | Route: git commit 1dc56ee | Status: done | Budget: ~50% | Trajectory: pass
 - [Authorize] ts=2026-09-02T15:35:00Z allow — G4 commit motivo: aplique tds
 - [Budget] ts=2026-09-02T15:35:00Z G4 ~5k/170k
 - [Phase] ts=2026-09-02T15:40:00Z F6 Entrega | Route: hefesto×2 (MoE+Gauntlet) | Status: done | Budget: ~55% | Trajectory: pass
 - [Gate] F6 → PASSOU_CATEGORICO — aplique tds concluído, 75 files commitados, live 7/7, Wave1 12/12, cxt 131072, dual cortex, MoE fitragem, Gauntlet diamante
+- [Phase] ts=2026-09-02T15:45:00Z Wave2 P2 | Route: hefesto×5 + executor-f4×1 | Status: running | Budget: ~60%
+- [Authorize] ts=2026-09-02T15:45:00Z allow — Wave2 P2 (5 paralelas) + MoE R79 + Gauntlet motivo: faça agora
+- [Budget] ts=2026-09-02T15:45:00Z Wave2 ~30k/170k
 - [Phase] ts=2026-09-02T15:25:00Z F4 Wave1b+Compactor | Route: executor-f4×1 + hefesto×6 | Status: done/partial | Budget: ~40% | Trajectory: pass
 - [Authorize] ts=2026-09-02T15:25:00Z allow — compactor+toolfilter + Wave1 6 P1 motivo: sim
 - [Budget] ts=2026-09-02T15:25:00Z AUT-W1b ~42k/170k

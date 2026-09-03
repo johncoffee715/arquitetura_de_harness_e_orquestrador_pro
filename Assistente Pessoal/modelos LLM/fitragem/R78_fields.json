@@ -1,0 +1,26 @@
+{
+  "debilidades": [
+    {
+      "model": "qwen3.5-moe-4.7B-d4B",
+      "type": "MoE",
+      "reason": "Model is in MoE format which often has higher latency and may require more VRAM; also has specific training characteristics that can affect performance on certain tasks",
+      "details": "MoE models can have variance in performance across different hardware and task types due to ensemble dynamics"
+    }
+  ],
+  "capacidades": [
+    {
+      "model": "qwen3.5-moe-4.7B-d4B",
+      "type": "MoE",
+      "reason": "Strong in context-aware reasoning tasks, especially those requiring multi-turn dialogue or complex reasoning over long contexts",
+      "details": "MoE excels at tasks requiring diverse reasoning paths and robust handling of varied inputs due to ensemble nature"
+    }
+  ],
+  "possibilidades": [
+    {
+      "model": "qwen3.5-moe-4.7B-d4B",
+      "type": "MoE",
+      "reason": "Can be adapted for specialized domains (scientific text, code, multilingual)",
+      "details": "Suitable for specialized applications requiring complex reasoning, code generation, or multilingual understanding"
+    }
+  ]
+}

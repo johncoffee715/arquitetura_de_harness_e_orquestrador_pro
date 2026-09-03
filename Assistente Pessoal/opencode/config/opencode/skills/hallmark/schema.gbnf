@@ -1,0 +1,27 @@
+# Schema GBNF - Hallmark Skill (R84 quarteto)
+# Root schema definition for the skill
+
+# This is a simplified GBNF schema representing the Hallmark skill structure
+# The schema defines the expected input/output format for the skill
+
+type hallmark_skill {
+  field conceito {
+    type: string;
+    max_length: 500;
+  }
+  field firewall {
+    type: object;
+    max_properties: 10;
+    min_properties: 3;
+  }
+  field mecanica {
+    type: object;
+    max_properties: 5;
+    min_properties: 2;
+  }
+  field gabarito {
+    type: object;
+    max_properties: 10;
+    min_properties: 1;
+  }
+}

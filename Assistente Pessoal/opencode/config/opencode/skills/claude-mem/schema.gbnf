@@ -1,0 +1,28 @@
+{
+  "schema_name": "claude-mem",
+  "model": "wave-micro-0.1b",
+  "description": "Micro-classifier/extractor that extracts 5-digit numeric patterns from dirty text using GBNF regex.",
+  "input_schema": {
+    "type": "string",
+    "pattern": "^.*$",
+    "description": "Any English text (potentially noisy/dirty)"
+  },
+  "output_schema": {
+    "type": "integer",
+    "minimum": -999999,
+    "maximum": 999999,
+    "exclusive_minimum": false,
+    "exclusive_maximum": false
+  },
+  "constraints": {
+    "extraction_rule": "Extract the first 5-digit pattern using regex [0-9]{5} (allowing leading zeros).",
+    "success": {
+      "pattern": "exactly 5 consecutive digits found (e.g., 12345, 00123)",
+      "output_type": "integer"
+    },
+    "failure": {
+      "pattern": "no 5-digit pattern found in text",
+      "output_type": "null"
+    }
+  }
+}

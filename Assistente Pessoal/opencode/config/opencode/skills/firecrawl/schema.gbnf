@@ -1,0 +1,20 @@
+// GBNF schema root for firecrawl skill
+{
+  "type": "object",
+  "properties": {
+    "task_id": {"type": "string"},
+    "run_id": {"type": "string"},
+    "objective": {"type": "string"},
+    "constraints": {
+      "type": "object",
+      "properties": {
+        "run_id": {"type": "string"},
+        "objective": {"type": "string"},
+        "constraints": {
+          "type": "array",
+          "items": {"type": "string"}
+        }
+      }
+    }
+  }
+}
