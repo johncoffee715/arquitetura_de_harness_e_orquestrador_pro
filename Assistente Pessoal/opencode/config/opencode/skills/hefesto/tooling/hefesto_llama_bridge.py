@@ -40,6 +40,23 @@ LD_LIBRARY_PATH = "/mnt/dados/Assistente Pessoal/opencode/llama.cpp/bin"
 
 
 
+# Watchdog 2.5 — detecção de loop/stall durante geração (C-004) — graceful degrade.
+def _load_watchdog():
+    try:
+        import importlib.util as _ilu
+        _p = TOOLING_DIR / "generation_watchdog.py"
+        if _p.exists():
+            _spec = _ilu.spec_from_file_location("generation_watchdog", str(_p))
+            _mod = _ilu.module_from_spec(_spec)
+            _spec.loader.exec_module(_mod)
+            return _mod.watchdog_check
+    except Exception:
+        pass
+    return None
+
+_WATCHDOG_CHECK = _load_watchdog()
+
+
 # ==============================================================================
 # NÚCLEO R81/R82 — Geração Restrita Universal (Constrained Decoding)
 # Fonte única: gabarito.json (R77) → Pydantic → JSON Schema → GBNF em runtime.
@@ -185,6 +202,17 @@ class ConstrainedGenerate:
                 if not text or not text.strip():
                     last_error = "resposta vazia do motor"
                     continue
+                if _WATCHDOG_CHECK is not None:
+                    try:
+                        import time as _time
+                        # Checagem pós-geração (n-gram/sequência/entropia/max);
+                        # stall ao vivo pertence ao timeout do servidor.
+                        _wd = _WATCHDOG_CHECK(text, len(text) // 4, self.max_tokens, _time.time())
+                        if _wd.get("action") in ("STOP", "INVALIDATE"):
+                            last_error = ("watchdog 2.5: " + str(_wd.get("reason", _wd.get("details", "repetição/stall detectado"))))[:200]
+                            continue
+                    except Exception:
+                        pass
                 if self.response_model is None:
                     return text, {"attempts": attempt, "ok": True, "raw": text}
                 obj = self.response_model.model_validate_json(text)

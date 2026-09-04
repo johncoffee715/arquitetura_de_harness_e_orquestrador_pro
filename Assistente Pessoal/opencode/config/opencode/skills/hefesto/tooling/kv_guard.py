@@ -48,7 +48,7 @@ def fragment_semantic(text: str, max_tokens_per_fragment: int, overlap_ratio: fl
     """
     Fragmenta em fronteiras estruturais (nunca por contagem matemática):
     - Código: fim de blocos lógicos (funções, classes)
-    - Texto: parágrafos fechados (\\n\\n)
+    - Texto: parágrafos fechados (\n\n)
     Overlap 15% para garantir continuidade.
     Retorna lista de fragmentos com envelope.
     """
@@ -66,13 +66,13 @@ def fragment_semantic(text: str, max_tokens_per_fragment: int, overlap_ratio: fl
             "tokens": estimate_tokens(text),
         }]
     # Quebrar por parágrafos ou blocos
-    # Tentar por \\n\\n primeiro (texto), depois por linhas de código
-    if "\\n\\n" in text:
-        blocks = text.split("\\n\\n")
-        sep = "\\n\\n"
+    # Tentar por \n\n primeiro (texto), depois por linhas de código
+    if "\n\n" in text:
+        blocks = text.split("\n\n")
+        sep = "\n\n"
     else:
         # Código: tentar por linhas com indentação ou por funções
-        blocks = re.split(r"(\\ndef |\\nclass |\\n\\n)", text)
+        blocks = re.split(r"(\ndef |\nclass |\n\n)", text)
         sep = ""
     fragments = []
     current = ""
@@ -144,5 +144,5 @@ if __name__ == "__main__":
     # Teste rápido
     budget = calculate_budget(262144, "system prompt longo " * 100, "tool defs")
     print(f"budget available: {budget['available']}")
-    frags = fragment_semantic("para1\\n\\npara2\\n\\npara3 " * 100, 100)
+    frags = fragment_semantic("para1\n\npara2\n\npara3 " * 100, 100)
     print(f"fragmentos: {len(frags)}")

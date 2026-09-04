@@ -1,7 +1,7 @@
 {
  "status": "up",
- "modelo": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS",
+ "modelo": "Qwen3.6-35B-A3B-UD-IQ3_XXS",
  "ctx": 262144,
- "model_path": "/mnt/dados/Assistente Pessoal/modelos LLM/Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS.gguf",
- "ts": "2026-09-04T03:25:26.183699+00:00"
+ "model_path": "/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf",
+ "ts": "2026-09-04T04:03:00.326163+00:00"
 }

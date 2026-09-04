@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-09-04T01:39:09.490658Z",
+  "last_updated": "2026-09-04T03:46:54.747097Z",
   "description": "Manifesto de modelos LLM para o Grafo Híbrido v2 — regenerado por sync-llm-stack.py a partir de modelos LLM/manifesto_llm.json.",
   "cortex_sensorial": {
     "model": "rwkv7-g1d-0.4b-instruct",
@@ -49,7 +49,7 @@
       "ctx_allocated": 65536,
       "status": "online"
     },
-    "ornith-1.5-35b-a3b-ad-iq3_s-iq3_xxs": {
+    "qwen3.6-35b-a3b-ud-iq3_xxs": {
       "slot": "8083",
       "category": "orquestrador",
       "high_precision": true,

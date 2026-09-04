@@ -1,14 +1,14 @@
 {
   "catalog": "ctx-catalog",
-  "updated": "2026-09-04T01:29:09.415141+00:00",
+  "updated": "2026-09-04T03:47:07.835223+00:00",
   "models": [
     {
-      "model": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS.gguf",
+      "model": "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf",
       "port": 8083,
       "ctx": 262144,
       "kv_type": "K=q4_0 V=q4_0",
       "kv": "5.76 KB/tok · 1.51 GiB @262144",
-      "weights_gb": 14.44,
+      "weights_gb": 12.3,
       "local": "cpu"
     },
     {
@@ -74,13 +74,13 @@
     "models": [
       {
         "key": "orchestrator",
-        "model": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS",
+        "model": "Qwen3.6-35B-A3B-UD-IQ3_XXS",
         "port": 8083,
         "ctx": 262144,
         "local": "cpu",
         "kv_type": "K=q8_0 V=q4_0",
         "kv": "5.76 KB/tok · 1.51 GiB @262144",
-        "weights_gb": 14.44
+        "weights_gb": 12.3
       },
       {
         "key": "bonsai",

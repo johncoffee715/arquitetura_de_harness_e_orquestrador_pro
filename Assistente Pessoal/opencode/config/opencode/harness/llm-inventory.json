@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "last_updated": "2026-09-04T01:39:09.489590Z",
+  "last_updated": "2026-09-04T03:46:54.745960Z",
   "governance": {
     "rule": "R52 — Inventário Global de LLMs Locais (Regra Global Guardrail)",
     "source_of_truth": "config/opencode/AGENTS.md §R52",
@@ -218,11 +218,11 @@
       "status": "online"
     },
     {
-      "id": "ornith-1.5-35b-a3b-ad-iq3_s-iq3_xxs",
+      "id": "qwen3.6-35b-a3b-ud-iq3_xxs",
       "slot": "8083",
-      "file": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS.gguf",
+      "file": "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf",
       "params": "35B",
-      "quant": "IQ3_S-IQ3_XXS (3.44/3.06 bpw mix)",
+      "quant": "UD-IQ3_XXS (3.0625 bpw puro)",
       "arch": "qwen35moe MoE 35B A3B — 256 experts, 8 ativos/token, full_attn_interval=4 (10/40 full-attn), 30/40 linear (SSM)",
       "n_ctx_train": 262144,
       "ctx_allocated": 262144,

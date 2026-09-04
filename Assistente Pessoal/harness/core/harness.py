@@ -154,6 +154,18 @@ class GranMestreHarness:
         except Exception:
             self.model_inheritance = None
             self.stall_watchdog = None
+        # KV Guard 1.5 — orçamento de contexto antes do dispatch (R22; C-004).
+        self.kv_guard: Any = None
+        try:
+            import importlib.util as _ilu
+            _kg_path = Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hefesto/tooling/kv_guard.py")
+            if _kg_path.exists():
+                _kg_spec = _ilu.spec_from_file_location("kv_guard", str(_kg_path))
+                _kg_mod = _ilu.module_from_spec(_kg_spec)
+                _kg_spec.loader.exec_module(_kg_mod)
+                self.kv_guard = _kg_mod
+        except Exception:
+            self.kv_guard = None
 
     def _load_config(self) -> dict:
         """Load harness configuration."""
@@ -269,6 +281,8 @@ class GranMestreHarness:
 
     def _run_wave(self, k: int, total: int, tasks: List[str],
                   plan: Optional[Any], model: Any) -> List[dict]:
+        # Camada 1.5 — KV Guard antes do dispatch (R22; C-004)
+        tasks = self._kv_guard_check(tasks)
         agents = []
         if plan is not None:
             agents = list(getattr(plan, "agents", None) or [])
@@ -291,6 +305,33 @@ class GranMestreHarness:
                 "model": resource_model,
             })
         return results
+
+    def _kv_guard_check(self, tasks: List[str], window: int = 262144) -> List[str]:
+        """Camada 1.5 — orçamento de contexto antes do dispatch (R22; C-004).
+
+        Estima tokens por tarefa; se exceder o orçamento, fragmenta em
+        fronteiras semânticas com overlap (nunca por contagem). Dentro do
+        orçamento ou sem kv_guard: retorna intacta (comportamento inalterado).
+        """
+        if getattr(self, "kv_guard", None) is None:
+            return tasks
+        try:
+            budget = self.kv_guard.calculate_budget(window, "", "")
+            available = int(budget.get("available", 0)) or 0
+            checked: List[str] = []
+            for task in tasks:
+                tokens = int(self.kv_guard.estimate_tokens(task))
+                if available > 0 and self.kv_guard.needs_fragmentation(tokens, available):
+                    frags = self.kv_guard.fragment_semantic(task, available)
+                    print(f"  [KV Guard] task ~{tokens}tok > budget ~{available}tok — "
+                          f"fragmentado em {len(frags)}")
+                    checked.extend(f["inputs"] for f in frags)
+                else:
+                    checked.append(task)
+            return checked
+        except Exception as e:
+            print(f"  [skip] KV Guard indisponível: {e}")
+            return tasks
 
     def _human_approve(self, gate: str) -> bool:
         if self.auto_approve:

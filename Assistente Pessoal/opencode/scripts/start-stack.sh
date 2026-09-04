@@ -61,13 +61,12 @@ compute_ornith_ctx() {
 ORNITH_CTX=$(compute_ornith_ctx)
 echo "[8083] ctx dinâmico = $ORNITH_CTX (rocm-smi)"
 # ══ SEÇÃO GERADA por sync-llm-stack.py · FONTE: manifesto_llm.json (não editar à mão) ══
-# CPU 8083 · orquestrador · Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS · ORQUESTRADOR (CPU, ctx fixo, threads auto)
-launch 8083 "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS.gguf" \
-  -c 262144 -np 1 -b 8192 -ub 2048 -ngl 0 \
+# CPU 8083 · orquestrador · Qwen3.6-35B-A3B-UD-IQ3_XXS · ORQUESTRADOR (CPU, ctx fixo, threads auto)
+launch 8083 "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf" \
+  -c 262144 -np 1 -b 2048 -ub 512 -ngl 0 \
   --cache-type-k q4_0 --cache-type-v q4_0 \
   --jinja --temp 0.6 --top-p 0.95 --top-k 20 \
-  --chat-template-kwargs '{"enable_thinking": false}' \
-  --cache-prompt
+  --chat-template-kwargs '{"enable_thinking": false}'
 
 # GPU 9084 · talamus-cortex · RWKV7-G1d-0.4B-Instruct-FP16 (RWKV — state fixo, ctx nativo)
 launch 9084 "RWKV7-G1d-0.4B-Instruct-FP16.gguf" \

@@ -1,6 +1,6 @@
 {
   "version": "1.2",
-  "updated": "2026-09-04T01:39:09.308527+00:00",
+  "updated": "2026-09-04T03:54:23.580930+00:00",
   "fonte": "auditoria R52 + ctx-cost + start-stack + BENCH-03/09 IQ3 vs IQ4",
   "politica_roteamento": {
     "tipo": "hibrido-em-camadas",
@@ -68,7 +68,7 @@
     "nota_v1_2": "mantida; Granite-4.2-3B assume executor F4 no lugar do Qwen3.8-9B (ver stack_atual.substituicoes)"
   },
   "stack_atual": {
-    "gpu": "9084 RWKV7-0.4B-FP16 + 9086 LFM-1.2B + 9088 granite-4.2-3b + 9090 Ternary-8B + 9092 Gemma-2-2B + 9093 SmolLM2 (VRAM) + 8083 Ornith AD-IQ3 CPU",
+    "gpu": "9084 RWKV7-0.4B-FP16 + 9086 LFM-1.2B + 9088 granite-4.2-3b + 9090 Ternary-8B + 9092 Gemma-2-2B + 9093 SmolLM2 (VRAM) + 8083 Qwen3.6 UD-IQ3 CPU",
     "cpu_slots": 1,
     "total_slots": 9,
     "substituicoes_2026_08_30": [
@@ -81,6 +81,9 @@
     "nota_forja": "Needle-2 ONLINE :9091 (binário nativo x86) — API POST /complete; triagem L0 :8097 + forja :9091",
     "substituicoes_2026_09_03": [
       "8083 Ornith-1.5-35B-A3B-IQ4_XS (18G, IQ4_XS) -> Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS (15.5G, IQ3_S 3.44bpw + IQ3_XXS 3.06bpw, 14.44GiB bench 14.44, pp512 15.74 tg32 3.44) CPU (decisão usuário 2026-09-03; Q4 excluído)"
+    ],
+    "substituicoes_2026_09_04": [
+      "8083 Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS (15.5G) -> Qwen3.6-35B-A3B-UD-IQ3_XXS (13.21G, IQ3_XXS 3.0625bpw, 12.29GiB bench pp512 40.48 tg32 7.14) CPU (decisao usuario G1 2026-09-04; Ornith excluido, libera 15.5G)"
     ]
   },
   "models": [
@@ -312,7 +315,7 @@
       }
     },
     {
-      "model_id": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS",
+      "model_id": "Qwen3.6-35B-A3B-UD-IQ3_XXS",
       "slot_port": 8083,
       "device": "CPU",
       "topologia_arquitetura": {
@@ -329,38 +332,38 @@
         "arch_detail": "qwen35moe MoE 35B A3B — 256 experts, 8 ativos/token, full_attn_interval=4 (10/40 full-attn), 30/40 linear (SSM)"
       },
       "fisica_inferencia": {
-        "quantizacao": "IQ3_S-IQ3_XXS (3.44/3.06 bpw mix)",
-        "pesos_gb": 14.44,
-        "pesos_bytes": 15512189120,
+        "quantizacao": "UD-IQ3_XXS (3.0625 bpw puro)",
+        "pesos_gb": 12.3,
+        "pesos_bytes": 13211155424,
         "ctx_ativo": 262144,
         "cache_k": "q4_0",
         "cache_v": "q4_0",
         "kv_per_token_kb": 5.76,
         "kv_total_gb_at_ctx": 1.51,
-        "tps_decode_empirical": 3.44,
-        "tps_decode_nota": "BENCH-03/09 CPU pp512 15.74 · pp128 7.31 · tg32 3.44 · tg16 3.97 · IQ4_XS baseline pp512 9.67 tg32 1.55 (bench 03/09, 18 threads, -c 4096-262144)",
+        "tps_decode_empirical": 7.14,
+        "tps_decode_nota": "SWEEP-04/09 CPU 18 threads pp512: 2048/512=45.48/7.32 · 4096/1024=44.40/7.28 · 8192/2048=42.95/7.00 · 16384/4096=41.95/6.84 — otimo 2048/512",
         "temp": 0.6,
         "ngl": 0,
         "threads": "auto(18)",
         "flash_attn": false,
-        "nota": "substitui Ornith-1.5-35B-A3B-IQ4_XS 2026-09-03 (decisão usuário; IQ3 14.44GiB vs 17.43GiB IQ4, +63% prefill, +122% decode tg32; mesmo ctx 262144, KV q4_0/q4_0)",
-        "batch_ubatch": "2048/512",
-        "tps_prefill_empirical": 15.74,
+        "nota": "substitui Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS 2026-09-04 (decisao usuario G1; Qwen3.6 +157% prefill +108% decode tg32, -15% pesos; mesmo ctx 262144 qwen35moe 256exp/8, KV q4_0/q4_0)",
+        "batch_ubatch": "2048/512 (crivo 04/09: 4096/1024 -2%, 8192/2048 -6%, 16384/4096 -8% — bandwidth-bound, mantido)",
+        "tps_prefill_empirical": 40.48,
         "mtp": "N/A (arquivo sem head MTP — jashepp removeu 22/08)"
       },
       "vocacao_grafo": "ORQUESTRADOR ATIVO · 35B MoE · CPU · KV q4/q4 @262144",
       "derivado": {
-        "file": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS.gguf",
-        "slug": "ornith-1.5-35b-a3b-ad-iq3_s-iq3_xxs",
+        "file": "Qwen3.6-35B-A3B-UD-IQ3_XXS.gguf",
+        "slug": "qwen3.6-35b-a3b-ud-iq3_xxs",
         "category": "orquestrador",
         "papel": "ORQUESTRADOR ATIVO",
         "ctx_ativo_efetivo": 262144,
         "generator_version": "1.0.0"
       },
       "metrica_avaliativa_r78": {
-        "debilidade": "3.44 t/s CPU tg32 (melhor que 1.55 IQ4, ainda bandwidth-bound DDR 14.44GB); NUNCA síncrono em loop; RAM RSS ~17GB (vs 20.2 IQ4)",
-        "capacidades": "Orquestração/suprema corte (lógica 12/12); síntese macro; decisão final — INSUBSTITUÍVEL até prova em contrário",
-        "possibilidades": "Offload parcial (testado — degrada 1.63 t/s); draft (testado — degrada); única via real = 2ª MI50"
+        "debilidade": "7.14 t/s CPU tg32 (2x Ornith, ainda bandwidth-bound DDR 12.29GB); thinking hibrido exige enable_thinking=false p/ resposta direta; NUNCA sincrono em loop",
+        "capacidades": "Orquestracao/suprema corte; sintese macro; JSON exato sem fences; logica PT correta; tool-call exato; GBNF byte-level conforme (perna qualidade 4/4 04/09)",
+        "possibilidades": "Offload parcial (nao testado — Ornith degradava); draft (nao testado)"
       }
     },
     {
@@ -597,5 +600,24 @@
       "delta_decode": "+122%"
     },
     "recomendacao": "Canonizado IQ3 como orquestrador (15.5G), IQ4 excluído. Próximo teste: lógica 12/12 com IQ3 para medir qualidade (delta erro <5% com defesa 5 camadas)."
+  },
+  "benchmarks_2026_09_04": {
+    "qwen3.6-ud-iq3_xxs": {
+      "prefill_512": 40.48,
+      "decode_32": 7.14,
+      "prefill_128": 44.04,
+      "decode_16": 7.22,
+      "size_gib": 12.29,
+      "bpw": "3.0625 puro",
+      "qualidade": "4/4 (P1 JSON exato, P2 logica PT, P3 tool-call, P4 GBNF) vs Ornith baseline 12/12",
+      "vs_ornith": "+157% prefill, +108% decode tg32"
+    },
+    "qwen3.6-batch-sweep": {
+      "2048/512": "45.48/7.32 OTIMO",
+      "4096/1024": "44.40/7.28",
+      "8192/2048": "42.95/7.00",
+      "16384/4096": "41.95/6.84",
+      "conclusao": "batch maior degrada (DDR bandwidth-bound, igual Ornith R76); servico mantido 2048/512"
+    }
   }
 }
