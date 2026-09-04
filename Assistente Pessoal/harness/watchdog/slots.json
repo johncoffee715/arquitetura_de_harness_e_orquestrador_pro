@@ -1,0 +1,40 @@
+{
+ "interval_s": 30,
+ "slots": [
+  {
+   "port": 8083,
+   "name": "orchestrator",
+   "critical": true
+  },
+  {
+   "port": 9084,
+   "name": "qwen0.8b",
+   "critical": true
+  },
+  {
+   "port": 9086,
+   "name": "lfm2.5",
+   "critical": false
+  },
+  {
+   "port": 9088,
+   "name": "granite-4.2-3b",
+   "critical": false
+  },
+  {
+   "port": 9090,
+   "name": "ternary8b",
+   "critical": false
+  },
+  {
+   "port": 9092,
+   "name": "gemma-2-2b",
+   "critical": true
+  },
+  {
+   "port": 9093,
+   "name": "smollm2-360m",
+   "critical": true
+  }
+ ]
+}
