@@ -19,7 +19,7 @@
   "validation": {
     "schema": "strict_json_schema",
     "required": ["summary", "context_id", "timestamp"],
-    "additional_properties": False
+    "additional_properties": false
   },
   "anti_patterns": [
     "inventive speculation beyond given context",

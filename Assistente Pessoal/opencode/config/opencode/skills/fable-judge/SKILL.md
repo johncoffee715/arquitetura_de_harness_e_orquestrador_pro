@@ -1,53 +1,36 @@
 ---
 name: fable-judge
+description: >-
+  Verificação adversarial de trabalho concluído. Trata qualquer 'done' como conjunto de afirmações, re-executa cada verificação afirmada, detecta checks enfraquecidos e falsos completos. Use após qualquer agente/modelo afirmar que trabalho está completo.
+category: skill-tecnica
+model: local-thalamus/ingestor
 version: 1.0.0
-type: skill
-category: judge
-description: R7/R75 helenized fable-judge skill (F4 Wave1 P1)
-author: Gran-Mestre
-tags: [fable, judge, helenization, R77, R75]
+origin: https://github.com/Sahir619/fable-method
+helenized: true
+r84: true
+r77_triple: true
 ---
+# fable-judge — juiz fabular
 
-# fable-judge skill (Helenized - R77/R75)
+Helenizado de [`https://github.com/Sahir619/fable-method`](https://github.com/Sahir619/fable-method) — essência destilada para harness nativo (R77 tríplice, R84 GBNF travado, R75 categoria).
 
-This skill follows the 3-layer helenization pattern (R77):
-- ontologia: system prompt defining persona and constraints
-- persona: detailed persona with role, capabilities, and constraints
-- mecânica: ignition/validation mechanics and workflow
+## Propósito
+Verificação adversarial de trabalho concluído. Trata qualquer 'done' como conjunto de afirmações, re-executa cada verificação afirmada, detecta checks enfraquecidos e falsos completos. Use após qualquer agente/modelo afirmar que trabalho está completo.
 
-## Category Bindings (R75)
+## Padrões absorvidos
+- avaliação: julgamento, veredito, R28
+- Origem: https://github.com/Sahir619/fable-method
+- Domínio: juiz fabular
 
-The skill is bound to the 'judge' category:
-- model: fable-judge
-- role: judge
-- bindings: { "category": "judge", "role": "judge", "model": "fable-judge" }
+## Como usar (Gran-Mestre)
+1. Detectar necessidade que casa com `fable-judge` (tags: julgamento, veredito).
+2. `skill(name="fable-judge")` — carrega tríplice (conceito + gabarito + mecânica).
+3. Aplicar padrão helenizado ao contexto atual com GBNF travado (`temp 0.3`, `max_retries=3`).
 
-## Global Resources (R2)
+## Tríplice R77
+- `conceito.md` — ontologia/persona imutável (50-100 linhas, R75 `local-thalamus/ingestor`)
+- `gabarito.json` — firewall allow/deny + schema rígido + `stop_tokens` + `max_tokens`
+- `mecanica.md` + `mecanica.py` + `schema.gbnf` — ignição determinística, validação Pydantic, anti-loop
 
-This skill is global and can be invoked across tasks.
-
-## Execution Flow (F4 Wave1 P1)
-
-1. Task reception → 2. System validation → 3. Persona initialization → 4. Skill execution → 5. Result validation → 6. Final output
-
-## Frontmatter YAML Structure
-
-```yaml
----
-name: fable-judge
-version: 1.0.0
-type: skill
-category: judge
-description: R7/R75 helenized fable-judge skill (F4 Wave1 P1)
-author: Gran-Mestre
-tags: [fable, judge, helenization, R77, R75]
----
-```
-
-## Skill Implementation Details
-
-The skill implements the helenização R77/R75 (F4 Wave1 P1) pattern:
-- 3 layers: ontologia/persona/mechanica
-- Category-bound bindings (R75)
-- Global scope (R2)
-- Proper workflow for F4 Wave1 P1
+## Fonte
+https://github.com/Sahir619/fable-method

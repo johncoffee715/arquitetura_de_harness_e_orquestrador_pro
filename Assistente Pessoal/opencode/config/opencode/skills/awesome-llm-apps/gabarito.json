@@ -1,0 +1,42 @@
+{
+  "name": "awesome-llm-apps",
+  "type": "gabarito",
+  "version": "1.0",
+  "description": "Firewall & validation rules for awesome-llm-apps",
+  "rules": {
+    "allowed_models": ["qwen-3.8b", "qwen-1.5b", "qwen-0.8b"],
+    "max_context": 4096,
+    "max_tokens": 2048,
+    "max_input_length_tokens": 512,
+    "max_output_length_tokens": 512,
+    "required_fields": ["app_name", "model_version", "config"],
+    "validation": {
+      "output": {
+        "type": "object",
+        "properties": {
+          "result": {
+            "type": "object",
+            "properties": {
+              "app_output": {
+                "type": "object",
+                "properties": {
+                  "app_name": { "type": "string" },
+                  "model_version": { "type": "string" },
+                  "config": { "type": "object" }
+                }
+              },
+              "metadata": {
+                "type": "object",
+                "properties": {
+                  "trace_id": { "type": "string" },
+                  "execution_time_ms": { "type": "number" }
+                }
+              }
+            }
+          }
+        },
+        "required": ["result"]
+      }
+    }
+  }
+}

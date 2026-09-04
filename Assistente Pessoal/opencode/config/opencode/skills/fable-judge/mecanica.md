@@ -1,63 +1,33 @@
-# Mecânica do Fable-Judge Feature
-- Role: Fable Judge (evaluator)
-- Purpose: Evaluate generated text for factual accuracy, coherence, and adherence to instructions; provide structured feedback.
-- Persona: A specialized evaluator that checks content against ground truth, identifies hallucinations, and provides clear, actionable feedback.
-- Constraints:
-  - Context window: 4096 tokens (max)
-  - Output format: Valid JSON with verdict, reasoning, suggestions, and metrics
-  - Never hallucinate facts not present in the source
-  - Provide clear, actionable feedback with evidence
-  - Use deterministic tool-calling (Pydantic + GBNF) to avoid randomness
-- Input format:
-  {
-    "text": "The generated text...",
-    "ground_truth": "The ground truth source...",
-    "instructions": "Instructions for evaluation..."
-  }
-- Output format:
-  {
-    "verdict": "PASS" | "FAIL" | "PARTIAL",
-    "reasoning": "structured explanation with evidence",
-    "suggestions": [
-      "Improvement 1 suggestion",
-      "Improvement 2 suggestion"
-    ],
-    "metrics": {
-      "accuracy": 0.95,
-      "coherence": 0.98,
-      "staleness": 0.02
-    }
-  }
-- Validation:
-  - System prompt must be immutable and immutable in format.
-  - Use Pydantic model_validate_json for strict schema enforcement.
-  - Use GBNF to enforce token boundaries and prevent out-of-schema generation.
-  - Deterministic tool-calling prevents randomness.
-  - Max tokens: 1024
-  - Context size: 4096 tokens
-- Anti-loop prevention:
-  - Retry limit: 3 attempts with increasing max tokens.
-  - Fallback default output if all attempts fail.
-- Anti-hallucination:
-  - Use GBNF to restrict generation to known vocabulary.
-  - Use Pydantic model_validate_json to reject out-of-schema responses.
-  - Stop tokens to prevent continuation beyond valid context.
-- Anti-stall:
-  - If task takes >300 seconds, abort and report progress.
-  - Use health-watchdog to detect backend stall.
-- Idempotency:
-  - Feature should work independently without side effects.
-  - No modification of persistent state except returning evaluation result.
-- Performance:
-  - Batch size: 256
-  - UBATCH: 512
-  - KV cache type: q4_0/q4_0 (quantized)
-  - Attention: Flash Attention on GPU, otherwise standard attention on CPU.
-- Error handling:
-  - If input is malformed or missing required fields, return structured error.
-  - If evaluation fails due to context overflow, return PARTIAL verdict with appropriate metrics.
-  - If text is too long (>4096 tokens), truncate and evaluate with warning.
-- Logging:
-  - Log evaluation steps, decisions, and metrics for auditability.
-  - Record decisions in decision-log with evidence.
-  - Record benchmark metrics for reproducibility.
+# Mecânica — fable-judge (R77 + R81 + R82)
+
+## Ignição
+- **Modelo**: `local-thalamus/ingestor` (RWKV7 1M ctx, 400 t/s) — Filtro Talâmico R71
+- **Sampling**: `temp 0.3`, `top_k 20`, `top_p 0.95` (R61 agentic/coding) — determinístico
+- **GBNF**: `schema.gbnf` gerado do `gabarito.json` em runtime (`LlamaGrammar.from_json_schema`)
+- **Max retries**: 3 (R82) — 3 falhas = exceção Python + fallback `{"result":""}`, nunca loop no LLM
+
+## Seleção de motor (R75)
+- Categoria `skill-tecnica` → `local-thalamus/ingestor` (proposer leve 1M)
+- Janela >1M → `omniroute` (R23, janela grande 262k)
+- Refutação A2A → `local-refuter/refuter` (ternary 8B) + `local-reflexo/reflexo` (LFM)
+
+## Validação determinística
+1. `Pydantic model_validate_json` — `gabarito.json` é fonte única
+2. `GBNF barrier` — tokens fora da regra = logit bias -inf antes do softmax (físico)
+3. `anti-lixo gate` — rejeita output com `False/True` capital, `PASS|FAIL` não JSON, campos extras
+
+## Anti-loop (R82)
+- `stop_tokens`: `["</|eot_id|>","\n\n","```"]`
+- `max_tokens`: calculado do schema (trava física)
+- `max_retries=3` + `Circuit Breaker 5×` (R18) — queda >5× baseline → restart cirúrgico
+
+## Fluxo
+1. Ler `conceito.md` (persona) + `gabarito.json` (schema) → compilar `schema.gbnf`
+2. `constrained_generate(prompt, schema)` → JSON byte-level
+3. `validate_output(json)` → `Output` Pydantic
+4. Em falha, re-injetar erro parseado + retry ≤3, senão fallback
+
+## Evidência
+- `mecanica.py` implementa `validate_output` + `constrained_generate` stub
+- `schema.gbnf` = GBNF do `gabarito.json` (fonte única R77)
+- Teste: `python -m py_compile mecanica.py && python -c "import mecanica; print(mecanica.validate_output)"`

@@ -1,122 +1,59 @@
 #!/usr/bin/env python3
 """
-Tool-calling engine for fable-judge feature.
-Deterministic, GBNF-compliant evaluation of text against ground truth.
+Mecanica — fable-judge
+R77 tríplice + R81 constrained decoding + R82 estrangulamento
+Skill: fable-judge — juiz fabular
+Origin: https://github.com/Sahir619/fable-method
+Model: local-thalamus/ingestor (R75 DIP)
 """
 
+from pydantic import BaseModel, Field, ValidationError
+from typing import Optional, List
 import json
-from typing import Any, Dict, Optional
-from pydantic import BaseModel, BaseModel as PydanticModel
-from typing_extensions import Field
 
-# Pydantic model for input
-class InputModel(PydanticModel):
-    text: str
-    ground_truth: str
-    instructions: str
+class Output(BaseModel):
+    """Output estrito de fable-judge — validado via Pydantic + GBNF"""
+    result: str = Field(description="Resultado principal", pattern=r"^[a-zA-Z0-9\-_/ ]+$")
+    confidence: float = Field(ge=0.0, le=1.0, description="Confiança 0-1")
+    skill: str = Field(default="fable-judge", pattern=r"^[a-z0-9-]+$")
+    meta: Optional[str] = Field(default=None, description="Metadados opcionais")
 
-# Pydantic model for output (evaluation result)
-class OutputModel(PydanticModel):
-    verdict: str  # "PASS", "FAIL", "PARTIAL"
-    reasoning: str
-    suggestions: list[str]
-    metrics: Dict[str, float]
+    class Config:
+        extra = "forbid"
 
-def evaluate_text(
-    text: str,
-    ground_truth: str,
-    instructions: str,
-    max_context: int = 4096,
-    max_tokens: int = 1024,
-) -> Dict[str, Any]:
-    """
-    Evaluate the generated text against ground truth and instructions.
-    
-    Returns a structured evaluation result in the required schema.
-    """
-    # Simple evaluation logic (in real use, would use more sophisticated models)
-    result = {
-        "verdict": "PASS",  # Default - can be adjusted based on evaluation logic
-        "reasoning": "The evaluation logic is deterministic and based on provided constraints.",
-        "suggestions": [],
-        "metrics": {
-            "accuracy": 0.95,
-            "coherence": 0.98,
-            "staleness": 0.02
-        }
-    }
-    
-    return {
-        "input": {
-            "text": text,
-            "ground_truth": ground_truth,
-            "instructions": instructions
-        },
-        "output": result
-    }
+def validate_output(data: dict) -> Output:
+    """Validação determinística — 100% schema conforme (R81)"""
+    return Output.model_validate(data)
 
-# Tool-calling engine
-def run_fable_judge_evaluation(
-    input_data: Dict[str, Any],
-    max_context: int = 4096,
-    max_tokens: int = 1024,
-    batch_size: int = 256,
-    ubatch: int = 512,
-) -> Dict[str, Any]:
-    """
-    Tool-calling engine that runs the fable-judge evaluation using deterministic Pydantic models.
-    
-    This engine ensures:
-    - Strict schema validation (Pydantic model_validate_json)
-    - GBNF compliance (token boundary restrictions)
-    - Deterministic tool calling (no randomness)
-    - Context and token limits
-    - Structured evaluation output
-    
-    Returns:
-        Evaluation result in the required JSON schema.
-    """
-    try:
-        # Validate input against schema
-        validated_input = InputModel(**input_data)
-        
-        # Prepare evaluation
-        result = evaluate_text(
-            validated_input.text,
-            validated_input.ground_truth,
-            validated_input.instructions,
-            max_context=max_context,
-            max_tokens=max_tokens
-        )
-        
-        # Return structured evaluation result
-        return {
-            "verdict": result["output"]["verdict"],
-            "reasoning": result["output"]["reasoning"],
-            "suggestions": result["output"]["suggestions"],
-            "metrics": result["output"]["metrics"]
-        }
-    except Exception as e:
-        # Handle errors deterministically
-        return {
-            "verdict": "FAIL",
-            "reasoning": f"Evaluation failed: {str(e)}",
-            "suggestions": [f"Retry with corrected input: {str(e)}"],
-            "metrics": {
-                "accuracy": 0.0,
-                "coherence": 0.0,
-                "staleness": 0.0
-            }
-        }
+def validate_json_str(json_str: str) -> Output:
+    """Validação de string JSON com anti-lixo gate"""
+    # gate: rejeita False/True capital (Python vs JSON)
+    if " False" in json_str or " True" in json_str:
+        raise ValueError("JSON contém True/False capital — use true/false")
+    if " | " in json_str and "PASS" in json_str:
+        raise ValueError("JSON contém 'PASS | FAIL' não JSON — use enum")
+    return Output.model_validate_json(json_str)
 
-# Main entry point
+def constrained_generate(prompt: str, max_retries: int = 3) -> Output:
+    """Stub GBNF travado — em produção, chama llama_cpp com LlamaGrammar.from_json_schema"""
+    # Exemplo determinístico para teste
+    sample = {"result": "ok-fable-judge", "confidence": 0.95, "skill": "fable-judge"}
+    for attempt in range(max_retries):
+        try:
+            return validate_output(sample)
+        except ValidationError as e:
+            if attempt == max_retries - 1:
+                raise
+            # re-inject error e retry (nunca loop infinito)
+            sample["result"] = f"retry-{attempt}"
+    raise RuntimeError("max_retries excedido — fallback")
+
 if __name__ == "__main__":
-    # Example usage
-    example_input = {
-        "text": "The Earth is divided into four hemispheres by the equator...",
-        "ground_truth": "The Earth is divided into four hemispheres by the equator...",
-        "instructions": "Evaluate whether the text is factually accurate based on ground truth."
-    }
-    
-    result = run_fable_judge_evaluation(example_input, max_context=4096, max_tokens=1024)
-    print(json.dumps(result, indent=2))
+    # sanity
+    out = constrained_generate("test")
+    print(out.model_dump_json())
+    # test anti-lixo
+    try:
+        validate_json_str('{"result": "x", "confidence": 0.9, "skill": "fable-judge", "extra": "lixo"}')
+    except Exception as e:
+        print(f"gate ok: {e}")

@@ -1,0 +1,65 @@
+{
+  "role": "hestia",
+  "system": "You are a specialist in Héstia conformidade via skill hestia. Apply R84 quarteto + GBNF strict. Temp 0.3, top_k 20, top_p 0.95. Deterministic, anti-loop, strict schema.",
+  "concepts": [
+    "conformidade",
+    "contrato",
+    "Héstia"
+  ],
+  "constraints": {
+    "allowed_outputs": [
+      "json_strict",
+      "validated_result"
+    ],
+    "stop_tokens": [
+      "</|eot_id|>",
+      "\n\n",
+      "```"
+    ],
+    "max_tokens": 1024,
+    "temp": 0.3,
+    "top_k": 20,
+    "top_p": 0.95,
+    "max_context": 8192,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": [
+      "result",
+      "confidence",
+      "skill"
+    ],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "inventive speculation beyond given context",
+    "generate long narrative without synthesis",
+    "supressão de blocos com atalho preguiçoso",
+    "alucinação de campos fora do schema"
+  ],
+  "firewall": {
+    "allow": {
+      "read": [
+        "vault",
+        "harness",
+        "tmp"
+      ],
+      "write": [
+        "tmp",
+        "vault/decisoes"
+      ]
+    },
+    "deny": {
+      "exec": [
+        "rm -rf /",
+        "curl | sh"
+      ],
+      "access": [
+        "../",
+        "/etc"
+      ]
+    }
+  }
+}

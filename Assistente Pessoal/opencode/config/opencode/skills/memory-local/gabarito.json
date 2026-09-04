@@ -1,20 +1,65 @@
 {
-  "name": "memory-local",
-  "description": "Memória persistente de longo prazo 100% local para agentes...",
-  "category": "memory",
-  "role": "memory-keeper",
-  "gabarito": {
-    "debar": {
-      "allowed_models": ["local-orchestrator/orchestrator", "local-bonsai/bonsai"],
-      "max_tokens": 200,
-      "max_entities": 50,
-      "allowed_contexts": ["session", "task"],
-      "timeout_seconds": 300
+  "role": "memory-local",
+  "system": "You are a specialist in memória local mem0 via skill memory-local. Apply R84 quarteto + GBNF strict. Temp 0.3, top_k 20, top_p 0.95. Deterministic, anti-loop, strict schema.",
+  "concepts": [
+    "mem0",
+    "ADD/UPDATE/DELETE",
+    "vetorial"
+  ],
+  "constraints": {
+    "allowed_outputs": [
+      "json_strict",
+      "validated_result"
+    ],
+    "stop_tokens": [
+      "</|eot_id|>",
+      "\n\n",
+      "```"
+    ],
+    "max_tokens": 1024,
+    "temp": 0.3,
+    "top_k": 20,
+    "top_p": 0.95,
+    "max_context": 8192,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": [
+      "result",
+      "confidence",
+      "skill"
+    ],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "inventive speculation beyond given context",
+    "generate long narrative without synthesis",
+    "supressão de blocos com atalho preguiçoso",
+    "alucinação de campos fora do schema"
+  ],
+  "firewall": {
+    "allow": {
+      "read": [
+        "vault",
+        "harness",
+        "tmp"
+      ],
+      "write": [
+        "tmp",
+        "vault/decisoes"
+      ]
     },
-    "constraints": {
-      "device": "local",
-      "janela": "local-first",
-      "embedding_type": "local-only"
+    "deny": {
+      "exec": [
+        "rm -rf /",
+        "curl | sh"
+      ],
+      "access": [
+        "../",
+        "/etc"
+      ]
     }
   }
 }

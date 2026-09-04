@@ -1,16 +1,36 @@
-# DeepAgents Skill
+---
+name: deepagents
+description: >-
+  Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo. (absorvido de langchain-ai/deepagents)
+category: skill-tecnica
+model: local-thalamus/ingestor
+version: 1.0.0
+origin: https://github.com/langchain-ai/deepagents
+helenized: true
+r84: true
+r77_triple: true
+---
+# deepagents — deep agents
 
-A skill for deepagents that generates optimized, well-structured code.
+Helenizado de [`https://github.com/langchain-ai/deepagents`](https://github.com/langchain-ai/deepagents) — essência destilada para harness nativo (R77 tríplice, R84 GBNF travado, R75 categoria).
 
-This skill follows the quarteto R84 pattern with:
-- conceito.md (50-100 lines) - ontology/persona description
-- gabarito.json (firewall specification) - constraints and allowed inputs
-- mecanica.py (mechanics) - Python implementation for code generation/validation
-- schema.gbnf (root schema) - GBNF schema root
-- SKILL.md (skill definition) - skill metadata
+## Propósito
+Harness de agente 'batteries-included': sub-agents com janelas isoladas, offload de tool outputs, memória persistente pluggável, HITL, model-agnostic e .mcp.json nativo. (absorvido de langchain-ai/deepagents)
 
-The skill is designed to:
-- Generate clean, well-structured Python code
-- Apply refactoring and optimization techniques
-- Follow best practices for code quality and maintainability
-- Handle complex tasks through decomposition
+## Padrões absorvidos
+- agentes: agente profundo, hierarquia
+- Origem: https://github.com/langchain-ai/deepagents
+- Domínio: deep agents
+
+## Como usar (Gran-Mestre)
+1. Detectar necessidade que casa com `deepagents` (tags: agente profundo, hierarquia).
+2. `skill(name="deepagents")` — carrega tríplice (conceito + gabarito + mecânica).
+3. Aplicar padrão helenizado ao contexto atual com GBNF travado (`temp 0.3`, `max_retries=3`).
+
+## Tríplice R77
+- `conceito.md` — ontologia/persona imutável (50-100 linhas, R75 `local-thalamus/ingestor`)
+- `gabarito.json` — firewall allow/deny + schema rígido + `stop_tokens` + `max_tokens`
+- `mecanica.md` + `mecanica.py` + `schema.gbnf` — ignição determinística, validação Pydantic, anti-loop
+
+## Fonte
+https://github.com/langchain-ai/deepagents

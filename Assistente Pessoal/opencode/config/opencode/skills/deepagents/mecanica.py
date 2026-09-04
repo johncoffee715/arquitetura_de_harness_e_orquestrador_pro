@@ -1,31 +1,59 @@
-# DeepAgents - Mecânica de Ignição/Validação (Python)
+#!/usr/bin/env python3
+"""
+Mecanica — deepagents
+R77 tríplice + R81 constrained decoding + R82 estrangulamento
+Skill: deepagents — deep agents
+Origin: https://github.com/langchain-ai/deepagents
+Model: local-thalamus/ingestor (R75 DIP)
+"""
 
-def deepagents_generate_code(task_description, code_template, max_tokens=1024):
-    """
-    Gera código baseado no descritor de tarefa.
-    - task_description: string com o requisito da tarefa
-    - code_template: template de código (ex: f"def {func_name}():\n    return {body}")
-    - max_tokens: limite de tokens de saída
-    
-    Retorna: código Python bem formatado e otimizado.
-    """
-    # Esta função representa o mecanismo de ignição/validação
-    # para o DeepAgents skill.
-    # Ela pode ser usada para:
-    # - Validar se o código gerado atende aos requisitos
-    # - Refatorar código existente
-    # - Decompor tarefas complexas
-    # - Aplicar padrões de projeto e boas práticas
-    
-    return code_template.format(
-        task_description=task_description,
-        code_template=code_template,
-        max_tokens=max_tokens
-    )
+from pydantic import BaseModel, Field, ValidationError
+from typing import Optional, List
+import json
 
-# Exemplo de uso (não executado):
-# code = deepagents_generate_code(
-#     task_description="Implementar uma função que calcule a soma de uma lista",
-#     code_template="def sum_function(numbers):\n    total = 0\n    for n in numbers:\n        total += n\n    return total",
-#     max_tokens=256
-# )
+class Output(BaseModel):
+    """Output estrito de deepagents — validado via Pydantic + GBNF"""
+    result: str = Field(description="Resultado principal", pattern=r"^[a-zA-Z0-9\-_/ ]+$")
+    confidence: float = Field(ge=0.0, le=1.0, description="Confiança 0-1")
+    skill: str = Field(default="deepagents", pattern=r"^[a-z0-9-]+$")
+    meta: Optional[str] = Field(default=None, description="Metadados opcionais")
+
+    class Config:
+        extra = "forbid"
+
+def validate_output(data: dict) -> Output:
+    """Validação determinística — 100% schema conforme (R81)"""
+    return Output.model_validate(data)
+
+def validate_json_str(json_str: str) -> Output:
+    """Validação de string JSON com anti-lixo gate"""
+    # gate: rejeita False/True capital (Python vs JSON)
+    if " False" in json_str or " True" in json_str:
+        raise ValueError("JSON contém True/False capital — use true/false")
+    if " | " in json_str and "PASS" in json_str:
+        raise ValueError("JSON contém 'PASS | FAIL' não JSON — use enum")
+    return Output.model_validate_json(json_str)
+
+def constrained_generate(prompt: str, max_retries: int = 3) -> Output:
+    """Stub GBNF travado — em produção, chama llama_cpp com LlamaGrammar.from_json_schema"""
+    # Exemplo determinístico para teste
+    sample = {"result": "ok-deepagents", "confidence": 0.95, "skill": "deepagents"}
+    for attempt in range(max_retries):
+        try:
+            return validate_output(sample)
+        except ValidationError as e:
+            if attempt == max_retries - 1:
+                raise
+            # re-inject error e retry (nunca loop infinito)
+            sample["result"] = f"retry-{attempt}"
+    raise RuntimeError("max_retries excedido — fallback")
+
+if __name__ == "__main__":
+    # sanity
+    out = constrained_generate("test")
+    print(out.model_dump_json())
+    # test anti-lixo
+    try:
+        validate_json_str('{"result": "x", "confidence": 0.9, "skill": "deepagents", "extra": "lixo"}')
+    except Exception as e:
+        print(f"gate ok: {e}")

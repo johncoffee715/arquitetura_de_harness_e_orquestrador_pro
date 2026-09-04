@@ -1,39 +1,33 @@
-# Mecânica de Ignição, Seleção e Refutação de Motores (memory-local skill)
+# Mecânica — memory-local (R77 + R81 + R82)
 
-## 1. Mecânica de Ignição (Iniciação)
-- **Trigger**: início de sessão, início de task, mudança de contexto.
-- **Model**: local-orchestrator/orchestrator (run_id: d9be2308-3a42-470b-9a75-d20254190f38)
-- **Processo**: O orquestrador ignita o skill após a inicialização da sessão.
-- **Entrada esperada**: run_id, run_id_task, contexto inicial do usuário.
-- **Output esperado**: lista de memórias inicializadas (se houver contexto relevante).
-- **Timeout**: 30 segundos após início de sessão.
-- **Stop tokens**: ["\n\n", "```", "<|eot_id|>"]
+## Ignição
+- **Modelo**: `local-thalamus/ingestor` (RWKV7 1M ctx, 400 t/s) — Filtro Talâmico R71
+- **Sampling**: `temp 0.3`, `top_k 20`, `top_p 0.95` (R61 agentic/coding) — determinístico
+- **GBNF**: `schema.gbnf` gerado do `gabarito.json` em runtime (`LlamaGrammar.from_json_schema`)
+- **Max retries**: 3 (R82) — 3 falhas = exceção Python + fallback `{"result":""}`, nunca loop no LLM
 
-## 2. Mecânica de Seleção (Seleção de contexto)
-- **Trigger**: início de tarefa nova, mudança de contexto significativa.
-- **Model**: local-orchestrator/orchestrator
-- **Processo**: O orquestrador busca memórias relevantes usando:
-  - Similaridade de embeddings (embedding) + filtro `target`.
-  - Se nenhum for encontrado, retorna contexto vazio com instrução de recall.
-- **Entrada esperada**: run_id, run_id_task, contexto atual (JSON).
-- **Output esperado**: bloco `[MEMORY]` com até 3 top-3 memórias relevantes.
-- **Limitação**: cada memória ≤ 1 linha; bloco ≤ 200 tokens.
-- **TTL**: baseado em `scope` (global/per-conversa).
+## Seleção de motor (R75)
+- Categoria `skill-tecnica` → `local-thalamus/ingestor` (proposer leve 1M)
+- Janela >1M → `omniroute` (R23, janela grande 262k)
+- Refutação A2A → `local-refuter/refuter` (ternary 8B) + `local-reflexo/reflexo` (LFM)
 
-## 3. Mecânica de Refutação (Refutação de motores)
-- **Propósito**: garantir que o modelo não gere conteúdo sensível ou fora de contexto.
-- **Aplicação**: aplicada ao skill/hook que usa o skill memory-local.
-- **Definição de falha**: qualquer saída que envolva:
-  - Segredos/tokens/credenciais (regra global §6).
-  - Embeddings externos (regra global §6).
-  - Contexto poluído (janela excede limite).
-  - Implementação duplicada ou anti-padrões (conformidade do gabarito).
-- **Veredito categórico**: 
-  - PASSOU_CATEGORICO: se o skill/hook passa o gabarito com ≥90% nota (R28).
-  - NÃO_PASSOU: se o skill/hook falha veredito categórico (R28).
-- **Evidência**: 
-  - Gabarito.json (validado).
-  - Runtime SKILL.md (frontmatter válido).
-  - Conceito.md (ontologia) - já incluído no SKILL.md.
-  - Gabarito.json - já criado.
-  - Mecânica.md - já criado.
+## Validação determinística
+1. `Pydantic model_validate_json` — `gabarito.json` é fonte única
+2. `GBNF barrier` — tokens fora da regra = logit bias -inf antes do softmax (físico)
+3. `anti-lixo gate` — rejeita output com `False/True` capital, `PASS|FAIL` não JSON, campos extras
+
+## Anti-loop (R82)
+- `stop_tokens`: `["</|eot_id|>","\n\n","```"]`
+- `max_tokens`: calculado do schema (trava física)
+- `max_retries=3` + `Circuit Breaker 5×` (R18) — queda >5× baseline → restart cirúrgico
+
+## Fluxo
+1. Ler `conceito.md` (persona) + `gabarito.json` (schema) → compilar `schema.gbnf`
+2. `constrained_generate(prompt, schema)` → JSON byte-level
+3. `validate_output(json)` → `Output` Pydantic
+4. Em falha, re-injetar erro parseado + retry ≤3, senão fallback
+
+## Evidência
+- `mecanica.py` implementa `validate_output` + `constrained_generate` stub
+- `schema.gbnf` = GBNF do `gabarito.json` (fonte única R77)
+- Teste: `python -m py_compile mecanica.py && python -c "import mecanica; print(mecanica.validate_output)"`

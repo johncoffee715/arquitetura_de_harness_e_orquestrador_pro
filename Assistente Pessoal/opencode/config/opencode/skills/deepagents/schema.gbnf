@@ -1,7 +1,4 @@
-# GBNF schema root for DeepAgents skill
-# Defines the expected input format for the skill
-
-root:
-    task_description: string
-    code_template: string
-    max_tokens: integer
+root ::= "{" ws "\"result\"" ws ":" ws string ws "," ws "\"confidence\"" ws ":" ws number ws "," ws "\"skill\"" ws ":" ws "\"deepagents\"" ws "}" 
+string ::= "\"" [a-zA-Z0-9\-_/ ]+ "\""
+number ::= "0" "." [0-9]+ | "1" "." "0"+
+ws ::= [ \t\n]*

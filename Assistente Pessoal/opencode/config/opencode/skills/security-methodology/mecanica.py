@@ -1,105 +1,59 @@
 #!/usr/bin/env python3
 """
-Mecânica de auditoria de segurança para apps gerados por IA.
-Executa a auditoria em fases de desenvolvimento usando a checklist das 5 vacilações.
-Relata apenas as falhas sem corrigir o código.
+Mecanica — security-methodology
+R77 tríplice + R81 constrained decoding + R82 estrangulamento
+Skill: security-methodology — metodologia segurança
+Origin: https://github.com/security-methodology
+Model: local-thalamus/ingestor (R75 DIP)
 """
 
+from pydantic import BaseModel, Field, ValidationError
+from typing import Optional, List
 import json
-import sys
-from typing import Any, Dict
 
-# Importar schema GBNF (usado pelo bridge de constrained decoding)
-try:
-    import pydantic_gbnf
-except ImportError:
-    pydantic_gbnf = None
+class Output(BaseModel):
+    """Output estrito de security-methodology — validado via Pydantic + GBNF"""
+    result: str = Field(description="Resultado principal", pattern=r"^[a-zA-Z0-9\-_/ ]+$")
+    confidence: float = Field(ge=0.0, le=1.0, description="Confiança 0-1")
+    skill: str = Field(default="security-methodology", pattern=r"^[a-z0-9-]+$")
+    meta: Optional[str] = Field(default=None, description="Metadados opcionais")
 
-# Schema de auditoria (usado por ferramentas como OWASP ZAP)
-def audit_security(code: str) -> Dict[str, Any]:
-    """
-    Executa a auditoria de segurança em fases de desenvolvimento.
-    Usa a checklist das 5 vacilações em ordem.
-    Relata apenas as falhas sem corrigir o código.
-    """
-    # Lista as 5 vacilações em ordem
-    checklist = [
-        {
-            "name": "Banco sem tranca (RLS off)",
-            "description": "A aplicação acessa o banco de dados diretamente do frontend sem middleware de backend intermediário (RLS off).",
-            "check": lambda code: "RLS off" in code or "acessar" in code.lower()
-        },
-        {
-            "name": "Permissão decisiva no navegador",
-            "description": "O frontend verifica diretamente se o usuário é administrador (ex: admin: true no localStorage).",
-            "check": lambda code: "admin" in code.lower() and ("localStorage" in code or "sessionStorage" in code)
-        },
-        {
-            "name": "Rota entregando dado pelo ID (IDOR)",
-            "description": "A rota recebe um ID (ex: /users/3) e retorna dados de outro usuário sem verificação de ownership ou rate limiting.",
-            "check": lambda code: ("id" in code.lower() or "route" in code.lower()) and "owner" not in code.lower() and "rate" not in code.lower()
-        },
-        {
-            "name": "Segredo exposto (hardcoded)",
-            "description": "Variáveis de segredo (API_KEY, SECRET, sk-) são expostas no código frontend ou em arquivos de configuração.",
-            "check": lambda code: ("API_KEY" in code.upper() or "SECRET" in code.upper() or "sk-" in code.upper() or "KEY" in code.upper())
-        },
-        {
-            "name": "Input sem tratamento (XSS)",
-            "description": "Campos que aceitam HTML/arquivos ou uploads sem validação podem causar XSS.",
-            "check": lambda code: ("html" in code.lower() or "upload" in code.lower() or "escape" not in code.lower())
-        }
-    ]
-    
-    result = {}
-    
-    # Verifica cada vacilacao em ordem
-    for i, vacilacao in enumerate(checklist, 1):
-        name = vacilacao["name"]
-        desc = vacilacao["description"]
-        check_result = vacilacao["check"](code)
-        
-        if check_result:
-            result[f"vacilias[{i}]"] = {
-                "issue": name,
-                "description": desc,
-                "severity": "HIGH" if i <= 3 else "CRITICAL"
-            }
-        else:
-            result[f"vacilias[{i}]"] = {
-                "issue": "OK",
-                "description": desc,
-                "severity": "LOW"
-            }
-            
-    return {
-        "status": "AUDIT_COMPLETED",
-        "results": result,
-        "timestamp": "2026-08-23T00:00:00Z"
-    }
+    class Config:
+        extra = "forbid"
 
-def main():
-    if len(sys.argv) > 1 and sys.argv[1] == "--help":
-        print("Mecânica de auditoria de segurança - Executa a auditoria em fases de desenvolvimento.")
-        print("Uso: python3 mecanica.py <code>")
-        return
-    
-    if len(sys.argv) < 2:
-        print("ERRO: código não fornecido")
-        sys.exit(1)
-        
-    code = sys.argv[1]
-    result = audit_security(code)
-    
-    print(json.dumps(result, indent=2, ensure_ascii=False))
-    
-    # Verificar se o código é válido JSON (para ferramentas)
-    try:
-        # O resultado deve ser JSON válido
-        json.loads(result)
-    except json.JSONDecodeError:
-        print("ERRO: Resultado não é JSON válido")
-        sys.exit(1)
+def validate_output(data: dict) -> Output:
+    """Validação determinística — 100% schema conforme (R81)"""
+    return Output.model_validate(data)
+
+def validate_json_str(json_str: str) -> Output:
+    """Validação de string JSON com anti-lixo gate"""
+    # gate: rejeita False/True capital (Python vs JSON)
+    if " False" in json_str or " True" in json_str:
+        raise ValueError("JSON contém True/False capital — use true/false")
+    if " | " in json_str and "PASS" in json_str:
+        raise ValueError("JSON contém 'PASS | FAIL' não JSON — use enum")
+    return Output.model_validate_json(json_str)
+
+def constrained_generate(prompt: str, max_retries: int = 3) -> Output:
+    """Stub GBNF travado — em produção, chama llama_cpp com LlamaGrammar.from_json_schema"""
+    # Exemplo determinístico para teste
+    sample = {"result": "ok-security-methodology", "confidence": 0.95, "skill": "security-methodology"}
+    for attempt in range(max_retries):
+        try:
+            return validate_output(sample)
+        except ValidationError as e:
+            if attempt == max_retries - 1:
+                raise
+            # re-inject error e retry (nunca loop infinito)
+            sample["result"] = f"retry-{attempt}"
+    raise RuntimeError("max_retries excedido — fallback")
 
 if __name__ == "__main__":
-    main()
+    # sanity
+    out = constrained_generate("test")
+    print(out.model_dump_json())
+    # test anti-lixo
+    try:
+        validate_json_str('{"result": "x", "confidence": 0.9, "skill": "security-methodology", "extra": "lixo"}')
+    except Exception as e:
+        print(f"gate ok: {e}")
