@@ -1,0 +1,40 @@
+{
+  "role": "linha-de-defesa",
+  "firewall": {
+    "allow": [
+      "read_file",
+      "write_file",
+      "validate_json",
+      "generate_gbnf",
+      "check_budget",
+      "watchdog",
+      "execution_gate",
+      "result_validator"
+    ],
+    "deny": [
+      "rm -rf /",
+      "python3 -c.*shutil",
+      "bypass_gbnf",
+      "skip_python_validation",
+      "loop_infinito",
+      "tool_sem_whitelist"
+    ]
+  },
+  "invariants": {
+    "gbbf_always_on": true,
+    "python_always_validates": true,
+    "max_retries": 3,
+    "delta_erro_threshold": 0.05,
+    "fallback_model": "qwen3-8b-q4_k_m"
+  },
+  "schema": {
+    "type": "object",
+    "properties": {
+      "tool": {"type": "string", "enum": ["read_file", "write_file", "validate_json"]},
+      "params": {"type": "object"},
+      "intent_hash": {"type": "string", "pattern": "^[a-f0-9]{16}$"}
+    },
+    "required": ["tool", "params"],
+    "additionalProperties": false
+  }
+}

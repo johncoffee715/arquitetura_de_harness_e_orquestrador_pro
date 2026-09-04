@@ -1,0 +1,46 @@
+Dev Loop(AKA Gauntlet Loop)
+
+Https://youtube.com/shorts/AvIujLlbmks?is=LUUlh-wYNi5p9nSn
+
+O Gauntlet Loop é uma técnica avançada de
+engenharia de prompts baseada em agentes autônomos.
+Ela permite criar códigos, jogos 3D ou designs
+altamente refinados com apenas um comando inicial.
+O método funciona delegando tarefas para uma
+inteligência artificial que se auto-audita continuamente
+até atingir um patamar de qualidade absurdo.Como
+funciona o Gauntlet LoopDiferente de um fluxo comum onde
+você pede algo à IA e precisa corrigir os erros manualmente,
+o Gauntlet Loop automatiza a revisão criando uma estrutura de
+"gráfico em diamante":Agente Líder: Recebe o seu objetivo
+ambicioso e escolhe um produto real de alta qualidade para
+servir de régua de comparação
+(ex: Call of Duty ou Crash Bandicoot).
+Segmentação: O líder divide o projeto nas menores
+partes possíveis.Subagentes Executores: Múltiplos agentes especializados
+trabalham em paralelo criando pedaços
+isolados de código ou design.Subagentes Críticos:
+Críticos independentes analisam o resultado de
+forma cega (sem saber como foi feito)
+e comparam diretamente com a referência real.
+O Loop Contínuo: Se a criação da IA perder para
+o produto real, o crítico aponta a maior falha e devolve o
+item para o executor. O processo repete ciclicamente
+até que os críticos fiquem genuinamente
+impressionados ou você decida interromper o comando.
+
+Vantagens e Riscos
+-Produtividade Extrema: Permite gerar sistemas complexos
+funcionais do zero quase sem intervenção humana.
+-Qualidade Superior: Impede que a IA pare em um resultado apenas "bom o suficiente",
+forçando um padrão externo rígido.
+-Custo de Tokens Elevado: Como gera múltiplos ciclos
+de criação e revisão por trás dos panos, o método
+consome uma quantidade massiva de créditos de API ou tokens de assinatura.
+-Dependência de Referência: Funciona perfeitamente quando
+há um modelo claro para clonar ou se espelhar,
+mas pode falhar ou inventar padrões desconexos
+se você tentar criar algo 100% inédito sem referências existentes.
+
+
+

@@ -1,6 +1,0 @@
-{"task": "smoke-task", "state": "closed", "action": "escalate", "failures": 1, "rollbacks_used": 0, "now": null}
-{"task": "smoke-task", "state": "closed", "action": "escalate", "failures": 2, "rollbacks_used": 0, "now": null}
-{"task": "smoke-task", "state": "closed", "action": "reset", "failures": 0, "rollbacks_used": 0, "now": null}
-{"task": "smoke-nc", "state": "closed", "action": "escalate", "failures": 1, "rollbacks_used": 0, "now": null}
-{"task": "smoke-nc", "state": "closed", "action": "escalate", "failures": 2, "rollbacks_used": 0, "now": null}
-{"task": "smoke-nc", "state": "open", "action": "abort_and_rollback", "failures": 3, "rollbacks_used": 1, "now": null}

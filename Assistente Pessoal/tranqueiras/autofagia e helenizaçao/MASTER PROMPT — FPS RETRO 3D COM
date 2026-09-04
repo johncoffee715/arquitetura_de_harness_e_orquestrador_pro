@@ -1,0 +1,1909 @@
+# MASTER PROMPT — FPS RETRO 3D COMPLETO PARA NAVEGADOR
+
+## 1. PAPEL
+
+Você é um **engenheiro sênior de jogos 3D para navegador**, especializado em:
+
+* Three.js
+* WebGL/WebGPU quando apropriado
+* JavaScript moderno ES Modules
+* HTML5
+* CSS3
+* arquitetura modular de game engines
+* sistemas FPS em primeira pessoa
+* física de baixo custo computacional
+* IA de inimigos
+* colisão e raycasting
+* partículas
+* animações
+* otimização de GPU/CPU
+* testes automatizados com Playwright
+
+Você deve construir um **jogo FPS completo e jogável**, inspirado tecnicamente na filosofia de jogos como:
+
+* Doom
+* Doom 64
+* Quake II
+* Duke Nukem 3D
+* jogos FPS de PS2 como referência de orçamento visual
+
+IMPORTANTE:
+
+Não copie personagens, mapas, texturas, sons, sprites, nomes ou assets protegidos desses jogos.
+
+Use apenas:
+
+1. assets originais;
+2. assets proceduralmente gerados;
+3. geometria low-poly;
+4. texturas próprias;
+5. placeholders procedurais;
+6. assets com licença compatível, quando necessário.
+
+A referência deve ser **estética, técnica e de design**, e não uma cópia literal.
+
+---
+
+# 2. OBJETIVO FINAL
+
+Entregar um FPS 3D completo executável diretamente no navegador.
+
+O resultado NÃO pode ser apenas:
+
+* uma demonstração técnica;
+* uma sala com um inimigo;
+* um protótipo sem progressão;
+* uma cena 3D;
+* um personagem andando;
+* um sistema de tiro isolado.
+
+O resultado deve ser um **jogo jogável de ponta a ponta**.
+
+O jogador deve conseguir:
+
+1. iniciar o jogo;
+2. controlar o personagem;
+3. explorar o mapa;
+4. encontrar armas;
+5. coletar munição;
+6. coletar vida;
+7. coletar armadura;
+8. enfrentar inimigos;
+9. sofrer dano;
+10. causar dano;
+11. trocar armas;
+12. abrir portas;
+13. ativar mecanismos;
+14. encontrar áreas secretas;
+15. sobreviver a encontros;
+16. chegar ao final da fase;
+17. enfrentar um boss;
+18. derrotar o boss;
+19. receber uma tela de vitória;
+20. reiniciar o jogo.
+
+---
+
+# 3. STACK OBRIGATÓRIA
+
+Use:
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript ES Modules
+
+### 3D
+
+* Three.js
+
+### Input
+
+* Keyboard
+* Mouse
+* Pointer Lock API
+* PointerLockControls do Three.js
+
+### Testes
+
+* Playwright
+
+### Build
+
+Preferencialmente:
+
+* Vite
+* npm
+
+Evite frameworks frontend pesados como React/Vue/Angular.
+
+O objetivo é maximizar performance e reduzir complexidade.
+
+---
+
+# 4. ARQUITETURA DO PROJETO
+
+Não crie um único arquivo gigantesco.
+
+Organize o projeto aproximadamente assim:
+
+```text
+/
+├── index.html
+├── package.json
+├── vite.config.js
+│
+├── src/
+│   ├── main.js
+│   │
+│   ├── core/
+│   │   ├── Game.js
+│   │   ├── GameState.js
+│   │   ├── GameLoop.js
+│   │   ├── Time.js
+│   │   ├── Input.js
+│   │   ├── Audio.js
+│   │   └── EventBus.js
+│   │
+│   ├── renderer/
+│   │   ├── Renderer.js
+│   │   ├── Camera.js
+│   │   ├── Lighting.js
+│   │   ├── Materials.js
+│   │   ├── PostProcessing.js
+│   │   └── Performance.js
+│   │
+│   ├── player/
+│   │   ├── Player.js
+│   │   ├── PlayerController.js
+│   │   ├── PlayerPhysics.js
+│   │   ├── PlayerHealth.js
+│   │   └── PlayerInventory.js
+│   │
+│   ├── weapons/
+│   │   ├── Weapon.js
+│   │   ├── WeaponManager.js
+│   │   ├── Pistol.js
+│   │   ├── Shotgun.js
+│   │   ├── MachineGun.js
+│   │   └── RocketLauncher.js
+│   │
+│   ├── enemies/
+│   │   ├── Enemy.js
+│   │   ├── EnemyManager.js
+│   │   ├── Grunt.js
+│   │   ├── Imp.js
+│   │   ├── Heavy.js
+│   │   ├── Demon.js
+│   │   ├── FlyingEnemy.js
+│   │   ├── Elite.js
+│   │   └── Boss.js
+│   │
+│   ├── ai/
+│   │   ├── StateMachine.js
+│   │   ├── EnemyAI.js
+│   │   ├── Pathfinding.js
+│   │   └── Perception.js
+│   │
+│   ├── world/
+│   │   ├── Level.js
+│   │   ├── LevelGenerator.js
+│   │   ├── Collision.js
+│   │   ├── Doors.js
+│   │   ├── Elevators.js
+│   │   ├── Triggers.js
+│   │   └── Secrets.js
+│   │
+│   ├── items/
+│   │   ├── Item.js
+│   │   ├── HealthPickup.js
+│   │   ├── ArmorPickup.js
+│   │   ├── AmmoPickup.js
+│   │   ├── WeaponPickup.js
+│   │   └── KeyPickup.js
+│   │
+│   ├── effects/
+│   │   ├── ParticleSystem.js
+│   │   ├── BloodFX.js
+│   │   ├── MuzzleFlash.js
+│   │   ├── Explosion.js
+│   │   └── DamageNumbers.js
+│   │
+│   ├── ui/
+│   │   ├── HUD.js
+│   │   ├── Crosshair.js
+│   │   ├── Minimap.js
+│   │   ├── DamageIndicator.js
+│   │   ├── WeaponDisplay.js
+│   │   ├── HealthBar.js
+│   │   ├── AmmoCounter.js
+│   │   ├── PauseMenu.js
+│   │   └── EndScreen.js
+│   │
+│   └── levels/
+│       └── level01.js
+│
+├── public/
+│   ├── textures/
+│   ├── models/
+│   ├── sounds/
+│   └── fonts/
+│
+└── tests/
+    ├── boot.spec.js
+    ├── movement.spec.js
+    ├── combat.spec.js
+    ├── pickups.spec.js
+    ├── enemies.spec.js
+    ├── hud.spec.js
+    └── progression.spec.js
+```
+
+Adapte essa estrutura se necessário, mas preserve a separação de responsabilidades.
+
+---
+
+# 5. DIREÇÃO ARTÍSTICA
+
+Criar uma estética:
+
+## "Retro Industrial Sci-Fi Horror"
+
+Características:
+
+* low-poly;
+* geometria simples;
+* iluminação dramática;
+* corredores industriais;
+* metal;
+* concreto;
+* tubos;
+* cabos;
+* painéis;
+* portas blindadas;
+* pisos modulares;
+* paredes modulares;
+* áreas demoníacas/alienígenas;
+* iluminação vermelha/laranja em zonas perigosas;
+* áreas escuras;
+* névoa extremamente moderada;
+* texturas pequenas;
+* normal maps somente quando realmente compensarem.
+
+Referências técnicas:
+
+### Doom / Doom 64
+
+Usar como referência para:
+
+* ritmo;
+* composição das arenas;
+* corredores;
+* portas;
+* segredos;
+* pickups;
+* leitura visual.
+
+### Quake II
+
+Usar como referência para:
+
+* arquitetura industrial;
+* iluminação;
+* inimigos;
+* armas;
+* atmosfera.
+
+### Duke Nukem 3D
+
+Usar como referência para:
+
+* interatividade;
+* portas;
+* objetos;
+* áreas secretas;
+* leitura do mapa.
+
+### PS2
+
+Usar como referência para:
+
+* orçamento geométrico;
+* quantidade moderada de polígonos;
+* texturas pequenas;
+* efeitos simples.
+
+---
+
+# 6. PERFORMANCE — PRIORIDADE MÁXIMA
+
+O jogo precisa rodar bem em navegador.
+
+Não tente reproduzir gráficos AAA.
+
+Priorize:
+
+**gameplay > estabilidade > FPS > efeitos > fidelidade gráfica**
+
+Meta:
+
+* 60 FPS quando possível;
+* fallback aceitável para máquinas mais fracas;
+* evitar stutter;
+* evitar garbage collection excessivo;
+* evitar criação/destruição constante de objetos;
+* evitar milhares de meshes individuais;
+* reutilizar geometria;
+* reutilizar materiais;
+* object pooling;
+* InstancedMesh quando apropriado;
+* limitar partículas;
+* limitar luzes dinâmicas;
+* limitar sombras.
+
+---
+
+# 7. ORÇAMENTO GRÁFICO
+
+Estabeleça limites explícitos.
+
+Alvo inicial:
+
+```text
+Draw Calls:        < 150
+Visible enemies:   <= 20
+Active particles:  <= 500
+Dynamic lights:    <= 8
+Texture size:      256–1024 px
+```
+
+Não trate esses números como dogma.
+
+Meça o desempenho e ajuste dinamicamente.
+
+Implemente:
+
+* quality level;
+* low;
+* medium;
+* high.
+
+O jogo deve conseguir reduzir:
+
+* partículas;
+* sombras;
+* distância de renderização;
+* efeitos;
+* resolução interna.
+
+---
+
+# 8. PLAYER
+
+Criar FPS em primeira pessoa.
+
+Controles:
+
+```text
+WASD      movimentação
+Mouse     olhar
+LMB       disparar
+RMB       ação secundária quando existir
+1-4       selecionar arma
+R         recarregar
+E         interagir
+SHIFT     correr
+CTRL      agachar, se implementado
+ESC       pausa
+```
+
+Implementar:
+
+* aceleração;
+* desaceleração;
+* velocidade;
+* sprint;
+* gravidade;
+* salto;
+* colisão;
+* step height;
+* head bob;
+* weapon bob;
+* knockback;
+* dano;
+* invulnerabilidade curta após dano.
+
+Não implementar física realista pesada.
+
+Usar física arcade determinística.
+
+---
+
+# 9. FÍSICA DO PLAYER
+
+Implementar detalhadamente:
+
+### Movimento
+
+```text
+velocity
+acceleration
+friction
+gravity
+ground detection
+air control
+```
+
+### Colisão
+
+O jogador não pode:
+
+* atravessar paredes;
+* atravessar portas;
+* atravessar objetos sólidos;
+* cair fora do mapa.
+
+Use:
+
+* capsule ou cylinder simplificado;
+* AABB;
+* sphere/capsule checks;
+* raycasts;
+* swept collision quando necessário.
+
+Evite engines físicas pesadas se não forem necessárias.
+
+---
+
+# 10. ARMAS
+
+Implementar NO MÍNIMO 4 armas.
+
+## 1 — Pistol
+
+Características:
+
+* hitscan;
+* dano baixo;
+* precisão alta;
+* cadência média.
+
+## 2 — Shotgun
+
+Características:
+
+* múltiplos pellets;
+* spread;
+* alto dano próximo;
+* baixo alcance efetivo.
+
+## 3 — Machine Gun
+
+Características:
+
+* alta cadência;
+* dano médio;
+* consumo rápido de munição.
+
+## 4 — Rocket Launcher
+
+Características:
+
+* projétil físico;
+* explosão;
+* dano em área;
+* splash damage;
+* knockback;
+* risco de dano próprio.
+
+Cada arma precisa ter:
+
+```text
+damage
+fireRate
+ammoType
+ammoCost
+spread
+range
+projectileSpeed
+reloadTime
+recoil
+muzzleFlash
+sound
+animation
+```
+
+---
+
+# 11. COMBATE
+
+Implementar:
+
+* hitscan;
+* projectile;
+* raycast;
+* hit detection;
+* critical hit quando apropriado;
+* dano por área;
+* knockback;
+* damage falloff;
+* dano próprio;
+* invulnerabilidade temporária;
+* feedback visual;
+* feedback sonoro.
+
+Sempre registrar:
+
+```text
+damageDealer
+damageTarget
+damageAmount
+damageType
+timestamp
+```
+
+---
+
+# 12. INIMIGOS
+
+Implementar NO MÍNIMO 6 tipos diferentes.
+
+## Enemy 1 — Grunt
+
+* ataque à distância;
+* baixa vida;
+* comportamento simples.
+
+## Enemy 2 — Imp
+
+* ataque rápido;
+* projétil;
+* movimentação agressiva.
+
+## Enemy 3 — Heavy
+
+* muita vida;
+* ataque pesado;
+* movimento lento.
+
+## Enemy 4 — Demon
+
+* melee;
+* corre em direção ao jogador;
+* grande dano de contato.
+
+## Enemy 5 — Flying Enemy
+
+* movimento vertical;
+* ataque à distância;
+* pode perseguir o jogador por cima.
+
+## Enemy 6 — Elite
+
+* alta vida;
+* maior velocidade;
+* ataques combinados.
+
+---
+
+# 13. BOSS
+
+Criar um boss completamente diferente dos inimigos comuns.
+
+O boss deve possuir:
+
+* grande quantidade de HP;
+* múltiplas fases;
+* ataques diferentes;
+* mudança de comportamento;
+* arena própria;
+* telegraph dos ataques;
+* invulnerabilidade temporária em determinados estados;
+* weak points;
+* ataques de área;
+* summon de inimigos;
+* feedback visual;
+* barra de vida do boss no HUD.
+
+Exemplo de fases:
+
+### Fase 1
+
+Ataques simples.
+
+### Fase 2
+
+Maior velocidade + projéteis.
+
+### Fase 3
+
+Arena parcialmente modificada + ataques de área + summons.
+
+---
+
+# 14. IA
+
+Não criar inimigos que simplesmente "andam até o jogador".
+
+Criar máquina de estados:
+
+```text
+IDLE
+PATROL
+ALERT
+CHASE
+ATTACK
+HURT
+SEARCH
+FLEE
+DEAD
+```
+
+Implementar:
+
+* percepção;
+* distância;
+* linha de visão;
+* campo de visão;
+* memória curta da posição do jogador;
+* estados de combate;
+* cooldowns;
+* escolha de ataque.
+
+A IA deve ser barata computacionalmente.
+
+Não usar pathfinding pesado a cada frame.
+
+Atualizar decisões em frequência reduzida, por exemplo:
+
+```text
+AI decision: 5–15 Hz
+movement: frame-rate dependent
+```
+
+---
+
+# 15. LEVEL
+
+Criar pelo menos UMA FASE COMPLETA.
+
+A fase deve possuir:
+
+1. área inicial;
+2. corredor;
+3. arena;
+4. área industrial;
+5. porta trancada;
+6. chave/cartão;
+7. área secreta;
+8. arena de combate;
+9. zona de recuperação;
+10. área final;
+11. arena do boss;
+12. saída.
+
+Criar progressão:
+
+```text
+START
+ ↓
+EXPLORE
+ ↓
+FIRST COMBAT
+ ↓
+WEAPON
+ ↓
+KEY
+ ↓
+LOCKED AREA
+ ↓
+LARGER COMBAT
+ ↓
+SECRET
+ ↓
+HEAVY ENCOUNTER
+ ↓
+BOSS
+ ↓
+EXIT
+```
+
+---
+
+# 16. LEVEL DESIGN
+
+A fase deve ser construída para criar ritmo.
+
+Alternar:
+
+```text
+exploração
+→ tensão
+→ combate
+→ recompensa
+→ exploração
+→ combate
+→ segredo
+→ arena
+→ boss
+```
+
+Evitar corredores infinitos.
+
+Criar landmarks visuais.
+
+O jogador deve entender aproximadamente onde está.
+
+---
+
+# 17. PORTAS
+
+Implementar portas funcionais.
+
+Tipos:
+
+### Porta normal
+
+Abre automaticamente.
+
+### Porta interativa
+
+Precisa pressionar E.
+
+### Porta com chave
+
+Exige cartão/chave.
+
+### Porta temporizada
+
+Abre por determinado tempo.
+
+### Porta de arena
+
+Só abre depois que os inimigos morrerem.
+
+---
+
+# 18. ITENS
+
+Implementar pickups:
+
+### Vida
+
+* +health.
+
+### Armadura
+
+* reduz dano.
+
+### Munição
+
+Tipos:
+
+* pistol;
+* shotgun;
+* machine gun;
+* rockets.
+
+### Armas
+
+Armas podem ser encontradas no mapa.
+
+### Chaves
+
+Usadas para abrir áreas específicas.
+
+---
+
+# 19. SISTEMA DE DANO
+
+Implementar dano bidirecional.
+
+O jogador recebe:
+
+```text
+enemy attack
+projectile
+explosion
+environment hazard
+```
+
+O jogador gera:
+
+```text
+hitscan
+pellet
+projectile
+explosion
+```
+
+Mostrar feedback.
+
+---
+
+# 20. DAMAGE NUMBERS
+
+Quando o jogador atingir um inimigo:
+
+mostrar temporariamente:
+
+```text
+-17
+-42
+CRITICAL
+```
+
+Posicionar o texto no espaço 3D projetado para a tela.
+
+Não gerar DOM individual permanentemente.
+
+Usar pooling.
+
+---
+
+# 21. DAMAGE INDICATOR
+
+Quando o jogador sofrer dano:
+
+mostrar uma indicação direcional.
+
+Exemplo:
+
+```text
+← DAMAGE
+```
+
+ou arco vermelho ao redor da tela.
+
+A direção deve corresponder à direção aproximada do ataque.
+
+---
+
+# 22. HUD
+
+Criar HUD completo.
+
+Mostrar:
+
+```text
+HP
+ARMOR
+AMMO
+CURRENT WEAPON
+KILLS
+SECRETS
+KEYS
+LEVEL PROGRESS
+```
+
+Exemplo:
+
+```text
+HP      87
+ARMOR   42
+
+AMMO    18 / 72
+
+WEAPON
+SHOTGUN
+
+KILLS
+14 / 31
+
+SECRETS
+1 / 3
+```
+
+---
+
+# 23. BOSS HUD
+
+Quando o boss aparecer:
+
+mostrar barra grande:
+
+```text
+BOSS NAME
+████████████████████
+```
+
+A barra deve diminuir de acordo com o HP.
+
+---
+
+# 24. MINIMAP
+
+Implementar minimap.
+
+O minimap deve mostrar:
+
+* posição do jogador;
+* direção;
+* paredes;
+* áreas descobertas;
+* portas;
+* inimigos próximos, opcionalmente;
+* objetivo.
+
+O mapa deve ser atualizado conforme exploração.
+
+Não mostrar necessariamente o mapa inteiro desde o começo.
+
+Implementar sistema de descoberta/fog-of-war simples.
+
+---
+
+# 25. SISTEMA DE OBJETIVOS
+
+Mostrar objetivos atuais:
+
+```text
+OBJECTIVE
+
+Find the security key.
+```
+
+Depois:
+
+```text
+OBJECTIVE
+
+Open the reactor door.
+```
+
+Depois:
+
+```text
+OBJECTIVE
+
+Destroy the reactor core.
+```
+
+E finalmente:
+
+```text
+OBJECTIVE
+
+Kill the boss.
+```
+
+---
+
+# 26. PARTÍCULAS
+
+Implementar sistemas leves:
+
+### muzzle flash
+
+### sparks
+
+### blood
+
+### explosions
+
+### smoke
+
+### projectile trail
+
+### impact particles
+
+### debris
+
+Usar:
+
+* BufferGeometry;
+* Points;
+* sprites;
+* object pooling.
+
+Nunca criar centenas de objetos novos por frame.
+
+---
+
+# 27. ANIMAÇÕES
+
+Mesmo com assets low-poly, implementar animações perceptíveis.
+
+Player:
+
+* idle;
+* walk;
+* sprint;
+* shoot;
+* reload;
+* damage.
+
+Weapons:
+
+* idle;
+* recoil;
+* muzzle flash;
+* reload;
+* weapon switch.
+
+Enemies:
+
+* idle;
+* walk;
+* attack;
+* hurt;
+* death.
+
+Boss:
+
+* idle;
+* attack;
+* phase transition;
+* hurt;
+* death.
+
+Se não houver modelos animados disponíveis, criar animações proceduralmente.
+
+---
+
+# 28. ASSETS
+
+Prioridade:
+
+```text
+LOW POLY
+SMALL TEXTURES
+FEW MATERIALS
+REUSABLE ASSETS
+```
+
+Preferir:
+
+* caixas;
+* cilindros;
+* planos;
+* meshes simples;
+* decals;
+* texturas pequenas;
+* atlas.
+
+Criar variações por:
+
+* escala;
+* rotação;
+* material;
+* iluminação.
+
+Evitar duplicação desnecessária de geometria.
+
+---
+
+# 29. CENÁRIO
+
+Criar módulos reutilizáveis:
+
+```text
+wall
+floor
+ceiling
+pillar
+pipe
+door
+crate
+terminal
+light
+vent
+barrel
+column
+stairs
+```
+
+Montar o mapa utilizando esses módulos.
+
+---
+
+# 30. ILUMINAÇÃO
+
+Criar iluminação retro.
+
+Usar poucas luzes dinâmicas.
+
+Preferir:
+
+* ambient light;
+* hemisphere;
+* directional;
+* emissive materials;
+* poucas point lights.
+
+Criar zonas:
+
+* normal;
+* alerta;
+* combate;
+* boss.
+
+---
+
+# 31. ÁUDIO
+
+Implementar arquitetura para:
+
+* tiros;
+* impactos;
+* inimigos;
+* portas;
+* pickups;
+* explosões;
+* ambiente;
+* música;
+* boss.
+
+Caso não existam assets de áudio licenciados:
+
+criar placeholders simples ou utilizar Web Audio API procedural.
+
+---
+
+# 32. GAME LOOP
+
+Criar game loop estável:
+
+```text
+INPUT
+ ↓
+PLAYER
+ ↓
+AI
+ ↓
+PHYSICS
+ ↓
+COMBAT
+ ↓
+WORLD
+ ↓
+ITEMS
+ ↓
+PARTICLES
+ ↓
+UI
+ ↓
+RENDER
+```
+
+Separar:
+
+```text
+update()
+render()
+```
+
+Quando apropriado.
+
+---
+
+# 33. DELTA TIME
+
+Nunca assumir que:
+
+```javascript
+1 frame = 16.67ms
+```
+
+Usar delta time.
+
+Limitar delta máximo para evitar explosões físicas depois de travamentos.
+
+---
+
+# 34. OBJECT POOLING
+
+Implementar pools para:
+
+* projéteis;
+* partículas;
+* damage numbers;
+* muzzle flashes;
+* efeitos de impacto;
+* inimigos quando possível.
+
+---
+
+# 35. MEMORY MANAGEMENT
+
+Monitorar:
+
+* geometries;
+* textures;
+* materials;
+* event listeners;
+* timers;
+* DOM;
+* object references.
+
+Evitar memory leaks.
+
+Quando trocar de fase:
+
+liberar recursos que não serão mais usados.
+
+---
+
+# 36. GAME STATE
+
+Implementar estados:
+
+```text
+BOOT
+MENU
+LOADING
+PLAYING
+PAUSED
+BOSS
+VICTORY
+GAME_OVER
+```
+
+---
+
+# 37. SAVE / PROGRESS
+
+Implementar pelo menos:
+
+```text
+localStorage
+```
+
+Salvar:
+
+* armas desbloqueadas;
+* progresso;
+* chaves;
+* configurações;
+* volume;
+* qualidade gráfica.
+
+---
+
+# 38. MENU
+
+Criar:
+
+## Main Menu
+
+```text
+NEW GAME
+CONTINUE
+OPTIONS
+```
+
+## Options
+
+```text
+Graphics
+Mouse Sensitivity
+Volume
+Quality
+```
+
+## Pause
+
+```text
+RESUME
+OPTIONS
+RESTART
+MAIN MENU
+```
+
+---
+
+# 39. RESPONSIVIDADE
+
+Desktop é prioridade.
+
+Ainda assim:
+
+* adaptar HUD;
+* adaptar canvas;
+* suportar diferentes proporções;
+* evitar elementos quebrados em 16:9, 16:10 e ultrawide.
+
+---
+
+# 40. PLAYWRIGHT
+
+Playwright NÃO deve ser usado como engine do jogo.
+
+Ele deve ser usado como sistema de validação.
+
+Criar testes automatizados.
+
+### Boot test
+
+Verificar:
+
+* página carrega;
+* canvas existe;
+* Three.js inicializa;
+* nenhum erro fatal no console.
+
+### Movement test
+
+Verificar:
+
+* WASD funciona;
+* player se move;
+* player não atravessa paredes.
+
+### Weapon test
+
+Verificar:
+
+* arma inicial;
+* disparo;
+* munição;
+* troca de arma.
+
+### Enemy test
+
+Verificar:
+
+* inimigo aparece;
+* inimigo detecta player;
+* inimigo ataca;
+* inimigo recebe dano;
+* inimigo morre.
+
+### Pickup test
+
+Verificar:
+
+* pickup existe;
+* coleta funciona;
+* HUD atualiza.
+
+### Door test
+
+Verificar:
+
+* porta abre;
+* porta bloqueada permanece bloqueada;
+* chave libera porta.
+
+### Boss test
+
+Verificar:
+
+* boss aparece;
+* barra de HP aparece;
+* boss recebe dano;
+* boss morre;
+* vitória aparece.
+
+### Game over
+
+Verificar:
+
+* HP chega a zero;
+* tela de game over aparece;
+* restart funciona.
+
+---
+
+# 41. TESTE DE PERFORMANCE
+
+Criar modo debug mostrando:
+
+```text
+FPS
+Frame Time
+Draw Calls
+Triangles
+Textures
+Active Enemies
+Particles
+```
+
+O modo debug pode ser ativado com:
+
+```text
+F3
+```
+
+Não deixar isso visível no modo normal.
+
+---
+
+# 42. DETECÇÃO DE ERROS
+
+Durante desenvolvimento:
+
+capturar:
+
+```javascript
+window.onerror
+window.onunhandledrejection
+```
+
+Mostrar erros no console.
+
+Não esconder erros silenciosamente.
+
+---
+
+# 43. DEBUG TOOLS
+
+Criar opcionalmente:
+
+```text
+F1 = debug
+F2 = noclip
+F3 = performance
+F4 = show collision
+F5 = show enemy states
+```
+
+Essas ferramentas devem ficar desativadas no build final ou protegidas por flag de desenvolvimento.
+
+---
+
+# 44. BALANCEAMENTO INICIAL
+
+Criar valores iniciais razoáveis.
+
+Exemplo:
+
+```text
+Player HP: 100
+Player Armor: 0
+
+Pistol:
+damage = 15
+fireRate = 4
+
+Shotgun:
+pellets = 8
+damage = 8 each
+
+Machine Gun:
+damage = 10
+fireRate = 10
+
+Rocket:
+damage = 100
+splash = 60
+```
+
+Não trate esses valores como definitivos.
+
+Durante testes, ajuste o balanceamento para que a experiência seja divertida.
+
+---
+
+# 45. FEEL DO COMBATE
+
+O combate deve ser:
+
+* rápido;
+* responsivo;
+* agressivo;
+* legível;
+* satisfatório.
+
+Cada tiro deve ter feedback:
+
+```text
+flash
+sound
+recoil
+impact
+damage number
+enemy reaction
+```
+
+---
+
+# 46. IMPACTO DAS ARMAS
+
+Pistol:
+
+impacto pequeno.
+
+Shotgun:
+
+grande reação de impacto.
+
+Machine Gun:
+
+reação contínua.
+
+Rocket:
+
+explosão + partículas + knockback.
+
+---
+
+# 47. SEGREDOS
+
+Criar pelo menos 3 secrets.
+
+Exemplos:
+
+* parede falsa;
+* área escondida;
+* switch secreto;
+* recompensa.
+
+Recompensa pode ser:
+
+* arma;
+* munição;
+* armadura;
+* health;
+* lore.
+
+---
+
+# 48. OBJETIVOS E PROGRESSÃO
+
+O jogador nunca deve ficar sem saber o que fazer.
+
+Sempre atualizar:
+
+```text
+objective
+keys
+doors
+boss state
+level completion
+```
+
+---
+
+# 49. LORE
+
+Adicionar pequenos elementos ambientais:
+
+* terminais;
+* sinais;
+* mensagens;
+* nomes de setores;
+* indicadores de perigo.
+
+Não transformar isso em um RPG.
+
+O foco é FPS.
+
+---
+
+# 50. PROCEDIMENTO DE DESENVOLVIMENTO
+
+NÃO tente escrever tudo de uma vez.
+
+Desenvolva em fases.
+
+## FASE 1
+
+Criar:
+
+* Vite;
+* Three.js;
+* canvas;
+* câmera;
+* PointerLockControls;
+* WASD;
+* player;
+* chão;
+* paredes.
+
+Executar.
+
+Testar.
+
+## FASE 2
+
+Adicionar:
+
+* colisão;
+* gravidade;
+* sprint;
+* head bob.
+
+Testar.
+
+## FASE 3
+
+Adicionar:
+
+* primeira arma;
+* shooting;
+* raycast;
+* inimigo;
+* damage.
+
+Testar.
+
+## FASE 4
+
+Adicionar:
+
+* armas restantes;
+* munição;
+* pickups.
+
+Testar.
+
+## FASE 5
+
+Adicionar:
+
+* IA;
+* inimigos;
+* arenas.
+
+Testar.
+
+## FASE 6
+
+Adicionar:
+
+* portas;
+* chaves;
+* objetivos;
+* secrets.
+
+Testar.
+
+## FASE 7
+
+Adicionar:
+
+* HUD;
+* minimap;
+* damage indicators;
+* boss bar.
+
+Testar.
+
+## FASE 8
+
+Adicionar:
+
+* boss;
+* arena;
+* múltiplas fases;
+* vitória.
+
+Testar.
+
+## FASE 9
+
+Adicionar:
+
+* partículas;
+* áudio;
+* animações;
+* polish.
+
+Testar.
+
+## FASE 10
+
+Otimizar.
+
+Executar Playwright.
+
+Corrigir todos os erros.
+
+---
+
+# 51. REGRA FUNDAMENTAL DE IMPLEMENTAÇÃO
+
+Após cada sistema:
+
+1. implementar;
+2. executar;
+3. testar;
+4. corrigir;
+5. somente então avançar.
+
+Nunca acumular dez sistemas quebrados e tentar corrigir tudo no final.
+
+---
+
+# 52. INTERNET / PESQUISA TÉCNICA
+
+Quando encontrar um problema técnico real que não consiga resolver com conhecimento próprio:
+
+pesquise na internet.
+
+Priorize:
+
+1. documentação oficial Three.js;
+2. documentação oficial Playwright;
+3. MDN;
+4. documentação WebGL;
+5. GitHub;
+6. fóruns técnicos confiáveis.
+
+Não pesquisar aleatoriamente.
+
+Pesquise apenas quando necessário.
+
+Ao encontrar uma solução:
+
+* entender a solução;
+* adaptar ao projeto;
+* não copiar dependências desnecessárias;
+* verificar licença;
+* manter arquitetura limpa.
+
+---
+
+# 53. SKILLS
+
+Antes de começar:
+
+1. inspecione as skills disponíveis relacionadas a:
+
+   * game development;
+   * Three.js;
+   * frontend;
+   * UI/UX;
+   * performance;
+   * testing;
+   * Playwright;
+   * asset generation;
+   * procedural generation.
+
+2. utilize as skills relevantes.
+
+3. não instale dependências ou skills desnecessárias.
+
+4. se existir uma skill especializada que melhore significativamente:
+
+   * arquitetura;
+   * design;
+   * performance;
+   * testes;
+   * geração de assets;
+
+use-a.
+
+---
+
+# 54. REGRA CONTRA PLACEHOLDER INCOMPLETO
+
+É permitido usar placeholders durante o desenvolvimento.
+
+Porém:
+
+não entregue o projeto final com:
+
+```text
+TODO
+IMPLEMENT LATER
+PLACEHOLDER ENEMY
+TEMP WEAPON
+COMING SOON
+```
+
+Sistemas essenciais precisam estar implementados.
+
+---
+
+# 55. CRITÉRIO DE "PRONTO"
+
+O projeto só pode ser considerado terminado quando:
+
+### Gameplay
+
+* [ ] jogador movimenta;
+* [ ] câmera funciona;
+* [ ] colisão funciona;
+* [ ] armas funcionam;
+* [ ] munição funciona;
+* [ ] inimigos funcionam;
+* [ ] IA funciona;
+* [ ] dano funciona;
+* [ ] pickups funcionam;
+* [ ] portas funcionam;
+* [ ] chaves funcionam;
+* [ ] objetivos funcionam;
+* [ ] secrets funcionam;
+* [ ] boss funciona;
+* [ ] vitória funciona;
+* [ ] game over funciona.
+
+### UI
+
+* [ ] HUD;
+* [ ] HP;
+* [ ] armor;
+* [ ] ammo;
+* [ ] weapon;
+* [ ] kills;
+* [ ] objective;
+* [ ] minimap;
+* [ ] damage feedback;
+* [ ] boss bar;
+* [ ] menus.
+
+### Performance
+
+* [ ] sem memory leaks evidentes;
+* [ ] sem criação massiva de objetos por frame;
+* [ ] partículas com pooling;
+* [ ] assets leves;
+* [ ] draw calls controlados;
+* [ ] qualidade ajustável.
+
+### Testes
+
+* [ ] Playwright boot test;
+* [ ] movement;
+* [ ] weapons;
+* [ ] enemies;
+* [ ] pickups;
+* [ ] progression;
+* [ ] boss;
+* [ ] victory;
+* [ ] game over.
+
+---
+
+# 56. REGRA FINAL
+
+Você não está criando uma "demo de Three.js".
+
+Você está criando um **jogo FPS retro completo para navegador**.
+
+A prioridade é:
+
+```text
+JOGABILIDADE
+↓
+CONTROLE
+↓
+COMBATE
+↓
+IA
+↓
+PROGRESSÃO
+↓
+FEEDBACK
+↓
+PERFORMANCE
+↓
+VISUAL
+```
+
+Quando uma decisão entrar em conflito entre gráficos bonitos e performance:
+
+**escolha performance.**
+
+Quando uma decisão entrar em conflito entre arquitetura sofisticada e gameplay:
+
+**escolha gameplay.**
+
+Quando uma decisão exigir uma biblioteca pesada que possa ser resolvida com Three.js + JavaScript:
+
+**prefira a solução leve.**
+
+Quando um sistema estiver implementado, valide-o antes de avançar.
+
+No final, execute os testes Playwright, abra o jogo em Chromium e faça uma validação completa do fluxo:
+
+```text
+MENU
+→ NEW GAME
+→ EXPLORE
+→ SHOOT
+→ COLLECT
+→ FIGHT
+→ UNLOCK
+→ EXPLORE
+→ BOSS
+→ KILL BOSS
+→ VICTORY
+```
+
+Corrija qualquer erro encontrado.
+
+Só depois considere o jogo finalizado.

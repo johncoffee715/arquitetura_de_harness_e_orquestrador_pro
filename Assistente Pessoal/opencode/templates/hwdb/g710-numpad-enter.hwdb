@@ -1,0 +1,4 @@
+# G710 numpad-Enter → Return (normalização user-space-proof)
+# origem: hefesto 2026-08-26 · reversível: remover este arquivo + systemd-hwdb update
+evdev:input:b0003v046DpC24D*
+ KEYBOARD_KEY_70058=enter

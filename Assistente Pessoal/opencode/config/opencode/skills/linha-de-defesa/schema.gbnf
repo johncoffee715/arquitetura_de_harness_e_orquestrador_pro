@@ -1,0 +1,3 @@
+root ::= "{" ws "\"tool\"" ws ":" ws string ws "," ws "\"params\"" ws ":" ws "{" ws "}" ws "}"
+ws ::= [ \t\n]*
+string ::= "\"" [^"\\\n]{0,256} "\""

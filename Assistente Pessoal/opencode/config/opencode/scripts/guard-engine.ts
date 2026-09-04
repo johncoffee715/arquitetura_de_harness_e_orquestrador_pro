@@ -13,6 +13,7 @@ export function unescapePath(p: string): string {
 }
 
 export const DESTRUCTIVE_PATTERNS: Rule[] = [
+  { re: /^\s*python3\s+-c\b.*\b(shutil\.rmtree|os\.remove|os\.unlink|pathlib.*unlink)\b.*/, label: "python3 -c destrutivo (bypass)" },
   { re: /^\s*rm\s+(-[a-zA-Z]*[fF]|--force)\b.*/, label: "rm -f/--force" },
   { re: /^\s*git\s+clean\s+(-[a-zA-Z]*[fd]|--force|-fdx)\b.*/, label: "git clean (delete worktree)" },
   { re: /^\s*git\s+checkout\s+--\s+.*/, label: "git checkout -- (descarta mudanças)" },

@@ -1,6 +1,6 @@
 {
   "schema_version": "1.0",
-  "last_updated": "2026-09-01T01:19:11.532358Z",
+  "last_updated": "2026-09-04T01:39:09.490658Z",
   "description": "Manifesto de modelos LLM para o Grafo Híbrido v2 — regenerado por sync-llm-stack.py a partir de modelos LLM/manifesto_llm.json.",
   "cortex_sensorial": {
     "model": "rwkv7-g1d-0.4b-instruct",
@@ -31,56 +31,13 @@
     },
     "granite-4.2-3b": {
       "slot": "9088",
-      "category": "executor",
+      "category": "contrato-plano",
       "high_precision": true,
       "input_hygiene_required": true,
       "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
       "safe_input_size": 131072,
       "ctx_allocated": 131072,
-      "status": "online",
-      "file": "granite-4.2-3b-Q4_K_M.gguf",
-      "temp": 0.8,
-      "sampling": {
-        "temperature": 0.8,
-        "top_p": 0.95
-      },
-      "fisica_inferencia": {
-        "backend": "Vulkan0",
-        "flash_attn": true,
-        "cache_type_k": "q4_0",
-        "cache_type_v": "q4_0",
-        "batch": 512,
-        "n_ctx": 131072,
-        "kv_q4_q4_validado": true
-      },
-      "metrica_R78": {
-        "debilidade": "SWE-Bench não avaliado (3B) — código F4 profundo limitado; BFCL 52.41 (tool calling bom, igual ou melhor que Qwen4B); card exige temp 1.0/top_p 0.95 — usar crivo empírico",
-        "capacidades": "proposer/planejamento F2-F3, hefesto, tool calling OpenAI-schema, raciocínio thinking, 131K ctx, RULER 64K 67.5, τ³-bench 45.8, AIME25 78.3",
-        "possibilidades": "F4 leve sob supervisão; substituir Qwen3.8-4B :9088 (2026-08-31, issue alucinação)"
-      },
-      "benchmark_R79": {
-        "fonte": "ibm-granite/granite-4.2-3b (Apache-2.0, card oficial 2026-08-25) + BFCL-V4",
-        "bfcl_v4": 52.41,
-        "rul er_64k": 67.52,
-        "aime25": 78.33,
-        "t3_bench": 45.78,
-        "status": "evidencia_externa_conflitada_em_andamento"
-      },
-      "benchmark_empirico_local_2026-08-31": {
-        "prefill_short_tok_s": 78.4,
-        "prefill_medium_tok_s": 1401.3,
-        "decode_short_tok_s": 103.3,
-        "decode_med_tok_s": 97.8,
-        "decode_long_tok_s": 112.4,
-        "decode_media": 104.5,
-        "latencia_geracao_s": 1.9,
-        "vram_usado_gb": 15.22,
-        "vram_total_gb": 17.16,
-        "folga_gb": 1.94,
-        "crivo_r83": "PASSOU_CATEGORICO",
-        "limiar_f4_r65": "decode >=100 -> PASS (104.5 medio)"
-      },
-      "ctx": 131072
+      "status": "online"
     },
     "ternary-bonsai-8b": {
       "slot": "9090",
@@ -92,7 +49,7 @@
       "ctx_allocated": 65536,
       "status": "online"
     },
-    "ornith-1.5-35b-a3b-iq4_xs": {
+    "ornith-1.5-35b-a3b-ad-iq3_s-iq3_xxs": {
       "slot": "8083",
       "category": "orquestrador",
       "high_precision": true,
@@ -110,14 +67,7 @@
       "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
       "safe_input_size": 8192,
       "ctx_allocated": 8192,
-      "status": "online",
-      "file": "Gemma-2-2B-IT-Q4_K_M.gguf",
-      "temp": 0.8,
-      "metrica_R78": {
-        "debilidade": "janela 8K curta; não para contexto longo",
-        "capacidades": "refutador ágil / fallback forja (tool calling light); veredito rápido",
-        "possibilidades": "juiz rápido em retornos curtos"
-      }
+      "status": "online"
     },
     "smollm2-360m": {
       "slot": "9093",
@@ -127,16 +77,6 @@
       "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
       "safe_input_size": 4096,
       "ctx_allocated": 4096,
-      "status": "online"
-    },
-    "qwen3.5-0.8b": {
-      "slot": "9083",
-      "category": "descoberta",
-      "high_precision": true,
-      "input_hygiene_required": true,
-      "cortex_sensorial": "rwkv7-g1d-0.4b-instruct:9084",
-      "safe_input_size": 262144,
-      "ctx_allocated": 262144,
       "status": "online"
     }
   },

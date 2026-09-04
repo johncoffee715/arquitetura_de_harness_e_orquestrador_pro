@@ -93,7 +93,7 @@
     },
     "local-ternary-gemma-2-2b": {
       "api": "openai",
-      "name": "JUIZ F5-F6 (refutador-agil) :9092 — role:refuter",
+      "name": "juiz F5-F6 (refutador-agil) :9092 :9092 — role:refuter",
       "options": {
         "baseURL": "http://127.0.0.1:9092/v1",
         "apiKey": "llamacpp"
@@ -111,7 +111,7 @@
     },
     "local-descoberta": {
       "api": "openai",
-      "name": "micro-checks :9093 — role:ingestor",
+      "name": "micro 1-bit 400 t/s :9093 :9093 — role:ingestor",
       "options": {
         "baseURL": "http://127.0.0.1:9093/v1",
         "apiKey": "llamacpp"
@@ -121,42 +121,6 @@
           "name": "role:ingestor",
           "limit": {
             "context": 4096,
-            "output": 8192
-          },
-          "tool_call": true
-        }
-      }
-    },
-    "local-descoberta-qwen3.5-0.8b": {
-      "api": "openai",
-      "name": "NÍVEL 1 (R38) :9083 — role:ingestor",
-      "options": {
-        "baseURL": "http://127.0.0.1:9083/v1",
-        "apiKey": "llamacpp"
-      },
-      "models": {
-        "ingestor": {
-          "name": "role:ingestor",
-          "limit": {
-            "context": 262144,
-            "output": 8192
-          },
-          "tool_call": true
-        }
-      }
-    },
-    "local-executor": {
-      "api": "openai",
-      "name": "EXECUTOR F4 :9088 — role:proposer",
-      "options": {
-        "baseURL": "http://127.0.0.1:9088/v1",
-        "apiKey": "llamacpp"
-      },
-      "models": {
-        "proposer": {
-          "name": "role:proposer",
-          "limit": {
-            "context": 131072,
             "output": 8192
           },
           "tool_call": true

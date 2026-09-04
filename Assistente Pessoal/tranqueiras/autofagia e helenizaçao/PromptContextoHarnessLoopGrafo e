@@ -1,0 +1,229 @@
+Use features compativeis, MIX, DEV LOOP, HEFESTO, A2A, SWARM, no path
+/mnt/dados/Assistente Pessoal/projetos/doom/ e crie um clone do jogo
+doom64 usando tree.js/css/java script/html5/playwright/ aqui vao algumas
+metricas graficas e fisicas de baixo custo como referencia:
+quake ii, black ps2, duken nuken, Doom64,
+inclua pelo menos quatro tipos de armas, seis inimigos, boss,
+implemente o jogo completo, crie inimigos e todos os detalhes de fisica da
+fase de forma extremamente detalhada backend e frontend, coloque tambem no hud
+informaçoes conforme progresso, minimap,coleta de itens,
+danos recebido e danos gerados nos inimigos,  ajuste tudo
+o que precisar como dinamica, fisica, particulas,
+animaçoes de assets e itens bem como cenario, pra ser um jogo
+jogavel, use assets leves pra que rode sem travar no navegador,
+use as skills de design disponiveis e se necessario vasculhe a
+internet para apoio tecnico conforme oferta e demanda do projeto.
+8:41
+
+o que e saas, crm, landpage,
+
+
+
+visualização de geração de código em tempo real por IA é Streaming (ou Streamed Responses).
+SSE (Server-Sent Events) ou Chunked Transfer Encoding para entregar essa funcionalidade.
+
+
+
+
+https://www.youtube.com/watch?v=wR_cLfRLBDs
+
+
+usar o obsidian como rag
+
+
+
+corrija a "Linha de Defesa" Multi-Formato contra alucinaçoes, falha looping sistemico, quantização agreessiva,
+combinar Markdown + Python + JSON + GBNF, mas arquiteturalmente sólida.
+Cada formato atua em uma camada de defesa diferente e como eles se complementam:
+
+┌─────────────────────────────────────────────────────────────┐
+│  CAMADA 4: VALIDAÇÃO FUNCIONAL (Python .py)                 │
+│  → Executa testes, verifica se a saída faz sentido lógico   │
+│  → Simula chamadas de API, checa consistência de dados      │
+├─────────────────────────────────────────────────────────────┤
+│  CAMADA 3: VALIDAÇÃO SEMÂNTICA (JSON Schema + Python)       │
+│  → Verifica se campos obrigatórios existem                  │
+│  → Valida tipos, ranges, enums                              │
+├─────────────────────────────────────────────────────────────┤
+│  CAMADA 2: VALIDAÇÃO SINTÁTICA (GBNF .gbnf)                 │
+│  → Força o modelo a gerar apenas tokens válidos             │
+│  → Garante JSON bem-formado, Markdown válido, etc.          │
+├─────────────────────────────────────────────────────────────┤
+│  CAMADA 1: ESTRUTURAÇÃO DO PROMPT (Markdown .md)            │
+│  → Separa contexto, instruções, exemplos, constraints       │
+│  → Reduz ambiguidade no input                               │
+├─────────────────────────────────────────────────────────────┤
+│  CAMADA 0: MODELO      (quantização agressiva)              │
+│ → Gera a saída (potencialmente ruidosa devido à quantização)│
+└─────────────────────────────────────────────────────────────┘
+
+| Formato            | Função na defesa                                 | Quando é aplicado                                                        |
+| ------------------ | ------------------------------------------------ | ------------------------------------------------------------------------ |
+| **Markdown (.md)** | Estruturação do prompt e do output intermediário | No prompt system/instruction e na saída de raciocínio (chain-of-thought) |
+| **GBNF (.gbnf)**   | Gramática constrangedora — força sintaxe válida  | Durante a geração (sampler do llama.cpp), token a token                  |
+| **JSON (.json)**   | Contrato de dados — schema rigoroso              | Na saída final para consumo por APIs ou próximo agente                   |
+| **Python (.py)**   | Validador e executor — checa semântica e lógica  | Pós-processamento da saída, antes de executar qualquer ação              |
+
+
+| Risco                                                             | Mitigação com sua arquitetura                                                          |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| Modelo gera JSON sintaticamente válido mas semanticamente absurdo | JSON Schema (campos obrigatórios + enums) + validação Python                           |
+| Modelo escolhe ferramenta errada devido a reasoning degradado     | Few-shot examples no prompt Markdown + validação de existência da ferramenta em Python |
+| Modelo "esquece" constraints em contexto longo                    | Resumo periódico em Markdown + re-injeção de constraints a cada turno                  |
+| Modelo gera parâmetros com tipos errados (string vs int)          | GBNF com tipagem forte + JSON Schema `type` rigoroso                                   |
+| Alucinação de ferramentas inexistentes                            | Python valida contra whitelist de tools disponíveis                                    |
+
+    Teste A/B: Compare a mesma tarefa entre a quantização base mais coerente e quantizaçoes mais agressivas. Meça taxa de erro (ferramenta errada, JSON inválido, parâmetros incorretos). Se a taxa de erro das quantizaçoes mais agressivas >5% a mais, considere puro ou a quantização base.
+    Use GBNF sempre para orquestração, independente da quantização. A penalidade de performance é menor que o custo de parsear JSON malformado.
+    Não pule a camada Python. GBNF garante sintaxe, JSON Schema garante estrutura, mas apenas Python garante que a orquestração faz sentido (ex: "esta ferramenta realmente pode receber estes parâmetros?").
+    Considere fallback: Se as quantizaçoes mais agressivas falhar em uma tarefa crítica, tenha um caminho para repetir com  quantização base mais coerente ou delegar para um modelo menor mas denso (ex: Qwen3-8B em Q4_K_M a ~12 t/s) como validador.
+
+ estratégia é viável e inteligente. A quantização agressiva compensa pela velocidade e economia de RAM, desde que você trate o modelo como um "gerador potencialmente ruidoso" e invista pesado nas camadas de validação. A combinação Markdown → GBNF → JSON → Python é exatamente a ordem correta de defesa.
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                     META-ORQUESTRADOR — PYTHON                             │
+│                                                                             │
+│ • Task Classification                                                       │
+│ • Model / Quantization Routing                                             │
+│ • STATE TRACKER                                                            │
+│ • STATE HASH                                                               │
+│ • INTENT FINGERPRINT                                                       │
+│ • Context / KV Manager                                                     │
+│ • Retry Controller                                                         │
+│ • Circuit Breaker                                                          │
+│ • Model Fallback                                                           │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   ▼
+════════════════════════════ FASE 1 — PRE-INFERENCE ══════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 1 — CONTEXT / PROMPT STATE                                          │
+│                         Markdown / Structured Text                         │
+│                                                                             │
+│ • System Policy                                                            │
+│ • Task                                                                      │
+│ • Context                                                                   │
+│ • Constraints                                                               │
+│ • Few-shot                                                                  │
+│ • Operational State                                                         │
+│ • Previous Failure Feedback                                                 │
+│                                                                             │
+│ FUNÇÃO: estruturar contexto e reduzir ambiguidade                          │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 1.5 — CONTEXT / KV GUARD                                            │
+│                                                                             │
+│ • token budget                                                              │
+│ • context compaction                                                        │
+│ • context priority                                                          │
+│ • degradation detection                                                     │
+│ • KV checkpoint                                                             │
+│ • session reset                                                             │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   ▼
+════════════════════════════ FASE 2 — INFERENCE ═══════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 0 — MODEL ENGINE                                                     │
+│                                                                             │
+│ Model + Quantization + KV + Sampler                                         │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │ logits
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 2 — CONSTRAINED DECODING                                            │
+│                                                                             │
+│             JSON Schema → GBNF                                              │
+│                                                                             │
+│ • syntax                                                                     │
+│ • valid structure                                                            │
+│ • enums estruturais                                                          │
+│ • tool-call format                                                           │
+│                                                                             │
+│ Schema = fonte da verdade                                                    │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 2.5 — GENERATION WATCHDOG                                            │
+│                                                                             │
+│ • n-gram repetition                                                         │
+│ • sequence repetition                                                       │
+│ • semantic cycle                                                            │
+│ • token stall                                                               │
+│ • timeout                                                                    │
+│ • max generation                                                            │
+│ • entropy / diversity anomaly                                               │
+│                                                                             │
+│ ACTION → STOP / INVALIDATE / RETRY                                          │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   │ RAW STRING
+                                   ▼
+════════════════════════════ FASE 3 — VALIDATION ══════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 3 — STRUCTURAL + SEMANTIC VALIDATION                                │
+│                                                                             │
+│ JSON Parse                                                                  │
+│       ↓                                                                     │
+│ JSON Schema                                                                 │
+│       ↓                                                                     │
+│ Pydantic                                                                    │
+│                                                                             │
+│ • types                                                                      │
+│ • required                                                                   │
+│ • enum                                                                       │
+│ • range                                                                      │
+│ • invariants                                                                 │
+│ • additionalProperties=false                                                │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   │ TYPED OBJECT
+                                   ▼
+════════════════════════════ FASE 4 — EXECUTION ═══════════════════════════════
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 4 — EXECUTION GATE                                                   │
+│                                                                             │
+│ • Tool Whitelist                                                           │
+│ • Permission                                                               │
+│ • State Validation                                                         │
+│ • Argument Validation                                                      │
+│ • Preconditions                                                            │
+│ • Safety Invariants                                                        │
+│ • INTENT FINGERPRINT CHECK                                                 │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                                   ▼
+                              TOOL / API
+                                   │
+                                   ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CAMADA 5 — RESULT VALIDATOR                                                 │
+│                                                                             │
+│ • expected effect                                                          │
+│ • state transition                                                         │
+│ • checksum                                                                  │
+│ • invariants                                                                │
+│ • artifact integrity                                                        │
+└──────────────────────────────────┬──────────────────────────────────────────┘
+                                   │
+                         ┌─────────┴─────────┐
+                         │                   │
+                        PASS                FAIL
+                         │                   │
+                         ▼                   ▼
+                       COMMIT             CLASSIFY
+                                             │
+                  ┌──────────────────────────┼─────────────────────┐
+                  │                          │                     │
+                RETRY                       HARD               MODEL
+                  │                         FAIL              DEGRADE
+                  ▼                          │                     │
+             update state                    ▼                     ▼
+                                      CIRCUIT BREAKER          FALLBACK

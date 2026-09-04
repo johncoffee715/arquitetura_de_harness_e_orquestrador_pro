@@ -25,3 +25,12 @@ harness/watchdog/orchestrator-history.jsonl
 harness/logs/wd-modular.log
 harness/watchdog/orchestrator-metrics.jsonl
 harness/watchdog/orchestrator-metrics.state
+
+# Symlinks locais de compatibilidade (apontam p/ Assistente Pessoal/) - nao versionar
+/cerebro
+/cerebro com IA
+/ecossistema
+/harness
+/logs
+/opencode
+Assistente Pessoal/cerebro com IA/textos, pdf e esquemas/**/*.pdf

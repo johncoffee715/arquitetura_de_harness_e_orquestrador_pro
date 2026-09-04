@@ -1,0 +1,80 @@
+{
+  "gerado_em": "2026-08-30",
+  "vram_total_gb": 17.16,
+  "vram_usada_gb": 15.7,
+  "folga_gb": 1.46,
+  "slots": [
+    {
+      "slot": 8083,
+      "role": "orchestrator",
+      "modelo": "Ornith-35B IQ4_XS",
+      "device": "CPU/RAM",
+      "pesos_gb": 18.73,
+      "kv_kb_tok": 5.76,
+      "ctx_atual": 262144,
+      "ctx_nativo": 262144,
+      "kv_gb_atual": 1.51,
+      "nota": "RAM 20.2GB RSS — limitado por RAM (31GB), não VRAM"
+    },
+    {
+      "slot": 9084,
+      "role": "ingestor",
+      "modelo": "RWKV7-0.4B FP16",
+      "device": "GPU",
+      "pesos_gb": 0.91,
+      "kv_kb_tok": 0.0,
+      "ctx_atual": 1048576,
+      "ctx_nativo": 1048576,
+      "kv_gb_atual": 0.064,
+      "nota": "state fixo — KV NÃO escala com ctx"
+    },
+    {
+      "slot": 9085,
+      "role": "judge",
+      "modelo": "LLMJudge-3B Q4_K_M",
+      "device": "GPU",
+      "pesos_gb": 1.93,
+      "kv_kb_tok": 10.12,
+      "ctx_atual": 32768,
+      "ctx_nativo": 32768,
+      "kv_gb_atual": 0.33,
+      "nota": "JÁ NO NATIVO MÁX (32768)"
+    },
+    {
+      "slot": 9086,
+      "role": "reflexo",
+      "modelo": "LFM-1.2B Q4_K_M",
+      "device": "GPU",
+      "pesos_gb": 0.73,
+      "kv_kb_tok": 5.63,
+      "ctx_atual": 32768,
+      "ctx_nativo": 128000,
+      "kv_gb_atual": 0.18,
+      "nota": "PODE EXPANDIR até 128K (+0.54GB)"
+    },
+    {
+      "slot": 9088,
+      "role": "proposer",
+      "modelo": "Qwen3.8-4B Q4_K_M",
+      "device": "GPU",
+      "pesos_gb": 2.78,
+      "kv_kb_tok": 10.12,
+      "ctx_atual": 131072,
+      "ctx_nativo": 262144,
+      "kv_gb_atual": 1.33,
+      "nota": "AUMENTADO 65K→131K (loop compactação); até 200K cabe (+0.70GB)"
+    },
+    {
+      "slot": 9090,
+      "role": "refuter",
+      "modelo": "Ternary-8B Q2_0_g64",
+      "device": "GPU",
+      "pesos_gb": 2.31,
+      "kv_kb_tok": 40.5,
+      "ctx_atual": 65536,
+      "ctx_nativo": 65536,
+      "kv_gb_atual": 2.65,
+      "nota": "JÁ NO NATIVO MÁX (65536); KV caro 40.5KB/tok"
+    }
+  ]
+}

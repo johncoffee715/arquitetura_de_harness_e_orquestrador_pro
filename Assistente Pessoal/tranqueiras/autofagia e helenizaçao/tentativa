@@ -1,0 +1,19 @@
+
+
+
+
+-rules, skills, mcps, hooks, lsp
+-subagents prompts
+
+
+# Backup da pp_table original
+cat /sys/class/drm/card0/device/pp_table > /tmp/pp_stock.bin
+
+# Executar o cap
+python3 /tmp/superpowers/skills/fix-mi50-socclk/cap-socclk.py /tmp/pp_stock.bin /tmp/pp_capped.bin
+
+# Aplicar em runtime
+sudo cat /tmp/pp_capped.bin > /sys/class/drm/card0/device/pp_table
+
+# Verificar
+cat /sys/class/drm/card0/device/pp_dpm_socclk

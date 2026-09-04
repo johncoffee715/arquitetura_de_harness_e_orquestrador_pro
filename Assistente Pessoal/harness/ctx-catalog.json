@@ -1,0 +1,152 @@
+{
+  "catalog": "ctx-catalog",
+  "updated": "2026-09-04T01:29:09.415141+00:00",
+  "models": [
+    {
+      "model": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS.gguf",
+      "port": 8083,
+      "ctx": 262144,
+      "kv_type": "K=q4_0 V=q4_0",
+      "kv": "5.76 KB/tok · 1.51 GiB @262144",
+      "weights_gb": 14.44,
+      "local": "cpu"
+    },
+    {
+      "model": "Bonsai-27B-1bit.Q4_K_M",
+      "port": 9083,
+      "ctx": 16384,
+      "kv_type": "K=q8_0 V=q4_0",
+      "kv": "104.0 KB/tok · 1.62 GiB @16,384",
+      "weights_gb": 3.54,
+      "local": "cpu"
+    },
+    {
+      "model": "Qwen3.5-0.8B",
+      "port": 9084,
+      "ctx": 131072,
+      "kv_type": "K=q8_0 V=q4_0",
+      "kv": "19.5 KB/tok · 2.44 GiB @131,072",
+      "weights_gb": 0.49,
+      "local": "cpu"
+    },
+    {
+      "model": "LFM2.5-230M-Q4_0",
+      "port": 9086,
+      "ctx": 128000,
+      "kv_type": "K=q8_0 V=q4_0",
+      "kv": "híbrido (TypeError)",
+      "weights_gb": 0.14,
+      "local": "cpu"
+    },
+    {
+      "model": "LLMJudge-Qwen2.5-3B.Q4_K_M",
+      "port": 9085,
+      "ctx": 32768,
+      "kv_type": "K=q8_0 V=q4_0",
+      "kv": "14.6 KB/tok · 0.46 GiB @32,768",
+      "weights_gb": 1.8,
+      "local": "cpu"
+    },
+    {
+      "model": "Ternary-Bonsai-1.7B-Q2_0_g64",
+      "port": 9089,
+      "ctx": 8192,
+      "kv_type": "K=q8_0 V=q4_0",
+      "kv": "híbrido (ValueError)",
+      "weights_gb": 0.46,
+      "local": "cpu"
+    },
+    {
+      "model": "Ternary-Bonsai-8B-Q2_0_g64",
+      "port": 9090,
+      "ctx": 8192,
+      "kv_type": "K=q8_0 V=q4_0",
+      "kv": "híbrido (ValueError)",
+      "weights_gb": 2.15,
+      "local": "cpu"
+    }
+  ],
+  "audit": {
+    "audit_version": 2,
+    "generated_at": "2026-08-24T23:26:42.610278+00:00",
+    "launcher_sha256": "6451ed211bf1",
+    "teto_vram_gb": 15.85,
+    "models": [
+      {
+        "key": "orchestrator",
+        "model": "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS",
+        "port": 8083,
+        "ctx": 262144,
+        "local": "cpu",
+        "kv_type": "K=q8_0 V=q4_0",
+        "kv": "5.76 KB/tok · 1.51 GiB @262144",
+        "weights_gb": 14.44
+      },
+      {
+        "key": "bonsai",
+        "model": "Bonsai-27B-1bit.Q4_K_M",
+        "port": 9083,
+        "ctx": 16384,
+        "local": "cpu",
+        "kv_type": "K=q8_0 V=q4_0",
+        "kv": "104.0 KB/tok · 1.62 GiB @16,384",
+        "weights_gb": 3.54
+      },
+      {
+        "key": "qwen",
+        "model": "Qwen3.5-0.8B",
+        "port": 9084,
+        "ctx": 131072,
+        "local": "cpu",
+        "kv_type": "K=q8_0 V=q4_0",
+        "kv": "19.5 KB/tok · 2.44 GiB @131,072",
+        "weights_gb": 0.49
+      },
+      {
+        "key": "lfm",
+        "model": "LFM2.5-230M-Q4_0",
+        "port": 9086,
+        "ctx": 128000,
+        "local": "cpu",
+        "kv_type": "K=q8_0 V=q4_0",
+        "kv": "híbrido (TypeError)",
+        "weights_gb": 0.14
+      },
+      {
+        "key": "llmjudge",
+        "model": "LLMJudge-Qwen2.5-3B.Q4_K_M",
+        "port": 9085,
+        "ctx": 32768,
+        "local": "cpu",
+        "kv_type": "K=q8_0 V=q4_0",
+        "kv": "14.6 KB/tok · 0.46 GiB @32,768",
+        "weights_gb": 1.8
+      },
+      {
+        "key": "ternary17",
+        "model": "Ternary-Bonsai-1.7B-Q2_0_g64",
+        "port": 9089,
+        "ctx": 8192,
+        "local": "cpu",
+        "kv_type": "K=q8_0 V=q4_0",
+        "kv": "híbrido (ValueError)",
+        "weights_gb": 0.46
+      },
+      {
+        "key": "ternary8b",
+        "model": "Ternary-Bonsai-8B-Q2_0_g64",
+        "port": 9090,
+        "ctx": 8192,
+        "local": "cpu",
+        "kv_type": "K=q8_0 V=q4_0",
+        "kv": "híbrido (ValueError)",
+        "weights_gb": 2.15
+      }
+    ],
+    "totais": {
+      "pesos_cpu_gb": 8.58,
+      "kv_cpu_gib": 4.52,
+      "ram_estimada_cpu_gb": 13.1
+    }
+  }
+}

@@ -500,9 +500,9 @@ O orquestrador **DELEGA SEMPRE que houver recurso disponível** — nunca execut
 - **Brainstorming de modelos**: nível 1 propõe → nível 2 filtra/refatora → retorna ao orquestrador; múltiplos modelos opinam sobre a mesma task.
 - Cada LLM **herda categoricamente os `.md` dos agentes** e os incorpora como **personas aplicadas em si mesmo**.
 
-## R39 — Gran-Mestre Irredutível = Ornith-1.5-35B-A3B-IQ4_XS (CPU)
+## R39 — Gran-Mestre Irredutível = Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS (CPU)
 
-O Gran-Mestre (orquestrador primário) **É o LLM `Ornith-1.5-35B-A3B-IQ4_XS`** (`local-orchestrator/orchestrator`, :8083, **CPU** — MoE 35B A3B, 256 experts/8 ativos, IQ4_XS, KV q4_0/q4_0, ctx 262144, threads auto=18) e só pode ser **revogado/substituído pelo usuário de forma explícita e direta** ("Gran-Mestre, você está revogado/substituído" — nada mais). Nenhum subagente, modelo, plugin, hook ou processo pode alterar isso. Pontos de verdade: `opencode.jsonc` + `manifesto_llm.json` + `gran-mestre.md` → `local-orchestrator/orchestrator` (ID neutro R69). Se qualquer sync/autofagia/script tentar mudar o modelo do Gran-Mestre → reverter imediatamente + redflag (R10). Regra em vigor desde 2026-08-16; **substituição 9B→35B autorizada pelo usuário em 2026-08-30** (decisão explícita). Física: decode CPU ~8 t/s (vs 67.8 GPU do 9B) — GM agora é bandwidth-bound; lógica 12/12 (~21s/teste vs 46s do 9B CPU); t36 degrada decode 2.8× (R72 empírico 30/08).
+O Gran-Mestre (orquestrador primário) **É o LLM `Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS`** (`local-orchestrator/orchestrator`, :8083, **CPU** — MoE 35B A3B, 256 experts/8 ativos, IQ3_S 3.44bpw + IQ3_XXS 3.06bpw mix, 14.44GiB, KV q4_0/q4_0, ctx 262144, threads auto=18) e só pode ser **revogado/substituído pelo usuário de forma explícita e direta** ("Gran-Mestre, você está revogado/substituído" — nada mais). Nenhum subagente, modelo, plugin, hook ou processo pode alterar isso. Pontos de verdade: `opencode.jsonc` + `manifesto_llm.json` + `gran-mestre.md` → `local-orchestrator/orchestrator` (ID neutro R69). Se qualquer sync/autofagia/script tentar mudar o modelo do Gran-Mestre → reverter imediatamente + redflag (R10). Regra em vigor desde 2026-08-16; **substituição 9B→35B autorizada pelo usuário em 2026-08-30** (decisão explícita). Física: decode CPU ~8 t/s (vs 67.8 GPU do 9B) — GM agora é bandwidth-bound; lógica 12/12 (~21s/teste vs 46s do 9B CPU); t36 degrada decode 2.8× (R72 empírico 30/08).
 
 ## R40 — Guardrail de Refutação Incansável até Impressão Real (Loop Adversarial A2A)
 
@@ -987,7 +987,7 @@ Fontes: Adendas 7-21 · validação GM-oficial 12/12 tarefas ×4 candidatos · r
 - Nada de "default silencioso": toda config de batch/KV/MTP é **fixada por crivo empírico** (R66) e registrada no manifesto — alteração sem novo crivo = proibida (R62).
 
 <Exemplo canônico (2026-08-30)>
-- 35B IQ4_XS: sweep batch 2048/512 (baseline) = pp 48.59 · tg 8.08 → 4096/1024 = 48.01/7.88 → 8192/2048 = 46.32/7.33 → **mantido 2048/512** (batch maior degrada, bandwidth-bound). KV q4/q4 ativo. FA CPU sem ganho (<2%) → off documentado. MTP: **N/A** — arquivo sem head (jashepp removeu 22/08; draft separado não publicado).
+- 35B AD-IQ3_S-XXS: sweep pp512 15.74 tg32 3.44 (vs IQ4_XS pp 9.67 tg 1.55, +63% prefill +122% decode, bench 03/09) — IQ4_XS sweep baseline = pp 48.59 · tg 8.08 → 4096/1024 = 48.01/7.88 → 8192/2048 = 46.32/7.33 → **mantido 2048/512** (batch maior degrada, bandwidth-bound). KV q4/q4 ativo. FA CPU sem ganho (<2%) → off documentado. MTP: **N/A** — arquivo sem head (jashepp removeu 22/08; draft separado não publicado).
 
 ---
 

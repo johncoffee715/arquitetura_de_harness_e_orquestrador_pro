@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# needle — wrapper global do Micro-Roteador L0 (Needle 2, Cactus-Compute)
+# Uso:
+#   needle --tools <tools.json> --prompt "..."        # one-shot
+#   needle --serve --port 8097 --tools graph-tools.json  # servidor HTTP
+# Default: catálogo do grafo (triagem F0/F4) se nenhum --tools for passado.
+set -u
+DIR="/mnt/dados/Assistente Pessoal/opencode/tools/needle2"
+BIN="$DIR/needle"
+[ -x "$BIN" ] || { echo "needle2 não instalado em $DIR" >&2; exit 127; }
+
+has_tools=false
+for a in "$@"; do [ "$a" = "--tools" ] && has_tools=true; done
+if ! $has_tools; then
+  exec "$BIN" --tools "$DIR/graph-tools.json" "$@"
+fi
+exec "$BIN" "$@"

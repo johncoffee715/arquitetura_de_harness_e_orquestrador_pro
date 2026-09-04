@@ -1,0 +1,201 @@
+{
+  "gerado_em": "2026-08-30T20:17:43.283136+00:00",
+  "secoes": {
+    "providers": [
+      {
+        "provider": "local-thalamus",
+        "role": "ingestor",
+        "porta": "9084",
+        "ctx": 1048576,
+        "tool_call": false
+      },
+      {
+        "provider": "local-judge",
+        "role": "judge",
+        "porta": "9085",
+        "ctx": 32768,
+        "tool_call": true
+      },
+      {
+        "provider": "local-reflexo",
+        "role": "reflexo",
+        "porta": "9086",
+        "ctx": 32768,
+        "tool_call": true
+      },
+      {
+        "provider": "local-forge",
+        "role": "proposer",
+        "porta": "9088",
+        "ctx": 65536,
+        "tool_call": true
+      },
+      {
+        "provider": "local-ternary",
+        "role": "refuter",
+        "porta": "9090",
+        "ctx": 65536,
+        "tool_call": false
+      },
+      {
+        "provider": "local-orchestrator",
+        "role": "orchestrator",
+        "porta": "8083",
+        "ctx": 262144,
+        "tool_call": true
+      }
+    ],
+    "agents": [
+      {
+        "nome": "cortex-sensorial",
+        "model": "local-thalamus/ingestor",
+        "path": "agent/cortex-sensorial.md"
+      },
+      {
+        "nome": "executor-f4",
+        "model": "local-forge/proposer",
+        "path": "agent/executor-f4.md"
+      },
+      {
+        "nome": "explorador-tool",
+        "model": "local-forge/proposer",
+        "path": "agent/explorador-tool.md"
+      },
+      {
+        "nome": "explore",
+        "model": "local-forge/proposer",
+        "path": "agent/explore.md"
+      },
+      {
+        "nome": "general",
+        "model": "local-forge/proposer",
+        "path": "agent/general.md"
+      },
+      {
+        "nome": "gran-mestre",
+        "model": "local-orchestrator/orchestrator",
+        "path": "agent/gran-mestre.md"
+      },
+      {
+        "nome": "hefesto",
+        "model": "local-forge/proposer",
+        "path": "agent/hefesto.md"
+      },
+      {
+        "nome": "juiz-limbico",
+        "model": "local-judge/judge",
+        "path": "agent/juiz-limbico.md"
+      },
+      {
+        "nome": "planejador-f23",
+        "model": "local-forge/proposer",
+        "path": "agent/planejador-f23.md"
+      },
+      {
+        "nome": "prosa-f2",
+        "model": "local-forge/proposer",
+        "path": "agent/prosa-f2.md"
+      },
+      {
+        "nome": "reflexo-r42",
+        "model": "local-reflexo/reflexo",
+        "path": "agent/reflexo-r42.md"
+      },
+      {
+        "nome": "refutador-limbico",
+        "model": "local-ternary/refuter",
+        "path": "agent/refutador-limbico.md"
+      },
+      {
+        "nome": "sdd-executor",
+        "model": "local-thalamus/ingestor",
+        "path": "agent/sdd/sdd-executor.md"
+      },
+      {
+        "nome": "sentinel-guard",
+        "model": "local-forge/proposer",
+        "path": "agent/sentinel-guard.md"
+      }
+    ],
+    "skills": [
+      {
+        "nome": "context-selector",
+        "tags": "contexto, selecao, bm25, disclosure, tokens, ferramentas",
+        "path": "skills/context-selector/SKILL.md"
+      },
+      {
+        "nome": "gran-mestre",
+        "tags": "orquestracao, meta-orquestrador, pipeline, gates, delegação, task-packet, governanca, doutrina",
+        "path": "skills/gran-mestre/SKILL.md"
+      },
+      {
+        "nome": "guardrail-llm-fitragem",
+        "tags": "⚠️ SEM TAGS",
+        "path": "skills/guardrail-llm-fitragem/SKILL.md"
+      },
+      {
+        "nome": "harness-kronjob-guardrail",
+        "tags": "kronjob, talamos, guardrail, arquitetura, 10-elementos, roteamento, intencao",
+        "path": "skills/harness-kronjob-guardrail/SKILL.md"
+      },
+      {
+        "nome": "hefesto",
+        "tags": "autofagia, helenizacao, decompilacao, absorcao, forja, skill, plugin, hook, subagent, mcp, lsp",
+        "path": "skills/hefesto/SKILL.md"
+      },
+      {
+        "nome": "sdd",
+        "tags": "⚠️ SEM TAGS",
+        "path": "skills/sdd/SKILL.md"
+      },
+      {
+        "nome": "sentinel-guard-security",
+        "tags": "seguranca, auditoria, adversarial, sentinel, guard, vulnerabilidade",
+        "path": "skills/sentinel-guard-security/SKILL.md"
+      }
+    ],
+    "hooks": [
+      {
+        "comando": "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/kronjob-talamus-filter.py",
+        "registrado": true
+      },
+      {
+        "comando": "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/sdd/sdd-talamus-filter.py",
+        "registrado": true
+      },
+      {
+        "comando": "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/sync-llm-stack.py",
+        "registrado": true
+      },
+      {
+        "comando": "python3 /mnt/dados/Assistente Pessoal/opencode/config/opencode/hooks/stack-health-check.py",
+        "registrado": true
+      }
+    ],
+    "plugins": [
+      "plugin/talamus-preflight.ts"
+    ],
+    "commands": [
+      "commands/attach.md",
+      "commands/stack-toggle.md"
+    ],
+    "scripts": [
+      "scripts/hefesto_motor.py",
+      "scripts/llm-inventory.py",
+      "scripts/attach_media.py",
+      "scripts/auto-amelioracao.py",
+      "scripts/filtro-veloz.py",
+      "scripts/skills-security-audit.sh"
+    ],
+    "mcp": [],
+    "lsp": []
+  },
+  "health_slots": {
+    "8083": "online",
+    "9084": "online",
+    "9085": "online",
+    "9086": "online",
+    "9088": "online",
+    "9090": "online"
+  }
+}

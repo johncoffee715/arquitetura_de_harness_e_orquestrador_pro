@@ -1,0 +1,32 @@
+<%*
+// 1. Defina o nome exato da pasta que está DENTRO do seu vault
+const nomeDaPasta = "ImagensFundo";
+
+// 2. Busca a pasta usando a API nativa do Obsidian
+const pasta = app.vault.getAbstractFileByPath(nomeDaPasta);
+
+if (pasta && pasta.children) {
+    // Filtra apenas os arquivos que são imagens válidas dentro da pasta
+    const imagens = pasta.children.filter(arquivo =>
+        arquivo.extension && ['jpg', 'jpeg', 'png', 'webp'].includes(arquivo.extension.toLowerCase())
+    );
+
+    if (imagens.length > 0) {
+        // Seleciona uma imagem aleatória do array
+        const imagemAleatoria = imagens[Math.floor(Math.random() * imagens.length)];
+
+        // Obtém o recurso local seguro formatado pelo Obsidian
+        const caminhoSeguro = app.vault.getResourcePath(imagemAleatoria);
+        const urlObsidian = `url("${caminhoSeguro}")`;
+
+        // Aplica a imagem de fundo instantaneamente no layout
+        document.body.style.setProperty('--fundo-aleatorio-atual', urlObsidian);
+
+        new Notice(`Fundo alterado para: ${imagemAleatoria.name}`);
+    } else {
+        new Notice("Nenhuma imagem encontrada na pasta '" + nomeDaPasta + "' do seu Vault.");
+    }
+} else {
+    new Notice("A pasta '" + nomeDaPasta + "' não foi encontrada na raiz do seu Vault.");
+}
+-%>

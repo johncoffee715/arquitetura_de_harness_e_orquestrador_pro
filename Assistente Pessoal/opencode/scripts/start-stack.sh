@@ -12,13 +12,14 @@ mkdir -p "$LOGDIR"
 
 # ── MODELO WARM (R21/R58): sobe SÓ sob demanda ──
 MODE_WARM=${MODE_WARM:-1}
-MODE_WARM_PORTS=(9086 9088 9090 9093 9095)
+MODE_WARM_PORTS=(9086 9088 9090 9092 9093 9095)
 
 # ── PORTAS CANÔNICAS ──
-ESSENTIAL_PORTS=(8083 9084)
-WARM_PORTS=(9086 9088 9090 9093 9095)
+ESSENTIAL_PORTS=(8083 9084 9092 9093)
+WARM_PORTS=(9086 9088 9090 9092 9093 9095)
 NEEDLE_PORTS=(8097 9091)
-ALL_PORTS=(8083 9084 9086 9088 9090 9093 9095 8097 9091)
+ALL_PORTS=(8083 9084 9086 9088 9090 9092 9093 9095 8097 9091)
+# 9085/9087 intencionalmente DOWN — adaptados para Gemma 9092 (R71 dual), qwen38-2b sem GGUF — wd-modular não deve reportar como falha
 
 # ── FUNÇÃO DE LAUNCH (R19: idempotente, setsid nohup, desanexado) ──
 launch() { # $1=port $2=model $3...=flags extras
@@ -60,12 +61,13 @@ compute_ornith_ctx() {
 ORNITH_CTX=$(compute_ornith_ctx)
 echo "[8083] ctx dinâmico = $ORNITH_CTX (rocm-smi)"
 # ══ SEÇÃO GERADA por sync-llm-stack.py · FONTE: manifesto_llm.json (não editar à mão) ══
-# CPU 8083 · orquestrador · Ornith-1.5-35B-A3B-IQ4_XS · ORQUESTRADOR (CPU, ctx fixo, threads auto)
-launch 8083 "Ornith-1.5-35B-A3B-IQ4_XS.gguf" \
-  -c 262144 -np 1 -b 2048 -ub 512 -ngl 0 \
+# CPU 8083 · orquestrador · Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS · ORQUESTRADOR (CPU, ctx fixo, threads auto)
+launch 8083 "Ornith-1.5-35B-A3B-AD-IQ3_S-IQ3_XXS.gguf" \
+  -c 262144 -np 1 -b 8192 -ub 2048 -ngl 0 \
   --cache-type-k q4_0 --cache-type-v q4_0 \
   --jinja --temp 0.6 --top-p 0.95 --top-k 20 \
-  --chat-template-kwargs '{"enable_thinking": false}'
+  --chat-template-kwargs '{"enable_thinking": false}' \
+  --cache-prompt
 
 # GPU 9084 · talamus-cortex · RWKV7-G1d-0.4B-Instruct-FP16 (RWKV — state fixo, ctx nativo)
 launch 9084 "RWKV7-G1d-0.4B-Instruct-FP16.gguf" \
@@ -77,15 +79,25 @@ launch 9086 "LFM2.5-1.2B-Thinking-ToMoE-Q4_K_M.gguf" \
   -c 128000 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.05
 
-# GPU 9088 · contrato-plano · granite-4.2-3b-Q4_K_M (FA on) — trocado 2026-08-31 (issue alucinação; decision-log SH-2026-08-31-antilixo)
+# GPU 9088 · contrato-plano · granite-4.2-3b-Q4_K_M (FA on)
 launch 9088 "granite-4.2-3b-Q4_K_M.gguf" \
   -c 131072 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
-  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.8
+  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
 
 # GPU 9090 · refutacao · Ternary-Bonsai-8B-Q2_0_g64 (FA on)
 launch 9090 "Ternary-Bonsai-8B-Q2_0_g64.gguf" \
   -c 65536 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.8
+
+# GPU 9092 · refutacao · Gemma-2-2B-IT-Q4_K_M (FA on)
+launch 9092 "Gemma-2-2B-IT-Q4_K_M.gguf" \
+  -c 8192 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
+  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.8
+
+# GPU 9093 · descoberta · SmolLM2-360M-Instruct-Q8_0 (FA on)
+launch 9093 "SmolLM2-360M-Instruct-Q8_0.gguf" \
+  -c 4096 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
+  --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
 
 # ── CPU · F0 TRIAGEM L0 · Needle 2 (Cactus) · 28MB RAM · confidence-gated ──
 NEEDLE="$ROOT/tools/needle2/needle"
@@ -107,16 +119,20 @@ fi
 echo "--- health check ---"
 sleep 2
 ok=0; total=0
-for p in 8083 9084 9086 9088 9090; do
+for p in 8083 9084 9086 9088 9090 9092 9093; do
   total=$((total+1))
   for i in $(seq 1 45); do
-    curl -sf -m 2 "http://127.0.0.1:$p/health" >/dev/null 2>&1 && break
+    if [ "$p" = "8097" ] || [ "$p" = "9091" ]; then
+      curl -sf -m 2 -X POST "http://127.0.0.1:$p/complete" -H "Content-Type: application/json" -d '{"prompt":"ping","max_tokens":1}' >/dev/null 2>&1 && break
+    else
+      curl -sf -m 2 "http://127.0.0.1:$p/health" >/dev/null 2>&1 && break
+    fi
     sleep 2
   done
-  if curl -sf -m 2 "http://127.0.0.1:$p/health" >/dev/null 2>&1; then
-    echo "[$p] OK"; ok=$((ok+1))
+  if [ "$p" = "8097" ] || [ "$p" = "9091" ]; then
+    if curl -sf -m 2 -X POST "http://127.0.0.1:$p/complete" -H "Content-Type: application/json" -d '{"prompt":"ping","max_tokens":1}' >/dev/null 2>&1; then echo "[$p] OK"; ok=$((ok+1)); else echo "[$p] FALHOU — ver $LOGDIR/llama-$p.log"; fi
   else
-    echo "[$p] FALHOU — ver $LOGDIR/llama-$p.log"
+    if curl -sf -m 2 "http://127.0.0.1:$p/health" >/dev/null 2>&1; then echo "[$p] OK"; ok=$((ok+1)); else echo "[$p] FALHOU — ver $LOGDIR/llama-$p.log"; fi
   fi
 done
 echo "health $ok/$total"
