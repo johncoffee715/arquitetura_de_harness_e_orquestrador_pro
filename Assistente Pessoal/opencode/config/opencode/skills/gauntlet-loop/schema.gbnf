@@ -1,0 +1,24 @@
+/* GBNF for Gauntlet Loop - constrained generation */
+
+{
+  "name": "gauntlet-loop",
+  "description": "Gauntlet Loop - Dev Loop em Diamante",
+  "phases": [
+    {
+      "name": "segmentacao",
+      "type": "dev-loop",
+      "steps": ["segmentacao-task", "execucao-paralela", "criticos-egos", "refutacao-incansavel", "loop-impresao-genuina", "validacao-final"]
+    }
+  ],
+  "constraints": {
+    "max_context": 131072,
+    "gpu_model": "ornith",
+    "wave_nesting": "nested",
+    "criticador": "granite-9088"
+  },
+  "reference_path": "/dev/loop/diamante/path/SHA",
+  "criticador": {
+    "model": "granite-9088",
+    "description": "Criticador para avaliação de qualidade e impressão genuína"
+  }
+}
