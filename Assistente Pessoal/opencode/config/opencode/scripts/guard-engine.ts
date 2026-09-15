@@ -1,10 +1,13 @@
 // guard-engine.ts — lógica pura e testável do guard-gap-p5 (sem dependências de runtime).
 // Extraída em 2026-08-26 para permitir TDD RED→GREEN (R51). NÃO importa opencode/node: basta
 // node --test para validar cada padrão de segurança em isolamento (allow/deny/allow-gov/allow-r18).
+// POLÍTICA 2026-09-15 (soberania do usuário, decisoes/2026-09-15-regra-guard-comando-explicito.md):
+// escrita fora do workdir/governança é PERMITIDA sempre que o usuário solicitar. O engine continua
+// CLASSIFICANDO (deny NÃO-hard = auditoria), mas só regras hardDeny (perda de dados) bloqueiam de fato.
 
 export type Verdict = "allow" | "deny" | "allow-gov" | "allow-r18"
 
-export interface Rule { re: RegExp; label: string; govAware?: boolean; destGroup?: number }
+export interface Rule { re: RegExp; label: string; govAware?: boolean; destGroup?: number; hardDeny?: boolean }
 
 // Paths com escape de shell (`Assistente\ Pessoal`) quebram âncoras e extração de destino.
 // TODO comando/argumento é NORMALIZADO (unescape) antes de qualquer casamento de padrão.
@@ -12,20 +15,23 @@ export function unescapePath(p: string): string {
   return p.replace(/\\(.)/g, "$1")
 }
 
+// hardDeny=true: PERDA DE DADOS irreversível — bloqueio real mantido mesmo sob ordem do usuário
+// (a ordem soberana é executada pelo terminal do usuário ou por caminho com trilha R18, nunca cega).
+// hardDeny ausente/false: deny-classificatório vira ALLOW COM AUDITORIA no plugin (política 2026-09-15).
 export const DESTRUCTIVE_PATTERNS: Rule[] = [
   { re: /^\s*python3\s+-c\b.*\b(shutil\.rmtree|os\.remove|os\.unlink|pathlib.*unlink)\b.*/, label: "python3 -c destrutivo (bypass)" },
-  { re: /^\s*rm\s+(-[a-zA-Z]*[fF]|--force)\b.*/, label: "rm -f/--force" },
-  { re: /^\s*git\s+clean\s+(-[a-zA-Z]*[fd]|--force|-fdx)\b.*/, label: "git clean (delete worktree)" },
-  { re: /^\s*git\s+checkout\s+--\s+.*/, label: "git checkout -- (descarta mudanças)" },
-  { re: /^\s*git\s+reset\s+--hard\s*$/, label: "git reset --hard SEM SHA" },
-  { re: /^\s*git\s+reset\s+(?!--hard\b).*/, label: "git reset não-hard" },
-  { re: /^\s*truncate\s+.*/, label: "truncate (zerar arquivo)" },
-  { re: /^\s*dd\s+of=.*/, label: "dd of= (zerar bloco)" },
+  { re: /^\s*rm\s+(-[a-zA-Z]*[fF]|--force)\b.*/, label: "rm -f/--force", hardDeny: true },
+  { re: /^\s*git\s+clean\s+(-[a-zA-Z]*[fd]|--force|-fdx)\b.*/, label: "git clean (delete worktree)", hardDeny: true },
+  { re: /^\s*git\s+checkout\s+--\s+.*/, label: "git checkout -- (descarta mudanças)", hardDeny: true },
+  { re: /^\s*git\s+reset\s+--hard\s*$/, label: "git reset --hard SEM SHA", hardDeny: true },
+  { re: /^\s*git\s+reset\s+(?!--hard\b).*/, label: "git reset não-hard", hardDeny: true },
+  { re: /^\s*truncate\s+.*/, label: "truncate (zerar arquivo)", hardDeny: true },
+  { re: /^\s*dd\s+of=.*/, label: "dd of= (zerar bloco)", hardDeny: true },
   { re: /^\s*(sed|perl|python3)\s+-i\b(?:.*?\s+)?((?:"[^"]*")|(?:'[^']*')|(?:\\.|\S)+)\s*$/, label: "edição in-place", govAware: true, destGroup: 2 },
   { re: /^\s*tee\s+(?:.*\s)?((?:"[^"]*")|(?:'[^']*')|(?:\\.|\S)+)\s*$/, label: "tee p/ arquivo", govAware: true },
   { re: /^\s*(cat|echo|printf)\b.*(>>?|>)\s+((?:"[^"]*")|(?:'[^']*')|(?:\\.|\S)+)\s*.*/, label: "redirecionamento p/ arquivo", govAware: true, destGroup: 3 },
   { re: /^\s*(cp|mv)\s+.*\.(py|js|ts|rs|go|c|cpp|h|json|jsonc|md|sh)\s+.*(src|lib|app|packages|test)/, label: "cp/mv sobre árvore de código" },
-  { re: /^\s*(sh|bash|zsh)\s+-c\b.*\b(rm|mv|dd|truncate|tee|sed\s+-i|git\s+clean|git\s+checkout\s+--)\b.*/, label: "shell -c destrutivo (bypass)" },
+  { re: /^\s*(sh|bash|zsh)\s+-c\b.*\b(rm|mv|dd|truncate|tee|sed\s+-i|git\s+clean|git\s+checkout\s+--)\b.*/, label: "shell -c destrutivo (bypass)", hardDeny: true },
 ]
 
 export const LEGIT_DESTRUCTIVE: Rule[] = [
@@ -89,7 +95,7 @@ export function isAllowedWritePath(p: string): boolean {
   return false
 }
 
-export function verdict(cmd: string): { verdict: Verdict; why: string; dest?: string } {
+export function verdict(cmd: string): { verdict: Verdict; why: string; dest?: string; hard?: boolean } {
   const segs = segment(cmd)
   for (const seg of segs) {
     // 1) roteiro legitimado (rollback R18) — segmento inteiro deve ser o reset
@@ -104,7 +110,7 @@ export function verdict(cmd: string): { verdict: Verdict; why: string; dest?: st
         if (r.govAware && dest && isAllowedWritePath(dest)) {
           return { verdict: "allow-gov", why: "escopo governado (harness/global/sandbox)", dest }
         }
-        return { verdict: "deny", why: r.label, dest }
+        return { verdict: "deny", why: r.label, dest, hard: r.hardDeny === true }
       }
     }
   }

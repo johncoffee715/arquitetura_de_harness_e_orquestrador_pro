@@ -72,3 +72,24 @@ for (const [cmd, expected] of CASES) {
     assert.equal(verdict(cmd).verdict, expected)
   })
 }
+
+// POLÍTICA 2026-09-15 (soberania do usuário): deny NÃO-hard = allow+auditoria no plugin.
+// Apenas hardDeny (perda de dados irreversível) bloqueia de fato.
+test("hard flag: perda de dados = true; escrita fora do escopo = false", () => {
+  assert.equal(verdict("rm -rf /tmp/x").hard, true, "rm -f é hardDeny")
+  assert.equal(verdict("rm --force arquivo.tmp").hard, true)
+  assert.equal(verdict("git clean -fdx").hard, true)
+  assert.equal(verdict("git checkout -- a.py").hard, true)
+  assert.equal(verdict("git reset --hard").hard, true)
+  assert.equal(verdict("git reset --soft HEAD~1").hard, true)
+  assert.equal(verdict("truncate -s 0 f.log").hard, true)
+  assert.equal(verdict("dd of=/dev/sda").hard, true)
+  assert.equal(verdict("bash -c 'rm -rf /'").hard, true, "shell -c destrutivo")
+  // soft (viram allow-outside auditados no plugin):
+  assert.equal(verdict("sed -i s/a/b/ src.py").hard, false, "edição in-place fora da governança")
+  assert.equal(verdict("tee x > /tmp/out.py").hard, false, "tee fora de caminho permitido")
+  assert.equal(verdict("echo x > src/app.py").hard, false, "redirect fora da governança")
+  assert.equal(verdict("cat >> /mnt/dados/.gitignore").hard, false, "redirect p/ dotfile do repo")
+  assert.equal(verdict("cp a.py src/lib/").hard, false, "cp sobre árvore de código")
+  assert.equal(verdict("git status").hard, undefined, "allow não carrega hard")
+})

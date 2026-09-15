@@ -54,3 +54,10 @@ cerebro com IA/textos, pdf e esquemas/**/*.7z
 
 **/*.so.*
 Assistente Pessoal/opencode/bin/
+
+# Sessao 2026-09-15 (conclusao pendencias): dados/volateis nunca versionar
+Assistente Pessoal/snn/data/
+**/*.part
+**/__pycache__/
+Assistente Pessoal/cerebro com IA/.obsidian/plugins/
+Assistente Pessoal/opencode/config/opencode/harness/logs/
