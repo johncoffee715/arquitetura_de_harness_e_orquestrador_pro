@@ -1,0 +1,49 @@
+{
+  "version": "1.0.0",
+  "description": "OpenTelemetry Export — Observabilidade do AgentRegistry",
+  "service_name": "gsd-agent-registry",
+  "otel_collector": {
+    "endpoint": "http://localhost:4318",
+    "protocol": "http/protobuf",
+    "headers": {
+      "Content-Type": "application/x-protobuf"
+    }
+  },
+  "traces": {
+    "exporter": "otlp",
+    "sampler": "always_on",
+    "batch_size": 128,
+    "export_interval_ms": 5000
+  },
+  "metrics": {
+    "exporter": "otlp",
+    "export_interval_ms": 10000
+  },
+  "logs": {
+    "exporter": "otlp",
+    "level": "info"
+  },
+  "attributes": {
+    "service.version": "1.0.0",
+    "deployment.environment": "development",
+    "telemetry.sdk.name": "opencode"
+  },
+  "spans": {
+    "agent:invoked": {
+      "attributes": ["agent.name", "capability", "duration_ms", "status"],
+      "events": ["agent:started", "agent:completed", "agent:failed"]
+    },
+    "command:executed": {
+      "attributes": ["command.name", "args", "duration_ms", "exit_code"],
+      "events": ["command:started", "command:completed"]
+    },
+    "hook:executed": {
+      "attributes": ["hook.id", "phase", "duration_ms", "exit_code"],
+      "events": ["hook:started", "hook:completed"]
+    },
+    "mcp:called": {
+      "attributes": ["mcp.server", "mcp.tool", "duration_ms", "status"],
+      "events": ["mcp:started", "mcp:completed", "mcp:failed"]
+    }
+  }
+}

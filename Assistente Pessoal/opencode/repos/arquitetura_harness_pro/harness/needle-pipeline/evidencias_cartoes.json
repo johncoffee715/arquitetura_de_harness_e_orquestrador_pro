@@ -1,0 +1,12 @@
+[
+ {
+  "📍_onde": "demo_test.py:3",
+  "🛑_porque": "AssertionError: ",
+  "⚖️_delta": "E       AssertionError: soma incorreta"
+ },
+ {
+  "📍_onde": "demo_test.py:7",
+  "🛑_porque": "AssertionError: ",
+  "⚖️_delta": "E       KeyError: 'inexistente'"
+ }
+]

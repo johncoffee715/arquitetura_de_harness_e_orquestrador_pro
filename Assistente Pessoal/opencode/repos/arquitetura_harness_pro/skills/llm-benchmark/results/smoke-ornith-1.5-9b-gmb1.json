@@ -1,0 +1,78 @@
+{
+  "name": "ornith-1.5-9b-gmb1",
+  "ts": "2026-08-23T16:33:49",
+  "endpoint": "http://127.0.0.1:8083",
+  "telemetry": null,
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": false,
+      "ok": true,
+      "dur": 36.27,
+      "tps": 28.24,
+      "details": {
+        "svg_valid": false,
+        "pelican": false,
+        "bike": false
+      },
+      "reason": null,
+      "raw": ""
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": true,
+      "ok": true,
+      "dur": 17.77,
+      "tps": 28.81,
+      "details": {
+        "count_3": true,
+        "reasoning": true
+      },
+      "reason": null,
+      "raw": "# Counting the 'r's in \"strawberry\"\n\n**The answer is 3 'r's.**\n\n## Step-by-step reasoning\n\nLet me break down the word letter by letter:\n\n| Position | Letter | Is it an 'r'? |\n|----------|--------|---------------|\n| 1 | s | No |\n| 2 | t | No |\n| 3 | **r** | ✅ Yes |\n| 4 | a | No |\n| 5 | w | No |\n| 6 |"
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": true,
+      "ok": true,
+      "dur": 3.73,
+      "tps": 26.25,
+      "details": {
+        "parseable": true,
+        "values_correct": true,
+        "markdown_fence": false
+      },
+      "reason": null,
+      "raw": "{\"name\": \"Maria\", \"age\": 28, \"city\": \"São Paulo\"}"
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": true,
+      "ok": true,
+      "dur": 2.16,
+      "tps": 21.28,
+      "details": {
+        "tool_call_count": 1,
+        "json_valid": true,
+        "name_args_ok": true
+      },
+      "reason": null,
+      "raw": "<tool_call>\n{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}</tool_call>"
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": true,
+      "ok": true,
+      "dur": 8.75,
+      "tps": 28.68,
+      "details": {
+        "admits_no_access": true,
+        "invented_number": false
+      },
+      "reason": null,
+      "raw": "I don't have access to real-time market data, so I can't provide the current stock price of AAPL. My knowledge has a cutoff date, and I'm unable to fetch live prices.\n\nTo get the current price, you can:\n\n- **Check a financial website** like Google Finance, Yahoo Finance, or CNBC\n- **Use a stock app*"
+    }
+  ],
+  "passed": 4,
+  "total": 5
+}

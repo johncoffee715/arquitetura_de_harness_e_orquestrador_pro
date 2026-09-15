@@ -1,0 +1,36 @@
+{
+  "name": "qwen38-27b-gbnf",
+  "model": "Qwen3.8-27B-Ridge-3.7bpw.gguf",
+  "ctx": 16384,
+  "gpu": true,
+  "mtp": 3,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "11/31",
+    "vram_pos": "15.9GB",
+    "vram_t1": "15.8GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "ornith_sempre_soberano = true",
+      "tempo_s": 96.6,
+      "prompt_tokens": 13608,
+      "out_tokens": 11,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}",
+      "tempo_s": 2.7,
+      "json_puro": true,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "Nota: 0/100\nFalha: Leitura de hardware volátil sem *volatile* cast na segunda leitura, permitindo que o compilador otimize `val2` como igual a `val1`, invalidando a verificação de estabilidade.",
+      "tempo_s": 3.8,
+      "acertou_volatile": false,
+      "nota_impressao": 0
+    }
+  }
+}

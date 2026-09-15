@@ -1,0 +1,37 @@
+{
+  "projectId": "opencode-superpowers",
+  "installerVersion": 1,
+  "packageVersion": "0.4.0",
+  "installMode": "symlink",
+  "source": "/tmp/opencode-superpowers",
+  "installedAt": "2026-07-09T10:01:20.366Z",
+  "lockSha256": "5d92e4109300015b838040401a070db2c1b3dbe8ffde8557c9a8fbcef8a07cae",
+  "upstreamCommit": "6efe32c9e2dd002d0c394e861e0529675d1ab32e",
+  "installedAgents": [
+    "/home/johncoffee/.config/opencode/agents/superpowers.md",
+    "/home/johncoffee/.config/opencode/agents/superpowers-spec-writer.md",
+    "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer.md",
+    "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer-alt2.md",
+    "/home/johncoffee/.config/opencode/agents/superpowers-plan-writer-alt1.md",
+    "/home/johncoffee/.config/opencode/agents/superpowers-implementer.md",
+    "/home/johncoffee/.config/opencode/agents/superpowers-code-reviewer.md"
+  ],
+  "installedSkills": [
+    "/home/johncoffee/.config/opencode/skills/superpowers-writing-plans",
+    "/home/johncoffee/.config/opencode/skills/superpowers-verification-before-completion",
+    "/home/johncoffee/.config/opencode/skills/superpowers-using-superpowers",
+    "/home/johncoffee/.config/opencode/skills/superpowers-subagent-driven-development",
+    "/home/johncoffee/.config/opencode/skills/superpowers-executing-plans",
+    "/home/johncoffee/.config/opencode/skills/superpowers-brainstorming"
+  ],
+  "installedPlugins": [
+    "/home/johncoffee/.config/opencode/plugins/model-guide",
+    "/home/johncoffee/.config/opencode/plugins/model-guide/index.ts",
+    "/home/johncoffee/.config/opencode/plugins/model-guide/guide.ts",
+    "/home/johncoffee/.config/opencode/plugins/model-guide/hints.ts"
+  ],
+  "tuiPlugin": {
+    "config": "/home/johncoffee/.config/opencode/tui.json",
+    "spec": "file:///home/johncoffee/.config/opencode/plugins/model-guide/index.ts"
+  }
+}

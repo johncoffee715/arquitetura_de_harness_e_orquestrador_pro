@@ -1,0 +1,36 @@
+{
+  "name": "qwen38-27b-ridge-q4kv",
+  "model": "Qwen3.8-27B-Ridge-3.7bpw.gguf",
+  "ctx": 16384,
+  "gpu": true,
+  "mtp": 3,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "11/31",
+    "vram_pos": "17.0GB",
+    "vram_t1": "16.4GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "ornith_sempre_soberano = true",
+      "tempo_s": 127.0,
+      "prompt_tokens": 13608,
+      "out_tokens": 11,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}",
+      "tempo_s": 6.8,
+      "json_puro": true,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "Nota: 0/100\nFalha: O código ignora o retorno de `read_sensor`, permitindo que a leitura do hardware seja otimizada ou eliminada pelo compilador, e não há verificação de erro ou tratamento de instabilidade real.",
+      "tempo_s": 16.3,
+      "acertou_volatile": false,
+      "nota_impressao": 0
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "$schema": "https://opencode.conf.json",
+  "providers": {
+    "local-qwen27b": {
+      "api": "openai",
+      "name": "Qwen3.8-27B IQ2_XXS-slim (GPU :8090)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8090",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "qwen27b-iq2m": {
+          "id": "Qwen3.8-27B-IQ2_M",
+          "name": "Qwen3.8-27B IQ2_M (14GB, 28 t/s)",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          }
+        },
+        "qwen27b-iq2xxs": {
+          "id": "Qwen3.8-27B-IQ2_XXS",
+          "name": "Qwen3.8-27B IQ2_XXS (12.6GB, 28 t/s)",
+          "limit": {
+            "context": 16384,
+            "output": 4096
+          }
+        }
+      }
+    },
+    "local-ornith": {
+      "api": "openai",
+      "name": "Ornith-9B (GPU :8083)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8083",
+        "apiKey": "llamacpp"
+      },
+      "models": {
+        "ornith-9b": {
+          "id": "ornith-1.0-9B.Q4_K_M",
+          "name": "Ornith-9B Q4_K_M (3.2GB, instantâneo)",
+          "limit": {
+            "context": 16384,
+            "output": 2048
+          }
+        }
+      }
+    }
+  }
+}

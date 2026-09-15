@@ -1,0 +1,86 @@
+digraph HookRegistry {
+  rankdir=LR;
+  node [shape=box, style=rounded];
+
+  subgraph cluster_PreToolUse {
+    label="PreToolUse (8 hooks)";
+    style=filled;
+    color="#fff3e0";
+    "pre:config-protection" [label="pre:config-protection\n(p110)"];
+    "pre:config-protection" [label="pre:config-protection\n(p110)"];
+    "pre:edit-write:gateguard-fact-force" [label="pre:edit-write:gateguard-fact-force\n(p120)"];
+    "pre:mcp-health-check" [label="pre:mcp-health-check\n(p130)"];
+    "pre:bash:dispatcher" [label="pre:bash:dispatcher\n(p140)"];
+    "pre:write:doc-file-warning" [label="pre:write:doc-file-warning\n(p150)"];
+    "pre:edit-write:suggest-compact" [label="pre:edit-write:suggest-compact\n(p160)"];
+    "pre:observe:continuous-learning" [label="pre:observe:continuous-learning\n(p170)"];
+  }
+
+  subgraph cluster_PreCompact {
+    label="PreCompact (1 hooks)";
+    style=filled;
+    color="#f3e5f5";
+    "pre:compact" [label="pre:compact\n(p210)"];
+  }
+
+  subgraph cluster_SessionStart {
+    label="SessionStart (5 hooks)";
+    style=filled;
+    color="#e1f5fe";
+    "session:start" [label="session:start\n(p60)"];
+    "session:start" [label="session:start\n(p60)"];
+    "session-start:preflight" [label="session-start:preflight\n(p70)"];
+    "session-start:registry-sync" [label="session-start:registry-sync\n(p75)"];
+    "session-start:ck-context" [label="session-start:ck-context\n(p80)"];
+  }
+
+  subgraph cluster_PostToolUse {
+    label="PostToolUse (10 hooks)";
+    style=filled;
+    color="#e8f5e9";
+    "post:edit:console-warn" [label="post:edit:console-warn\n(p310)"];
+    "post:edit:console-warn" [label="post:edit:console-warn\n(p310)"];
+    "post:edit:design-quality-check" [label="post:edit:design-quality-check\n(p320)"];
+    "post:edit:accumulator" [label="post:edit:accumulator\n(p330)"];
+    "post:quality-gate" [label="post:quality-gate\n(p340)"];
+    "post:bash:dispatcher" [label="post:bash:dispatcher\n(p350)"];
+    "post:governance-capture" [label="post:governance-capture\n(p360)"];
+    "post:observe:continuous-learning" [label="post:observe:continuous-learning\n(p370)"];
+    "post:session-activity-tracker" [label="post:session-activity-tracker\n(p380)"];
+    "post:ecc-metrics-bridge" [label="post:ecc-metrics-bridge\n(p385)"];
+  }
+
+  subgraph cluster_PostToolUseFailure {
+    label="PostToolUseFailure (1 hooks)";
+    style=filled;
+    color="#ffebee";
+    "post:mcp-health-check" [label="post:mcp-health-check\n(p410)"];
+  }
+
+  subgraph cluster_Stop {
+    label="Stop (7 hooks)";
+    style=filled;
+    color="#fff8e1";
+    "stop:format-typecheck" [label="stop:format-typecheck\n(p510)"];
+    "stop:format-typecheck" [label="stop:format-typecheck\n(p510)"];
+    "stop:check-console-log" [label="stop:check-console-log\n(p520)"];
+    "stop:session-end" [label="stop:session-end\n(p530)"];
+    "stop:cost-tracker" [label="stop:cost-tracker\n(p540)"];
+    "stop:evaluate-session" [label="stop:evaluate-session\n(p550)"];
+    "stop:desktop-notify" [label="stop:desktop-notify\n(p560)"];
+  }
+
+  subgraph cluster_SessionEnd {
+    label="SessionEnd (1 hooks)";
+    style=filled;
+    color="#fce4ec";
+    "session:end:marker" [label="session:end:marker\n(p610)"];
+  }
+
+  "session-start:ck-context" -> "pre:config-protection" [style=dashed, label="next phase"];
+  "pre:observe:continuous-learning" -> "pre:compact" [style=dashed, label="next phase"];
+  "pre:compact" -> "post:edit:console-warn" [style=dashed, label="next phase"];
+  "post:ecc-metrics-bridge" -> "post:mcp-health-check" [style=dashed, label="next phase"];
+  "post:mcp-health-check" -> "stop:format-typecheck" [style=dashed, label="next phase"];
+  "stop:desktop-notify" -> "session:end:marker" [style=dashed, label="next phase"];
+}

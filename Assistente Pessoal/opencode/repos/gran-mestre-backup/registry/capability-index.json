@@ -1,0 +1,258 @@
+{
+  "documentation": [
+    "agent-reach",
+    "gsd-ai-researcher",
+    "gsd-code-reviewer",
+    "gsd-codebase-mapper",
+    "gsd-doc-classifier",
+    "gsd-doc-synthesizer",
+    "gsd-doc-verifier",
+    "gsd-doc-writer",
+    "gsd-research-synthesizer",
+    "reverser",
+    "superpowers-spec-writer"
+  ],
+  "research": [
+    "agent-reach",
+    "gsd-advisor-researcher",
+    "gsd-ai-researcher",
+    "gsd-domain-researcher",
+    "gsd-phase-researcher",
+    "gsd-project-researcher",
+    "gsd-research-synthesizer",
+    "security-review"
+  ],
+  "memory": [
+    "ck",
+    "gsd-mempalace-curator",
+    "memory-keeper"
+  ],
+  "execution": [
+    "atlas",
+    "gsd-ai-researcher",
+    "gsd-eval-auditor",
+    "gsd-executor",
+    "gsd-phase-researcher",
+    "gsd-plan-checker",
+    "gsd-planner",
+    "gsd-security-auditor",
+    "gsd-ui-auditor",
+    "superpowers",
+    "superpowers-code-reviewer",
+    "superpowers-implementer",
+    "superpowers-plan-writer",
+    "superpowers-plan-writer-alt1",
+    "superpowers-plan-writer-alt2"
+  ],
+  "framework-selection": [
+    "gsd-ai-researcher",
+    "gsd-eval-planner",
+    "gsd-framework-selector"
+  ],
+  "integration": [
+    "gsd-ai-researcher",
+    "gsd-domain-researcher",
+    "gsd-eval-planner",
+    "gsd-framework-selector",
+    "gsd-integration-checker"
+  ],
+  "pattern-mapping": [
+    "gsd-ai-researcher",
+    "gsd-pattern-mapper",
+    "security-review"
+  ],
+  "ui-design": [
+    "gsd-ai-researcher",
+    "gsd-domain-researcher",
+    "gsd-eval-auditor",
+    "gsd-eval-planner",
+    "gsd-nyquist-auditor",
+    "gsd-roadmapper",
+    "gsd-ui-auditor",
+    "gsd-ui-checker",
+    "gsd-ui-researcher",
+    "memory-keeper",
+    "superpowers-spec-writer"
+  ],
+  "assumptions-analysis": [
+    "gsd-assumptions-analyzer"
+  ],
+  "intelligence": [
+    "gsd-code-fixer",
+    "gsd-intel-updater"
+  ],
+  "review": [
+    "atena",
+    "gsd-code-fixer",
+    "gsd-code-reviewer",
+    "gsd-eval-auditor",
+    "gsd-ui-auditor",
+    "security-review",
+    "superpowers",
+    "superpowers-code-reviewer",
+    "fable-judge"
+  ],
+  "security": [
+    "atena",
+    "gsd-code-reviewer",
+    "gsd-security-auditor",
+    "security-review",
+    "fable-judge"
+  ],
+  "debugging": [
+    "gsd-debug-session-manager",
+    "gsd-debugger"
+  ],
+  "planning": [
+    "prometheus",
+    "gsd-doc-classifier",
+    "gsd-doc-synthesizer",
+    "gsd-domain-researcher",
+    "gsd-eval-auditor",
+    "gsd-executor",
+    "gsd-intel-updater",
+    "gsd-pattern-mapper",
+    "gsd-phase-researcher",
+    "gsd-plan-checker",
+    "gsd-planner",
+    "gsd-project-researcher",
+    "gsd-roadmapper",
+    "gsd-security-auditor",
+    "superpowers",
+    "superpowers-code-reviewer",
+    "superpowers-implementer",
+    "superpowers-plan-writer",
+    "superpowers-plan-writer-alt1",
+    "superpowers-plan-writer-alt2"
+  ],
+  "verification": [
+    "gsd-doc-verifier",
+    "gsd-integration-checker",
+    "gsd-nyquist-auditor",
+    "gsd-plan-checker",
+    "gsd-planner",
+    "gsd-security-auditor",
+    "gsd-verifier",
+    "fable-judge"
+  ],
+  "domain-research": [
+    "gsd-domain-researcher",
+    "gsd-project-researcher"
+  ],
+  "evaluation": [
+    "gsd-domain-researcher",
+    "gsd-eval-auditor",
+    "gsd-eval-planner"
+  ],
+  "profiling": [
+    "gsd-user-profiler",
+    "superpowers-plan-writer-alt1",
+    "superpowers-plan-writer-alt2"
+  ],
+  "reverse-engineering": [
+    "reverser"
+  ],
+  "superpowers": [
+    "superpowers",
+    "superpowers-code-reviewer",
+    "superpowers-implementer",
+    "superpowers-plan-writer",
+    "superpowers-plan-writer-alt1",
+    "superpowers-plan-writer-alt2",
+    "superpowers-spec-writer"
+  ],
+  "orchestration": [
+    "gran-mestre"
+  ],
+  "delegation": [
+    "gran-mestre"
+  ],
+  "governance": [
+    "gran-mestre"
+  ],
+  "safety": [
+    "gran-mestre"
+  ],
+  "observability": [
+    "gran-mestre"
+  ],
+  "decomposition": [
+    "prometheus"
+  ],
+  "validation": [
+    "hestia"
+  ],
+  "conformity-audit": [
+    "hestia"
+  ],
+  "implementation": [
+    "atlas"
+  ],
+  "quality": [
+    "hestia",
+    "fable-judge"
+  ],
+  "macro-review": [
+    "atena"
+  ],
+  "architecture-audit": [
+    "atena"
+  ],
+  "adversarial-review": [
+    "fable-judge"
+  ],
+  "routing": [
+    "gran-mestre"
+  ],
+  "pipeline-management": [
+    "gran-mestre"
+  ],
+  "escalation": [
+    "gran-mestre"
+  ],
+  "requirements-analysis": [
+    "prometheus"
+  ],
+  "task-decomposition": [
+    "prometheus"
+  ],
+  "dependency-analysis": [
+    "prometheus"
+  ],
+  "spec-validation": [
+    "hestia"
+  ],
+  "coverage-validation": [
+    "hestia"
+  ],
+  "contract-validation": [
+    "hestia"
+  ],
+  "verifiability-validation": [
+    "hestia"
+  ],
+  "final-validation": [
+    "hestia"
+  ],
+  "git-management": [
+    "atlas"
+  ],
+  "task-sequencing": [
+    "atlas"
+  ],
+  "supervision": [
+    "atlas"
+  ],
+  "holistic-review": [
+    "atena"
+  ],
+  "coherence-check": [
+    "atena"
+  ],
+  "coupling-analysis": [
+    "atena"
+  ],
+  "architecture-alignment": [
+    "atena"
+  ]
+}

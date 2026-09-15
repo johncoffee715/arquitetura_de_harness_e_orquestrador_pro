@@ -1,0 +1,15 @@
+{
+  "local-providers": [
+    {
+      "name": "gpu-8090",
+      "type": "openai",
+      "baseURL": "http://127.0.0.1:8090/v1",
+      "models": [
+        {
+          "name": "qwen27b-vulkan",
+          "type": "chat"
+        }
+      ]
+    }
+  ]
+}

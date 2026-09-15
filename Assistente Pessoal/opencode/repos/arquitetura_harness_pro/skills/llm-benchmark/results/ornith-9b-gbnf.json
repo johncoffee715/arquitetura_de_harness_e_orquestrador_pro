@@ -1,0 +1,36 @@
+{
+  "name": "ornith-9b-gbnf",
+  "model": "ornith-1.0-9B.Q4_K_M.gguf",
+  "ctx": 32768,
+  "gpu": true,
+  "mtp": 0,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "11/31",
+    "vram_pos": "9.1GB",
+    "vram_t1": "9.6GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "true",
+      "tempo_s": 25.1,
+      "prompt_tokens": 13608,
+      "out_tokens": 2,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}",
+      "tempo_s": 1.1,
+      "json_puro": true,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "**Nota de impressão: 15/100**\n\n**Falha técnica:** O código assume que a porta de I/O é atômica e não verifica se a leitura foi realmente consistente (a CPU pode ler `val1` e `val2` de ciclos diferentes, gerando um falso positivo de \"Stable\" mesmo com ruído); além disso, a função não retorna o valor ",
+      "tempo_s": 1.9,
+      "acertou_volatile": false,
+      "nota_impressao": 15
+    }
+  }
+}

@@ -1,0 +1,19 @@
+name: security-review
+version: 1.0.0
+description: AI-powered codebase security scanner — SQL injection, XSS, authentication,
+  secrets
+author: Gran-Mestre System
+scope: opencode-project
+requires: []
+triggers:
+- security-review
+- seguranca
+- vulnerabilidade
+- audit
+category: security
+priority: high
+tags:
+- gsd
+- security
+- audit
+- vulnerability

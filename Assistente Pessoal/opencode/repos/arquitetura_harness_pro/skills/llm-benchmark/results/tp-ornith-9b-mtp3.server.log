@@ -1,0 +1,16 @@
+0.00.140.981 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.141.303 I srv          init: The UI is disabled
+0.00.141.306 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.141.489 W srv  llama_server: -----------------
+0.00.141.492 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.141.492 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.141.492 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.141.493 W srv  llama_server: -----------------
+0.00.142.798 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/ornith-1.0-9B.Q4_K_M.gguf'
+0.01.165.521 W srv    load_model: [spec] failed to measure MTP context memory: failed to create llama_context from model
+0.20.097.292 I common_speculative_init_result: creating MTP draft context against the target model '/mnt/dados/Assistente Pessoal/modelos LLM/ornith-1.0-9B.Q4_K_M.gguf'
+0.20.097.304 W llama_init_from_model: context type MTP requested but model doesn't contain MTP layers
+0.20.097.304 E common_speculative_init_result: failed to create MTP context
+0.20.097.312 E srv    load_model: failed to create MTP context
+0.20.097.317 I srv    operator(): operator(): cleaning up before exit...
+0.20.099.063 E srv  llama_server: exiting due to model loading error

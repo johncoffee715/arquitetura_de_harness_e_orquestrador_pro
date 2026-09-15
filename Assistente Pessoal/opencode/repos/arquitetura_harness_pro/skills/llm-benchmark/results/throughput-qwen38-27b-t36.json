@@ -1,0 +1,28 @@
+{
+  "name": "qwen38-27b-t36",
+  "model": "Qwen3.8-27B-Ridge-3.7bpw.gguf",
+  "ctx": 16384,
+  "mtp": 3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "np": 1,
+  "threads": 36,
+  "telemetria": {
+    "ram": "13/31",
+    "vram_gb": 17.1
+  },
+  "rodada1": {
+    "wall_s": 48.8,
+    "prompt_n": 435,
+    "predicted_n": 256,
+    "prompt_per_second": 33.7,
+    "predicted_per_second": 7.1
+  },
+  "rodada2": {
+    "wall_s": 142.6,
+    "prompt_n": 3480,
+    "predicted_n": 256,
+    "prompt_per_second": 32.6,
+    "predicted_per_second": 7.2
+  }
+}

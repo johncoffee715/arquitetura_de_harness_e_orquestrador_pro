@@ -1,0 +1,861 @@
+{
+  "$schema": "https://raw.githubusercontent.com/code-yeongyu/oh-my-openagent/dev/assets/oh-my-opencode.schema.json",
+  "agents": {
+    "sisyphus": {
+      "model": "local-qwen38-2b/qwen38-2b-4.1-3b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "hephaestus": {
+      "model": "local-qwen38-2b/qwen38-2b-4.1-3b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "oracle": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "librarian": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "explore": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "multimodal-looker": {
+      "model": "omniroute/auto/best-vision",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "prometheus": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "metis": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "momus": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "superpowers": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "atlas": {
+      "model": "local-qwen38-2b/qwen38-2b-4.1-3b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "sisyphus-junior": {
+      "model": "local-qwen38-2b/qwen38-2b-4.1-3b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "hestia": {
+      "model": "local-qwen38-2b/qwen38-2b-4.1-3b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "atena": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "ai-agent-book": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "book-to-skill": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "code-review-graph": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "context-selector": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "dokku-deploy": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "executor-deep": {
+      "model": "local-qwen38-2b/qwen38-2b-4.1-3b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "fallow-lsp-reviewer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "fallow-mcp-reviewer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gran-mestre": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-advisor-researcher": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-ai-researcher": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-assumptions-analyzer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-code-fixer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-code-reviewer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-codebase-mapper": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-debug-session-manager": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-debugger": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-doc-classifier": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-doc-synthesizer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-doc-verifier": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-doc-writer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-domain-researcher": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-eval-auditor": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-eval-planner": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-executor": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-framework-selector": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-integration-checker": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-intel-updater": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-mempalace-curator": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-nyquist-auditor": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-pattern-mapper": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-phase-researcher": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-plan-checker": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-planner": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-project-researcher": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-research-synthesizer": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-roadmapper": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-security-auditor": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-ui-auditor": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-ui-checker": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-ui-researcher": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-user-profiler": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "gsd-verifier": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "hallmark": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "i-have-adhd": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "mattpocock-skills": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "memory-keeper": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "oh-my-opencode-slim": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "omniroute": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "onp-spec-driven": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "openship": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "orca": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "pi": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "reverser": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "ruview": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "superpowers-code-reviewer": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "superpowers-implementer": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "superpowers-plan-writer-alt1": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "superpowers-plan-writer-alt2": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "superpowers-plan-writer": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "superpowers-spec-writer": {
+      "model": "local-orchestrator/orchestrator-9b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    },
+    "worldmonitor": {
+      "model": "local-qwen/qwen-3.5-0.8b",
+      "fallback_models": [
+        {
+          "model": "omniroute/auto/best-fast"
+        },
+        {
+          "model": "local-qwen/qwen-3.5-0.8b"
+        }
+      ]
+    }
+  },
+  "categories": {
+    "orquestrador": [
+      "gran-mestre"
+    ],
+    "gsd-core": [
+      "gsd-plan-phase",
+      "gsd-execute-phase",
+      "gsd-code-review",
+      "gsd-help",
+      "gsd-verify-work"
+    ],
+    "on-demand": [
+      "__movidas__: ['agent-reach', 'better-harness', 'caveman', 'code-archaeologist', 'graphify', 'headroom-compress', 'procedural-audio', 'procedural-textures', 'silverhawk', 'superpowers-executing-plans', 'superpowers-subagent-driven-development', 'superpowers-using-superpowers', 'superpowers-verification-before-completion', 'superpowers-writing-plans', 'threejs-game-harness', 'gsd-add-tests', 'gsd-ai-integration-phase', 'gsd-audit-fix', 'gsd-audit-milestone', 'gsd-audit-uat', 'gsd-autonomous', 'gsd-capture', 'gsd-cleanup', 'gsd-complete-milestone', 'gsd-config', 'gsd-debug', 'gsd-discuss-phase', 'gsd-docs-update', 'gsd-eval-review', 'gsd-explore', 'gsd-extract-learnings', 'gsd-fast', 'gsd-forensics', 'gsd-graphify', 'gsd-health', 'gsd-import', 'gsd-inbox', 'gsd-ingest-docs', 'gsd-manager', 'gsd-map-codebase', 'gsd-mempalace-capture', 'gsd-mempalace-recall', 'gsd-milestone-summary', 'gsd-mvp-phase', 'gsd-new-milestone', 'gsd-new-project', 'gsd-ns-context', 'gsd-ns-ideate', 'gsd-ns-manage', 'gsd-ns-project', 'gsd-ns-review', 'gsd-ns-workflow', 'gsd-pause-work', 'gsd-phase', 'gsd-plan-review-convergence', 'gsd-pr-branch', 'gsd-profile-user', 'gsd-progress', 'gsd-quick', 'gsd-resume-work', 'gsd-review', 'gsd-review-backlog', 'gsd-secure-phase', 'gsd-settings', 'gsd-ship', 'gsd-sketch', 'gsd-spec-phase', 'gsd-spike', 'gsd-stats', 'gsd-surface', 'gsd-thread', 'gsd-ui-phase', 'gsd-ui-review', 'gsd-ultraplan-phase', 'gsd-undo', 'gsd-update', 'gsd-validate-phase', 'gsd-workspace', 'gsd-workstreams', 'self-scaffold-guard', 'superpowers-brainstorming']"
+    ]
+  },
+  "updated_at": "2026-08-19T13:10:00-03:00",
+  "aliases": {
+    "qwen27b-iq2m": "local-qwen27b/qwen27b-iq2m",
+    "qwen27b-iq2xxs": "local-qwen27b/qwen27b-iq2xxs"
+  }
+}

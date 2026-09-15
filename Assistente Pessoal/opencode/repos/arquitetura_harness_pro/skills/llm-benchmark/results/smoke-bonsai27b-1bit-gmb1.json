@@ -1,0 +1,78 @@
+{
+  "name": "bonsai27b-1bit-gmb1",
+  "ts": "2026-08-23T18:56:50",
+  "endpoint": "http://127.0.0.1:8083",
+  "telemetry": null,
+  "tests": [
+    {
+      "test": "A1_Pelican_SVG",
+      "passed": true,
+      "ok": true,
+      "dur": 37.05,
+      "tps": 27.64,
+      "details": {
+        "svg_valid": true,
+        "pelican": true,
+        "bike": true
+      },
+      "reason": null,
+      "raw": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Subject:** Pelican riding a bicycle\n   - **Format:** Valid SVG (XML file with `<svg>` and `</svg>` tags only)\n   - **Constraints:** \n     - Must contain specific keywords: \"pelican\", \"bird\", \"beak\", \"wing\", \"bicycle\", \"bike\", \"wheel\", \"p"
+    },
+    {
+      "test": "A2_Strawberry",
+      "passed": true,
+      "ok": true,
+      "dur": 18.88,
+      "tps": 27.12,
+      "details": {
+        "count_3": true,
+        "reasoning": true
+      },
+      "reason": null,
+      "raw": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Task:** Count the number of 'r's in the word \"strawberry\".\n   - **Requirement:** Explain reasoning step by step.\n\n2.  **Identify the Target Word:**\n   - Word: \"strawberry\"\n\n3.  **Break Down the Word into Letters:**\n   - s - t - r - a - w"
+    },
+    {
+      "test": "A3_JSON_Extract",
+      "passed": true,
+      "ok": true,
+      "dur": 9.94,
+      "tps": 25.75,
+      "details": {
+        "parseable": true,
+        "values_correct": true,
+        "markdown_fence": false
+      },
+      "reason": null,
+      "raw": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - **Task:** Extract information as valid JSON with specific keys: `name`, `age`, `city`.\n   - **Input Text:** \"Maria is 28 years old and lives in São Paulo.\"\n   - **Constraint:** Respond ONLY with the JSON object, no markdown fences.\n\n2.  **"
+    },
+    {
+      "test": "A4_Tool_Call",
+      "passed": true,
+      "ok": true,
+      "dur": 7.1,
+      "tps": 23.68,
+      "details": {
+        "tool_call_count": 1,
+        "json_valid": true,
+        "name_args_ok": true
+      },
+      "reason": null,
+      "raw": "<tool_call>{\"name\": \"get_weather\", \"arguments\": {\"city\": \"Tokyo\"}}</tool_call>"
+    },
+    {
+      "test": "A5_Halluc_Guard",
+      "passed": true,
+      "ok": true,
+      "dur": 9.71,
+      "tps": 26.36,
+      "details": {
+        "admits_no_access": true,
+        "invented_number": false
+      },
+      "reason": null,
+      "raw": "Here's a thinking process:\n\n1.  **Analyze User Input:**\n   - User asks: \"What is the current stock price of AAPL?\"\n   - AAPL = Apple Inc. stock\n   - \"Current stock price\" implies real-time/live market data\n\n2.  **Identify Key Constraints & Capabilities:**\n   - I am an AI without real-time internet a"
+    }
+  ],
+  "passed": 5,
+  "total": 5
+}

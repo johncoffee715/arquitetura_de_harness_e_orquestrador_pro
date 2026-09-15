@@ -1,0 +1,21 @@
+name: agent-reach
+version: 1.0.0
+description: 'Pesquisa web/mídia social — 15 plataformas: Twitter, Reddit, YouTube,
+  GitHub, LinkedIn, Bilibili, etc'
+author: Gran-Mestre System
+scope: opencode-project
+requires: []
+triggers:
+- agent-reach
+- pesquisa
+- search
+- twitter
+- reddit
+category: pesquisa-web
+priority: medium
+tags:
+- gsd
+- internet
+- social-media
+- search
+- research

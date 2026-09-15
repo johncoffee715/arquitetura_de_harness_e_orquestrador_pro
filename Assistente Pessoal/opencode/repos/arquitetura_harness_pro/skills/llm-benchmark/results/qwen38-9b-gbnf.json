@@ -1,0 +1,36 @@
+{
+  "name": "qwen38-9b-gbnf",
+  "model": "Qwen3.8-9B-Q4_K_M.gguf",
+  "ctx": 32768,
+  "gpu": true,
+  "mtp": 3,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "11/31",
+    "vram_pos": "9.5GB",
+    "vram_t1": "9.4GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "true",
+      "tempo_s": 25.7,
+      "prompt_tokens": 13608,
+      "out_tokens": 2,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}",
+      "tempo_s": 1.2,
+      "json_puro": true,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "Nota: 10/100. A falha é que a variável `port` é um ponteiro, não um endereço, e o operador `*` acessa o valor do ponteiro, não o endereço da porta I/O, além de não haver uso da instrução `in` do assembly para leitura de hardware.",
+      "tempo_s": 1.9,
+      "acertou_volatile": false,
+      "nota_impressao": 10
+    }
+  }
+}

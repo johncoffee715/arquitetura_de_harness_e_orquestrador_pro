@@ -1,0 +1,1 @@
+/mnt/dados/opencode/config/rules/variants/compacto/AGENTS.md

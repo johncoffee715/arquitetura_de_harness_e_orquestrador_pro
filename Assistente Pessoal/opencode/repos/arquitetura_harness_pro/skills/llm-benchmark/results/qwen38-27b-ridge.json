@@ -1,0 +1,36 @@
+{
+  "name": "qwen38-27b-ridge",
+  "model": "Qwen3.8-27B-Ridge-3.7bpw.gguf",
+  "ctx": 16384,
+  "gpu": true,
+  "mtp": 3,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "12/31",
+    "vram_pos": "16.8GB",
+    "vram_t1": "16.9GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "true",
+      "tempo_s": 104.4,
+      "prompt_tokens": 13608,
+      "out_tokens": 2,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}",
+      "tempo_s": 2.9,
+      "json_puro": true,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "Nota: 0/100\nFalha: O código lê o mesmo endereço volátil duas vezes sem garantir que o hardware atualizou o registro entre as leituras, tornando a verificação de estabilidade inúvel.",
+      "tempo_s": 4.0,
+      "acertou_volatile": false,
+      "nota_impressao": 0
+    }
+  }
+}

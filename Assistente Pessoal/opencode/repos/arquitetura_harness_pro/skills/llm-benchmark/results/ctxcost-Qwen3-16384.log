@@ -1,0 +1,14 @@
+0.00.251.548 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.251.891 I srv          init: The UI is disabled
+0.00.251.897 I srv          init: Use --ui/--no-ui (or deprecated --webui/--no-webui) to enable/disable
+0.00.252.084 W srv  llama_server: -----------------
+0.00.252.087 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.252.087 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.252.088 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.252.088 W srv  llama_server: -----------------
+0.00.253.407 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-9B-Q4_K_M.gguf'
+0.20.220.338 I common_speculative_init_result: creating MTP draft context against the target model '/mnt/dados/Assistente Pessoal/modelos LLM/Qwen3.8-9B-Q4_K_M.gguf'
+0.20.271.240 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 16384, kv_unified = 'false'
+0.20.338.078 I srv  llama_server: model loaded
+0.20.338.093 I srv  llama_server: listening on http://127.0.0.1:8089
+0.28.180.706 I srv    operator(): operator(): cleaning up before exit...

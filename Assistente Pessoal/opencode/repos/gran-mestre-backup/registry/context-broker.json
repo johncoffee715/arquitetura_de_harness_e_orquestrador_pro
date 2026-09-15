@@ -1,0 +1,71 @@
+{
+  "version": "1.0.0",
+  "description": "ContextBroker \u2014 Contexto unificado com TraceID global",
+  "trace_id": {
+    "format": "ulid",
+    "propagation": "W3C TraceContext (traceparent header)",
+    "inject_on": [
+      "command:invoked",
+      "agent:spawned",
+      "hook:executed",
+      "mcp:called"
+    ]
+  },
+  "components": {
+    "command": {
+      "trace": true,
+      "fields": [
+        "trace_id",
+        "command_name",
+        "args",
+        "timestamp",
+        "duration_ms"
+      ]
+    },
+    "agent": {
+      "trace": true,
+      "fields": [
+        "trace_id",
+        "agent_name",
+        "capability",
+        "parent_trace_id",
+        "timestamp",
+        "duration_ms",
+        "status"
+      ]
+    },
+    "hook": {
+      "trace": true,
+      "fields": [
+        "trace_id",
+        "hook_id",
+        "phase",
+        "timestamp",
+        "duration_ms",
+        "exit_code"
+      ]
+    },
+    "mcp": {
+      "trace": true,
+      "fields": [
+        "trace_id",
+        "server_name",
+        "tool_name",
+        "timestamp",
+        "duration_ms",
+        "status"
+      ]
+    }
+  },
+  "memory_unification": {
+    "strategy": "context-broker como ponte entre ck sessions e mempalace",
+    "ck_integration": "TraceID vincula sessions do ck com chamadas de agente",
+    "mempalace_integration": "TraceID permite replay de decis\u00f5es arquiteturais"
+  },
+  "benefits": [
+    "menos acoplamento entre componentes",
+    "rastreabilidade de ponta a ponta",
+    "debugging distribu\u00eddo",
+    "base para OpenTelemetry"
+  ]
+}

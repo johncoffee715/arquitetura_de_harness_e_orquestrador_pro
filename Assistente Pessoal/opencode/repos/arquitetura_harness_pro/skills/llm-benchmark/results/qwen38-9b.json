@@ -1,0 +1,36 @@
+{
+  "name": "qwen38-9b",
+  "model": "Qwen3.8-9B-Q4_K_M.gguf",
+  "ctx": 32768,
+  "gpu": true,
+  "mtp": 3,
+  "temp": 0.3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "telemetria": {
+    "ram_pos": "12/31",
+    "vram_pos": "10.6GB",
+    "vram_t1": "10.7GB"
+  },
+  "results": {
+    "t1": {
+      "resposta": "true",
+      "tempo_s": 26.1,
+      "prompt_tokens": 13608,
+      "out_tokens": 2,
+      "alucinou": false
+    },
+    "t2": {
+      "resposta": "```json\n{\n  \"veredito\": \"PASSOU_CATEGORICO\",\n  \"nota\": 95\n}\n```",
+      "tempo_s": 1.2,
+      "json_puro": false,
+      "has_thinking_tag": false
+    },
+    "t3": {
+      "resposta": "Nota: 10/100. A falha é que a variável `port` é `volatile`, o que impede a otimização de leitura dupla da CPU, mas não garante atomicidade na leitura de um inteiro de 32 bits (4 bytes) em um único ciclo de clock, permitindo que a leitura seja fragmentada entre dois acessos de memória distintos.",
+      "tempo_s": 2.0,
+      "acertou_volatile": false,
+      "nota_impressao": 10
+    }
+  }
+}

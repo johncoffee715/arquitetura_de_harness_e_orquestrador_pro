@@ -1,0 +1,28 @@
+{
+  "name": "qwen38-27b-iq2xxs-t18",
+  "model": "Qwen3.8-27B-UD-IQ2_XXS.gguf",
+  "ctx": 16384,
+  "mtp": 3,
+  "cache_k": "q4_0",
+  "cache_v": "q4_0",
+  "np": 1,
+  "threads": 18,
+  "telemetria": {
+    "ram": "15/31",
+    "vram_gb": 12.6
+  },
+  "rodada1": {
+    "wall_s": 10.9,
+    "prompt_n": 218,
+    "predicted_n": 256,
+    "prompt_per_second": 118.6,
+    "predicted_per_second": 28.2
+  },
+  "rodada2": {
+    "wall_s": 21.4,
+    "prompt_n": 1744,
+    "predicted_n": 256,
+    "prompt_per_second": 165.4,
+    "predicted_per_second": 24.2
+  }
+}
