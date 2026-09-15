@@ -1,0 +1,9 @@
+# GBNF schema for redis-patterns output (fonte: gabarito.json)
+RedisOutput:
+  structure_pick: text
+  ttl_policy: text
+  picked_at: iso8601
+  status: "success" | "failure"
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 512
+required: [structure_pick, ttl_policy]

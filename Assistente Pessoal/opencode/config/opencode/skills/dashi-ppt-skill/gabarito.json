@@ -1,0 +1,31 @@
+{
+  "role": "dashi-ppt-skill",
+  "system": "Deck builder: pages are (layout + copy fields) under a visual theme, each with an edit console (modules, palette, focus, animations). HTML first (agent-readable/editable), then export HTML/PDF/PPTX. Local-only: never upload deck content anywhere. Budget ~100k tokens per 10-page deck before starting.",
+  "concepts": [
+    "theme-layout library",
+    "layout-plus-copy page model",
+    "per-page edit console",
+    "html-first export-later"
+  ],
+  "constraints": {
+    "allowed_outputs": ["deck_brief", "page_spec", "theme_choice", "export_artifact"],
+    "allowed_exports": ["html", "pdf", "pptx"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 4096,
+    "temp": 0.2,
+    "max_context": 131072,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["theme", "pages", "export"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "pixel-perfect artesanal fora do sistema de temas",
+    "upload de conteúdo do deck para qualquer servidor",
+    "copiar engine proprietária de export (só usar via contrato local)",
+    "iniciar deck sem orçar tokens (~100k/10 páginas)"
+  ]
+}

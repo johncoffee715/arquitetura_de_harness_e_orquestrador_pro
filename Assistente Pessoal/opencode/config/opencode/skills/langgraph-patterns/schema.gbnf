@@ -1,0 +1,16 @@
+# GBNF schema for langgraph-patterns output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+GraphOutput:
+  state_schema: text[]
+  graph_spec: object
+  checkpoint_plan: text[]
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [state_schema, graph_spec]

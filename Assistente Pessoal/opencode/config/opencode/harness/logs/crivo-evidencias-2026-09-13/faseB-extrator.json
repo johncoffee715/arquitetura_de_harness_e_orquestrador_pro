@@ -1,0 +1,242 @@
+[
+ {
+  "arquivo": "crivo-bs3s-RAW.jsonl",
+  "task": "T6",
+  "raw_gbnf": false,
+  "ext_gbnf": true,
+  "mudou": true,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-bs3s-RAW.jsonl",
+  "task": "T11",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/pro"
+ },
+ {
+  "arquivo": "crivo-dt3xxs-RAW.jsonl",
+  "task": "T6",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5"
+ },
+ {
+  "arquivo": "crivo-dt3xxs-RAW.jsonl",
+  "task": "T11",
+  "raw_gbnf": false,
+  "ext_gbnf": true,
+  "mudou": true,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-neohorse9bQ5-RAW.jsonl",
+  "task": "T6",
+  "raw_gbnf": false,
+  "ext_gbnf": true,
+  "mudou": true,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-neohorse9bQ5-RAW.jsonl",
+  "task": "T11",
+  "raw_gbnf": false,
+  "ext_gbnf": true,
+  "mudou": true,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-neohorseQ5-RET-RAW.jsonl",
+  "task": "T6",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-neohorseQ5-RET-RAW.jsonl",
+  "task": "T11",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-noemaQ8-RAW.jsonl",
+  "task": "T6",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-noemaQ8-RAW.jsonl",
+  "task": "T11",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": ""
+ },
+ {
+  "arquivo": "crivo-stack-8083-qwen35moe-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-stack-8083-qwen35moe-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-stack-9084-rwkv04-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": "Okay, let's see. The user wants me to generate a JSON response that's just \"ok\" with a score of 9.5. Wait, but the examp"
+ },
+ {
+  "arquivo": "crivo-stack-9084-rwkv04-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": "Okay, let's see. The user wants me to generate a JSON response that's just the tool call. The tool is called \"read_file\""
+ },
+ {
+  "arquivo": "crivo-stack-9086-lfm12b-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": ""
+ },
+ {
+  "arquivo": "crivo-stack-9086-lfm12b-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": ""
+ },
+ {
+  "arquivo": "crivo-stack-9086-lfm12b-FASE-A2.jsonl",
+  "task": "T6",
+  "raw_gbnf": null,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": ""
+ },
+ {
+  "arquivo": "crivo-stack-9086-lfm12b-FASE-A2.jsonl",
+  "task": "T11",
+  "raw_gbnf": null,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": ""
+ },
+ {
+  "arquivo": "crivo-stack-9088-llama1b-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-stack-9088-llama1b-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-stack-9090-llama3b-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-stack-9090-llama3b-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-stack-9092-smollm17-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-stack-9092-smollm17-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"tool\": \"read_file\", \"args\": {\"path\": \"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-stack-9093-smollm360-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-stack-9093-smollm360-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\n  \"tool\": \"read_file\",\n  \"args\": {\n    \"path\": \"/tmp/opencode/probe.txt\"\n  }\n}"
+ },
+ {
+  "arquivo": "crivo-stack-9095-moe27-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": false,
+  "ext_gbnf": true,
+  "mudou": true,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-stack-9095-moe27-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": true,
+  "ext_gbnf": true,
+  "mudou": false,
+  "extraido": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "arquivo": "crivo-stack-9096-coder3b-FASE-A.jsonl",
+  "task": "T6",
+  "raw_gbnf": false,
+  "ext_gbnf": true,
+  "mudou": true,
+  "extraido": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "arquivo": "crivo-stack-9096-coder3b-FASE-A.jsonl",
+  "task": "T11",
+  "raw_gbnf": false,
+  "ext_gbnf": false,
+  "mudou": false,
+  "extraido": "{\n  \"tool\": \"read_file\",\n  \"args\": {\n    \"path\": \"/tmp/op/op/probe.txt\"\n  }\n}"
+ }
+]

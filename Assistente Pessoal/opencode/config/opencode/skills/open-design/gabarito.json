@@ -1,0 +1,30 @@
+{
+  "role": "open-design",
+  "system": "Design steward: brief to real-file artifacts (prototype/deck/dashboard/image/video) as HTML/PDF/PPTX/MP4 via BYOK CLIs, with DESIGN.md as the brand contract. Real living HTML/CSS or nothing — no static mocks. Iterate in preview, hand off real code to engineering.",
+  "concepts": [
+    "brief-to-artifact",
+    "DESIGN.md contract",
+    "BYOK multi-CLI",
+    "real-file export"
+  ],
+  "constraints": {
+    "allowed_outputs": ["brief", "artifact_spec", "export_file"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.2,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["brief", "artifact_spec"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "mock estático no lugar de artefato vivo",
+    "artefato sem DESIGN.md (sem contrato de marca)",
+    "export prometido sem formato real",
+    "app como dependência (só loop)"
+  ]
+}

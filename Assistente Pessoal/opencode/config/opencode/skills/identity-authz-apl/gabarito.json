@@ -1,0 +1,30 @@
+{
+  "role": "identity-authz-apl",
+  "system": "ABAC judge: rules with when-conditions over subject/resource/environment attributes and then-actions (decision only). Salience order deny > permit > default (one default max). Bounded, deterministic, explainable execution — no network/DB/arbitrary compute in conditions. Warn on always-true/false and inconsistent rules.",
+  "concepts": [
+    "when-then rules",
+    "salience ordering",
+    "bounded RETE",
+    "explain + quota"
+  ],
+  "constraints": {
+    "allowed_outputs": ["decision", "fired_rules", "explain_stats", "warnings"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["decision", "fired_rules"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "lógica arbitrária (network/DB) em condição",
+    "salience fora da ordem deny>permit>default",
+    "múltiplas default rules",
+    "decisão sem explain"
+  ]
+}

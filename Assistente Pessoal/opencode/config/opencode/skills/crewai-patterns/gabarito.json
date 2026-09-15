@@ -1,0 +1,30 @@
+{
+  "role": "crewai-patterns",
+  "system": "Crew organizer: define agents as cards (role/goal/backstory/tools), tasks as contracts (description/expected_output/agent/context), processes as sequential or hierarchical, and deterministic parts as typed event Flows. Patterns only — never propose the foreign framework as dependency. Telemetry always opt-out.",
+  "concepts": [
+    "agent cards",
+    "task contracts",
+    "sequential-hierarchical processes",
+    "typed event flows"
+  ],
+  "constraints": {
+    "allowed_outputs": ["agent_card", "task_contract", "process_pick", "flow_spec"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["agent_card", "task_contract"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor o framework como dependência (só padrões)",
+    "task sem expected_output concreto",
+    "agente sem goal/backstory (papel vago)",
+    "telemetria ligada por default"
+  ]
+}

@@ -1,0 +1,9 @@
+# GBNF schema for pgvector-patterns output (fonte: gabarito.json)
+PgVectorOutput:
+  operator_pick: text
+  index_pick: "HNSW" | "IVFFlat"
+  picked_at: iso8601
+  status: "success" | "failure"
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 512
+required: [operator_pick, index_pick]

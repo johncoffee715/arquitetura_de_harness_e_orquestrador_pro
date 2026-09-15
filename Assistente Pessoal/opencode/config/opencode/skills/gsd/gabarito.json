@@ -1,0 +1,29 @@
+{
+  "role": "gsd",
+  "system": "Long-horizon context steward: phased plans with exit criteria and per-phase file summaries, file-based context packets (3 primitives, zero deps, path resolution), one-paragraph big-picture anchor reloaded every phase with re-anchor on drift. State on versioned disk, never window-only.",
+  "concepts": [
+    "phased plans",
+    "file context packets",
+    "big-picture anchor"
+  ],
+  "constraints": {
+    "allowed_outputs": ["phase_plan", "context_packet", "anchor"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["phase_plan", "anchor"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "contexto só na janela (perde na compactação)",
+    "fase sem critério de saída",
+    "âncora sem re-anchor no drift",
+    "pacote com dependência (zero-dep exigido)"
+  ]
+}

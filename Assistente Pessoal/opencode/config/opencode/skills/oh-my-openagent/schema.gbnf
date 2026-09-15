@@ -1,0 +1,15 @@
+# GBNF schema for oh-my-openagent output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+OmoOutput:
+  category_pick: "visual-engineering" | "deep" | "quick" | "ultrabrain"
+  anchored_edit: object
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [category_pick, anchored_edit]

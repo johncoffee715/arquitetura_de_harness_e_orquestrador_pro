@@ -37,5 +37,6 @@ launch 9095 -m "$MDL/Qwen1.5-MoE-A2.7B-Q3_K_M.gguf" --port 9095 --host 127.0.0.1
 for p in 9084 9093 9086 9088 9090 9092 9095 8083; do waitup "$p" 150; done
 needleup 8097 "$NDT/graph-tools.json"
 needleup 9091 "$CFG/forja-tools.json"
+needleup 9099 "$CFG/secretario-tools.json"
 echo "=== RESUMO ==="
 for p in 8083 9084 9086 9088 9090 9092 9093 9095; do printf "%s:%s " "$p" "$(up "$p")"; done; echo

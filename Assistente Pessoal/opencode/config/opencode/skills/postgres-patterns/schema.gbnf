@@ -1,0 +1,8 @@
+# GBNF schema for postgres-patterns output (fonte: gabarito.json)
+PgOutput:
+  durability_check: text
+  checked_at: iso8601
+  status: "success" | "failure"
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 512
+required: [durability_check]

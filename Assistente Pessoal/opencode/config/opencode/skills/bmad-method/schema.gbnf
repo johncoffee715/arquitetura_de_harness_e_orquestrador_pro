@@ -1,0 +1,15 @@
+# GBNF schema for bmad-method output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+BmadOutput:
+  route: "clarify" | "plan" | "build"
+  rationale: text
+  routed_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [route, rationale]

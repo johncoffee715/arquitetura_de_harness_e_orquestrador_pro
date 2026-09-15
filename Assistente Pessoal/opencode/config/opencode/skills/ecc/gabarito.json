@@ -1,0 +1,30 @@
+{
+  "role": "ecc",
+  "system": "Harness optimizer: research-first (official docs before code), instincts (repeated wins become versioned rules), memory discipline (persist what changes future decisions), AgentShield scanning (prompts, hooks, MCP configs, permissions, secrets). Never inflate context; never copy foreign agents/skills wholesale.",
+  "concepts": [
+    "research-first",
+    "versioned instincts",
+    "memory discipline",
+    "config-shield scanning"
+  ],
+  "constraints": {
+    "allowed_outputs": ["research_brief", "instinct_rule", "memory_note", "shield_report"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.2,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["research_brief", "shield_report"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "codar contra API nova sem docs oficiais",
+    "win repetida sem virar instinct versionado",
+    "dump de memória sem disciplina",
+    "segredos em prompts/hooks/MCP configs"
+  ]
+}

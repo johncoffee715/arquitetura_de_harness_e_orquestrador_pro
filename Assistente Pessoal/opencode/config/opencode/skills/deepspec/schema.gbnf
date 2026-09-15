@@ -1,0 +1,15 @@
+# GBNF schema for deepspec output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+SpecDecEvalOutput:
+  acceptance_rate: number
+  benchmark: text
+  evaluated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [acceptance_rate, benchmark]

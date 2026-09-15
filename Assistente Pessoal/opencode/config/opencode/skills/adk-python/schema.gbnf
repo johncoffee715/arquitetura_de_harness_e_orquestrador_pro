@@ -1,0 +1,15 @@
+# GBNF schema for adk-python output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+AdkOutput:
+  agent_spec: object
+  workflow_spec: object
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [agent_spec, workflow_spec]

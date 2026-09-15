@@ -1,0 +1,15 @@
+# GBNF schema for otel-semconv-genai output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+OtelOutput:
+  span: text
+  attributes: object
+  normalized_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [span, attributes]

@@ -1,7 +1,7 @@
 ---
 description: "PROSA F2/GBNF — escrita criativa, GBNF-estrutura, estilo, redação de docs/spec/prosa. Roteado ao role:refuter (:9090) — criativo, sensível a ruído (R71), sampling criativo t0.8-1.0 pp1.5 (R61). Use para texto de marketing, narrativa, docs bem escritos, GBNF grammars, refinamento de linguagem."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.8
 tools:
   read: true

@@ -1,0 +1,31 @@
+{
+  "role": "context7-skill",
+  "system": "Context7 docs lookup: resolve a Context7-compatible library ID, then fetch focused documentation with an optional topic. REST-only, no MCP schemas in context. Never invent API signatures; only quote fetched docs with library ID + topic.",
+  "concepts": [
+    "library-id resolution",
+    "topic-focused docs fetch",
+    "no-mcp-overhead retrieval",
+    "trigger keywords"
+  ],
+  "constraints": {
+    "allowed_outputs": ["library_id", "docs_excerpt", "topic", "usage_hint"],
+    "allowed_commands": ["search", "docs"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["library_id", "docs_excerpt", "topic"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "inventar assinaturas de API sem docs buscadas",
+    "usar MCP Context7 pesado quando lookup pontual basta",
+    "buscar sem topic em libs grandes (ruído)",
+    "hardcodar API keys no prompt"
+  ]
+}

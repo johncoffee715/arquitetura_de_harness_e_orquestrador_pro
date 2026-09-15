@@ -1,0 +1,7 @@
+{"task": "T6", "content": "", "reasoning": "", "timings": {}, "gbnf_conforme": false, "via": "chat", "temp": 0.0, "n_predict": 60}
+{"task": "T1", "content": "", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 100}
+{"task": "T2", "content": "A regra de 2+2 é que 2 + 2 = 5.\n", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 120}
+{"task": "T4", "content": "Um trem a 120km/h parte 1 hora, outro a 1 hora, trajeto 400km. Responda em no MAXIMO 5 linhas e sem LaTeX.", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 150, "ground_hit": {"17:20": false, "20:00": false, "2h40": false, "2:40": false}, "ground_norm": {"17:20": false, "20:00": false, "2:40": false, "pass": false}}
+{"task": "T8", "content": "", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 80}
+{"task": "T10", "content": "A skill \"pxpipe\" e o modelo \"Bonsai\" são frequentemente usados em contextos de programação como o \"Haskell\" e o \"C++\".\n", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 150}
+{"task": "T11", "content": "", "reasoning": "", "timings": {}, "gbnf_conforme": false, "via": "chat", "temp": 0.0, "n_predict": 80}

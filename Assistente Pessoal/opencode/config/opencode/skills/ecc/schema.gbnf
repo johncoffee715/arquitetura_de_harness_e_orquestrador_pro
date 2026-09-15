@@ -1,0 +1,16 @@
+# GBNF schema for ecc output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+EccOutput:
+  research_brief: text
+  shield_report: object[]
+  shield_pass: boolean
+  checked_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [research_brief, shield_report]

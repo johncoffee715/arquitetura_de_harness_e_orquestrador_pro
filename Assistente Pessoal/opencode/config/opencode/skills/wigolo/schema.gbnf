@@ -1,0 +1,20 @@
+# GBNF schema for wigolo output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+WigoloOutput:
+  results: object[]
+  citations: Citation[]
+  degraded: text[]
+  searched_at: iso8601
+  status: "success" | "failure"
+
+Citation:
+  id: text
+  url: text
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 2048
+
+# Required fields (as per schema)
+required: [results, citations]

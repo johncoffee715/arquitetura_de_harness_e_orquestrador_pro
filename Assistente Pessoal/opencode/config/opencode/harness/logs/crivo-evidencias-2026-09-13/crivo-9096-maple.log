@@ -1,0 +1,16 @@
+0.00.030.339 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.031.709 W srv  llama_server: -----------------
+0.00.031.712 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.031.713 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.031.713 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.031.713 W srv  llama_server: -----------------
+0.00.033.062 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/maple-preview-TQ1_0-head-F16.gguf'
+0.00.148.317 E llama_model_load: error loading model: unknown model architecture: 'maple'
+0.00.148.324 E llama_model_load_from_file_impl: failed to load model
+0.00.148.370 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.252.881 E llama_model_load: error loading model: unknown model architecture: 'maple'
+0.00.252.886 E llama_model_load_from_file_impl: failed to load model
+0.00.252.893 E cmn  common_init_: failed to load model '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/maple-preview-TQ1_0-head-F16.gguf'
+0.00.252.899 E srv    load_model: failed to load model, '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/maple-preview-TQ1_0-head-F16.gguf'
+0.00.252.903 I srv    operator(): operator(): cleaning up before exit...
+0.00.254.203 E srv  llama_server: exiting due to model loading error

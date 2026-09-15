@@ -99,7 +99,7 @@ launch 9093 "SmolLM2-360M-Instruct-Q8_0.gguf" \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
 
 # CPU 9094 · embedder · Qwen3-Embedding-0.6B-Q8_0 (embedding, pooling last)
-launch 9094 "filtragem/Qwen3-Embedding-0.6B-Q8_0.gguf" \
+launch 9094 "Qwen3-Embedding-0.6B-Q8_0.gguf" \
   -c 2048 -np 1 --flash-attn on -b 512 -ngl 0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.0 --embedding --pooling last
 
@@ -109,26 +109,31 @@ launch 9095 "Qwen1.5-MoE-A2.7B-Q3_K_M.gguf" \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6
 
 # GPU 9097 · embedder · Qwen3-Embedding-0.6B-Q8_0-GPU (embedding, pooling last)
-launch 9097 "filtragem/Qwen3-Embedding-0.6B-Q8_0.gguf" \
+launch 9097 "Qwen3-Embedding-0.6B-Q8_0.gguf" \
   -c 2048 -np 1 --flash-attn on -b 512 -ngl 999 -dev Vulkan0 \
   --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.0 --embedding --pooling last
 
-# ── CPU · F0 TRIAGEM L0 · Needle 2 (Cactus) · 28MB RAM · confidence-gated ──
-NEEDLE="$ROOT/tools/needle2/needle"
-if [ -x "$NEEDLE" ] && ! pgrep -f "needle2/needle --serve" >/dev/null 2>&1; then
-  (setsid nohup "$NEEDLE" --serve --port 8097 --tools "$ROOT/tools/needle2/graph-tools.json" \
-    > "$LOGDIR/needle-8097.log" 2>&1 < /dev/null &)
-  echo "[8097] lançando needle2 triagem L0"
-fi
-
-# ── CPU · F4 FORJA · Needle 2 (Cactus) · 29MB RAM · validação schema + tool calling ──
-NEEDLE_FORJA="$ROOT/tools/needle2/needle"
-FORJA_TOOLS="$ROOT/config/opencode/tools/needle2/forja-tools.json"
-if [ -x "$NEEDLE_FORJA" ] && [ -f "$FORJA_TOOLS" ] && ! pgrep -f "needle --serve --port 9091" >/dev/null 2>&1; then
-  (setsid nohup "$NEEDLE_FORJA" --serve --port 9091 --tools "$FORJA_TOOLS" \
-    > "$LOGDIR/needle-forja-9091.log" 2>&1 < /dev/null &)
-  echo "[9091] lançando needle2 forja (validate_schema/write_artifact/upsert_vault/emit_manifest)"
-fi
+# ── Needle 2 · binários nativos idempotentes (W9 2026-09-15) ──
+# API real do binário: needle --serve --port N --tools <json> · POST /complete · POST /reset (sem /health → liveness via pgrep+ss)
+NEEDLE_BIN="$ROOT/tools/needle2/needle"
+NEEDLE_GRAPH_TOOLS="$ROOT/tools/needle2/graph-tools.json"
+NEEDLE_FORJA_TOOLS="$ROOT/config/opencode/tools/needle2/forja-tools.json"
+start_needle() { # $1=name $2=port $3=tools.json — idempotente: skip se porta já viva
+  local name="$1" port="$2" tools="$3"
+  if pgrep -f "needle --serve --port $port" >/dev/null 2>&1 || ss -ltn 2>/dev/null | grep -q ":$port "; then
+    echo "[$port] needle2 $name já ativo — skip"
+    return 0
+  fi
+  [ -x "$NEEDLE_BIN" ] || { echo "[$port] needle2 $name: binário ausente ($NEEDLE_BIN)"; return 0; }
+  [ -f "$tools" ] || { echo "[$port] needle2 $name: tools ausente ($tools)"; return 0; }
+  (setsid nohup "$NEEDLE_BIN" --serve --port "$port" --tools "$tools" \
+    > "$LOGDIR/needle-$name-$port.log" 2>&1 < /dev/null &)
+  echo "[$port] lançando needle2 $name (tools=$(basename "$tools"))"
+}
+# CPU · F0 TRIAGEM L0 · graph :8097 (triage_route/run_shell/delegate_task) · acoplado talâmico/triagem
+start_needle "graph" 8097 "$NEEDLE_GRAPH_TOOLS"
+# CPU · F4 FORJA · forja :9091 (validate_schema/write_artifact/upsert_vault/emit_manifest) · acoplado executor/planejador
+start_needle "forja" 9091 "$NEEDLE_FORJA_TOOLS"
 
 # ── BIBLIOTECARIO WATCHER (R94 gerente, 92 dirs, inotify Payload real) ──
 if ! pgrep -f "bibliotecario/tooling/watcher.py" >/dev/null 2>&1; then

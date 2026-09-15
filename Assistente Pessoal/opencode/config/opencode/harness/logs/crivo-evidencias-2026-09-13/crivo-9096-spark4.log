@@ -1,0 +1,16 @@
+0.00.031.011 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.032.695 W srv  llama_server: -----------------
+0.00.032.698 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.032.699 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.032.699 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.032.699 W srv  llama_server: -----------------
+0.00.034.044 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/Spark-X2.5-4B-BF16-ASHQ1-2000.gguf'
+0.00.140.564 E llama_model_load: error loading model: unknown model architecture: 'spark2_5'
+0.00.140.570 E llama_model_load_from_file_impl: failed to load model
+0.00.140.620 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.239.838 E llama_model_load: error loading model: unknown model architecture: 'spark2_5'
+0.00.239.843 E llama_model_load_from_file_impl: failed to load model
+0.00.239.851 E cmn  common_init_: failed to load model '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/Spark-X2.5-4B-BF16-ASHQ1-2000.gguf'
+0.00.239.856 E srv    load_model: failed to load model, '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/Spark-X2.5-4B-BF16-ASHQ1-2000.gguf'
+0.00.239.859 I srv    operator(): operator(): cleaning up before exit...
+0.00.240.929 E srv  llama_server: exiting due to model loading error

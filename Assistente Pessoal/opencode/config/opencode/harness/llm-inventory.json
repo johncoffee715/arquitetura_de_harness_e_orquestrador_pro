@@ -280,7 +280,7 @@
     {
       "id": "qwen3-embedding-0.6b-cpu",
       "slot": "9094",
-      "file": "filtragem/Qwen3-Embedding-0.6B-Q8_0.gguf",
+      "file": "Qwen3-Embedding-0.6B-Q8_0.gguf",
       "params": "0.6B",
       "quant": "Q8_0",
       "arch": "Qwen3-Embedding-0.6B Q8_0 610M, pooling last, 1024-d MRL",
@@ -295,7 +295,7 @@
     {
       "id": "qwen3-embedding-0.6b-gpu",
       "slot": "9097",
-      "file": "filtragem/Qwen3-Embedding-0.6B-Q8_0.gguf",
+      "file": "Qwen3-Embedding-0.6B-Q8_0.gguf",
       "params": "0.6B",
       "quant": "Q8_0",
       "arch": "Qwen3-Embedding-0.6B Q8_0 610M, pooling last, 1024-d MRL",

@@ -1,0 +1,15 @@
+# GBNF schema for open-design output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+DesignOutput:
+  brief: text
+  artifact_spec: object
+  specified_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [brief, artifact_spec]

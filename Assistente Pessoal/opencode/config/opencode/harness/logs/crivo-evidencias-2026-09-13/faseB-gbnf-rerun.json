@@ -1,0 +1,98 @@
+[
+ {
+  "port": 9093,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "port": 9093,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "port": 9092,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "port": 9092,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{\n\"tool\": \"read_file\",\n\"args\": {\"path\": \"/tmp/opencode/probe.txt\"}\n}"
+ },
+ {
+  "port": 9088,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "port": 9088,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{ \"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "port": 9090,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "port": 9090,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "port": 9095,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "port": 9095,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{ \"tool\": \"read_file\", \"args\": { \"path\": \"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "port": 9084,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}\n\n"
+ },
+ {
+  "port": 9084,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "port": 8083,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "port": 8083,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ },
+ {
+  "port": 9086,
+  "task": "T6",
+  "gbnf_rerun": true,
+  "out": "{\"status\":\"ok\",\"nota\":9.5}"
+ },
+ {
+  "port": 9086,
+  "task": "T11",
+  "gbnf_rerun": true,
+  "out": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}"
+ }
+]

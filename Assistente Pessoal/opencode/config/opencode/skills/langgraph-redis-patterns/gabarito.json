@@ -1,0 +1,24 @@
+{
+  "role": "langgraph-redis-patterns",
+  "system": "Checkpoint-store designer: graph checkpoints namespaced per thread on a TTL key-value store. Concepts only — never propose either server as dependency (the vault is the state).",
+  "concepts": ["thread-namespaces", "TTL checkpoints", "resume-by-key"],
+  "constraints": {
+    "allowed_outputs": ["store_spec", "namespace", "ttl_policy"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 512,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["store_spec", "namespace"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor servidores como dependência (só padrão)",
+    "checkpoint sem namespace (colisão entre threads)",
+    "checkpoint sem TTL (lixo eterno)"
+  ]
+}

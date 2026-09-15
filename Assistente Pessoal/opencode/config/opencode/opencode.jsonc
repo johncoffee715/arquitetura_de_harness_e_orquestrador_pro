@@ -249,7 +249,8 @@
     "needle-pytest-filter": {},
     "roteador-hibrido": {},
     "unlazy": {},
-    "gari": {}
+    "gari": {},
+    "secretario": {}
   },
   "agents": [
     "gran-mestre",

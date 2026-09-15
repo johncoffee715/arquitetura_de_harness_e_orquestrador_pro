@@ -1,0 +1,20 @@
+# GBNF schema for andrej-karpathy-skills output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+KarpathyReviewOutput:
+  verdict: "pass" | "fail"
+  violations: Violation[]
+  reviewed_at: iso8601
+  status: "success" | "failure"
+
+Violation:
+  principle: "think" | "simplicity" | "scope" | "goals"
+  line: text
+  reason: text
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [violations, verdict]

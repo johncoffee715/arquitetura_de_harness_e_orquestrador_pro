@@ -1,0 +1,16 @@
+# GBNF schema for openspec output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+OpenSpecOutput:
+  change_name: text
+  artifacts: text[]
+  archived: boolean
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 2048
+
+# Required fields (as per schema)
+required: [change_name, artifacts]

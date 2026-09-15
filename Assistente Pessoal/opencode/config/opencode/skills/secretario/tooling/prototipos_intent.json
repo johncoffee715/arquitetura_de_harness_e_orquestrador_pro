@@ -1,0 +1,142 @@
+{
+  "version": "1.0.1",
+  "dim": 1024,
+  "margem_desempate": 0.03,
+  "_tuning_nota": "2026-09-15 bateria 27 frases (3/intent): 25/27, 2 ambiguos, 0 erros. Margem 0.05->0.03: gaps [0.03,0.05) so continham top1-correto pos-enriquecimento. Rewords anti-colisao: 'arquiva' fora de organizar/registrar, 'colecao vetorial' fora de pesquisar-descricao + exemplo de busca-na-colecao em pesquisar, 'nota de catalogacao'->'informe' em corresponder. Residuais (escalar e correto): 'onde anotamos...colecao' [registrar,pesquisar] e 'anota deliberacao p/ achar depois' pile-up 4-vias — ambos genuinamente incertos, nenhum correto-obvio em ambiguo. Limites conhecidos OK: 'lembrete dia 25'->agendar, 'arquive pasta filosofia'->catalogar, 'resuma ontem'->resumir.",
+  "intents": {
+    "catalogar": {
+      "descricao": "Classificar e indexar notas do vault com tags e índice temático.",
+      "rota": "bibliotecario_rwkv7",
+      "acao_critica": false,
+      "exemplos": [
+        "cataloga essa nota nova com as tags certas",
+        "classifica esses arquivos no índice temático",
+        "organiza o acervo por tema e adiciona etiquetas",
+        "indexa as notas da semana no catálogo",
+        "coloca tag nesse texto e arquiva no tema correto",
+        "atualiza o índice temático com esses documentos",
+        "arquiva esta nota na pasta de filosofia com a etiqueta certa",
+        "guarda essa nota no tema correto com tags e índice"
+      ]
+    },
+    "pesquisar": {
+      "descricao": "Buscar informação existente no vault ou na biblioteca.",
+      "rota": "bibliotecario_rwkv7",
+      "acao_critica": false,
+      "exemplos": [
+        "procura nas notas onde falamos de embeddings",
+        "busca na biblioteca o que temos sobre Qdrant",
+        "encontra aquele texto sobre papéis do harness",
+        "localiza em que nota ficou aquela conclusão antiga",
+        "onde está anotado o fallback do Needle",
+        "recupera as referências sobre triagem semântica",
+        "onde anotamos aquela decisão antiga, procura para mim",
+        "em que nota ficou aquela conclusão, procura para mim",
+        "procura na coleção aquela decisão antiga que anotamos"
+      ]
+    },
+    "resumir": {
+      "descricao": "Sintetizar textos longos em resumo fiel, sem inventar.",
+      "rota": "bibliotecario_rwkv7",
+      "acao_critica": false,
+      "exemplos": [
+        "resume esse documento longo em cinco linhas",
+        "sintetiza a ata da reunião de ontem",
+        "faz um resumo fiel desse relatório",
+        "condensa esse texto mantendo os fatos",
+        "me dá o essencial desse artigo",
+        "sumariza essas notas sem perder as decisões",
+        "resume a ata da reunião em tópicos curtos",
+        "condensa a ata longa em bullets fiéis",
+        "resume o que foi decidido ontem sem inventar nada"
+      ]
+    },
+    "agendar": {
+      "descricao": "Criar, listar ou consultar compromissos, lembretes e prazos.",
+      "rota": "agenda",
+      "acao_critica": false,
+      "exemplos": [
+        "me lembra de revisar o plano amanhã",
+        "agenda uma revisão semanal toda segunda",
+        "marca um compromisso para daqui a três dias",
+        "quais compromissos vencem hoje",
+        "lista meus lembretes pendentes",
+        "cria um aviso para o dia vinte com a entrega",
+        "mostra a agenda da semana"
+      ]
+    },
+    "registrar": {
+      "descricao": "Gravar decisão, nota ou lembrete no registro vetorial Qdrant.",
+      "rota": "registro_vetorial",
+      "acao_critica": false,
+      "exemplos": [
+        "registra essa decisão no vetorial",
+        "grava no Qdrant que escolhemos a coleção bibliotecario_1024",
+        "anota essa conclusão para consulta futura",
+        "salva esse aprendizado no registro vetorial",
+        "guarda essa nota com embedding para achar depois",
+        "persiste essa deliberação no banco vetorial",
+        "anota essa deliberação no vetorial para achar depois",
+        "grava essa conclusão com embedding para consulta futura"
+      ]
+    },
+    "corresponder": {
+      "descricao": "Redigir resumo diário, ata, lembrete ou nota a partir de template.",
+      "rota": "correspondencia",
+      "acao_critica": false,
+      "exemplos": [
+        "redige a ata da decisão de hoje",
+        "gera o resumo diário com esses pontos",
+        "escreve um lembrete de follow-up para a equipe",
+        "elabora um informe de catalogação desse texto",
+        "formaliza essa deliberação numa ata",
+        "monta o boletim do dia com esses informes",
+        "redige um lembrete de follow-up para o cliente sobre o prazo",
+        "escreve um aviso de cobrança para o cliente",
+        "redige a ata da decisão de hoje para a equipe"
+      ]
+    },
+    "organizar_mover": {
+      "descricao": "Mover, arquivar ou descartar arquivos do vault (AÇÃO CRÍTICA, exige HITL).",
+      "rota": "execucao_local",
+      "acao_critica": true,
+      "exemplos": [
+        "move essa nota para a quarentena",
+        "encaminha esses rascunhos antigos para a quarentena",
+        "reorganiza essa pasta movendo os arquivos",
+        "descarta essas notas duplicadas",
+        "transfere esse documento para o arquivo",
+        "limpa essa pasta levando tudo para quarentena",
+        "leva esses papéis velhos para a quarentena",
+        "joga esses rascunhos na quarentena"
+      ]
+    },
+    "saudacao": {
+      "descricao": "Cumprimento ou frase social curta (early-exit, sem despacho).",
+      "rota": "nenhuma",
+      "acao_critica": false,
+      "exemplos": [
+        "oi, bom dia",
+        "olá, tudo bem",
+        "boa noite",
+        "e aí, beleza",
+        "oi, como vai",
+        "bom dia, secretário"
+      ]
+    },
+    "fora_escopo": {
+      "descricao": "Pedido fora das 5 funções: código, nuvem, contas, prosa livre (escalar).",
+      "rota": "escalar_orquestrador",
+      "acao_critica": false,
+      "exemplos": [
+        "escreve um programa em Rust para mim",
+        "faz deploy da aplicação na nuvem",
+        "paga minha conta de luz no banco",
+        "cria uma história de ficção sobre dragões",
+        "configura meu roteador wifi",
+        "compra ações da bolsa para mim",
+        "faz uma transferência bancária para pagar o aluguel"
+      ]
+    }
+  }
+}

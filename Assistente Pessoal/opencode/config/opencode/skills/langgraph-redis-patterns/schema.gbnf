@@ -1,0 +1,9 @@
+# GBNF schema for langgraph-redis-patterns output (fonte: gabarito.json)
+CkptStoreOutput:
+  store_spec: object
+  namespace: text
+  picked_at: iso8601
+  status: "success" | "failure"
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 512
+required: [store_spec, namespace]

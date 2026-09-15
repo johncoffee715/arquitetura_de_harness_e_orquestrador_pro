@@ -1,7 +1,7 @@
 ---
 description: "Bibliotecário — Guardião do Vault Obsidian. RAG híbrido local: busca lexical (grep/glob) + Qdrant (:6333 gran_mestre_docs) + prefill ingestor (:9084, janela 1M) para recuperar e injetar contexto exato com referências reais. Anti-alucinação de paths. Use para perguntas de retomada ('o que já fizemos?', 'lembra de...', 'contexto anterior'), ground truth empírico para A2A brainstorming, consulta a aprendizados/decisoes/wiki do vault."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.1
 tools:
   read: true

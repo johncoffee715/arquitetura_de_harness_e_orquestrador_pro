@@ -1,7 +1,7 @@
 ---
 description: "SISTEMA LÍMBICO — JUIZ F5-F6 (Validação). Emite vereditos categóricos por métrica (R28) na escala R34 (0,0000001-100), valida diffs holísticos, conformidade e evidência fresca (R29). Roteado ao role:refutador-agil (:9092 Gemma-2-2B) — veredito exige lógica, temp 0.8 (R61); Judge-3B removido 31/08 (desperdício VRAM/disco — única função era árbitro binário). Use para revisão macro F5, gate de conformidade F6, vereditos R28, refutação adversarial de entregas."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.8
 tools:
   read: true

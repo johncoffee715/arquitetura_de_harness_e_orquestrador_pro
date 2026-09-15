@@ -150,6 +150,10 @@ shell -c bypass), exceção auditável `git reset --hard` (rollback R18). Sandbo
 5. **Timeouts**: prazo em toda delegação; watchdog (R7) ~1min; stall ⇒ refatorar rota (R6).
 6. **Isolamento**: subagent suspeito não recebe nova delegação na wave — instância fresca (R6/R18).
 7. Fail-closed na segurança; fail-open só em telemetria.
+8. **Trilhos por chamada (matriz R84, auditoria 2026-09-14 — :8083 EXCLUÍDO por ordem)**: todo despacho a
+   slot local carrega system canônico (identidade + data UTC + honestidade + `grammar` GBNF em tool-call)
+   SOMENTE nos slots ON (9092/9088/9090 — ganhos medidos +0.5..+0.8); slots OFF (9093/9095/9084/coder —
+   regressão medida) recebem APENAS `grammar` isolada; 9086 N/A (thinking-burn, R57 pendente G4).
 
 ## Lineage Causal (o POR QUÊ confiar no output)
 

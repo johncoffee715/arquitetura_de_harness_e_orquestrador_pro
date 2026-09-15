@@ -1,0 +1,17 @@
+# GBNF schema for superpowers output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+PowersOutput:
+  skill_check: boolean
+  review_1_spec: "pass" | "blocked"
+  review_2_quality: "pass" | "blocked"
+  finish: "ship" | "hold"
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [skill_check, plan]

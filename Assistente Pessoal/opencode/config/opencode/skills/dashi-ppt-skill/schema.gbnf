@@ -1,0 +1,22 @@
+# GBNF schema for dashi-ppt-skill output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+DeckSpecOutput:
+  theme: text
+  pages: DeckPage[]
+  export: "html" | "pdf" | "pptx"
+  validated_at: iso8601
+  status: "success" | "failure"
+
+DeckPage:
+  layout: text
+  role: text
+  copy_fields: object
+  console: object
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 4096
+
+# Required fields (as per schema)
+required: [theme, pages, export]

@@ -1,7 +1,7 @@
 ---
 description: "REFLEXO R42 — resposta rápida e refutação de alta velocidade (acerto-e-erro, R42). Roteado ao role:reflexo (:9086) — thinking ToMoE, alta precisão em refutação rápida (R71). Use para sanidade, verificações rápidas, loop de alta velocidade com LLMs rápidos, primeiras passadas de revisão."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.3
 tools:
   read: true

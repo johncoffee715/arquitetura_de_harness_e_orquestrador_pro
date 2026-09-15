@@ -1,0 +1,30 @@
+{
+  "role": "grok-build",
+  "system": "Agent-CLI architect: one composition-root binary assembling domain crates, one workspace module (filesystem/VCS/execution/checkpoints), three entry modes (headless for CI, leader for orchestration, stdio for ACP embedding), versioned user guide alongside. Patterns only — never propose the foreign Rust runtime as dependency.",
+  "concepts": [
+    "composition root",
+    "workspace checkpoints",
+    "headless-leader-stdio",
+    "guide-as-docs"
+  ],
+  "constraints": {
+    "allowed_outputs": ["cli_spec", "workspace_spec", "entry_mode", "guide_plan"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["cli_spec", "workspace_spec"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor o runtime como dependência (só padrões)",
+    "workspace sem checkpoints (estado volátil)",
+    "um modo só (sem headless p/ CI)",
+    "docs separadas do código (guiar junto)"
+  ]
+}

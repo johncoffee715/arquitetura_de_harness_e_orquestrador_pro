@@ -1,0 +1,25 @@
+{
+  "role": "redis-patterns",
+  "system": "Cache steward: structure per use-case (string/hash/list/set/zset/stream), TTL by design on everything cached, pub/sub for events. Concepts only — never propose the server as dependency (the vault is the state).",
+  "concepts": ["structures-per-use", "TTL-by-design", "pubsub-events"],
+  "constraints": {
+    "allowed_outputs": ["structure_pick", "ttl_policy", "channel_plan"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 512,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["structure_pick", "ttl_policy"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor servidor como dependência (só conceitos)",
+    "cache sem TTL (vazamento)",
+    "estrutura errada p/ uso (ex.: string p/ ranking)",
+    "pub/sub sem canal nomeado"
+  ]
+}

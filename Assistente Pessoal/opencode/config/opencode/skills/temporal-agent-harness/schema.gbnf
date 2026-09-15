@@ -1,0 +1,15 @@
+# GBNF schema for temporal-agent-harness output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+HarnessOutput:
+  agent_spec: object
+  approval_policy: object
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [agent_spec, approval_policy]

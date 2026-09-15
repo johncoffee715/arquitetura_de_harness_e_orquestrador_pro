@@ -1,7 +1,7 @@
 ---
 description: "OVERRIDE do built-in 'explore': exploração de código NÃO satura mais o orquestrador — roteada ao role:reflexo (:9086, 317 t/s ultra-veloz). Use para leitura/escrita/exploração ultra-veloz — interpolação saturada, agora com LFM 1.2B thinking (128k, 317 t/s) + defesa quadriplice."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.2
 tools:
   read: true

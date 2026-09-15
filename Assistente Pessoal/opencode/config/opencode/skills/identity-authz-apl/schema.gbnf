@@ -1,0 +1,15 @@
+# GBNF schema for identity-authz-apl output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+AplOutput:
+  decision: "permit" | "deny"
+  fired_rules: text[]
+  evaluated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [decision, fired_rules]

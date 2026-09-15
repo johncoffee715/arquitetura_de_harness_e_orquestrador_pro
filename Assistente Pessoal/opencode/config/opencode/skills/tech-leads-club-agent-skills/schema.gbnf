@@ -1,0 +1,15 @@
+# GBNF schema for tech-leads-club-agent-skills output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+RegistryReviewOutput:
+  scan_verdict: "pass" | "fail"
+  integrity_pin: text
+  reviewed_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [scan_verdict, integrity_pin]

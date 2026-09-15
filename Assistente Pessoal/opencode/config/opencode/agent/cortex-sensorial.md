@@ -1,7 +1,7 @@
 ---
 description: "CÓRTEX SENSORIAL PRIMÁRIO — EARLY-EXIT ONLY (decisão usuário 2026-08-28). role:ingestor (:9084), ctx 1.048.576 (1M). Papel ÚNICO: pré-classificação e roteamento de intenção com early-exit para phatics — respostas triviais SEM despertar GPU/alta-precisão. Evidência empírica: falha em extração/sumarização estruturada (repete padrões) -> PROIBIDO para tarefas mecânicas de extração; essas vão aos subagentes alta-precisão por papel (R65/R71). tool_call=false. Responde direto ao prompt."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.1
 ---
 

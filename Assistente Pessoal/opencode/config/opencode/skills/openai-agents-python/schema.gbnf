@@ -1,0 +1,15 @@
+# GBNF schema for openai-agents-python output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+HandoffOutput:
+  agent_spec: object
+  handoff_map: object
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [agent_spec, handoff_map]

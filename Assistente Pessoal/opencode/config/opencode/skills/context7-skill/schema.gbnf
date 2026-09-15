@@ -1,0 +1,23 @@
+# GBNF schema for context7-skill output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+Context7DocsOutput:
+  library_id: text
+  docs_excerpt: text
+  topic: text
+  resolved_at: iso8601
+  status: "success" | "failure"
+  validation_details: object
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [library_id, docs_excerpt, topic]
+
+# Validation details shape
+validation_details: {
+  "schema_check": boolean,
+  "topic_filter": boolean
+}

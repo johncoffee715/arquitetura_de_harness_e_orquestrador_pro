@@ -1,0 +1,16 @@
+# GBNF schema for crewai-patterns output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+CrewSpecOutput:
+  agent_card: object
+  task_contract: object
+  process: "sequential" | "hierarchical"
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [agent_card, task_contract]

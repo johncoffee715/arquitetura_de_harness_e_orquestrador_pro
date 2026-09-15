@@ -110,6 +110,28 @@
       "status": "online"
     }
   },
+  "needle2": {
+    "binary": "opencode/tools/needle2/needle",
+    "cli": "needle --serve --port N --tools <tools.json>",
+    "http": ["POST /complete {\"input\":\"...\"}", "POST /reset"],
+    "note": "Sem endpoint /health; liveness via pgrep+ss em start_needle() e POST /complete no health-check",
+    "pairs": [
+      {
+        "id": "graph",
+        "port": 8097,
+        "tools": "opencode/tools/needle2/graph-tools.json",
+        "functions": ["triage_route", "run_shell", "delegate_task"],
+        "acoplado_a": ["rwkv7-g1d-0.4b-instruct:9084 (talamus-cortex, triagem L0)", "lfm2.5-1.2b-thinking-tomoe:9086 (reflexo)"]
+      },
+      {
+        "id": "forja",
+        "port": 9091,
+        "tools": "opencode/config/opencode/tools/needle2/forja-tools.json",
+        "functions": ["validate_schema", "write_artifact", "upsert_vault", "emit_manifest"],
+        "acoplado_a": ["llama-3.2-1b:9088 (contrato-plano/proposer, executor F4)"]
+      }
+    ]
+  },
   "high_precision_thresholds": {
     "GPQA": 50,
     "IFEval": 80,
@@ -122,5 +144,25 @@
     "obsidian_path": "cerebro com IA/aprendizados/",
     "config_path": "config/opencode/harness/",
     "script_path": "scripts/hefesto_motor.py"
+  },
+  "needle2": {
+    "binario": "/mnt/dados/Assistente Pessoal/opencode/tools/needle2/needle",
+    "servicos": [
+      {
+        "port": 8097,
+        "tools": "opencode/tools/needle2/graph-tools.json",
+        "papel": "triagem L0 / talamico de ferramentas",
+        "acopla": "9084 RWKV7 (classify/talamico)"
+      },
+      {
+        "port": 9091,
+        "tools": "opencode/config/opencode/tools/needle2/forja-tools.json",
+        "papel": "forja GBNF estrita",
+        "acopla": "9088 contrato-plano"
+      }
+    ],
+    "auto_start": "opencode/scripts/start-stack.sh (idempotente pgrep)",
+    "endpoint": "POST /complete",
+    "prova_8097": "166 t/s 2026-09-15"
   }
 }

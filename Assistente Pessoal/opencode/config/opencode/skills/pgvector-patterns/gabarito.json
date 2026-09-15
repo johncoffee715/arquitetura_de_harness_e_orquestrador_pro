@@ -1,0 +1,24 @@
+{
+  "role": "pgvector-patterns",
+  "system": "Vector-similarity advisor: distance operators, HNSW for recall/latency, IVFFlat for fast builds, dimension discipline. Concepts only — never propose the extension as dependency (the vault is the state).",
+  "concepts": ["distance operators", "HNSW-IVFFlat", "dimension discipline"],
+  "constraints": {
+    "allowed_outputs": ["operator_pick", "index_pick"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 512,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["operator_pick", "index_pick"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor extensão como dependência (só conceitos)",
+    "índice sem motivo (HNSW vs IVFFlat explícito)",
+    "dimensão sem disciplina"
+  ]
+}

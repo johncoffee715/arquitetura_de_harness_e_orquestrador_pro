@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "opencode/muse-spark-1.3-contributor-free",
+  "small_model": "opencode/muse-spark-1.3-contributor-free",
+  "agent": {
+    "bibliotecario": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "cortex-sensorial": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "executor-f4": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "explorador-tool": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "explore": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "general": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "hefesto": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "juiz-limbico": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "planejador-f23": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "prosa-f2": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "reflexo-r42": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "refutador-limbico": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "sdd-executor": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "sentinel-guard": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "build": { "model": "opencode/muse-spark-1.3-contributor-free" },
+    "plan": { "model": "opencode/muse-spark-1.3-contributor-free" }
+  }
+}

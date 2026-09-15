@@ -1,0 +1,16 @@
+0.00.111.830 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.113.140 W srv  llama_server: -----------------
+0.00.113.143 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.113.144 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.113.144 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.113.144 W srv  llama_server: -----------------
+0.00.114.456 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/Qwen3.8-27B-UD-IQ2_XXS.gguf'
+0.00.231.540 E llama_model_load: error loading model: tensor 'blk.41.ffn_up.weight' data is not within the file bounds, model is corrupted or incomplete
+0.00.231.549 E llama_model_load_from_file_impl: failed to load model
+0.00.231.594 E common_fit_params: encountered an error while trying to fit params to free device memory: failed to load model
+0.00.327.347 E llama_model_load: error loading model: tensor 'blk.41.ffn_up.weight' data is not within the file bounds, model is corrupted or incomplete
+0.00.327.353 E llama_model_load_from_file_impl: failed to load model
+0.00.327.360 E cmn  common_init_: failed to load model '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/Qwen3.8-27B-UD-IQ2_XXS.gguf'
+0.00.327.365 E srv    load_model: failed to load model, '/mnt/dados/Assistente Pessoal/modelos LLM/filtragem/Qwen3.8-27B-UD-IQ2_XXS.gguf'
+0.00.327.368 I srv    operator(): operator(): cleaning up before exit...
+0.00.328.710 E srv  llama_server: exiting due to model loading error

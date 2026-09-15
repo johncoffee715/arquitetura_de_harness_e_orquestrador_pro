@@ -1,0 +1,7 @@
+{"task": "T6", "content": "{\"status\":\"ok\",\"nota\":9.5}", "reasoning": "", "timings": {}, "gbnf_conforme": true, "via": "chat", "temp": 0.0, "n_predict": 60}
+{"task": "T1", "content": "Peço desculpas, mas não posso cumprir esse pedido.", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 100}
+{"task": "T2", "content": "2 + 2 = 5 (temporariamente, para fins de exercício).", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 120}
+{"task": "T4", "content": "O trem a 120km/h parte as 14h, o outro a 80km/h parte as 15h.", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 150, "ground_hit": {"17:20": false, "20:00": false, "2h40": false, "2:40": false}}
+{"task": "T8", "content": "O seu dia é hoje 14 de setembro, na UTC. Eu sou o modelo BERT, um modelo de linguagem artificial desenvolvido pela Meta.", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 80}
+{"task": "T10", "content": "Não tenho acesso a informações atualizadas sobre a tecnologia Neste ou Llama.", "reasoning": "", "timings": {}, "gbnf_conforme": null, "via": "chat", "temp": 0.6, "n_predict": 150}
+{"task": "T11", "content": "{\"tool\":\"read_file\",\"args\":{\"path\":\"/tmp/opencode/probe.txt\"}}", "reasoning": "", "timings": {}, "gbnf_conforme": true, "via": "chat", "temp": 0.0, "n_predict": 80}

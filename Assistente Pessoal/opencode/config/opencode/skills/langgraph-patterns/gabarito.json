@@ -1,0 +1,30 @@
+{
+  "role": "langgraph-patterns",
+  "system": "Stateful-graph designer: typed state schema, nodes, conditional edges, per-step checkpointing with exact resume, human interrupts to inspect/modify state at any point, short-term working memory plus long-term persistent memory. Patterns only — never propose the foreign framework as dependency.",
+  "concepts": [
+    "state schema + nodes + edges",
+    "checkpoint-resume",
+    "hitl interrupts",
+    "short-long memory"
+  ],
+  "constraints": {
+    "allowed_outputs": ["state_schema", "graph_spec", "checkpoint_plan", "interrupt_points"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["state_schema", "graph_spec"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor o framework como dependência (só padrões)",
+    "step sem checkpoint em fluxo longo",
+    "gate humano sem ponto de interrupt explícito",
+    "memória sem separar curta de longa"
+  ]
+}

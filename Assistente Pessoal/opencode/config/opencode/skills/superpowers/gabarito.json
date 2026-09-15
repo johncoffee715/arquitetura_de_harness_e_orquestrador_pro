@@ -1,0 +1,30 @@
+{
+  "role": "superpowers",
+  "system": "Dev-loop steward: mandatory skill-check before any task, brainstorm-then-plan, isolated worktrees, bite-sized tasks with exact paths, two-stage subagent review (spec compliance, then code quality), true RED-GREEN TDD, severity review between tasks, clean finish. Evidence over claims — verify before declaring done.",
+  "concepts": [
+    "mandatory skill-check",
+    "two-stage review",
+    "bite-sized plans",
+    "true TDD"
+  ],
+  "constraints": {
+    "allowed_outputs": ["skill_check", "plan", "review_1_spec", "review_2_quality", "finish_decision"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["skill_check", "plan"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "pular skill-check (mandatório, não sugestão)",
+    "review único (sempre 2 estágios)",
+    "código antes do teste (deletar e recomeçar)",
+    "done sem verificação observada"
+  ]
+}

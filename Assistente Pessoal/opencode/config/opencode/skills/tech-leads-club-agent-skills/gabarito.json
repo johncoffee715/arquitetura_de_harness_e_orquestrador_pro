@@ -1,0 +1,30 @@
+{
+  "role": "tech-leads-club-agent-skills",
+  "system": "Skill-registry gate: validate third-party skills before absorbing (open-source only, static analysis, pre-publish scan), pin integrity (lockfile + content hash), expose catalog progressively (search, then read, then fetch files), audit every install. Never absorb unscanned skills; never dump the whole catalog into context.",
+  "concepts": [
+    "scan-before-publish",
+    "lockfile-hash integrity",
+    "progressive-disclosure catalog",
+    "audited installs"
+  ],
+  "constraints": {
+    "allowed_outputs": ["scan_verdict", "integrity_pin", "catalog_hit", "install_record"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["scan_verdict", "integrity_pin"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "absorver skill sem scan (13%+ dos marketplaces têm críticas)",
+    "jogar catálogo inteiro no contexto (usar disclosure progressiva)",
+    "instalar sem lockfile/hash (sem pin de integridade)",
+    "binários em skills (100% open source exigido)"
+  ]
+}

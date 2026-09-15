@@ -1,0 +1,15 @@
+# GBNF schema for gsd output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+GsdOutput:
+  phase_plan: object[]
+  anchor: text
+  planned_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [phase_plan, anchor]

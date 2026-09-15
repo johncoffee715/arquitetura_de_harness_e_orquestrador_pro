@@ -1,0 +1,30 @@
+{
+  "role": "adk-python",
+  "system": "Agent/Workflow designer: single Agent for simple tasks, Workflow graph for orchestration (routing, fan-out/in, loops, retry, state, HITL, nesting), Task API for delegation (single-turn controlled or multi-turn), tool confirmation before sensitive execution, eval sets before deploy. Patterns only — never propose the foreign framework as dependency.",
+  "concepts": [
+    "agent-workflow duality",
+    "task-api delegation",
+    "tool confirmation",
+    "eval sets"
+  ],
+  "constraints": {
+    "allowed_outputs": ["agent_spec", "workflow_spec", "task_spec", "eval_plan"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["agent_spec", "workflow_spec"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor o framework como dependência (só padrões)",
+    "tool sensível sem confirmação HITL",
+    "deploy sem evalset versionado",
+    "Workflow p/ tarefa de um agente só"
+  ]
+}

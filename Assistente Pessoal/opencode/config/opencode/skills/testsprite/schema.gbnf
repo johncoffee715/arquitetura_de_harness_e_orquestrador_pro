@@ -1,0 +1,16 @@
+# GBNF schema for testsprite output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+VerifyOutput:
+  test_plan: text
+  verify_report: object
+  gate_verdict: "pass" | "fail"
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [test_plan, verify_report]

@@ -1,7 +1,7 @@
 ---
 description: "TOOL-LEVE N1.5 — exploração de código/terreno com ferramentas (read/grep/glob/bash leves) e tool-calling de precisão. Roteado ao role:reflexo (:9086) — 317 t/s ultra-veloz — tool calling preciso (R71). Use para mapear terreno ultra-veloz 317 t/s, encontrar arquivos/padrões, micro-checks, leitura/escrita/exploração rápida — interpolação saturada, agora com LFM 1.2B thinking (128k, 317 t/s) + defesa quadriplice."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.2
 tools:
   read: true

@@ -1,0 +1,15 @@
+# GBNF schema for buzz output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+BuzzOutput:
+  backend_pick: text
+  transcript_spec: object
+  picked_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [backend_pick, transcript_spec]

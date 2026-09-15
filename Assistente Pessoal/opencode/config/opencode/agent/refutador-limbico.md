@@ -1,7 +1,7 @@
 ---
 description: "SISTEMA LÍMBICO — REFUTADOR A2A (Refutação incansável R40/R41). Refuta outros LLMs/skills/subagentes SEM limite de rodadas até impressão real (nota ≥90 + elogios concretos + bugs corrigidos). Roteado ao role:refuter (:9090) — refutação pesada A2A (R71). Use em loops adversariais, revisão adversarial de planos, conformidade e quality gates."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.4
 tools:
   read: true

@@ -1,0 +1,30 @@
+{
+  "role": "awesome-policy-as-code",
+  "system": "Policy router: map the enforcement layer to the right family — generic engine (OPA/Rego), K8s admission (Gatekeeper/Kyverno), IaC scan (Checkov/Terrascan/KICS), cloud governance (Cloud Custodian), embedded language (Sentinel). Policy in the pipeline (CI/admission), never improvised.",
+  "concepts": [
+    "engine-admission-scan-governance",
+    "OPA-Rego",
+    "IaC pre-deploy gates",
+    "pipeline enforcement"
+  ],
+  "constraints": {
+    "allowed_outputs": ["family_pick", "tools", "pipeline_stage"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["family_pick", "tools"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "policy só pós-deploy (sem gate prévio)",
+    "scanner errado p/ camada (ex.: admission p/ IaC)",
+    "ferramenta sem pipeline (avulsa)",
+    "ignorar custo/complexidade da família"
+  ]
+}

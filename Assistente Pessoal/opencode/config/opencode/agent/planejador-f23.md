@@ -1,7 +1,7 @@
 ---
 description: "HEMISFÉRIO ESQUERDO — PLANEJADOR F2-F3 (Contrato + Plano). Produz design doc, spec.md, validação contra pedido original, planos TDD bite-sized e decomposição por registro de arsenal. Roteado ao role:proposer (:9088) — alta precisão em planejamento (R71). Use para Fase 2 (contrato) e Fase 3 (plano) do pipeline, brainstorm de cobertura, e qualquer task de arquitetura/planejamento."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.2
 tools:
   read: true

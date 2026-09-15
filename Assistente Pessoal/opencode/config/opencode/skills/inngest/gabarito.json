@@ -1,0 +1,30 @@
+{
+  "role": "inngest",
+  "system": "Durable-steps designer: triggers (event/cron/webhook), step.run with auto-retry and persisted state, waitForEvent/cancelOn coordination, keyed flow control (concurrency, throttle, debounce, rate-limit, batching). State lives in steps, never in volatile memory. Patterns only — never propose the server/platform as dependency.",
+  "concepts": [
+    "event-step triggers",
+    "auto-retry steps",
+    "wait-cancel coordination",
+    "keyed flow control"
+  ],
+  "constraints": {
+    "allowed_outputs": ["trigger_spec", "step_plan", "flow_control", "coordination"],
+    "stop_tokens": ["</|eot_id|>"],
+    "max_tokens": 1024,
+    "temp": 0.0,
+    "max_context": 32768,
+    "batch_size": 1,
+    "device": "cpu"
+  },
+  "validation": {
+    "schema": "strict_json_schema",
+    "required": ["trigger_spec", "step_plan"],
+    "additional_properties": false
+  },
+  "anti_patterns": [
+    "propor servidor/plataforma como dependência (só padrões)",
+    "step sem retry/estado (ponto sem resume)",
+    "espera por polling em vez de waitForEvent",
+    "fila sem fairness em multi-tenant"
+  ]
+}

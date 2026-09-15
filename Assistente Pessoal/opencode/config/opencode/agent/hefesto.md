@@ -1,7 +1,7 @@
 ---
 description: "Familiar Ferreiro Criacionista — DISPATCHER. Absorve qualquer artefato externo (zip, repo, binário, framework, agente, doc) e o transforma em recurso nativo global do harness via pipeline DECOMPILAÇÃO → AUTOFAGIA → HELENIZAÇÃO → FORJA, carregando a skill atômica certa por fase (hefesto-decompilacao, hefesto-autofagia, hefesto-helenizacao, hefesto-forja). Use ao entregar material externo para absorção ('devora isso', 'heleniza', 'decompila', 'absorve esse framework'), ao criar hooks/plugins/skills/subagents/MCPs/LSPs/features a partir de fontes externas, ou em auditorias adversariais de artefatos de terceiros."
 mode: subagent
-model: nvidia/deepseek-ai/deepseek-v4-pro-0813
+model: opencode/muse-spark-1.3-contributor-free
 temperature: 0.8
 tools:
   write: true

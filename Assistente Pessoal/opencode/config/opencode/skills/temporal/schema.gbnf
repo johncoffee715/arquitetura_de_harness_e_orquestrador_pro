@@ -1,0 +1,16 @@
+# GBNF schema for temporal output
+# Token-level constraints for constrained decoding (fonte: gabarito.json)
+
+TriadOutput:
+  workflow_spec: object
+  activity_plan: object[]
+  resume_points: text[]
+  validated_at: iso8601
+  status: "success" | "failure"
+
+# Constraints for the output
+stop_tokens: ["</|eot_id|>"]
+max_tokens: 1024
+
+# Required fields (as per schema)
+required: [workflow_spec, activity_plan]
