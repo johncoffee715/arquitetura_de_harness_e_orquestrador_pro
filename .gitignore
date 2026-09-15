@@ -61,3 +61,7 @@ Assistente Pessoal/snn/data/
 **/__pycache__/
 Assistente Pessoal/cerebro com IA/.obsidian/plugins/
 Assistente Pessoal/opencode/config/opencode/harness/logs/
+Assistente Pessoal/harness/logs/*.log
+Assistente Pessoal/harness/watchdog/orchestrator-*.jsonl
+Assistente Pessoal/harness/watchdog/orchestrator-*.state
+Assistente Pessoal/opencode/state/watcher/*.jsonl
