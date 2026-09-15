@@ -103,6 +103,7 @@
 | R99 | Gari |
 | R100 | Consulta Bibliotecário |
 | R101 | Setor regras + synclinks |
+| R102 | Programas de apoio — path canônico |
 
 ## Recuperação sob demanda
 

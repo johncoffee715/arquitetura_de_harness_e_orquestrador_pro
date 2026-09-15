@@ -111,3 +111,4 @@ data: 2026-09-11
 | R99 | Gari |
 | R100 | Consulta Bibliotecário |
 | R101 | Setor regras + synclinks |
+| R102 | Programas de apoio — path canônico |
