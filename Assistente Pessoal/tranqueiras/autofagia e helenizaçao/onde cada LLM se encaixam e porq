@@ -1,0 +1,61 @@
+onde cada LLM se encaixam e porque, gerencie e me entregue:
+
+sempre alinhe os llms disponiveis no path: (/mnt/dados/Assistente Pessoal/modelos LLM/) a cada grafo coorrespondente automaticamente:
+
+
+ grafo desenho de 0-6 fases é o loop externo que orquestra as Features(plugins, subagentes, hooks, skills, mcps, tool callings, lsps, tools) de forma autonoma atraves do quarteto(.md .py .json .gbnf) evoluindo sozinho conforme orquestrador vai se aperfeiçoando, aprendendo e otimizando a si mesmo com (self-improvement, auto-ameliorativo, self-scarfold, self-learning, self-healing).
+
+[FASE 0 — USUÁRIO & INGESTÃO CRUDA]executor seletivo
+ └── ⚡ CAMADA DE FILTRAGEM ULTRAVELOZ (llm local mais veloz da arquitetura t/s)
+      ├── Intercepta Prompt + Contexto + Harness + Logs de Execuções Anteriores.
+      ├── Compacta o histórico do Obsidian e remove metadados redundantes.
+      └── Entrega um pacote limpo para o Orquestrador, atraves da engenharia de contexto prevenindo o estouro de cxt.
+
+[FASE 1 — DESCOBERTA]
+ ├── Ideias, Escopo e Remoção de Ambiguidade.
+ └── Decomposição leve e Loop Braingstorming A2A de Refutações (SubLLMs/Subagentes).
+      └── 🛑 ALVO DE FILTRO: O Brainstorm gera tokens em massa.
+      O (llm local mais veloz da arquitetura t/s) roda em background
+      consolidando e limpando as refutações rejeitadas antes de passar ao proximo estagio.
+ ⏸️ GATE 1: Usuário aprova a direção.
+
+[FASE 2 — CONTRATO]
+ ├── Direção aprovada → Design Doc → spec.md.
+ ├── Validação contra o pedido original e Auditoria.
+ └── 💾 GANHO DE MEMÓRIA (Preservar o contexto):
+ O (llm local mais veloz da arquitetura t/s)
+ faz o Cache Semântico do spec.md.
+ Se o contrato não mudou, ele impede o
+ reprocessamento do arquivo inteiro na RAM/VRAM nas fases seguintes.
+ ⏸️ GATE 2: Usuário aprova o spec.
+
+[FASE 3 — PLANO]
+ ├── TDD/SDD, Tasks bite-sized e quebra de trabalho.
+ ├── ignita Features(plugins, subagentes, hooks, skills, mcps, tool callings, lsps, tools).
+ └── Loop Braingstorming A2A de Refutações (Cobertura, Contratos, Verificabilidade, Revisão).
+      └── 📊 COMPRESSÃO DE CXT MAX: O llm local mais veloz da arquitetura t/s é acionado aqui, limitando estritamente o histórico enviado a ele para evitar paginação (swap) de VRAM/RAM nos LLM criticos de alta precisao.
+ ⏸️ GATE 3: Usuário aprova o plano.
+ 💾 Safety: SHA salvo AQUI (Fases 1-3 não tocam código produtivo).
+
+[FASE 4 — EXECUÇÃO]
+ ├── LLM coorrespondente deve Supervisionar/sequenciar/gerenciar tasks e gerenciar Git (commits atômicos).
+ ├── ignita Features frescos(plugins, subagentes, hooks, skills, mcps, tool callings, lsps, tools).
+ ├── Loop Braingstorming A2A de Refutações de SDD e Evidência de verificação por task.
+      └── 🛠️ ROTEAMENTO DE FERRO: O llm local mais veloz da arquitetura t/s limpa os schemas das ferramentas (MCPs/LSPs) enviando apenas as funções estritamente necessárias para o llm executor, mitigando sua lentidão nativa.
+ ⚡ Sem gates — Commits atômicos, progresso visível.
+
+[FASE 5 — REVISÃO MACRO]
+ ├── Revisão holística do diff total, acoplamento e critérios de qualidade.
+ └── Loop Braingstorming A2A de Refutações (Arquitetura e Alinhamento).
+      └── 🔍 AGREGADOR DE DIFF: O llm local mais veloz da arquitetura t/s varre todo o histórico de commits da Fase 4 e gera um sumário analítico focado apenas em desvios de contrato para o LLM avaliador inspecionar.
+
+[FASE 6 — ENTREGA & SELF-LEARNING, SELF-HEALING, SELF-SCAFFOLDING, SELF-IMPROVEMENT, AUTO-AMELIORATIVO]
+ ├── Verification: Evidência fresca de ferro e validação contra pedido original.
+ ├── Loop Braingstorming A2A de Refutações para conformidade e qualidade.
+ └── ⏸️ GATE 4: Relatório do Orquestrador → Memória cerebral no Obsidian.
+      └── 🔄 LOOP AUTO-AMELIORATIVO (Mecanismo de Scaffold):
+           ├── O Orquestrador analisa a telemetria da rodada (Ex: "Fase 1 demorou X devido a tamanho do contexto", "O LLM bateu limitador cognitivo da janela cxt").
+           ├── O Orquestrador escreve instruções de auto-otimização para o prompt de sistema do llm local mais veloz da arquitetura t/s aplicando atraves das capacidades do SubAgent Hefesto (.md, .py, .json)Ex: "Diminuir tamanho do resumo de histórico em 20%", "Filtrar mais agressivamente logs de erro do LSP".
+           └── Salva no Obsidian as novas regras de Scaffold que ele próprio aprendeu.
+
+🔄 O Loop Auto-Ameliorativo: Mecanismo de Mutação por Hefesto, A inteligência auto-evolutiva do sistema reside na aresta de retroalimentação entre a Fase 6 e o início de um novo ciclo na Fase 0. O SubAgente Hefesto atua como o engenheiro de sistemas autônomo da própria infraestrutura local.

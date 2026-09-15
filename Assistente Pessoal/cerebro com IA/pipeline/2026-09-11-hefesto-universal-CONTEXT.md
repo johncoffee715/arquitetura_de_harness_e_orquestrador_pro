@@ -63,3 +63,117 @@ impeccable, cc-harness-iai, spec-kit, a2a-brainstorm
 ## RunIDs: reservados abaixo por task.
 
 ## F4 Execução — RunIDs
+
+[RunID] ts=2026-09-12 run-20260911-context7 hefesto-context7-skill done dur_ms=n/a (forja direta cloud provisória)
+[Phase] ts=2026-09-12 F6 Entrega | Route: hefesto-cloud | Status: TODAS AS WAVES DONE (A+B+C+D+E+F+G+I) | Budget: ~95%
+[Authorize] auto — modo autônomo (cloud): forjas buzz + open-design + pgvector/postgres/redis/langgraph-redis sem gate humano
+[RunID] ts=2026-09-12 run-20260912-buzz hefesto-buzz done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-opendesign hefesto-open-design done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-pgvector hefesto-pgvector-patterns done dur_ms=n/a (só conceitos, nunca dependência)
+[RunID] ts=2026-09-12 run-20260912-postgres hefesto-postgres-patterns done dur_ms=n/a (só conceitos, nunca dependência)
+[RunID] ts=2026-09-12 run-20260912-redis hefesto-redis-patterns done dur_ms=n/a (só conceitos, nunca dependência)
+[RunID] ts=2026-09-12 run-20260912-lgredis hefesto-langgraph-redis-patterns done dur_ms=n/a (só padrão, nunca servidores)
+[Verify] ts=2026-09-12 sweep FINAL 35/35 PASS 0 FAIL (todas as forjas)
+[Authorize] auto — modo autônomo (cloud): clones reais /tmp/opencode/repos + forjas grok-build + testsprite sem gate humano
+[RunID] ts=2026-09-12 run-20260912-grokbuild hefesto-grok-build done dur_ms=n/a (clone SHA 3794978 + fonte lida, só padrões)
+[RunID] ts=2026-09-12 run-20260912-testsprite hefesto-testsprite done dur_ms=n/a (clone SHA 125872f + fonte lida, só loop)
+
+### Wave G — Tools/CLI (clone real Hefesto, 2/4)
+| Repo | Skill | Status | Evidência |
+|---|---|---|---|
+| xai-org/grok-build | grok-build | done | clone SHA 3794978, README+linhas reais, smoke 3/3 |
+| TestSprite/testsprite-cli | testsprite | done | clone SHA 125872f, package+skills reais, smoke 3/3 |
+| chidiwilliams/buzz | buzz | pending | próximo (clone real) |
+| nexu-io/open-design | open-design | pending | próximo (clone real) |
+[Authorize] auto — modo autônomo (cloud): forjas oh-my-openagent + superpowers + fable-method + gsd sem gate humano
+[RunID] ts=2026-09-12 run-20260912-omo hefesto-oh-my-openagent done dur_ms=n/a (forja direta cloud provisória, só padrões; licença SUL sinalizada)
+[RunID] ts=2026-09-12 run-20260912-superpowers hefesto-superpowers done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-fablemethod hefesto-fable-method done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-gsd hefesto-gsd done dur_ms=n/a (forja direta cloud provisória; org como fonte, PARTIALLY UNDERSTOOD nos internals)
+
+### Wave I — Novos (lote usuário, execução cloud provisória, 4/4)
+| Repo | Skill | Status | Evidência |
+|---|---|---|---|
+| code-yeongyu/oh-my-openagent | oh-my-openagent | done | 6 arquivos + smoke 3/3 (hashline/categorias/Team) |
+| obra/superpowers | superpowers | done | 6 arquivos + smoke 4/4 (skill-check + review duplo) |
+| Sahir619/fable-method | fable-method | done | 6 arquivos + smoke 4/4 (loop bounded + INTENT) |
+| gsd-build (org) | gsd | done | 6 arquivos + smoke 2/2 (flatship patterns; internals PARTIALLY UNDERSTOOD) |
+[Authorize] auto — modo autônomo (cloud): forjas temporal + temporal-agent-harness sem gate humano
+[RunID] ts=2026-09-12 run-20260912-temporal hefesto-temporal done dur_ms=n/a (forja direta cloud provisória, só padrão; 1 retry: fix tipo Pydantic Dict[str,str]→Dict[str,Any])
+[RunID] ts=2026-09-12 run-20260912-tah hefesto-temporal-agent-harness done dur_ms=n/a (forja direta cloud provisória, só padrões)
+[Authorize] auto — modo autônomo (cloud): forjas adk-python + openai-agents-python + inngest sem gate humano
+[RunID] ts=2026-09-12 run-20260912-adk hefesto-adk-python done dur_ms=n/a (forja direta cloud provisória, só padrão)
+[RunID] ts=2026-09-12 run-20260912-oaiagents hefesto-openai-agents-python done dur_ms=n/a (forja direta cloud provisória, só padrão)
+[RunID] ts=2026-09-12 run-20260912-inngest hefesto-inngest done dur_ms=n/a (forja direta cloud provisória, só padrão)
+[Authorize] auto — modo autônomo (cloud): forjas langfuse + otel-semconv-genai + awesome-policy-as-code + identity-authz-apl sem gate humano
+[RunID] ts=2026-09-12 run-20260912-langfuse hefesto-langfuse done dur_ms=n/a (forja direta cloud provisória, só loop)
+[RunID] ts=2026-09-12 run-20260912-otel hefesto-otel-semconv-genai done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-pac hefesto-awesome-policy-as-code done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-apl hefesto-identity-authz-apl done dur_ms=n/a (forja direta cloud provisória)
+[Authorize] auto — modo autônomo (cloud): forjas crewai-patterns + langgraph-patterns sem gate humano
+[RunID] ts=2026-09-12 run-20260912-crewai hefesto-crewai-patterns done dur_ms=n/a (forja direta cloud provisória, só padrão)
+[RunID] ts=2026-09-12 run-20260912-langgraph hefesto-langgraph-patterns done dur_ms=n/a (forja direta cloud provisória, só padrão)
+[Authorize] auto — modo autônomo (cloud): forjas openagentscontrol + ecc sem gate humano
+[RunID] ts=2026-09-12 run-20260912-oac hefesto-openagentscontrol done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-ecc hefesto-ecc done dur_ms=n/a (forja direta cloud provisória)
+[Verify] ts=2026-09-12 sweep 12/12 PASS 0 FAIL (todas as forjas re-validadas — falha captada corrigida)
+[Authorize] auto — modo autônomo (cloud): forjas wigolo + ruflo sem gate humano
+[RunID] ts=2026-09-12 run-20260912-wigolo hefesto-wigolo done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-ruflo hefesto-ruflo done dur_ms=n/a (forja direta cloud provisória, só padrões)
+[Authorize] auto — modo autônomo (cloud): forjas bmad-method + mcp-servers sem gate humano
+[RunID] ts=2026-09-12 run-20260912-bmad hefesto-bmad-method done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-mcpservers hefesto-mcp-servers done dur_ms=n/a (forja direta cloud provisória)
+[Authorize] auto — modo autônomo (cloud): forjas tech-leads-club-agent-skills + openspec sem gate humano
+[RunID] ts=2026-09-12 run-20260912-tlc hefesto-tech-leads-club-agent-skills done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-openspec hefesto-openspec done dur_ms=n/a (forja direta cloud provisória)
+[Authorize] auto — modo autônomo (cloud): forjas andrej-karpathy-skills + deepspec sem gate humano
+[RunID] ts=2026-09-12 run-20260912-karpathy hefesto-andrej-karpathy-skills done dur_ms=n/a (forja direta cloud provisória)
+[RunID] ts=2026-09-12 run-20260912-deepspec hefesto-deepspec done dur_ms=n/a (forja direta cloud provisória)
+[Authorize] auto — modo autônomo (cloud): forja dashi-ppt-skill sem gate humano
+[RunID] ts=2026-09-12 run-20260912-dashippt hefesto-dashi-ppt-skill done dur_ms=n/a (forja direta cloud provisória)
+[Budget] ts=2026-09-12 hefesto-context7-skill ~6tok/teto (6 arquivos, smoke 3/3)
+
+### Wave A — Skills (execução cloud provisória, 1/7)
+| Repo | Skill | Status | Evidência |
+|---|---|---|---|
+| netresearch/context7-skill | context7-skill | done | 6 arquivos + gabarito JSON válido + mecanica.py smoke 3/3 |
+| chuspeeism/dashi-ppt-skill | dashi-ppt-skill | done | 6 arquivos + gabarito JSON válido + mecanica.py smoke 4/4 |
+| multica-ai/andrej-karpathy-skills | andrej-karpathy-skills | done | 6 arquivos + smoke 3/3 |
+| tech-leads-club/agent-skills | tech-leads-club-agent-skills | done | 6 arquivos + smoke 3/3 (registry validado + MCP progressivo) |
+| deepseek-ai/deepspec | deepspec | done | 6 arquivos + smoke 4/4 (correção: speculative decoding, NÃO spec-driven) |
+| Fission-AI/OpenSpec | openspec | done | 6 arquivos + smoke 3/3 (ciclo fluido + Stores) |
+| bmad-code-org/BMAD-METHOD | bmad-method | done | 6 arquivos + smoke 5/5 (delivery-loop router) |
+
+### Wave B — MCP (execução cloud provisória, 1/3)
+| Repo | Skill | Status | Evidência |
+|---|---|---|---|
+| modelcontextprotocol/servers | mcp-servers | done | 6 arquivos + smoke 4/4 (catálogo 7 ativos + config segura) |
+| knockoutez/wigolo | wigolo | done | 6 arquivos + smoke 3/3 (MCP web local-first $0) |
+| ruvnet/ruflo | ruflo | done | 6 arquivos + smoke 4/4 (só padrões, nunca runtime alheio) |
+
+### Wave H — pesquisa concluída (primário cloud, 6/6)
+ecc SIM (padrao-harness/alta) · openagentscontrol SIM (padrao-orquestracao/alta) · instatic NÃO (tool-cms/baixa) · open-design SIM (skill/media) · ruflo SIM (padrao-harness/alta) · wigolo SIM (mcp/alta)
+
+### Wave F — Infra-padrões (só conceitos, NUNCA dependência, 4/4 DONE)
+| Repo | Skill | Status | Evidência |
+|---|---|---|---|
+| pgvector/pgvector | pgvector-patterns | done | 6 arquivos + smoke 3/3 (HNSW/IVFFlat) |
+| postgres/postgres | postgres-patterns | done | 6 arquivos + smoke 3/3 (WAL-first/MVCC) |
+| redis/redis | redis-patterns | done | 6 arquivos + smoke 3/3 (estruturas/TTL) |
+| redis-developer/langgraph-redis | langgraph-redis-patterns | done | 6 arquivos + smoke 2/2 (namespace+TTL) |
+
+### Wave G — Tools/CLI (4/4 DONE; grok-build+testsprite com clone real)
+| Repo | Skill | Status | Evidência |
+|---|---|---|---|
+| xai-org/grok-build | grok-build | done | clone SHA 3794978 + fonte real, smoke 3/3 |
+| TestSprite/testsprite-cli | testsprite | done | clone SHA 125872f + fonte real, smoke 3/3 |
+| chidiwilliams/buzz | buzz | done | 6 arquivos + smoke 2/2 (pipeline offline) |
+| nexu-io/open-design | open-design | done | 6 arquivos + smoke 3/3 (loop + DESIGN.md) |
+
+## F6 Encerramento — drift + restart (2026-09-12)
+- [Drift] HEAD 35e25c1 (snapshot era 45a3ec8 — commits do sistema no meio); skills novas: 35 dirs untracked; catálogo 117 total
+- [Drift] agent/*.md (13 subagents → nvidia/deepseek) EM VIGOR no disco — vale pós-restart; revert: modelos originais (ingestor×2, proposer×6, refuter×2, reflexo×3) — ver decisão abaixo
+- [Drift] opencode.jsonc local-forge: minha troca p/ :9090 foi REVERTIDA (volta a :9088/131072) — mecanismo desconhecido (suspeita sync-hook); NÃO confiar nela; routing por agent-file prevalece
+- [Restart] :9088 roda new-build Llama-3.2-3B CPU (meu processo); restart-stack.sh usa old-build (Vulkan ausente → NÃO sobe slots novos); stack local segue no seu domínio p/ reparo
+- [Safety] NENHUM git add/commit/push feito (sem ordem); NENHUM rollback (máx 1/pipeline, não usado); __pycache__/ em skills/ = limpar antes do add
+- [Derivation] 41 absorvidos prévios (evidência: quartetos no disco) + 6 pesquisados + 35 forjados → pesos por onda; strategy: delegation→cloud-direct provisório

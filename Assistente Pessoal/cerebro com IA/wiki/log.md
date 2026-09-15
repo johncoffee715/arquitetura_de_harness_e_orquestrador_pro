@@ -91,3 +91,15 @@ Histórico cronológico de operações no wiki — ativações neurais.
 - R54 guardrail: Gran-Mestre preserva janela delegando, subagents devolvem só supra-sumo ≤25 linhas
 - Health 9/9 ok (8083 Ornith 212992 q4_0), KV 11.99GB, inventário R52 sync
 - [[summaries/2026-08-26-swap-llm-stack]] · [[decisoes/2026-08-26-swap-llm-stack]] · [[aprendizados/2026-08-26_swap-llm-stack]]
+
+## 2026-09-13 — Absorção MaleCNS v1.0 → recurso SNN nativo (hefesto snn-hefesto-absorb)
+- Artefato externo = conectoma Drosophila MaleCNS v1.0 (166K neurônios, 312M sinapses) → 3 recursos nativos
+- HMI Obsidian: `wiki/concepts/snn/` 4 notas macro-região (índice + Corpos Cogumelo + Complexo Central + PPL101)
+- Spec parser CSR + esqueleto event-loop SNN (Rust, Min-Heap/Timing Wheel): `opencode/config/opencode/skills/snn-conectoma/`
+- Device-map validado: 9086/9090/9092 = CPU (-ngl 0); string `stack_atual.gpu` do manifesto = stale
+- `rustc --test event_loop.rs` → 3 testes verdes, 0 warnings
+- [[aprendizados/2026-09-13_snn-conectoma-hefesto-absorb]]
+
+## 2026-09-14 — HMI SNN viva (motor índice + 4 regiões ligadas ao live_loop)
+- Índice motor: `wiki/concepts/snn/snn-motor-indice.md` (mapa módulo→região → live_loop)
+- 4 regiões com seção 'Estado vivo': índice/topologia + MB/KC + CX/navegação + PPL101/valência

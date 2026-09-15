@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "943d5c43105ffba6",
+        "id": "89f15df9bcdba760",
         "type": "tabs",
         "children": [
           {
-            "id": "d8c2944fc2dd2967",
+            "id": "a9d6a6855cad2fd6",
             "type": "leaf",
             "state": {
               "type": "graph",
@@ -51,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "tag:#imagem",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -75,7 +75,8 @@
               "title": "Marcadores"
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "horizontal",
@@ -172,6 +173,7 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:Abrir a troca rápida": false,
       "graph:Abrir visualização em gráfico": false,
       "canvas:Criar novo canvas": false,
@@ -182,8 +184,9 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "d8c2944fc2dd2967",
+  "active": "0424fbf90b2ecd92",
   "lastOpenFiles": [
+    "pipeline/2026-09-15-auditoria-stack-CONTEXT.md",
     "harness/harness-patterns.md",
     "harness/harness-learnings.md",
     "harness/harness-decisions.md",
