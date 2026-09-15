@@ -65,3 +65,4 @@ Assistente Pessoal/harness/logs/*.log
 Assistente Pessoal/harness/watchdog/orchestrator-*.jsonl
 Assistente Pessoal/harness/watchdog/orchestrator-*.state
 Assistente Pessoal/opencode/state/watcher/*.jsonl
+Assistente Pessoal/harness/watchdog/orchestrator-state.json
