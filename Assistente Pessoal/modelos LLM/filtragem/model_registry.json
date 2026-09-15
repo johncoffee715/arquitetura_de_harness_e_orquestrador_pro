@@ -731,7 +731,10 @@
         "capacidades": "T6 exato + T4 perfeito",
         "possibilidades": "caso tall-small honesto; insuficiente p/ qualquer papel"
       },
-      "evidencia": "/tmp/opencode/crivo-neohorse.jsonl"
+      "evidencia": "/tmp/opencode/crivo-neohorse.jsonl",
+      "hardware": {
+        "kv_kb_per_1k": null
+      }
     },
     "NeoHorse-1-4B-Q5_K_M": {
       "status": "QUARENTENA-CRIVADO-RETESTE",
@@ -772,7 +775,18 @@
           "decode": "3.5-5.3"
         }
       },
-      "crivo_producao_gpu": "MOTOR_F4_CANDIDATO_TOPO"
+      "crivo_producao_gpu": "MOTOR_F4_CANDIDATO_TOPO",
+      "hardware": {
+        "ctx_train": 262144,
+        "ctx_usavel": 32768,
+        "n_embd": 2560,
+        "n_params": 4205751296,
+        "size_gb": 2.86,
+        "quant": "Q5_K_M",
+        "ftype_lex": "Q5_K",
+        "kv_kb_per_1k": null
+      },
+      "crivo_producao": {}
     },
     "Noema-2B-Q4_K_M": {
       "status": "QUARENTENA-CRIVADO",
@@ -791,7 +805,10 @@
         "capacidades": "T6 exato + emissao PT",
         "possibilidades": "micro c/ RAG; insuficiente p/ GM"
       },
-      "evidencia": "harness/logs/crivo-evidencias-2026-09-13/crivo-noema-RAW.jsonl"
+      "evidencia": "harness/logs/crivo-evidencias-2026-09-13/crivo-noema-RAW.jsonl",
+      "hardware": {
+        "kv_kb_per_1k": null
+      }
     },
     "NeoHorse-1-9B-Q4_K_M": {
       "status": "QUARENTENA-CRIVADO",

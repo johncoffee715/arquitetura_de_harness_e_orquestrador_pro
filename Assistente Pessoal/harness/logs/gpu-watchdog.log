@@ -64872,3 +64872,1534 @@ STATUS FINAL: 5/8 modelos no ar
 
 RAM: 
 [start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 4167
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 4179
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 4180
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 4182
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 4185
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 4186
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 4187
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 4189
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 7521
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 7522
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 7523
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 7524
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 7525
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 7526
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 7527
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 7528
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 2/8 no ar
+[start-all] 160s: 4/8 no ar
+[start-all] 165s: 4/8 no ar
+[start-all] 170s: 4/8 no ar
+[start-all] 175s: 4/8 no ar
+[start-all] 180s: 4/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 4/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] reusando 4/8; subindo apenas os ausentes.
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 10573
+[start-all] qwen: reusando — pulando
+[start-all] lfm: reusando — pulando
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 10574
+[start-all] qwen31-7b: reusando — pulando
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 10575
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 10576
+[start-all] ternary8b: reusando — pulando
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 4/8 no ar
+[start-all] 10s: 4/8 no ar
+[start-all] 15s: 5/8 no ar
+[start-all] 20s: 5/8 no ar
+[start-all] 25s: 5/8 no ar
+[start-all] 30s: 5/8 no ar
+[start-all] 35s: 5/8 no ar
+[start-all] 40s: 5/8 no ar
+[start-all] 45s: 5/8 no ar
+[start-all] 50s: 5/8 no ar
+[start-all] 55s: 5/8 no ar
+[start-all] 60s: 5/8 no ar
+[start-all] 65s: 5/8 no ar
+[start-all] 70s: 5/8 no ar
+[start-all] 75s: 5/8 no ar
+[start-all] 80s: 5/8 no ar
+[start-all] 85s: 5/8 no ar
+[start-all] 90s: 5/8 no ar
+[start-all] 95s: 5/8 no ar
+[start-all] 100s: 5/8 no ar
+[start-all] 105s: 5/8 no ar
+[start-all] 110s: 5/8 no ar
+[start-all] 115s: 5/8 no ar
+[start-all] 120s: 5/8 no ar
+[start-all] 125s: 5/8 no ar
+[start-all] 130s: 5/8 no ar
+[start-all] 135s: 5/8 no ar
+[start-all] 140s: 5/8 no ar
+[start-all] 145s: 5/8 no ar
+[start-all] 150s: 5/8 no ar
+[start-all] 155s: 5/8 no ar
+[start-all] 160s: 5/8 no ar
+[start-all] 165s: 5/8 no ar
+[start-all] 170s: 5/8 no ar
+[start-all] 175s: 5/8 no ar
+[start-all] 180s: 5/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 5/8 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] reusando 5/8; subindo apenas os ausentes.
+[start-all] orchestrator: reusando — pulando
+[start-all] qwen: reusando — pulando
+[start-all] lfm: reusando — pulando
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 566005
+[start-all] qwen31-7b: reusando — pulando
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 566006
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 566007
+[start-all] ternary8b: reusando — pulando
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 5/8 no ar
+[start-all] 10s: 5/8 no ar
+[start-all] 15s: 5/8 no ar
+[start-all] 20s: 5/8 no ar
+[start-all] 25s: 5/8 no ar
+[start-all] 30s: 5/8 no ar
+[start-all] 35s: 5/8 no ar
+[start-all] 40s: 5/8 no ar
+[start-all] 45s: 5/8 no ar
+[start-all] 50s: 5/8 no ar
+[start-all] 55s: 5/8 no ar
+[start-all] 60s: 5/8 no ar
+[start-all] 65s: 5/8 no ar
+[start-all] 70s: 5/8 no ar
+[start-all] 75s: 5/8 no ar
+[start-all] 80s: 5/8 no ar
+[start-all] 85s: 5/8 no ar
+[start-all] 90s: 5/8 no ar
+[start-all] 95s: 5/8 no ar
+[start-all] 100s: 5/8 no ar
+[start-all] 105s: 5/8 no ar
+[start-all] 110s: 5/8 no ar
+[start-all] 115s: 5/8 no ar
+[start-all] 120s: 5/8 no ar
+[start-all] 125s: 5/8 no ar
+[start-all] 130s: 5/8 no ar
+[start-all] 135s: 5/8 no ar
+[start-all] 140s: 5/8 no ar
+[start-all] 145s: 5/8 no ar
+[start-all] 150s: 5/8 no ar
+[start-all] 155s: 5/8 no ar
+[start-all] 160s: 5/8 no ar
+[start-all] 165s: 5/8 no ar
+[start-all] 170s: 5/8 no ar
+[start-all] 175s: 5/8 no ar
+[start-all] 180s: 5/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 5/8 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 3835
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 3837
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 3838
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 3839
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 3840
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 3841
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 3842
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 3843
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 6683
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 6684
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 6685
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 6686
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 6687
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 6688
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 6689
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 6690
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 8084
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 8085
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 8086
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 8087
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 8088
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 8089
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 8090
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 8091
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 9989
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 9990
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 9991
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 9992
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 9993
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 9994
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 9995
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 9996
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 11152
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 11153
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 11154
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 11155
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 11156
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 11157
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 11158
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 11159
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 12541
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 12542
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 12543
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 12544
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 12545
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 12546
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 12547
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 12548
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 15094
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 15095
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 15096
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 15097
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 15098
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 15099
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 15100
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 15101
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 16957
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 16958
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 16959
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 16960
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 16961
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 16962
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 16963
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 16964
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 18620
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 18621
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 18622
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 18623
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 18624
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 18625
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 18626
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 18627
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 20222
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 20223
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 20224
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 20225
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 20226
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 20227
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 20228
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 20229
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 23496
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 23497
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 23498
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 23499
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 23500
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 23501
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 23502
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 23503
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 28143
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 28144
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 28145
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 28146
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 28147
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 28148
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 28149
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 28150
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 29760
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 29761
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 29762
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 29763
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 29764
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 29765
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 29766
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 29767
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 31981
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 31982
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 31983
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 31984
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 31985
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 31986
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 31987
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 31988
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 33751
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 33752
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 33753
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 33754
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 33755
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 33756
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 33757
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 33758
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 35527
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 35528
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 35529
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 35530
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 35531
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 35532
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 35533
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 35534
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 0/8 no ar
+[start-all] 25s: 0/8 no ar
+[start-all] 30s: 0/8 no ar
+[start-all] 35s: 0/8 no ar
+[start-all] 40s: 0/8 no ar
+[start-all] 45s: 0/8 no ar
+[start-all] 50s: 0/8 no ar
+[start-all] 55s: 0/8 no ar
+[start-all] 60s: 0/8 no ar
+[start-all] 65s: 0/8 no ar
+[start-all] 70s: 0/8 no ar
+[start-all] 75s: 0/8 no ar
+[start-all] 80s: 0/8 no ar
+[start-all] 85s: 0/8 no ar
+[start-all] 90s: 0/8 no ar
+[start-all] 95s: 0/8 no ar
+[start-all] 100s: 0/8 no ar
+[start-all] 105s: 0/8 no ar
+[start-all] 110s: 0/8 no ar
+[start-all] 115s: 0/8 no ar
+[start-all] 120s: 0/8 no ar
+[start-all] 125s: 0/8 no ar
+[start-all] 130s: 0/8 no ar
+[start-all] 135s: 0/8 no ar
+[start-all] 140s: 0/8 no ar
+[start-all] 145s: 0/8 no ar
+[start-all] 150s: 0/8 no ar
+[start-all] 155s: 0/8 no ar
+[start-all] 160s: 0/8 no ar
+[start-all] 165s: 0/8 no ar
+[start-all] 170s: 0/8 no ar
+[start-all] 175s: 0/8 no ar
+[start-all] 180s: 0/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 0/8 modelos no ar
+════════════════════════════════════════════
+  ❌ orchestrator  → log: /mnt/dados/logs/all-orchestrator.log
+  ❌ qwen  → log: /mnt/dados/logs/all-qwen.log
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ❌ qwen31-7b  → log: /mnt/dados/logs/all-qwen31-7b.log
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ❌ ternary8b  → log: /mnt/dados/logs/all-ternary8b.log
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 37547
+[start-all] qwen: porta 9084 | ctx 131072 | slots 1 | cpu | PID 37548
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 37549
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 37550
+[start-all] qwen31-7b: porta 9088 | ctx 40960 | slots 1 | cpu | PID 37551
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 37552
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 37553
+[start-all] ternary8b: porta 9090 | ctx 65536 | slots 1 | cpu | PID 37554
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 0/8 no ar
+[start-all] 10s: 0/8 no ar
+[start-all] 15s: 0/8 no ar
+[start-all] 20s: 2/8 no ar
+[start-all] 25s: 3/8 no ar
+[start-all] 30s: 4/8 no ar
+[start-all] 35s: 4/8 no ar
+[start-all] 40s: 4/8 no ar
+[start-all] 45s: 4/8 no ar
+[start-all] 50s: 4/8 no ar
+[start-all] 55s: 4/8 no ar
+[start-all] 60s: 4/8 no ar
+[start-all] 65s: 4/8 no ar
+[start-all] 70s: 4/8 no ar
+[start-all] 75s: 4/8 no ar
+[start-all] 80s: 4/8 no ar
+[start-all] 85s: 4/8 no ar
+[start-all] 90s: 4/8 no ar
+[start-all] 95s: 4/8 no ar
+[start-all] 100s: 4/8 no ar
+[start-all] 105s: 4/8 no ar
+[start-all] 110s: 4/8 no ar
+[start-all] 115s: 4/8 no ar
+[start-all] 120s: 5/8 no ar
+[start-all] 125s: 5/8 no ar
+[start-all] 130s: 5/8 no ar
+[start-all] 135s: 5/8 no ar
+[start-all] 140s: 5/8 no ar
+[start-all] 145s: 5/8 no ar
+[start-all] 150s: 5/8 no ar
+[start-all] 155s: 5/8 no ar
+[start-all] 160s: 5/8 no ar
+[start-all] 165s: 5/8 no ar
+[start-all] 170s: 5/8 no ar
+[start-all] 175s: 5/8 no ar
+[start-all] 180s: 5/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 5/8 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] reusando 4/8; subindo apenas os ausentes.
+[start-all] orchestrator: reusando — pulando
+[start-all] qwen: reusando — pulando
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 103970
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 103971
+[start-all] qwen31-7b: reusando — pulando
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 103972
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 103973
+[start-all] ternary8b: reusando — pulando
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 4/8 no ar
+[start-all] 10s: 4/8 no ar
+[start-all] 15s: 4/8 no ar
+[start-all] 20s: 4/8 no ar
+[start-all] 25s: 4/8 no ar
+[start-all] 30s: 4/8 no ar
+[start-all] 35s: 4/8 no ar
+[start-all] 40s: 4/8 no ar
+[start-all] 45s: 4/8 no ar
+[start-all] 50s: 4/8 no ar
+[start-all] 55s: 4/8 no ar
+[start-all] 60s: 4/8 no ar
+[start-all] 65s: 4/8 no ar
+[start-all] 70s: 4/8 no ar
+[start-all] 75s: 4/8 no ar
+[start-all] 80s: 4/8 no ar
+[start-all] 85s: 4/8 no ar
+[start-all] 90s: 4/8 no ar
+[start-all] 95s: 4/8 no ar
+[start-all] 100s: 4/8 no ar
+[start-all] 105s: 4/8 no ar
+[start-all] 110s: 4/8 no ar
+[start-all] 115s: 4/8 no ar
+[start-all] 120s: 4/8 no ar
+[start-all] 125s: 4/8 no ar
+[start-all] 130s: 4/8 no ar
+[start-all] 135s: 4/8 no ar
+[start-all] 140s: 4/8 no ar
+[start-all] 145s: 4/8 no ar
+[start-all] 150s: 4/8 no ar
+[start-all] 155s: 4/8 no ar
+[start-all] 160s: 4/8 no ar
+[start-all] 165s: 4/8 no ar
+[start-all] 170s: 4/8 no ar
+[start-all] 175s: 4/8 no ar
+[start-all] 180s: 4/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 4/8 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] reusando 4/8; subindo apenas os ausentes.
+[start-all] orchestrator: reusando — pulando
+[start-all] qwen: reusando — pulando
+[start-all] lfm: porta 9086 | ctx 128000 | slots 1 | cpu | PID 108073
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 108074
+[start-all] qwen31-7b: reusando — pulando
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 108075
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 108076
+[start-all] ternary8b: reusando — pulando
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 4/8 no ar
+[start-all] 10s: 4/8 no ar
+[start-all] 15s: 4/8 no ar
+[start-all] 20s: 4/8 no ar
+[start-all] 25s: 4/8 no ar
+[start-all] 30s: 4/8 no ar
+[start-all] 35s: 4/8 no ar
+[start-all] 40s: 4/8 no ar
+[start-all] 45s: 4/8 no ar
+[start-all] 50s: 4/8 no ar
+[start-all] 55s: 4/8 no ar
+[start-all] 60s: 4/8 no ar
+[start-all] 65s: 4/8 no ar
+[start-all] 70s: 4/8 no ar
+[start-all] 75s: 4/8 no ar
+[start-all] 80s: 4/8 no ar
+[start-all] 85s: 4/8 no ar
+[start-all] 90s: 4/8 no ar
+[start-all] 95s: 4/8 no ar
+[start-all] 100s: 4/8 no ar
+[start-all] 105s: 4/8 no ar
+[start-all] 110s: 4/8 no ar
+[start-all] 115s: 4/8 no ar
+[start-all] 120s: 4/8 no ar
+[start-all] 125s: 4/8 no ar
+[start-all] 130s: 4/8 no ar
+[start-all] 135s: 4/8 no ar
+[start-all] 140s: 4/8 no ar
+[start-all] 145s: 4/8 no ar
+[start-all] 150s: 4/8 no ar
+[start-all] 155s: 4/8 no ar
+[start-all] 160s: 4/8 no ar
+[start-all] 165s: 4/8 no ar
+[start-all] 170s: 4/8 no ar
+[start-all] 175s: 4/8 no ar
+[start-all] 180s: 4/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 4/8 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ❌ lfm  → log: /mnt/dados/logs/all-lfm.log
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] reusando 4/8; subindo apenas os ausentes.
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 492411
+[start-all] qwen: reusando — pulando
+[start-all] lfm: reusando — pulando
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 492412
+[start-all] qwen31-7b: reusando — pulando
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 492413
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 492414
+[start-all] ternary8b: reusando — pulando
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 4/8 no ar
+[start-all] 10s: 4/8 no ar
+[start-all] 15s: 4/8 no ar
+[start-all] 20s: 5/8 no ar
+[start-all] 25s: 5/8 no ar
+[start-all] 30s: 5/8 no ar
+[start-all] 35s: 5/8 no ar
+[start-all] 40s: 5/8 no ar
+[start-all] 45s: 5/8 no ar
+[start-all] 50s: 5/8 no ar
+[start-all] 55s: 5/8 no ar
+[start-all] 60s: 5/8 no ar
+[start-all] 65s: 5/8 no ar
+[start-all] 70s: 5/8 no ar
+[start-all] 75s: 5/8 no ar
+[start-all] 80s: 5/8 no ar
+[start-all] 85s: 5/8 no ar
+[start-all] 90s: 5/8 no ar
+[start-all] 95s: 5/8 no ar
+[start-all] 100s: 5/8 no ar
+[start-all] 105s: 5/8 no ar
+[start-all] 110s: 5/8 no ar
+[start-all] 115s: 5/8 no ar
+[start-all] 120s: 5/8 no ar
+[start-all] 125s: 5/8 no ar
+[start-all] 130s: 5/8 no ar
+[start-all] 135s: 5/8 no ar
+[start-all] 140s: 5/8 no ar
+[start-all] 145s: 5/8 no ar
+[start-all] 150s: 5/8 no ar
+[start-all] 155s: 5/8 no ar
+[start-all] 160s: 5/8 no ar
+[start-all] 165s: 5/8 no ar
+[start-all] 170s: 5/8 no ar
+[start-all] 175s: 5/8 no ar
+[start-all] 180s: 5/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 5/8 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)
+[start-all] reusando 4/8; subindo apenas os ausentes.
+[start-all] orchestrator: porta 8083 | ctx 262144 | slots 1 | gpu | PID 496934
+[start-all] qwen: reusando — pulando
+[start-all] lfm: reusando — pulando
+[start-all] qwen38-9b: porta 9087 | ctx 131072 | slots 1 | cpu | PID 496935
+[start-all] qwen31-7b: reusando — pulando
+[start-all] llmjudge: porta 9085 | ctx 32768 | slots 1 | cpu | PID 496936
+[start-all] ternary17: porta 9089 | ctx 32768 | slots 1 | cpu | PID 496937
+[start-all] ternary8b: reusando — pulando
+
+[start-all] Aguardando 8 servidores (até 180s)...
+[start-all] 5s: 4/8 no ar
+[start-all] 10s: 4/8 no ar
+[start-all] 15s: 4/8 no ar
+[start-all] 20s: 4/8 no ar
+[start-all] 25s: 4/8 no ar
+[start-all] 30s: 4/8 no ar
+[start-all] 35s: 4/8 no ar
+[start-all] 40s: 4/8 no ar
+[start-all] 45s: 4/8 no ar
+[start-all] 50s: 4/8 no ar
+[start-all] 55s: 4/8 no ar
+[start-all] 60s: 4/8 no ar
+[start-all] 65s: 5/8 no ar
+[start-all] 70s: 5/8 no ar
+[start-all] 75s: 5/8 no ar
+[start-all] 80s: 5/8 no ar
+[start-all] 85s: 5/8 no ar
+[start-all] 90s: 5/8 no ar
+[start-all] 95s: 5/8 no ar
+[start-all] 100s: 5/8 no ar
+[start-all] 105s: 5/8 no ar
+[start-all] 110s: 5/8 no ar
+[start-all] 115s: 5/8 no ar
+[start-all] 120s: 5/8 no ar
+[start-all] 125s: 5/8 no ar
+[start-all] 130s: 5/8 no ar
+[start-all] 135s: 5/8 no ar
+[start-all] 140s: 5/8 no ar
+[start-all] 145s: 5/8 no ar
+[start-all] 150s: 5/8 no ar
+[start-all] 155s: 5/8 no ar
+[start-all] 160s: 5/8 no ar
+[start-all] 165s: 5/8 no ar
+[start-all] 170s: 5/8 no ar
+[start-all] 175s: 5/8 no ar
+[start-all] 180s: 5/8 no ar
+
+════════════════════════════════════════════
+STATUS FINAL: 5/8 modelos no ar
+════════════════════════════════════════════
+  ✅ orchestrator  → http://127.0.0.1:8083 (gpu)
+  ✅ qwen  → http://127.0.0.1:9084 (cpu)
+  ✅ lfm  → http://127.0.0.1:9086 (cpu)
+  ❌ qwen38-9b  → log: /mnt/dados/logs/all-qwen38-9b.log
+  ✅ qwen31-7b  → http://127.0.0.1:9088 (cpu)
+  ❌ llmjudge  → log: /mnt/dados/logs/all-llmjudge.log
+  ❌ ternary17  → log: /mnt/dados/logs/all-ternary17.log
+  ✅ ternary8b  → http://127.0.0.1:9090 (cpu)
+
+RAM: 
+[start-all] R68: watchers garantidos (wd modular · config-watcher · llm-usage@8083)

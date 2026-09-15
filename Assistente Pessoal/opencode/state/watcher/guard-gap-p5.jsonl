@@ -10560,3 +10560,61 @@
 {"ts":"2026-09-15T17:33:17.835Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a62152b37ea282fd2011ce35a16e","action":"after"}
 {"ts":"2026-09-15T17:33:22.005Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a621628a72228611bb615c4a25e9","cmd":"git reset -q HEAD -- \"Assistente Pessoal/cerebro com IA/.obsidian/plugins\" && git diff --cached --stat | tail -2 && git commit -q -m \"docs(vault): pipeline SNN (SPEC/CONTEXT/PLANO §§8-12) + decisoes/a","action":"deny","why":"git reset não-hard"}
 {"ts":"2026-09-15T17:33:26.106Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a62174137af1b1d6bce30ef63070","action":"after"}
+{"ts":"2026-09-15T17:33:31.975Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a62187be74709277c6650ad0f9de","action":"after"}
+{"ts":"2026-09-15T17:33:37.239Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T17:33:38.447Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a621a0127763a24e56c0acb78f37","action":"after"}
+{"ts":"2026-09-15T17:33:45.803Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a621bf677fd09efbd0ec44aeef57","action":"after"}
+{"ts":"2026-09-15T17:33:50.035Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a621d1417a03a6563fe7de886aaf","action":"after"}
+{"ts":"2026-09-15T17:33:55.417Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a621e68f782386afb6a6b0306e53","action":"after"}
+{"ts":"2026-09-15T17:34:03.625Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"call_01a0a622064f7ab1b03dcbc468c54972","action":"after"}
+{"ts":"2026-09-15T17:35:53.755Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T17:38:18.963Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T17:40:15.830Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T17:41:10.195Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"03d79900-4ac2-4f7e-946c-b771aae5405c","action":"after"}
+{"ts":"2026-09-15T17:42:23.439Z","tool":"bash","sessionID":"ses_f68bc3961ffes2C2SS1pZydcqp","callID":"34cb614f-2197-4c2a-8dd5-0a11398ab65f","action":"after"}
+{"ts":"2026-09-15T17:47:48.632Z","tool":"bash","sessionID":"ses_f68bc3961ffes2C2SS1pZydcqp","callID":"24045390-ce27-4219-88ce-10a9ba2ead97","action":"after"}
+{"ts":"2026-09-15T17:52:41.465Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_7cb9d8735a6a4ce38756bba7","action":"after"}
+{"ts":"2026-09-15T17:53:55.036Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_0803dc1ef9e248f792718852","action":"after"}
+{"ts":"2026-09-15T17:54:40.729Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_673fad47f3bf4ad39ef86532","action":"after"}
+{"ts":"2026-09-15T17:56:39.704Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_041ebdeb3aeb44e8a654abfe","cmd":"cat > \"/mnt/dados/Assistente Pessoal/cerebro com IA/decisoes/2026-09-15-tabela-verdade-completa.md\" <<'EOF'\n# Tabela da Verdade Completa — Stack + Candidatos (2026-09-15)\n\n> Fonte: crivo-padrão /7 (Fa","action":"allow-gov","why":"escopo governado (harness/global/sandbox)"}
+{"ts":"2026-09-15T17:56:39.725Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_041ebdeb3aeb44e8a654abfe","action":"after"}
+{"ts":"2026-09-15T17:58:08.476Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_df47fa30646446af8b6a3e56","action":"after"}
+{"ts":"2026-09-15T17:59:32.466Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T18:02:08.825Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/cerebro com IA/decisoes/2026-09-15-regra-guard-comando-explicito.md","action":"allow"}
+{"ts":"2026-09-15T18:02:08.835Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:05:34.619Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/cerebro com IA/decisoes/2026-09-15-regra-guard-comando-explicito.md","action":"allow"}
+{"ts":"2026-09-15T18:05:34.629Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:10:39.098Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/cerebro com IA/decisoes/2026-09-15-regra-guard-comando-explicito.md","action":"allow"}
+{"ts":"2026-09-15T18:10:39.108Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:12:22.419Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/cerebro com IA/decisoes/2026-09-15-regra-guard-comando-explicito.md","action":"allow"}
+{"ts":"2026-09-15T18:12:22.428Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:21:37.484Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:1","action":"after"}
+{"ts":"2026-09-15T18:28:04.791Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/opencode/config/opencode/scripts/guard-engine.ts","action":"allow"}
+{"ts":"2026-09-15T18:28:04.803Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:30:57.400Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/opencode/config/opencode/scripts/guard-engine.ts","action":"allow"}
+{"ts":"2026-09-15T18:30:57.411Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:33:08.727Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/opencode/config/opencode/scripts/guard-engine.ts","action":"allow"}
+{"ts":"2026-09-15T18:33:08.736Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:35:00.861Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_056663fef5a34c05b3bce354","action":"after"}
+{"ts":"2026-09-15T18:35:30.492Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/opencode/config/opencode/plugins/guard-gap-p5.ts","action":"allow"}
+{"ts":"2026-09-15T18:35:30.504Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:37:38.624Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_4196ffc06a0b4fd9b4c21718","action":"after"}
+{"ts":"2026-09-15T18:37:42.032Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/opencode/config/opencode/plugins/guard-gap-p5.ts","action":"allow"}
+{"ts":"2026-09-15T18:37:42.045Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:38:29.194Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_d987876cc2bc4709b8749285","action":"after"}
+{"ts":"2026-09-15T18:38:46.860Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_7141d1c280214924a97bcd5b","action":"after"}
+{"ts":"2026-09-15T18:40:22.987Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","path":"/mnt/dados/Assistente Pessoal/opencode/config/opencode/tests/guard-engine.test.ts","action":"allow"}
+{"ts":"2026-09-15T18:40:23.194Z","tool":"edit","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"edit:0","action":"after"}
+{"ts":"2026-09-15T18:40:29.863Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_744fb1772920422ba4284995","action":"after"}
+{"ts":"2026-09-15T18:43:08.084Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T18:44:25.513Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_74e7b68a02e346cea96ec4a8","action":"after"}
+{"ts":"2026-09-15T18:45:50.289Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_7f99a4ed277947dbbf461758","action":"after"}
+{"ts":"2026-09-15T18:46:11.801Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:0","cmd":"cat >> /mnt/dados/.gitignore << 'EOF'\n\n# Sessao 2026-09-15 (conclusao pendencias): dados/volateis nunca versionar\nAssistente Pessoal/snn/data/\n**/*.part\n**/__pycache__/\nAssistente Pessoal/cerebro com ","action":"deny","why":"redirecionamento p/ arquivo"}
+{"ts":"2026-09-15T18:47:07.974Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_c39a01ba9b97494bb7c517d2","action":"after"}
+{"ts":"2026-09-15T18:48:33.525Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T18:49:28.247Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_b7cef42f9a3b4ccb947c2907","cmd":"cat > \"/mnt/dados/Assistente Pessoal/cerebro com IA/decisoes/2026-09-15-tabela-verdade-maxima.md\" <<'EOF'\n# Tabela da Verdade MÁXIMA — conflito Stack vs Candidatos (2026-09-15 18:47)\n\n## Stack canônic","action":"allow-gov","why":"escopo governado (harness/global/sandbox)"}
+{"ts":"2026-09-15T18:49:28.266Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_b7cef42f9a3b4ccb947c2907","action":"after"}
+{"ts":"2026-09-15T18:50:31.606Z","tool":"bash","sessionID":"ses_f891ac454ffezb5UEjS7nnKbgZ","callID":"call_b86a8e486b164cf080555b60","action":"after"}
+{"ts":"2026-09-15T18:50:46.762Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:0","action":"after"}
+{"ts":"2026-09-15T18:52:52.253Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:1","action":"after"}
+{"ts":"2026-09-15T18:54:59.469Z","tool":"bash","sessionID":"ses_f5eee21dfffe8la4qvAEd5fEg7","callID":"bash:0","action":"after"}
