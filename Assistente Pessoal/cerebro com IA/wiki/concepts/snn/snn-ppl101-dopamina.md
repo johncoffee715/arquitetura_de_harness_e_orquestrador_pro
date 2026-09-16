@@ -39,3 +39,4 @@ a plasticidade em regiões como os Corpos Cogumelo (via cAMP/rutabaga).
 ## Estado vivo (motor SNN 2026-09-14)
 Ver [[concepts/snn/snn-motor-indice]] — esta região entra no loop como reforço dopamina:
 sinal de valência como canal modulador de referência para o ciclo decisão→snapshot do `live_loop.py`.
+- **Update 2026-09-15 (probe B3)**: PPL101 CONFIRMADO no MaleCNS v1.0 minconf-0.5 — 4 células com type PPL101 (família PPL1xx dopaminérgica MB: PPL101-108, PPL201-203; 48 células PPL* no total). Contagem UNKNOWN anterior resolvida por medição no body-annotations.feather.

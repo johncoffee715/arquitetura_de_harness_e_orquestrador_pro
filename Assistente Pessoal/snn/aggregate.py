@@ -20,7 +20,10 @@ from __future__ import annotations
 
 from typing import Callable, List, Optional, Sequence
 
-from parser import Csr
+try:
+    from .parser import Csr  # import de pacote (B1: packaging robusto)
+except ImportError:  # cwd=snn/ ou import top-level
+    from parser import Csr
 
 # As 4 macro-regiões HMI do vault (nomes que dão identidade ao painel).
 DEFAULT_REGIONS: List[str] = [

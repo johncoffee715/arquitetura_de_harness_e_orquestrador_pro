@@ -31,6 +31,9 @@ ANNOT_FEATHER = os.path.join(os.path.dirname(os.path.abspath(__file__)),
 
 MARKER = "<!-- snn-episode"
 
+# B3 (probe 2026-09-15): PPL101 EXISTE no body-annotations v1.0 minconf-0.5
+# (4 celulas, type PPL101; familia PPL1xx = dopaminergicas MB: PPL101-108,
+# PPL201-203). Prefixo "PPL" abaixo mapeia essas celulas -> regiao MB.
 MB_PREFIXES = ("KC", "MBON", "DAN", "PPL", "MB-", "MB_")
 CX_PREFIXES = ("EPG", "PEG", "PEN", "PFN", "PFP", "PFL", "PFR", "PFG",
                "FB", "EB", "PB", "LNO", "LCNO", "ExR", "hDelta",

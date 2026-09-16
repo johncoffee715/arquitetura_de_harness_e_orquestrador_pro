@@ -29,9 +29,14 @@ import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-import feather_to_csr as f2c
-from event_loop import SnnEventLoop
-from lif import LifNeuron
+try:  # import de pacote (B1: packaging robusto)
+    from . import feather_to_csr as f2c
+    from .event_loop import SnnEventLoop
+    from .lif import LifNeuron
+except ImportError:  # cwd=snn/ ou import top-level
+    import feather_to_csr as f2c
+    from event_loop import SnnEventLoop
+    from lif import LifNeuron
 try:
     import anatomy as _anatomy
 except ImportError:
@@ -133,16 +138,6 @@ class LiveLoop:
         n = self.csr.n
         neurons = [LifNeuron(v=0.0, threshold=1.0, reset=0.0,
                              leak=0.0, delay=1) for _ in range(n)]
-        fire_counts = [0] * n
-        for i, nr in enumerate(neurons):  # conta disparos reais (wrap)
-            orig = nr.receive
-            j = i
-            def wrapped(w, _o=orig, _j=j):
-                fired = _o(w)
-                if fired:
-                    fire_counts[_j] += 1
-                return fired
-            nr.receive = wrapped
         loop = SnnEventLoop(neurons, self.csr.row_ptr,
                             self.csr.col_idx, self.csr.weight)
         seed = sum(stimulus.encode()) % max(n, 1)
@@ -158,6 +153,7 @@ class LiveLoop:
         total = 0
         for _ in range(steps):
             total += loop.step()
+        fire_counts = [nr.fired_count for nr in neurons]  # B5: contagem nativa
         self._active_routes = {self._region_of_idx(i)
                                  for i, c in enumerate(fire_counts) if c > 0}
         if not self._active_routes:
@@ -220,7 +216,8 @@ class LiveLoop:
                   "Voce e o bibliotecario autonomo da biblioteca: explorar "
                   "e o seu papel. Na duvida entre ignorar e ler, prefira "
                   "'ler'; 'ler' e 'agir' sao acoes seguras do seu papel. "
-                  "Responda com UMA palavra: ignorar, ler ou agir.")
+                  "Responda APENAS com uma unica palavra: ignorar, ler ou agir. "
+                  "Nao escreva nada alem dessa palavra.")
         _, body = _post_json(self.rwkv_url,
                              {"messages": [{"role": "user", "content": prompt}],
                               "max_tokens": 16}, RWKV_TIMEOUT)
@@ -235,14 +232,21 @@ class LiveLoop:
 
     @staticmethod
     def classify(text: str) -> str:
-        # W7: parsing tolerante p/ 'ler' prolixo; 'agir' NUNCA inferido.
-        low = text.lower()
-        if "agir" in low:
+        # W7+B4: parsing tolerante — normaliza acentos/pontuacao e casa palavra
+        # de decisao como token standalone (resposta chatty com a palavra no
+        # meio ainda classifica; sem palavra nenhuma -> ignorar, default seguro).
+        # 'agir' NUNCA inferido: so se dito explicitamente como palavra unica.
+        import re
+        import unicodedata
+        low = unicodedata.normalize("NFKD", (text or "").lower())
+        low = "".join(c for c in low if not unicodedata.combining(c))
+        low = re.sub(r"[^a-z0-9\s]", " ", low)
+        words = low.split()
+        if "agir" in words:
             return "agir"
-        for token in ("ler", "leia", "leitura", "vou ler"):
-            if token in low:
-                return "ler"
-        if "ignorar" in low:
+        if any(w in ("ler", "leia", "leitura") for w in words):
+            return "ler"
+        if "ignorar" in words:
             return "ignorar"
         return "ignorar"
 

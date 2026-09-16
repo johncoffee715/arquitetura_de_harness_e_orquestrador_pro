@@ -25,7 +25,10 @@ import time
 import pyarrow.compute as pc
 import pyarrow.ipc as ipc
 
-from parser import parse_csr
+try:
+    from .parser import parse_csr  # import de pacote (B1: packaging robusto)
+except ImportError:  # cwd=snn/ ou import top-level
+    from parser import parse_csr
 
 COLUMNS = ("body_pre", "body_post", "weight")
 

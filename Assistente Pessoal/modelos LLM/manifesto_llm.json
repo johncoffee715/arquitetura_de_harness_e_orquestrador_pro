@@ -1,6 +1,6 @@
 {
   "version": "1.2",
-  "updated": "2026-09-10T00:05:00+00:00",
+  "updated": "2026-09-16T00:00:00+00:00",
   "fonte": "auditoria R52 + ctx-cost + start-stack + BENCH-03/09 IQ3 vs IQ4",
   "politica_roteamento": {
     "tipo": "hibrido-em-camadas",
@@ -68,10 +68,9 @@
     "nota_v1_2": "mantida; Granite-4.2-3B assume executor F4 no lugar do Qwen3.8-9B (ver stack_atual.substituicoes)"
   },
   "stack_atual": {
-    "gpu": "8083 Qwen3.5 CPU(ngl0)+draft0.8B-GPU + 9084 RWKV7 + 9086 LFM + 9088 Llama-1B(ngl999) + 9090 Llama-3B + 9092 Smol-1.7B + 9093 Smol-360M (VRAM)",
+    "gpu": "8083 Qwen3.5 CPU(ngl0)+draft0.8B-GPU(ngl36) + 9084 RWKV7(ngl999) + 9086 LFM(CPU ngl0) + 9088 Llama-1B(ngl999) + 9090 Llama-3B(CPU ngl0) + 9092 Smol-1.7B(CPU ngl0) + 9093 Smol-360M(CPU ngl0)",
     "cpu_slots": [
-      "8083",
-      "9095"
+      "8083"
     ],
     "total_slots": 9,
     "substituicoes_2026_08_30": [
@@ -104,7 +103,8 @@
     "substituicoes_2026_09_09": [
       "8083 Qwen3.6-35B (13.21G) -> Qwen3.5-35B (13.08G) CPU (mata-mata 6.0vs5.5; 3.6 excluido)",
       "9088 Llama-1B CPU(25.3 t/s) -> GPU ngl999 c131072 (240.5 t/s, 10x; folga 3.03GB)"
-    ]
+    ],
+    "nota_2026_09_16": "P2 manifesto-stale: device-map corrigido via /proc/<pid>/cmdline (ngl real por slot). 9093 Smol-360M e CPU (ngl0), nao GPU; 9095 NeoHorse e GPU (ngl999), removido de cpu_slots; string stack_atual.gpu agora per-slot honesta. 9097 (embedding GPU) offline no momento do check."
   },
   "models": [
     {
@@ -215,7 +215,7 @@
     {
       "model_id": "SmolLM2-360M-Instruct-Q8_0",
       "slot_port": 9093,
-      "device": "GPU",
+      "device": "CPU",
       "topologia_arquitetura": {
         "tipo_fundacao": "smollm2",
         "layers": 32,
@@ -456,52 +456,6 @@
       }
     },
     {
-      "model_id": "Qwen1.5-MoE-A2.7B-Q3_K_M",
-      "slot_port": 9095,
-      "device": "CPU",
-      "topologia_arquitetura": {
-        "tipo_fundacao": "qwen1_5_moe",
-        "layers": 24,
-        "contexto_nativo": 8192,
-        "expert_count": 60,
-        "expert_used_count": 4,
-        "arch_detail": "Qwen1.5-MoE A2.7B (14B total/2.7B ativos, 60 experts/4 ativos)"
-      },
-      "fisica_inferencia": {
-        "quantizacao": "Q3_K_M",
-        "pesos_gb": 6.93,
-        "pesos_bytes": 7437745440,
-        "ctx_ativo": 8192,
-        "cache_k": "q4_0",
-        "cache_v": "q4_0",
-        "kv_per_token_kb": 1.15,
-        "kv_total_gb_at_ctx": 0.01,
-        "tps_decode_empirical": 4.0,
-        "tps_decode_nota": "CPU warm; GPU impossivel (7.44GB pesos > 3.03GB folga 09/09)",
-        "temp": 0.6,
-        "ngl": 0,
-        "threads": "auto",
-        "flash_attn": false,
-        "mtp": "N/A",
-        "device": "CPU",
-        "nota": "WARM :9095; GPU bloqueada por aritmetica VRAM (pesos 6.93GB > folga 3.03GB)"
-      },
-      "vocacao_grafo": "warm :9095 (MoE legado; reserva de experimentos)",
-      "derivado": {
-        "file": "Qwen1.5-MoE-A2.7B-Q3_K_M.gguf",
-        "slug": "qwen1.5-moe-a2.7b",
-        "category": "warm",
-        "papel": "warm",
-        "ctx_ativo_efetivo": 8192,
-        "generator_version": "1.0.0"
-      },
-      "metrica_avaliativa_r78": {
-        "debilidade": "legado 2024, ctx 8K, Q3_K_M",
-        "capacidades": "MoE barato p/ experimentos warm",
-        "possibilidades": "GPU se VRAM liberar ~8GB"
-      }
-    },
-    {
       "model_id": "Qwen3-Embedding-0.6B-Q8_0",
       "slot_port": 9094,
       "device": "CPU",
@@ -573,10 +527,10 @@
         "threads": "GPU Vulkan0",
         "flash_attn": true,
         "mtp": "N/A",
-        "device": "GPU",
+        "device": "GPU (toggle)",
         "nota": "CANONICO GPU burst (bibliotecario backfill b16/32, 6.1x CPU)"
       },
-      "vocacao_grafo": "embedder lote :9097 (bibliotecario backfill)",
+      "vocacao_grafo": "embedder GPU sob demanda (R5/R10) — unificado com :9094; sobe via stack-toggle quando VRAM livre",
       "derivado": {
         "file": "Qwen3-Embedding-0.6B-Q8_0.gguf",
         "slug": "qwen3-embedding-0.6b-gpu",
@@ -589,7 +543,112 @@
         "debilidade": "+1G VRAM, custo para manter quente",
         "capacidades": "Lote 91k tok/s, 0.12s b1, ideal backfill",
         "possibilidades": "Desligar quando VRAM apertar (kill :9097 libera 1G)"
-      }
+      },
+      "status": "TOGGLE-OPCIONAL"
+    },
+    {
+      "model_id": "NeoHorse-1-4B-Q5_K_M",
+      "slot_port": 9095,
+      "device": "GPU",
+      "topologia_arquitetura": {
+        "tipo_fundacao": "qwen35-hybrid",
+        "layers": 32,
+        "full_attention_layers": 8,
+        "ssm_layers": 24,
+        "embedding_length": 2560,
+        "attn_heads": 16,
+        "kv_heads": 4,
+        "key_len_head": 256,
+        "value_len_head": 256,
+        "contexto_nativo": 262144,
+        "arch_detail": "Qwen3.5 hibrido: 8 full-attn + 24 SSM (state fixo)"
+      },
+      "fisica_inferencia": {
+        "quantizacao": "Q5_K_M",
+        "pesos_gb": 3.06,
+        "pesos_bytes": 3074986752,
+        "ctx_ativo": 262144,
+        "cache_k": "q4_0",
+        "cache_v": "q4_0",
+        "kv_per_token_kb": 8.0,
+        "kv_total_gb_at_ctx": 2.147,
+        "tps_decode_empirical": 102.2,
+        "tps_prefill_empirical": 184.8,
+        "device": "GPU",
+        "ngl": 999,
+        "flash_attn": "on"
+      },
+      "vocacao_grafo": "F4 EXECUTOR — motor de features, tool-calling estrito (GBNF), TDD, ctx 262k",
+      "derivado": {
+        "file": "NeoHorse-1-4B-Q5_K_M.gguf",
+        "slug": "neohorse-1-4b-q5",
+        "category": "executor",
+        "papel": "EXECUTOR F4",
+        "ctx_ativo_efetivo": 262144
+      },
+      "metrica_avaliativa_r78": {
+        "debilidade": "Cede ao poison (2+2=5); thinking-only no chat sem enable_thinking:false",
+        "capacidades": "Crivo 4.0/7 (T6/T11 GBNF exatos, T8 data certa, recusa papel); decode 102 GPU; ctx 262k",
+        "possibilidades": "F6 scaffold; motor A2A; SDD (treinamento 4-self)"
+      },
+      "quarteto": {
+        "path": "config/opencode/harness/quarteto/neohorse-4b/",
+        "peças": [
+          "ontologia.md",
+          "firewall.json",
+          "motor.py",
+          "schema.gbnf"
+        ],
+        "status": "COMPLETO"
+      },
+      "status": "CANONIZADO"
+    },
+    {
+      "model_id": "Noema-2B.Q4_K_S",
+      "slot_port": 9098,
+      "device": "CPU",
+      "topologia_arquitetura": {
+        "tipo_fundacao": "qwen35-hybrid",
+        "layers": 24,
+        "full_attention_layers": 6,
+        "ssm_layers": 18,
+        "embedding_length": 2048,
+        "attn_heads": 8,
+        "kv_heads": 2,
+        "key_len_head": 256,
+        "value_len_head": 256,
+        "contexto_nativo": 262144,
+        "arch_detail": "Qwen3.5 hibrido 2B: 6 full-attn + 18 SSM"
+      },
+      "fisica_inferencia": {
+        "quantizacao": "Q4_K_S",
+        "pesos_gb": 1.21,
+        "pesos_bytes": 1212055904,
+        "ctx_ativo": 32768,
+        "cache_k": "q4_0",
+        "cache_v": "q4_0",
+        "kv_per_token_kb": 3.0,
+        "kv_total_gb_at_ctx": 0.098,
+        "tps_decode_empirical": 13.7,
+        "tps_prefill_empirical": 82.2,
+        "device": "CPU",
+        "ngl": 0,
+        "flash_attn": "off"
+      },
+      "vocacao_grafo": "EXECUTOR-CEGO — obediencia estrita, forja, extracao JSON, ordens diretas (cru = estado otimo, sem quarteto)",
+      "derivado": {
+        "file": "Noema-2B.Q4_K_S.gguf",
+        "slug": "noema-2b-q4ks",
+        "category": "executor-cego",
+        "papel": "EXECUTOR CEGO",
+        "ctx_ativo_efetivo": 32768
+      },
+      "metrica_avaliativa_r78": {
+        "debilidade": "Raciocinio limitado (2B); regride com quarteto (obediencia inata); T1/T2 vazios no chat",
+        "capacidades": "Sweep Q4_K_S: 3.0/7 (T6/T11 EXATOS, melhor custo-beneficio); obediencia estrita nata; autoaprendizado 4-self",
+        "possibilidades": "GPU se VRAM liberar (1.21GB cabe); ctx 262k viavel (KV 3KB/1k)"
+      },
+      "status": "CANONIZADO"
     }
   ],
   "sync_state": {

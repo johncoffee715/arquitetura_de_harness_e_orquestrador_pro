@@ -72,3 +72,12 @@ def test_run_simulation_async_returns_spike_count():
     # passo1: 1 spike (A dispara), passo2: 2 spikes (A→B, A→C), passo3: 3 spikes
     # (B→2, C→0, C→3) — cadeia determinística da topologia da fixture.
     assert total == 6, f"total de spikes entregues deve ser 6, foi {total}"
+
+def test_fired_count_nativo():
+    """B5: contagem nativa de disparos no LifNeuron (sem monkey-patch)."""
+    nr = LifNeuron(v=0.0, threshold=1.0, reset=0.0, leak=0.0, delay=1)
+    assert nr.fired_count == 0
+    assert nr.receive(2.0) is True   # dispara
+    assert nr.fired_count == 1
+    assert nr.receive(0.5) is False  # nao dispara
+    assert nr.fired_count == 1

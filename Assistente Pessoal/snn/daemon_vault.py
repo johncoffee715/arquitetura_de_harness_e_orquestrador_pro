@@ -1,5 +1,8 @@
 """Daemon vault->cerebro (Wave 5): polling reativo sobre o vault.
 
+B6 (juiz): polling 2s + taxa 1 episodio/10s = design anti-spam DELIBERADO,
+nao limitacao acidental — reatividade real limitada por escolha.
+
 Polling 2s por .md novos/editados via mtime em memoria (stdlib, sem deps).
 Nao reutiliza watcher.py integralmente: debounce temporal (3s) + taxa
 maxima (1 episodio/10s) + fila max 5 exigem camada propria; coupling com

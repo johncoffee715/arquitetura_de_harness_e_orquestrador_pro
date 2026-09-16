@@ -16,7 +16,10 @@ import asyncio
 import heapq
 from typing import List, Sequence, Tuple
 
-from lif import LifNeuron
+try:
+    from .lif import LifNeuron  # import de pacote (B1: packaging robusto)
+except ImportError:  # cwd=snn/ ou import top-level
+    from lif import LifNeuron
 
 
 class SnnEventLoop:

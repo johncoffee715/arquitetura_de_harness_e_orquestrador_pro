@@ -108,7 +108,20 @@ def test_falha_endpoint_nao_finge(tmp_path):
     assert out["exit_status"] == "failed" and "error" in out
 
 
+def _rwkv_up() -> bool:
+    """Probe curto do :9084 — e2e real so roda com a stack viva (skip-limpo)."""
+    try:
+        import urllib.request
+        with urllib.request.urlopen("http://127.0.0.1:9084/v1/models",
+                                    timeout=2) as r:
+            return r.status == 200
+    except Exception:
+        return False
+
+
 def test_e2e_real_vault_trio_vault():
+    if not _rwkv_up():
+        pytest.skip("9084 down — e2e real exige stack viva")
     """E2E REAL: probe-note -> slice CSR real -> :9084/:9091/:9094."""
     probe_body = ("---\ntipo: probe-w2\n---\n# probe w2\n"
                   "Loop vivo vault-trio-vault: verificar decisão curta.\n")
@@ -129,3 +142,25 @@ def test_e2e_real_vault_trio_vault():
         if os.path.exists(PROBE):
             os.remove(PROBE)
     assert not os.path.exists(PROBE), "probe-note NAO foi removida"
+
+
+def test_classify_chatty_com_decisao():
+    """B4: resposta chatty COM palavra de decisao no meio -> classifica."""
+    assert LiveLoop.classify("Okay, let's see... vou ler a nota") == "ler"
+
+
+def test_classify_chatty_sem_decisao():
+    """B4: chatty SEM palavra nenhuma -> ignorar (default seguro)."""
+    assert LiveLoop.classify("Okay, let's see") == "ignorar"
+
+
+def test_classify_agir_so_explicito():
+    """B4: 'agir' so como palavra unica; nunca inferido de substring."""
+    assert LiveLoop.classify("agir") == "agir"
+    assert LiveLoop.classify("Vamos gerir o agiramento") == "ignorar"
+
+
+def test_classify_acentos_pontuacao():
+    """B4: normalizacao — acentos e pontuacao nao bloqueiam o match."""
+    assert LiveLoop.classify("Ler, com certeza!") == "ler"
+    assert LiveLoop.classify("Ignorar.") == "ignorar"

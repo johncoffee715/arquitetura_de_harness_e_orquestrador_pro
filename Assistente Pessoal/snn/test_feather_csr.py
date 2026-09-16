@@ -7,11 +7,13 @@ gera CSR identico ao parse direto e respeita os invariantes da spec.
 from __future__ import annotations
 
 import inspect
+import os
 
 import feather_to_csr as f2c
 from parser import parse_csr
 
-FEATHER = "snn/data/connectome-weights.feather"
+FEATHER = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                       "data", "connectome-weights.feather")  # abs (B1)
 SLICE = 100_000
 
 

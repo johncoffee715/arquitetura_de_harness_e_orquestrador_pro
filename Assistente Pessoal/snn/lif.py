@@ -22,12 +22,14 @@ class LifNeuron:
     reset: float = 0.0      # reset pós-disparo
     leak: float = 0.0       # decaimento por timestep (0.0 = sem leak)
     delay: int = 1          # atraso axonal em timesteps
+    fired_count: int = 0    # contagem nativa de disparos (B5: sem monkey-patch)
 
     def receive(self, w: float) -> bool:
         """Aplica spike de entrada (peso) e retorna True se disparou."""
         self.v += w
         if self.v >= self.threshold:
             self.v = self.reset
+            self.fired_count += 1
             return True
         return False
 
