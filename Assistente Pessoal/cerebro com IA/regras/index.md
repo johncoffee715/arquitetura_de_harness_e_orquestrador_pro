@@ -61,7 +61,7 @@ data: 2026-09-11
 | R57 | Endless-think ⇒ no-think |
 | R58 | Doutrina cold/warm |
 | R59 | Métrica t/s-per-KV-GB |
-| R60 | Ornith ctx fixado 131072 |
+| R60 | DESCONTINUADA 2026-09-18 — ctx efetivo Ornith = 262144 nativo (ver r50/RS4/R66) |
 | R61 | Sampling por responsabilidade |
 | R62 | Geometria ≠ custo real |
 | R63 | Watchdog-decode |
@@ -101,6 +101,7 @@ data: 2026-09-11
 | R99 | Gari (faxineiro pós-veredito) |
 | R100 | Consulta automática ao Bibliotecário |
 | R101 | Setor regras + synclinks (prefill otimizado) |
+| R107 | Transcrição automática de vídeo lido (guardrail universal) |
 
 ## Notas individuais (extração 2026-09-11)
 

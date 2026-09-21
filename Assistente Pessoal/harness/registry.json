@@ -51,7 +51,7 @@
         "r34",
         "tensao-cognitiva"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/a2a-brainstorm",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/a2a-brainstorm",
       "source": "opencode"
     },
     {
@@ -63,7 +63,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/agent-reach",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/agent-reach",
       "source": "opencode"
     },
     {
@@ -75,7 +75,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/agentic-awesome-skills",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/agentic-awesome-skills",
       "source": "opencode"
     },
     {
@@ -87,7 +87,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/ai-agent-book",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/ai-agent-book",
       "source": "opencode"
     },
     {
@@ -99,7 +99,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/anthropics-skills",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/anthropics-skills",
       "source": "opencode"
     },
     {
@@ -111,7 +111,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/archify",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/archify",
       "source": "opencode"
     },
     {
@@ -123,7 +123,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/athena",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/athena",
       "source": "opencode"
     },
     {
@@ -135,7 +135,7 @@
       "category": "",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/awesome-llm-apps",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/awesome-llm-apps",
       "source": "opencode"
     },
     {
@@ -147,7 +147,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/azure-skills",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/azure-skills",
       "source": "opencode"
     },
     {
@@ -159,7 +159,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/better-harness",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/better-harness",
       "source": "opencode"
     },
     {
@@ -182,7 +182,7 @@
         "contexto",
         "ingestor"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/bibliotecario",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/bibliotecario",
       "source": "opencode"
     },
     {
@@ -194,7 +194,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/book-to-skill",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/book-to-skill",
       "source": "opencode"
     },
     {
@@ -206,7 +206,7 @@
       "category": "skill-tecnica",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/browser-use",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/browser-use",
       "source": "opencode"
     },
     {
@@ -218,7 +218,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/cc-harness-iai",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/cc-harness-iai",
       "source": "opencode"
     },
     {
@@ -230,7 +230,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/ck",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/ck",
       "source": "opencode"
     },
     {
@@ -242,7 +242,7 @@
       "category": "skill-tecnica",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/claude-mem",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/claude-mem",
       "source": "opencode"
     },
     {
@@ -254,7 +254,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/code-review-graph",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/code-review-graph",
       "source": "opencode"
     },
     {
@@ -266,7 +266,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/coderabbit",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/coderabbit",
       "source": "opencode"
     },
     {
@@ -278,7 +278,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/colibri",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/colibri",
       "source": "opencode"
     },
     {
@@ -290,7 +290,7 @@
       "category": "skill-tecnica",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/context-compaction",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/context-compaction",
       "source": "opencode"
     },
     {
@@ -302,7 +302,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/context-mode",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/context-mode",
       "source": "opencode"
     },
     {
@@ -321,7 +321,7 @@
         "tokens",
         "ferramentas"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/context-selector",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/context-selector",
       "source": "opencode"
     },
     {
@@ -333,7 +333,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/deepagents",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/deepagents",
       "source": "opencode"
     },
     {
@@ -345,7 +345,7 @@
       "category": "skill-tecnica",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/dev-loop",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/dev-loop",
       "source": "opencode"
     },
     {
@@ -357,7 +357,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/dokku-deploy",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/dokku-deploy",
       "source": "opencode"
     },
     {
@@ -369,7 +369,7 @@
       "category": "skill-tecnica",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/engenharia-de-harness",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/engenharia-de-harness",
       "source": "opencode"
     },
     {
@@ -381,7 +381,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/fable-judge",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/fable-judge",
       "source": "opencode"
     },
     {
@@ -393,7 +393,7 @@
       "category": "skill-tecnica",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/firecrawl",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/firecrawl",
       "source": "opencode"
     },
     {
@@ -410,7 +410,7 @@
         "\"diamante\"",
         "\"dev-loop-refatoracao\"]"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/gauntlet-loop",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/gauntlet-loop",
       "source": "opencode"
     },
     {
@@ -422,7 +422,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/gemini-mcp-tool",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/gemini-mcp-tool",
       "source": "opencode"
     },
     {
@@ -445,7 +445,7 @@
         "anti-lixo-gate",
         "R80"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/gran-mestre",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/gran-mestre",
       "source": "opencode"
     },
     {
@@ -464,7 +464,7 @@
         "benchmark",
         "guardrail"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/guardrail-llm-fitragem",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/guardrail-llm-fitragem",
       "source": "opencode"
     },
     {
@@ -476,7 +476,7 @@
       "category": "",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hallmark",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hallmark",
       "source": "opencode"
     },
     {
@@ -496,7 +496,7 @@
         "roteamento",
         "intencao"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/harness-kronjob-guardrail",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/harness-kronjob-guardrail",
       "source": "opencode"
     },
     {
@@ -520,7 +520,7 @@
         "anti-lixo-gate",
         "ferreiro"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hefesto",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hefesto",
       "source": "opencode"
     },
     {
@@ -540,7 +540,7 @@
         "estomago",
         "essencia"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hefesto-autofagia",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hefesto-autofagia",
       "source": "opencode"
     },
     {
@@ -559,7 +559,7 @@
         "evidencia",
         "arqueologo"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hefesto-decompilacao",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hefesto-decompilacao",
       "source": "opencode"
     },
     {
@@ -581,7 +581,7 @@
         "selador",
         "needle"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hefesto-forja",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hefesto-forja",
       "source": "opencode"
     },
     {
@@ -602,7 +602,7 @@
         "global",
         "tradutor"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hefesto-helenizacao",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hefesto-helenizacao",
       "source": "opencode"
     },
     {
@@ -614,7 +614,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hestia",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hestia",
       "source": "opencode"
     },
     {
@@ -626,7 +626,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/i-have-adhd",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/i-have-adhd",
       "source": "opencode"
     },
     {
@@ -638,7 +638,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/impeccable",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/impeccable",
       "source": "opencode"
     },
     {
@@ -650,7 +650,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/last30days-skill",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/last30days-skill",
       "source": "opencode"
     },
     {
@@ -662,7 +662,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/llama-mtp",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/llama-mtp",
       "source": "opencode"
     },
     {
@@ -674,7 +674,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/llama-mtp-concept",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/llama-mtp-concept",
       "source": "opencode"
     },
     {
@@ -686,7 +686,7 @@
       "category": "",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/llm-benchmark",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/llm-benchmark",
       "source": "opencode"
     },
     {
@@ -708,7 +708,7 @@
         "heuristica",
         "sem-llm"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/log-summarizer",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/log-summarizer",
       "source": "opencode"
     },
     {
@@ -720,7 +720,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/longhorizon-harness",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/longhorizon-harness",
       "source": "opencode"
     },
     {
@@ -732,7 +732,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/mattpocock-skills",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/mattpocock-skills",
       "source": "opencode"
     },
     {
@@ -744,7 +744,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/memory-local",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/memory-local",
       "source": "opencode"
     },
     {
@@ -756,7 +756,7 @@
       "category": "",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/memory-recall",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/memory-recall",
       "source": "opencode"
     },
     {
@@ -778,7 +778,7 @@
         "extracao",
         "deterministico"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/needle-pytest-filter",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/needle-pytest-filter",
       "source": "opencode"
     },
     {
@@ -790,7 +790,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/oh-my-opencode-slim",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/oh-my-opencode-slim",
       "source": "opencode"
     },
     {
@@ -802,7 +802,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/omniroute",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/omniroute",
       "source": "opencode"
     },
     {
@@ -814,7 +814,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/onp-spec-driven",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/onp-spec-driven",
       "source": "opencode"
     },
     {
@@ -826,7 +826,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/openship",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/openship",
       "source": "opencode"
     },
     {
@@ -838,7 +838,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/openwork-mcp",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/openwork-mcp",
       "source": "opencode"
     },
     {
@@ -850,7 +850,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/orca",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/orca",
       "source": "opencode"
     },
     {
@@ -862,7 +862,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/pi",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/pi",
       "source": "opencode"
     },
     {
@@ -874,7 +874,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/prime-agent",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/prime-agent",
       "source": "opencode"
     },
     {
@@ -886,7 +886,7 @@
       "category": "",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/pxpipe",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/pxpipe",
       "source": "opencode"
     },
     {
@@ -898,7 +898,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/react-bits",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/react-bits",
       "source": "opencode"
     },
     {
@@ -910,7 +910,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/recursive-llm",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/recursive-llm",
       "source": "opencode"
     },
     {
@@ -934,7 +934,7 @@
         "sintatico",
         "coexistencia"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/roteador-hibrido",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/roteador-hibrido",
       "source": "opencode"
     },
     {
@@ -946,7 +946,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/ruview",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/ruview",
       "source": "opencode"
     },
     {
@@ -968,7 +968,7 @@
         "real-time",
         "a2a"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/sdd",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/sdd",
       "source": "opencode"
     },
     {
@@ -980,7 +980,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/security-methodology",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/security-methodology",
       "source": "opencode"
     },
     {
@@ -999,7 +999,7 @@
         "guard",
         "vulnerabilidade"
       ],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/sentinel-guard-security",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/sentinel-guard-security",
       "source": "opencode"
     },
     {
@@ -1011,7 +1011,7 @@
       "category": "classifier",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/sentinel-micro-classifier",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/sentinel-micro-classifier",
       "source": "opencode"
     },
     {
@@ -1023,7 +1023,7 @@
       "category": "extractor",
       "version": "",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/sentinel-micro-extractor",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/sentinel-micro-extractor",
       "source": "opencode"
     },
     {
@@ -1035,7 +1035,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/sentry-mcp",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/sentry-mcp",
       "source": "opencode"
     },
     {
@@ -1047,7 +1047,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/spec-kit",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/spec-kit",
       "source": "opencode"
     },
     {
@@ -1059,7 +1059,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/unsloth-zoo",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/unsloth-zoo",
       "source": "opencode"
     },
     {
@@ -1071,7 +1071,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/vercel-agent-skills",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/vercel-agent-skills",
       "source": "opencode"
     },
     {
@@ -1083,7 +1083,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/world-model-optimizer",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/world-model-optimizer",
       "source": "opencode"
     },
     {
@@ -1095,7 +1095,7 @@
       "category": "skill-tecnica",
       "version": "1.0.0",
       "tags": [],
-      "path": "/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/worldmonitor",
+      "path": "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/worldmonitor",
       "source": "opencode"
     }
   ],

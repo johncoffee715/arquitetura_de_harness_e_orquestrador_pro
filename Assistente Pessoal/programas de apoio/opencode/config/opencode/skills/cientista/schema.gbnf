@@ -1,0 +1,37 @@
+# schema.gbnf — skill `cientista` (spec 2026-09-17 §4; quarteto R85).
+# Gramatica llama.cpp ESTRITA do relatorio. Fonte unica de validacao.
+#
+#   root      ::= 1 (um) achado — unidade do relatorio (spec §5: "saida por item
+#                 validada pelo schema.gbnf"); mecanica.py valida cada item via
+#                 parser equivalente embutido (valida_achado).
+#   relatorio ::= array de achados — o relatorio semanal completo (top-N por
+#                 severidade, max_experimentos do gabarito.json).
+#
+# Invariantes: enums EXATOS; strings nao-vazias (min 1 char); SEM campos extras;
+# ordem de campos fixa (chave estrita). Padrao de string/escape espelha o
+# json.gbnf oficial do llama.cpp.
+
+root ::= achado
+
+relatorio ::= "[" ws (achado ("," ws achado)*)? ws "]"
+
+achado ::= "{" ws
+            "\"fenomeno_observado\""      ws ":" ws string ws "," ws
+            "\"hipotese_refutacao_vies\"" ws ":" ws string ws "," ws
+            "\"variavel_e_controle\""     ws ":" ws string ws "," ws
+            "\"protocolo_teste\""         ws ":" ws string ws "," ws
+            "\"confianca\""              ws ":" ws confianca ws "," ws
+            "\"risco\""                  ws ":" ws risco ws "," ws
+            "\"self\""                   ws ":" ws self ws "," ws
+            "\"origem\""                 ws ":" ws string ws
+            "}"
+
+confianca ::= "\"alta\"" | "\"media\"" | "\"baixa\""
+risco     ::= "\"nenhum\"" | "\"baixo\"" | "\"medio\"" | "\"alto\""
+self      ::= "\"S-ca\"" | "\"H-e\"" | "\"L-e\"" | "\"A-m\""
+
+# string JSON nao-vazia: min 1 char (string-char+), escapes padrao JSON
+string      ::= "\"" string-char+ "\""
+string-char ::= [^"\\\x7F\x00-\x1F] | "\\" (["\\/bfnrt] | "u" [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F])
+
+ws ::= [ \t\n\r]*

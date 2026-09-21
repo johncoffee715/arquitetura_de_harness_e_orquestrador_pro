@@ -1,0 +1,42 @@
+{
+  "name": "gemma3-4b-it-qat",
+  "ts": "2026-09-16T19:00:37",
+  "t1": {
+    "total": 5,
+    "ok": 5,
+    "detalhes": [
+      {
+        "img": "t1_bancada.jpg",
+        "ok": true,
+        "s": 50.7
+      },
+      {
+        "img": "t2_macro_solda.jpg",
+        "ok": true,
+        "s": 11.5
+      },
+      {
+        "img": "t3_produto.jpg",
+        "ok": true,
+        "s": 9.3
+      },
+      {
+        "img": "t4_cena.jpg",
+        "ok": true,
+        "s": 17.1
+      },
+      {
+        "img": "t5_ficha.jpg",
+        "ok": true,
+        "s": 11.8
+      }
+    ]
+  },
+  "t2": {
+    "total": 10,
+    "ok": 10
+  },
+  "raw_falhas": [],
+  "tok_s_media": 6.59,
+  "lat_media_s": 15.95
+}

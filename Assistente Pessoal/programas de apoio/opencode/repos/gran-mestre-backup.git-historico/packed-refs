@@ -1,0 +1,7 @@
+# pack-refs with: peeled fully-peeled sorted 
+783f75e5afdf7585a33d018f4bc344d0ba543e31 refs/remotes/origin/backup-2026-07-25
+7133b6703fb1ae5600094d5406a50d3b2c6cfd4f refs/remotes/origin/backup-2026-08-snapshot
+6e69a2bb07a5197575036bf0e9327ebe19d58088 refs/remotes/origin/main
+7de10798d38b6bc901b843d35d5909351ba8d183 refs/remotes/origin/master
+7194fa6725131532abee3fad655a84e1ba00fb0d refs/remotes/origin/snapshot-2026-08-10-preunificacao
+7133b6703fb1ae5600094d5406a50d3b2c6cfd4f refs/remotes/origin/snapshot-master-preunificacao

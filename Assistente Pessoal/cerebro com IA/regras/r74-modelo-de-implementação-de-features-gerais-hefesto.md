@@ -33,3 +33,17 @@ data: 2026-09-11
 
 
 ---
+
+## Extensão universal — Hefesto para cumprimento e aperfeiçoamento de regras
+
+> Upgrade R74 (2026-09-18): o Hefesto não serve só à criação — serve à manutenção contínua do corpo normativo.
+
+**Mandato**: o Hefesto (dispatcher DECOMPILAÇÃO → AUTOFAGIA → HELENIZAÇÃO → FORJA) DEVE ser usado SEMPRE também para aperfeiçoamento e cumprimento das regras — não apenas para criação de features novas. O Gran-Mestre supervisiona, como no pipeline original.
+
+**Escopo estendido**: o objeto de trabalho expande de "features" para **regras + ecossistema + mente coletiva da biblioteca no Obsidian**. Onde houver drift, gap ou upgrade pendente no corpo normativo, aplica-se R74.
+
+**Automação (R101)**: ao detectar drift/gap/upgrade de regra (via ingestão por upgrade do setor de regras), rotear ao Hefesto com spec curta (regra alvo + delta desejado + comando de verificação); registrar a lição no vault; REUSAR o pipeline de 8 passos existente — nunca criar fluxo paralelo novo.
+
+**Otimização**: visa automatizar, otimizar espaço/tempo, ganhar t/s e aperfeiçoar o ecossistema. Absorve os ângulos de R14 (autofagia + helenização), R44 (refinamento contínuo), R47 (inventário→grafo) e R101 (setor de regras) SEM duplicá-las — R8 anti-reinvenção: catálogo primeiro, construir só o gap.
+
+**Guardrail (R94)**: o Hefesto NUNCA deleta regra permanente. Regra obsoleta → QUARENTENA (mover para setor de arquivo, não remover) + LOG REVERSÍVEL (path original, data, motivo, diff). Reversão sempre possível; o Bibliotecário audita.

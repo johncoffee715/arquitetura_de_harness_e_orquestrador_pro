@@ -5,7 +5,7 @@
 
 set -euo pipefail
 
-REGISTRY_FILE="${REGISTRY_DIR:-/mnt/dados/opencode/config/registry}/auto-registry.json"
+REGISTRY_FILE="${REGISTRY_DIR:-/mnt/dados/Assistente Pessoal/harness/referencias}/auto-registry.json"
 DRY_RUN="${1:-}"
 
 echo "=== REGISTRY SYNC — $(date) ==="
@@ -125,7 +125,7 @@ for f in sorted(os.listdir("/home/johncoffee/.config/opencode/hooks")):
 
 # MCPs
 try:
-    with open("/mnt/dados/opencode/config/opencode.json") as fh:
+    with open("/home/johncoffee/.config/opencode/opencode.json") as fh:
         config = json.load(fh)
         for name, mcp in config.get("mcp", {}).items():
             registry["entries"].append({

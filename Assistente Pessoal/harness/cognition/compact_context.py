@@ -178,7 +178,7 @@ def load_state() -> dict:
     git = _run(["git", "-C", str(HARNESS_ROOT), "status", "-s"]).splitlines()
     reg = "?"
     try:
-        r = json.loads(Path("/mnt/dados/opencode/config/agents/gran-mestre/agent-registry.json").read_text())
+        r = json.loads(Path("/mnt/dados/Assistente Pessoal/programas de apoio/opencode/repos/arquitetura_harness_pro/registry/agent-registry.json").read_text())
         reg = str(len(r.get("entries", [])))
     except Exception:
         pass

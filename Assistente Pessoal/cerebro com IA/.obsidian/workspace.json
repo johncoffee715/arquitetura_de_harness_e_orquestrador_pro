@@ -51,7 +51,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:#imagem",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": true,
                 "collapseAll": false,
@@ -184,8 +184,20 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "0424fbf90b2ecd92",
+  "active": "a9d6a6855cad2fd6",
   "lastOpenFiles": [
+    "wiki/entities/gran-mestre.md",
+    "benchmarks/2026-09-18-crivo-noema-2b-nothink.md",
+    "reddit pequisas/Faça um filme MiniMax completo de 2 horas por US $ 6,96. Não Brincar..md",
+    "reddit pequisas",
+    "aprendizados/2026-08-25-doom64-sessao-final.md",
+    "aprendizados/2026-08-25_auditoria-seguranca-skills.md",
+    "textos, pdf e esquemas/historicos/chats claude.ai/historico_apoio_opencode.md",
+    "textos, pdf e esquemas/Textos/doc's word/Curriculo de john (cv detalhado) 2.md",
+    "marca/cenario-video-macro-solda.md",
+    "decisoes/2026-09-14-stack-recovery.md",
+    "decisoes/2026-08-31-stack-warm-instrucoes.md",
+    "decisoes/2026-09-16-tabela-verdade-final.md",
     "pipeline/2026-09-15-auditoria-stack-CONTEXT.md",
     "harness/harness-patterns.md",
     "harness/harness-learnings.md",
@@ -198,14 +210,11 @@
     "benchmarks/template.md",
     "benchmarks/index.md",
     "benchmarks",
-    "aprendizados/2026-08-25_auditoria-seguranca-skills.md",
     "sessions/2026-08-25_sessao-2026-.md",
     "Sem título.md",
     "AGENTS.md",
     "auditorias/2026-09-04_auditoria-gran-mestre-v91-hefesto.md",
-    "Deploys e Debuggings/2026-07-28_mi50-oc-350w-deploy-v2.md",
     "Sem título",
-    "textos, pdf e esquemas/historicos/chats gemini/Substitutos CPU para LLM.md",
     "ImagensFundo/maromba grego 6.png",
     "ImagensFundo/maromba grego 5.png",
     "ImagensFundo/maromba grego 4.png",
@@ -213,15 +222,10 @@
     "ImagensFundo/maromba grego 2.png",
     "ImagensFundo/maromba grego 1.png",
     "ImagensFundo/maromba grego .png",
-    "textos, pdf e esquemas/historicos/chats chatgpt.com/Corrija Linha de Defesa.md",
-    "textos, pdf e esquemas/historicos/chats gemini/blindar suas possiveis falhas atraves de .md .py .json .gbnf.md",
-    "textos, pdf e esquemas/historicos/chats Kimi/CPU MoE LLM 列表.md",
     "Templates/Mudar Fundo",
     "Templates",
     "ImagensFundo/maromba grego 0.png",
     "ImagensFundo",
-    "Mudar Fundo",
-    "textos, pdf e esquemas/motorola/Moto E4 Plus/Data Sheet/Data Sheet MT6328 (PM).md",
-    "textos, pdf e esquemas/samsung/gsm/Samsung GT-S7580/GT-S7582-COVER-1.md"
+    "Mudar Fundo"
   ]
 }

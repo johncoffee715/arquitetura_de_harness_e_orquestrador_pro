@@ -1,0 +1,1 @@
+[{"name": "ping_porta", "description": "Echo de adocao: retorna a mensagem recebida", "parameters": {"type": "object", "properties": {"message": {"type": "string"}}, "required": ["message"]}}]

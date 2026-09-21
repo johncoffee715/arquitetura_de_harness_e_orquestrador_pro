@@ -1,0 +1,4 @@
+root ::= "{" ws "\"task\"" ws ":" ws string ws "," ws "\"steps\"" ws ":" ws int ws "," ws "\"verified_steps\"" ws ":" ws int ws "," ws "\"trajectory\"" ws ":" ws "[" ws (string ws "," ws)* string ws "]" ws "}"
+string ::= "\"" [a-zA-Z0-9\-_/:=\[\]{}., ]+ "\""
+int ::= [0-9]+
+ws ::= [ \t\n]*

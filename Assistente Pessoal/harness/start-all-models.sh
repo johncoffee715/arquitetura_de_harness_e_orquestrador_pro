@@ -1,4 +1,9 @@
 #!/bin/bash
+# DEPRECATED 2026-09-17 — usar fonte canônica modelos LLM/manifesto_llm.json +
+# padrão vivo /proc/<pid>/cmdline (relançamento em watchdog/actions/respawn.sh).
+# Motivo: SERVER stale + tabela MODELS abaixo referencia .gguf deletados
+# (Qwen3.5-0.8B, LLMJudge, Qwen3.8-*, Qwen3-1.7B, LFM2.5-230M). Mantido só como
+# referência histórica; o watchdog NÃO o chama mais.
 # start-all-models.sh — Cenário F: 1 GPU + 6 CPU (7 modelos)
 # Uso: ./start-all-models.sh
 # Portas: LLM Orquestrador 8083(GPU) | bonsai 9083(CPU) | qwen 9084(CPU) | lfm 9086(CPU) | qwen38-2b 9087(CPU)
@@ -19,8 +24,8 @@
 set -uo pipefail
 
 MODELS_DIR="/mnt/dados/Assistente Pessoal/modelos LLM"
-SERVER="/mnt/dados/llama.cpp-master/build/bin/llama-server"
-LOG_DIR="/mnt/dados/logs"
+SERVER="/mnt/dados/Assistente Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server"
+LOG_DIR="/mnt/dados/Assistente Pessoal/harness/logs"
 mkdir -p "$LOG_DIR"
 
 # Lock cooperativo

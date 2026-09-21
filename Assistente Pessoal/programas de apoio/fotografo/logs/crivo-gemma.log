@@ -1,0 +1,7 @@
+== CRIVO gemma3-4b-it-qat ==
+T1 visão : 5/5
+T2 texto : 10/10
+tok/s médio: 6.59 | lat média: 15.95s
+raw_falhas: 0
+artefato: /mnt/dados/Assistente Pessoal/programas de apoio/fotografo/benchmarks/result_gemma3-4b-it-qat.json
+EXIT:0

@@ -8,7 +8,7 @@
   },
   {
    "port": 9084,
-   "name": "qwen0.8b",
+    "name": "rwkv7-g1d-0.4b-instruct",
    "critical": true
   },
   {
@@ -18,22 +18,27 @@
   },
   {
    "port": 9088,
-   "name": "granite-4.2-3b",
+    "name": "llama-3.2-1b",
    "critical": false
   },
   {
    "port": 9090,
-   "name": "ternary8b",
+    "name": "llama-3.2-3b",
    "critical": false
   },
   {
    "port": 9092,
-   "name": "gemma-2-2b",
+   "name": "smollm2-1.7b",
    "critical": true
   },
   {
    "port": 9093,
    "name": "smollm2-360m",
+   "critical": true
+  },
+  {
+   "port": 9094,
+   "name": "qwen3-embedding-cpu",
    "critical": true
   }
  ]

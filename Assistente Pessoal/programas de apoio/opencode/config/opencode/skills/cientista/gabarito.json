@@ -1,0 +1,41 @@
+{
+  "feature": "cientista",
+  "version": "1.0.0",
+  "data": "2026-09-18",
+  "origem": "in-house:spec-2026-09-17-feature-cientista (forja B1a, run b1a-20260918)",
+  "descricao": "Fonte única de configuração da skill cientista (R85/R106-candidata): allowlist de leitura, exclusões, idempotência ISO-week, critério de morte, selfs válidos e porta de teste. Consumida por mecanica.py e pelo gate humano.",
+  "allowlist_leitura": [
+    "/mnt/dados/Assistente Pessoal/cerebro com IA/decisoes/**",
+    "/mnt/dados/Assistente Pessoal/cerebro com IA/aprendizados/**",
+    "/mnt/dados/Assistente Pessoal/cerebro com IA/benchmarks/**",
+    "/mnt/dados/Assistente Pessoal/cerebro com IA/harness/decision-log.jsonl",
+    "/tmp/opencode/**"
+  ],
+  "exclusion_list": [
+    "**/quarentena/**",
+    "**/archive/**",
+    "**/ImagensFundo/**",
+    "**/*.gguf",
+    "**/*.bin",
+    "**/*.safetensors",
+    "**/*.onnx"
+  ],
+  "max_recursao": 1,
+  "iso_week_runid": true,
+  "criterio_morte": {
+    "janela_semanas": 4,
+    "min_aprovadas": 3,
+    "degradacao": "relatorio-mensal",
+    "arquivamento_semanas": 8
+  },
+  "porta_teste": 9191,
+  "paths": {
+    "vault": "/mnt/dados/Assistente Pessoal/cerebro com IA",
+    "spec": "/mnt/dados/Assistente Pessoal/cerebro com IA/ideias/2026-09-17-feature-cientista-spec.md",
+    "experimentos": "/mnt/dados/Assistente Pessoal/cerebro com IA/experimentos",
+    "relatorio_semanal": "/mnt/dados/Assistente Pessoal/cerebro com IA/benchmarks/YYYY-MM-DD-cientista-semanal.md",
+    "runs_locks": "/mnt/dados/Assistente Pessoal/cerebro com IA/experimentos/.runs"
+  },
+  "selfs_validos": ["S-ca", "H-e", "L-e", "A-m"],
+  "severidades": ["info", "atencao", "acao"]
+}

@@ -1,0 +1,33 @@
+   462.6ms (setup:1347): 2026-08-30 19:18:08
+   462.7ms (setup:1348): /usr/bin/pipx install pipx
+   462.7ms (setup:1349): pipx version is 1.15.0
+   462.8ms (setup:1350): Default python interpreter is '/usr/bin/python3.14'
+   462.9ms (mkdir:72): creating directory /mnt/dados/Assistente Pessoal/programas de apoio/opencode/data/pipx/venvs
+   463.1ms (mkdir:72): creating directory /mnt/dados/Assistente Pessoal/programas de apoio/opencode/cache/pipx
+   463.2ms (mkdir:72): creating directory /mnt/dados/Assistente Pessoal/programas de apoio/opencode/data/pipx/py
+   463.3ms (setup:1364): Adding CACHEDIR.TAG to cache directory
+   463.4ms (setup:1364): Adding CACHEDIR.TAG to cache directory
+   464.4ms (_validate_backend_available:309): Backend resolved to uv (source: auto-path)
+   464.6ms (package_name_from_spec:409): Determined package name: pipx
+   464.6ms (package_name_from_spec:410): Package name determined in 0.0s
+   464.9ms (create_venv:250): Creating virtual environment
+   627.7ms (__init__:59): using path uv 0.11.32 from /home/johncoffee/.local/bin/uv
+   628.0ms (run_subprocess:182): running /home/johncoffee/.local/bin/uv venv --python /usr/bin/python3.14 --quiet /mnt/dados/Assistente Pessoal/programas de apoio/opencode/data/pipx/venvs/pipx
+   745.2ms (run_subprocess:207): stdout:
+   745.3ms (run_subprocess:209): stderr:
+   745.3ms (run_subprocess:210): returncode: 0
+   745.5ms (run_subprocess:182): running /mnt/dados/Assistente Pessoal/programas de apoio/opencode/data/pipx/venvs/pipx/bin/python --version
+   747.1ms (run_subprocess:207): stdout: Python 3.14.7
+   747.1ms (run_subprocess:209): stderr:
+   747.2ms (run_subprocess:210): returncode: 0
+   747.3ms (_parsed_package_to_package_or_url:138): cleaned package spec: pipx
+   747.4ms (install_package:336): Installing pipx
+   747.6ms (run_subprocess:182): running /home/johncoffee/.local/bin/uv pip install --python /mnt/dados/Assistente Pessoal/programas de apoio/opencode/data/pipx/venvs/pipx/bin/python --quiet pipx
+   995.5ms (run_subprocess:210): returncode: 0
+   995.8ms (run_subprocess:182): running <fetch_info_in_venv commands>
+  1028.5ms (run_subprocess:207): stdout: {"sys_path": ["/usr/lib/python314.zip", "/usr/lib/python3.14", "/usr/lib/python3.14/lib-dynload", "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/data/pipx/venvs/pipx/lib/python3.14/site-packages"], "python_version": "3.14.7", "environment": {"implementation_name": "cpython", "implementation_version": "3.14.7", "os_name": "posix", "platform_machine": "x86_64", "platform_release": "7.2.2-1-cachyos", "platform_system": "Linux", "platform_version": "#1 SMP PREEMPT_DYNAMIC Fri, 28 Aug 2026 11:45:06 +0000", "python_full_version": "3.14.7", "platform_python_implementation": "CPython", "python_version": "3.14", "sys_platform": "linux"}}
+  1028.6ms (run_subprocess:210): returncode: 0
+  1049.7ms (get_venv_metadata_for_package:424): get_venv_metadata_for_package: 54ms
+  1049.8ms (_parsed_package_to_package_or_url:138): cleaned package spec: pipx
+  1050.7ms (_symlink_package_resource:195): ⚠️  Note: pipx was already on your PATH at /usr/bin/pipx
+  1077.8ms (cli:1449): pipx finished.

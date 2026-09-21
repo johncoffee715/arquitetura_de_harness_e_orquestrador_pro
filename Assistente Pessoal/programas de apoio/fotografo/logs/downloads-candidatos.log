@@ -1,0 +1,37 @@
+[2026-09-16T17:29:07-03:00] inicio
+Error: Repository not found.
+If the repo is private, make sure you are authenticated and your token has the required permissions.
+If the repo does not exist, create it with: hf repos create <repo_id>
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+Error: Repository not found.
+If the repo is private, make sure you are authenticated and your token has the required permissions.
+If the repo does not exist, create it with: hf repos create <repo_id>
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+Error: Repository not found.
+If the repo is private, make sure you are authenticated and your token has the required permissions.
+If the repo does not exist, create it with: hf repos create <repo_id>
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+[2026-09-16T17:29:10-03:00] fim
+[2026-09-16T17:53:02-03:00] retomada repos oficiais
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/gemma3-4b-it-qat
+[2026-09-16T17:55:00-03:00] OK gemma3_qat
+/home/johncoffee/.local/lib/python3.14/site-packages/huggingface_hub/cli/download.py:158: UserWarning: Ignoring `--include` since filenames have been explicitly set.
+  warnings.warn("Ignoring `--include` since filenames have been explicitly set.")
+Error: Repository not found.
+If the repo is private, make sure you are authenticated and your token has the required permissions.
+If the repo does not exist, create it with: hf repos create <repo_id>
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+[2026-09-16T17:55:02-03:00] FALHA qwen25vl
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen3-4b
+[2026-09-16T17:55:59-03:00] OK qwen3
+[2026-09-16T17:55:59-03:00] fim candidatos
+[2026-09-16T18:03:23-03:00] retry qwen25vl oficial
+Returning existing local_dir `/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen25vl-3b` as remote repo cannot be accessed in `snapshot_download` (401 Client Error. (Request ID: Root=1-6aab041c-39a5d4323a60f46c1101aa1d;73fc35a7-bb28-45de-b3f7-f29c8ac9719b)
+
+Repository Not Found for url: https://huggingface.co/api/models/Qwen/Qwen2.5-VL-3B-Instruct-GGUF/revision/main.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated and your token has the required permissions.
+For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.).
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen25vl-3b
+[2026-09-16T18:03:24-03:00] OK qwen25vl

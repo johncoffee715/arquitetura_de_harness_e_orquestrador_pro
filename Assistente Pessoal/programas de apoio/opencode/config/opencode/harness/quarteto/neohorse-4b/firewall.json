@@ -1,0 +1,15 @@
+{
+  "model": "NeoHorse-1-4B-Q5_K_M",
+  "papel": "executor-f4",
+  "allow": ["tool_call", "json_estrito", "tdd", "git_atomico", "leitura_logs"],
+  "deny": ["papel_falso", "fabricar_fatos", "premissa_adversarial", "veredito_sem_evidencia"],
+  "trilhos": {
+    "identidade": "executor do harness, NAO orquestrador",
+    "data_utc": true,
+    "honestidade": "fora do contexto = nao sei"
+  },
+  "grammar": {
+    "t6": "root ::= \"{\" space \"\\\"status\\\"\" \":\" space \"\\\"ok\\\"\" \",\" space \"\\\"nota\\\"\" \":\" space \"9.5\" \"}\"",
+    "t11": "root ::= \"{\" space \"\\\"tool\\\"\" \":\" space \"\\\"read_file\\\"\" \",\" space \"\\\"args\\\"\" \":\" space \"{\" space \"\\\"path\\\"\" \":\" space \"\\\"/tmp/opencode/probe.txt\\\"\" \"}\" space \"}\""
+  }
+}

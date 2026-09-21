@@ -1,6 +1,6 @@
 {
   "version": "1.2",
-  "updated": "2026-09-16T00:00:00+00:00",
+  "updated": "2026-09-17T22:10:00+00:00",
   "fonte": "auditoria R52 + ctx-cost + start-stack + BENCH-03/09 IQ3 vs IQ4",
   "politica_roteamento": {
     "tipo": "hibrido-em-camadas",
@@ -39,7 +39,7 @@
     "nota": "score roda SOMENTE dentro do conjunto aprovado pelos disjuntores"
   },
   "decisao_orquestrador_2026-08-24": {
-    "veredito": "Qwen3.8-9B @229376 (224K MAX VALIDADO 24/08: decode 81.2 t/s, prefill 487, VRAM pico 10.28GiB global). Ornith reserva warm.",
+    "veredito": "COROADO 17/09: Ornith-1.5-35B-A3B-IQ2_XXS. Qwen3.5-35B EXCLUÍDO TOTALMENTE (sem fallback) — limitação de hardware (user 17/09).",
     "dados": {
       "ornith": {
         "gm_local": 76.3,
@@ -160,7 +160,7 @@
       }
     },
     {
-      "model_id": "Qwen3.5-35B-A3B-UD-IQ3_XXS",
+      "model_id": "Ornith-1.5-35B-A3B-IQ2_XXS",
       "slot_port": 8083,
       "device": "CPU",
       "topologia_arquitetura": {
@@ -174,42 +174,42 @@
         "contexto_nativo": 262144,
         "expert_count": 256,
         "expert_used_count": 8,
-        "arch_detail": "qwen35moe MoE 35B A3B — 256 experts, 8 ativos/token, full_attn_interval=4 (10/40 full-attn), 30/40 linear (SSM)"
+        "arch_detail": "qwen35moe MoE 35B A3B — mesma família do Qwen3.5-35B (Ornith-1.5 é finetune)"
       },
       "fisica_inferencia": {
-        "quantizacao": "UD-IQ3_XXS (3.0625 bpw puro)",
-        "pesos_gb": 12.3,
-        "pesos_bytes": 13211155424,
-        "ctx_ativo": 262144,
+        "quantizacao": "IQ2_XXS (2.33 bpw)",
+        "pesos_gb": 9.55,
+        "pesos_bytes": 10255140512,
+        "ctx_ativo": 65536,
         "cache_k": "q4_0",
         "cache_v": "q4_0",
         "kv_per_token_kb": 5.76,
-        "kv_total_gb_at_ctx": 1.51,
-        "tps_decode_empirical": 26.5,
-        "tps_decode_nota": "PRODUCAO ngl36 b4096/ub1024 c262144 (05/09). Curva: ngl20=11.2, 24=11.2, 28=17.5, 32=18.6, 36=25.6, 40=40.7. FA-off (-17% prefill), mlock-abort (ulimit 8MB).",
+        "kv_total_gb_at_ctx": 0.38,
+        "tps_decode_empirical": 44.5,
+        "tps_decode_nota": "CPU-KNOBS 17/09: b4096/ub1024 fa-on prio2 mlock t36 = 44.5 dec / 103.4 pre. full-GPU ngl99 = 79.4 dec. Crivo B=6.0 (R103/R104).",
         "temp": 0.6,
-        "ngl": 36,
-        "threads": "auto (R72, sem -t fixo)",
-        "flash_attn": false,
-        "nota": "hibrido ngl36 desde 05/09 (deploy-B): 70% pesos GPU + KV@262K GPU = 12.19G solo; casa 16.18G. Full ngl40=40.7 solo possivel (reserva operacional).",
-        "batch_ubatch": "4096/1024 (crivo prefill 05/09: prefill 594.8 +36%, decode 26.5 +5% vs 2048/512; 8192/2048 colapso prefill 113/decode 13)",
-        "tps_prefill_empirical": 594.8,
-        "mtp": "N/A (arquivo sem head MTP — jashepp removeu 22/08)",
-        "device": "hibrido GPU/CPU (ngl36, resto RAM)"
+        "ngl": 0,
+        "threads": "36 (R72, t36/tb36)",
+        "flash_attn": true,
+        "nota": "COROADO 17/09 via CPU-knobs (44.5 t/s, 13x sobre serving subótimo). GGUF mais leve da família (9.55G vs 12.3G do Qwen3.5-IQ3_XXS).",
+        "batch_ubatch": "4096/1024",
+        "tps_prefill_empirical": 103.4,
+        "mtp": "N/A (build atual não suporta head MTP — ggml_abort)",
+        "device": "CPU (knobs) / GPU (ngl99 quando VRAM livre)"
       },
-      "vocacao_grafo": "ORQUESTRADOR ATIVO · 35B MoE · CPU · KV q4/q4 @262144",
+      "vocacao_grafo": "ORQUESTRADOR ATIVO · 35B MoE · CPU-knobs · KV q4/q4 @65536",
       "derivado": {
-        "file": "Qwen3.5-35B-A3B-UD-IQ3_XXS.gguf",
-        "slug": "qwen3.5-35b-a3b-ud-iq3_xxs",
+        "file": "Ornith-1.5-35B-A3B-IQ2_XXS.gguf",
+        "slug": "ornith-1.5-35b-a3b-iq2_xxs",
         "category": "orquestrador",
         "papel": "ORQUESTRADOR ATIVO",
-        "ctx_ativo_efetivo": 262144,
+        "ctx_ativo_efetivo": 65536,
         "generator_version": "1.0.0"
       },
       "metrica_avaliativa_r78": {
-        "debilidade": "7.14 t/s CPU tg32 (2x Ornith, ainda bandwidth-bound DDR 12.29GB); thinking hibrido exige enable_thinking=false p/ resposta direta; NUNCA sincrono em loop",
-        "capacidades": "Orquestracao/suprema corte; sintese macro; JSON exato sem fences; logica PT correta; tool-call exato; GBNF byte-level conforme (perna qualidade 4/4 04/09)",
-        "possibilidades": "Offload parcial (nao testado); draft SIMPLES ATIVO 09/09 (Qwen3.5-0.8B GPU, n-max 8, p-min 0.75, accept 0.96-1.0)"
+        "debilidade": "ctx 65536 (vs 262144 do antecessor); IQ2_XXS = 2.33bpw (degradação em tarefas finas); MTP/DFlash bloqueados por build",
+        "capacidades": "Crivo B=6.0 (Δ0.2 do incumbent); CPU-knobs 44.5 t/s; full-GPU 79.4 t/s; sobreviveu R104 (piso 2.33bpw)",
+        "possibilidades": "full-GPU quando VRAM livre; draft da família certa quando build atualizar"
       }
     },
     {
@@ -501,52 +501,6 @@
       }
     },
     {
-      "model_id": "Qwen3-Embedding-0.6B-Q8_0-GPU",
-      "slot_port": 9097,
-      "device": "GPU",
-      "topologia_arquitetura": {
-        "tipo_fundacao": "qwen3",
-        "layers": 28,
-        "embedding_length": 1024,
-        "contexto_nativo": 32768,
-        "arch_detail": "Qwen3-Embedding-0.6B Q8_0 610M, pooling last, 1024-d MRL"
-      },
-      "fisica_inferencia": {
-        "quantizacao": "Q8_0",
-        "pesos_gb": 0.61,
-        "pesos_bytes": 610000000,
-        "ctx_ativo": 2048,
-        "cache_k": "q4_0",
-        "cache_v": "q4_0",
-        "kv_per_token_kb": 14.0,
-        "kv_total_gb_at_ctx": 0.028,
-        "tps_decode_empirical": 90982,
-        "tps_decode_nota": "GPU 0.12s b1 / 91k b32 (bench 2026-09-11, c2048 b256/ub256, +1047M VRAM)",
-        "temp": 0.0,
-        "ngl": 99,
-        "threads": "GPU Vulkan0",
-        "flash_attn": true,
-        "mtp": "N/A",
-        "device": "GPU (toggle)",
-        "nota": "CANONICO GPU burst (bibliotecario backfill b16/32, 6.1x CPU)"
-      },
-      "vocacao_grafo": "embedder GPU sob demanda (R5/R10) — unificado com :9094; sobe via stack-toggle quando VRAM livre",
-      "derivado": {
-        "file": "Qwen3-Embedding-0.6B-Q8_0.gguf",
-        "slug": "qwen3-embedding-0.6b-gpu",
-        "category": "embedder",
-        "papel": "embedder-gpu",
-        "ctx_ativo_efetivo": 2048,
-        "generator_version": "1.0.0"
-      },
-      "metrica_avaliativa_r78": {
-        "debilidade": "+1G VRAM, custo para manter quente",
-        "capacidades": "Lote 91k tok/s, 0.12s b1, ideal backfill",
-        "possibilidades": "Desligar quando VRAM apertar (kill :9097 libera 1G)"
-      },
-      "status": "TOGGLE-OPCIONAL"
-    },
-    {
       "model_id": "NeoHorse-1-4B-Q5_K_M",
       "slot_port": 9095,
       "device": "GPU",
@@ -567,24 +521,24 @@
         "quantizacao": "Q5_K_M",
         "pesos_gb": 3.06,
         "pesos_bytes": 3074986752,
-        "ctx_ativo": 262144,
+        "ctx_ativo": 32768,
         "cache_k": "q4_0",
         "cache_v": "q4_0",
         "kv_per_token_kb": 8.0,
-        "kv_total_gb_at_ctx": 2.147,
+        "kv_total_gb_at_ctx": 0.25,
         "tps_decode_empirical": 102.2,
         "tps_prefill_empirical": 184.8,
         "device": "GPU",
         "ngl": 999,
         "flash_attn": "on"
       },
-      "vocacao_grafo": "F4 EXECUTOR — motor de features, tool-calling estrito (GBNF), TDD, ctx 262k",
+      "vocacao_grafo": "F4 EXECUTOR — motor de features, tool-calling estrito (GBNF), TDD, ctx 32k",
       "derivado": {
         "file": "NeoHorse-1-4B-Q5_K_M.gguf",
         "slug": "neohorse-1-4b-q5",
         "category": "executor",
         "papel": "EXECUTOR F4",
-        "ctx_ativo_efetivo": 262144
+        "ctx_ativo_efetivo": 32768
       },
       "metrica_avaliativa_r78": {
         "debilidade": "Cede ao poison (2+2=5); thinking-only no chat sem enable_thinking:false",
@@ -601,7 +555,10 @@
         ],
         "status": "COMPLETO"
       },
-      "status": "CANONIZADO"
+      "status": "CANONIZADO",
+      "historico_ctx": [
+        "2026-09-16: 262144->32768 (plano 8-32k; KV 2.1GB->0.25GB; relaunch -c 32768, health ok + smoke ok)"
+      ]
     },
     {
       "model_id": "Noema-2B.Q4_K_S",
@@ -804,5 +761,14 @@
       "16384/4096": "41.95/6.84",
       "conclusao": "batch maior degrada (DDR bandwidth-bound, igual Ornith R76); servico mantido 2048/512"
     }
-  }
+  },
+  "nota_2026_09_16": " | 9095 NeoHorse ctx 32k (autonomo 06:40).",
+  "exclusoes": [
+    {
+      "model_id": "Qwen3.5-35B-A3B-UD-IQ3_XXS",
+      "data": "2026-09-17",
+      "motivo": "exclusão total sem fallback — limitações de hardware (decisão user)",
+      "arquivo": "Qwen3.5-35B-A3B-UD-IQ3_XXS.gguf (13.08GB) removido"
+    }
+  ]
 }

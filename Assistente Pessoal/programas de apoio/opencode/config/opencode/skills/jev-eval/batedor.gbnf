@@ -1,0 +1,13 @@
+# batedor.gbnf — gramática da decisão tipada (jev-eval batedor, 2026-09-18)
+# O LLM barato emite EXATAMENTE este objeto; prosa = rejeitado pelo parser antes do motor.
+root    ::= "{" ws rota "," ws topicos "," ws urgente "," ws confianca "," ws needs_dense ws "}"
+rota    ::= "\"rota\"" ws ":" ws rota-valor
+rota-valor ::= "\"tecnico\"" | "\"financeiro\"" | "\"comercial\"" | "\"geral\"" | "\"vault\"" | "\"codigo\"" | "\"conversa\""
+topicos ::= "\"topicos\"" ws ":" ws "[" ws (string ("," ws string){0,2})? ws "]"
+urgente ::= "\"urgente\"" ws ":" ws bool
+confianca ::= "\"confianca\"" ws ":" ws zero-um
+needs_dense ::= "\"needs_dense\"" ws ":" ws bool
+bool    ::= "true" | "false"
+zero-um ::= "0" ("." [0-9]+)? | "1" ("." "0"+)?
+string  ::= "\"" [^"\\]{1,80} "\""
+ws      ::= [ \t\n]*

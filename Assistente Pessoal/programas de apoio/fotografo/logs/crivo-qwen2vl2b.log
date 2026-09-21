@@ -1,0 +1,7 @@
+== CRIVO qwen2vl-2b ==
+T1 visão : 5/5
+T2 texto : 10/10
+tok/s médio: 199.71 | lat média: 1.58s
+raw_falhas: 0
+artefato: /mnt/dados/Assistente Pessoal/programas de apoio/fotografo/benchmarks/result_qwen2vl-2b.json
+EXIT:0

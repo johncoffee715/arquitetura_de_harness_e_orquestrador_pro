@@ -3,7 +3,7 @@
 Pós-reboot: colar num terminal (um por linha, cada um com `&` já incluso via nohup) ou salvar como .sh e executar.
 
 ```bash
-BIN="/mnt/dados/Assistente Pessoal/opencode/llama.cpp/bin/llama-server.real"
+BIN="/mnt/dados/Assistente Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real"
 M="/mnt/dados/Assistente Pessoal/modelos LLM"
 nohup "$BIN" -m "$M/Qwen3.5-35B-A3B-UD-IQ3_XXS.gguf" --port 8083 --host 127.0.0.1 -c 262144 -np 1 -b 4096 -ub 1024 -ngl 36 -dev Vulkan0 --cache-type-k q4_0 --cache-type-v q4_0 --jinja --temp 0.6 --top-p 0.95 --top-k 20 --chat-template-kwargs '{"enable_thinking": false}' > /tmp/opencode/raw-8083.log 2>&1 &
 nohup "$BIN" -m "$M/RWKV7-G1d-0.4B-Instruct-FP16.gguf" --port 9084 --host 127.0.0.1 -c 1048576 -np 1 -b 512 -ngl 999 -dev Vulkan0 --cache-type-k q4_0 --cache-type-v q4_0 --jinja > /tmp/opencode/raw-9084.log 2>&1 &

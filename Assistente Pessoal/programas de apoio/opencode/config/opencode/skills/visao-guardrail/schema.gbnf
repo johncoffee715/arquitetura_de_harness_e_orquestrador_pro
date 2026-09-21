@@ -1,0 +1,20 @@
+# schema.gbnf — visao-guardrail · contrato JSON estrito do veredito de inspeção visual
+# Origem: spec do usuário 2026-09-17 (arquitetura visão-edge) + regra R105 promulgada 2026-09-17
+# Data: 2026-09-17 · harness: llama.cpp GBNF (slot físico Qwen2-VL-7B Q4_K_M + mmproj f16 em :9188)
+# Uso: grammar-file deste GBNF no /v1/chat/completions (response_format guiado) OU validação pós-decode.
+# Ordem de chaves FIXA (inspection_id, status, overall_confidence, defects, pass_delivery_criteria).
+# bbox = [x1,y1,x2,y2] normalizado 0..1 (float) — 4 números.
+
+root ::= "{" ws "\"inspection_id\"" ws ":" ws string ws "," ws "\"status\"" ws ":" ws status ws "," ws "\"overall_confidence\"" ws ":" ws confidence ws "," ws "\"defects\"" ws ":" ws defects ws "," ws "\"pass_delivery_criteria\"" ws ":" ws boolean ws "}" ws
+
+status ::= "\"PASS\"" | "\"FAIL\""
+boolean ::= "true" | "false"
+confidence ::= ("0" ("." [0-9]+)? | "1" ("." "0"*)?)
+number ::= "-"? ("0" | [1-9] [0-9]*) ("." [0-9]+)? ([eE] [-+]? [0-9]+)?
+bbox ::= "[" ws number ws "," ws number ws "," ws number ws "," ws number ws "]"
+severity ::= "\"low\"" | "\"medium\"" | "\"high\"" | "\"critical\""
+defect ::= "{" ws "\"type\"" ws ":" ws string ws "," ws "\"component\"" ws ":" ws string ws "," ws "\"severity\"" ws ":" ws severity ws "," ws "\"bounding_box\"" ws ":" ws bbox ws "," ws "\"description\"" ws ":" ws string ws "}"
+defects ::= "[" ws (defect (ws "," ws defect)*)? ws "]"
+string ::= "\"" char* "\""
+char ::= [^"\\\x7F\x00-\x1F] | "\\" (["\\/bfnrt] | "u" [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F] [0-9a-fA-F])
+ws ::= ([ \t\n\r])*

@@ -1,0 +1,27 @@
+{
+  "_como_aplicar": "mergear os blocos abaixo dentro de 'provider' do opencode.jsonc (F4). Requer usuário aplicar (arquivo fora do escopo de escrita do GM).",
+  "local-fotografo-vlm": {
+    "api": "openai",
+    "name": "FOTOGRAFO-VLM — DoP/visão da feature Fotógrafo — CPU :9188, sob demanda (Stack B; canonizado crivo 2026-09-16: T1 5/5 T2 10/10 67t/s) — role:fotografo",
+    "options": { "baseURL": "http://127.0.0.1:9188/v1", "apiKey": "llamacpp" },
+    "models": {
+      "fotografo": {
+        "name": "role:fotografo",
+        "limit": { "context": 4096, "output": 2048 },
+        "tool_call": false
+      }
+    }
+  },
+  "local-fotografo-sprint": {
+    "api": "openai",
+    "name": "FOTOGRAFO-SPRINT — triagem rápida VLM 200t/s :9187 sob demanda — role:fotografo-sprint",
+    "options": { "baseURL": "http://127.0.0.1:9187/v1", "apiKey": "llamacpp" },
+    "models": {
+      "fotografo-sprint": {
+        "name": "role:fotografo-sprint",
+        "limit": { "context": 4096, "output": 1024 },
+        "tool_call": false
+      }
+    }
+  }
+}

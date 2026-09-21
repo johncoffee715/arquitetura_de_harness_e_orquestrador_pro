@@ -1,0 +1,19 @@
+{
+  "feature": "vepforge",
+  "version": "1.0.0",
+  "descricao": "Verifiable Experience Pipeline — evidência verificada antes de entrar no Experience (anti-fake-done).",
+  "allow": {
+    "verifiers": ["exit_code", "hash", "http_status", "schema", "test_result", "stdout"],
+    "sandbox": ["/tmp/opencode/**"],
+    "tools": ["bash(read-only)", "read", "grep", "glob"]
+  },
+  "deny": {
+    "verifiers": [],
+    "paths": ["/etc/**", "/usr/**", "/home/johncoffee/.ssh/**"],
+    "tools": ["edit", "write"]
+  },
+  "sampling": {
+    "temp": 0.0,
+    "max_tokens": 256
+  }
+}

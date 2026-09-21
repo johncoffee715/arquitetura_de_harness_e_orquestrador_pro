@@ -1,0 +1,22 @@
+(lsfg-vk) [ERROR]: Failed to initialize global info:
+(lsfg-vk) [ERROR]: - Unknown key in configuration: game
+0.00.312.537 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.314.120 W srv  llama_server: -----------------
+0.00.314.125 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.314.125 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.314.125 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.314.126 W srv  llama_server: -----------------
+0.00.315.513 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/modelos LLM/smollm2-1.7b-instruct-q4_k_m.gguf'
+0.17.107.960 W llama_context: n_ctx_seq (32768) > n_ctx_train (8192) -- possible training context overflow
+0.18.461.710 W srv    load_model: the slot context (32768) exceeds the training context of the model (8192) - capping
+0.18.830.990 I srv    load_model: initializing, n_slots = 1, n_ctx_slot = 8192, kv_unified = 'false'
+0.18.835.048 I srv  llama_server: model loaded
+0.18.835.057 I srv  llama_server: listening on http://127.0.0.1:9092
+60.28.114.563 I slot get_availabl: id  0 | task -1 | selected slot by LRU, t_last = -1
+60.28.115.009 I slot launch_slot_: id  0 | task 0 | processing task, is_child = 0
+60.36.409.350 I slot print_timing: id  0 | task 0 | prompt eval time =    4406.13 ms /    48 tokens (   91.79 ms per token,    10.89 tokens per second)
+60.36.409.359 I slot print_timing: id  0 | task 0 |        eval time =    3888.07 ms /    64 tokens (   60.75 ms per token,    16.46 tokens per second)
+60.36.409.361 I slot print_timing: id  0 | task 0 |       total time =    8294.20 ms /   112 tokens
+60.36.409.369 I slot print_timing: id  0 | task 0 |    graphs reused =         63
+60.36.410.358 I slot      release: id  0 | task 0 | stop processing: n_tokens = 111, truncated = 0
+3014.18.527.172 I srv    operator(): operator(): cleaning up before exit...

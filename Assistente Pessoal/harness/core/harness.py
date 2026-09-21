@@ -158,7 +158,7 @@ class GranMestreHarness:
         self.kv_guard: Any = None
         try:
             import importlib.util as _ilu
-            _kg_path = Path("/mnt/dados/Assistente Pessoal/opencode/config/opencode/skills/hefesto/tooling/kv_guard.py")
+            _kg_path = Path("/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode/skills/hefesto/tooling/kv_guard.py")
             if _kg_path.exists():
                 _kg_spec = _ilu.spec_from_file_location("kv_guard", str(_kg_path))
                 _kg_mod = _ilu.module_from_spec(_kg_spec)

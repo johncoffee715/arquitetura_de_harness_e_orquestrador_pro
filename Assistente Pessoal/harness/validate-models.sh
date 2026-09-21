@@ -13,7 +13,7 @@ set -uo pipefail
 
 MODELS_DIR="/mnt/dados/Assistente Pessoal/modelos LLM"
 SERVER="/mnt/dados/llama.cpp-master/build/bin/llama-server"
-LOG_DIR="/mnt/dados/logs"
+LOG_DIR="/mnt/dados/Assistente Pessoal/harness/logs"
 mkdir -p "$LOG_DIR"
 PASS=0; FAIL=0
 
@@ -37,7 +37,9 @@ validate_one() {
   echo "▶ Validando: $key ($FILE) | porta $PORT | ctx $CTX | slots $SLOTS | grammar $GRAMMAR"
   echo "══════════════════════════════════════════════════════"
 
-  pkill -f llama-server 2>/dev/null; sleep 2
+  # NUNCA pkill amplo: validações manuais não podem derrubar o stack (CPU
+  # slots jamais caem — sem kill em massa). Escopo restrito à porta validada.
+  pkill -f "llama-server.*--port $PORT" 2>/dev/null; sleep 2
   local LOG="$LOG_DIR/validate-$key.log"
   local EXTRA_ARGS=()
   case "$FILE" in
@@ -88,7 +90,7 @@ validate_one() {
     echo "$RESP" | head -c 300
     FAIL=$((FAIL+1))
   fi
-  pkill -f llama-server 2>/dev/null; sleep 2
+  pkill -f "llama-server.*--port $PORT" 2>/dev/null; sleep 2
 }
 
 if [ $# -eq 1 ]; then

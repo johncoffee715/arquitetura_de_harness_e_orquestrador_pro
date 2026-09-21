@@ -1,0 +1,14 @@
+[2026-09-16T17:13:31-03:00] inicio
+Hint: A new version of huggingface_hub (1.31.0) is available! You are using version 1.30.0.
+To update, run: hf update
+Hint: The `hf-cli` skill is not installed. Run `hf skills add -g --claude` to teach your AI agents how to use the `hf` CLI.
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/home/johncoffee/pesos confyui/checkpoints/sd_xl_base_1.0.safetensors
+[2026-09-16T17:15:18-03:00] OK sdxl
+[2026-09-16T17:53:02-03:00] retomada
+path=/home/johncoffee/pesos confyui/controlnet/diffusion_pytorch_model_promax.safetensors
+[2026-09-16T17:54:30-03:00] OK cn_union
+Error: Access denied. This repository requires approval.
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+[2026-09-16T17:54:35-03:00] FALHA svd
+[2026-09-16T17:54:35-03:00] fim pesos

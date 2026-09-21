@@ -1,0 +1,1411 @@
+{
+  "fingerprints": {
+    "1672c6fbdc52de8108eb608fc11596ef6fea5f90": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "44bd544a2e2555d62c31dd7e9a68b09670caf1b1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "0dfc2328f3f33befe328d4b71b72a21aa7f99fea": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "6538a64f6a51c4afdfe0a895e47a0b3d1cfafd6c": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "0b6b98323233e732a574ffbbf749c9c7880800a3": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "835cab6aaa82b6f29d32aeab63b88fa0d2ce24a6": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "f19d4f1d274729c70a6eab5960529a06361973fb": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "2ef1625bfa4575b0a175c1757821f307c29d1591": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d24f479ddf3a193f9b90b5c34ca6eeef98e2327b": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "a88abbe760fd272e8b7c88d5d60aa5691e40e7bd": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ae2f107e83f4fc0465b6178c1416d5fa4a0bccf0": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "55e0d173843c0e2926f3991ad3884261cf212c37": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "c4e3d78b22b319e76ec321f7c809542c5b5661eb": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "93ea3dad5abd7e10adc698eb99fb432656cec00d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "b089cc94bcf2d191c1c00e7dfb22b61abe5e947f": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "7a6c5c3dd8284f62404e49b37b50114339f0960d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bd1919816785118349c11cfd682ce1925f4a70f1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "a76f7a5fde9b285a456321c346102b6c2ca4f8b8": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "e3c761ab168e7315a52fd8624ea95ab594a3cbca": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1e6750d063588c4e985cc97eb659a4e31806f8b2": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d71e45530ec521af252ec5b88863f6e3b0b5d494": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "8194f7779c2d9027f56ec200fe42ba46af244f33": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "429a6ce7972e6c168b0ed147c2418afd18bdb065": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "afb905102a1890e0082338670a4670c6e01c6429": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "524432d9345f57df75a5b6d701cf50c40625bf02": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "03112a65df1bdb0ea6aa20b4e260129c71925359": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "6a95139ded9a9fd261ef0631f7d9a9254676ca86": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d98869fe2042d691511f7c9bb39c8bae43da041b": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "30062bd3180bed81ae3be2b1a09083b5ab88854c": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "cef5161aae790aa1c61714f4a61666a60db9c293": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "33c0c5edadfc310e5dd15180f12d518cd330ede9": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1888dd396a3cced877cd65945e4f1f4f0939b164": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "f5f0b28a1076034b92455d9b35dd0a12edb71f19": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4b0bf59ab397142e9c41af88c5fa3dafd9416430": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "f0ed32fa6e372f2b2402d8635685376f044266cb": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "243137a41519ddd44fb6fbdaf99324f9f549241e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9baa4e2fa2fb0b6b5c0b1a257111bcdbbfef33b1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "71e4b43b7299248da1aff0bccda0076cb4fa0d1a": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "246bd6adcdf59ccc4f3f0f4f55e13e2674c52981": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ebc4495d05497fbb854e2750c76062b8bb9876c8": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9facb85d39b46a02d1ca4e59bce1ad118ac63cca": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "231819611230b3d3f8df9852e578f1bc67da6530": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "f0d81a8afb10c740de1ab1ee8ab9d389d7a25abb": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "8860d4fdcbb44b0fb5bbe6ac62cc56688ede68f0": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4367498bcf4f3954957645d648437c4e452976b2": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "256174ff4d23873d54ff0bc3459be8f5116877b4": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4c9a1df857b317233c7c02c34b97231b4e2b325c": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "f853ef55dc67e31f389fd63b9ad6508c5f28cd33": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "c460a3d63f91759dd560c3d1740f82cc7e6c579d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "33cc3d7e818540b7a8f3c354be9975eba559f812": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "288786353481d028ad354c617eb3e6b7ad90ae6d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9729d48f44d7df2474e30d9e5608d4eececf3539": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "db0af3715837ff58548d5c97d300801c7750a834": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "e42011279f9875f01601a47eaff63264e5af34f9": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3a9dddac758dbc37e160f0db0698b2f29d8af573": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "6a6ed320f3822781333759a9e2802a8fa9e377e5": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "2492ea28b9ec055fa46d52febd199a46ddcaf5cc": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3ff07a5a9f80935d2d7b9588f223c538bc7b6a57": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "5f3cd674c01a22f2c6b5ce6a4c32e2a59898f8be": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "c250a5fd8a58070b8eaad71088651b14c598d841": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "94e11e113b1022df30f9e6bec7fa2283afc1e84e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d85d8b074dc39f49e48404662a4e9a682422f995": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d2e8713f5543e34802f8af00e6c42e2349beecd4": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "2363aa321c77338b6ffe989d26015edff4c88d90": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "5a6bce077be2f423479ec5cd89517a14e4db013f": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "558c97dbe45d0db29a0935f3d08d9b95b588f2af": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bad804b81943b306f0e89833b354c889fc57ee6d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "8ea42bf5f3fae32f9c874e86b184b13dfc890b39": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ef404cb1d0ada7ba9d5113359a6219f55bdb72e5": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "79973da84a4e210c5f4629a52056ae9661a4762d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ccc643e1b97650dd1cacc62e27c8953bbf01f2f1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bbbb16afd2747b179b45748c132380c0b4ef9412": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "149806e4511017d4693fcc51490ebe5176ec0541": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "96265ea7aef04c288110157cbfffa53583265adc": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4af8bf07c536373df9e159cc14f18c4dbcdec96a": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "75fe013279a9a55daccc4bbd66efb132c6e28584": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9dc7a4b6603bdf03b9b23ecc92e0e7bb206fa934": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "6408167e347f50fe3b6d606a1c9681b633c275c5": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d2d8bcc98882cae42d3275e35b1157515f8da4af": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "48899e32a8bee995f1e2fc1febcf0d834738cc7e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "71901f04926e1fa6575fadf1db34abf8f8a74ab2": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9042826ce9c0c38600dfccfadbbaf9eb4f21a287": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "11709f90dd774faa7c1e16c2b1edee5275811535": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "2a21852122e1556f933e00c1e32d7bf53e43b264": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3e5f27d0528dd184922bd45062cb4735d102614d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "52e7f3c583008db8b0aba79dad080882daed71c6": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bbdc2e0c417bfce2872d04a111a065c1c8aea217": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9d1655a776fee137f5d03546c0caf99759972fa0": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "60c41b9809d9bd5773b72f0cd5fc298e3d3fefdf": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "36df2b5cfe3e870d5fe3715a0737d28b3f0b36cf": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "79fcb80aca65799f6c4ca57c4ce3b59c3c3db2a0": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "a5ebfa87e1e875ff67d5d728b67cdce4d345e6e1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "cf43242c71cbe55ae63430c3775ac1ac5710b468": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1d09bf5c2b6af13310dbcb3868e4497807443528": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "62780159836ce9e651f517f03d4499166f0e28e3": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "e6550c58835a3c4cbd5e4d6a014bb8832509bdf8": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "6f01235d5d18f1ba8d7f43e14900021d1971371b": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "82802d7efb8965a8a3b861b2c3df0746b5036270": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "fa37da82d88d8bc09b0fd324c871d5a77c640771": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3902152c51faabda615feceefbaf548a378de11a": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "cdcfaf7dcd0badb9cda37d649fb7da9f4fdbd856": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "b0b478372514a814f6059d0048f329dfec04aac1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "498b99c759df1e2e21288a4d6d3d899564cb0b8f": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "71f61e9327e84007739f15d9f10bbd1ebfef262d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "05096a80f9b4a728df56856ffa0773b5b00df476": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9ad46dc6c64872adbe4b93206d5631268c580244": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4ffa2e664685dab770cb5e500e2c9bdaac49504f": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "c955fabf3f86ea25f08f9fd40bc9f909a63a7b07": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "5807cb39f10b10c26aaf2d81798cc882a76a75cc": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "8776a101b9de2895d818d39cd31ddc298c23cac2": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "14d461657615f2735cedc6f45e0bfeb378a501a1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "771e15c12c1c6757d912f55b7e5e5dd05b38d41a": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "e6ccd2ba1a3f32ee3c5eec060339f30162d65898": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "fdbd366d769ef7f4e2dd113d5c006a60659ae9c2": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4b00eade1bba97375e747579324382c39b0aa79e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1debb991177ca54c102587b7049d9cf72e99c11e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "43495549cc3830ca9adea3316b74b517f785ea57": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3897da1f28dfcb6219b1aed3e10e926e5220800a": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ce9c51d7b6603bf8359e12578b50bace9f3ee596": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bbfe8aaa43dd975d863eed556f696c3c6fa4a6ae": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "b010f360c01d08fba98591b484b23556ef301dc2": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1d33ad81235a934b18d8f5d6425c51ad0b56ea8d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "189b4a32f8fdb69d52aca26a2e6386caa4ed5e86": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "af7b031176a365ec501766dfce77b4388d700093": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "cb2fa11fb0209aa4f079b1b5d631f6fbec006e9d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "033a9f929b607c5c11667185e951bcc803ad9f28": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "a503bd6bf944524e7016d68471c5a4503ca1122d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "627a08618164c812c203b3a6f14a2799d06242fc": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "b5ddaa3775f3ef94d960c40d2b71e39853ec1067": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "407c900716f24a1317e56f7551240c250d2ed825": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bd4c8dc4586c07b100df15d19b8f4fbecd0d5af9": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "5b5b4b460c44e70a3882b27d6d5b5d3297cda1de": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "8efd690c697d21de785fd2ebb4b5dcc158b4aafa": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "a2ae26afbbe491581dc96aecc4b47681d5b4f890": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "2f042f1daeee708ba2b07643c202f38d57247c34": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "0f547699edd8755b09dc88ec65bb7471fc72d6a0": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "331148e3b4330a13e1e0504f6e1dcdd5f3a4dcd3": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "219738a5b285a3cc39342f6b00d3674222da7e70": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "17ee001d0ae2bf1328d82ff2ec95ad071ed3aff0": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ad86616695877b92aeaf60aa61015938f600d8ef": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "7ebec39f05a97c08470bdaa9a4a54139b84eb4a5": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1dfa325446d2644e0931329211a8619c989abdbd": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ac51b15e718e80c9ee56a0ff8301604ee0da41a3": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ab6e9f2cad37790e62c13f50c6ecf1786954af16": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "dac10cd550ba3dc563040096af8bb12928ec7414": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "7db1c772a2d8df1435988f26a548227bed8232d9": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "75f3827d1b02b2371e7642739cddc64e1a6b4b96": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d1eddb4e7be5a5eef24ffc79c74e143e5bd4204e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "040a22b6a3941f76c8064ff6aaaa3d64c21c424d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "52720ac8a6b8bdba2e62873a6007822bc0e6b38f": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "05c52be4e65141092327caf6b4c13e494a8cf1d1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d21568f553da7749198b6913a45d202f084a17e7": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "e6c7ae06f4c88e9dea785f94f8ae133195532226": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "aa6a8e843e983c4e012938357665f69e6c605a55": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "de3f6b59759645d9811b680240d608936332301f": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "9aeb767e2fc9e443350ff189e0fdfa7a5e8a4466": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4820124dc4b23f2dc562b21d73e150f7fd3c395a": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "d5c51d5f679891043a828018450948477780fad6": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "e1e6b4bdaab26bab4947e7757ec8b3b5091e3805": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "504fcf36060e50da611a23aaac9038091b341a74": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3abee23dfd8c3a7f8f8405f1bbaf0a22a5182dcb": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "097eb217024f8d3c475c5272cd3d0547c728661d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1ac724adb9629cb19261d51c14bb55e57b57abf4": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "792b888671bd347e0047a03c4a1d0c8afbf10904": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "390a2bb49eba377a43d7ea29ef8ac7f248ef70ce": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "84741a927edb4f9e9a7d3c5e000a5a1a39ea5d5e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ed3ceab0fde61fe220df6d18ec5e7023992db643": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "8b0ed6b34ffaf3b9920bf5d46b8e1ac04fd156b4": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "1798a238b036b4b5189e83a062a0b7cf4b373bcc": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "f8baffce2fa8e5856e57972ae173b391eaf25d80": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "aae205cabfe6b0e02cca98b811e97566fed8c6cf": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bc0404e9d0fbe5e999c18f49f8b6e8bfb7ff6c5d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "2d9b3598790c74f281c1fc8c55f34f20357080a7": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "49659f5e0995a2a77d02d8ae77984b857eba4d10": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4d6557a3e61b96ff2be91ff881af3f6705689c48": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4e3ec857e4fa7f06de661b7c029892e6601b828e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "166af64dbfa63aafa65bd358f990e599d5df85a3": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bec28935803ad2e08821424176706048cf545108": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "20e127cfa75b994be7c706cbd2e9a95ce5f644ad": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4f7d3b605f7c1045a2a8ba89b85caedd41966b4d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "49828871b098312d95bfdc9144c554fafabbd0b5": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "033a746bed9a2b4ae4617b2f682313eeaaa4eb26": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "b7496b8f3a33fd274fc33361dd04bbeb3c648b9d": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "200b92ee096c4f5d95e54078ae69b25ccbbe80a1": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "214ae9faf0231ea016b6e1c2ab92aad1551538e0": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "f6769a215a2019db72daa188aa87894cb1a87f55": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "df67398f98765d64a95c16d657c7a8d1c635b6b4": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "099259c88da71cdfe9a33301d6da7833d278f8ce": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "c3bdc3dea642c9f83fa9962b613ab9065007598c": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "bb21068c2c289b153c61988cb34072e972640843": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ca9458047f05de573595862ec6f2b9437b6e6a40": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "8224d336343d43b6efb689e0c96e70e6aa95b5e3": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "4adbfc7afb93ef7076b4505b0a5786bf9e841c6e": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3d42f36b14890566cc6a2acc965731919a0c3469": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "3a0f519d230bb4c5ff1dcc744ffeb3f1dfc6029f": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "974de4091876d1e3cac7483b90bd2d301f9877c8": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "589cd44df75af5743ca0dfe3a68b75fe6cf91501": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "a0d4ab91b27bf50c8eecfe01f80375656442b421": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "b0986bae066cbbd6c68990f8f73445c7076f2a86": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "ad1946556dfe954c864fd7ddf02ff6ef588f0a26": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    },
+    "b96564d55829f454f37068a7d884df309d678c21": {
+      "semanas": [
+        "2026-W38"
+      ],
+      "ocorrencias": 1,
+      "severidade": "info"
+    }
+  }
+}

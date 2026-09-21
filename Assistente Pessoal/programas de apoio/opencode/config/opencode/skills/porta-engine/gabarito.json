@@ -1,0 +1,32 @@
+{
+  "feature": "porta-engine",
+  "version": "1.0.0",
+  "descricao": "Firewall do Portao — onboarding staged de engines de tool-calling; telemetria OFF e lei, bench local antes de promocao, producao (9091/8097) intocada ate o crivo passar.",
+  "allow": {
+    "tools": ["read", "bash(read-only)", "write(somente em fitragem/engines/** e ~/.cache/cactus-needle/**)"],
+    "paths": [
+      "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/fitragem/**",
+      "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/tools/needle2/**",
+      "/tmp/opencode/**",
+      "~/.cache/cactus-needle/**"
+    ],
+    "formats": ["json", "cact", "bin", "md"],
+    "sampling": {"temp": 0, "top_k": 1, "top_p": 1, "max_tokens": 512},
+    "ports_smoke": [">=9100 descartavel — nunca 9091/8097"]
+  },
+  "deny": {
+    "tools": ["edit(em producao)", "tool-calling(sem crivo)"],
+    "paths": ["/etc/**", "/usr/**", "**/.env", "**/*.key", "~/.cactus_needle/**(criacao de telemetry_id)"],
+    "behaviors": [
+      "promover engine sem bench local no hardware do harness",
+      "rodar engine nova com telemetria habilitada (sem NEEDLE_TELEMETRY=0)",
+      "smoke nas portas de producao 9091/8097",
+      "confiar benchmark self-reported do vendor como CONFIRMED",
+      "auto-download HF no caminho critico sem needle fetch previo",
+      "substituir needle2 em producao sem veredito registrado no vault (R26)",
+      "fine-tune local LoRA quando o gate de confianca depender da confidence head",
+      "reusar processo entre pesos base e tuned (engine nao descarrega pesos)",
+      "score default alto sem evidencia"
+    ]
+  }
+}

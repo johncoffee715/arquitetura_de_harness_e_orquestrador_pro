@@ -7,7 +7,6 @@ Catálogo de todas as páginas do wiki — a rede neural do Gran-Mestre.
 - [[entities/hestia]] — Guardiã da conformidade
 - [[entities/atena]] — Revisão macro
 - [[entities/memory-keeper]] — Consciência neural
-- [[entities/reverser]] — Engenharia reversa (Ghidra)
 - [[entities/open-notebook]] — Open Notebook
 - [[entities/oh-my-pi]] — Oh My Pi
 - [[entities/granite-4.2-3b]] — Executor F4 / contexto-longo (Granite 4.2-3B)
@@ -18,6 +17,9 @@ Catálogo de todas as páginas do wiki — a rede neural do Gran-Mestre.
 - [[concepts/dev-loop]] — 3 níveis de iteração neural
 - [[concepts/ppr-cascade]] — Recuperação neural 5 estágios sem embeddings
 - [[concepts/llm-stack-cpu-r52]] — Inventário LLM Stack CPU R52
+- [[concepts/memory-caching-externo]] — MC como memória externa (paper Google + harness)
+- [[concepts/4-selfs-biblioteca-canais]] — Mapa S-ca/H-e/L-e/A-m × canais de apoio
+- [[concepts/cognicao-trio-biblioteca]] — Tríade cognitiva do Bibliotecário
 
 ## Decisões Arquivadas (neurônios)
 - [[decisoes/2026-07-25-gran-mestre-v7-obsidian]] — Cérebro cognitivo Obsidian
@@ -32,14 +34,18 @@ Catálogo de todas as páginas do wiki — a rede neural do Gran-Mestre.
 - [[pipeline/contexto-atual]] — Estado atual do pipeline
 
 ## Sumários
-- [[summaries/]]
+- [[summaries/2026-08-26-swap-llm-stack]] — Swap da stack LLM (2026-08-26)
+- [[summaries/memory-caching-rnns-growing-memory]] — Memory Caching (paper)
+- [[summaries/obsidian-cerebro-ia]] — Obsidian como cérebro-IA
+- [[summaries/yt-GlRHi8SmmQ0-intro-prog-ia]] — Pérola Nichonauta: programação com IA do zero
+- [[summaries/yt-DRcknO84EZk-qwen-claudecode-local]] — Qwen3.5-4B + Claude Code 100% local (llama.cpp)
 
 ## Respostas
 - [[answers/]]
 
 ## Relatórios
 - [[reports/]]
-- [[auditoria-2026-07-17]]
+- [[reports/auditoria-2026-07-17]]
 
 ## Catálogo de Skills
 - [[opencode-skills-index]] — Catálogo completo das skills

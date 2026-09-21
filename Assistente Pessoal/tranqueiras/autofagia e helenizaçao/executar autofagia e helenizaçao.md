@@ -1,16 +1,5 @@
 para aplicaçao universal use hefesto no modo MIX, Dev Loop e use todo arsenal do registro de acordo com as necessidades que voce identificar para executar de forma universal sempre decompilação, autofagia, helenizaçao e forja com excelencia em busca de features (hook, plugins, skills, subagents e agents, mcp, lsp, tools)de formar critetriosa, sistematica e categorica:
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
-- 
+- https://www.youtube.com/watch?v=24XZUFDRsrY
 - 
 - 
 - 

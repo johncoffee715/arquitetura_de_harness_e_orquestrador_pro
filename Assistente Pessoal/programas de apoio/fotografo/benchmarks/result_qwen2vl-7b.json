@@ -1,0 +1,42 @@
+{
+  "name": "qwen2vl-7b",
+  "ts": "2026-09-16T20:29:04",
+  "t1": {
+    "total": 5,
+    "ok": 5,
+    "detalhes": [
+      {
+        "img": "t1_bancada.jpg",
+        "ok": true,
+        "s": 11.4
+      },
+      {
+        "img": "t2_macro_solda.jpg",
+        "ok": true,
+        "s": 11.9
+      },
+      {
+        "img": "t3_produto.jpg",
+        "ok": true,
+        "s": 4.5
+      },
+      {
+        "img": "t4_cena.jpg",
+        "ok": true,
+        "s": 4.3
+      },
+      {
+        "img": "t5_ficha.jpg",
+        "ok": true,
+        "s": 1.7
+      }
+    ]
+  },
+  "t2": {
+    "total": 10,
+    "ok": 10
+  },
+  "raw_falhas": [],
+  "tok_s_media": 67.19,
+  "lat_media_s": 2.74
+}

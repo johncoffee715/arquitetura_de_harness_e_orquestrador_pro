@@ -1,0 +1,4 @@
+root ::= "{" ws "\"intent\"" ws ":" ws intent ws "," ws "\"confidence\"" ws ":" ws number ws "," ws "\"skill\"" ws ":" ws "\"sdd\"" ws "}"
+intent ::= "\"vault.query\"" | "\"vault.store\"" | "\"code\"" | "\"command\"" | "\"chitchat\"" | "\"unknown\""
+number ::= "0" "." [0-9]+ | "1" "." "0"*
+ws ::= [ \t\n]*

@@ -1,0 +1,3 @@
+# NeoHorse-4B — gramática GBNF (R85 .gbnf)
+root ::= "{" space "\"status\"" ":" space "\"ok\"" "," space "\"nota\"" ":" space "9.5" "}"
+space ::= [ \t\n\r]*

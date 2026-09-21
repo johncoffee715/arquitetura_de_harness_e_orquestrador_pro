@@ -151,4 +151,4 @@
 {"timestamp": "2026-08-19T12:49:08.462387+00:00", "level": "ERROR", "message": "Registry corrompido: Expecting property name enclosed in double quotes: line 1 column 2 (char 1)", "script": "arsenal"}
 {"timestamp": "2026-09-04T01:39:58.315717+00:00", "level": "INFO", "message": "Reconstruindo registry via /mnt/dados/Assistente Pessoal/harness/core/integration.py", "script": "arsenal"}
 {"timestamp": "2026-09-04T01:39:58.390516+00:00", "level": "INFO", "message": "Registry reconstruído e salvo atômicamente: /mnt/dados/Assistente Pessoal/harness/registry.json", "script": "arsenal"}
-{"timestamp": "2026-09-04T01:39:58.390676+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /mnt/dados/Assistente Pessoal/opencode/config/agents/gran-mestre/agent-registry.json", "script": "arsenal"}
+{"timestamp": "2026-09-04T01:39:58.390676+00:00", "level": "WARNING", "message": "Agent registry não encontrado: /mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/agents/gran-mestre/agent-registry.json", "script": "arsenal"}

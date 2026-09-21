@@ -4,7 +4,7 @@
 # Vault cognitivo INVISÍVEL (escrita só via memory_keeper.sh, fora da jaula).
 # Uso: secure_runner.sh [--net] -- comando [args...]
 BASE="/mnt/dados/Assistente Pessoal/harness/sandbox"
-HARNESS_RO=/mnt/dados/opencode/harness
+HARNESS_RO=/mnt/dados/Assistente Pessoal/harness
 TASK_ID="${TASK_ID:-$(date +%s)-$$}"
 WORKSPACE="/tmp/opencode_tasks/${TASK_ID}"
 DONE_DIR="/tmp/opencode_tasks/_done"

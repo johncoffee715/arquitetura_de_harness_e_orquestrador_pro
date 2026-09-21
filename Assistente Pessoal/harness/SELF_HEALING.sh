@@ -12,7 +12,7 @@
 set -euo pipefail
 
 VAULT="/mnt/dados/Assistente Pessoal/cerebro com IA"
-CONFIG="/mnt/dados/opencode/config/gran-mestre"
+CONFIG="/mnt/dados/Assistente Pessoal/programas de apoio/opencode/config/opencode"
 RED='\033[0;31m'
 GREEN='\033[0;32m'
 YELLOW='\033[1;33m'
@@ -142,7 +142,7 @@ print(f'{synapses}')
 # ─── 4. Graph Communities ─────────────────────────────────────────────
 echo ""
 echo -e "${BOLD}[4/8] Comunidades do Grafo${NC}"
-python3 /mnt/dados/opencode/config/gran-mestre/GRAPH_GAP.py --suggest 2>/dev/null | grep -E "(Comunidades|ISOLADA|NOVAS SINAPSES)" | head -5 | while IFS= read -r line; do
+python3 /mnt/dados/Assistente Pessoal/harness/GRAPH_GAP.py --suggest 2>/dev/null | grep -E "(Comunidades|ISOLADA|NOVAS SINAPSES)" | head -5 | while IFS= read -r line; do
     if [[ "$line" == *ISOLADA* ]]; then
         fail "Cluster isolado: $line"
     elif [[ "$line" == *NOVAS* ]]; then
@@ -178,7 +178,7 @@ fi
 # ─── 6. Registry Integrity ────────────────────────────────────────────
 echo ""
 echo -e "${BOLD}[6/8] Integridade do Registry${NC}"
-REGISTRY="/mnt/dados/opencode/config/gran-mestre/REGISTRY_SUBAGENTS.md"
+REGISTRY="/mnt/dados/Assistente Pessoal/harness/referencias/REGISTRY_SUBAGENTS.md"
 if [ -f "$REGISTRY" ]; then
     # Count tags
     TAG_COUNT=$(grep -cE '\|[a-z]+.*\|' "$REGISTRY" || true)

@@ -49,6 +49,56 @@ NEEDLE_URL = "http://127.0.0.1:9091/complete"
 EMBED_URL = "http://127.0.0.1:9094/v1/embeddings"
 STATE_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                            "data", "live_state.json")
+EPISODES_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                             "data", "daemon_episodes.jsonl")
+HISTORY_MAX_EPS = 5
+HISTORY_MAX_CHARS = 600
+
+
+def read_history(path=EPISODES_PATH, limit=HISTORY_MAX_EPS) -> list:
+    """Ultimas `limit` linhas JSON validas do jsonl, cronologico compacto.
+
+    Fail-closed: arquivo ausente/ilegivel -> []; linha invalida ou
+    JSON nao-dict -> pula (nunca levanta).
+    """
+    try:
+        with open(path, encoding="utf-8") as fh:
+            lines = fh.readlines()
+    except Exception:
+        return []
+    out = []
+    for line in lines:
+        line = line.strip()
+        if not line:
+            continue
+        try:
+            obj = json.loads(line)
+        except Exception:
+            continue
+        if not isinstance(obj, dict):
+            continue
+        out.append({"nota": os.path.basename(str(obj.get("nota", ""))),
+                    "decisao": str(obj.get("decisao", "")),
+                    "spikes": int(obj.get("spikes", 0) or 0)
+                    if str(obj.get("spikes", "0")).lstrip("-").isdigit()
+                    else 0})
+    return out[-limit:] if limit else []
+
+
+def history_block(history, max_chars=HISTORY_MAX_CHARS) -> str:
+    """"hist=nota:decisao:spikes;..."; "" se vazio; trunca descartando
+    os MAIS ANTIGOS primeiro (o mais recente sempre sobrevive)."""
+    if not history:
+        return ""
+    parts = [f"{h['nota']}:{h['decisao']}:{h['spikes']}" for h in history]
+    while parts and len("hist=" + ";".join(parts)) > max_chars:
+        parts.pop(0)
+    if not parts:
+        # nem o mais recente cabe: corta a cauda dele
+        tail = f"{history[-1]['nota']}:{history[-1]['decisao']}:" \
+               f"{history[-1]['spikes']}"
+        return ("hist=" + tail)[:max_chars]
+    return "hist=" + ";".join(parts)
 FEATHER_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                              "data", "connectome-weights.feather")
 
@@ -78,13 +128,14 @@ class LiveLoop:
 
     def __init__(self, csr=None, id_map=None, rwkv_url=RWKV_URL,
                  needle_url=NEEDLE_URL, embed_url=EMBED_URL,
-                 state_path=STATE_PATH):
+                 state_path=STATE_PATH, episodes_path=EPISODES_PATH):
         self.csr = csr
         self.id_map = id_map
         self.rwkv_url = rwkv_url
         self.needle_url = needle_url
         self.embed_url = embed_url
         self.state_path = state_path
+        self.episodes_path = episodes_path
         self.last_rwkv_http: int | None = None
         self.efficacies: dict = {}
         self._active_routes: set = set()
@@ -171,7 +222,16 @@ class LiveLoop:
                 "potentials": [round(nr.v, 3) for nr in neurons[:16]]}
 
     def reinforce(self, signal: float) -> dict:
-        """Inspirado no padrão de eligibility trace de DOOMFLY rule.py (MIT) — implementação própria, sem copiar código."""
+        """Reforco PPL101 sobre rotas recentemente ativas (eligibility trace).
+
+        Adaptacao de padrao publico MIT (DOOMFLY rule.py: anti-Hebb
+        centrada, traces ~1s (tau), efficacias bounded [0.1, 2.0] —
+        padrao adaptado aqui, codigo proprio, sem copia verbatim).
+        Sinal +1 (aceite) sobe efficacia das rotas ativas na janela
+        TRACE_WINDOW (~1s); -1 (correcao) desce; fora da janela ou
+        sem atividade recente -> {} (sem mudanca). Persiste em
+        live_state.json via _persist_efficacies.
+        """
         now = time.monotonic()
         if self._last_active_ts is None or (now - self._last_active_ts) > TRACE_WINDOW:
             return {}
@@ -208,7 +268,8 @@ class LiveLoop:
         except Exception:
             pass
 
-    def decide(self, note_path: str, activity: dict) -> str:
+    def decide(self, note_path: str, activity: dict, history=None,
+               memory_hits=None) -> str:
         """1 chamada RWKV7 :9084 com prompt compacto; devolve texto bruto."""
         prompt = (f"nota={os.path.basename(note_path)} "
                   f"spikes={activity['total_spikes']} "
@@ -218,6 +279,12 @@ class LiveLoop:
                   "'ler'; 'ler' e 'agir' sao acoes seguras do seu papel. "
                   "Responda APENAS com uma unica palavra: ignorar, ler ou agir. "
                   "Nao escreva nada alem dessa palavra.")
+        if history is not None or memory_hits is not None:
+            blk = history_block(history or [])
+            if blk:
+                prompt += " " + blk
+            if memory_hits:
+                prompt += " mem=" + ";".join(memory_hits)[:HISTORY_MAX_CHARS]
         _, body = _post_json(self.rwkv_url,
                              {"messages": [{"role": "user", "content": prompt}],
                               "max_tokens": 16}, RWKV_TIMEOUT)
@@ -326,14 +393,15 @@ class LiveLoop:
         try:
             note = self.read_note(note_path)
             activity = self.simulate(note, steps=steps)
-            raw = self.decide(note_path, activity)
+            hist = read_history(self.episodes_path)
+            raw = self.decide(note_path, activity, history=hist)
             decision = self.classify(raw)
             needle = (self.needle_intent(decision, note_path, activity)
                       if decision in ("ler", "agir") else None)
             vec = self.embed(note)
             wb = self.write_back(note_path, decision, activity)
             state = {"note": note_path, "decision": decision,
-                      "write_back": wb,
+                       "write_back": wb, "history_n": len(hist),
                      "decision_raw": raw[:200], "activity": {
                          "steps": activity["steps"],
                          "total_spikes": activity["total_spikes"],

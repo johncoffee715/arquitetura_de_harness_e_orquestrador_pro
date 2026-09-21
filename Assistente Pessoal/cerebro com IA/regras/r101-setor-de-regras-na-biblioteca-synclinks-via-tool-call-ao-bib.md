@@ -39,3 +39,25 @@ mais fluido e corrigindo as debilidades iniciais do LLM de precisão crítica (j
 <Exemplo canônico (2026-09-11)>
 - Orquestrador precisa da R93 (preservação) → tool call ao Bibliotecário → devolve só a R93
   (trecho + path `regras/R93-preservacao-orquestrador.md`) → prefill economizado ~150KB → workflow fluido.
+
+## Ingestão por upgrade (R108-canônica — input de regra nova)
+
+**Gatilho**: sempre que o user gerar input de nova regra universal guardrail, o orquestrador
+da session DEVE varrer TODAS as regras coexistentes (via `index.md` + search do Bibliotecário,
+R100) ANTES de criar qualquer nota nova.
+
+**Decisão**: fazer **UPGRADE** na regra mais próxima e coerente (score mais alto) — nunca
+criar arquivo novo por default. Criar nota nova SÓ se nenhuma candidata passar de 60 (escala
+R34) e com justificativa de gap explícita registrada.
+
+**Objetivo**: otimizar a biblioteca (espaço + tempo), ganhar t/s (prefill menor ao
+orquestrador), aperfeiçoar o ecossistema e a mente coletiva no Obsidian.
+
+**Procedimento**:
+1. Buscar (lexical + semântico) em `regras/` — `index.md` + `regras.py search`.
+2. Ranquear top-3 candidatas com scores (R34).
+3. Enxertar o delta na TOP-1 (append cirúrgico, sem remoção de conteúdo existente).
+4. Auditar synclink em `index.md` + `nucleo-irredutivel.md` (drift = GAP).
+
+**Anti-reinvenção**: instanciação concreta de R8 (catálogo primeiro) para o setor de regras —
+regra sem synclink = GAP (conforme R101 existente).

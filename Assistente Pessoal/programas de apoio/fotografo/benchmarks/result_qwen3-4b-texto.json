@@ -1,0 +1,78 @@
+{
+  "name": "qwen3-4b-texto",
+  "ts": "2026-09-16T21:09:13",
+  "t1": {
+    "total": 5,
+    "ok": 0,
+    "detalhes": [
+      {
+        "img": "t1_bancada.jpg",
+        "ok": false,
+        "s": 0.1,
+        "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+      },
+      {
+        "img": "t2_macro_solda.jpg",
+        "ok": false,
+        "s": 0.0,
+        "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+      },
+      {
+        "img": "t3_produto.jpg",
+        "ok": false,
+        "s": 0.0,
+        "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+      },
+      {
+        "img": "t4_cena.jpg",
+        "ok": false,
+        "s": 0.0,
+        "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+      },
+      {
+        "img": "t5_ficha.jpg",
+        "ok": false,
+        "s": 0.0,
+        "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500"
+      }
+    ]
+  },
+  "t2": {
+    "total": 10,
+    "ok": 10
+  },
+  "raw_falhas": [
+    {
+      "fase": "t1",
+      "img": "t1_bancada.jpg",
+      "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500",
+      "bruto": ""
+    },
+    {
+      "fase": "t1",
+      "img": "t2_macro_solda.jpg",
+      "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500",
+      "bruto": ""
+    },
+    {
+      "fase": "t1",
+      "img": "t3_produto.jpg",
+      "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500",
+      "bruto": ""
+    },
+    {
+      "fase": "t1",
+      "img": "t4_cena.jpg",
+      "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500",
+      "bruto": ""
+    },
+    {
+      "fase": "t1",
+      "img": "t5_ficha.jpg",
+      "erro": "Server error '500 Internal Server Error' for url 'http://127.0.0.1:9188/v1/chat/completions'\nFor more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/500",
+      "bruto": ""
+    }
+  ],
+  "tok_s_media": 99.88,
+  "lat_media_s": 0.66
+}

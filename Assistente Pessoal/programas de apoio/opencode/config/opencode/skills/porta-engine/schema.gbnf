@@ -1,0 +1,34 @@
+root ::= "{" ws "\"status\":" ws status ws ("," ws field)* ws "}" ws
+status ::= "\"PASS\"" | "\"FAIL\"" | "\"WARN\""
+field ::= "\"error\":" ws string
+        | "\"binary\":" ws string
+        | "\"sha256\":" ws string
+        | "\"size_bytes\":" ws int
+        | "\"telemetry_markers\":" ws "[" ws (string (ws "," ws string)*)? ws "]"
+        | "\"gate\":" ws string
+        | "\"needle_telemetry\":" ws (string | "null")
+        | "\"do_not_track\":" ws (string | "null")
+        | "\"archive\":" ws string
+        | "\"tag\":" ws string
+        | "\"generation\":" ws (int | "null")
+        | "\"port\":" ws int
+        | "\"checks\":" ws "[" ws (checkobj (ws "," ws checkobj)*)? ws "]"
+        | "\"passed\":" ws string
+        | "\"rounds\":" ws int
+        | "\"decode_tts_medio\":" ws number
+        | "\"latencia_media_s\":" ws number
+        | "\"schema_fails\":" ws int
+        | "\"confidence_calibrada\":" ws bool
+        | "\"baseline_tts\":" ws number
+        | "\"razao_baseline\":" ws number
+        | "\"verdict\":" ws ("\"PROMOVE\"" | "\"MANTEM\"" | "\"REPROVA\"")
+        | "\"stage\":" ws ("\"S0\"" | "\"S1\"" | "\"S2\"" | "\"S3\"" | "\"S4\"" | "\"S5\"")
+        | "\"engine\":" ws string
+        | "\"evidence\":" ws string
+        | "\"timestamp\":" ws string
+checkobj ::= "{" ws "\"check\":" ws string ws "," ws "\"pass\":" ws bool ws ("," ws "\"latency_s\":" ws number)? ws "}"
+bool ::= "true" | "false"
+string ::= "\"" ([^"\\] | "\\" .)* "\""
+int ::= "-"? [0-9]+
+number ::= "-"? [0-9]+ ("." [0-9]+)?
+ws ::= [ \t\n]*

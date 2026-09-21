@@ -67,3 +67,13 @@ Assistente Pessoal/harness/watchdog/orchestrator-*.state
 Assistente Pessoal/opencode/state/watcher/*.jsonl
 Assistente Pessoal/harness/watchdog/orchestrator-state.json
 Assistente Pessoal/opencode/repos/*.git-historico/
+
+# Sessao 2026-09-21 (push harness-pro GH001): venvs/binarios-JDK fora do git
+Assistente Pessoal/programas de apoio/*/venv*/
+Assistente Pessoal/programas de apoio/**/venv*/
+**/site-packages/
+Assistente Pessoal/programas de apoio/opencode/bin/opencode
+Assistente Pessoal/programas de apoio/opencode/tools/jdk-*/
+**/*.co
+**/ld.lld
+**/nvdisasm

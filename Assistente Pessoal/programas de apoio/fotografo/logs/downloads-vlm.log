@@ -1,0 +1,43 @@
+[2026-09-16T18:13:15-03:00] cadeia vlm inicio
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/home/johncoffee/pesos confyui/checkpoints/ltx-video-2b-v0.9.5.safetensors
+OK ltxvideo
+/home/johncoffee/.local/lib/python3.14/site-packages/huggingface_hub/cli/download.py:158: UserWarning: Ignoring `--include` since filenames have been explicitly set.
+  warnings.warn("Ignoring `--include` since filenames have been explicitly set.")
+Error: File not found in repository.
+URL: https://huggingface.co/bartowski/Qwen2-VL-2B-Instruct-GGUF/resolve/main/%2Ammproj%2Af16%2A
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+FALHA qwen2vl2b
+/home/johncoffee/.local/lib/python3.14/site-packages/huggingface_hub/cli/download.py:158: UserWarning: Ignoring `--include` since filenames have been explicitly set.
+  warnings.warn("Ignoring `--include` since filenames have been explicitly set.")
+Error: File not found in repository.
+URL: https://huggingface.co/bartowski/Qwen2-VL-7B-Instruct-GGUF/resolve/main/%2Ammproj%2Af16%2A
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+FALHA qwen2vl7b
+/home/johncoffee/.local/lib/python3.14/site-packages/huggingface_hub/cli/download.py:158: UserWarning: Ignoring `--include` since filenames have been explicitly set.
+  warnings.warn("Ignoring `--include` since filenames have been explicitly set.")
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+Error: File not found in repository.
+URL: https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf/resolve/main/%2Ammproj%2A
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+FALHA minicpm
+[2026-09-16T18:15:02-03:00] fim vlm
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen2vl-2b/Qwen2-VL-2B-Instruct-Q4_K_M.gguf
+OK Qwen2-VL-2B-Instruct-Q4_K_M.gguf
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen2vl-2b/mmproj-Qwen2-VL-2B-Instruct-f16.gguf
+OK mmproj-Qwen2-VL-2B-Instruct-f16.gguf
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen2vl-7b/Qwen2-VL-7B-Instruct-Q4_K_M.gguf
+OK Qwen2-VL-7B-Instruct-Q4_K_M.gguf
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen2vl-7b/mmproj-Qwen2-VL-7B-Instruct-f16.gguf
+OK mmproj-Qwen2-VL-7B-Instruct-f16.gguf
+Error: File not found in repository.
+URL: https://huggingface.co/openbmb/MiniCPM-V-2_6-gguf/resolve/main/MiniCPM-V-2_6-Q4_K_M.gguf
+Hint: set HF_DEBUG=1 as environment variable for full traceback.
+FALHA MiniCPM-V-2_6-Q4_K_M.gguf
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+path=/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/minicpmv26/mmproj-model-f16.gguf
+OK mmproj-model-f16.gguf
+fim-vlm2

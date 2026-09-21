@@ -1,0 +1,30 @@
+{
+  "skill": "aprendiz",
+  "versao": "1.0.0",
+  "data": "2026-09-18",
+  "fontes_permitidas": {
+    "video": {"handler": "R107 yt-dlp", "raw": "cerebro com IA/textos, pdf e esquemas/"},
+    "ebook_pdf": {"handler": "book-to-skill", "raw": "cerebro com IA/raw/"},
+    "user_input": {"handler": "gari/decision-log", "raw": "cerebro com IA/decisoes/"},
+    "a2a": {"handler": "loop refutacao", "raw": "cerebro com IA/aprendizados/"}
+  },
+  "limiares": {
+    "gate_confianca": 0.6,
+    "max_topicos_delta": 3,
+    "deltas_aprovados_min_semana": 3,
+    "semanas_degrade_mensal": 4,
+    "semanas_arquivar": 8
+  },
+  "selfs_validos": ["S-ca", "H-e", "L-e", "A-m"],
+  "paths_allowlist": [
+    "cerebro com IA/aprendizados/",
+    "cerebro com IA/pending_review/",
+    "cerebro com IA/raw/",
+    "cerebro com IA/decisoes/"
+  ],
+  "llm_decisor": {
+    "slot_sugerido": ":9086",
+    "modo": "gbnf_estrito",
+    "prosa_proibida": true
+  }
+}

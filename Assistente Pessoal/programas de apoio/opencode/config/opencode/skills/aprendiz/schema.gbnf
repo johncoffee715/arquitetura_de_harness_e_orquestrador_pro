@@ -1,0 +1,13 @@
+# schema.gbnf — delta acionável do aprendiz (2026-09-18)
+# Unidade de aprendizado: o que a ingesta produz. Evidência + self obrigatórios.
+root       ::= "{" ws "\"delta\"" ws ":" ws delta-obj ws "}"
+delta-obj  ::= "{" ws kv "\"id\"" ws string "}"
+# validação rica (self, confiança, evidência) acontece em mecanica.py — determinístico.
+# Esta gramática garante a forma mínima para o LLM barato tipificar a fonte:
+# classificacao ::= "{" ws "\"self\"" ws ":" self "," ws "\"confianca\"" ws ":" zero-um ws "}"
+classificacao ::= "{" ws "\"self\"" ws ":" ws self "," ws "\"confianca\"" ws ":" ws zero-um ws "}"
+self       ::= "\"S-ca\"" | "\"H-e\"" | "\"L-e\"" | "\"A-m\""
+zero-um    ::= "0" ("." [0-9]+)? | "1" ("." "0"+)?
+string     ::= "\"" [^"\\]{1,120} "\""
+kv         ::= [^}]*  # permissivo: a validação real é do mecanica.py
+ws         ::= [ \t\n]*

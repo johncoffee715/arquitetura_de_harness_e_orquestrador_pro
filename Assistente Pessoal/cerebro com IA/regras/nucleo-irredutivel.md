@@ -71,7 +71,7 @@ data: 2026-09-11
 | R57 | Endless-think ⇒ no-think |
 | R58 | Cold/warm |
 | R59 | t/s-per-KV-GB |
-| R60 | Ornith ctx 131072 |
+| R60 | DESCONTINUADA 2026-09-18 — ctx efetivo Ornith = 262144 nativo |
 | R61 | Sampling por responsabilidade |
 | R62 | Geometria ≠ custo |
 | R63 | Watchdog-decode |
@@ -112,3 +112,8 @@ data: 2026-09-11
 | R100 | Consulta Bibliotecário |
 | R101 | Setor regras + synclinks |
 | R102 | Programas de apoio — path canônico |
+| R103 | Régua justa — crivo A/B |
+| R104 | Criva piso quantização |
+| R105 | Guardrail visão pré-entrega |
+| R106 | Kronjob semanal Cientista (candidata — gate semanal) |
+| R107 | Transcrição automática de vídeo lido |

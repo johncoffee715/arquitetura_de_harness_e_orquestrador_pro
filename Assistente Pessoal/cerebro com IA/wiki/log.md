@@ -103,3 +103,22 @@ Histórico cronológico de operações no wiki — ativações neurais.
 ## 2026-09-14 — HMI SNN viva (motor índice + 4 regiões ligadas ao live_loop)
 - Índice motor: `wiki/concepts/snn/snn-motor-indice.md` (mapa módulo→região → live_loop)
 - 4 regiões com seção 'Estado vivo': índice/topologia + MB/KC + CX/navegação + PPL101/valência
+
+## [2026-09-16] ingest | Memory Caching: RNNs with Growing Memory (arxiv-2602.24281)
+- Paper Google Research real e verificado (Behrouz et al., fev/2026, ICML 2026): segmentos + checkpoints de hidden state + agregação, O(N·L)
+- [[summaries/memory-caching-rnns-growing-memory]] + [[concepts/memory-caching-externo]] (mapa MC↔harness + ruptura honesta + esboço Experimento B)
+- Correlação vault: padrão aplica como engenharia (notas atômicas/MOCs/RAG), não como arquitetura diferenciável
+
+## [2026-09-16] ingest | Pérolas YT destiladas + mapa 4-selfs (fila biblioteca-canais)
+- [[summaries/yt-GlRHi8SmmQ0-intro-prog-ia]] (Nichonauta, L-e/S-ca) — dual ferramentas×engenharia
+- [[summaries/yt-DRcknO84EZk-qwen-claudecode-local]] (L-e/S-ca) — VLM llama.cpp + Claude Code; receita = a do nosso fotógrafo
+- [[concepts/4-selfs-biblioteca-canais]] — agregador canônico dos 4 eixos × canais
+- Guardrail novo: linter de vault (skills/bibliotecario/tooling/vault_lint.py) — ingestão só vale se script verde
+
+## [2026-09-17] ingest | Spec vídeo P2 — transcrições + veredito honesto (fila biblioteca-canais)
+- [[../textos, pdf e esquemas/0LtdXQ_deUA-transcricao-PT]] (Astra 6 = agente cloud, 218 cues) — IRRELEVANTE p/ diffusion local
+- [[../textos, pdf e esquemas/YD0LbCaLOv4-transcricao-PT]] (NoConvert v3.0.5, 231 cues) — conversor de formato, não gerador
+- YX90I23Ys1Y (Director Studio OSS): sem legendas (yt-dlp: "has no subtitles") — spec via descrição (MiniMax H3 cloud + Qwen3.8-27B diretor + ComfyUI API)
+- [[../marca/spec-video-p2-2026-09-17]] — veredito: vault SEM rival ao LTX-2B; ranking + gaps (UltraSharp/COMFY-OFF/RIFE)
+## [2026-09-20] ingest | hefesto-fastvideo (hao-ai-lab/FastVideo) -> skills video-local + porta-modelo + swap-guard
+## [2026-09-20] ingest | hefesto-h3mix (doc gerador-prompts-H3 + Ilpwa9vqZ7s) -> skill prompt-h3 + runbook H3 no video-local

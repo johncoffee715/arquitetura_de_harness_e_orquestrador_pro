@@ -1,0 +1,68 @@
+{
+  "1": {
+    "class_type": "ImageOnlyCheckpointLoader",
+    "inputs": {
+      "ckpt_name": "svd_xt_1_1.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "{{REFERENCE_IMAGE}}"
+    }
+  },
+  "3": {
+    "class_type": "SVD_img2vid_Conditioning",
+    "inputs": {
+      "clip_vision": ["1", 1],
+      "init_image": ["2", 0],
+      "vae": ["1", 2],
+      "width": 1024,
+      "height": 576,
+      "video_frames": "{{FRAMES}}",
+      "motion_bucket_id": "{{MOTION_BUCKET_ID}}",
+      "fps": 6,
+      "augmentation_level": 0.0
+    }
+  },
+  "4": {
+    "class_type": "KSampler",
+    "inputs": {
+      "model": ["1", 0],
+      "positive": ["3", 0],
+      "negative": ["3", 1],
+      "latent_image": ["3", 2],
+      "seed": "{{SEED}}",
+      "steps": 20,
+      "cfg": 7.0,
+      "sampler_name": "euler",
+      "scheduler": "normal",
+      "denoise": 1.0
+    }
+  },
+  "5": {
+    "class_type": "VideoLinearCFGGuidance",
+    "inputs": {
+      "model": ["1", 0],
+      "min_cfg": 1.0
+    }
+  },
+  "6": {
+    "class_type": "VAEDecode",
+    "inputs": {
+      "samples": ["4", 0],
+      "vae": ["1", 2]
+    }
+  },
+  "7": {
+    "class_type": "SaveAnimatedWEBP",
+    "inputs": {
+      "images": ["6", 0],
+      "filename_prefix": "final_svd",
+      "fps": 6,
+      "lossless": false,
+      "quality": 90,
+      "method": 4
+    }
+  }
+}

@@ -1,0 +1,7 @@
+== CRIVO qwen3-4b-texto ==
+T1 visão : 0/5
+T2 texto : 10/10
+tok/s médio: 99.88 | lat média: 0.66s
+raw_falhas: 5
+artefato: /mnt/dados/Assistente Pessoal/programas de apoio/fotografo/benchmarks/result_qwen3-4b-texto.json
+EXIT:0

@@ -5,12 +5,12 @@
 #   3. Valida inferência real em cada endpoint
 #   4. Emite relatório JSON (para orquestrador + redflags)
 # Uso: ./auto-up.sh [--quiet]
-# Saída: /mnt/dados/logs/auto-up-<ts>.json  (fonte de verdade do estado)
+# Saída: /mnt/dados/Assistente Pessoal/harness/logs/auto-up-<ts>.json  (fonte de verdade do estado)
 set -uo pipefail
 
 MODELS_DIR="/mnt/dados/Assistente Pessoal/modelos LLM"
 HARNESS="/mnt/dados/Assistente Pessoal/harness"
-LOG_DIR="/mnt/dados/logs"
+LOG_DIR="/mnt/dados/Assistente Pessoal/harness/logs"
 mkdir -p "$LOG_DIR"
 QUIET="${1:-}"
 TS="$(date +%Y%m%d-%H%M%S)"

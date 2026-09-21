@@ -14,11 +14,13 @@ PORT="${2:-8081}"
 GRAMMAR="${3:-}"
 CTX="${4:-4096}"
 SLOTS="${5:-4}"
-LOG_DIR="/mnt/dados/logs"
+LOG_DIR="/mnt/dados/Assistente Pessoal/harness/logs"
 mkdir -p "$LOG_DIR"
 LOG="$LOG_DIR/llama-server-$(basename "$MODEL" .gguf).log"
 
-pkill -f llama-server 2>/dev/null || true
+# NUNCA pkill amplo: starters manuais não podem derrubar o stack (CPU slots
+# jamais caem). Escopo restrito à porta alvo.
+pkill -f "llama-server.*--port $PORT" 2>/dev/null || true
 sleep 2
 
 ARGS=(-m "$MODEL" -ngl 999 -dev Vulkan0 --port "$PORT" --host 127.0.0.1 -c "$CTX" -np "$SLOTS")
@@ -41,7 +43,9 @@ esac
 
 echo "[start-llama] Modelo: $MODEL | Porta: $PORT | ctx: $CTX | slots: $SLOTS"
 echo "[start-llama] GPU-only (-ngl 999, Vulkan0) — proibido offload CPU"
-setsid /mnt/dados/llama.cpp-master/build/bin/llama-server "${ARGS[@]}" > "$LOG" 2>&1 &
+# Binário canônico (respawn.sh): o path llama.cpp-master NÃO existe no disco.
+CANON_SERVER="/mnt/dados/Assistente Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server"
+setsid "$CANON_SERVER" "${ARGS[@]}" > "$LOG" 2>&1 &
 echo "PID=$! LOG=$LOG"
 sleep 15
 grep -E "model loaded|listening|error|failed|out of memory" "$LOG" | tail -5 || true

@@ -15,7 +15,7 @@ def _norm(text: str) -> str:
 class CapabilityIndex:
     """Maps registry agent capabilities to local models via greedy set cover."""
 
-    DEFAULT_REGISTRY = "/mnt/dados/opencode/registry/agent-registry.json"
+    DEFAULT_REGISTRY = "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/repos/arquitetura_harness_pro/registry/agent-registry.json"
     FALLBACK_REGISTRY = "/mnt/dados/Assistente Pessoal/harness/registry.json"
 
     TAG_KEYWORDS = {

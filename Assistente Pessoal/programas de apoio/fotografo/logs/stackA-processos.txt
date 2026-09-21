@@ -1,0 +1,11 @@
+1088081 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1088087 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1088093 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1088106 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1088114 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1088126 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1122979 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1579145 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1622906 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1699494 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m
+1814208 Pessoal/programas de apoio/opencode/llama.cpp/bin/llama-server.real -m

@@ -10,7 +10,7 @@ Data: 2026-08-31 · Origem: diagnóstico Gran-Mestre (sessão 2026-08-31)
 - WARM sob demanda sozinho NÃO resolve: mesmo só GM+córtex ≈ 32GB > 31GB.
 - Correção completa = ctx 32768 (libera ~7.5GB) + WARM sob demanda.
 
-## Passo 1 — Editar `/mnt/dados/Assistente Pessoal/opencode/scripts/start-stack.sh`
+## Passo 1 — Editar `/mnt/dados/Assistente Pessoal/programas de apoio/opencode/scripts/start-stack.sh`
 
 ### 1a. Reduzir ctx do GM (seção gerada, bloco launch 8083)
 Trocar `-c 262144` por `-c 32768`:
@@ -62,27 +62,27 @@ in_targets() { local p="$1" t; for t in "${TARGETS[@]:-}"; do [ "$t" = "$p" ] &&
 ### 1d. Health check final (linha ~110)
 Trocar `for p in 8083 9084 9086 9088 9090; do` por `for p in "${ESSENTIAL_PORTS[@]}"; do`.
 
-## Passo 2 — Editar `/mnt/dados/Assistente Pessoal/opencode/scripts/stop-all-models.sh`
+## Passo 2 — Editar `/mnt/dados/Assistente Pessoal/programas de apoio/opencode/scripts/stop-all-models.sh`
 - Trocar `PORTS=(8083 9084 9086 9088 9090)` por ALL_PORTS + TARGETS + parse de args
   (porta ou nome; sem args = todos), mesmo padrão do 1b.
 - Loop usa `"${TARGETS[@]}"`.
 - **REMOVER** a linha `pkill -f "llama-server" 2>/dev/null || true` (R19 — mata tudo).
 
-## Passo 3 — Editar `/mnt/dados/Assistente Pessoal/opencode/scripts/stack-toggle.sh`
+## Passo 3 — Editar `/mnt/dados/Assistente Pessoal/programas de apoio/opencode/scripts/stack-toggle.sh`
 - Em `is_stack_up()`: `local ports=(8083 9084)` (essenciais apenas).
 
 ## Passo 4 — Aplicar (restart do GM)
 ```bash
 # Backup primeiro
 mkdir -p /tmp/opencode/stack-warm-backup-$(date +%s)
-cp -p "/mnt/dados/Assistente Pessoal/opencode/scripts/"*.sh /tmp/opencode/stack-warm-backup-$(date +%s)/
+cp -p "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/scripts/"*.sh /tmp/opencode/stack-warm-backup-$(date +%s)/
 
 # Derrubar (só depois de corrigir o stop-all-models.sh — o atual derruba 8083 também)
-bash "/mnt/dados/Assistente Pessoal/opencode/scripts/stop-all-models.sh"
+bash "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/scripts/stop-all-models.sh"
 
 # Subir essenciais + WARM sob demanda
-bash "/mnt/dados/Assistente Pessoal/opencode/scripts/start-stack.sh"        # 8083 + 9084 + needles
-bash "/mnt/dados/Assistente Pessoal/opencode/scripts/start-stack.sh" 9088   # proposer sob demanda
+bash "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/scripts/start-stack.sh"        # 8083 + 9084 + needles
+bash "/mnt/dados/Assistente Pessoal/programas de apoio/opencode/scripts/start-stack.sh" 9088   # proposer sob demanda
 ```
 
 ## Passo 5 — Verificação

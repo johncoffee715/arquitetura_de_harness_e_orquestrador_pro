@@ -1,0 +1,23 @@
+(lsfg-vk) [ERROR]: Failed to initialize global info:
+(lsfg-vk) [ERROR]: - Unknown key in configuration: game
+0.00.200.584 I cmn  common_param: common_params_print_info: verbosity = 3 (adjust with the `-lv N` CLI arg)
+0.00.202.013 W srv  llama_server: -----------------
+0.00.202.018 W srv  llama_server: CORS is set to allow all origins ('*') and no API key is set
+0.00.202.018 W srv  llama_server: this can be a security risk (cross-origin attacks)
+0.00.202.019 W srv  llama_server: more info: https://github.com/ggml-org/llama.cpp/pull/25655
+0.00.202.019 W srv  llama_server: -----------------
+0.00.203.334 I srv    load_model: loading model '/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen2vl-7b/Qwen2-VL-7B-Instruct-Q4_K_M.gguf'
+0.01.011.626 W load: control-looking token: 128247 '</s>' was not control-type; this is probably a bug in the model. its type will be overridden
+0.18.712.445 W load_tensors: ffn up/down are swapped
+0.22.842.351 I srv    load_model: loaded multimodal model, '/mnt/dados/Assistente Pessoal/programas de apoio/fotografo/fitragem/qwen2vl-7b/mmproj-Qwen2-VL-7B-Instruct-f16.gguf'
+0.22.868.552 I srv    load_model: initializing, n_slots = 4, n_ctx_slot = 8192, kv_unified = 'true'
+0.22.873.707 I srv  llama_server: model loaded
+0.22.873.718 I srv  llama_server: listening on http://127.0.0.1:9188
+0.27.111.595 I slot get_availabl: id  3 | task -1 | selected slot by LRU, t_last = -1
+0.27.111.785 I slot launch_slot_: id  3 | task 0 | processing task, is_child = 0
+0.31.257.758 I slot print_timing: id  3 | task 0 | prompt processing, n_tokens =   1264, progress = 0.55, t =   4.15 s / 304.88 tokens per second
+0.35.589.670 I slot print_timing: id  3 | task 0 | prompt eval time =    7157.99 ms /  2302 tokens (    3.11 ms per token,   321.60 tokens per second)
+0.35.589.678 I slot print_timing: id  3 | task 0 |        eval time =    1319.82 ms /    90 tokens (   14.66 ms per token,    68.19 tokens per second)
+0.35.589.679 I slot print_timing: id  3 | task 0 |       total time =    8477.80 ms /  2392 tokens
+0.35.589.684 I slot print_timing: id  3 | task 0 |    graphs reused =         88
+0.35.591.313 I slot      release: id  3 | task 0 | stop processing: n_tokens = 2391, truncated = 0

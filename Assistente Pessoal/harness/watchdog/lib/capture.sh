@@ -3,7 +3,7 @@
 # modelo+ctx → state/history · limit.context+name do provider seguem o modelo REAL
 STATE="/mnt/dados/Assistente Pessoal/harness/watchdog/orchestrator-state.json"
 HIST="/mnt/dados/Assistente Pessoal/harness/watchdog/orchestrator-history.jsonl"
-OC=/mnt/dados/opencode/config/opencode.json
+OC=/home/johncoffee/.config/opencode/opencode.json
 RAW=$(curl -s -m 3 http://127.0.0.1:8083/props 2>/dev/null)
 [ -z "$RAW" ] && { echo "{\"status\":\"down\",\"ts\":\"$(date -Iseconds)\"}" > "$STATE" 2>/dev/null; exit 0; }
 python3 - "$RAW" "$STATE" "$HIST" "$OC" <<'PY'
